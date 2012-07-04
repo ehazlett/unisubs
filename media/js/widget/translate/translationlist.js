@@ -62,8 +62,7 @@ unisubs.translate.TranslationList.prototype.createDom = function() {
         function(subtitle) {
             var editableCaption = map[subtitle['subtitle_id']];
             if (!editableCaption)
-                editableCaption = this.captionSet_.addNewDependentTranslation(
-                    subtitle['sub_order'], subtitle['subtitle_id']);
+                editableCaption = this.captionSet_.addNewDependentTranslation(subtitle);
             w = new unisubs.translate.TranslationWidget(
                 subtitle, editableCaption, this.dialog_);
             this.addChild(w, true);

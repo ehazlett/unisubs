@@ -1,7 +1,5 @@
 from django.db import models
 from auth.models import CustomUser as User
-from django.db.models.signals import post_save
-from django.db import connection, transaction
 
 class AuthMeta(models.Model):
     """Metadata for Authentication"""
@@ -30,37 +28,4 @@ class OpenidProfile(models.Model):
     def __repr__(self):
         return unicode(self.openid_key)
     
-
-class TwitterUserProfile(models.Model):
-    """
-    For users who login via Twitter.
-    """
-    screen_name = models.CharField(max_length = 200, unique = True)
-    
-    user = models.ForeignKey(User)
-    access_token = models.CharField(max_length=255, blank=True, null=True, editable=False)
-    profile_image_url = models.URLField(blank=True, null=True)
-    location = models.CharField(max_length=100, blank=True, null=True)
-    url = models.URLField(blank=True, null=True)
-    description = models.CharField(max_length=160, blank=True, null=True)
-
-    def __str__(self):
-            return "%s's profile" % self.user
-        
-
-class FacebookUserProfile(models.Model):
-    """
-    For users who login via Facebook.
-    """
-    facebook_uid = models.CharField(max_length = 20, unique = True)
-    
-    user = models.ForeignKey(User)
-    profile_image_url = models.URLField(blank=True, null=True)
-    location = models.CharField(max_length=100, blank=True, null=True)
-    url = models.URLField(blank=True, null=True)
-    about_me = models.CharField(max_length=160, blank=True, null=True)
-    
-    
-
-
 

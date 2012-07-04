@@ -1,3 +1,4 @@
+import re
 import random
 import time
 
@@ -187,3 +188,13 @@ class MetricsCursorWrapper(_CursorWrapper):
 
 django.db.backends.mysql.base.CursorWrapper = MetricsCursorWrapper
 
+
+# http://www.randallmorey.com/blog/2010/feb/17/django-cache-sessions-and-google-analytics/
+class StripGoogleAnalyticsCookieMiddleware(object):
+    strip_re = re.compile(r'(__utm.=.+?(?:; |$))')
+    def process_request(self, request):
+        try:
+            cookie = self.strip_re.sub('', request.META['HTTP_COOKIE'])
+            request.META['HTTP_COOKIE'] = cookie
+        except:
+            pass

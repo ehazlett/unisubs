@@ -40,7 +40,7 @@ def upload_subtitles(context, video):
     if original_language and original_language.language:
         initial['video_language'] = original_language.language
 
-    context['form'] = SubtitlesUploadForm(context['user'], initial=initial)
+    context['form'] = SubtitlesUploadForm(context['user'], video, initial=initial)
     return context
 
 @register.simple_tag

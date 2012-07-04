@@ -265,10 +265,14 @@ unisubs.startdialog.Dialog.prototype.addFromLanguageSection_ = function($d) {
 };
 unisubs.startdialog.Dialog.prototype.addOriginalLanguageSection_ = function($d) {
     if (this.model_.originalLanguageShown()) {
+
+        var languages = unisubs.languages;
+        languages.unshift(['', '--Select language--']);
+
         this.originalLangDropdown_ = this.makeDropdown_(
-            $d, unisubs.languages, "original-language");
-        this.originalLangDropdown_.value = 'en';
-        this.model_.selectOriginalLanguage('en');
+            $d, languages, "original-language");
+        this.originalLangDropdown_.value = '';
+        this.model_.selectOriginalLanguage('');
         this.contentDiv_.appendChild(
             $d('p', null,
                $d('span', null, 'This video is in: '),
@@ -370,6 +374,15 @@ unisubs.startdialog.Dialog.prototype.okClicked_ = function(e) {
     var toLanguage = this.model_.toLanguageForKey(
         this.toLanguageDropdown_.value);
     var that = this;
+
+    if (this.model_.originalLanguageShown()) {
+        if (this.originalLangDropdown_.value === '') {
+            this.okHasBeenClicked_ = false;
+            alert('You must select a language first.');
+            return false;
+        };
+    };
+
     this.callback_(
         this.model_.originalLanguageShown() ?
             this.originalLangDropdown_.value : null,

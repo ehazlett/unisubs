@@ -312,6 +312,7 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'middleware.ResponseTimeMiddleware',
+    'middleware.StripGoogleAnalyticsCookieMiddleware',
     'utils.ajaxmiddleware.AjaxErrorMiddleware',
     'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -385,6 +386,7 @@ INSTALLED_APPS = (
     'streamer',
     'teams',
     'testhelpers',
+    'thirdpartyaccounts',
     'unisubs', #dirty hack to fix http://code.djangoproject.com/ticket/5494 ,
     'unisubs_compressor',
     'uslogging',
@@ -449,9 +451,9 @@ VIMEO_API_SECRET = None
 
 AUTHENTICATION_BACKENDS = (
    'auth.backends.CustomUserBackend',
+   'thirdpartyaccounts.auth_backends.TwitterAuthBackend',
+   'thirdpartyaccounts.auth_backends.FacebookAuthBackend',
    'auth.backends.OpenIdBackend',
-   'auth.backends.TwitterBackend',
-   'auth.backends.FacebookBackend',
    'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -464,6 +466,8 @@ LOGIN_REDIRECT_URL = '/'
 AUTH_PROFILE_MODULE = 'profiles.Profile'
 ACCOUNT_ACTIVATION_DAYS = 9999 # we are using registration only to verify emails
 SESSION_COOKIE_AGE = 2419200 # 4 weeks
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 RECENT_ACTIVITIES_ONPAGE = 10
 ACTIVITIES_ONPAGE = 20

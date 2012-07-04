@@ -16,26 +16,13 @@
 # along with this program.  If not, see
 # http://www.gnu.org/licenses/agpl-3.0.html.
 import random
-from urllib import urlopen
 
-from django.conf import settings
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.models import User as AuthUser
-from django.core.files.base import ContentFile
 
 from auth.models import CustomUser as User
-from socialauth.lib import oauthtwitter
-from socialauth.models import (
-    OpenidProfile as UserAssociation, TwitterUserProfile, FacebookUserProfile,
-    AuthMeta
-)
+from socialauth.models import OpenidProfile as UserAssociation, AuthMeta
 
-
-TWITTER_CONSUMER_KEY = getattr(settings, 'TWITTER_CONSUMER_KEY', '')
-TWITTER_CONSUMER_SECRET = getattr(settings, 'TWITTER_CONSUMER_SECRET', '')
-FACEBOOK_API_KEY = getattr(settings, 'FACEBOOK_API_KEY', '')
-FACEBOOK_SECRET_KEY = getattr(settings, 'FACEBOOK_SECRET_KEY', '')
-FACEBOOK_REST_SERVER = getattr(settings, 'FACEBOOK_REST_SERVER', 'http://api.facebook.com/restserver.php')
 
 class CustomUserBackend(ModelBackend):
     supports_object_permissions = False
@@ -131,122 +118,3 @@ class OpenIdBackend(object):
         except User.DoesNotExist:
             return None
 
-
-class TwitterBackend(object):
-    supports_object_permissions = False
-    supports_anonymous_user = False
-
-    def authenticate(self, access_token):
-        '''authenticates the token by requesting user information from twitter
-        '''
-        twitter = oauthtwitter.OAuthApi(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET, access_token)
-
-        try:
-            userinfo = twitter.GetUserInfo()
-        except:
-            # If we cannot get the user information, user cannot be authenticated
-            raise
-
-        screen_name = userinfo.screen_name
-        img_url = userinfo.profile_image_url
-
-        try:
-            user_profile = TwitterUserProfile.objects.get(screen_name = screen_name)
-            if user_profile.user.is_active:
-                return user_profile.user
-            else:
-                return
-        except TwitterUserProfile.DoesNotExist:
-            #Create new user
-            same_name_count = User.objects.filter(username__startswith = screen_name).count()
-            if same_name_count:
-                username = '%s%s' % (screen_name, same_name_count + 1)
-            else:
-                username = screen_name
-            username = '@'+username
-
-            name_count = AuthUser.objects.filter(username__startswith = username).count()
-
-            if name_count:
-                username = '%s%s'%(username, name_count + 1)
-
-            user = User(username =  username)
-            temp_password = User.objects.make_random_password(length=12)
-            user.set_password(temp_password)
-            name_data = userinfo.name.split()
-            try:
-                first_name, last_name = name_data[0], ' '.join(name_data[1:])
-            except:
-                first_name, last_name =  screen_name, ''
-            user.first_name, user.last_name = first_name, last_name
-            if img_url:
-                img = ContentFile(urlopen(img_url).read())
-                name = img_url.split('/')[-1]
-                user.picture.save(name, img, False)
-            #user.email = '%s@twitteruser.%s.com'%(userinfo.screen_name, settings.SITE_NAME)
-            user.save()
-            userprofile = TwitterUserProfile(user = user, screen_name = screen_name)
-            userprofile.access_token = access_token.key
-            userprofile.url = userinfo.url
-            userprofile.location = userinfo.location
-            userprofile.description = userinfo.description
-            userprofile.profile_image_url = userinfo.profile_image_url
-            userprofile.save()
-            AuthMeta(user=user, provider='Twitter').save()
-            return user
-
-    def get_user(self, user_id):
-        try:
-            return User.objects.get(pk=user_id)
-        except:
-            return None
-
-
-class FacebookBackend(object):
-    supports_object_permissions = False
-    supports_anonymous_user = False
-
-    def authenticate(self, facebook, request):
-        facebook.oauth2_check_session(request)
-
-        facebook.uid = facebook.users.getLoggedInUser()
-        user_info = facebook.users.getInfo([facebook.uid], ['first_name', 'last_name', 'pic_square'])[0]
-
-        username = user_info['first_name']
-        try:
-            user_profile = FacebookUserProfile.objects.get(facebook_uid=user_info['uid'])
-            if user_profile.user.is_active:
-                return user_profile.user
-            else:
-                return None
-        except FacebookUserProfile.DoesNotExist:
-            name_count = AuthUser.objects.filter(username__istartswith=username).count()
-            if name_count:
-                username = '%s%s' % (username, name_count + 1)
-
-            user = User.objects.create(username=username)
-            user.first_name = user_info['first_name']
-            user.last_name = user_info['last_name']
-
-            img_url = user_info.get('pic_square')
-            if img_url:
-                img = ContentFile(urlopen(img_url).read())
-                name = img_url.split('/')[-1]
-                user.picture.save(name, img, False)
-
-            user.save()
-
-            location = '' # TODO: Figure out how to get this from Facebook.  Maybe.
-
-            fb_profile = FacebookUserProfile(facebook_uid=user_info['uid'], user=user,
-                    profile_image_url=img_url, location=location)
-            fb_profile.save()
-
-            AuthMeta(user=user, provider='Facebook').save()
-            return user
-
-    def get_user(self, user_id):
-        try:
-            return User.objects.get(pk=user_id)
-        except:
-            return None

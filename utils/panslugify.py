@@ -30,3 +30,6 @@ def pan_slugify(value):
     """
     return slugify(unidecode(value))
 
+def pan_slugify_username(s):
+    """Return a slugified string suitable for a username."""
+    return pan_slugify(s).replace('-', '_')

@@ -164,12 +164,16 @@ unisubs.subtitle.EditableCaptionSet.prototype.identicalTo = function(otherCaptio
             return false;
     return true;
 };
-unisubs.subtitle.EditableCaptionSet.prototype.addNewDependentTranslation = function(subOrder, subtitleID) {
-    var c = new unisubs.subtitle.EditableCaption(
-        null, 
-        { 'subtitle_id': subtitleID,
+unisubs.subtitle.EditableCaptionSet.prototype.addNewDependentTranslation = function(subtitleJson) {
+    var newSub = {
+          'subtitle_id': subtitleJson['subtitle_id'],
           'text': '',
-          'sub_order': subOrder });
+          'sub_order': subtitleJson['sub_order'],
+          'start_time': subtitleJson['start_time'],
+          'end_time': subtitleJson['end_time']
+    }
+
+    var c = new unisubs.subtitle.EditableCaption(null, newSub);
     this.captions_.push(c);
     return c;
 };

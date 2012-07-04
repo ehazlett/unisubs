@@ -8,7 +8,7 @@
             {% if user.is_authenticated %}
             <p>
               {% blocktrans %}
-              Our site accepts SRT, SSA, SBV, DFXP and TTML format. Only files ending in .srt, .ssa, .sbv, .dfxp, .txt
+              Our site accepts SRT, SSA, SBV, DFXP, TTML, and TXT format. Only files ending in .srt, .ssa, .sbv, .dfxp, .txt
               or .xml (for TTML) are accepted.
               {% endblocktrans %}
             </p>
@@ -20,8 +20,10 @@
                         <div style="margin: 5px 0 5px 0;"><label>{% trans 'Language' %}</label>{{ form.language }}</div>
                         {% if not video.has_original_language %}
                         <div style="margin: 10px 0 10px 0;"><label>{% trans 'Video Language' %}</label>{{ form.video_language }}</div>
+                        {% else %}
+                        <div style="margin: 10px 0 10px 0;"><label>{% trans 'Translated from' %}</label>{{ form.translated_from }}</div>
                         {% endif %}
-              <div><input type="file" name="subtitles" id="subtitles-file-field" /></div>
+              <div><input type="file" name="draft" id="subtitles-file-field" /></div>
               <div><input type="checkbox" name="is_complete" id="updload-subtitles-form-is_complete" checked="checked"/>
               <label for="upload-subtitles-form-is_complete">{% trans "This subtitle file is 100% complete" %}</label></div>
               <div style="margin: 5px 0 15px 0;">

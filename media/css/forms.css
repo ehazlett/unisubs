@@ -396,20 +396,19 @@ form.message p span {
     width: 250px;
 }
 form p input, form p textarea, #feedback_form p input {
-    -moz-border-radius: 5px;
-    -moz-box-shadow: inset 0px 1px 1px #555;
-    -webkit-border-radius: 5px;
-    -webkit-box-shadow: inset 0px 1px 2px #555;
-    background: -moz-linear-gradient(top,    #eee,    #fff);
-    background: -webkit-gradient(linear, left top, left bottom,    from(#eee),    to(#fff));
-    border: 0;
-    box-shadow: inset 0px 1px 2px #555;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: inset 0px 0px 2px #999;
+    -webkit-box-shadow: inset 0px 0px 2px #999;
+    box-shadow: inset 0px 0px 2px #999;
+    border: 1px solid #eee;
     display: block;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    line-height: 15px;
-    margin: 0 0 5px 0px;
-    padding: 8px 0 5px 8px;
+    font-size: 15px;
+    line-height: 14px;
+    margin: 0 0 5px -.75em;
+    padding: .75em;
     width: inherit;
 }
 input#feedback_email, input#feedback_math_captcha_field {
@@ -453,40 +452,6 @@ input#email_friend_id_from_email, input#email_friend_id_to_emails, input#email_f
 .errorlist li a {
     color: #c0c0c0;
     text-shadow: none;
-}
-#login .provider {
-    display: block;
-    float: left;
-    height: 0;
-    overflow: hidden;
-    padding-top: 33px;
-    width: 102px;
-}
-#twitter {
-    background: url(../images/social_login.png) 0px 0px no-repeat
-}
-#facebook {
-    background: url(../images/social_login.png) -102px 0px no-repeat;
-}
-#ted {
-    background: url('../images/social_login_ted.png') 0 0 no-repeat;
-    margin-top: 10px;
-}
-#google {
-    background: url(../images/social_login.png) -204px 0px no-repeat
-}
-#open-id {
-    background: url(../images/social_login.png) -306px 0px no-repeat
-}
-input.open-id {
-    background: url(../images/social_login.png) -306px 0px no-repeat;
-    display: block;
-    float: left;
-    height: 0 !important;
-    margin-top: 10px;
-    overflow: hidden;
-    padding: 33px 0 0 0;
-    width: 102px;
 }
 #bulk_create {
     border-top: 1px #cae1e6 solid;
@@ -549,4 +514,105 @@ input.open-id {
 }
 #submit_multiple_toggle a:hover {
     background: #bed4d9
+}
+
+/** SIGN IN **/
+
+#login .content {
+    text-align: center;
+}
+
+#login .providers, #login h2, #login h3, #login p {
+    clear: both;
+    font-weight: normal;
+}
+#login h3 {
+    margin-top: 3em;
+}
+#login .sso {
+    margin-top: 2em;
+    padding: 1.5em 2em;
+    background: #f7f7f7;
+    border-radius: 3px;
+    border: 1px solid #eee;
+}
+.providers {
+    float: left;
+    position: relative;
+    left: 50%;
+    padding: 1em 0 2em;
+}
+.toggle-additional {
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+}
+.toggle-additional a {
+    text-decoration: none;
+    color: #999;
+}
+.toggle-additional a:hover {
+    color: #555;
+}
+.providers.additional {
+    padding-top: 0;
+    display: none;
+}
+.providers li {
+    float: left;
+    position: relative;
+    right: 50%;
+    padding: 0;
+}
+#login .provider {
+    display: block;
+    float: left;
+    height: 0;
+    margin: 0 .5em;
+    overflow: hidden;
+    padding-top: 31px;
+    width: 91px;
+
+    box-shadow: 0 1px 3px #fee;
+}
+#twitter {
+    background: url(../images/social_login.png) 0px 0px no-repeat
+}
+#facebook {
+    background: url(../images/social_login.png) -102px 0px no-repeat;
+}
+#ted {
+    background: url('../images/partner_login.png') 0 0 no-repeat;
+}
+#coursera {
+    background: url('../images/partner_login.png') -109px 0 no-repeat;
+}
+#google {
+    background: url(../images/social_login.png) -204px 0px no-repeat
+}
+#open-id {
+    background: url(../images/social_login.png) -306px 0px no-repeat
+}
+input.open-id {
+    background: url(../images/social_login.png) -306px 0px no-repeat;
+    display: block;
+    float: left;
+    height: 0 !important;
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 33px 0 0 0;
+    width: 102px;
+}
+#login .content form p {
+    margin-top: 1em;
+}
+#login .content form p.help {
+    color: #999;
+    margin: -.5em 0 1em;
+}
+#login .content form {
+    margin: 0 140px;
+}
+#login button.green_button {
+    float: none;
+    margin-top: 2em;
 }

@@ -235,6 +235,15 @@ class Rpc(BaseRpc):
             'general_settings': general_settings }
 
 
+    # Ugly hack for N caption display.
+    def get_caption_display_mode(self, language):
+        team_video = language.video.get_team_video()
+        if team_video and team_video.team.slug == 'netflix':
+            return 'n'
+        else:
+            return 'normal'
+
+
     # Start Editing
     def _check_team_video_locking(self, user, video_id, language_code, is_translation, mode, is_edit):
         """Check whether the a team prevents the user from editing the subs.
@@ -351,6 +360,7 @@ class Rpc(BaseRpc):
             version_for_subs, version_no, base_language_pk is None)
         return_dict = { "can_edit": True,
                         "session_pk": session.pk,
+                        "caption_display_mode": self.get_caption_display_mode(language),
                         "subtitles": subtitles }
 
         # If this is a translation, include the subtitles it's based on in the response.
@@ -389,6 +399,7 @@ class Rpc(BaseRpc):
             return_dict = { "response": "ok",
                             "can_edit" : True,
                             "session_pk" : session.pk,
+                            "caption_display_mode": self.get_caption_display_mode(session.language),
                             "subtitles" : subtitles }
             if session.base_language:
                 return_dict['original_subtitles'] = \
@@ -502,9 +513,6 @@ class Rpc(BaseRpc):
 
         team_video = language.video.get_team_video()
 
-        # Record the origin of this set of subtitles.
-        record_workflow_origin(new_version, team_video)
-
         if not save_for_later:
             # If we've just saved a completed subtitle language, we may need to
             # complete a subtitle or translation task.
@@ -590,11 +598,31 @@ class Rpc(BaseRpc):
             else:
                 self._copy_subtitles(previous_version, new_version)
 
+            incomplete = new_version.is_synced() or save_for_later
+
             # this is really really hackish.
             # TODO: clean all this mess on a friday
-            if not new_version.is_synced() or save_for_later:
+            if incomplete:
                 self._moderate_incomplete_version(new_version, user)
-            elif should_create_task:
+
+            # Record the origin of this set of subtitles.
+            #
+            # This has to be done here.  Here's why.
+            #
+            # We need to record the origin *after* creating subtitle/translate
+            # tasks, so that we can tell it originates there.  That happens in
+            # the _moderate_incomplete_version call above.
+            #
+            # We need to record it *before* creating review/approve tasks (if
+            # any) because that means these subs were from a post-publish edit
+            # or something similar.  If we record the origin after creating the
+            # review task it'll be marked as originating from review, which
+            # isn't right because these subs had to come from something else.
+            #
+            # :(
+            record_workflow_origin(new_version, new_version.video.get_team_video())
+
+            if (not incomplete) and should_create_task:
                 self._create_review_or_approve_task(new_version)
 
         return new_version

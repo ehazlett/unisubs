@@ -1,19 +1,19 @@
 // Amara, universalsubtitles.org
-// 
+//
 // Copyright (C) 2012 Participatory Culture Foundation
-// 
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
 // published by the Free Software Foundation, either version 3 of the
 // License, or (at your option) any later version.
-// 
+//
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU Affero General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU Affero General Public License
-// along with this program.  If not, see 
+// along with this program.  If not, see
 // http://www.gnu.org/licenses/agpl-3.0.html.
 
 goog.provide('unisubs.player.CaptionView');
@@ -49,7 +49,7 @@ unisubs.player.CaptionView = function( needsIFrame, isDraggable) {
      */
     this.isDraggable_ = true;//bool(isDraggable);
     /*
-     * @type  {bool} 
+     * @type  {bool}
      */
     this.userHasDragged_ = false;
 };
@@ -57,7 +57,7 @@ unisubs.player.CaptionView = function( needsIFrame, isDraggable) {
 goog.inherits(unisubs.player.CaptionView, goog.ui.Component);
 
 /*
- * @conts {int} 
+ * @conts {int}
  */
 unisubs.player.CaptionView.VERTICAL_MARGIN = 40;
 
@@ -73,22 +73,22 @@ unisubs.player.CaptionView.MAXIMUM_WIDTH = 400;
 
 /*
  * @param boundingBox {goog.math.Rect} The rectangle to which
- * to attach the caption. This is how the caption nows how to position 
+ * to attach the caption. This is how the caption nows how to position
  * itself in relation to the playe.
  * @param anchor {str=} Which positioning order to follow, defaults to
  * BOTTOM_CENTER if not provided.
  * @return The same bounding box or null if box is empty
  */
-unisubs.player.CaptionView.prototype.setUpPositioning = 
+unisubs.player.CaptionView.prototype.setUpPositioning =
     function ( boundingBox, anchor){
     if (!boundingBox){
         return null;
     }
     this.boundingBox_ = boundingBox;
-    this.captionWidth_ = Math.min(unisubs.player.CaptionView.MAXIMUM_WIDTH, 
-        this.boundingBox_.width - 
+    this.captionWidth_ = Math.min(unisubs.player.CaptionView.MAXIMUM_WIDTH,
+        this.boundingBox_.width -
           (unisubs.player.CaptionView.HORIZONTAL_MARGIN * 2));
-    this.captionLeft_ =  this.boundingBox_.left + 
+    this.captionLeft_ =  this.boundingBox_.left +
             ((  this.boundingBox_.width - this.captionWidth_) / 2);
     this.anchor_ = anchor || "BOTTOM_CENTER";
     return boundingBox;
@@ -114,7 +114,7 @@ unisubs.player.CaptionView.breakLines = function (text, opt_charsPerLine, opt_ma
         return "";
     }
     // the user might have forced line breaks, we should respect that
-    
+
     var lines = [];
     var currentLine  = [];
         charsOnCurrentLine = 0,
@@ -132,7 +132,7 @@ unisubs.player.CaptionView.breakLines = function (text, opt_charsPerLine, opt_ma
             }
             word = word.substring(0, newLineIndex);
         }
-        
+
         charsOnCurrentLine =  currentLine.join(" ").length + word.length + 1;
         if (  charsOnCurrentLine <= charsPerLine  ){
             // next word will fit within a line
@@ -165,9 +165,15 @@ unisubs.player.CaptionView.breakLines = function (text, opt_charsPerLine, opt_ma
 unisubs.player.CaptionView.prototype.setCaptionText = function(text) {
     if (text == null || text == "") {
         this.setVisibility(false);
-    }
-    else{
-        var text = unisubs.player.CaptionView.breakLines(text);
+    } else {
+        // TODO: This ugly hack is for N, who require a different standard of
+        // displaying subtitles.  We should remove this once we have pluginable
+        // popcorn set up.
+        if (unisubs.caption_display_mode == 'n') {
+            text = unisubs.player.CaptionView.breakLines(text);
+        } else {
+            text = goog.string.newLineToBr(goog.string.htmlEscape(text));
+        }
         // convert to markdown after text layout has been done
         // as to not inflate char count:
 
@@ -201,7 +207,7 @@ unisubs.player.CaptionView.prototype.createDom  = function (){
     if (this.isDraggable_){
         this.dragger_ = new goog.fx.Dragger(this.getElement());
     }
-    
+
 };
 
 unisubs.player.CaptionView.prototype.enterDocument = function() {
@@ -217,19 +223,19 @@ unisubs.player.CaptionView.prototype.enterDocument = function() {
                 goog.fx.Dragger.EventType.DRAG,
                 goog.bind(this.onDrag, this));
     };
-};      
+};
 
-/* 
+/*
  * @param e {fx.DragEvent} The dragging event.
  */
 unisubs.player.CaptionView.prototype.startDrag = function(e){
     this.userHasDragged_ = true;
 };
-/* 
+/*
  * @param e {fx.DragEvent} The dragging event.
  */
 unisubs.player.CaptionView.prototype.onDrag = function(e){
-    unisubs.style.setPosition(this.getElement(), 
+    unisubs.style.setPosition(this.getElement(),
                                this.dragger_.deltaX ,
                                this.dragger_.deltaY);
 };
@@ -242,7 +248,7 @@ unisubs.player.CaptionView.prototype.redrawInternal = function(){
        captionSize.height == this.oldSize_.height){
         return;
     }
-    var newTop = (this.boundingBox_.top + this.boundingBox_.height - captionSize.height ) - 
+    var newTop = (this.boundingBox_.top + this.boundingBox_.height - captionSize.height ) -
         unisubs.player.CaptionView.VERTICAL_MARGIN;
     unisubs.style.setPosition(this.getElement(), this.captionLeft_, newTop);
     if (this.needsIFrame_ && this.captionBgElem_) {
@@ -253,12 +259,12 @@ unisubs.player.CaptionView.prototype.redrawInternal = function(){
     this.oldSize_.height = captionSize.height;
 };
 
-/* 
+/*
  * @param {bool} If it will be made visible.
  */
 unisubs.player.CaptionView.prototype.setVisibility = function(show){
     if(this.captionBgElem_){
-        unisubs.style.setVisibility(this.captionBgElem_, show);   
+        unisubs.style.setVisibility(this.captionBgElem_, show);
     }
     unisubs.style.setVisibility(this.getElement(), show);
 };

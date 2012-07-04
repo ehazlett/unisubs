@@ -634,6 +634,7 @@ class TeamVideo(models.Model):
     added_by = models.ForeignKey(User)
     created = models.DateTimeField(auto_now_add=True)
     completed_languages = models.ManyToManyField(SubtitleLanguage, blank=True)
+    partner_id = models.CharField(max_length=100, blank=True, default="")
 
     project = models.ForeignKey(Project)
 
@@ -1037,6 +1038,7 @@ class MembershipNarrowing(models.Model):
 
         return super(MembershipNarrowing, self).save(*args, **kwargs)
 
+
 # Application
 class Application(models.Model):
     team = models.ForeignKey(Team, related_name='applications')
@@ -1286,6 +1288,10 @@ class Workflow(models.Model):
         """Return whether any form of approval is enabled for this workflow."""
         return True if self.approve_allowed else False
 
+    @property
+    def allows_tasks(self):
+        """Return wheter we can create tasks for a given workflow."""
+        return self.approve_enabled or self.review_enabled
 
 # Tasks
 class TaskManager(models.Manager):
@@ -1646,6 +1652,15 @@ class Task(models.Model):
                  'Approve': self._complete_approve,
         }[Task.TYPE_NAMES[self.type]]()
 
+    def _can_publish_directly(self, subtitle_version):
+        from teams.permissions import can_publish_edits_immediately
+        return (can_publish_edits_immediately(self.team_video,
+                                                    self.assignee,
+                                                    self.language) and
+                subtitle_version and
+                subtitle_version.prev_version() and
+                subtitle_version.language.is_complete_and_synced())
+
     def _find_previous_assignee(self, type):
         """Find the previous assignee for a new review/approve task for this video.
 
@@ -1689,22 +1704,24 @@ class Task(models.Model):
         subtitle_version = self.team_video.video.latest_version(
                                 language_code=self.language, public_only=False)
 
-        if self.workflow.review_enabled:
-            task = Task(team=self.team, team_video=self.team_video,
-                        subtitle_version=subtitle_version,
-                        review_base_version=subtitle_version,
-                        language=self.language, type=Task.TYPE_IDS['Review'],
-                        assignee=self._find_previous_assignee('Review'))
-            task.set_expiration()
-            task.save()
-        elif self.workflow.approve_enabled:
-            task = Task(team=self.team, team_video=self.team_video,
-                        subtitle_version=subtitle_version,
-                        review_base_version=subtitle_version,
-                        language=self.language, type=Task.TYPE_IDS['Approve'],
-                        assignee=self._find_previous_assignee('Approve'))
-            task.set_expiration()
-            task.save()
+        # TL;DR take a look at #1206 to know why i did this
+        if self.workflow.allows_tasks and not self._can_publish_directly(subtitle_version):
+            if self.workflow.review_enabled:
+                task = Task(team=self.team, team_video=self.team_video,
+                            subtitle_version=subtitle_version,
+                            review_base_version=subtitle_version,
+                            language=self.language, type=Task.TYPE_IDS['Review'],
+                            assignee=self._find_previous_assignee('Review'))
+                task.set_expiration()
+                task.save()
+            elif self.workflow.approve_enabled:
+                task = Task(team=self.team, team_video=self.team_video,
+                            subtitle_version=subtitle_version,
+                            review_base_version=subtitle_version,
+                            language=self.language, type=Task.TYPE_IDS['Approve'],
+                            assignee=self._find_previous_assignee('Approve'))
+                task.set_expiration()
+                task.save()
         else:
             # Subtitle task is done, and there is no approval or review
             # required, so we mark the version as approved.
@@ -1726,23 +1743,25 @@ class Task(models.Model):
         subtitle_version = self.team_video.video.latest_version(
                                 language_code=self.language, public_only=False)
 
-        if self.workflow.review_enabled:
-            task = Task(team=self.team, team_video=self.team_video,
-                        subtitle_version=subtitle_version,
-                        review_base_version=subtitle_version,
-                        language=self.language, type=Task.TYPE_IDS['Review'],
-                        assignee=self._find_previous_assignee('Review'))
-            task.set_expiration()
-            task.save()
-        elif self.workflow.approve_enabled:
-            # The review step may be disabled.  If so, we check the approve step.
-            task = Task(team=self.team, team_video=self.team_video,
-                        subtitle_version=subtitle_version,
-                        review_base_version=subtitle_version,
-                        language=self.language, type=Task.TYPE_IDS['Approve'],
-                        assignee=self._find_previous_assignee('Approve'))
-            task.set_expiration()
-            task.save()
+        # TL;DR take a look at #1206 to know why i did this
+        if self.workflow.allows_tasks and not self._can_publish_directly(subtitle_version):
+            if self.workflow.review_enabled:
+                task = Task(team=self.team, team_video=self.team_video,
+                            subtitle_version=subtitle_version,
+                            review_base_version=subtitle_version,
+                            language=self.language, type=Task.TYPE_IDS['Review'],
+                            assignee=self._find_previous_assignee('Review'))
+                task.set_expiration()
+                task.save()
+            elif self.workflow.approve_enabled:
+                # The review step may be disabled.  If so, we check the approve step.
+                task = Task(team=self.team, team_video=self.team_video,
+                            subtitle_version=subtitle_version,
+                            review_base_version=subtitle_version,
+                            language=self.language, type=Task.TYPE_IDS['Approve'],
+                            assignee=self._find_previous_assignee('Approve'))
+                task.set_expiration()
+                task.save()
         else:
             # Translation task is done, and there is no approval or review
             # required, so we mark the version as approved.

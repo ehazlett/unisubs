@@ -29,6 +29,11 @@ from django.conf import settings
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.sites.models import Site
 from utils.metrics import Meter
+from utils.subtitles import (
+    SubtitleParserError, SubtitleParser, TxtSubtitleParser,
+    YoutubeSubtitleParser, TtmlSubtitleParser, SrtSubtitleParser,
+    SbvSubtitleParser, SsaSubtitleParser, YoutubeXMLParser, DfxpSubtitleParser
+)
 
 DEFAULT_PROTOCOL = getattr(settings, "DEFAULT_PROTOCOL", 'https')
 

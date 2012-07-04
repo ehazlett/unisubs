@@ -22,16 +22,14 @@ from django.conf import settings
 from django.contrib import admin
 from django.template import RequestContext, loader
 from sitemaps import sitemaps, sitemap_view, sitemap_index
-from socialauth.models import (AuthMeta, OpenidProfile, TwitterUserProfile,
-     FacebookUserProfile)
+from socialauth.models import AuthMeta, OpenidProfile
 
 admin.autodiscover()
 
 # these really should be unregistred but while in development the dev server
 # might have not registred yet, so we silence this exception
 try:
-    admin.site.unregister([AuthMeta, OpenidProfile, TwitterUserProfile,
-        FacebookUserProfile])
+    admin.site.unregister([AuthMeta, OpenidProfile])
 except admin.sites.NotRegistered:
     pass
 
@@ -151,8 +149,9 @@ urlpatterns = patterns('',
         app_name='videos')), url(r'^teams/', include('teams.urls',
         namespace='teams', app_name='teams')),
     url(r'^profiles/', include('profiles.urls', namespace='profiles',
-        app_name='profiles')), url(r'auth/', include('auth.urls',
-        namespace='auth', app_name='auth')),
+        app_name='profiles')),
+    url(r'auth/', include('auth.urls', namespace='auth', app_name='auth')),
+    url(r'auth/', include('thirdpartyaccounts.urls', namespace='thirdpartyaccounts', app_name='thirdpartyaccounts')),
 )
 
 try:

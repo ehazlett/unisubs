@@ -7,6 +7,7 @@ PIL==1.1.7
 PyRSS2Gen==1.0.0
 PyYAML==3.09
 South==0.7
+kombu==1.4.3
 vendor/django-registration.tar.gz
 vendor/django-piston.tar.gz
 vendor/django-livesettings.tar.gz
@@ -22,7 +23,7 @@ vendor/celery-2.4.3.tar.gz
 vendor/django-celery-2.4.2.tar.gz
 vendor/pycrypto-2.1.0.tar.gz
 oauth==1.0.1
-oauth2==1.2.0
+oauth2==1.5.211
 pyOpenSSL==0.9
 vendor/redis-2.4.5.tar.gz
 simplejson==2.1.1
@@ -34,7 +35,7 @@ python-memcached
 feedparser
 lxml==2.3
 raven==1.8.2
-vendor/indifex-transifex-client-0.5.tar.gz
+transifex-client==0.8
 django-extensions==0.4.1
 # do we really need this in prod?
 django-debug-toolbar==0.8.3
@@ -49,7 +50,8 @@ vendor/django-templatetag-sugar.tar.gz
 vendor/django-tastypie-0.9.11.tar.gz
 # this should be commented until we are sure we want to deploy this to prod
 #vendor/oboe-0.4.1.0.tar.gz
-vendor/requests-v0.9.1.0-0.tar.gz
+requests==0.13.1
+rauth==0.4.12
 bernhard==0.0.2
 -e git+https://github.com/jsocol/bleach.git@105b4cfc2f00cc1954bcab3b39b16fbfaf8863e0#egg=bleach
 markdown2==2.0.0

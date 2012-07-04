@@ -420,10 +420,10 @@ class SubtitleParserTest(TestCase):
         self.assertTrue(result.find("Here we<br/>go") > -1)
 
 class WebUseTest(TestCase):
-    def _make_objects(self):
+    def _make_objects(self, video_id="S7HMxzLmS9gw"):
         self.auth = dict(username='admin', password='admin')
         self.user = User.objects.get(username=self.auth['username'])
-        self.video = Video.objects.get(video_id='iGzkk7nwWX8F')
+        self.video = Video.objects.get(video_id=video_id)
         self.video.followers.add(self.user)
 
     def _simple_test(self, url_name, args=None, kwargs=None, status=200, data={}):
@@ -444,7 +444,7 @@ class UploadSubtitlesTest(WebUseTest):
             'language': lang,
             'video_language': 'en',
             'video': video_pk,
-            'subtitles': open(os.path.join(os.path.dirname(__file__), 'fixtures/test.srt')),
+            'draft': open(os.path.join(os.path.dirname(__file__), 'fixtures/test.srt')),
             'is_complete': True
             }
 
@@ -455,7 +455,7 @@ class UploadSubtitlesTest(WebUseTest):
             'language': language_code,
             'video': video.pk,
             'video_language': 'en',
-            'subtitles': open(os.path.join(os.path.dirname(__file__), 'fixtures/%s' % subs_filename))
+            'draft': open(os.path.join(os.path.dirname(__file__), 'fixtures/%s' % subs_filename))
             }
 
     def setUp(self):
@@ -470,8 +470,6 @@ class UploadSubtitlesTest(WebUseTest):
 
         language = self.video.subtitle_language(data['language'])
         self.assertEquals(language, None)
-        original_language = self.video.subtitle_language()
-        self.assertFalse(original_language.language)
 
         response = self.client.post(reverse('videos:upload_subtitles'), data)
         self.assertEqual(response.status_code, 200)
@@ -511,6 +509,7 @@ class UploadSubtitlesTest(WebUseTest):
     def test_upload_original_subtitles(self):
         self._login()
         data = self._make_data(lang='en')
+        video = Video.objects.get(pk=self.video.pk)
         response = self.client.post(reverse('videos:upload_subtitles'), data)
         self.assertEqual(response.status_code, 200)
 
@@ -521,6 +520,38 @@ class UploadSubtitlesTest(WebUseTest):
         self.assertTrue(language.is_original)
         self.assertTrue(language.has_version)
         self.assertTrue(video.is_subtitled)
+
+    def test_upload_translation(self):
+        self._login()
+        data = self._make_data(lang='en')
+        video = Video.objects.get(pk=self.video.pk)
+        response = self.client.post(reverse('videos:upload_subtitles'), data)
+        self.assertEqual(response.status_code, 200)
+
+        video = Video.objects.get(pk=self.video.pk)
+        self.assertEqual(1, video.subtitlelanguage_set.count())
+        language = video.subtitle_language()
+        self.assertEqual('en', language.language)
+        self.assertTrue(language.is_original)
+        self.assertTrue(language.has_version)
+        self.assertTrue(video.is_subtitled)
+        self.assertFalse(language.is_dependent())
+
+        data = self._make_data(lang='fr')
+        data['translated_from'] = 'en'
+
+        response = self.client.post(reverse('videos:upload_subtitles'), data)
+        self.assertEqual(response.status_code, 200)
+
+        video = Video.objects.get(pk=self.video.pk)
+        self.assertEqual(2, video.subtitlelanguage_set.count())
+        language = video.subtitle_language("fr")
+        self.assertEqual('fr', language.language)
+        self.assertFalse(language.is_original)
+        self.assertTrue(language.has_version)
+        self.assertTrue(video.is_subtitled)
+        self.assertTrue(language.is_dependent())
+        self.assertEquals(language.standard_language.language, "en")
 
     def test_upload_twice(self):
         self._login()
@@ -539,26 +570,6 @@ class UploadSubtitlesTest(WebUseTest):
         self.assertEquals(version_no, language.latest_version(public_only=True).version_no)
         num_languages_2 = self.video.subtitlelanguage_set.all().count()
         self.assertEquals(num_languages_1, num_languages_2)
-
-    def test_upload_altered(self):
-        self._login()
-        data = self._make_data()
-        altered_data = self._make_altered_data()
-        language = self.video.subtitle_language(data['language'])
-        self.assertEqual(language, None)
-
-        self.client.post(reverse('videos:upload_subtitles'), data)
-        language = self.video.subtitle_language(data['language'])
-        self.assertEquals(1, language.subtitleversion_set.count())
-
-        self.client.post(reverse('videos:upload_subtitles'), altered_data)
-        language = self.video.subtitle_language(data['language'])
-        self.assertEquals(2, language.subtitleversion_set.count())
-        version = language.latest_version(public_only=True)
-        self.assertTrue(version.time_change > 0)
-        self.assertTrue(version.text_change > 0)
-        self.assertEquals(version.time_change , 1)
-        self.assertEquals(version.text_change , 1)
 
     def test_upload_over_translated(self):
         # for https://www.pivotaltracker.com/story/show/11804745
@@ -812,7 +823,7 @@ class ViewsTest(WebUseTest):
     fixtures = ['test.json']
 
     def setUp(self):
-        self._make_objects()
+        self._make_objects("iGzkk7nwWX8F")
         cache.clear()
 
     def _test_video_url_make_primary(self):
@@ -2553,13 +2564,12 @@ class TestSRT(WebUseTest, BaseDownloadTest):
             'language': self.language.language,
             'video': self.video.pk,
             'video_language': 'en',
-            'subtitles': open(os.path.join(os.path.dirname(__file__), 'fixtures/with-markdown.srt'))
+            'draft': open(os.path.join(os.path.dirname(__file__), 'fixtures/with-markdown.srt'))
         }
         self._login()
         response = self.client.post(reverse('videos:upload_subtitles'), data)
         self.assertEqual(response.status_code, 200)
-        version = self.language.version()
-        subs = version.subtitles()
+        subs = self.video.subtitle_language().version().subtitles()
         self.assertIn("**bold text in it**", subs[0].text)
         self.assertIn(" *multiline\nitalics*", subs[1].text)
         self.assertNotIn("script", subs[2].text)
