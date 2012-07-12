@@ -21,7 +21,7 @@ from teams.models import Task
 
 class FinishReviewForm(forms.Form):
     task = forms.ModelChoiceField(Task.objects.all())
-    body = forms.CharField(max_length=2000, required=False)
+    body = forms.CharField(required=False)
     approved = forms.TypedChoiceField(choices=Task.APPROVED_CHOICES, coerce=int,
                                       empty_value=None)
 
@@ -35,7 +35,7 @@ class FinishReviewForm(forms.Form):
 
 class FinishApproveForm(forms.Form):
     task = forms.ModelChoiceField(Task.objects.all())
-    body = forms.CharField(max_length=2000, required=False)
+    body = forms.CharField(required=False)
     approved = forms.TypedChoiceField(choices=Task.APPROVED_CHOICES, coerce=int,
                                       empty_value=None)
 

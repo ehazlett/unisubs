@@ -146,7 +146,7 @@
                                         <div class="cannot-perform-disabled">This task cannot be performed until the original language ({{ translated_from.get_language_display }}) is finished.</div
                                     {% endif %}
                                 {% endif %}
-                                {% if task.get_type_display == "Translate" and task.subtitle_version.moderation_status == 'waiting_moderation' %}
+                                {% if task.is_blocked %}
                                     class="disabled">
                                     <div class="cannot-perform-disabled">This task cannot be performed until the original language ({{ task.subtitle_version.language }}) has been approved.</div
                                 {% endif %}

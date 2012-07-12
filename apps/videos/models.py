@@ -1253,7 +1253,7 @@ class SubtitleVersionManager(models.Manager):
     def new_version(self, parser, language, user,
                     translated_from=None, note="", timestamp=None, moderation_status=None):
 
-        from videos import html_to_markdown
+        from utils.unisubsmarkup import html_to_markup
 
         version_no = 0
         last_version = language.version(public_only=False)
@@ -1322,7 +1322,7 @@ class SubtitleVersionManager(models.Manager):
             caption, created = Subtitle.objects.get_or_create(version=version, subtitle_id=str(id))
             caption.datetime_started = datetime.now()
             caption.subtitle_order = order
-            caption.subtitle_text = html_to_markdown(item['subtitle_text'])
+            caption.subtitle_text = html_to_markup(item['subtitle_text'])
             caption.start_time = item['start_time']
             caption.end_time = item['end_time']
             caption.start_of_paragraph = paragraph

@@ -8,11 +8,11 @@
     <script type="text/javascript">
         (function (window, document) {
             var loader = function () {
-                var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
-                script.src = "/site_media/js/embedder/embedder.min.js";
+                var script = document.createElement('script'), tag = document.getElementsByTagName('script')[0];
+                script.src = '/site_media/js/embedder/amara.js';
                 tag.parentNode.insertBefore(script, tag);
             };
-            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+            window.addEventListener ? window.addEventListener('load', loader, false) : window.attachEvent('onload', loader);
         })(window, document);
     </script>
 
@@ -33,15 +33,19 @@
             </div>
         </div>
         <section class="main">
-            <hr />
-            Vimeo:<br /><br />
-            <div class="amara-embed" data-url="http://vimeo.com/43119058"></div>
+            <!--<hr />-->
+            <!--Vimeo:<br /><br />-->
+            <!--<div class="amara-embed" data-url="http://vimeo.com/43119058"></div>-->
             <hr />
             YouTube:<br /><br />
-            <div class="amara-embed" data-url="http://www.youtube.com/watch?v=lJBJyQl8Xtw"></div>
+            <div class="amara-embed" style="width: 640px" data-url="http://www.youtube.com/watch?v=lJBJyQl8Xtw"></div>
             <hr />
             HTML5:<br /><br />
             <div class="amara-embed" data-url="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm"></div>
+            <hr />
+            <!--HTML5:<br /><br />-->
+            <!--<div class="amara-embed" data-url="http://video-js.zencoder.com/oceans-clip.mp4"></div>-->
+            <!--<hr />-->
         </section>
     </div>
 </body>

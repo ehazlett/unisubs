@@ -1,4 +1,5 @@
 #video h2.main-title a {
+    display: inline-block;
     text-decoration: none;
     color: #333 !important;
 }

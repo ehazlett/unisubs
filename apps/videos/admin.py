@@ -19,7 +19,7 @@
 from django.contrib import admin
 from videos.models import (
     Video, SubtitleLanguage, SubtitleVersion, VideoFeed, VideoMetadata,
-    VideoUrl, SubtitleVersionMetadata
+    VideoUrl, SubtitleVersionMetadata, Action
 )
 from videos.tasks import video_changed_tasks
 
@@ -219,5 +219,14 @@ class FixedTaskMonitor(TaskMonitor):
     traceback_display.allow_tags = True
     traceback_display.short_description = 'Traceback'
 
+
+class ActionAdmin(admin.ModelAdmin):
+    list_display = ('video', 'language', 'user', 'team', 'action_type',
+        'created')
+
+    class Meta:
+        model = Action
+
 admin.site.unregister(TaskState)
 admin.site.register(TaskState, FixedTaskMonitor)
+admin.site.register(Action, ActionAdmin)

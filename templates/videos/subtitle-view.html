@@ -73,14 +73,16 @@
             </a>
         </h3>
         <h2 class="main-title">
-            <a href="{{ video.get_absolute_url }}" title="View video">
+            <a href="{{ video.get_absolute_url }}" {% if language.is_rtl %}class="is-rtl"{% endif %} title="View video">
+                {% if not language.is_rtl %}
                 ←
+                {% endif %}
                 {{ language.get_title_display }}
             </a>
         </h2>
         {% if language.get_description %}
             <div id="description"{% if language.get_description|length > 300 %} class="abbr collapsed"{% endif %}>
-                <div>
+                <div {% if language.is_rtl %}class="is-rtl"{% endif %}>
                     {{ language.get_description|urlize|linebreaks }}
                 </div>
                 {% if language.get_description|length > 300 %}

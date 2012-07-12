@@ -770,7 +770,7 @@ LOGGING = {
     'disable_existing_loggers': True,
     'root': {
         'level': 'WARNING',
-        'handlers': ['console'],
+        'handlers': ['console', 'sentry'],
     },
     'formatters': {
         'verbose': {
@@ -788,7 +788,7 @@ LOGGING = {
             'formatter': 'verbose'
         },
         'sentry': {
-            'level': 'DEBUG',
+            'level': 'WARNING',
             'class': 'raven.contrib.django.handlers.SentryHandler',
         },
     },

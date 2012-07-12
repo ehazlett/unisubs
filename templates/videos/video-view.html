@@ -64,11 +64,11 @@
 
     <div class="grid_4 context alpha">
         <h2 class="main-title">
-            <a href="{{share_panel_permalink}}" title="Video permalink">{{ video }}</a>
+            <a href="{{share_panel_permalink}}" {% if video.latest_version.language.is_rtl %}class="is-rtl"{% endif %} title="Video permalink">{{ video }}</a>
         </h2>
         {% with video.get_description_display as description %}
             <div id="description"{% if description|length > 300 %} class="abbr collapsed"{% endif %}>
-                <div>
+                <div {% if video.latest_version.language.is_rtl %}class="is-rtl"{% endif %}>
                     {{ description|urlize|linebreaks }}
                 </div>
                 {% if description|length > 300 %}

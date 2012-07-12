@@ -17,54 +17,18 @@
 # http://www.gnu.org/licenses/agpl-3.0.html.
 from datetime import datetime, timedelta
 
-from django.db.models import Sum, Count
-from django.http import Http404
 from django.views.decorators.cache import cache_page
 from django.views.generic.list_detail import object_list
 
 from auth.models import CustomUser as User
-from comments.models import Comment
-from statistic import st_sub_fetch_handler
-from statistic.models import (
-    EmailShareStatistic, TweeterShareStatistic, FBShareStatistic,
-    SubtitleFetchCounters, get_model_statistics
-)
 from utils import render_to, render_to_json
-from videos.models import Video, SubtitleLanguage, ALL_LANGUAGES
+from videos.models import Video
 
 
 @cache_page(60 * 60 * 24)
 @render_to('statistic/index.html')
 def index(request):
-    today = datetime.today()
-    month_ago = today - timedelta(days=31)
-    week_ago = today - timedelta(weeks=1)
-    day_ago = today - timedelta(days=1)
-
-    videos_st = get_model_statistics(Video, today, month_ago, week_ago, day_ago)
-
-    tweet_st = get_model_statistics(TweeterShareStatistic, today, month_ago, week_ago, day_ago)
-
-    fb_st = get_model_statistics(FBShareStatistic, today, month_ago, week_ago, day_ago)
-
-    email_st = get_model_statistics(EmailShareStatistic, today, month_ago, week_ago, day_ago)
-
-    context = {
-        'subtitles_fetched_count': st_sub_fetch_handler.total_key.get(),
-        'videos_with_captions': Video.objects.exclude(subtitlelanguage=None).count(),
-        'all_videos': Video.objects.count(),
-        'all_users': User.objects.count(),
-        'translations_count': SubtitleLanguage.objects.filter(is_original=False).count(),
-        'fineshed_translations': SubtitleLanguage.objects.filter(is_original=False, had_version=True).count(),
-        'unfineshed_translations': SubtitleLanguage.objects.filter(is_original=False, had_version=False).count(),
-        'all_comments': Comment.objects.count(),
-        'videos_st': videos_st,
-        'tweet_st': tweet_st,
-        'fb_st': fb_st,
-        'email_st': email_st
-    }
-
-    return context
+    return {}
 
 @render_to_json
 def update_share_statistic(request, cls):
@@ -73,77 +37,6 @@ def update_share_statistic(request, cls):
         st.user = request.user
     st.save()
     return {}
-
-@cache_page(60 * 60 * 24)
-@render_to('statistic/languages_statistic.html')
-def languages_statistic(request):
-    today = datetime.today()
-    month_ago = today - timedelta(days=31)
-    week_ago = today - timedelta(weeks=1)
-    day_ago = today - timedelta(days=1)
-
-    total_langs = SubtitleLanguage.objects.values('language').annotate(lc=Count('language'))
-    month_langs = SubtitleLanguage.objects.filter(created__range=(month_ago, today)).values('language').annotate(lc=Count('language'))
-    week_langs = SubtitleLanguage.objects.filter(created__range=(week_ago, today)).values('language').annotate(lc=Count('language'))
-    day_langs = SubtitleLanguage.objects.filter(created__range=(day_ago, today)).values('language').annotate(lc=Count('language'))
-
-    lang_names = dict(ALL_LANGUAGES)
-    lang_names[u''] = 'No name'
-    langs = dict((i['language'], {'name': lang_names.get(i['language'], ['language']), 'total': i['lc'], 'month': 0, 'week': 0, 'day': 0}) for i in total_langs)
-    for item in month_langs:
-        langs[item['language']]['month'] = item['lc']
-    for item in week_langs:
-        langs[item['language']]['week'] = item['lc']
-    for item in day_langs:
-        langs[item['language']]['day'] = item['lc']
-
-    return {
-        'langs': langs
-    }
-
-@cache_page(60 * 60 * 24)
-@render_to('statistic/language_statistic.html')
-def language_statistic(request, lang):
-    lang_names = dict(ALL_LANGUAGES)
-    lang_names[u''] = 'No name'
-
-    if lang == 'undefined':
-        lang = u''
-
-    if not lang in lang_names:
-        raise Http404
-
-    today = datetime.today()
-    month_ago = today - timedelta(days=31)
-    week_ago = today - timedelta(weeks=1)
-    day_ago = today - timedelta(days=1)
-
-    videos_count = {}
-    videos_count['total'] = SubtitleLanguage.objects.filter(language=lang).count()
-    videos_count['month'] = SubtitleLanguage.objects.filter(created__range=(month_ago, today)).filter(language=lang).count()
-    videos_count['week'] = SubtitleLanguage.objects.filter(created__range=(week_ago, today)).filter(language=lang).count()
-    videos_count['day'] = SubtitleLanguage.objects.filter(created__range=(day_ago, today)).filter(language=lang).count()
-
-    subtitles_view_count = {}
-    subtitles_view_count['total'] = SubtitleFetchCounters.objects.filter(language=lang) \
-        .aggregate(Sum('count'))['count__sum']
-    subtitles_view_count['month'] = SubtitleFetchCounters.objects.filter(language=lang) \
-        .filter(date__range=(month_ago, today)).aggregate(Sum('count'))['count__sum']
-    subtitles_view_count['week'] = SubtitleFetchCounters.objects.filter(language=lang) \
-        .filter(date__range=(week_ago, today)).aggregate(Sum('count'))['count__sum']
-    subtitles_view_count['day'] = SubtitleFetchCounters.objects.filter(language=lang) \
-        .filter(date__range=(day_ago, today)).aggregate(Sum('count'))['count__sum']
-
-    videos_views_count = 0
-    for video in Video.objects.filter(subtitlelanguage__language=lang):
-        videos_views_count += video.widget_views_count
-
-    return {
-        'video_count': videos_count,
-        'lang_name': lang_names[lang],
-        'subtitles_view_count': subtitles_view_count,
-        'videos_views_count': videos_views_count
-    }
 
 @cache_page(60 * 60 * 24)
 def videos_statistic(request):

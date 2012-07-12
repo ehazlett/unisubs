@@ -71,7 +71,7 @@ for(var b in a){var c=a[b];f.isFunction(c)||(c=this[a[b]]);if(!c)throw Error('Me
 e.data=JSON.stringify(b.toJSON());g.emulateJSON&&(e.contentType="application/x-www-form-urlencoded",e.data=e.data?{model:e.data}:{});if(g.emulateHTTP&&("PUT"===d||"DELETE"===d))g.emulateJSON&&(e.data._method=d),e.type="POST",e.beforeSend=function(a){a.setRequestHeader("X-HTTP-Method-Override",d)};"GET"!==e.type&&!g.emulateJSON&&(e.processData=!1);return i.ajax(f.extend(e,c))};g.wrapError=function(a,b,c){return function(d,e){e=d===b?e:d;a?a(b,e,c):b.trigger("error",b,e,c)}};var x=function(){},G=function(a,
 b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply(this,arguments)};f.extend(d,a);x.prototype=a.prototype;d.prototype=new x;b&&f.extend(d.prototype,b);c&&f.extend(d,c);d.prototype.constructor=d;d.__super__=a.prototype;return d},n=function(a,b){return!a||!a[b]?null:f.isFunction(a[b])?a[b]():a[b]},t=function(){throw Error('A "url" property or function must be specified');}}).call(this);
 /*
- * popcorn.js version f87c515
+ * popcorn.js version bb8bf2c
  * http://popcornjs.org
  *
  * Copyright 2011, Mozilla Foundation
@@ -159,7 +159,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
   };
 
   //  Popcorn API version, automatically inserted via build system.
-  Popcorn.version = "f87c515";
+  Popcorn.version = "bb8bf2c";
 
   //  Boolean flag allowing a client to determine if Popcorn can be supported
   Popcorn.isSupported = true;
@@ -625,10 +625,99 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
     },
 
     //  Attach an event to a single point in time
-    exec: function( time, fn ) {
+    exec: function( id, time, fn ) {
+      var length = arguments.length,
+          trackEvent, sec;
+
+      // Check if first could possibly be a SMPTE string
+      // p.cue( "smpte string", fn );
+      // try/catch avoid awful throw in Popcorn.util.toSeconds
+      // TODO: Get rid of that, replace with NaN return?
+      try {
+        sec = Popcorn.util.toSeconds( id );
+      } catch ( e ) {}
+
+      // If it can be converted into a number then
+      // it's safe to assume that the string was SMPTE
+      if ( typeof sec === "number" ) {
+        id = sec;
+      }
+
+      // Shift arguments based on use case
+      //
+      // Back compat for:
+      // p.cue( time, fn );
+      if ( typeof id === "number" && length === 2 ) {
+        fn = time;
+        time = id;
+        id = Popcorn.guid( "cue" );
+      } else {
+        // Support for new forms
+
+        // p.cue( "empty-cue" );
+        if ( length === 1 ) {
+          // Set a time for an empty cue. It's not important what
+          // the time actually is, because the cue is a no-op
+          time = -1;
+
+        } else {
+
+          // Get the trackEvent that matches the given id.
+          trackEvent = this.getTrackEvent( id );
+
+          if ( trackEvent ) {
+
+            // p.cue( "my-id", 12 );
+            // p.cue( "my-id", function() { ... });
+            if ( typeof id === "string" && length === 2 ) {
+
+              // p.cue( "my-id", 12 );
+              // The path will update the cue time.
+              if ( typeof time === "number" ) {
+                // Re-use existing trackEvent start callback
+                fn = trackEvent._natives.start;
+              }
+
+              // p.cue( "my-id", function() { ... });
+              // The path will update the cue function
+              if ( typeof time === "function" ) {
+                fn = time;
+                // Re-use existing trackEvent start time
+                time = trackEvent.start;
+              }
+            }
+          } else {
+
+            if ( length >= 2 ) {
+
+              // p.cue( "a", "00:00:00");
+              if ( typeof time === "string" ) {
+                try {
+                  sec = Popcorn.util.toSeconds( time );
+                } catch ( e ) {}
+
+                time = sec;
+              }
+
+              // p.cue( "b", 11 );
+              if ( typeof time === "number" ) {
+                fn = Popcorn.nop();
+              }
+
+              // p.cue( "c", function() {});
+              if ( typeof time === "function" ) {
+                fn = time;
+                time = -1;
+              }
+            }
+          }
+        }
+      }
 
       //  Creating a one second track event with an empty end
+      //  Or update an existing track event with new values
       Popcorn.addTrackEvent( this, {
+        id: id,
         start: time,
         end: time + 1,
         _running: false,
@@ -929,6 +1018,23 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
 
   // Internal Only - Adds track events to the instance object
   Popcorn.addTrackEvent = function( obj, track ) {
+    var trackEvent, isUpdate, eventType;
+
+    // Do a lookup for existing trackevents with this id
+    if ( track.id ) {
+      trackEvent = obj.getTrackEvent( track.id );
+    }
+
+    // If a track event by this id currently exists, modify it
+    if ( trackEvent ) {
+      isUpdate = true;
+      // Create a new object with the existing trackEvent
+      // Extend with new track properties
+      track = Popcorn.extend( {}, trackEvent, track );
+
+      // Remove the existing track from the instance
+      obj.removeTrackEvent( track.id );
+    }
 
     // Determine if this track has default options set for it
     // If so, apply them to the track object
@@ -940,7 +1046,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
 
     if ( track._natives ) {
       //  Supports user defined track event id
-      track._id = !track.id ? Popcorn.guid( track._natives.type ) : track.id;
+      track._id = track.id || track._id || Popcorn.guid( track._natives.type );
 
       //  Push track event ids into the history
       obj.data.history.push( track._id );
@@ -1001,6 +1107,33 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
     // Store references to user added trackevents in ref table
     if ( track._id ) {
       Popcorn.addTrackEvent.ref( obj, track );
+    }
+
+    // If the call to addTrackEvent was an update/modify call, fire an event
+    if ( isUpdate ) {
+
+      // Determine appropriate event type to trigger
+      // they are identical in function, but the naming
+      // adds some level of intuition for the end developer
+      // to rely on
+      if ( track._natives.type === "cue" ) {
+        eventType = "cuechange";
+      } else {
+        eventType = "trackchange";
+      }
+
+      // Fire an event with change information
+      obj.emit( eventType, {
+        id: track.id,
+        previousValue: {
+          time: trackEvent.start,
+          fn: trackEvent._natives.start
+        },
+        currentValue: {
+          time: track.start,
+          fn: track._natives.start
+        }
+      });
     }
   };
 
@@ -1546,6 +1679,11 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
         options.target = manifestOpts && "target" in manifestOpts && manifestOpts.target;
       }
 
+      if ( options._natives ) {
+        // ensure an initial id is there before setup is called
+        options._id = Popcorn.guid( options._natives.type );
+      }
+
       // Trigger _setup method if exists
       options._natives._setup && options._natives._setup.call( this, options );
 
@@ -1571,13 +1709,43 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
 
     //  Extend Popcorn.p with new named definition
     //  Assign new named definition
-    Popcorn.p[ name ] = plugin[ name ] = function( options ) {
+    Popcorn.p[ name ] = plugin[ name ] = function( id, options ) {
+      var length = arguments.length,
+          trackEvent, defaults, mergedSetupOpts;
+
+      // Shift arguments based on use case
+      //
+      // Back compat for:
+      // p.plugin( options );
+      if ( id && !options ) {
+        options = id;
+        id = null;
+      } else {
+
+        // Get the trackEvent that matches the given id.
+        trackEvent = this.getTrackEvent( id );
+
+        // If the track event does not exist, ensure that the options
+        // object has a proper id
+        if ( !trackEvent ) {
+          options.id = id;
+
+        // If the track event does exist, merge the updated properties
+        } else {
+
+          options = Popcorn.extend( {}, trackEvent, options );
+
+          Popcorn.addTrackEvent( this, options );
+
+          return this;
+        }
+      }
 
       this.data.running[ name ] = this.data.running[ name ] || [];
 
       // Merge with defaults if they exist, make sure per call is prioritized
-      var defaults = ( this.options.defaults && this.options.defaults[ name ] ) || {},
-          mergedSetupOpts = Popcorn.extend( {}, defaults, options );
+      defaults = ( this.options.defaults && this.options.defaults[ name ] ) || {};
+      mergedSetupOpts = Popcorn.extend( {}, defaults, options );
 
       return pluginFn.call( this, isfn ? definition.call( this, mergedSetupOpts ) : definition,
                                   mergedSetupOpts );
@@ -2263,8 +2431,8 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
       videoExtensions = "ogg|ogv|mp4|webm",
       mediaExtensions = audioExtensions + "|" + videoExtensions;
 
-  var audioExtensionRegexp = new RegExp( "^.*\\.(" + audioExtensions + ")$" ),
-      mediaExtensionRegexp = new RegExp( "^.*\\.(" + mediaExtensions + ")$" );
+  var audioExtensionRegexp = new RegExp( "^.*\\.(" + audioExtensions + ")($|\\?)" ),
+      mediaExtensionRegexp = new RegExp( "^.*\\.(" + mediaExtensions + ")($|\\?)" );
 
   Popcorn.player = function( name, player ) {
 
@@ -2683,6 +2851,9 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
       firstSrc = typeof( src ) === "string" ? src : src.length ? src[ 0 ] : src;
 
       target = document.createElement( !!audioExtensionRegexp.exec( firstSrc ) ? elementTypes[ 0 ] : elementTypes[ 1 ] );
+
+      // Controls are defaulted to being present
+      target.controls = true;
 
       node.appendChild( target );
       node = target;
@@ -4615,7 +4786,9 @@ var googleCallback;
             geocoder.geocode({
               "address": options.location
             }, function ( results, status ) {
-              if ( status === google.maps.GeocoderStatus.OK ) {
+              // second check for newdiv since it could have disappeared before
+              // this callback is actual run
+              if ( newdiv && status === google.maps.GeocoderStatus.OK ) {
                 options.lat = results[ 0 ].geometry.location.lat();
                 options.lng = results[ 0 ].geometry.location.lng();
                 location = new google.maps.LatLng( options.lat, options.lng );
@@ -9014,12 +9187,10 @@ var wikiCallback;
     return result;
   }
 })( Popcorn );
-// PARSER: 0.3 TTML
-
-(function (Popcorn) {
-
+// PARSER: 1.0 TTML
+(function ( Popcorn ) {
   /**
-   * TTML popcorn parser plug-in 
+   * TTML popcorn parser plug-in
    * Parses subtitle files in the TTML format.
    * Times may be absolute to the timeline or relative
    *   Absolute times are ISO 8601 format (hh:mm:ss[.mmm])
@@ -9028,9 +9199,9 @@ var wikiCallback;
    * Styling information is ignored
    * Data parameter is given by Popcorn, will need an xml.
    * Xml is the file contents to be processed
-   * 
+   *
    * @param {Object} data
-   * 
+   *
    * Example:
     <tt xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling" xmlns="http://www.w3.org/2006/04/ttaf1">
       <body region="subtitleArea">
@@ -9042,147 +9213,147 @@ var wikiCallback;
       </body>
     </tt>
    */
-  Popcorn.parser( "parseTTML", function( data ) {
 
-    // declare needed variables
+  var rWhitespace = /^[\s]+|[\s]+$/gm,
+      rLineBreak = /(?:\r\n|\r|\n)/gm;
+
+  Popcorn.parser( "parseTTML", function( data ) {
     var returnData = {
           title: "",
           remote: "",
           data: []
         },
-        node,
-        numTracks = 0,
-        region;
-    
-    // Convert time expression to SS.mmm
-    // Expression may be absolute to timeline (hh:mm:ss.ms)
-    //   or relative ( fraction followedd by metric ) ex: 3.4s, 5.7m
-    // Returns -1 if invalid    
-    var toSeconds = function ( t_in, offset ) {
-      if ( !t_in ) {
-        return -1;
-      }
-      
-      var t = t_in.split( ":" ),
-          l = t.length - 1,
-          metric,
-          multiplier,
-          i;
-          
-      // Try clock time
-      if ( l >= 2 ) {
-        return parseInt( t[0], 10 )*3600 + parseInt( t[l-1], 10 )*60 + parseFloat( t[l], 10 );
-      }
-      
-      // Was not clock time, assume relative time
-      // Take metric from end of string (may not be single character)
-      // First find metric
-      for( i = t_in.length - 1; i >= 0; i-- ) {
-        if ( t_in[i] <= "9" && t_in[i] >= "0" ) {
-          break;
-        }
-      }
-      
-      // Point i at metric and normalize offsete time
-      i++;
-      metric = t_in.substr( i );
-      offset = offset || 0;
-      
-      // Determine multiplier for metric relative to seconds
-      if ( metric === "h" ) {
-        multiplier = 3600;
-      } else if ( metric === "m" ) {
-        multiplier = 60;
-      } else if ( metric === "s" ) {
-        multiplier = 1;
-      } else if ( metric === "ms" ) {
-        multiplier = 0.001;
-      } else {
-        return -1;
-      }
-      
-      // Valid multiplier
-      return parseFloat( t_in.substr( 0, i ) ) * multiplier + offset;
-    };
+        node;
 
-    // creates an object of all atrributes keyd by name
-    var createTrack = function( name, attributes ) {
-      var track = {};
-      track[name] = attributes;
-      return track;
-    };
-    
-    // Parse a node for text content
-    var parseNode = function( node, timeOffset ) {
-      var sub = {};
-      
-      // Trim left and right whitespace from text and change non-explicit line breaks to spaces
-      sub.text = node.textContent.replace(/^[\s]+|[\s]+$/gm, "").replace(/(?:\r\n|\r|\n)/gm, "<br />");
-      sub.id = node.getAttribute( "xml:id" ) || node.getAttribute( "id" );
-      sub.start = toSeconds ( node.getAttribute( "begin" ), timeOffset );
-      sub.end = toSeconds( node.getAttribute( "end" ), timeOffset );
-      sub.target = region;
-      
-      if ( sub.end < 0 ) {
-        // No end given, infer duration if possible
-        // Otherwise, give end as MAX_VALUE
-        sub.end = toSeconds( node.getAttribute( "duration" ), 0 );
-        
-        if ( sub.end >= 0 ) {
-          sub.end += sub.start;
-        } else {
-          sub.end = Number.MAX_VALUE;
-        }
-      }
-      
-      return sub;
-    };
-    
-    // Parse the children of the given node
-    var parseChildren = function( node, timeOffset ) {
-      var currNode = node.firstChild,
-          sub,
-          newOffset;
-      
-      while ( currNode ) {
-        if ( currNode.nodeType === 1 ) {
-          if ( currNode.nodeName === "p" ) {
-            // p is a teextual node, process contents as subtitle
-            sub = parseNode( currNode, timeOffset );
-            returnData.data.push( createTrack( "subtitle", sub ) );
-            numTracks++;
-          } else if ( currNode.nodeName === "div" ) {
-            // div is container for subtitles, recurse
-            newOffset = toSeconds( currNode.getAttribute("begin") );
-            
-            if (newOffset < 0 ) {
-              newOffset = timeOffset;
-            }
-           
-            parseChildren( currNode, newOffset );
-          }
-        }
-        
-        currNode = currNode.nextSibling;
-      }
-    };
-    
     // Null checks
-    if ( !data.xml || !data.xml.documentElement || !( node = data.xml.documentElement.firstChild ) ) {
+    if ( !data.xml || !data.xml.documentElement ) {
       return returnData;
     }
-    
+
+    node = data.xml.documentElement.firstChild;
+
+    if ( !node ) {
+      return returnData;
+    }
+
     // Find body tag
     while ( node.nodeName !== "body" ) {
       node = node.nextSibling;
     }
-    
-    region = "";
-    parseChildren( node, 0 );
+
+    if ( node ) {
+      returnData.data = parseChildren( node, 0 );
+    }
 
     return returnData;
   });
 
+  // Parse the children of the given node
+  function parseChildren( node, timeOffset, region ) {
+    var currNode = node.firstChild,
+        currRegion = getNodeRegion( node, region ),
+        retVal = [],
+        newOffset;
+
+    while ( currNode ) {
+      if ( currNode.nodeType === 1 ) {
+        if ( currNode.nodeName === "p" ) {
+          // p is a textual node, process contents as subtitle
+          retVal.push( parseNode( currNode, timeOffset, currRegion ) );
+        } else if ( currNode.nodeName === "div" ) {
+          // div is container for subtitles, recurse
+          newOffset = toSeconds( currNode.getAttribute( "begin" ) );
+
+          if (newOffset < 0 ) {
+            newOffset = timeOffset;
+          }
+
+          retVal.push.apply( retVal, parseChildren( currNode, newOffset, currRegion ) );
+        }
+      }
+
+      currNode = currNode.nextSibling;
+    }
+
+    return retVal;
+  }
+
+  // Get the "region" attribute of a node, to know where to put the subtitles
+  function getNodeRegion( node, defaultTo ) {
+    var region = node.getAttribute( "region" );
+
+    if ( region !== null ) {
+      return region;
+    } else {
+      return defaultTo || "";
+    }
+  }
+
+  // Parse a node for text content
+  function parseNode( node, timeOffset, region ) {
+    var sub = {};
+
+    // Trim left and right whitespace from text and convert non-explicit line breaks
+    sub.text = node.textContent.replace( rWhitespace, "" ).replace( rLineBreak, "<br />" );
+    sub.id = node.getAttribute( "xml:id" ) || node.getAttribute( "id" );
+    sub.start = toSeconds ( node.getAttribute( "begin" ), timeOffset );
+    sub.end = toSeconds( node.getAttribute( "end" ), timeOffset );
+    sub.target = getNodeRegion( node, region );
+
+    if ( sub.end < 0 ) {
+      // No end given, infer duration if possible
+      // Otherwise, give end as MAX_VALUE
+      sub.end = toSeconds( node.getAttribute( "duration" ), 0 );
+
+      if ( sub.end >= 0 ) {
+        sub.end += sub.start;
+      } else {
+        sub.end = Number.MAX_VALUE;
+      }
+    }
+
+    return { subtitle : sub };
+  }
+
+  // Convert time expression to SS.mmm
+  // Expression may be absolute to timeline (hh:mm:ss.ms)
+  //   or relative ( decimal followed by metric ) ex: 3.4s, 5.7m
+  // Returns -1 if invalid
+  function toSeconds( t_in, offset ) {
+    var i;
+
+    if ( !t_in ) {
+      return -1;
+    }
+
+    try {
+      return Popcorn.util.toSeconds( t_in );
+    } catch ( e ) {
+      i = getMetricIndex( t_in );
+      return parseFloat( t_in.substring( 0, i ) ) * getMultipler( t_in.substring( i ) ) + ( offset || 0 );
+    }
+  }
+
+  // In a time string such as 3.4ms, get the index of the first character (m) of the time metric (ms)
+  function getMetricIndex( t_in ) {
+    var i = t_in.length - 1;
+
+    while ( i >= 0 && t_in[ i ] <= "9" && t_in[ i ] >= "0" ) {
+      i--;
+    }
+
+    return i;
+  }
+
+  // Determine multiplier for metric relative to seconds
+  function getMultipler( metric ) {
+    return {
+      "h" : 3600,
+      "m" : 60,
+      "s" : 1,
+      "ms" : 0.001
+    }[ metric ] || -1;
+  }
 })( Popcorn );
 // PARSER: 0.1 TTXT
 
@@ -10500,6 +10671,10 @@ Popcorn.player( "youtube", {
         // For reference in inner functions.
         var that = this;
 
+        // This will store all future instances of Amara-powered videos.
+        // I'm trying really hard here to not use the word "widget".
+        this.amaraInstances = [];
+
         // Private methods that are called via the push() method.
         var actions = {
 
@@ -10508,13 +10683,110 @@ Popcorn.player( "youtube", {
             embedVideo: function(options) {
 
                 // Make sure we have a URL to work with.
+                // If we do, init a new Amara view.
                 if (__.has(options, 'url') && __.has(options, 'div')) {
-                    // Init the Popcorn video.
-                    var pop = Popcorn.smart(options.div, options.url);
+
+                    that.amaraInstances.push(
+                        new that.AmaraView({
+
+                            // TODO: This needs to support a node OR ID string.
+                            el: _$('#' + options.div)[0],
+                            model: new that.VideoModel(options)
+                        })
+                    );
+
                 }
             }
-
         };
+
+        // Video model.
+        this.VideoModel = _Backbone.Model.extend({
+            div: '',
+            height: '',
+            url: '',
+            width: ''
+        });
+
+        // Amara view. This contains all of the events and logic for a single instance of
+        // an Amara-powered video.
+        this.AmaraView = _Backbone.View.extend({
+
+            initialize: function() {
+                this.model.view = this;
+
+                // Variables that will eventually be set after rendering.
+                this.$amaraContainer = null;
+                this.pop = null;
+
+                this.template = __.template(this.templateHTML);
+
+                this.render();
+            },
+
+            events: {
+                'click a.amara-logo':              'logoClicked',
+                'click a.amara-share-button':      'shareButtonClicked',
+                'click a.amara-transcript-button': 'transcriptButtonClicked',
+                'click a.amara-subtitles-button':  'subtitlesButtonClicked'
+            },
+
+            render: function() {
+
+                var that = this;
+
+                // Init the Popcorn video.
+                this.pop = _Popcorn.smart(this.model.get('div'), this.model.get('url'));
+
+                // TODO: Popcorn is not firing any events for any video types other
+                // than HTML5. Watch http://popcornjs.org/popcorn-docs/events/.
+                this.pop.on('loadedmetadata', function() {
+
+                    // Set the video model's height and width, now that we know it.
+                    that.model.set('height', that.pop.position().height);
+                    that.model.set('width', that.pop.position().width);
+
+                    that.$el.append(that.template({
+                        width: that.model.get('width')
+                    }));
+
+                    that.$amaraContainer = $('div.amara-container', that.$el);
+                });
+
+                return this;
+
+            },
+            logoClicked: function() {
+                alert('Logo clicked');
+                return false;
+            },
+            shareButtonClicked: function() {
+                alert('Share button clicked');
+                return false;
+            },
+            transcriptButtonClicked: function() {
+                alert('Transcript button clicked');
+                return false;
+            },
+            subtitlesButtonClicked: function() {
+                alert('Subtitles button clicked');
+                return false;
+            },
+
+            templateHTML: '' +
+                '<div class="amara-container" style="width: {{ width }}px;">' +
+                '    <div class="amara-bar">' +
+                '        <a href="#" class="amara-share-button"></a>' +
+                '        <a href="#" class="amara-logo">Amara</a>' +
+                '        <ul class="amara-displays">' +
+                '            <li><a href="#" class="amara-transcript-button"></a></li>' +
+                '            <li><a href="#" class="amara-subtitles-button"></a></li>' +
+                '        </ul>' +
+                '    </div>' +
+                '    <div class="amara-transcript">' +
+                '    </div>' +
+                '</div>'
+
+        });
 
         // push() handles all action calls before and after the embedder is loaded.
         // Aside from init(), this is the only function that may be called from the
@@ -10549,6 +10821,19 @@ Popcorn.player( "youtube", {
         // Simply processes the existing _amara queue if we have one.
         this.init = function() {
 
+            // Load the Amara CSS.
+            var tag = document.getElementsByTagName('script')[0];
+            var style = document.createElement('link');
+            style.rel = 'stylesheet';
+            style.type = 'text/css';
+
+            // TODO: This needs to be a production URL based on DEBUG or not.
+            style.href = '/site_media/css/embedder/amara.css';
+            tag.parentNode.insertBefore(style, tag);
+
+            // Change the template delimiter for Underscore templates.
+            __.templateSettings = { interpolate : /\{\{(.+?)\}\}/g };
+
             // If we have a queue from before the embedder loaded, process the actions.
             if (toPush) {
                 for (var i = 0; i < toPush.length; i++) {
@@ -10563,10 +10848,10 @@ Popcorn.player( "youtube", {
             if (amaraEmbeds.length) {
                 amaraEmbeds.each(function() {
 
-                    // This is a patch until Popcorn.js supports passing a DOM elem to
+                    // This is a hack until Popcorn.js supports passing a DOM elem to
                     // its smart() method. See: http://bit.ly/L0Lb7t
                     var id = 'amara-embed-' + Math.floor(Math.random() * 100000000);
-                    var $div = $(this);
+                    var $div = _$(this);
                     $div.attr('id', id);
 
                     // Call embedVideo with this div and URL.

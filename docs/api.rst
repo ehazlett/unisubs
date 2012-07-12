@@ -157,9 +157,9 @@ Partner video ids
 
 If you are a partner, you can set the ``id`` field for a video.  Simply supply
 the ``usePartnerId`` parameter in your request and we will use your id for look
-ups.  The parameter can be sent as a ``GET`` or ``POST`` parameter.  This is
-useful if you already have a database of video ids and don't want to maintain a
-mapping between those ids and Amara ids.
+ups.  The parameter can be sent as a parameter to any kind of API call.  This
+is useful if you already have a database of video ids and don't want to
+maintain a mapping between those ids and Amara ids.
 
 Available Resources
 -------------------
@@ -710,4 +710,55 @@ An example response:
         "resource_uri": "/api2/partners/teams/all-star/tasks/3/",
         "type": "Subtitle",
         "video_id": "Myn4j5OI7BxL"
+    }
+
+Activity resource
+~~~~~~~~~~~~~~~~~
+
+This resource is read-only.
+
+List activity items:
+
+.. http:get:: /api2/partners/activity/
+
+    :query team: Show only items related to a given team (team slug)
+    :query video: Show only items related to a given video (video id)
+    :query action_type: Show only items with a given action type (int, see below)
+    :query language: Show only items with a given language (language code)
+
+Activity types:
+
+1.  Add video
+2.  Change title
+3.  Comment
+4.  Add version
+5.  Add video URL
+6.  Add translation
+7.  Subtitle request
+8.  Approve version
+9.  Member joined
+10. Reject version
+11. Member left
+12. Review version
+13. Accept version
+14. Decline version
+15. Delete video
+
+Activity item detail:
+
+.. http:get:: /api2/partners/activity/[activity-id]/
+
+Example response:
+
+.. code-block:: json
+
+    {
+        "action_type": 1,
+        "comment": null,
+        "created": "2012-07-12T07:02:19",
+        "id": "1339",
+        "language": "en",
+        "new_video_title": "",
+        "resource_uri": "/api2/partners/activity/1339/",
+        "user": "test-user"
     }

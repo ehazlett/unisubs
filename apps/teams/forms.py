@@ -625,12 +625,12 @@ class UploadDraftForm(forms.Form):
     draft = forms.FileField(required=True)
     task = forms.ModelChoiceField(Task.objects, required=True)
     translate_from = forms.ChoiceField(required=False, choices=[("", "Direct")] + ALL_LANGUAGES, initial='en')
-    language = forms.ChoiceField(required=False, choices=ALL_LANGUAGES, initial='en')
+    language = forms.ChoiceField(required=False, choices=ALL_LANGUAGES, initial='')
 
     def __init__(self, user, *args, **kwargs):
         self.user = user
         super(UploadDraftForm, self).__init__(*args, **kwargs)
-        self.fields['language'].choices = get_language_choices()
+        self.fields['language'].choices = get_language_choices(True)
 
     def clean_task(self):
         task = self.cleaned_data['task']

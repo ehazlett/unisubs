@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-04 01:48-0500\n"
-"PO-Revision-Date: 2012-07-03 06:50+0000\n"
+"POT-Creation-Date: 2012-07-12 01:45-0500\n"
+"PO-Revision-Date: 2012-07-10 06:47+0000\n"
 "Last-Translator: unisubsapi <universalsubtitles-dev@pculture.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/projects/p/"
 "universalsubtitles/language/sq/)\n"
@@ -599,11 +599,11 @@ msgstr "Përdoruesi nuk ekziston!"
 msgid "User is already a member of this team!"
 msgstr "Përdoruesi është tashmë anëtar i këtij ekipi!"
 
-#: apps/teams/forms.py:591 templates/videos/subtitle-view.html:373
+#: apps/teams/forms.py:591 templates/videos/subtitle-view.html:375
 msgid "Would you like to delete these subtitles completely?"
 msgstr "Doni të fshihen plotësisht këto titra?"
 
-#: apps/teams/forms.py:595 templates/videos/subtitle-view.html:358
+#: apps/teams/forms.py:595 templates/videos/subtitle-view.html:360
 msgid "What would you like to unpublish?"
 msgstr "Çfarë do të donit të çbotohet?"
 
@@ -1692,7 +1692,7 @@ msgstr "Nuk mund të hiqni URL-në origjinale"
 msgid "Feed is unavailable now."
 msgstr "Prurja nuk funksionoka tani."
 
-#: apps/videos/templatetags/subtitles_tags.py:58
+#: apps/videos/templatetags/subtitles_tags.py:59
 #, python-format
 msgid "%(count)s Line"
 msgid_plural "%(count)s Lines"
@@ -1743,7 +1743,7 @@ msgstr "Na ndjeni, këta titra moderohen privatisht."
 msgid "\n"
 msgstr "\n"
 
-#: apps/widget/views.py:106
+#: apps/widget/views.py:107
 msgid "That task has already been completed."
 msgstr "Kjo punë është kryer një herë."
 
@@ -3126,7 +3126,7 @@ msgstr "Ndërrmarje"
 msgid "Help"
 msgstr "Ndihmë"
 
-#: templates/base.html:78 templates/auth/login.html:29
+#: templates/base.html:78 templates/auth/login.html:30
 #: templates/openid_consumer/signin.html:22
 msgid "Sign In"
 msgstr "Hyni"
@@ -4853,35 +4853,31 @@ msgstr "Fshije"
 #: templates/profiles/_select_language_dialog.html:30
 #: templates/teams/settings-projects-add.html:67
 #: templates/teams/tasks.html:435 templates/videos/_feedback_form.html:25
-#: templates/videos/subtitle-view.html:387
+#: templates/videos/subtitle-view.html:389
 msgid "Cancel"
 msgstr "Anuloje"
 
-#: templates/auth/login.html:21
-msgid "Show more providers"
-msgstr ""
-
-#: templates/auth/login.html:24
+#: templates/auth/login.html:25
 msgid "Or use your Amara account"
 msgstr ""
 
-#: templates/auth/login.html:25
+#: templates/auth/login.html:26
 msgid "Don't have one?"
 msgstr ""
 
-#: templates/auth/login.html:28
+#: templates/auth/login.html:29
 msgid "Forgot your password?"
 msgstr ""
 
-#: templates/auth/login.html:33
+#: templates/auth/login.html:34
 msgid "Create an Amara account"
 msgstr ""
 
-#: templates/auth/login.html:34
+#: templates/auth/login.html:35
 msgid "Already have one?"
 msgstr ""
 
-#: templates/auth/login.html:37
+#: templates/auth/login.html:38
 msgid "Create Account"
 msgstr "Krijoje Llogarinë"
 
@@ -5341,8 +5337,8 @@ msgstr "Titra në"
 
 #: templates/profiles/dashboard.html:55 templates/teams/tasks.html:172
 #: templates/teams/tasks.html.py:188 templates/videos/diffing.html:87
-#: templates/videos/subtitle-view.html:147
-#: templates/videos/subtitle-view.html:194
+#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:196
 msgid "Subtitles"
 msgstr "Titra"
 
@@ -5678,88 +5674,6 @@ msgstr "Satitistika përdoruesi"
 msgid "Videos statistic"
 msgstr "Statistika videoje"
 
-#: templates/statistic/index.html:28
-msgid "Languages statistic"
-msgstr "Statistika gjuhësh"
-
-#: templates/statistic/index.html:73
-#: templates/statistic/language_statistic.html:31
-msgid "stats for"
-msgstr "statistika për"
-
-#: templates/statistic/index.html:74
-#: templates/statistic/language_statistic.html:32
-#: templates/statistic/languages_statistic.html:37
-msgid "day"
-msgstr "ditë"
-
-#: templates/statistic/index.html:75
-#: templates/statistic/language_statistic.html:33
-#: templates/statistic/languages_statistic.html:38
-msgid "week"
-msgstr "javë"
-
-#: templates/statistic/index.html:76
-#: templates/statistic/language_statistic.html:34
-#: templates/statistic/languages_statistic.html:39
-msgid "month"
-msgstr "muaj"
-
-#: templates/statistic/index.html:77
-#: templates/statistic/language_statistic.html:35
-#: templates/statistic/languages_statistic.html:40
-#: templates/statistic/users_statistic.html:16
-#: templates/statistic/videos_statistic.html:16
-msgid "TOTAL"
-msgstr "GJITHSEJ"
-
-#: templates/statistic/index.html:83
-msgid "Total number of videos captioned"
-msgstr "Numër videosh të titruara gjithsej"
-
-#: templates/statistic/index.html:90
-msgid "Tweets"
-msgstr "\"Tweets\""
-
-#: templates/statistic/index.html:97
-msgid "Facebook shares"
-msgstr "Ndarje me të tjerët në Facebook"
-
-#: templates/statistic/index.html:104
-msgid "Email shares"
-msgstr "Ndarje me të tjerët me email"
-
-#: templates/statistic/language_statistic.html:25
-msgid "Language statistic for "
-msgstr "Statistika gjuhe për"
-
-#: templates/statistic/language_statistic.html:26
-#: templates/statistic/languages_statistic.html:31
-#: templates/statistic/users_statistic.html:7
-#: templates/statistic/videos_statistic.html:7
-msgid "General statistic"
-msgstr "Statistika të përgjithshme"
-
-#: templates/statistic/language_statistic.html:41
-msgid "Videos count"
-msgstr "Numërim videosh"
-
-#: templates/statistic/language_statistic.html:48
-msgid "Subtitles views count"
-msgstr "Numërim parjesh titrash"
-
-#: templates/statistic/language_statistic.html:55
-msgid "Videos views count"
-msgstr "Numërim parjesh videosh"
-
-#: templates/statistic/languages_statistic.html:25
-msgid "Language statistic"
-msgstr "Statistika gjuhe"
-
-#: templates/statistic/languages_statistic.html:36
-msgid "Lanuage"
-msgstr "Gjuhë"
-
 #: templates/statistic/log_entry_model_admin.html:37
 #: templates/statistic/logger_model_admin.html:37
 msgid "Date"
@@ -5779,6 +5693,11 @@ msgstr "Kohë(sek)"
 msgid "Activity statistic"
 msgstr "Statistika veprimtarie"
 
+#: templates/statistic/users_statistic.html:7
+#: templates/statistic/videos_statistic.html:7
+msgid "General statistic"
+msgstr "Statistika të përgjithshme"
+
 #: templates/statistic/users_statistic.html:13
 #: templates/statistic/videos_statistic.html:13
 msgid "Day"
@@ -5793,6 +5712,11 @@ msgstr "Javë"
 #: templates/statistic/videos_statistic.html:15
 msgid "Month"
 msgstr "Muaj"
+
+#: templates/statistic/users_statistic.html:16
+#: templates/statistic/videos_statistic.html:16
+msgid "TOTAL"
+msgstr "GJITHSEJ"
 
 #: templates/statistic/videos_statistic.html:12
 #: templates/teams/_context_project.html:25
@@ -5942,7 +5866,7 @@ msgstr "Faqe Videoje"
 #: templates/teams/_context_project.html:17
 #: templates/teams/_context_team.html:14 templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:131
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show all"
 msgstr "Shfaqi krejt"
@@ -5987,7 +5911,7 @@ msgstr "video"
 
 #: templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:127
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show less"
 msgstr "Shfaq më pak"
@@ -6421,7 +6345,7 @@ msgid "Filter and Sort"
 msgstr "Filtroni dhe Renditini"
 
 #: templates/teams/members-list.html:53
-#: templates/videos/subtitle-view.html:198
+#: templates/videos/subtitle-view.html:200
 msgid "Showing"
 msgstr ""
 
@@ -6799,8 +6723,8 @@ msgstr "shqyrtuar"
 msgid "and edited"
 msgstr "dhe përpunuar"
 
-#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:202
-#: templates/videos/subtitle-view.html:318
+#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:204
+#: templates/videos/subtitle-view.html:320
 msgid "by"
 msgstr "nga"
 
@@ -7576,17 +7500,17 @@ msgid "Roll back to version"
 msgstr "Kthe versionin"
 
 #: templates/videos/diffing.html:126 templates/videos/diffing.html.py:192
-#: templates/videos/subtitle-view.html:210
+#: templates/videos/subtitle-view.html:212
 msgid "Title:"
 msgstr "Titull:"
 
 #: templates/videos/diffing.html:130 templates/videos/diffing.html.py:196
-#: templates/videos/subtitle-view.html:214
+#: templates/videos/subtitle-view.html:216
 msgid "Description:"
 msgstr "Përshkrim:"
 
 #: templates/videos/diffing.html:156 templates/videos/diffing.html.py:223
-#: templates/videos/subtitle-view.html:234
+#: templates/videos/subtitle-view.html:236
 msgid "Not Synced"
 msgstr "I Panjëkohësuar"
 
@@ -7866,70 +7790,70 @@ msgstr "Ju lutemi, përzgjidhni dy rishikime për krahasim"
 msgid "with"
 msgstr "me"
 
-#: templates/videos/subtitle-view.html:96 templates/videos/video-view.html:83
+#: templates/videos/subtitle-view.html:98 templates/videos/video-view.html:83
 msgid "View"
 msgstr "Shiheni"
 
-#: templates/videos/subtitle-view.html:102 templates/videos/video-view.html:89
+#: templates/videos/subtitle-view.html:104 templates/videos/video-view.html:89
 msgid "Follower"
 msgstr "Pasues"
 
-#: templates/videos/subtitle-view.html:108 templates/videos/video-view.html:95
+#: templates/videos/subtitle-view.html:110 templates/videos/video-view.html:95
 msgid "Comment"
 msgstr "Koment"
 
-#: templates/videos/subtitle-view.html:114
+#: templates/videos/subtitle-view.html:116
 msgid "Line"
 msgstr "Rresht"
 
-#: templates/videos/subtitle-view.html:124
+#: templates/videos/subtitle-view.html:126
 #: templates/videos/video-view.html:111
 msgid "View Subtitles"
 msgstr "Shihni Titrat"
 
-#: templates/videos/subtitle-view.html:148
-#: templates/videos/subtitle-view.html:285
+#: templates/videos/subtitle-view.html:150
+#: templates/videos/subtitle-view.html:287
 #: templates/videos/video-view.html:145 templates/videos/video-view.html:190
 msgid "Comments"
 msgstr "Komente"
 
-#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:151
 msgid "Revisions"
 msgstr "Rishikime"
 
-#: templates/videos/subtitle-view.html:154
-#: templates/videos/subtitle-view.html:388
+#: templates/videos/subtitle-view.html:156
+#: templates/videos/subtitle-view.html:390
 msgid "Unpublish"
 msgstr "Çbotoje"
 
-#: templates/videos/subtitle-view.html:157
-#: templates/videos/subtitle-view.html:403
+#: templates/videos/subtitle-view.html:159
+#: templates/videos/subtitle-view.html:405
 msgid "Edit Subtitles"
 msgstr "Përpunoni Titrat"
 
-#: templates/videos/subtitle-view.html:164
+#: templates/videos/subtitle-view.html:166
 msgid "Download"
 msgstr "Shkarkojeni"
 
-#: templates/videos/subtitle-view.html:192
+#: templates/videos/subtitle-view.html:194
 msgid "Draft only"
 msgstr "Vetëm skicë"
 
-#: templates/videos/subtitle-view.html:195
+#: templates/videos/subtitle-view.html:197
 msgid "translated from"
 msgstr "përkthyer prej"
 
-#: templates/videos/subtitle-view.html:199
-#: templates/videos/subtitle-view.html:308
+#: templates/videos/subtitle-view.html:201
 #: templates/videos/subtitle-view.html:310
+#: templates/videos/subtitle-view.html:312
 msgid "Revision"
 msgstr "Rishikim"
 
-#: templates/videos/subtitle-view.html:200
+#: templates/videos/subtitle-view.html:202
 msgid "created"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:246
+#: templates/videos/subtitle-view.html:248
 msgid ""
 "\n"
 "                            The most recent revision for this language is "
@@ -7938,27 +7862,27 @@ msgid ""
 "                            "
 msgstr ""
 
-#: templates/videos/subtitle-view.html:250
+#: templates/videos/subtitle-view.html:252
 msgid "View revision history"
 msgstr "Shihni historik rishikimesh"
 
-#: templates/videos/subtitle-view.html:255
+#: templates/videos/subtitle-view.html:257
 msgid "These subtitles are in progress."
 msgstr "Këto titra janë në përmbushje e sipër."
 
-#: templates/videos/subtitle-view.html:256
+#: templates/videos/subtitle-view.html:258
 msgid "Make more?"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:258
+#: templates/videos/subtitle-view.html:260
 msgid "No subtitles available yet."
 msgstr "Ende pa titra të passhëm."
 
-#: templates/videos/subtitle-view.html:259
+#: templates/videos/subtitle-view.html:261
 msgid "Make some!"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:267
+#: templates/videos/subtitle-view.html:269
 msgid ""
 "\n"
 "                            This language contains subtitles that are still "
@@ -7966,7 +7890,7 @@ msgid ""
 "                        "
 msgstr ""
 
-#: templates/videos/subtitle-view.html:273
+#: templates/videos/subtitle-view.html:275
 msgid ""
 "\n"
 "                            No subtitles have been added for this language "
@@ -7977,50 +7901,50 @@ msgstr ""
 "                            Për këtë gjuhë nuk janë shtuar ende titra.\n"
 "                        "
 
-#: templates/videos/subtitle-view.html:283
+#: templates/videos/subtitle-view.html:285
 #: templates/videos/video-view.html:188
 msgid "Leave a comment"
 msgstr "Lini një koment"
 
-#: templates/videos/subtitle-view.html:292
+#: templates/videos/subtitle-view.html:294
 msgid "Compare Revisions"
 msgstr "Krahasoni Rishikimet"
 
-#: templates/videos/subtitle-view.html:324
+#: templates/videos/subtitle-view.html:326
 msgid "Timing"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:325
+#: templates/videos/subtitle-view.html:327
 msgid "Text"
 msgstr "Tekst"
 
-#: templates/videos/subtitle-view.html:331
+#: templates/videos/subtitle-view.html:333
 msgid "No subtitles for this language."
 msgstr "Pa titra për këtë gjuhë."
 
-#: templates/videos/subtitle-view.html:340
+#: templates/videos/subtitle-view.html:342
 msgid "Roll back to this version"
 msgstr "Riktheni këtë version"
 
-#: templates/videos/subtitle-view.html:353
+#: templates/videos/subtitle-view.html:355
 msgid "Unpublish subtitles"
 msgstr "Çbotojini titrat"
 
-#: templates/videos/subtitle-view.html:361
+#: templates/videos/subtitle-view.html:363
 msgid "This version only"
 msgstr "Vetëm këtë version"
 
-#: templates/videos/subtitle-view.html:365
+#: templates/videos/subtitle-view.html:367
 msgid "This entire language and all dependent languages"
 msgstr "Krejt këtë gjuhë dhe tërë gjuhët e varura"
 
-#: templates/videos/subtitle-view.html:367
+#: templates/videos/subtitle-view.html:369
 msgid ""
 "Note: Any dependent languages will be unavailable until this language is "
 "reapproved."
 msgstr ""
 
-#: templates/videos/subtitle-view.html:376
+#: templates/videos/subtitle-view.html:378
 msgid ""
 "Yes, delete these subtitles instead of sending them back for editing/review"
 msgstr ""

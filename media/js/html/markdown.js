@@ -3,10 +3,9 @@ goog.provide('unisubs.html.MARKDOWN_REPLACE_SEQ');
 
 unisubs.html.MARKDOWN_REPLACE_SEQ = [
     // ordrer matters, need to apply double markers first
-    [/(__)([^_]+)(__)/g, "<b>$2</b>"],
     [/(\*\*)([^\*]+)(\*\*)/g, "<b>$2</b>"],
     [/(\*)([^\*]+)(\*{1})/g, "<i>$2</i>"],
-    [/(_)([^_]+)(_{1})/g, "<i>$2</i>"]
+    [/(_)([^_]+)(_{1})/g, "<u>$2</u>"]
 ];
 /**
  * This is *not* a parser. Just a quick hack to convert

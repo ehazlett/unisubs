@@ -223,23 +223,32 @@ unisubs.subtitle.SyncPanel.prototype.downReleased_ = function() {
     this.captionManager_.disableCaptionEvents(false);
     this.downHeld_ = false;
     var playheadTime = this.videoPlayer_.getPlayheadTime();
+    var startTime = playheadTime - 0.3;
+    if (startTime < 0) {
+        startTime = 0;
+    }
 
     if (this.downSub_ == null ||
         !this.downSub_.isShownAt(this.downPlayheadTime_)) {
         // pressed down before first sub or in between subs.
         var nextSub = null;
-        if (this.downSub_ == null && this.subtitles_.count() > 0)
+        if (this.downSub_ == null && this.subtitles_.count() > 0) {
             nextSub = this.subtitles_.caption(0);
-        if (this.downSub_)
+        }
+        if (this.downSub_) {
             nextSub = this.downSub_.getNextCaption();
-        if (nextSub != null)
-            nextSub.setStartTime(playheadTime);
+        }
+        if (nextSub != null) {
+            nextSub.setStartTime(startTime);
+        }
+    } else {
+        if (this.downSub_.isShownAt(startTime) &&
+            this.downSub_.getNextCaption()) {
+            this.downSub_.getNextCaption().setStartTime(startTime);
+        } else {
+            this.downSub_.setEndTime(startTime);
+        }
     }
-    else if (this.downSub_.isShownAt(playheadTime) &&
-             this.downSub_.getNextCaption())
-        this.downSub_.getNextCaption().setStartTime(playheadTime);
-    else
-        this.downSub_.setEndTime(playheadTime);
 
     this.downSub_ = null;
     this.downPlayheadTime_ = -1;

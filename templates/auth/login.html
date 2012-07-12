@@ -18,7 +18,7 @@
             <li><a class="provider" id="ted" href="{{ ted_auth.url }}">ted</a></li>
             <li><a class="provider" id="coursera" href="{{ stanford_auth.url }}">coursera</a></li>
         </ul>
-        <p class="toggle-additional"><a href="">{% trans "Show more providers" %}</a></p>
+        {% comment %}<p class="toggle-additional"><a href="">{% trans "Show more providers" %}</a></p>{% endcomment %}
     </div>
     <form class="auth-form" action="{% url auth:login_post %}" method="post">
         <h3>{% trans "Or use your Amara account" %}</h3>

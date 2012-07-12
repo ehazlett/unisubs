@@ -476,8 +476,21 @@ def remove_pip_package(package_egg_name):
     with Output("Removing pip package '{0}'".format(package_egg_name)):
         _execute_on_all_hosts(lambda dir: _remove_pip_package(dir, package_egg_name))
 
-
 def _update_environment(base_dir, flags=''):
+    with cd(os.path.join(base_dir, 'unisubs', 'deploy')):
+        _git_pull()
+        run('export PIP_REQUIRE_VIRTUALENV=true')
+        # see http://lincolnloop.com/blog/2010/jul/1/automated-no-prompt-deployment-pip/
+        run('yes i | {0}/env/bin/pip install {1} -r requirements.txt'.format(base_dir, flags), pty=True)
+        #_clear_permissions(os.path.join(base_dir, 'env'))
+
+def _update_environment_parallel(base_dir, flags=''):
+    """
+    This is the new way to build the virtualenv ; it will completely re-build
+    each time.  However, this must also be done only when parallel tasks
+    are implemented as this takes a long time to run on staging and production.
+
+    """
     with cd(os.path.join(base_dir, 'unisubs', 'deploy')):
         _git_pull()
         env_dir = '{0}/env'.format(base_dir)

@@ -20,6 +20,7 @@ Contents:
    apps
    data
    teams-callbacks
+   testing
 
 Contributing
 ------------

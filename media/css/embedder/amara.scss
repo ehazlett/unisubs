@@ -1,0 +1,156 @@
+@mixin border-radius($radius: 5px) {
+    -moz-background-clip: padding-box;
+    -moz-border-radius: $radius;
+    -webkit-background-clip: padding-box;
+    -webkit-border-radius: $radius;
+    background-clip: padding-box;
+    border-radius: $radius;
+}
+@mixin box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $color: #CCC) {
+    -moz-box-shadow: $horizontal $vertical $blur $color;
+    -webkit-box-shadow: $horizontal $vertical $blur $color;
+    box-shadow: $horizontal $vertical $blur $color;
+}
+@mixin inset-box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $color: #CCC) {
+    -moz-box-shadow: inset $horizontal $vertical $blur $color;
+    -webkit-box-shadow: inset $horizontal $vertical $blur $color;
+    box-shadow: inset $horizontal $vertical $blur $color;
+}
+@mixin multi-color-border($top, $sides, $bottom) {
+    border-bottom: 1px solid $bottom;
+    border-left: 1px solid $sides;
+    border-right: 1px solid $sides;
+    border-top: 1px solid $top;
+}
+@mixin multi-border-radius($topLeft: 5px, $topRight: 5px, $bottomRight: 5px, $bottomLeft: 5px) {
+    -moz-border-radius-bottomleft: $bottomLeft;
+    -moz-border-radius-bottomright: $bottomRight;
+    -moz-border-radius-topleft: $topLeft;
+    -moz-border-radius-topright: $topRight;
+    -webkit-border-bottom-left-radius: $bottomLeft;
+    -webkit-border-bottom-right-radius: $bottomRight;
+    -webkit-border-top-left-radius: $topLeft;
+    -webkit-border-top-right-radius: $topRight;
+    border-bottom-left-radius: $bottomLeft;
+    border-bottom-right-radius: $bottomRight;
+    border-top-left-radius: $topLeft;
+    border-top-right-radius: $topRight;
+}
+@mixin vertical-gradient($start: #000, $stop: #FFF) {
+    background: $start;
+    background-image: -moz-gradient(center top, $start 0%, $stop 100%);
+    background-image: -moz-linear-gradient(center top, $start 0%, $stop 100%);
+    background-image: -ms-linear-gradient($start, $stop);
+    background-image: -o-linear-gradient($start, $stop);
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
+    background-image: -webkit-linear-gradient($start, $stop);
+    background-image: linear-gradient($start, $stop);
+}
+@mixin vertical-gradient-with-image($image, $start: #000, $stop: #FFF) {
+    background: $image, -moz-gradient(center top, $start 0%, $stop 100%);
+    background: $image, -moz-linear-gradient(center top, $start 0%, $stop 100%);
+    background: $image, -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
+    background: ($start + $stop) / 2 $image;
+}
+@mixin linear-gradient($position, $first, $second, $third) {
+    background-image: -moz-linear-gradient($position, $first, $second, $third);
+    background-image: -ms-linear-gradient($position, $first, $second, $third);
+    background-image: -o-linear-gradient($position, $first, $second, $third);
+    background-image: -webkit-linear-gradient($position, $first, $second, $third);
+    background-image: linear-gradient($position, $first, $second, $third);
+}
+@mixin opacity($op) {
+    -khtml-opacity: $op;
+    -moz-opacity: $op;
+    opacity: $op;
+}
+@mixin box-right {
+    padding: 0;
+    position: absolute;
+    top: 2em; right: 0;
+    width: 120px;
+}
+@mixin block-level {
+    display: block;
+    width: 100%;
+}
+
+div.amara-embed {
+    div.amara-container {
+        div.amara-bar {
+            border-top: 1px solid #313233;
+            color: #666;
+            height: 36px;
+            margin-top: -5px;
+            @include multi-border-radius(0, 0, 3px, 3px);
+            @include vertical-gradient(#1B1C1D, #212223);
+
+            a {
+                // TODO: Have the CSS compiler convert these to absolute URLs.
+                background: transparent url('/site_media/images/embedder/amara-sprites.png') 0 0 no-repeat;
+                display: inline-block;
+                height: 36px;
+                @include opacity(.5);
+                -webkit-transition: opacity .03s linear;
+                -moz-transition: opacity .03s linear;
+
+                &.amara-logo {
+                    background-position: center 13px;
+                    color: transparent;
+                    float: left;
+                    width: 81px;
+
+                    &:active {
+                        background-position: center 14px;
+                    }
+                }
+                &.amara-share-button {
+                    background-position: 13px -236px;
+                    float: right;
+                    width: 38px;
+
+                    &:active {
+                        background-position: 13px -235px;
+                    }
+                }
+                &:hover {
+                    @include opacity(1);
+                }
+            }
+            ul.amara-displays {
+                border-left: 1px solid #2B2C2D;
+                display: inline-block;
+                height: 36px;
+                margin: 0;
+                padding: 0 10px;
+
+                li {
+                    display: inline-block;
+                    float: left;
+                    height: 36px;
+                    list-style-type: none;
+                    margin: 0;
+
+                    a {
+                        width: 28px;
+
+                        &.amara-transcript-button {
+                            background-position: 7px -37px;
+
+                            &:active {
+                                background-position: 7px -36px;
+                            }
+                        }
+                        &.amara-subtitles-button {
+                            background-position: 6px -86px;
+
+                            &:active {
+                                background-position: 6px -85px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

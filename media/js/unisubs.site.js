@@ -898,7 +898,7 @@ var Site = function(Site) {
 
         login: function() {
 
-            $('.toggle-additional a').click(function(e) {
+            /*$('.toggle-additional a').click(function(e) {
 
                 e.preventDefault();
 
@@ -915,7 +915,7 @@ var Site = function(Site) {
                     height: 'toggle'
                 }, 'fast');
 
-            });
+            });*/
 
             $('.form-swap').click(function(e) {
 

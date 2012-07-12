@@ -1661,6 +1661,15 @@ ol.subtitles li .quiet {
 }
 ol.subtitles.is_rtl li div.translation-text {
   direction: rtl;
+  text-align: right;
+}
+ol.subtitles.is_rtl li.title, ol.subtitles.is_rtl li.description {
+  direction: rtl;
+  text-align: right;
+}
+ol.subtitles.is_rtl li.title div.field, ol.subtitles.is_rtl li.description div.field {
+  direction: ltr;
+  text-align: left;
 }
 
 div#rollback-button {

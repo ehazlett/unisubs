@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-04 01:41-0500\n"
-"PO-Revision-Date: 2012-07-03 06:50+0000\n"
+"POT-Creation-Date: 2012-07-12 01:40-0500\n"
+"PO-Revision-Date: 2012-07-10 06:47+0000\n"
 "Last-Translator: unisubsapi <universalsubtitles-dev@pculture.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/"
 "universalsubtitles/language/ja/)\n"
@@ -96,13 +96,13 @@ msgstr "ネイティブのように書ける"
 
 #: apps/auth/models.py:394
 msgid "follow requests in language"
-msgstr ""
+msgstr "言語のリクエストをフォローする"
 
 #: apps/auth/models.py:409
 msgid ""
 "This is date when start to display announcement. And only the last will be "
 "displayed."
-msgstr ""
+msgstr "この日にちに通知を開始します。最新の通知のみ表示されます。"
 
 #: apps/auth/models.py:508
 msgid "e-mail confirmation"
@@ -146,11 +146,11 @@ msgstr "同じオブジェクトについて、コメントのみの返信が可
 
 #: apps/icanhaz/forms.py:23
 msgid "Only me"
-msgstr "個人のみ"
+msgstr "私のみ"
 
 #: apps/icanhaz/forms.py:44
 msgid "This user cannot change those settings"
-msgstr "このユーザーはそれらの設定を変更できません"
+msgstr "このユーザはそれらの設定を変更できません"
 
 #: apps/icanhaz/models.py:191
 msgid "Public"
@@ -182,7 +182,7 @@ msgstr "設定は保存されました！"
 
 #: apps/icanhaz/views.py:51
 msgid "Please correct the errors bellow!"
-msgstr "下記のエラーを修正する"
+msgstr "下記のエラーを修正してください！"
 
 #: apps/messages/forms.py:40
 msgid "You should be authenticated to write messages"
@@ -194,7 +194,7 @@ msgstr "このメッセージはサイト管理者からのメッセージです
 
 #: apps/messages/forms.py:96
 msgid "You cannot send a message to a user and a team at the same time."
-msgstr "ユーザーとチームに同時にメッセージを送る事はできません。"
+msgstr "ユーザとチームに同時にメッセージを送る事はできません。"
 
 #: apps/messages/forms.py:99
 msgid "You must choose a recipient."
@@ -224,55 +224,55 @@ msgstr "メッセージは存在しません。"
 #: apps/messages/tasks.py:71
 #, python-format
 msgid "New message from %(author)s on Amara: %(subject)s"
-msgstr ""
+msgstr "Amara にて %(author)s さんより新しいメッセージ：%(subject)s"
 
 #: apps/messages/tasks.py:73
 #, python-format
 msgid "New message on Amara: %(subject)s"
-msgstr ""
+msgstr "Amara にて新しいメッセージ：%(subject)s"
 
 #: apps/messages/tasks.py:117
 #, python-format
 msgid "You've been invited to team %s on Amara"
-msgstr ""
+msgstr "Amara の%sチームに招待されました。"
 
 #: apps/messages/tasks.py:152
 #, python-format
 msgid "%(user)s is applying for team %(team)s"
-msgstr ""
+msgstr "%(user)s さんが%(team)sチームへの参加を希望しています。"
 
 #: apps/messages/tasks.py:183
 #, python-format
 msgid "Your application to join the %s team has been declined"
-msgstr ""
+msgstr "%sチームへの参加は断られました。"
 
 #: apps/messages/tasks.py:217
 #, python-format
 msgid "%s team has a new member"
-msgstr ""
+msgstr "%sチームに新しいメンバーが追加されました。"
 
 #: apps/messages/tasks.py:241
 #, python-format
 msgid "You've joined the %s team!"
-msgstr ""
+msgstr "%sチームに入会しました！"
 
 #: apps/messages/tasks.py:266
 #, python-format
 msgid "%(user)s has left the %(team)s team"
-msgstr ""
+msgstr "%(user)s さんが%(team)sチームを退会しました。"
 
 #: apps/messages/tasks.py:291
 #, python-format
 msgid "You've left the %s team!"
-msgstr ""
+msgstr "%sチームを退会しました。"
 
 #: apps/messages/tasks.py:327
 msgid "Your videos were imported!"
-msgstr ""
+msgstr "ビデオをインポートしました！"
 
 #: apps/messages/tasks.py:354
 msgid "You have a new task assignment on Amara!"
-msgstr ""
+msgstr "Amara にて新しいタスクが任命されました。"
 
 #: apps/messages/tasks.py:395
 msgid "Your subtitles have been reviewed"
@@ -280,28 +280,28 @@ msgstr ""
 
 #: apps/messages/tasks.py:397
 msgid " and published"
-msgstr ""
+msgstr "公開されました。"
 
 #: apps/messages/tasks.py:498
 msgid "Your subtitles have been approved and published!"
-msgstr ""
+msgstr "あなたの字幕は承認され、公開されました！"
 
 #: apps/messages/tasks.py:504
 msgid "Your subtitles have been returned for further editing"
-msgstr ""
+msgstr "あなたの字幕は、更なる編集のために戻されました。"
 
 #: apps/messages/tasks.py:559
 msgid "Your subtitles were not accepted"
-msgstr ""
+msgstr "あなたの字幕は受け入れられませんでした。"
 
 #: apps/messages/tasks.py:603
 #, python-format
 msgid "%(user)s left a comment on the video %(title)s"
-msgstr ""
+msgstr "%(user)s さんがビデオ「%(title)s」についてコメントをしました。"
 
 #: apps/messages/views.py:123
 msgid "Message sent."
-msgstr ""
+msgstr "メッセージを送信しました。"
 
 #: apps/openid_consumer/views.py:94
 msgid "i-names are not supported"
@@ -409,19 +409,19 @@ msgstr "質問"
 
 #: apps/search/forms.py:37
 msgid "Sort By"
-msgstr "ソート"
+msgstr "ソート順"
 
 #: apps/search/forms.py:38
 msgid "Subtitled Into"
-msgstr "冒頭の字幕"
+msgstr "字幕言語"
 
 #: apps/search/forms.py:39 apps/search/forms.py:41
 msgid "Left blank for any language"
-msgstr ""
+msgstr "全言語を選択するには空欄のままにする"
 
 #: apps/search/forms.py:40
 msgid "Video In"
-msgstr ""
+msgstr "ビデオ言語"
 
 #: apps/search/forms.py:63 apps/search/forms.py:99
 msgid "All Languages"
@@ -429,7 +429,9 @@ msgstr "全言語"
 
 #: apps/statistic/models.py:47 apps/statistic/models.py:48
 msgid "Subtitle fetch statistic"
-msgstr "字幕取得統計"
+msgstr ""
+"コンマで区切って有効なユーザー名を入力してください。ユーザー名はa〜z、A〜Z、"
+"0〜9のみ使用できます。"
 
 #: apps/statistic/models.py:55 apps/statistic/models.py:56
 msgid "Video view statistic"
@@ -446,7 +448,7 @@ msgstr "メッセージ送信数 %(count)s"
 
 #: apps/teams/admin.py:59
 msgid "Fill all fields please."
-msgstr "全てのフィールドを埋めてください"
+msgstr "全ての欄に記入してくさい"
 
 #: apps/teams/admin.py:60
 msgid "Send message"
@@ -454,11 +456,11 @@ msgstr "メッセージを送る"
 
 #: apps/teams/admin.py:64
 msgid "Feature teams"
-msgstr "チームを取り上げる"
+msgstr "注目チームとして取り上げる"
 
 #: apps/teams/admin.py:68
 msgid "Unfeature teams"
-msgstr "チームの取り上げをやめる"
+msgstr "注目チームとしての取り上げをやめる"
 
 #: apps/teams/admin.py:78 apps/teams/admin.py:111 apps/teams/models.py:182
 msgid "Team"
@@ -501,7 +503,7 @@ msgstr "データベースにビデオが存在しない場合のみ保存され
 
 #: apps/teams/forms.py:216
 msgid "This video already belongs to a team."
-msgstr ""
+msgstr "このビデオはすでにチームに属しています。"
 
 #: apps/teams/forms.py:222
 msgid "Set original language for this video."
@@ -522,8 +524,8 @@ msgid ""
 "and make sure to check \"Save feed\" box."
 msgstr ""
 "%(count)s 個のビデオが追加されました。表示まで数分かかります。このフィードか"
-"らの既存ビデオを追加するには本フィードを再び投稿し、\"フィードを保存\"チェッ"
-"クボックスをチェックしてください。"
+"ら残りのビデオを追加するには、フィードを再送信し、「フィードを保存する」"
+"チェックボックスをチェックしてください。"
 
 #: apps/teams/forms.py:295
 msgid "Team intro video URL"
@@ -538,7 +540,8 @@ msgid ""
 msgstr ""
 "ボランティアの興味を引く為に、チームを説明するビデオをホームページに追加する"
 "こともできます。\n"
-"適合する種類のビデオ、あるいは本サイト上のビデオへのリンクを入力ください。"
+"互換性のあるビデオのリンク、あるいは本サイト上のビデオへのリンクを入力くださ"
+"い。"
 
 #: apps/teams/forms.py:302
 msgid "Team URL: http://universalsubtitles.org/teams/"
@@ -546,31 +549,31 @@ msgstr "チームURL: http://universalsubtitles.org/teams/"
 
 #: apps/teams/forms.py:342
 msgid "This video has already been transcribed."
-msgstr ""
+msgstr "ビデオの書き写しはすでに完了しています。"
 
 #: apps/teams/forms.py:347
 msgid "Subtitling of this video is already in progress."
-msgstr "本ビデオへの字幕の追加は進行中です"
+msgstr "本ビデオの字幕は現在編集中です。"
 
 #: apps/teams/forms.py:353
 msgid "No one has transcribed this video yet, so it can't be translated."
-msgstr ""
+msgstr "ビデオの書き写しが行われていないため、翻訳することができません。"
 
 #: apps/teams/forms.py:359
 msgid "This language already has a complete set of subtitles."
-msgstr ""
+msgstr "この言語の字幕はすでに存在します。"
 
 #: apps/teams/forms.py:379
 msgid "There is already a task in progress for that video/language."
-msgstr "そのビデオ／言語に対する進行中の作業が既に存在します"
+msgstr "そのビデオ／言語の作業は進行中です。"
 
 #: apps/teams/forms.py:393
 msgid "You must select a language for a Translate task."
-msgstr ""
+msgstr "翻訳タスクには、言語を選択してください。"
 
 #: apps/teams/forms.py:426
 msgid "That user has already been assigned the maximum number of tasks."
-msgstr ""
+msgstr "ユーザは、すでに最大タスク数が指名されています。"
 
 #: apps/teams/forms.py:448
 msgid "You do not have permission to assign this task."
@@ -578,7 +581,7 @@ msgstr "このタスクを割り当てる権限を持っていません"
 
 #: apps/teams/forms.py:455
 msgid "This user cannot perform that task."
-msgstr ""
+msgstr "このユーザは、そのタスクを行うことができません。"
 
 #: apps/teams/forms.py:476
 msgid "You do not have permission to delete this task."
@@ -590,17 +593,17 @@ msgstr ""
 
 #: apps/teams/forms.py:556 apps/teams/forms.py:558
 msgid "User does not exist!"
-msgstr ""
+msgstr "ユーザは存在しません！"
 
 #: apps/teams/forms.py:565
 msgid "User is already a member of this team!"
-msgstr ""
+msgstr "ユーザは既にこのチームのメンバーです。"
 
-#: apps/teams/forms.py:591 templates/videos/subtitle-view.html:373
+#: apps/teams/forms.py:591 templates/videos/subtitle-view.html:375
 msgid "Would you like to delete these subtitles completely?"
-msgstr ""
+msgstr "この字幕を完全に削除しますか？"
 
-#: apps/teams/forms.py:595 templates/videos/subtitle-view.html:358
+#: apps/teams/forms.py:595 templates/videos/subtitle-view.html:360
 msgid "What would you like to unpublish?"
 msgstr ""
 
@@ -622,11 +625,11 @@ msgstr ""
 
 #: apps/teams/forms.py:639
 msgid "You cannot perform that task."
-msgstr ""
+msgstr "そのタスクは実行できません。"
 
 #: apps/teams/forms.py:651 apps/videos/forms.py:461
 msgid "Invalid language to translate from."
-msgstr ""
+msgstr "翻訳元言語が無効です。"
 
 #: apps/teams/forms.py:660 apps/videos/forms.py:71 apps/videos/forms.py:89
 #: apps/videos/forms.py:470
@@ -636,7 +639,7 @@ msgstr "ファイルサイズは {0} kb以下である必要があります。"
 #: apps/teams/forms.py:665 apps/videos/forms.py:475
 #, python-format
 msgid "Incorrect format. Upload %s"
-msgstr ""
+msgstr "形式が正しくありません。%s をアップロードしてください。"
 
 #: apps/teams/forms.py:672 apps/videos/forms.py:76 apps/videos/forms.py:97
 #: apps/videos/forms.py:482
@@ -652,12 +655,16 @@ msgid ""
 "Sorry, we couldn't upload your file because it has fewer lines ({0}) than "
 "the previous version ({1})."
 msgstr ""
+"ファイルの行数 ({0}) が前バージョン({1}) より少ないため、アップロードすること"
+"ができません。"
 
 #: apps/teams/forms.py:756 apps/videos/forms.py:584
 msgid ""
 "Sorry, we couldn't upload your file because the number of lines in your "
 "translation ({0}) doesn't match the original ({1})."
 msgstr ""
+"翻訳の行数 ({0}) が原文の行数 ({1}) と同じでないため、ファイルをアップロード"
+"することができません。"
 
 #: apps/teams/models.py:91
 msgid "Open"
@@ -769,7 +776,7 @@ msgstr "タスク割当てポリシー"
 
 #: apps/teams/models.py:164
 msgid "subtitling policy"
-msgstr "投稿ポリシー"
+msgstr "字幕ポリシー"
 
 #: apps/teams/models.py:167
 msgid "translation policy"
@@ -827,7 +834,7 @@ msgstr "寄稿者"
 
 #: apps/teams/notifications.py:150
 msgid "New activity on your team video"
-msgstr "チームビデオに関する新しいアクティビティー"
+msgstr "チームビデオの新しいアクティビティー"
 
 #: apps/teams/rpc.py:40
 msgid "Team does not exist"
@@ -865,7 +872,7 @@ msgstr "このチームの管理者ではありません"
 
 #: apps/teams/rpc.py:77
 msgid "Incorrect team member role."
-msgstr "チームメンバーの役割が誤りです"
+msgstr "チームメンバーの役割が正しくありません"
 
 #: apps/teams/rpc.py:82
 msgid "Team member does not exist."
@@ -877,11 +884,11 @@ msgstr "自分を推薦することはできません"
 
 #: apps/teams/rpc.py:89
 msgid "Team member role changed."
-msgstr "チームメンバーの役割が変更になりました"
+msgstr "チームメンバーの役割が変更しました"
 
 #: apps/teams/rpc.py:163
 msgid "You cannot assign that role to that member."
-msgstr "メンバーに対する役割を割り当てることができません。"
+msgstr "そのメンバーに役割を割り当てることができません。"
 
 #: apps/teams/tasks.py:76
 #, python-format
@@ -900,7 +907,7 @@ msgstr "最新の"
 
 #: apps/teams/views.py:123 templates/teams/teams-list.html:44
 msgid "Most Members"
-msgstr "ほとんどのメンバー"
+msgstr "最もメンバー数が多い順"
 
 #: apps/teams/views.py:166
 #, python-format
@@ -924,32 +931,32 @@ msgstr ""
 
 #: apps/teams/views.py:192
 msgid "You do not have permission to delete this team."
-msgstr ""
+msgstr "あなたにはチームを削除する権限がありません。"
 
 #: apps/teams/views.py:206 apps/teams/views.py:242 apps/teams/views.py:270
 #: apps/teams/views.py:303 apps/teams/views.py:358 apps/teams/views.py:1533
 msgid "You do not have permission to edit this team."
-msgstr ""
+msgstr "あなたにはこのチームを変更する権限がありません。"
 
 #: apps/teams/views.py:229 apps/teams/views.py:288 apps/teams/views.py:373
 msgid "Settings saved."
-msgstr "設定は保存されました。"
+msgstr "設定を保存しました。"
 
 #: apps/teams/views.py:255
 msgid "Guidelines and messages updated."
-msgstr ""
+msgstr "指針およびメッセージを変更しました。"
 
 #: apps/teams/views.py:499
 msgid "You can't add that video to this team/project."
-msgstr ""
+msgstr "そのビデオをこのチーム・プロジェクトに追加することはできません。"
 
 #: apps/teams/views.py:534
 msgid "The video has been moved to the new team."
-msgstr ""
+msgstr "ビデオは新しいチームに移動しました。"
 
 #: apps/teams/views.py:547
 msgid "You can't add videos to this team/project."
-msgstr ""
+msgstr "ビデオをこのチーム・プロジェクトに追加することはできません。"
 
 #: apps/teams/views.py:566
 msgid "You can't edit this video."
@@ -965,7 +972,7 @@ msgstr ""
 
 #: apps/teams/views.py:611
 msgid "You can't delete that video."
-msgstr ""
+msgstr "そのビデオは削除することができません。"
 
 #: apps/teams/views.py:615
 msgid "You can't remove that video."
@@ -973,23 +980,25 @@ msgstr "ビデオは移動できません"
 
 #: apps/teams/views.py:627
 msgid "Video has been deleted from Amara."
-msgstr ""
+msgstr "Amara からビデオを削除しました。"
 
 #: apps/teams/views.py:630
 msgid "Video has been removed from the team."
-msgstr ""
+msgstr "ビデオをチームから削除しました。"
 
 #: apps/teams/views.py:749
 msgid "Member has been removed from the team."
-msgstr ""
+msgstr "メンバーをチームから削除しました。"
 
 #: apps/teams/views.py:752
 msgid "Use the \"Leave this team\" button to remove yourself from this team."
 msgstr ""
+"このチームから退会する場合、「チームを退会する」というボタンをクリックしてく"
+"ださい。"
 
 #: apps/teams/views.py:755
 msgid "You don't have permission to remove this member from the team."
-msgstr ""
+msgstr "あなたにはこのメンバーをチームから削除する権限がありません。"
 
 #: apps/teams/views.py:786
 msgid "Application approved."
@@ -1021,15 +1030,15 @@ msgstr "このチームに加入できません"
 
 #: apps/teams/views.py:905
 msgid "You have left this team."
-msgstr "このチームから離脱しました。"
+msgstr "このチームから脱会しました。"
 
 #: apps/teams/views.py:962
 msgid "Member saved."
-msgstr ""
+msgstr "メンバーを保存しました。"
 
 #: apps/teams/views.py:1118
 msgid "You cannot view this team's tasks."
-msgstr ""
+msgstr "このチームのタスクを見ることはできません。"
 
 #: apps/teams/views.py:1261 apps/teams/views.py:1264
 msgid "You are not allowed to perform this task."
@@ -1037,15 +1046,15 @@ msgstr "このタスクを遂行することができません"
 
 #: apps/teams/views.py:1319
 msgid "Task deleted."
-msgstr "タスクが削除されました。"
+msgstr "タスクを削除しました。"
 
 #: apps/teams/views.py:1321
 msgid "You cannot delete this task."
-msgstr ""
+msgstr "このタスクを削除することはできません。"
 
 #: apps/teams/views.py:1346
 msgid "Task declined."
-msgstr ""
+msgstr "タスクが拒否されました。"
 
 #: apps/teams/views.py:1348
 msgid "Task assigned."
@@ -1069,27 +1078,27 @@ msgstr ""
 
 #: apps/teams/views.py:1410
 msgid "You are not allowed to download this transcript."
-msgstr ""
+msgstr "この原稿をダウンロードする権限がありません。"
 
 #: apps/teams/views.py:1460
 msgid "There's already a project with this name"
-msgstr ""
+msgstr "プロジェクト名はすでに使用されています。"
 
 #: apps/teams/views.py:1472
 msgid "Project added."
-msgstr ""
+msgstr "プロジェクトを追加しました。"
 
 #: apps/teams/views.py:1489
 msgid "You cannot edit that project."
-msgstr ""
+msgstr "プロジェクトを変更することはできません。"
 
 #: apps/teams/views.py:1500
 msgid "Project deleted."
-msgstr ""
+msgstr "プロジェクトを削除しました。"
 
 #: apps/teams/views.py:1518
 msgid "Project saved."
-msgstr ""
+msgstr "プロジェクトを保存しました。"
 
 #: apps/teams/views.py:1644
 msgid ""
@@ -1136,6 +1145,9 @@ msgid ""
 "think there's been some mistake, <a\n"
 "href=\"mailto:%s\">contact us</a>!"
 msgstr ""
+"Amara ではそのウェブサイトまたはビデオ形式をサポートしていません。新しいサイ"
+"トまたは形式をサポートしてほしい場合、または何らかの手違いであると思われる場"
+"合は、<a href=\"mailto:%s\">ご連絡ください</a>！"
 
 #: apps/videos/forms.py:142
 msgid "You have not permission add video URL for this video"
@@ -1151,12 +1163,15 @@ msgid ""
 "Sorry, we can't upload your subtitles because work on this language is "
 "already in progress."
 msgstr ""
+"この言語の字幕はすでに進行中であるため、アップロードすることができません。"
 
 #: apps/videos/forms.py:198 apps/videos/forms.py:530
 msgid ""
 "Sorry, we cannot upload subtitles for this language because this would ruin "
 "translations made from it"
 msgstr ""
+"この言語の字幕から他の言語に翻訳されているので、この字幕はアップロードするこ"
+"とができません。"
 
 #: apps/videos/forms.py:227 apps/videos/forms.py:559
 msgid ""
@@ -1173,13 +1188,13 @@ msgstr ""
 
 #: apps/videos/forms.py:516
 msgid "The language already exists and already has a version"
-msgstr ""
+msgstr "言語はすでに存在します。"
 
 #: apps/videos/forms.py:521
 #, python-format
 msgid ""
 "The language already exists and you can't change its translation from %s"
-msgstr ""
+msgstr "言語はすでに存在します。%sからの翻訳を変更することはできません。"
 
 #: apps/videos/forms.py:813
 #, python-format
@@ -1233,8 +1248,8 @@ msgid ""
 "Choose this if you wish to add videos from this feed in the future. Only "
 "valid RSS feeds will be saved."
 msgstr ""
-"この先、フィードからのビデオを追加したい場合に選択してください。適正なRSS"
-"フィードのみ保存されます。"
+"今後、このフィードからビデオを追加したい場合、これを選択してください。適正な"
+"RSSフィードのみ保存されます。"
 
 #: apps/videos/forms.py:891
 msgid ""
@@ -1249,10 +1264,12 @@ msgid ""
 "The videos are being added in the background. If you are logged in, you will "
 "receive a message when it's done"
 msgstr ""
+"ビデオはバックグラウンドで追加中です。ログインしている場合は、完了したらメッ"
+"セージが表示されます。"
 
 #: apps/videos/forms.py:907
 msgid "captcha"
-msgstr ""
+msgstr "CAPTCHA"
 
 #: apps/videos/models.py:136
 msgid "in seconds"
@@ -1291,6 +1308,8 @@ msgid ""
 "  accepted <a href=\"%(language_url)s\">%(language)s</a> subtitles for <a "
 "href=\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"<a href=\"%(language_url)s\">%(language)s</a>での<a href=\"%(video_url)s\">%"
+"(video_name)s</a>の字幕を受け入れました。"
 
 #: apps/videos/models.py:1960
 #, python-format
@@ -1316,11 +1335,13 @@ msgid ""
 "  declined <a href=\"%(language_url)s\">%(language)s</a> subtitles for <a "
 "href=\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"<a href=\"%(language_url)s\">%(language)s</a>での<a href=\"%(video_url)s\">%"
+"(video_name)s</a>の字幕を拒否しました。"
 
 #: apps/videos/models.py:1976
 #, python-format
 msgid "  deleted video \"%(title)s\""
-msgstr ""
+msgstr "「%(title)s」というビデオを削除しました。"
 
 #: apps/videos/models.py:1981
 #, python-format
@@ -1429,39 +1450,39 @@ msgstr ""
 
 #: apps/videos/models.py:2125
 msgid "add video"
-msgstr "ビデオを追加"
+msgstr "ビデオを追加する"
 
 #: apps/videos/models.py:2126
 msgid "change title"
-msgstr "タイトルを変更"
+msgstr "タイトルを変更する"
 
 #: apps/videos/models.py:2127
 msgid "comment"
-msgstr "コメント"
+msgstr "コメントする"
 
 #: apps/videos/models.py:2128
 msgid "add version"
-msgstr "改訂を追加"
+msgstr "改訂を追加する"
 
 #: apps/videos/models.py:2129
 msgid "add translation"
-msgstr "翻訳を追加"
+msgstr "翻訳を追加する"
 
 #: apps/videos/models.py:2130
 msgid "add video url"
-msgstr "URLを追加"
+msgstr "URLを追加する"
 
 #: apps/videos/models.py:2131
 msgid "request subtitles"
-msgstr "字幕を要求"
+msgstr "字幕を要求する"
 
 #: apps/videos/models.py:2132
 msgid "approve version"
-msgstr "改訂の承認"
+msgstr "改訂を承認する"
 
 #: apps/videos/models.py:2133
 msgid "add contributor"
-msgstr "寄稿者を追加"
+msgstr "寄稿者を追加する"
 
 #: apps/videos/models.py:2134
 msgid "remove contributor"
@@ -1469,7 +1490,7 @@ msgstr ""
 
 #: apps/videos/models.py:2135
 msgid "reject version"
-msgstr "改訂を棄却"
+msgstr "改訂を棄却する"
 
 #: apps/videos/models.py:2136
 msgid "review version"
@@ -1477,15 +1498,15 @@ msgstr ""
 
 #: apps/videos/models.py:2137
 msgid "accept version"
-msgstr ""
+msgstr "バージョンを受け入れる"
 
 #: apps/videos/models.py:2138
 msgid "decline version"
-msgstr ""
+msgstr "バージョンを拒否する"
 
 #: apps/videos/models.py:2139
 msgid "delete video"
-msgstr ""
+msgstr "ビデオを削除する"
 
 #: apps/videos/models.py:2391
 #, python-format
@@ -1502,7 +1523,7 @@ msgstr "権限がありません"
 
 #: apps/videos/rpc.py:59 apps/videos/rpc.py:75
 msgid "Incorrect video ID"
-msgstr "誤ったビデオIDです"
+msgstr "ビデオIDが正しくありません"
 
 #: apps/videos/rpc.py:62 apps/videos/rpc.py:78 apps/videos/rpc.py:331
 msgid "Video does not exist"
@@ -1518,7 +1539,7 @@ msgstr "ビデオのタイトルは変更できません"
 
 #: apps/videos/rpc.py:333 apps/videos/rpc.py:351
 msgid "Title was changed success"
-msgstr ""
+msgstr "タイトルが変更されました。"
 
 #: apps/videos/rpc.py:345
 msgid "Subtitle language does not exist"
@@ -1526,7 +1547,7 @@ msgstr "字幕言語が存在しません。"
 
 #: apps/videos/rpc.py:353
 msgid "This is not forked translation"
-msgstr ""
+msgstr "これは曖昧な翻訳ではありません。"
 
 #: apps/videos/rpc.py:362 apps/videos/rpc.py:378
 msgid "Video does not exist."
@@ -1580,7 +1601,7 @@ msgstr ""
 #: apps/videos/share_utils.py:106
 #, python-format
 msgid "Just found a version of this video with %(language_name)s subtitles"
-msgstr "%(language_name)s の字幕を発見しました"
+msgstr "%(language_name)s の字幕を見つけました"
 
 #: apps/videos/views.py:160
 msgid ""
@@ -1589,9 +1610,9 @@ msgid ""
 "or\n"
 "improve subtitles, click the button below the video."
 msgstr ""
-"ビデオに関する字幕ワークスペースです。友達とビデオを共有したり、サイトへの埋"
-"め込みコードを取得する事ができます。字幕の追加や改善するにはビデオの下のボタ"
-"ンを押してください。"
+"ビデオの字幕ワークスペースです。友達とビデオを共有したり、あなたのサイトに埋"
+"め込めるコードを取得する事ができます。字幕の追加や編集にはビデオの下のボタン"
+"を押してください。"
 
 #: apps/videos/views.py:168
 msgid ""
@@ -1602,7 +1623,7 @@ msgstr ""
 
 #: apps/videos/views.py:173
 msgid "Existing subtitles will be imported in a few minutes."
-msgstr "数分後に現在の字幕は改訂されます。"
+msgstr "既存の字幕を取り込みます。数分お待ちください。"
 
 #: apps/videos/views.py:282
 msgid ""
@@ -1635,11 +1656,14 @@ msgstr "オリジナルURLを削除する事は出来ません。"
 msgid "Feed is unavailable now."
 msgstr "フィードは現在利用できません。"
 
-#: apps/videos/templatetags/subtitles_tags.py:58
+#: apps/videos/templatetags/subtitles_tags.py:59
 #, python-format
 msgid "%(count)s Line"
 msgid_plural "%(count)s Lines"
 msgstr[0] ""
+"one: %(count)s行\n"
+"\n"
+"other: %(count)s行"
 
 #: apps/videos/types/dailymotion.py:85
 msgid "Video is unavailable"
@@ -1682,8 +1706,10 @@ msgstr ""
 #: apps/widget/rpc.py:945 apps/widget/rpc.py:986
 msgid "\n"
 msgstr ""
+"\n"
+"⏎\n"
 
-#: apps/widget/views.py:106
+#: apps/widget/views.py:107
 msgid "That task has already been completed."
 msgstr ""
 
@@ -1853,6 +1879,8 @@ msgstr "提案する"
 msgid "%(more_count)s more"
 msgid_plural "%(more_count)s more"
 msgstr[0] ""
+"one: あと%(more_count)s\n"
+"other: あと%(more_count)s"
 
 #: libs/rosetta/templates/rosetta/pofile.html:123
 msgid "Save and translate next block"
@@ -1871,6 +1899,8 @@ msgstr "表示中："
 msgid "%(hits)s/%(message_number)s message"
 msgid_plural "%(hits)s/%(message_number)s messages"
 msgstr[0] ""
+"one: メッセージ%(hits)s/%(message_number)s通\n"
+"other: メッセージ%(hits)s/%(message_number)s通"
 
 #: libs/unilangs/unilangs.py:122
 msgid "Afar"
@@ -1882,7 +1912,7 @@ msgstr "アブハズ語"
 
 #: libs/unilangs/unilangs.py:124
 msgid "Avestan"
-msgstr ""
+msgstr "アヴェスター語"
 
 #: libs/unilangs/unilangs.py:125
 msgid "Afrikaans"
@@ -1918,7 +1948,7 @@ msgstr "アストゥリアス語"
 
 #: libs/unilangs/unilangs.py:133
 msgid "Avaric"
-msgstr ""
+msgstr "アヴァル語"
 
 #: libs/unilangs/unilangs.py:134
 msgid "Aymara"
@@ -1926,7 +1956,7 @@ msgstr "アイマラ語"
 
 #: libs/unilangs/unilangs.py:135
 msgid "Azerbaijani"
-msgstr ""
+msgstr "アゼルバイジャン語"
 
 #: libs/unilangs/unilangs.py:136
 msgid "Bashkir"
@@ -1982,11 +2012,11 @@ msgstr "カタロニア語"
 
 #: libs/unilangs/unilangs.py:149
 msgid "Chechen"
-msgstr ""
+msgstr "チェチェン語"
 
 #: libs/unilangs/unilangs.py:150
 msgid "Cebuano"
-msgstr ""
+msgstr "セブアノ語"
 
 #: libs/unilangs/unilangs.py:151
 msgid "Chamorro"
@@ -1994,7 +2024,7 @@ msgstr "チャモロ語"
 
 #: libs/unilangs/unilangs.py:152
 msgid "Choctaw"
-msgstr ""
+msgstr "チョクトー語"
 
 #: libs/unilangs/unilangs.py:153
 msgid "Corsican"
@@ -2010,11 +2040,11 @@ msgstr "チェコ語"
 
 #: libs/unilangs/unilangs.py:156
 msgid "Church Slavic"
-msgstr ""
+msgstr "教会スラヴ語"
 
 #: libs/unilangs/unilangs.py:157
 msgid "Chuvash"
-msgstr ""
+msgstr "チュヴァシ語"
 
 #: libs/unilangs/unilangs.py:158
 msgid "Welsh"
@@ -2042,7 +2072,7 @@ msgstr "エウェ語"
 
 #: libs/unilangs/unilangs.py:164
 msgid "Efik"
-msgstr ""
+msgstr "エフィク語"
 
 #: libs/unilangs/unilangs.py:165
 msgid "Greek"
@@ -2070,11 +2100,11 @@ msgstr "スペイン語、アルゼンチン"
 
 #: libs/unilangs/unilangs.py:171
 msgid "Spanish, Mexican"
-msgstr ""
+msgstr "スペイン語、メキシコ"
 
 #: libs/unilangs/unilangs.py:172
 msgid "Spanish, Nicaraguan"
-msgstr ""
+msgstr "スペイン語、ニカラグア"
 
 #: libs/unilangs/unilangs.py:173
 msgid "Estonian"
@@ -2090,7 +2120,7 @@ msgstr "ペルシア語"
 
 #: libs/unilangs/unilangs.py:176
 msgid "Fulah"
-msgstr ""
+msgstr "フラニ語"
 
 #: libs/unilangs/unilangs.py:177
 msgid "Finnish"
@@ -2114,7 +2144,7 @@ msgstr "フランス語"
 
 #: libs/unilangs/unilangs.py:182
 msgid "French, Canadian"
-msgstr "フランス語、カナダ語"
+msgstr "フランス語、カナダ"
 
 #: libs/unilangs/unilangs.py:183
 msgid "Fula"
@@ -2122,7 +2152,7 @@ msgstr "フラ語"
 
 #: libs/unilangs/unilangs.py:184
 msgid "Frisian"
-msgstr ""
+msgstr "フリジア語"
 
 #: libs/unilangs/unilangs.py:185
 msgid "Irish"
@@ -2138,7 +2168,7 @@ msgstr "ガリシア語"
 
 #: libs/unilangs/unilangs.py:188
 msgid "Guaran"
-msgstr ""
+msgstr "グアラニー語"
 
 #: libs/unilangs/unilangs.py:189
 msgid "Gujarati"
@@ -2166,7 +2196,7 @@ msgstr "ヒンディー語"
 
 #: libs/unilangs/unilangs.py:195
 msgid "Hiri Motu"
-msgstr ""
+msgstr "ヒリモツ語"
 
 #: libs/unilangs/unilangs.py:196
 msgid "Croatian"
@@ -2182,7 +2212,7 @@ msgstr "ハンガリー語"
 
 #: libs/unilangs/unilangs.py:199
 msgid "Hupa"
-msgstr ""
+msgstr "フーパ語"
 
 #: libs/unilangs/unilangs.py:200
 msgid "Armenian"
@@ -2190,11 +2220,11 @@ msgstr "アルメニア語"
 
 #: libs/unilangs/unilangs.py:201
 msgid "Herero"
-msgstr ""
+msgstr "ヘレロ語"
 
 #: libs/unilangs/unilangs.py:202
 msgid "Interlingua"
-msgstr ""
+msgstr "インターリングア"
 
 #: libs/unilangs/unilangs.py:203
 msgid "Igbo"
@@ -2206,31 +2236,31 @@ msgstr "インドネシア語"
 
 #: libs/unilangs/unilangs.py:205
 msgid "Interlingue"
-msgstr ""
+msgstr "インターリング"
 
 #: libs/unilangs/unilangs.py:206
 msgid "Sichuan Yi"
-msgstr ""
+msgstr "四川彝語"
 
 #: libs/unilangs/unilangs.py:207
 msgid "Inupia"
-msgstr ""
+msgstr "イヌピアック語"
 
 #: libs/unilangs/unilangs.py:208
 msgid "Ilocano"
-msgstr ""
+msgstr "イロカノ語"
 
 #: libs/unilangs/unilangs.py:209
 msgid "Ingush"
-msgstr ""
+msgstr "イングーシ語"
 
 #: libs/unilangs/unilangs.py:210
 msgid "Ido"
-msgstr ""
+msgstr "イド語"
 
 #: libs/unilangs/unilangs.py:211
 msgid "Iroquoian languages"
-msgstr ""
+msgstr "イロコイ諸語"
 
 #: libs/unilangs/unilangs.py:212
 msgid "Icelandic"
@@ -2258,7 +2288,7 @@ msgstr "グルジア語"
 
 #: libs/unilangs/unilangs.py:218
 msgid "Karen"
-msgstr ""
+msgstr "カレン諸語"
 
 #: libs/unilangs/unilangs.py:219
 msgid "Kanuri"
@@ -2274,7 +2304,7 @@ msgstr "ルワンダ語"
 
 #: libs/unilangs/unilangs.py:222
 msgid "Kuanyama, Kwanyama"
-msgstr ""
+msgstr "クワニャマ語"
 
 #: libs/unilangs/unilangs.py:223
 msgid "Kazakh"
@@ -2310,7 +2340,7 @@ msgstr "クルド語"
 
 #: libs/unilangs/unilangs.py:231
 msgid "Komi"
-msgstr ""
+msgstr "コミ語"
 
 #: libs/unilangs/unilangs.py:232
 msgid "Cornish"
@@ -2330,11 +2360,11 @@ msgstr "ルクセンブルグ語"
 
 #: libs/unilangs/unilangs.py:236
 msgid "Ganda"
-msgstr ""
+msgstr "ガンダ語"
 
 #: libs/unilangs/unilangs.py:237
 msgid "Limburgish"
-msgstr ""
+msgstr "リンブルフ語"
 
 #: libs/unilangs/unilangs.py:238
 msgid "Lingala"
@@ -2342,7 +2372,7 @@ msgstr "リンガラ語"
 
 #: libs/unilangs/unilangs.py:239
 msgid "Lakota"
-msgstr ""
+msgstr "ラコタ語"
 
 #: libs/unilangs/unilangs.py:240
 msgid "Lao"
@@ -2354,7 +2384,7 @@ msgstr "リトアニア語"
 
 #: libs/unilangs/unilangs.py:242
 msgid "Luba-Katagana"
-msgstr ""
+msgstr "ルバ・カタンガ語"
 
 #: libs/unilangs/unilangs.py:243
 msgid "Luba-Kasai"
@@ -2386,7 +2416,7 @@ msgstr ""
 
 #: libs/unilangs/unilangs.py:250
 msgid "Madurese"
-msgstr ""
+msgstr "マドゥラ語"
 
 #: libs/unilangs/unilangs.py:251
 msgid "Marshallese"
@@ -2410,7 +2440,7 @@ msgstr "マダガスカル語"
 
 #: libs/unilangs/unilangs.py:256
 msgid "Mongolian"
-msgstr ""
+msgstr "モンゴル語"
 
 #: libs/unilangs/unilangs.py:257
 msgid "Mandinka"
@@ -2418,7 +2448,7 @@ msgstr "マンディンカ語"
 
 #: libs/unilangs/unilangs.py:258
 msgid "Moldavian, Moldovan"
-msgstr ""
+msgstr "モルドバ語"
 
 #: libs/unilangs/unilangs.py:259
 msgid "Mohawk"
@@ -2426,7 +2456,7 @@ msgstr "モホーク語"
 
 #: libs/unilangs/unilangs.py:260
 msgid "Manipuri"
-msgstr ""
+msgstr "マニプリ語"
 
 #: libs/unilangs/unilangs.py:261
 msgid "Mossi"
@@ -2450,19 +2480,19 @@ msgstr "ビルマ語"
 
 #: libs/unilangs/unilangs.py:266
 msgid "Hokkien"
-msgstr ""
+msgstr "福佬語"
 
 #: libs/unilangs/unilangs.py:267
 msgid "Naurunan"
-msgstr ""
+msgstr "ナウル語"
 
 #: libs/unilangs/unilangs.py:268
 msgid "Norwegian Bokmal"
-msgstr ""
+msgstr "ノルウェーブークモール語"
 
 #: libs/unilangs/unilangs.py:269
 msgid "North Ndebele"
-msgstr ""
+msgstr "北ンデベレ語"
 
 #: libs/unilangs/unilangs.py:270
 msgid "Nepali"
@@ -2470,7 +2500,7 @@ msgstr "ネパール語"
 
 #: libs/unilangs/unilangs.py:271
 msgid "Ndonga"
-msgstr ""
+msgstr "ンドンゴ語"
 
 #: libs/unilangs/unilangs.py:272
 msgid "Dutch"
@@ -2478,15 +2508,15 @@ msgstr "オランダ語"
 
 #: libs/unilangs/unilangs.py:273
 msgid "Norwegian Nynorsk"
-msgstr ""
+msgstr "ノルウェーニーノシュク語"
 
 #: libs/unilangs/unilangs.py:274
 msgid "Norwegian"
-msgstr ""
+msgstr "ノルウェー語"
 
 #: libs/unilangs/unilangs.py:275
 msgid "Southern Ndebele"
-msgstr ""
+msgstr "南ンデベレ語"
 
 #: libs/unilangs/unilangs.py:276
 msgid "Northern Sotho"
@@ -2494,7 +2524,7 @@ msgstr "北ソト語"
 
 #: libs/unilangs/unilangs.py:277
 msgid "Navajo"
-msgstr ""
+msgstr "ナバホ語"
 
 #: libs/unilangs/unilangs.py:278
 msgid "Chewa"
@@ -2506,7 +2536,7 @@ msgstr "オック語"
 
 #: libs/unilangs/unilangs.py:280
 msgid "Ojibwe"
-msgstr ""
+msgstr "オジブエ語"
 
 #: libs/unilangs/unilangs.py:281
 msgid "Oriya"
@@ -2518,11 +2548,11 @@ msgstr "オロモ語"
 
 #: libs/unilangs/unilangs.py:283
 msgid "Ossetian, Ossetic"
-msgstr ""
+msgstr "オセット語"
 
 #: libs/unilangs/unilangs.py:284
 msgid "Papiamento"
-msgstr ""
+msgstr "パピアメント語"
 
 #: libs/unilangs/unilangs.py:285
 msgid "Punjabi"
@@ -2554,7 +2584,7 @@ msgstr "ケチュア語"
 
 #: libs/unilangs/unilangs.py:292
 msgid "Romansh"
-msgstr ""
+msgstr "ロマンシュ語"
 
 #: libs/unilangs/unilangs.py:293
 msgid "Romanian"
@@ -2566,7 +2596,7 @@ msgstr "ロシア語"
 
 #: libs/unilangs/unilangs.py:295
 msgid "Rundi"
-msgstr ""
+msgstr "ルンディ語"
 
 #: libs/unilangs/unilangs.py:296
 msgid "Macedo"
@@ -2574,7 +2604,7 @@ msgstr ""
 
 #: libs/unilangs/unilangs.py:297
 msgid "Rusyn"
-msgstr ""
+msgstr "ルシン語"
 
 #: libs/unilangs/unilangs.py:298
 msgid "Sanskrit"
@@ -2590,7 +2620,7 @@ msgstr "シンド語"
 
 #: libs/unilangs/unilangs.py:301
 msgid "Northern Sami"
-msgstr ""
+msgstr "北部サーミ語"
 
 #: libs/unilangs/unilangs.py:302
 msgid "Sango"
@@ -2638,11 +2668,11 @@ msgstr "セルビア語"
 
 #: libs/unilangs/unilangs.py:313
 msgid "Serbian, Latin"
-msgstr ""
+msgstr "セルビア語、ラテン"
 
 #: libs/unilangs/unilangs.py:314
 msgid "Swati"
-msgstr ""
+msgstr "スワジ語"
 
 #: libs/unilangs/unilangs.py:315
 msgid "Sundanese"
@@ -2662,7 +2692,7 @@ msgstr "タミール語"
 
 #: libs/unilangs/unilangs.py:319
 msgid "Tetum"
-msgstr ""
+msgstr "テトゥン語"
 
 #: libs/unilangs/unilangs.py:320
 msgid "Telugu"
@@ -2694,7 +2724,7 @@ msgstr "クリンゴン語"
 
 #: libs/unilangs/unilangs.py:327
 msgid "Tonga"
-msgstr ""
+msgstr "トンガ語"
 
 #: libs/unilangs/unilangs.py:328
 msgid "Turkish"
@@ -2702,7 +2732,7 @@ msgstr "トルコ語"
 
 #: libs/unilangs/unilangs.py:329
 msgid "Tsonga"
-msgstr ""
+msgstr "ツォンガ語"
 
 #: libs/unilangs/unilangs.py:330
 msgid "Tswana"
@@ -2718,11 +2748,11 @@ msgstr "トウィ語"
 
 #: libs/unilangs/unilangs.py:333
 msgid "Tahitian"
-msgstr ""
+msgstr "タヒチ語"
 
 #: libs/unilangs/unilangs.py:334
 msgid "Uighur"
-msgstr ""
+msgstr "ウイグル語"
 
 #: libs/unilangs/unilangs.py:335
 msgid "Ukrainian"
@@ -2734,7 +2764,7 @@ msgstr "ムブンドゥ語"
 
 #: libs/unilangs/unilangs.py:337
 msgid "Uyghur"
-msgstr ""
+msgstr "ウイグル語"
 
 #: libs/unilangs/unilangs.py:338
 msgid "Urdu"
@@ -2746,7 +2776,7 @@ msgstr "ウズベク語"
 
 #: libs/unilangs/unilangs.py:340
 msgid "Venda"
-msgstr ""
+msgstr "ヴェンダ語"
 
 #: libs/unilangs/unilangs.py:341
 msgid "Vietnamese"
@@ -2778,7 +2808,7 @@ msgstr "ヨルバ語"
 
 #: libs/unilangs/unilangs.py:348
 msgid "Zhuang, Chuang"
-msgstr ""
+msgstr "チワン語"
 
 #: libs/unilangs/unilangs.py:349
 msgid "Chinese, Yue"
@@ -2845,11 +2875,11 @@ msgstr "固定リンク"
 #: templates/_sharing_widget.html:3 templates/teams/_context_project.html:73
 #: templates/teams/_context_team.html:106
 msgid "Share"
-msgstr ""
+msgstr "共有する"
 
 #: templates/_sharing_widget.html:14
 msgid "Get Embed Code"
-msgstr ""
+msgstr "埋め込みコードを取得する"
 
 #: templates/_testing_widget.html:3
 msgid "We&#8217;d like help testing our subtitling widget"
@@ -2966,7 +2996,7 @@ msgstr ""
 
 #: templates/base.html:70
 msgid "Subtitle Videos"
-msgstr ""
+msgstr "ビデオに字幕を付ける"
 
 #: templates/base.html:71
 msgid "Watch"
@@ -2984,7 +3014,7 @@ msgstr ""
 msgid "Help"
 msgstr "ヘルプ"
 
-#: templates/base.html:78 templates/auth/login.html:29
+#: templates/base.html:78 templates/auth/login.html:30
 #: templates/openid_consumer/signin.html:22
 msgid "Sign In"
 msgstr "サインイン"
@@ -2993,6 +3023,8 @@ msgstr "サインイン"
 msgid ""
 "Amara is a project of <a href=\"http://participatoryculture.org/\">PCF</a>."
 msgstr ""
+"Amara は<a href=\"http://participatoryculture.org/\">PCF</a>のプロジェクトで"
+"す。"
 
 #: templates/base.html:105 templates/profiles/view_profile.html:68
 msgid "About"
@@ -3000,7 +3032,7 @@ msgstr "Amara について"
 
 #: templates/base.html:106
 msgid "Jobs"
-msgstr ""
+msgstr "採用情報"
 
 #: templates/base.html:109
 msgid "Contact Us"
@@ -3016,7 +3048,7 @@ msgstr "サービス利用規約"
 
 #: templates/base.html:121
 msgid "Sentry"
-msgstr ""
+msgstr "セントリー"
 
 #: templates/base.html:124
 msgid "Rosetta"
@@ -3037,7 +3069,7 @@ msgid ""
 msgstr ""
 "\n"
 "        <strong>これは何？</strong> 以下のビデオはデモンストレーション用で"
-"す。 &mdash; '字幕を追加'ボタンをクリックしてください！ \n"
+"す。 &mdash; 「字幕を付ける」ボタンをクリックしてください！ \n"
 "        何も保存されないのでご心配なく！\n"
 "        "
 
@@ -3048,6 +3080,9 @@ msgid ""
 "menu to report bugs or to leave comments for the team.\n"
 "        "
 msgstr ""
+"\n"
+"<strong>ご意見をぜひお寄せください。</strong> バグを報告したり、コメントを残"
+"すには、メインメニューから、「ヘルプ」を選んでください。"
 
 #: templates/dmca.html:6
 msgid "Copyright Infringement Notification"
@@ -3063,6 +3098,10 @@ msgid ""
 "your legal counsel or see Section 512(c)(3) of the Copyright Act to confirm\n"
 "these requirements):\n"
 msgstr ""
+"\n"
+"著作権侵害警告を提出するには、書面にて下記全項を当団体にお送りください (下記"
+"要件を確認するには、弁護士にお問い合わせするか、著作権法の第512条(c)(3)をご参"
+"照ください)：\n"
 
 #: templates/dmca.html:18
 msgid ""
@@ -3098,6 +3137,22 @@ msgid ""
 "of the owner of an exclusive right that is allegedly infringed.\n"
 "Such written notice should be sent to our designated agent as follows:\n"
 msgstr ""
+"\n"
+"独占権が侵害されたとされる所有者の代理として権限を有する者の署名または電子署"
+"名。\n"
+"侵害されたとされる著作物の特定、又は同一のオンラインサイトにおける複数の著作"
+"物が同一の警告に含まれている場合は、同サイトにおける著作物の代表的な目録。\n"
+"著作権を侵害した、又は著作権の侵害行為の主体となっているとされ、削除又はアク"
+"セスを不可能にすべき資料の特定およびサービスプロバイダが同資料を特定するため"
+"に必要な適度な情報。\n"
+"サービスプロバイダが、警告提出者に連絡を取るに必要な適度な情報、すなわち警告"
+"提出者に連絡可能な住所、電話番号、および該当する場合は電子メールアドレス。\n"
+"警告提出者が、誠実な信念をもって、申し立てに記してある資料の使用が著作権保有"
+"者、その代理人又は法律によって認可されていないと信じているという陳述。\n"
+"警告に記されている情報が正確であり、偽りの場合には偽証罪に問われることを承知"
+"の上で、警告提出者が、独占権を侵害されたとされる所有者の代理として権限を有し"
+"ているという陳述。\n"
+"以上の書面による警告を、下記に従って当団体の指定代理人にお送りください：\n"
 
 #: templates/dmca.html:55
 msgid ""
@@ -3243,7 +3298,7 @@ msgstr ""
 
 #: templates/embed_page.html:24
 msgid "Add collaborative subtitling to every video on your site"
-msgstr "サイト上の全てのビデオに協業の字幕機能を追加しましょう"
+msgstr "サイト上の全てのビデオに共著可能な字幕機能を追加しましょう"
 
 #: templates/embed_page.html:28
 msgid "Just drop one line of code into your page:"
@@ -3257,14 +3312,21 @@ msgid ""
 "unisubs/wiki/Widgetizer-script-usage-guide\">see usage notes</a>).\n"
 "        "
 msgstr ""
+"\n"
+"            コードは、<code>&lt;/head&gt;</code> または <code>&lt;/body&gt;</"
+"code> タグの直前に挿入してください (<a href=\"https://github.com/pculture/"
+"unisubs/wiki/Widgetizer-script-usage-guide\">使用注意事項をご参照ください。</"
+"a>)。\n"
+"        "
 
 #: templates/embed_page.html:37
 msgid "This lets you and visitors to your site"
 msgstr ""
+"このコードを埋め込むことによって、あなたのサイトで次のことが可能になります："
 
 #: templates/embed_page.html:41
 msgid "Create subtitles for any compatible video"
-msgstr "互換性のある全てのビデオに字幕を追加しましょう"
+msgstr "互換性のある全てのビデオに字幕を追加する"
 
 #: templates/embed_page.html:44
 msgid "Find subtitles created by others"
@@ -3272,15 +3334,15 @@ msgstr "他の人によって作られた字幕を探す"
 
 #: templates/embed_page.html:47
 msgid "Add translations and improve other's work"
-msgstr "翻訳を加え、他の人によるものを改善する"
+msgstr "翻訳を加え、他の人によるものを編集する"
 
 #: templates/embed_page.html:50
 msgid "Make your videos searchable and accessible"
-msgstr "あなたのビデオを検索されやすく、アクセスしやすくしましょう。"
+msgstr "あなたのビデオを検索しやすく、かつアクセスしやすくする"
 
 #: templates/embed_page.html:53
 msgid "Bring your videos to an international audience"
-msgstr "国際的な観衆にあなたのビデオを提供しましょう"
+msgstr "あなたのビデオを国際レベルに持ち上げる"
 
 #: templates/embed_page.html:58
 msgid "Proud to be a"
@@ -3288,7 +3350,7 @@ msgstr "光栄にも"
 
 #: templates/embed_page.html:58
 msgid "Featured Mozilla Drumbeat Project"
-msgstr "Mozilla Drumbeat Projectによる特集"
+msgstr "Mozilla Drumbeat で注目されているプロジェクト"
 
 #: templates/embed_page.html:66
 msgid ""
@@ -3299,9 +3361,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"        「要翻訳」もしくは「言語選択」ボタンが互換性のある全てのビデオ上に表"
-"示されます。\n"
-"        ユーザーはクリックで字幕を再生(もしくは作成)できます。\n"
+"        「字幕を付ける」もしくは「言語選択」ボタンが互換性のある全てのビデオ"
+"上に表示されます。\n"
+"        ボタンをクリックすると、字幕が表示されます(もしくは字幕を作成すること"
+"ができます)。\n"
 "        "
 
 #: templates/embed_page.html:77
@@ -3318,7 +3381,7 @@ msgstr ""
 
 #: templates/enterprise.html:15
 msgid "Amara Platform"
-msgstr ""
+msgstr "Amara のプラットフォーム"
 
 #: templates/enterprise.html:16
 msgid "Global Reach"
@@ -3326,7 +3389,7 @@ msgstr ""
 
 #: templates/enterprise.html:17 templates/enterprise.html.py:137
 msgid "Quality Control"
-msgstr ""
+msgstr "品質管理"
 
 #: templates/enterprise.html:18 templates/enterprise.html.py:159
 msgid "Automated Workflows"
@@ -3350,11 +3413,11 @@ msgstr ""
 
 #: templates/enterprise.html:27 templates/enterprise.html.py:232
 msgid "Companies"
-msgstr ""
+msgstr "企業"
 
 #: templates/enterprise.html:28 templates/enterprise.html.py:238
 msgid "Universities"
-msgstr ""
+msgstr "大学"
 
 #: templates/enterprise.html:29 templates/enterprise.html.py:248
 msgid "Publishers"
@@ -3394,7 +3457,7 @@ msgstr ""
 
 #: templates/enterprise.html:63
 msgid "Build a Translation Team"
-msgstr "翻訳チームを作成"
+msgstr "翻訳チームの作成"
 
 #: templates/enterprise.html:65
 msgid ""
@@ -3451,7 +3514,7 @@ msgstr ""
 
 #: templates/enterprise.html:87
 msgid "Crowdsource with Professional Review"
-msgstr "専門家のレビューによるクラウドソーシング"
+msgstr "クラウドソーシングによる専門的なレビュー"
 
 #: templates/enterprise.html:89
 msgid ""
@@ -3463,7 +3526,7 @@ msgstr ""
 
 #: templates/enterprise.html:95
 msgid "Work with Any Video Platform"
-msgstr "どんなビデオプラットフォームでも使用できます"
+msgstr "どんなビデオプラットフォームでも使用可能"
 
 #: templates/enterprise.html:97
 msgid ""
@@ -3823,11 +3886,11 @@ msgstr "よくある質問"
 
 #: templates/faq.html:19 templates/faq.html.py:43
 msgid "What is Amara?"
-msgstr ""
+msgstr "Amara とは？"
 
 #: templates/faq.html:20 templates/faq.html.py:54
 msgid "How can I use Amara?"
-msgstr ""
+msgstr "Amara はどのように利用するのですか？"
 
 #: templates/faq.html:21 templates/faq.html.py:65
 msgid "What are the benefits of subtitles?"
@@ -3883,8 +3946,8 @@ msgid ""
 "It says \"Someone else is currently editing these subtitles\" and I can't do "
 "anything.  How long will this last for?  Why does it happen?"
 msgstr ""
-"「誰かが編集中で字幕を翻訳できません」と言われて何もできません。これはいつま"
-"で続くのでしょう？なぜ起きるのでしょうか？"
+"「誰かが字幕を編集中です」というメッセージが現れて、何もすることができないで"
+"す。いつまでこの状態が続きますか？どうしてこんなことが起こるのですか？"
 
 #: templates/faq.html:34 templates/faq.html.py:159
 msgid "Why can't I change the timing on a translation?"
@@ -3895,8 +3958,8 @@ msgid ""
 "How do old revisions work? What if somebody makes a change to my work that I "
 "don't approve of?"
 msgstr ""
-"古い改訂はどう扱われるのでしょうか？私が承認しない変更を誰かが行った場合、ど"
-"うなりますか？"
+"改訂履歴はありますか？私の翻訳を誰かが変えて、私が同意しない場合はどうしたら"
+"いいですか？"
 
 #: templates/faq.html:36 templates/faq.html.py:186
 msgid "How do I add the Amara &quot;embed all videos&quot; code to my site?"
@@ -3904,7 +3967,7 @@ msgstr ""
 
 #: templates/faq.html:37 templates/faq.html.py:199
 msgid "Hey, you don’t list my language!"
-msgstr "私の言語がリストにないんだけど！"
+msgstr "私の言語がリストに含まれていない！"
 
 #: templates/faq.html:45
 msgid ""
@@ -3931,28 +3994,27 @@ msgid ""
 "\t\t"
 msgstr ""
 "\n"
-"ソフトウェアがどのように働くかが分かる<a href=\"http://universalsubtitles."
-"org/demo/\">デモ</a> へようこそ。ウェブ上に既に投稿してあるビデオに<a href="
-"\"http://universalsubtitles.org/videos/create\">字幕を付ける</a>ことも可能で"
-"す。\n"
+"ソフトウェアの仕組みが分かるように<a href=\"http://universalsubtitles.org/"
+"demo/\">デモ</a> をどうぞお試しください。ウェブ上に既に投稿してあるあなたのビ"
+"デオに<a href=\"http://universalsubtitles.org/videos/create\">字幕を付ける</"
+"a>こともできます。\n"
 "\t\t"
 
 #: templates/faq.html:66
 msgid "VVideo subtitles are a gold mine of untapped potential."
-msgstr "ビデオ字幕は未開拓な能力を秘めた金鉱です"
+msgstr "ビデオ字幕は非常に将来性のある未開拓な域です。"
 
 #: templates/faq.html:68
 msgid ""
 "Captions make videos accessible for viewers who are deaf or hard of hearing "
-msgstr "見出しを付ける事で、聴力障害を持つ人達も鑑賞することができます。"
+msgstr ""
+"字幕を付ける事で、聴力障害を持つ人達もビデオを鑑賞することが可能になります。"
 
 #: templates/faq.html:69
 msgid ""
 "Translations make it possible for all of us to watch video in languages that "
 "we don't speak"
-msgstr ""
-"翻訳する事で、自分達の話していない言語で作られたビデオを鑑賞することができま"
-"す。"
+msgstr "翻訳する事で、知らない言語のビデオを鑑賞することができます。"
 
 #: templates/faq.html:70
 msgid ""
@@ -3997,6 +4059,11 @@ msgid ""
 "\t\tto help improve and add more languages.\n"
 "\t  "
 msgstr ""
+"\n"
+"サイトとツールは、多言語に対応しています (ブラウザ設定で言語を指定するだけで"
+"大丈夫)。サイトの改善と新しい言語の追加のために、常に<a href=\"http://blog."
+"universalsubtitles.org/2010/09/13/our-site-is-translateable-looking-for-"
+"translators/\">ボランティア翻訳者</a>を募集しています。"
 
 #: templates/faq.html:99
 msgid ""
@@ -4008,6 +4075,11 @@ msgid ""
 "\t\t  website’s template inside the &lt;head&gt; tags.\n"
 "\t\t"
 msgstr ""
+"\n"
+"一つだけのビデオに字幕を付ける場合は、わたしたちのサイトを利用してください。"
+"あなたのウェブサイトに掲載している複数のビデオに字幕を付ける場合は、<a href="
+"\"http://universalsubtitles.org/en/get-code/\">このコード</a> をあなたのウェ"
+"ブサイトのテンプレートにある&lt;head&gt;タグ内に挿入してください。"
 
 #: templates/faq.html:108
 msgid ""
@@ -4069,6 +4141,13 @@ msgid ""
 "\t\t button and choose the desired file format from the drop-down list.\n"
 "       "
 msgstr ""
+"\n"
+"     字幕がある場合、該当言語の字幕を .SRT, .SSA, .SBV, .TXT, TTML 形式でペー"
+"ジ内にダウンロードすることができます (<a href=\"http://universalsubtitles."
+"org/videos/yKsUAgChJlGA/lt/\">例</a>) 。右下の「字幕を編集する」というボタン"
+"の左側にある、「字幕をダウンロードする」というボタンをクリックして、ドロップ"
+"ダウンからお好きなファイル形式を選択してください。⏎\n"
+"       "
 
 #: templates/faq.html:151
 msgid ""
@@ -4153,11 +4232,11 @@ msgstr "プロジェクトの発展に注目していてください！"
 
 #: templates/feedback_response.html:9
 msgid "Announcement Signup"
-msgstr ""
+msgstr "お知らせに登録する"
 
 #: templates/feedback_response.html:12
 msgid "Best"
-msgstr ""
+msgstr "草々"
 
 #: templates/feedback_response.html:16
 msgid ""
@@ -4169,15 +4248,15 @@ msgstr ""
 
 #: templates/index.html:18
 msgid "The easiest way to caption and translate any video."
-msgstr "ビデオを翻訳し、字幕を追加する最も簡単な方法です"
+msgstr "簡単にビデオに字幕を付け、翻訳しよう"
 
 #: templates/index.html:19
 msgid "Subtitles make videos more powerful, more global, and more searchable."
-msgstr "字幕はビデオをより強力に、グローバルに、見つけやすくします。"
+msgstr "字幕の力でビデオをより効果的、国際的、かつ検索しやすくしよう"
 
 #: templates/index.html:24
 msgid "Subtitle a Video Now"
-msgstr "今すぐ字幕を追加"
+msgstr "今すぐビデオに字幕を付ける"
 
 #: templates/index.html:26
 msgid "Subtitle"
@@ -4185,19 +4264,19 @@ msgstr "字幕"
 
 #: templates/index.html:27
 msgid "Works with YouTube, Vimeo, HTML5, and more."
-msgstr "YouTube、Vimeo、HTML5などで動作します。"
+msgstr "YouTube、Vimeo、HTML5などに適合。"
 
 #: templates/index.html:30
 msgid "Features"
-msgstr "機能"
+msgstr "特徴"
 
 #: templates/index.html:32
 msgid "Embed the video anywhere"
-msgstr "好きな場所にビデオを埋め込みましょう"
+msgstr "好きな場所にビデオを埋め込むことが可能"
 
 #: templates/index.html:33
 msgid "Add subtitles yourself or ask viewers to help."
-msgstr "自分で字幕を追加するか、閲覧者にお願いをしましょう"
+msgstr "自分で字幕を付け加え、または閲覧者に協力してもらうことが可能"
 
 #: templates/index.html:34
 msgid "Full site integration"
@@ -4247,11 +4326,11 @@ msgstr "世界で最大、最強の字幕／翻訳追加プラットフォーム
 
 #: templates/index.html:86 templates/index.html.py:88
 msgid "TED Team"
-msgstr ""
+msgstr "TED チーム"
 
 #: templates/index.html:94 templates/index.html.py:95
 msgid "Mozilla Team"
-msgstr ""
+msgstr "Mozilla チーム"
 
 #: templates/index.html:100 templates/index.html.py:101
 msgid "Khan Integration"
@@ -4267,15 +4346,15 @@ msgstr "Al Jazeera チーム"
 
 #: templates/index.html:120
 msgid "Newshour Team"
-msgstr ""
+msgstr "Newshour チーム"
 
 #: templates/index.html:121
 msgid "NewsHour Team"
-msgstr ""
+msgstr "NewsHour チーム"
 
 #: templates/index.html:127
 msgid "More Popular"
-msgstr "人気をもっと"
+msgstr "人気ビデオををもっと観る"
 
 #: templates/index.html:128
 msgid "Most Popular Today"
@@ -4291,16 +4370,16 @@ msgstr "全期間のトップ"
 
 #: templates/index.html:138
 msgid "More Featured"
-msgstr "特集をもっと"
+msgstr "注目ビデオをもっと観る"
 
 #: templates/index.html:139 templates/videos/featured_videos.html:36
 #: templates/videos/volunteer.html:25 templates/videos/watch.html:25
 msgid "Featured Videos"
-msgstr "特集ビデオ"
+msgstr "注目ビデオ"
 
 #: templates/index_old.html:26
 msgid "Easily caption and translate your videos, with help from your viewers."
-msgstr "視聴者の助けを借りて、いとも簡単にビデオに説明文や翻訳を付けましょう。"
+msgstr "視聴者の助けを借りて、いとも簡単にビデオに字幕や翻訳を付けましょう。"
 
 #: templates/index_old.html:28
 msgid ""
@@ -4315,8 +4394,7 @@ msgid ""
 "It's powered by viewers and other volunteers: it's collaborative editing and "
 "translation, like a wiki."
 msgstr ""
-"視聴者とボランティアによって支援されます：wikiのようにコラボレイティブな編集"
-"と翻訳です"
+"視聴者とボランティアによって支援されます：wikiのように共著的な編集と翻訳です"
 
 #: templates/index_old.html:30
 msgid "It's the world's easiest subtitle creator - type and tap."
@@ -4344,11 +4422,11 @@ msgstr "この字幕タブをほんの数秒でビデオに追加します"
 
 #: templates/index_old.html:65
 msgid "For an individual video"
-msgstr "個人のビデオに"
+msgstr "個別のビデオに"
 
 #: templates/index_old.html:68
 msgid "enter a video URL to enable and then embed anywhere"
-msgstr "URLを入力して好きなところに追加しましょう"
+msgstr "ビデオのURLを入力してどこにでも埋め込むことができます"
 
 #: templates/index_old.html:71
 msgid "For every video on a page or site"
@@ -4364,15 +4442,15 @@ msgstr ""
 
 #: templates/index_old.html:77
 msgid "Amara works with these video sites and formats"
-msgstr ""
+msgstr "Amara は以下ののビデオサイトと形式に対応しています。"
 
 #: templates/index_old.html:89
 msgid "With Amara, you can:"
-msgstr ""
+msgstr "Amara では以下のことができます："
 
 #: templates/index_old.html:91
 msgid "Add subtitles"
-msgstr "字幕の追加"
+msgstr "字幕を付ける"
 
 #: templates/index_old.html:92
 msgid ""
@@ -4380,13 +4458,13 @@ msgid ""
 "toyour video (or your site) and click the \"subtitle me\" button. The rest "
 "is simple! Totally free, and no software to download."
 msgstr ""
-"ビデオに字幕を追加する最も簡単な方法をご用意しました。あなたのビデオ(もしくは"
-"サイト)に字幕ウィジェットを追加して\"字幕を追加\"ボタンをクリックしてくださ"
-"い。完全無料でソフトウェアのダウンロードは不要です。"
+"ビデオに字幕を付ける最も簡単な方法をご用意しました。あなたのビデオ(もしくはサ"
+"イト)に字幕ウィジェットを追加して「字幕を付ける」ボタンをクリックしてくださ"
+"い。あとはとても簡単です。完全無料でソフトウェアのダウンロードは不要です。"
 
 #: templates/index_old.html:96
 msgid "Add translations"
-msgstr "翻訳の追加"
+msgstr "翻訳を付け加える"
 
 #: templates/index_old.html:98
 msgid ""
@@ -4401,10 +4479,10 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"          一旦、字幕を付加することで、全ての視聴者がどんな言語でも字幕を\n"
-"          付加できるようになります。 視聴者を混乱させる機械翻訳はもう不要\n"
-"          です。Universal Subtitlesは視聴者のコミュニティから高品質な翻訳\n"
-"          を収集することを可能にします。\n"
+"          字幕を付けることによって、視聴者が字幕をどんな言語にでも翻訳\n"
+"          することができるようになります。 視聴者を混乱させるような機械\n"
+"          翻訳はもう不要です。Universal Subtitles では視聴者のコミュニティ\n"
+"          からより正確な翻訳が得られます。\n"
 "          "
 
 #: templates/index_old.html:108
@@ -4424,10 +4502,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"          視聴者(そして、字幕コミュニティのメンバー)はどんな字幕や翻訳も\n"
-"          改善することができます。これにより、wikipediaの記事のように、\n"
-"          字幕は常により良くなって行きます。あなたのビデオをもっと\n"
-"          アクセスしやすくするために、世界中の視聴者を動員します。\n"
+"          字幕や翻訳は、視聴者(および字幕コミュニティのメンバー) が編集\n"
+"          することができます。そうすることによって、ウィキペディアの記事\n"
+"          のように、字幕の質がより良くなっていきます。あなたのビデオが\n"
+"          もっと広まるように、世界中の視聴者を動員します。\n"
 "        "
 
 #: templates/index_old.html:122
@@ -4436,7 +4514,7 @@ msgstr "無料で、ソフトウェアのダウンロードも必要ありませ
 
 #: templates/index_old.html:123
 msgid "Add our embed code to your videos."
-msgstr "私達の埋め込みコードをビデオに追加してください。"
+msgstr "ビデオに埋め込みコードを加える。"
 
 #: templates/index_old.html:124
 msgid ""
@@ -4448,14 +4526,14 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"    ビデオを投稿し、サイトに追加する埋め込みコードを取得してください。\n"
-"    ページがロードされると、(小さな、シンプルなボタンとして)\n"
-"    字幕ツールがビデオの下に表示されます。\n"
+"    ビデオを投稿されたら、あなたのサイトに加えるための埋め込みコードを\n"
+"    提供します。ページが表示したら、字幕ツールが、(小さな、シンプルな\n"
+"    ボタンとして)ビデオの下に表示されます。\n"
 "    "
 
 #: templates/index_old.html:132
 msgid "Subtitling tools open in your page."
-msgstr "字幕ツールがページに追加されます"
+msgstr "字幕ツールがページ内に表示される。"
 
 #: templates/index_old.html:133
 msgid ""
@@ -4467,15 +4545,16 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"      誰かが\"翻訳して\"ボタンをクリックすると、\n"
-"      字幕インタフェースがページに現れます。(ほとんどのユーザーはサイトを離れ"
-"ることはありません)\n"
-"      作成した字幕は、あなたのサイト上で、他のユーザーが見れるようになりま"
-"す。"
+"      誰かが「字幕を付ける」ボタンをクリックすると、\n"
+"      字幕インタフェースがページに現れます(ほとんどのユーザはサイトを離れるこ"
+"とはありません)。\n"
+"      作成される字幕は、あなたのサイト上で、他のユーザーからも見れるようにな"
+"ります。\n"
+"      "
 
 #: templates/index_old.html:142
 msgid "How it works"
-msgstr "動作手順"
+msgstr "仕組み"
 
 #: templates/index_old.html:144
 msgid ""
@@ -4487,10 +4566,10 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"      あなたのビデオにウィジェットが追加されました。視聴者と一緒に字幕が追加"
-"できます。\n"
-"      字幕はサイト上に保存されます。サイト上では個々のビデオに協業スペースが"
-"設けられ、変更履歴の確認やフィードバックがやりとりできます。\n"
+"      あなたのビデオにウィジェットがを追加します。そうすると、あなたと視聴者"
+"ともに、字幕を加えることができます。\n"
+"      字幕はわれわれのサイトに保存されます。当サイトではそれぞれのビデオ専用"
+"の共著スペースが設けられ、変更履歴やフィードバックのやりとりができます。\n"
 "    "
 
 #: templates/index_old.html:149
@@ -4499,17 +4578,18 @@ msgstr "デモを試す"
 
 #: templates/index_old.html:156
 msgid "Why Amara is different"
-msgstr ""
+msgstr "Amara が特殊なわけ"
 
 #: templates/index_old.html:158
 msgid ""
 "It's built by a 501(c)3 nonprofit working with a community of volunteers"
 msgstr ""
-"ボランティアのコミュニティによる501(c)3 非営利活用によって作成されています。"
+"われわれは、501(c)3 非営利団体で、ボランティアコミュニティーによって支えられ"
+"ています"
 
 #: templates/index_old.html:158
 msgid "find out how to volunteer"
-msgstr "どうやってボランティアをするか見つける"
+msgstr "ボランティアに興味あるかたはこちらへ"
 
 #: templates/index_old.html:160
 msgid "The code is free and open source"
@@ -4537,8 +4617,8 @@ msgid ""
 "You don't have to host your video with us, and you're not dependent on any "
 "one video host, platform, or format."
 msgstr ""
-"ビデオのホストになる必要も無いし、ビデオのホストやプラットフォーム、フォー"
-"マットに依存する必要もありません。"
+"ビデオを当サイトに掲載する必要はないし、ビデオのホストやプラットフォーム、"
+"フォーマットに依存する必要もありません。"
 
 #: templates/index_old.html:164
 msgid "People are free to add subtitles to any video"
@@ -4558,7 +4638,7 @@ msgstr "寄付する"
 
 #: templates/opensubtitles2010.html:8 templates/opensubtitles2010.html:26
 msgid "Open Subtitles Design Summit"
-msgstr ""
+msgstr "オープン字幕デザインサミット"
 
 #: templates/opensubtitles2010.html:28
 msgid ""
@@ -4570,13 +4650,15 @@ msgstr ""
 
 #: templates/opensubtitles2010.html:34
 msgid "Meeting Goals"
-msgstr ""
+msgstr "会議目的"
 
 #: templates/opensubtitles2010.html:37
 msgid ""
 "<strong>Connect</strong> major stakeholders from projects, organizations, "
 "and movements that have open subtitling needs or focus."
 msgstr ""
+"オープン字幕を必要としている、もしくはオープン字幕に注目しているプロジェク"
+"ト、組織・団体、動きの主な利害関係者同士を<strong>つなげる</strong>"
 
 #: templates/opensubtitles2010.html:41
 msgid ""
@@ -4584,12 +4666,16 @@ msgid ""
 "aware of existing technology that can be leveraged. Find logical places for "
 "collaboration/cooperation."
 msgstr ""
+"字幕のニーズを理解し、既存の技術を考慮しつつ<strong>解決方法を見つけ出す</"
+"strong>。協力・協同できる事柄を見つけ出す。"
 
 #: templates/opensubtitles2010.html:44
 msgid ""
 "<strong>Move towards</strong> standardizing solutions and pushing forward "
 "the state of the art in open subtiting."
 msgstr ""
+"ソリューションの標準化と最新技術を取り入れたオープン字幕を<strong>目指す</"
+"strong>。"
 
 #: templates/opensubtitles2010.html:53
 msgid "Participants"
@@ -4603,12 +4689,18 @@ msgid ""
 "other individuals and organizations with a stake in the subtitling world. "
 "We'll make a roster available when the event draws closer."
 msgstr ""
+"参加者は、ビデオ制作者およびプロデューサー、エンドユーザ、主要の動画共有サー"
+"ビスプロバイダ、標準化エンジニア、ユーザ補助擁護者、オープンソース開発者、教"
+"育指導者、その他字幕分野に関係のある個人や団体です。イベント日に近づいたら参"
+"加者リストを発表します。"
 
 #: templates/opensubtitles2010.html:57
 msgid ""
 "Attendees are selected by invitation; however, if you or your organization "
 "would like to participate, please contact:"
 msgstr ""
+"当サミットへの参加は、ご招待の方のみに限りますが、参加されたい方はこちらまで"
+"ご連絡ください："
 
 #: templates/opensubtitles2010.html:62
 msgid "When"
@@ -4659,6 +4751,14 @@ msgid ""
 "            and make sense of the ever growing sea of online video.\n"
 "           "
 msgstr ""
+"\n"
+"このサミットの主要目的は、見出しと字幕の普及とその使い勝手の改善についてで"
+"す。いずれも、非常に欠けている事柄です。インターネット動画利用が急上昇し、字"
+"幕に頼っている人々が置き去りにされてしまう中で、重要なサミットとなります。あ"
+"らゆる文化から新しいユーザが一斉にインターネットを使い始めている中、技術を標"
+"準化かつ遍在化することによって、文化の枠を超えて視聴者の数を飛躍的に増やすこ"
+"とが可能です。字幕を増やすことによって、膨らむ一方のオンライン動画の処理や索"
+"引付けがより容易になります。"
 
 #: templates/opensubtitles2010.html:91
 msgid "Organizers, Facilitators, Sponsors"
@@ -4687,6 +4787,9 @@ msgid ""
 "are the most powerful way to facilitate interaction, build networks, and "
 "collaborate."
 msgstr ""
+"<a href=\"http://www.aspirationtech.org/\">Aspiration</a> には進行と議題の準"
+"備をしていただきます。Aspiration は、交流を斡旋して人脈を築き、協同するには、"
+"面と向かっての出会いが最も効果的であると考えています。"
 
 #: templates/opensubtitles2010.html:103
 msgid "Sponsors"
@@ -4710,7 +4813,7 @@ msgstr ""
 
 #: templates/admin/base_site.html:4 templates/admin/base_site.html.py:7
 msgid "Amara"
-msgstr ""
+msgstr "Amara"
 
 #: templates/admin/base_site.html:12
 msgid "View site"
@@ -4722,7 +4825,7 @@ msgstr "設定の編集"
 
 #: templates/admin/teams/team/change_list.html:9
 msgid "Send"
-msgstr "送信済"
+msgstr "送信する"
 
 #: templates/auth/_email_confirmation_notification.html:6
 msgid "Resend confirmation email"
@@ -4730,46 +4833,42 @@ msgstr "確認メールを再送信"
 
 #: templates/auth/delete_user.html:9
 msgid "Are you sure that you want to permanently delete your profile?"
-msgstr "本当に、あなたのプロファイルを永久的に消去しても良いですか？"
+msgstr "本当に、あなたのプロファイルを永久的に消去しますか？"
 
 #: templates/auth/delete_user.html:13 templates/messages/list.html:83
 #: templates/messages/sent.html:51 templates/teams/tasks.html:381
 msgid "Delete"
-msgstr "削除"
+msgstr "削除する"
 
 #: templates/auth/delete_user.html:14
 #: templates/profiles/_select_language_dialog.html:30
 #: templates/teams/settings-projects-add.html:67
 #: templates/teams/tasks.html:435 templates/videos/_feedback_form.html:25
-#: templates/videos/subtitle-view.html:387
+#: templates/videos/subtitle-view.html:389
 msgid "Cancel"
-msgstr "中止"
-
-#: templates/auth/login.html:21
-msgid "Show more providers"
-msgstr ""
-
-#: templates/auth/login.html:24
-msgid "Or use your Amara account"
-msgstr ""
+msgstr "中止する"
 
 #: templates/auth/login.html:25
+msgid "Or use your Amara account"
+msgstr "または Amara アカウントを利用する"
+
+#: templates/auth/login.html:26
 msgid "Don't have one?"
-msgstr ""
+msgstr "アカウントをお持ちでない方"
 
-#: templates/auth/login.html:28
+#: templates/auth/login.html:29
 msgid "Forgot your password?"
-msgstr ""
-
-#: templates/auth/login.html:33
-msgid "Create an Amara account"
-msgstr ""
+msgstr "パスワードをお忘れの方"
 
 #: templates/auth/login.html:34
-msgid "Already have one?"
-msgstr ""
+msgid "Create an Amara account"
+msgstr "Amara のアカウントを作成する"
 
-#: templates/auth/login.html:37
+#: templates/auth/login.html:35
+msgid "Already have one?"
+msgstr "すでにアカウントをお持ちの方"
+
+#: templates/auth/login.html:38
 msgid "Create Account"
 msgstr "アカウントを作成する"
 
@@ -4779,7 +4878,7 @@ msgstr "アカウントを作成する"
 #: templates/videos/_video_url_panel.html:29 templates/videos/diffing.html:107
 #: templates/videos/diffing.html.py:172
 msgid "ago"
-msgstr ""
+msgstr "前"
 
 #: templates/jsdemo/home.html:16
 msgid "Subtitles and Captions for Every Video on the Web"
@@ -4896,19 +4995,19 @@ msgstr "デモを使ってみる"
 
 #: templates/livesettings/site_settings.html:48
 msgid "Documentation"
-msgstr ""
+msgstr "参考文献"
 
 #: templates/livesettings/site_settings.html:48
 msgid "Change password"
-msgstr "パスワードを変更"
+msgstr "パスワードを変更する"
 
 #: templates/livesettings/site_settings.html:48
 msgid "Log out"
-msgstr "ログアウト"
+msgstr "ログアウトする"
 
 #: templates/livesettings/site_settings.html:52
 msgid "Edit Site Settings"
-msgstr "サイトの設定を編集"
+msgstr "サイトの設定を編集する"
 
 #: templates/livesettings/site_settings.html:59
 msgid "Livesettings are disabled for this site."
@@ -4917,11 +5016,14 @@ msgstr "本サイトに対するライブセッティングは無効です"
 #: templates/livesettings/site_settings.html:60
 msgid "All configuration options must be edited in the site settings.py file"
 msgstr ""
+"設定オプションの変更は、サイトの settings.py ファイルにて行ってください。"
 
 #: templates/livesettings/site_settings.html:66
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
 msgstr[0] ""
+"one: 下記エラーを直してください。\n"
+"other: 下記エラーを直してください。"
 
 #: templates/livesettings/site_settings.html:82
 #, python-format
@@ -4930,11 +5032,11 @@ msgstr "グループ設定: %(name)s"
 
 #: templates/livesettings/site_settings.html:108
 msgid "Update Settings"
-msgstr "設定を更新"
+msgstr "設定を更新する"
 
 #: templates/livesettings/site_settings.html:109
 msgid "Uncollapse all"
-msgstr "全て展開"
+msgstr "全て展開する"
 
 #: templates/livesettings/site_settings.html:113
 msgid "You don't have permission to edit values."
@@ -4974,11 +5076,11 @@ msgstr ""
 
 #: templates/messages/list.html:74
 msgid "Mark Read"
-msgstr ""
+msgstr "開封済みにする"
 
 #: templates/messages/list.html:79
 msgid "Reply"
-msgstr "返信"
+msgstr "返信する"
 
 #: templates/messages/list.html:93
 msgid "You have no messages."
@@ -4987,7 +5089,7 @@ msgstr "メッセージはありません。"
 #: templates/messages/list.html:100 templates/messages/new.html:74
 #: templates/messages/sent.html:66
 msgid "Inbox"
-msgstr "受信"
+msgstr "受信箱"
 
 #: templates/messages/list.html:101 templates/messages/new.html:75
 #: templates/messages/sent.html:67
@@ -4996,15 +5098,15 @@ msgstr "送信済み"
 
 #: templates/messages/list.html:124
 msgid "Send Message"
-msgstr "メッセージ送信"
+msgstr "メッセージを送る"
 
 #: templates/messages/new.html:6
 msgid "Compose a Message"
-msgstr ""
+msgstr "メッセージを新規作成する"
 
 #: templates/messages/sent.html:6
 msgid "Sent Messages"
-msgstr "メッセージを送る"
+msgstr "送信済みメッセージ"
 
 #: templates/messages/sent.html:42 templates/messages/sent.html.py:44
 msgid "Avatar"
@@ -5040,6 +5142,18 @@ msgid ""
 "Thanks, <br/>\n"
 "The Amara team\n"
 msgstr ""
+"Amara にご登録していただき、ありがとうございます！<br/>\n"
+"\n"
+"ユーザアカウント %(user)s を universalsubtitles.org で作成された方は、下記の"
+"リンクにてメールアドレス (%(email)s) を確認してください：<br/></p>\n"
+"\n"
+"<p><a href=\"%(activate_url)s\">confirm email</a></p>\n"
+"\n"
+"<p>もしこのメッセージに身に覚えのない場合は、申し訳ありませんが無視してくだ"
+"さって結構です。ご質問等ありましたら、feedback@universalsubtitles.org までお"
+"問い合わせください。</p>\n"
+"\n"
+"Amara チーム一同\n"
 
 #: templates/messages/email/message_received.html:7
 #, python-format
@@ -5047,6 +5161,8 @@ msgid ""
 "\n"
 "%(author)s has just sent you a message on Amara:\n"
 msgstr ""
+"\n"
+"%(author)s さんが Amara でメッセージを送りました：\n"
 
 #: templates/messages/email/message_received.html:14
 msgid "Reply to this message"
@@ -5054,11 +5170,11 @@ msgstr "このメッセージに返信する"
 
 #: templates/messages/email/team-you-have-been-invited.html:14
 msgid "Join"
-msgstr "参加"
+msgstr "参加する"
 
 #: templates/messages/email/team-you-have-been-invited.html:16
 msgid "Reject"
-msgstr ""
+msgstr "拒否する"
 
 #: templates/messages/email/videos-imported.html:6
 #, python-format
@@ -5077,11 +5193,21 @@ msgid ""
 "Thanks, <br/>\n"
 "The Amara team\n"
 msgstr ""
+"あなたのビデオ %(imported_videos)s がインポートされました。\n"
+"\n"
+"<p>ビデオをみるには、<a href=\"%(my_videos_url)s\">あなたのユーザページ</a>を"
+"ご訪問ください。</p>\n"
+"\n"
+"<p>もしこのメッセージに身に覚えのない場合は、申し訳ありませんが無視してくだ"
+"さって結構です。ご質問等ありましたら、feedback@universalsubtitles.org までお"
+"問い合わせください。</p>\n"
+"\n"
+"Amara チーム一同\n"
 
 #: templates/openid_consumer/signin.html:14
 #: templates/registration/password_reset_form.html:12
 msgid "Back to Sign In"
-msgstr ""
+msgstr "ログインページに戻る"
 
 #: templates/profiles/_filters.html:5
 msgid "User Details"
@@ -5098,53 +5224,53 @@ msgstr ""
 
 #: templates/profiles/_filters_dashboard.html:11
 msgid "My Videos"
-msgstr ""
+msgstr "マイ・ビデオ"
 
 #: templates/profiles/_require_email_dialog.html:7
 msgid ""
 "It looks like you logged in without submitting an email. We need an email "
 "address to notify you (for example, when others edit your work)."
 msgstr ""
-"emailの登録をせずにログインしたようです。あなたへ連絡するため、emailアドレス"
-"が必要です(例えば、あなたの作業した物が編集されたときなど)。"
+"メールアドレスの登録をせずにログインしたようです。あなたに連絡するため、メー"
+"ルアドレスが必要です(例えば、あなたの翻訳が他人に編集されたときなど)。"
 
 #: templates/profiles/_require_email_dialog.html:8
 msgid "Please enter a valid e-mail address"
-msgstr "正しいe-mailアドレスを入力して下さい。"
+msgstr "有効なメールアドレスを入力して下さい。"
 
 #: templates/profiles/_require_email_dialog.html:10
 msgid "Enter valid email please."
-msgstr "正しいemailを入力して下さい。"
+msgstr "有効なメールアドレスを入力して下さい。"
 
 #: templates/profiles/_select_language_dialog.html:4
 #: templates/search/search.html:154 templates/videos/featured_videos.html:55
 #: templates/videos/popular_videos.html:90
 msgid "Loading..."
-msgstr "ロードしています。。。"
+msgstr "ロード中..."
 
 #: templates/profiles/_select_language_dialog.html:5
 msgid "Select your Languages"
-msgstr "言語を選択"
+msgstr "言語を選択する"
 
 #: templates/profiles/_select_language_dialog.html:10
 msgid "Select at least one language."
-msgstr "最低でも一言語選択"
+msgstr "言語は最低一つは選択してください。"
 
 #: templates/profiles/_select_language_dialog.html:11
 msgid "Saving your language settings..."
-msgstr "言語の設定を保存。。。"
+msgstr "言語の設定を保存中..."
 
 #: templates/profiles/_select_language_dialog.html:15
 msgid "We really need your help!"
-msgstr "本当にあなたの協力が必要なのです!"
+msgstr "あなたの協力が必要です!"
 
 #: templates/profiles/_select_language_dialog.html:16
 msgid "What languages do you speak?"
-msgstr "どんな言語をお使いですか？"
+msgstr "何語ができますか？"
 
 #: templates/profiles/_select_language_dialog.html:29
 msgid "Submit"
-msgstr "送信"
+msgstr "送信する"
 
 #: templates/profiles/_tabs.html:6 templates/profiles/_top_user_panel.html:16
 msgid "Profile"
@@ -5170,7 +5296,7 @@ msgstr "活動なし"
 #: templates/profiles/_video_detail.html:8
 #: templates/teams/members-list.html:102
 msgid "language"
-msgstr ""
+msgstr "言語"
 
 #: templates/profiles/_video_detail.html:10
 #: templates/teams/_team_video_detail.html:28
@@ -5189,12 +5315,12 @@ msgstr ""
 #: templates/profiles/dashboard.html:50 templates/search/_search_form.html:28
 #: templates/teams/tasks.html:167
 msgid "Subtitles into"
-msgstr "字幕"
+msgstr "字幕言語"
 
 #: templates/profiles/dashboard.html:55 templates/teams/tasks.html:172
 #: templates/teams/tasks.html.py:188 templates/videos/diffing.html:87
-#: templates/videos/subtitle-view.html:147
-#: templates/videos/subtitle-view.html:194
+#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:196
 msgid "Subtitles"
 msgstr "字幕"
 
@@ -5205,7 +5331,7 @@ msgstr ""
 
 #: templates/profiles/dashboard.html:67
 msgid "Decline Task"
-msgstr ""
+msgstr "タスクを拒否する"
 
 #: templates/profiles/dashboard.html:80
 msgid "You have no open tasks assigned to you."
@@ -5229,7 +5355,7 @@ msgstr ""
 
 #: templates/profiles/edit_profile.html:5
 msgid "Edit My Profile"
-msgstr "自分のプロファイルを編集"
+msgstr "プロファイルを編集する"
 
 #: templates/profiles/edit_profile.html:16
 msgid "Do you really want delete your picture?"
@@ -5239,7 +5365,7 @@ msgstr ""
 #: templates/videos/_paste_transcription.html:106
 #: templates/videos/_video_url_panel.html:77
 msgid "Saving..."
-msgstr "保存中。。。"
+msgstr "保存中..."
 
 #: templates/profiles/edit_profile.html:51
 msgid "Edit Your Profile"
@@ -5255,7 +5381,7 @@ msgstr ""
 
 #: templates/profiles/edit_profile.html:83
 msgid "remove picture"
-msgstr "写真を削除"
+msgstr "写真を削除する"
 
 #: templates/profiles/edit_profile.html:88
 msgid "Upload picture"
@@ -5301,15 +5427,15 @@ msgstr ""
 #: templates/profiles/edit_profile.html:183
 #: templates/teams/settings-permissions.html:118
 msgid "Save Changes"
-msgstr "変更を保存"
+msgstr "変更を保存する"
 
 #: templates/profiles/edit_profile.html:186
 msgid "Permanently Delete Your Profile"
-msgstr "永久的にプロファイルを消去"
+msgstr "永久的にプロファイルを消去する"
 
 #: templates/profiles/my_videos.html:6 templates/profiles/my_videos.html:22
 msgid "My videos"
-msgstr "自分のビデオ"
+msgstr "マイビデオ"
 
 #: templates/profiles/view_profile.html:56
 msgid "Member since"
@@ -5356,7 +5482,7 @@ msgstr "パスワードを変更しました"
 
 #: templates/registration/password_reset_complete.html:14
 msgid "Your password has been set.  You may go ahead and sign in now."
-msgstr ""
+msgstr "パスワードを設定しました。ログインしてください。"
 
 #: templates/registration/password_reset_confirm.html:4
 msgid "Password reset confirmation"
@@ -5453,11 +5579,11 @@ msgstr "パスワードを変更する"
 
 #: templates/search/_search_form.html:12
 msgid "Search videos"
-msgstr "ビデオを検索"
+msgstr "ビデオを検索する"
 
 #: templates/search/_search_form.html:24
 msgid "Videos In"
-msgstr "言語"
+msgstr "ビデオ言語"
 
 #: templates/search/_video_item.html:14
 #: templates/videos/_video_languages.html:8
@@ -5471,6 +5597,13 @@ msgid_plural ""
 "              %(number)s languages\n"
 "          "
 msgstr[0] ""
+"\n"
+"one: ⏎\n"
+"              %(number)s 言語⏎\n"
+"          \n"
+"other: ⏎\n"
+"              %(number)s 言語⏎\n"
+"          "
 
 #: templates/search/_video_item.html:24
 msgid "lines"
@@ -5490,7 +5623,7 @@ msgstr "(すべての)再生数"
 
 #: templates/search/search.html:86 templates/search/search.html.py:125
 msgid "Search Videos"
-msgstr "ビデオを検索"
+msgstr "ビデオを検索する"
 
 #: templates/search/search.html:88
 msgid "Search Results for"
@@ -5519,89 +5652,7 @@ msgstr "ユーザー別集計"
 #: templates/statistic/index.html:27
 #: templates/statistic/videos_statistic.html:6
 msgid "Videos statistic"
-msgstr "ビデオ別統計"
-
-#: templates/statistic/index.html:28
-msgid "Languages statistic"
-msgstr "言語別集計"
-
-#: templates/statistic/index.html:73
-#: templates/statistic/language_statistic.html:31
-msgid "stats for"
-msgstr "集計"
-
-#: templates/statistic/index.html:74
-#: templates/statistic/language_statistic.html:32
-#: templates/statistic/languages_statistic.html:37
-msgid "day"
-msgstr "日"
-
-#: templates/statistic/index.html:75
-#: templates/statistic/language_statistic.html:33
-#: templates/statistic/languages_statistic.html:38
-msgid "week"
-msgstr "週"
-
-#: templates/statistic/index.html:76
-#: templates/statistic/language_statistic.html:34
-#: templates/statistic/languages_statistic.html:39
-msgid "month"
-msgstr "月"
-
-#: templates/statistic/index.html:77
-#: templates/statistic/language_statistic.html:35
-#: templates/statistic/languages_statistic.html:40
-#: templates/statistic/users_statistic.html:16
-#: templates/statistic/videos_statistic.html:16
-msgid "TOTAL"
-msgstr "合計"
-
-#: templates/statistic/index.html:83
-msgid "Total number of videos captioned"
-msgstr "解説付きビデオの合計"
-
-#: templates/statistic/index.html:90
-msgid "Tweets"
-msgstr "ツイート数"
-
-#: templates/statistic/index.html:97
-msgid "Facebook shares"
-msgstr "フェイスブックシェア数"
-
-#: templates/statistic/index.html:104
-msgid "Email shares"
-msgstr "Eメールシェア数"
-
-#: templates/statistic/language_statistic.html:25
-msgid "Language statistic for "
-msgstr "言語別集計"
-
-#: templates/statistic/language_statistic.html:26
-#: templates/statistic/languages_statistic.html:31
-#: templates/statistic/users_statistic.html:7
-#: templates/statistic/videos_statistic.html:7
-msgid "General statistic"
-msgstr "全般集計"
-
-#: templates/statistic/language_statistic.html:41
-msgid "Videos count"
-msgstr "ビデオ数"
-
-#: templates/statistic/language_statistic.html:48
-msgid "Subtitles views count"
-msgstr "字幕付きビデオ数"
-
-#: templates/statistic/language_statistic.html:55
-msgid "Videos views count"
-msgstr "ビデオ視聴数"
-
-#: templates/statistic/languages_statistic.html:25
-msgid "Language statistic"
-msgstr "言語別集計"
-
-#: templates/statistic/languages_statistic.html:36
-msgid "Lanuage"
-msgstr "言語"
+msgstr "ビデオ別集計"
 
 #: templates/statistic/log_entry_model_admin.html:37
 #: templates/statistic/logger_model_admin.html:37
@@ -5622,6 +5673,11 @@ msgstr "尺(秒)"
 msgid "Activity statistic"
 msgstr "アクティビティ集計"
 
+#: templates/statistic/users_statistic.html:7
+#: templates/statistic/videos_statistic.html:7
+msgid "General statistic"
+msgstr "全般集計"
+
 #: templates/statistic/users_statistic.html:13
 #: templates/statistic/videos_statistic.html:13
 msgid "Day"
@@ -5636,6 +5692,11 @@ msgstr "週"
 #: templates/statistic/videos_statistic.html:15
 msgid "Month"
 msgstr "月"
+
+#: templates/statistic/users_statistic.html:16
+#: templates/statistic/videos_statistic.html:16
+msgid "TOTAL"
+msgstr "合計"
 
 #: templates/statistic/videos_statistic.html:12
 #: templates/teams/_context_project.html:25
@@ -5694,11 +5755,11 @@ msgstr ""
 
 #: templates/teams/_actions.html:58
 msgid "Join Team"
-msgstr ""
+msgstr "チームに参加する"
 
 #: templates/teams/_actions.html:64
 msgid "Want to create your own subtitling team? Contact "
-msgstr ""
+msgstr "新しい字幕チームを作りたいですか？次までご連絡ください："
 
 #: templates/teams/_application_form.html:4
 msgid "Apply to Join"
@@ -5742,7 +5803,7 @@ msgstr ""
 
 #: templates/teams/_application_form.html:37
 msgid "About you"
-msgstr "あなた"
+msgstr "自分について"
 
 #: templates/teams/_application_form.html:39
 #, python-format
@@ -5769,20 +5830,20 @@ msgstr "ビデオページ"
 #: templates/teams/_context_project.html:17
 #: templates/teams/_context_team.html:14 templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:131
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show all"
-msgstr ""
+msgstr "すべて表示する"
 
 #: templates/teams/_context_project.html:31
 #: templates/teams/_context_team.html:59
 msgid "Task"
-msgstr ""
+msgstr "タスク"
 
 #: templates/teams/_context_project.html:56
 #: templates/teams/_context_team.html:89
 msgid "Tasks in my languages"
-msgstr ""
+msgstr "私の言語でのタスク"
 
 #: templates/teams/_context_project.html:60
 #: templates/teams/_context_team.html:93
@@ -5792,16 +5853,18 @@ msgid ""
 "\"language_modal\">your languages</a>\n"
 "                    "
 msgstr ""
+"\n"
+"<a href=\"#\" data-modal=\"language_modal\">あなたの言語</a>のタスクを見る"
 
 #: templates/teams/_context_project.html:94
 msgid "Other"
-msgstr ""
+msgstr "他"
 
 #: templates/teams/_context_project.html:94
 #: templates/teams/_context_team.html:21
 #: templates/teams/_subnav_settings.html:21
 msgid "Projects"
-msgstr ""
+msgstr "プロジェクト"
 
 #: templates/teams/_context_team.html:29
 #: templates/videos/test_form_page.html:24
@@ -5810,14 +5873,14 @@ msgstr "ビデオ"
 
 #: templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:127
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show less"
 msgstr ""
 
 #: templates/teams/_context_team.html:53
 msgid "Member"
-msgstr ""
+msgstr "メンバー"
 
 #: templates/teams/_context_team.html:83
 msgid "My tasks"
@@ -5849,21 +5912,21 @@ msgstr "再度訪問ください！レビューできる翻訳が出てくるで
 
 #: templates/teams/_invite_friends_to_team.html:4
 msgid "You can also invite friends who speak other languages to help out."
-msgstr "助けてもらうために他の言語を話す友人を招待することもできます。"
+msgstr "他の言語を話す友人を招待して協力してもうらうこともできます。"
 
 #: templates/teams/_perform_task_link.html:5
 #: templates/teams/_perform_task_link.html:29 templates/teams/tasks.html:259
 msgid "Resume"
-msgstr ""
+msgstr "再開する"
 
 #: templates/teams/_perform_task_link.html:7
 #: templates/teams/_perform_task_link.html:31 templates/teams/tasks.html:261
 msgid "Start now"
-msgstr ""
+msgstr "開始する"
 
 #: templates/teams/_subnav_settings.html:5 templates/teams/create.html:43
 msgid "Team Details"
-msgstr ""
+msgstr "チーム詳細"
 
 #: templates/teams/_subnav_settings.html:13
 #: templates/teams/settings-permissions.html:92
@@ -5905,7 +5968,7 @@ msgstr ""
 
 #: templates/teams/_team_add_video_select.html:8
 msgid "Choose a team"
-msgstr ""
+msgstr "チームを選ぶ"
 
 #: templates/teams/_team_message.html:4
 #, python-format
@@ -5918,7 +5981,7 @@ msgstr ""
 
 #: templates/teams/_team_move_video_select.html:6
 msgid "Move video to one of your other teams?"
-msgstr ""
+msgstr "ビデオをあなたの他のチームに移動しますか？"
 
 #: templates/teams/_team_move_video_select.html:27
 #: templates/teams/_team_move_video_select.html:51
@@ -5930,6 +5993,8 @@ msgid ""
 "You are about to move this video to a new team.<br /><strong>If you proceed, "
 "all open tasks will be deleted.</strong>"
 msgstr ""
+"このビデオを本当に新しいチームに移動しますか？<br/><strong>移動すると、未完の"
+"タスクは全て削除されます。</strong>"
 
 #: templates/teams/_team_select.html:6
 msgid "Managing"
@@ -5950,6 +6015,13 @@ msgid_plural ""
 "                        %(num)s languages\n"
 "                    "
 msgstr[0] ""
+"\n"
+"one: ⏎\n"
+"                        %(num)s 言語⏎\n"
+"                    \n"
+"other: ⏎\n"
+"                        %(num)s 言語⏎\n"
+"                    "
 
 #: templates/teams/_team_video_detail.html:19
 #, python-format
@@ -5979,7 +6051,7 @@ msgstr[0] ""
 #: templates/teams/members-list.html:119
 #: templates/teams/settings-projects.html:29
 msgid "Edit"
-msgstr "編集"
+msgstr "編集する"
 
 #: templates/teams/_team_video_detail.html:60
 #: templates/teams/members-list.html:122 templates/teams/videos-list.html:147
@@ -5989,7 +6061,7 @@ msgstr ""
 
 #: templates/teams/_third-party-accounts.html:42
 msgid "You haven't linked any accounts yet."
-msgstr ""
+msgstr "アカウントはまだリンクしていません。"
 
 #: templates/teams/activity.html:28
 msgid "Sorry, no activity yet"
@@ -6001,16 +6073,16 @@ msgstr "チームビデオ"
 
 #: templates/teams/add_video.html:23
 msgid "Add video"
-msgstr "ビデオを追加"
+msgstr "ビデオを追加する"
 
 #: templates/teams/add_video.html:35 templates/teams/add_videos.html:31
 #: templates/teams/create_task.html:91 templates/teams/team_video.html:44
 msgid "Save"
-msgstr "保存"
+msgstr "保存する"
 
 #: templates/teams/add_videos.html:21
 msgid "Add multiple videos"
-msgstr "複数のビデオを追加"
+msgstr "複数のビデオを追加する"
 
 #: templates/teams/applications.html:6
 msgid "Team Aplications"
@@ -6018,19 +6090,19 @@ msgstr "チーム申請"
 
 #: templates/teams/applications.html:49 templates/teams/tasks.html:64
 msgid "Approve"
-msgstr "承認"
+msgstr "承認する"
 
 #: templates/teams/applications.html:52
 msgid "Deny"
-msgstr "拒否"
+msgstr "拒否する"
 
 #: templates/teams/applications.html:56
 msgid "Send a message"
-msgstr ""
+msgstr "メッセージを送信する"
 
 #: templates/teams/applications.html:66
 msgid "There are no applications right now"
-msgstr "現時点の申請はありません"
+msgstr "セルビア語、ラテン"
 
 #: templates/teams/base.html:43
 msgid "Edit team"
@@ -6042,20 +6114,20 @@ msgstr "チームを作る"
 
 #: templates/teams/create.html:23 templates/teams/create.html.py:65
 msgid "Create a team"
-msgstr "チームを作成"
+msgstr "チームを作成する"
 
 #: templates/teams/create.html:28 templates/teams/teams-list.html:23
 msgid "All Teams"
-msgstr "全チーム"
+msgstr "全てのチーム"
 
 #: templates/teams/create.html:33 templates/teams/teams-list.html:6
 #: templates/teams/teams-list.html.py:29
 msgid "My Teams"
-msgstr "私のチーム"
+msgstr "マイ・チーム"
 
 #: templates/teams/create.html:51
 msgid "Display Settings"
-msgstr ""
+msgstr "表示設定"
 
 #: templates/teams/create.html:57
 msgid "Create Team"
@@ -6071,7 +6143,7 @@ msgstr "マイ・チームに戻る"
 
 #: templates/teams/create_task.html:8
 msgid "Create a Task"
-msgstr "タスクを作成"
+msgstr "タスクを作成する"
 
 #: templates/teams/create_task.html:44
 msgid "New Task"
@@ -6113,7 +6185,7 @@ msgstr ""
 
 #: templates/teams/create_task.html:77
 msgid "You do not have permission to create any valid tasks for this video."
-msgstr "ビデオに対する有効なタスクを作成する権限がありません"
+msgstr "このビデオのタスクを作成する権限がありません"
 
 #: templates/teams/create_task.html:83
 msgid "Selected Video"
@@ -6136,8 +6208,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"            %(team_name)s は以下の新しいビデオの字幕と翻訳付加にあなたの助け"
-"を必要としています：\n"
+"            %(team_name)s では以下の新しいビデオの字幕と翻訳付加が必要で"
+"す：\n"
 "        "
 
 #: templates/teams/email_new_video.html:13
@@ -6159,7 +6231,7 @@ msgid ""
 msgstr ""
 "\n"
 "            <a href=\"http://%(domain)s%(team_url)s\">%(team_name)s</a> \n"
-"            チームが新しいビデオを追加し、協力を必要としています：\n"
+"            チームに新しいビデオが追加され、あなたの協力が必要です：\n"
 "        "
 
 #: templates/teams/email_new_videos.html:20
@@ -6168,7 +6240,7 @@ msgstr "ありがとう！"
 
 #: templates/teams/invite_members.html:6 templates/teams/members-list.html:45
 msgid "Invite Members"
-msgstr "メンバー招待"
+msgstr "メンバーを招待する"
 
 #: templates/teams/invite_members.html:23
 msgid "Recipient"
@@ -6180,7 +6252,7 @@ msgstr ""
 
 #: templates/teams/invite_members.html:32
 msgid "Amara username of the user you want to invite."
-msgstr ""
+msgstr "招待するユーザの Amara ユーザ名"
 
 #: templates/teams/invite_members.html:36
 msgid "Invite Details"
@@ -6200,7 +6272,7 @@ msgstr ""
 
 #: templates/teams/invite_members.html:49
 msgid "Send Invites"
-msgstr "招待を送信"
+msgstr "招待を送信する"
 
 #: templates/teams/members-list.html:47 templates/teams/tasks.html:48
 #: templates/teams/videos-list.html:47
@@ -6208,7 +6280,7 @@ msgid "Filter and Sort"
 msgstr ""
 
 #: templates/teams/members-list.html:53
-#: templates/videos/subtitle-view.html:198
+#: templates/videos/subtitle-view.html:200
 msgid "Showing"
 msgstr ""
 
@@ -6256,7 +6328,7 @@ msgstr "申し訳ありません。メンバーが見つかりません。"
 
 #: templates/teams/members-list.html:92
 msgid "Me"
-msgstr ""
+msgstr "自分"
 
 #: templates/teams/members-list.html:101 templates/teams/members-list.html:102
 msgid "and"
@@ -6264,7 +6336,7 @@ msgstr "そして"
 
 #: templates/teams/members-list.html:101
 msgid "project"
-msgstr ""
+msgstr "プロジェクト"
 
 #: templates/teams/members-list.html:113
 msgid "Assignments"
@@ -6272,38 +6344,40 @@ msgstr ""
 
 #: templates/teams/members-list.html:122
 msgid "Are you sure you want to remove this member from the team?"
-msgstr ""
+msgstr "本当にこのメンバーをチームから除きますか？"
 
 #: templates/teams/settings-guidelines.html:5
 #: templates/teams/settings-guidelines.html:44
 msgid "Guidelines"
-msgstr ""
+msgstr "指針"
 
 #: templates/teams/settings-guidelines.html:25
 msgid "Custom messages"
-msgstr ""
+msgstr "カスタマイズしたメッセージ"
 
 #: templates/teams/settings-guidelines.html:28
 msgid ""
 "Customize the messages sent to your users. The text you enter will accompany "
 "the default system message."
 msgstr ""
+"あなたのユーザに送られるメッセージをカスタマイズすることができます。メッセー"
+"ジは、規定メッセージと共に送られます。"
 
 #: templates/teams/settings-guidelines.html:31
 msgid "When a member is invited to join the team"
-msgstr ""
+msgstr "メンバーがチームに招待されたとき"
 
 #: templates/teams/settings-guidelines.html:34
 msgid "When a member applies to join the team"
-msgstr ""
+msgstr "メンバーがチームへの参加依頼をしたとき"
 
 #: templates/teams/settings-guidelines.html:37
 msgid "When a member is given the Manager role"
-msgstr ""
+msgstr "メンバーがマネジャーになったとき"
 
 #: templates/teams/settings-guidelines.html:40
 msgid "When a member is given the Admin role"
-msgstr ""
+msgstr "メンバーが管理人になったとき"
 
 #: templates/teams/settings-guidelines.html:47
 msgid "Add guidelines to be displayed to your users when completing tasks."
@@ -6311,11 +6385,11 @@ msgstr ""
 
 #: templates/teams/settings-guidelines.html:50
 msgid "When transcribing"
-msgstr ""
+msgstr "書き写しをしているとき"
 
 #: templates/teams/settings-guidelines.html:53
 msgid "When translating"
-msgstr ""
+msgstr "翻訳をしているとき"
 
 #: templates/teams/settings-guidelines.html:56
 msgid "When reviewing"
@@ -6323,39 +6397,39 @@ msgstr ""
 
 #: templates/teams/settings-languages.html:27
 msgid "Preferred Languages"
-msgstr ""
+msgstr "好みの言語"
 
 #: templates/teams/settings-languages.html:28
 msgid "Translation tasks will be auto-created for these languages"
-msgstr ""
+msgstr "これらの言語の翻訳タスクを自動的に作ります。"
 
 #: templates/teams/settings-languages.html:33
 msgid "Blacklisted Languages"
-msgstr ""
+msgstr "不要言語"
 
 #: templates/teams/settings-languages.html:34
 msgid "Will not be shown when creating or performing tasks"
-msgstr ""
+msgstr "タスクを作成または実行している際、表示されません。"
 
 #: templates/teams/settings-permissions.html:27
 msgid "Team Management"
-msgstr ""
+msgstr "チームメンバーの管理"
 
 #: templates/teams/settings-permissions.html:28
 msgid "How can users join your team?"
-msgstr ""
+msgstr "ユーザはどのようにしてあなたのチームに参加することができますか？"
 
 #: templates/teams/settings-permissions.html:31
 msgid "Who can add/remove videos?"
-msgstr ""
+msgstr "誰がビデオの追加／削除をすることができますか？"
 
 #: templates/teams/settings-permissions.html:37
 msgid "Manage subtitling and translation work for your videos"
-msgstr ""
+msgstr "ビデオの字幕および翻訳の管理"
 
 #: templates/teams/settings-permissions.html:39
 msgid "Who can create and assign tasks?"
-msgstr ""
+msgstr "誰が託すの作成および指名をすることができますか？"
 
 #: templates/teams/settings-permissions.html:41
 msgid ""
@@ -6365,51 +6439,51 @@ msgstr ""
 
 #: templates/teams/settings-permissions.html:43
 msgid "How many tasks can a user have at once?"
-msgstr ""
+msgstr "ユーザはいくつのタスクを同時に受け持つことができますか？"
 
 #: templates/teams/settings-permissions.html:46
 msgid "If left blank there will be no limit."
-msgstr ""
+msgstr "空白の場合は、制限なし。"
 
 #: templates/teams/settings-permissions.html:48
 msgid "How many days should an assignee get to complete a task?"
-msgstr ""
+msgstr "タスクを完了するまで、何日与えますか？"
 
 #: templates/teams/settings-permissions.html:51
 msgid "If left blank tasks will not expire."
-msgstr ""
+msgstr "空白の場合は、期限なし。"
 
 #: templates/teams/settings-permissions.html:55
 msgid "Subtitling"
-msgstr ""
+msgstr "字幕の管理"
 
 #: templates/teams/settings-permissions.html:57
 msgid "Who can transcribe subtitles?"
-msgstr ""
+msgstr "字幕の書き写しは、誰がすることができますか？"
 
 #: templates/teams/settings-permissions.html:58
 msgid "i.e. transcribe from video and perform time-alignment"
-msgstr ""
+msgstr "すなわち、ビデオの書き写しを行い、タイミング合わせもする"
 
 #: templates/teams/settings-permissions.html:61
 msgid "Who can translate subtitles?"
-msgstr ""
+msgstr "字幕の翻訳は、誰がすることができますか？"
 
 #: templates/teams/settings-permissions.html:62
 msgid "i.e. translate text from an original subtitle into a new language"
-msgstr ""
+msgstr "すなわち、原文の字幕から新しい言語に翻訳する"
 
 #: templates/teams/settings-permissions.html:67
 msgid "How your subtitles will get published <em>(configure below)</em>"
-msgstr ""
+msgstr "字幕の公開方法 <em>(下記にて設定してください)</em>"
 
 #: templates/teams/settings-permissions.html:69
 msgid "Transcribed"
-msgstr ""
+msgstr "書き写し済み"
 
 #: templates/teams/settings-permissions.html:71
 msgid "or ..."
-msgstr ""
+msgstr "または"
 
 #: templates/teams/settings-permissions.html:77
 msgid "Reviewed"
@@ -6417,11 +6491,11 @@ msgstr ""
 
 #: templates/teams/settings-permissions.html:82
 msgid "Approved"
-msgstr ""
+msgstr "承認済み"
 
 #: templates/teams/settings-permissions.html:87
 msgid "Published"
-msgstr ""
+msgstr "発行済"
 
 #: templates/teams/settings-permissions.html:93
 msgid "Workflows enable you to add moderation steps and automate tasks"
@@ -6434,42 +6508,42 @@ msgstr ""
 
 #: templates/teams/settings-permissions.html:101
 msgid "Automatically create transcription tasks"
-msgstr ""
+msgstr "書き写しタスクを自動的に作成する"
 
 #: templates/teams/settings-permissions.html:106
 #: templates/teams/settings-projects-add.html:54
 msgid "Automatically create translation tasks for preferred languages"
-msgstr ""
+msgstr "好みの言語につき、翻訳タスクを自動的に作成する。"
 
 #: templates/teams/settings-permissions.html:106
 #: templates/teams/settings-projects-add.html:54
 msgid "manage languages"
-msgstr ""
+msgstr "言語を管理する"
 
 #: templates/teams/settings-permissions.html:109
 #: templates/teams/settings-projects-add.html:57 templates/teams/tasks.html:61
 msgid "Review"
-msgstr "レビュー"
+msgstr "校正する"
 
 #: templates/teams/settings-permissions.html:112
 #: templates/teams/settings-projects-add.html:60
 msgid "Approval"
-msgstr ""
+msgstr "承認"
 
 #: templates/teams/settings-projects-add.html:18
 #: templates/teams/settings-projects-edit.html:24
 #: templates/teams/settings-projects.html:20
 msgid "Add Project"
-msgstr ""
+msgstr "プロジェクトを追加する"
 
 #: templates/teams/settings-projects-add.html:26
 msgid "Add new project"
-msgstr ""
+msgstr "新しいプロジェクトを追加する"
 
 #: templates/teams/settings-projects-add.html:32
 #: templates/teams/settings-projects-edit.html:40
 msgid "Description"
-msgstr ""
+msgstr "概要"
 
 #: templates/teams/settings-projects-add.html:40
 msgid ""
@@ -6479,27 +6553,27 @@ msgstr ""
 
 #: templates/teams/settings-projects-add.html:49
 msgid "Automatically create subtitle tasks"
-msgstr ""
+msgstr "字幕タスクを自動的に作成する"
 
 #: templates/teams/settings-projects-edit.html:34
 msgid "Edit Project"
-msgstr ""
+msgstr "プロジェクトを編集する"
 
 #: templates/teams/settings-projects-edit.html:76
 msgid "Are you sure you want to delete this project?"
-msgstr ""
+msgstr "このプロジェクトを本当に削除しますか？"
 
 #: templates/teams/settings-projects.html:36
 msgid "This team does not have any projects yet"
-msgstr ""
+msgstr "このチームにプロジェクトはありません。"
 
 #: templates/teams/tasks.html:44
 msgid "Add Task"
-msgstr ""
+msgstr "タスクを追加する"
 
 #: templates/teams/tasks.html:59
 msgid "Translate"
-msgstr ""
+msgstr "翻訳する"
 
 #: templates/teams/tasks.html:69
 msgid "tasks for"
@@ -6507,7 +6581,7 @@ msgstr ""
 
 #: templates/teams/tasks.html:73
 msgid "my languages"
-msgstr ""
+msgstr "私の言語"
 
 #: templates/teams/tasks.html:86
 msgid "assigned to"
@@ -6519,7 +6593,7 @@ msgstr ""
 
 #: templates/teams/tasks.html:89 templates/teams/tasks.html.py:223
 msgid "me"
-msgstr ""
+msgstr "自分"
 
 #: templates/teams/tasks.html:90
 msgid "no one"
@@ -6527,7 +6601,7 @@ msgstr ""
 
 #: templates/teams/tasks.html:99 templates/teams/videos-list.html:65
 msgid "sorted by"
-msgstr ""
+msgstr "並び替え順"
 
 #: templates/teams/tasks.html:102
 msgid "date, newest"
@@ -6548,7 +6622,7 @@ msgstr ""
 #: templates/teams/tasks.html:119 templates/teams/tasks.html.py:126
 #: templates/teams/tasks.html:133
 msgid "Clear all filters, sorts, and search terms"
-msgstr ""
+msgstr "フィルター、並べ替え順、検索用語をクリアしてください。"
 
 #: templates/teams/tasks.html:131
 msgid "NOTE:"
@@ -6557,7 +6631,7 @@ msgstr ""
 #: templates/teams/tasks.html:132
 msgid ""
 "When sorting by expiration date, tasks without an expiration are not shown."
-msgstr ""
+msgstr "期限日順で並べ替える場合、期限日がないタスクは表示されません。"
 
 #: templates/teams/tasks.html:190
 msgid "latest draft"
@@ -6579,8 +6653,8 @@ msgstr ""
 msgid "and edited"
 msgstr ""
 
-#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:202
-#: templates/videos/subtitle-view.html:318
+#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:204
+#: templates/videos/subtitle-view.html:320
 msgid "by"
 msgstr ""
 
@@ -6610,7 +6684,7 @@ msgstr ""
 
 #: templates/teams/tasks.html:290
 msgid "Important:"
-msgstr ""
+msgstr "重要："
 
 #: templates/teams/tasks.html:290
 msgid ""
@@ -6626,15 +6700,17 @@ msgstr "言語"
 
 #: templates/teams/tasks.html:299
 msgid "Translate from"
-msgstr ""
+msgstr "から翻訳する"
 
 #: templates/teams/tasks.html:304
 msgid "File:"
-msgstr ""
+msgstr "ファイル："
 
 #: templates/teams/tasks.html:307
 msgid "Accepted formats: .srt, .ssa, .sbv, .dfxp, .txt or .xml (for TTML)"
 msgstr ""
+"アップロード可能な形式：.srt、 .ssa、 .sbv、 .dfxp、 .txt または .xml (TTML"
+"用)"
 
 #: templates/teams/tasks.html:321
 msgid "Download a draft"
@@ -6646,7 +6722,7 @@ msgstr ""
 
 #: templates/teams/tasks.html:352
 msgid "Decline"
-msgstr ""
+msgstr "拒否する"
 
 #: templates/teams/tasks.html:372
 msgid "Reassign"
@@ -6688,7 +6764,7 @@ msgstr "チームビデオを編集する"
 
 #: templates/teams/team_video.html:27 templates/videos/video-view.html:210
 msgid "Edit video"
-msgstr "ビデオを編集"
+msgstr "ビデオを編集する"
 
 #: templates/teams/team_video.html:40
 msgid "This video is being moderated by team"
@@ -6744,7 +6820,7 @@ msgstr ""
 
 #: templates/teams/teams-list.html:114
 msgid "Sorry, no teams found."
-msgstr ""
+msgstr "該当チームなし。"
 
 #: templates/teams/teams-list.html:122
 msgid "Search and Filter"
@@ -6761,10 +6837,13 @@ msgid ""
 "\"mailto:enterprise@pculture.org\">enterprise@pculture.org</a>\n"
 "            "
 msgstr ""
+"\n"
+"新しい字幕チームを作りたいですか？<a href=\"mailto:enterprise@pculture.org"
+"\">enterprise@pculture.org</a>までご連絡ください。"
 
 #: templates/teams/videos-list.html:44
 msgid "Add Video"
-msgstr "ビデオを追加"
+msgstr "ビデオを追加する"
 
 #: templates/teams/videos-list.html:54
 msgid "Videos with"
@@ -6823,7 +6902,7 @@ msgstr ""
 #: templates/teams/videos-list.html:125
 #, python-format
 msgid "You are removing this video from the %(team)s team."
-msgstr ""
+msgstr "%(team)sチームからこのビデオを取り除きます。"
 
 #: templates/teams/videos-list.html:126 templates/teams/videos-list.html:133
 msgid ""
@@ -6841,11 +6920,11 @@ msgstr ""
 
 #: templates/teams/videos-list.html:131
 msgid "Just remove the video from the team."
-msgstr ""
+msgstr "チームからビデオを取り除く。"
 
 #: templates/teams/videos-list.html:136
 msgid "Delete the video entirely."
-msgstr ""
+msgstr "Amara はどのように利用するのですか？"
 
 #: templates/videos/_error_feedback_form.html:7
 msgid "Please let us know what you were doing when you encountered this error."
@@ -6857,15 +6936,16 @@ msgstr "申し訳ございませんが、お尋ねのページは見つかりま
 
 #: templates/videos/_feature_video.html:12
 msgid "Unfeature video"
-msgstr "非特集ビデオ"
+msgstr "注目ビデオとしての取り上げをやめる"
 
 #: templates/videos/_feature_video.html:14
 msgid "Feature video"
-msgstr "特集ビデオ"
+msgstr "注目ビデオとして取り上げる"
 
 #: templates/videos/_feedback_form.html:6
 msgid "How are you using Amara?  What would make it better?"
 msgstr ""
+"Amara はどのように利用していますか？もと良くするにはどうしたらいいですか？"
 
 #: templates/videos/_feedback_form.html:8
 msgid "Please let us know if you have any comments, questions, or suggestions!"
@@ -6875,8 +6955,8 @@ msgstr "コメント、ご質問、ご指摘など、是非お寄せください
 msgid ""
 "Note: we read/speak English best, but try to read/respond to anything we can."
 msgstr ""
-"注意：私達は英語を最も良く読み／書きしますが、読み／返答するために最善を尽く"
-"します。"
+"注意：私達は英語が最も得意ですが、どんな言語にでもお答えするよう努めていま"
+"す。"
 
 #: templates/videos/_feedback_form.html:13
 msgid "Your email:"
@@ -6974,7 +7054,7 @@ msgstr "全ての言語のフォローを中止する"
 
 #: templates/videos/_follow_video_button.html:142
 msgid "You will receive notifications when anyone edits "
-msgstr ""
+msgstr "誰かが編集した場合、メールでお知らせします"
 
 #: templates/videos/_follow_video_button.html:144
 msgid " subtitles for this video. You can stop these emails at any time."
@@ -6982,17 +7062,19 @@ msgstr " このビデオの字幕。 これらのメールはいつでも停止�
 
 #: templates/videos/_follow_video_button.html:145
 msgid "Follow "
-msgstr ""
+msgstr "フォローする"
 
 #: templates/videos/_follow_video_button.html:149
 msgid ""
 "You will receive notifications when anyone edits any subtitles for this "
 "video. You can stop these emails at any time."
 msgstr ""
+"このビデオの字幕を誰かが編集した場合、メールでお知らせします。メールはいつで"
+"もストップすることができます。"
 
 #: templates/videos/_follow_video_button.html:150
 msgid "Follow this video"
-msgstr ""
+msgstr "このビデオをフォローする"
 
 #: templates/videos/_follow_video_button.html:158
 msgid "Follow all languages"
@@ -7008,15 +7090,15 @@ msgstr "要認証"
 
 #: templates/videos/_follow_video_button.html:200
 msgid "x Stop Following"
-msgstr ""
+msgstr "x フォローをやめる"
 
 #: templates/videos/_follow_video_button.html:202
 msgid "✓ Click to Follow"
-msgstr ""
+msgstr "✓ フォローする"
 
 #: templates/videos/_get_counter.html:3
 msgid "Get counter code:"
-msgstr ""
+msgstr "カウンターコードを得る"
 
 #: templates/videos/_paste_transcription.html:114
 msgid "Submit a Transcript"
@@ -7053,7 +7135,7 @@ msgstr ""
 
 #: templates/videos/_paste_transcription.html:136
 msgid "Upload TXT file"
-msgstr "TXTファイルをアップロード"
+msgstr "TXTファイルをアップロードする"
 
 #: templates/videos/_paste_transcription.html:144
 #: templates/videos/_upload_subtitles.html:35
@@ -7066,15 +7148,15 @@ msgstr ""
 
 #: templates/videos/_team_list.html:8
 msgid "Visit"
-msgstr ""
+msgstr "訪問する"
 
 #: templates/videos/_team_list.html:8
 msgid "Translation Project"
-msgstr ""
+msgstr "翻訳プロジェクト"
 
 #: templates/videos/_upload_subtitles.html:2
 msgid "upload"
-msgstr ""
+msgstr "アップロードする"
 
 #: templates/videos/_upload_subtitles.html:6
 msgid "Upload Subtitles"
@@ -7088,6 +7170,10 @@ msgid ""
 "              or .xml (for TTML) are accepted.\n"
 "              "
 msgstr ""
+"\n"
+"当サイトでは、SRT、SSA、SBV、DFXP、TTML、TXT 形式のみ取り扱っています。."
+"srt, .ssa、.sbv、.dfxp、.txt、または .xml (TTML用) で終わるファイルのみ受け入"
+"れています。"
 
 #: templates/videos/_upload_subtitles.html:22
 msgid "Video Language"
@@ -7095,7 +7181,7 @@ msgstr "ビデオの言語"
 
 #: templates/videos/_upload_subtitles.html:24
 msgid "Translated from"
-msgstr ""
+msgstr "から翻訳"
 
 #: templates/videos/_upload_subtitles.html:28
 #, python-format
@@ -7104,18 +7190,23 @@ msgstr "字幕ファイルの進捗度は100%です"
 
 #: templates/videos/_upload_subtitles.html:30
 msgid "Upload"
-msgstr "アップロード"
+msgstr "アップロードする"
 
 #: templates/videos/_upload_subtitles.html:44
 msgid ""
 "If you believe your subtitle file is compatible, <a href='mailto:"
 "feedback@universalsubtitles.org'>send it to us</a>"
 msgstr ""
+"字幕フィルが適合していると思われる場合は、<a href='mailto:"
+"feedback@universalsubtitles.org'>こちらまでお送りください。</a>"
 
 #: templates/videos/_video.html:23
 msgid "view"
 msgid_plural "views"
 msgstr[0] ""
+"Pluralized Translations\n"
+"one: 視聴数\n"
+"other: 視聴数"
 
 #: templates/videos/_video.html:26
 msgid "Added"
@@ -7132,10 +7223,17 @@ msgid_plural ""
 "                    %(number)s Languages\n"
 "                "
 msgstr[0] ""
+"\n"
+"one: ⏎\n"
+"                    %(number)s 言語⏎\n"
+"                \n"
+"other: ⏎\n"
+"                    %(number)s 言語⏎\n"
+"                "
 
 #: templates/videos/_video_url_panel.html:6
 msgid "Add new URL"
-msgstr "新しいURLを追加"
+msgstr "新しいURLを追加する"
 
 #: templates/videos/_video_url_panel.html:16
 #: templates/videos/_video_url_panel.html:109
@@ -7154,9 +7252,7 @@ msgstr "さらに学ぶ"
 msgid ""
 "Multiple video URLs let you link multiple videos to a single set of "
 "subtitles. Some example uses:"
-msgstr ""
-"複数のURLによって1セットの字幕に対して複数のビデオをリンクすることができま"
-"す。使用例："
+msgstr "同じ字幕を、複数のビデオのURLにリンクすることができます。使用例："
 
 #: templates/videos/_video_url_panel.html:48
 msgid ""
@@ -7170,8 +7266,8 @@ msgid ""
 "You put your video on Youtube, Vimeo, Blip, and Dailymotion and you want the "
 "subtitles you make to work on all of those versions."
 msgstr ""
-"Youtube, Vimeo, Blip, Dailymotionにビデオを掲載した際、それら全てに適用される"
-"字幕が必要になります。"
+"Youtube, Vimeo, Blip, Dailymotionにビデオを掲載し、同じ字幕をそれら全てに適用"
+"したい。"
 
 #: templates/videos/_video_url_panel.html:50
 msgid ""
@@ -7191,7 +7287,7 @@ msgstr "方法：タイミングの問題がないか重ねてご確認くださ
 
 #: templates/videos/_video_url_panel.html:59
 msgid "Add another URL for this video"
-msgstr "ビデオに対する他のURLを追加"
+msgstr "ビデオの別のURLを追加する"
 
 #: templates/videos/_video_url_panel.html:61
 msgid ""
@@ -7202,11 +7298,11 @@ msgstr ""
 
 #: templates/videos/_video_url_panel.html:74
 msgid "Add"
-msgstr "追加"
+msgstr "追加する"
 
 #: templates/videos/_video_url_panel.html:84
 msgid "You must be logged in to add a URL"
-msgstr ""
+msgstr "URL を追加するには、ログインしてください。"
 
 #: templates/videos/_video_url_panel.html:88
 msgid "Login"
@@ -7215,7 +7311,7 @@ msgstr "ログイン"
 #: templates/videos/_video_url_panel.html:121
 #: templates/videos/_video_url_panel.html:141
 msgid "You are not authenticated"
-msgstr "未承認です"
+msgstr "あなたは、認証されていません"
 
 #: templates/videos/_video_url_panel.html:130
 msgid ""
@@ -7231,7 +7327,7 @@ msgstr ""
 
 #: templates/videos/_watch_page.html:15
 msgid "No videos found"
-msgstr ""
+msgstr "該当ビデオなし"
 
 #: templates/videos/actions_list.html:21
 msgid "There are no activities."
@@ -7272,6 +7368,8 @@ msgid ""
 "Enter the URL of an Ogg, WebM, flv, mp4, Youtube, Vimeo or Dailymotion "
 "video. You can also use our"
 msgstr ""
+"Ogg、WebM、flv、mp4、Youtube、Vimeo または Dailymotion のビデオの URL を入力"
+"してください。または以下を利用することもできます"
 
 #: templates/videos/create.html:30
 msgid "to subtitle all the videos on your site. Just looking?"
@@ -7283,7 +7381,7 @@ msgstr "例"
 
 #: templates/videos/create.html:45
 msgid "Automatically submit videos"
-msgstr "ビデオを自動的に投稿"
+msgstr "ビデオを自動的に投稿する"
 
 #: templates/videos/create.html:49
 msgid "Let's Go!"
@@ -7291,7 +7389,7 @@ msgstr "はじめてみましょう！"
 
 #: templates/videos/create.html:55 templates/videos/create.html.py:65
 msgid "Or Submit Multiple Videos"
-msgstr "もしくは複数のビデオを投稿"
+msgstr "もしくは複数のビデオを投稿する"
 
 #: templates/videos/diffing.html:41
 msgid "Subtitles will be rolled back to a previous version"
@@ -7341,23 +7439,25 @@ msgid ""
 "            Revision #%(version_no)s by %(user)s\n"
 "            "
 msgstr ""
+"\n"
+"            %(user)s さんによる第#%(version_no)s改訂 "
 
 #: templates/videos/diffing.html:118 templates/videos/diffing.html.py:185
 msgid "Roll back to version"
-msgstr ""
+msgstr "以前のバージョンに戻す"
 
 #: templates/videos/diffing.html:126 templates/videos/diffing.html.py:192
-#: templates/videos/subtitle-view.html:210
+#: templates/videos/subtitle-view.html:212
 msgid "Title:"
-msgstr ""
+msgstr "タイトル："
 
 #: templates/videos/diffing.html:130 templates/videos/diffing.html.py:196
-#: templates/videos/subtitle-view.html:214
+#: templates/videos/subtitle-view.html:216
 msgid "Description:"
-msgstr ""
+msgstr "概説："
 
 #: templates/videos/diffing.html:156 templates/videos/diffing.html.py:223
-#: templates/videos/subtitle-view.html:234
+#: templates/videos/subtitle-view.html:236
 msgid "Not Synced"
 msgstr "同期していません"
 
@@ -7370,7 +7470,7 @@ msgid ""
 "To stop receiving these emails, go to your preferences page and uncheck "
 "\"notify me by email\":"
 msgstr ""
-"メールの配信を停止するには、設定ページにて、\"メールによるお知らせ\"のチェッ"
+"メールの配信を停止するには、設定ページにて、「メールによるお知らせ」のチェッ"
 "クを外してください："
 
 #: templates/videos/email_base.html:106
@@ -7436,7 +7536,7 @@ msgstr "古いテキスト"
 #: templates/videos/email_notification.html:41
 #: templates/videos/email_notification_non_editors.html:35
 msgid "Changes to title"
-msgstr ""
+msgstr "タイトルへの変更"
 
 #: templates/videos/email_notification.html:44
 #: templates/videos/email_notification.html:72
@@ -7519,7 +7619,7 @@ msgstr "敬具"
 
 #: templates/videos/email_start_notification.html:20
 msgid "The Amara Community"
-msgstr ""
+msgstr "Amara コミュニティ"
 
 #: templates/videos/email_title_changed.html:7
 msgid "The title of the video"
@@ -7553,9 +7653,9 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"    \"タイトルを編集\"をクリックし、更新してください。タイトルが編集できない"
-"場合、メインメニューの\"ヘルプ\"をクリックし、サポートのリクエストを行ってく"
-"ださい。\n"
+"    「タイトルを編集する」をクリックし、更新してください。タイトルが編集でき"
+"ない場合、メインメニューの「ヘルプ」をクリックし、サポートのリクエストを行っ"
+"てください。\n"
 "    "
 
 #: templates/videos/email_video_url_add.html:7
@@ -7589,7 +7689,7 @@ msgstr "オリジナルのビデオURLを見る"
 #: templates/videos/featured_videos.html:32
 #: templates/videos/popular_videos.html:55 templates/videos/watch.html:18
 msgid "Watch Subtitled Videos"
-msgstr "字幕付きビデオを視聴する"
+msgstr "字幕付きビデオを観る"
 
 #: templates/videos/latest_videos.html:20 templates/videos/volunteer.html:114
 #: templates/videos/volunteer_latest.html:21 templates/videos/watch.html:107
@@ -7611,7 +7711,7 @@ msgstr "今週"
 #: templates/videos/popular_videos.html:64 templates/videos/volunteer.html:64
 #: templates/videos/watch.html:46
 msgid "Today"
-msgstr "本日"
+msgstr "今日"
 
 #: templates/videos/popular_videos.html:66 templates/videos/volunteer.html:66
 #: templates/videos/watch.html:48
@@ -7631,7 +7731,7 @@ msgstr "すべての期間"
 #: templates/videos/stop_notification.html:9
 #, python-format
 msgid "Notifications to %(u)s stopped for %(video)s."
-msgstr ""
+msgstr "%(u)sへの%(video)sのお知らせを停止しました。"
 
 #: templates/videos/subtitle-view.html:22
 msgid "Select two revisions to compare, please"
@@ -7642,70 +7742,70 @@ msgstr "比較のために２つの改訂を選択ください"
 msgid "with"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:96 templates/videos/video-view.html:83
+#: templates/videos/subtitle-view.html:98 templates/videos/video-view.html:83
 msgid "View"
-msgstr ""
+msgstr "見る"
 
-#: templates/videos/subtitle-view.html:102 templates/videos/video-view.html:89
+#: templates/videos/subtitle-view.html:104 templates/videos/video-view.html:89
 msgid "Follower"
-msgstr ""
+msgstr "フォロワー"
 
-#: templates/videos/subtitle-view.html:108 templates/videos/video-view.html:95
+#: templates/videos/subtitle-view.html:110 templates/videos/video-view.html:95
 msgid "Comment"
-msgstr ""
+msgstr "コメントする"
 
-#: templates/videos/subtitle-view.html:114
+#: templates/videos/subtitle-view.html:116
 msgid "Line"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:124
+#: templates/videos/subtitle-view.html:126
 #: templates/videos/video-view.html:111
 msgid "View Subtitles"
-msgstr ""
+msgstr "字幕を見る"
 
-#: templates/videos/subtitle-view.html:148
-#: templates/videos/subtitle-view.html:285
+#: templates/videos/subtitle-view.html:150
+#: templates/videos/subtitle-view.html:287
 #: templates/videos/video-view.html:145 templates/videos/video-view.html:190
 msgid "Comments"
 msgstr "コメント"
 
-#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:151
 msgid "Revisions"
-msgstr ""
+msgstr "改訂"
 
-#: templates/videos/subtitle-view.html:154
-#: templates/videos/subtitle-view.html:388
+#: templates/videos/subtitle-view.html:156
+#: templates/videos/subtitle-view.html:390
 msgid "Unpublish"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:157
-#: templates/videos/subtitle-view.html:403
+#: templates/videos/subtitle-view.html:159
+#: templates/videos/subtitle-view.html:405
 msgid "Edit Subtitles"
 msgstr "字幕を編集する"
 
-#: templates/videos/subtitle-view.html:164
+#: templates/videos/subtitle-view.html:166
 msgid "Download"
-msgstr ""
+msgstr "ダウンロードする"
 
-#: templates/videos/subtitle-view.html:192
+#: templates/videos/subtitle-view.html:194
 msgid "Draft only"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:195
+#: templates/videos/subtitle-view.html:197
 msgid "translated from"
 msgstr "からの翻訳"
 
-#: templates/videos/subtitle-view.html:199
-#: templates/videos/subtitle-view.html:308
+#: templates/videos/subtitle-view.html:201
 #: templates/videos/subtitle-view.html:310
+#: templates/videos/subtitle-view.html:312
 msgid "Revision"
 msgstr "改訂"
 
-#: templates/videos/subtitle-view.html:200
+#: templates/videos/subtitle-view.html:202
 msgid "created"
-msgstr ""
+msgstr "作成"
 
-#: templates/videos/subtitle-view.html:246
+#: templates/videos/subtitle-view.html:248
 msgid ""
 "\n"
 "                            The most recent revision for this language is "
@@ -7713,28 +7813,30 @@ msgid ""
 "                            revisions that contain subtitles.\n"
 "                            "
 msgstr ""
+"\n"
+"この言語の最新改訂版は空白ですが、以前の改訂版に字幕が含まれています。"
 
-#: templates/videos/subtitle-view.html:250
+#: templates/videos/subtitle-view.html:252
 msgid "View revision history"
 msgstr "改訂の履歴を見る"
 
-#: templates/videos/subtitle-view.html:255
+#: templates/videos/subtitle-view.html:257
 msgid "These subtitles are in progress."
-msgstr ""
-
-#: templates/videos/subtitle-view.html:256
-msgid "Make more?"
-msgstr ""
+msgstr "これらの字幕は進行中です。"
 
 #: templates/videos/subtitle-view.html:258
-msgid "No subtitles available yet."
-msgstr ""
+msgid "Make more?"
+msgstr "もっと作りますか？"
 
-#: templates/videos/subtitle-view.html:259
+#: templates/videos/subtitle-view.html:260
+msgid "No subtitles available yet."
+msgstr "字幕はまだ存在しません。"
+
+#: templates/videos/subtitle-view.html:261
 msgid "Make some!"
 msgstr "作成してください！"
 
-#: templates/videos/subtitle-view.html:267
+#: templates/videos/subtitle-view.html:269
 msgid ""
 "\n"
 "                            This language contains subtitles that are still "
@@ -7742,61 +7844,65 @@ msgid ""
 "                        "
 msgstr ""
 
-#: templates/videos/subtitle-view.html:273
+#: templates/videos/subtitle-view.html:275
 msgid ""
 "\n"
 "                            No subtitles have been added for this language "
 "yet.\n"
 "                        "
 msgstr ""
+"\n"
+"この言語の字幕はまだありません。"
 
-#: templates/videos/subtitle-view.html:283
+#: templates/videos/subtitle-view.html:285
 #: templates/videos/video-view.html:188
 msgid "Leave a comment"
-msgstr ""
+msgstr "コメントを残す"
 
-#: templates/videos/subtitle-view.html:292
+#: templates/videos/subtitle-view.html:294
 msgid "Compare Revisions"
 msgstr "改訂を比較する"
 
-#: templates/videos/subtitle-view.html:324
+#: templates/videos/subtitle-view.html:326
 msgid "Timing"
-msgstr ""
+msgstr "タイミング"
 
-#: templates/videos/subtitle-view.html:325
+#: templates/videos/subtitle-view.html:327
 msgid "Text"
 msgstr "テキスト"
 
-#: templates/videos/subtitle-view.html:331
+#: templates/videos/subtitle-view.html:333
 msgid "No subtitles for this language."
 msgstr "この言語の字幕はありません。"
 
-#: templates/videos/subtitle-view.html:340
+#: templates/videos/subtitle-view.html:342
 msgid "Roll back to this version"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:353
+#: templates/videos/subtitle-view.html:355
 msgid "Unpublish subtitles"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:361
+#: templates/videos/subtitle-view.html:363
 msgid "This version only"
-msgstr ""
-
-#: templates/videos/subtitle-view.html:365
-msgid "This entire language and all dependent languages"
-msgstr ""
+msgstr "このバージョンのみ"
 
 #: templates/videos/subtitle-view.html:367
+msgid "This entire language and all dependent languages"
+msgstr "この言語全部およびこの言語に依存しているすべての言語"
+
+#: templates/videos/subtitle-view.html:369
 msgid ""
 "Note: Any dependent languages will be unavailable until this language is "
 "reapproved."
 msgstr ""
+"注意：この言語が再承認されるまで、この言語に依存している他の言語は利用できな"
+"くなります。"
 
-#: templates/videos/subtitle-view.html:376
+#: templates/videos/subtitle-view.html:378
 msgid ""
 "Yes, delete these subtitles instead of sending them back for editing/review"
-msgstr ""
+msgstr "はい、字幕を、編集／校正のために送り返すのではなく、削除する。"
 
 #: templates/videos/test_form_page.html:18
 msgid "Your Email"
@@ -7837,7 +7943,7 @@ msgstr "ビデオを翻訳してください(バイリンガルでない場合�
 
 #: templates/videos/test_form_page.html:42
 msgid "optional: get updates about Amara"
-msgstr ""
+msgstr "オプショナル：Amara の最新情報を得る"
 
 #: templates/videos/test_form_page.html:45
 msgid "Submit!"
@@ -7864,6 +7970,8 @@ msgid ""
 "Subtitles saved! You can share the video with friends, or get an embed code "
 "for your site. To add atranslation, click the button below."
 msgstr ""
+"字幕を保存しました。友達とビデオをシェアしたり、あなたのサイトにコードを埋め"
+"込むことができます。翻訳を加えるには、この下のボタンをクリックしてください。"
 
 #: templates/videos/video-view.html:131
 msgid "Be the first to "
@@ -7871,31 +7979,31 @@ msgstr ""
 
 #: templates/videos/video-view.html:131
 msgid "create subtitles"
-msgstr ""
+msgstr "字幕を作成する"
 
 #: templates/videos/video-view.html:134 templates/videos/video-view.html:158
 msgid "This video doesn't have any subtitles yet"
-msgstr ""
+msgstr "このビデオには字幕がありません。"
 
 #: templates/videos/video-view.html:147
 msgid "URLs"
-msgstr ""
+msgstr "URL"
 
 #: templates/videos/video-view.html:153
 msgid "Contribute"
-msgstr ""
+msgstr "寄稿する"
 
 #: templates/videos/video-view.html:158
 msgid "Create subtitles now"
-msgstr ""
+msgstr "字幕を今すぐ作成する"
 
 #: templates/videos/video-view.html:162
 msgid "Don't see the language you're looking for?"
-msgstr ""
+msgstr "探している言語が見つかりませんか？"
 
 #: templates/videos/video-view.html:162
 msgid "Start a new translation"
-msgstr ""
+msgstr "新しい翻訳を開始する"
 
 #: templates/videos/video-view.html:168
 msgid ""
@@ -7909,11 +8017,11 @@ msgstr "全てのアクティビティーを見る"
 
 #: templates/videos/volunteer.html:18
 msgid "Contribute Subtitles"
-msgstr "字幕を投稿"
+msgstr "字幕を投稿する"
 
 #: templates/videos/volunteer.html:23 templates/videos/watch.html:23
 msgid "More Featured Videos"
-msgstr "特集ビデオをもっと"
+msgstr "注目ビデオをもっと観る"
 
 #: templates/videos/volunteer.html:38
 msgid "More Requested Videos"
@@ -7926,11 +8034,11 @@ msgstr ""
 
 #: templates/videos/volunteer.html:56 templates/videos/watch.html:38
 msgid "More Popular Videos"
-msgstr "人気ビデオをもっと"
+msgstr "人気ビデオをもっと観る"
 
 #: templates/videos/volunteer.html:112 templates/videos/watch.html:105
 msgid "More Recent Videos"
-msgstr "最近のビデオをもっと"
+msgstr "最近のビデオをもっと観る"
 
 #: templates/videos/volunteer_requested.html:20
 msgid "Help Subtitle Videos"
@@ -7963,8 +8071,8 @@ msgid ""
 "Enter valid usernames separated by commas. Username can contain only a-z, A-"
 "Z and 0-9."
 msgstr ""
-"コンマで区切られた有効なユーザー名を入力してください。ユーザー名はa〜z、A〜"
-"Z、0〜9のみ使用できます。"
+"コンマで区切って有効なユーザー名を入力してください。ユーザー名はa〜z、A〜Z、"
+"0〜9のみ使用できます。"
 
 #: utils/forms/unisub_video_form.py:62
 msgid "This URL does not contain video id."

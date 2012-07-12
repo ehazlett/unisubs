@@ -170,7 +170,7 @@ unisubs.player.CaptionView.prototype.setCaptionText = function(text) {
         // displaying subtitles.  We should remove this once we have pluginable
         // popcorn set up.
         if (unisubs.caption_display_mode == 'n') {
-            text = unisubs.player.CaptionView.breakLines(text);
+            text = unisubs.player.CaptionView.breakLines(text, 42);
         } else {
             text = goog.string.newLineToBr(goog.string.htmlEscape(text));
         }

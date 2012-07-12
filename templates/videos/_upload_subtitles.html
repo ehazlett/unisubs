@@ -67,6 +67,10 @@
                     }
                 },
                 beforeSubmit: function(formData, $Form, options) {
+                    if ($('#id_language').val() === '') {
+                        alert('You must select a language first.');
+                        return false;
+                    }
                     $('p.error_list', $Form ).fadeOut('fast');
                     $('p.#feedback-message', $Form ).fadeOut('fast');
                     $('p.feedback-message', $Form ).fadeOut('fast');

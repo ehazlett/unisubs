@@ -65,7 +65,7 @@ def save_subtitle(video, language, parser, user=None, update_video=True,
                   forks=True, as_forked=True, translated_from=None):
     from videos.models import SubtitleVersion, Subtitle, SubtitleMetadata
     from videos.tasks import video_changed_tasks
-    from videos import html_to_markdown
+    from utils.unisubsmarkup import html_to_markup
 
     key = str(uuid4()).replace('-', '')
 
@@ -114,7 +114,7 @@ def save_subtitle(video, language, parser, user=None, update_video=True,
             metadata = item.pop('metadata', None)
 
             data = item.copy()
-            data['subtitle_text'] = html_to_markdown(data['subtitle_text'])
+            data['subtitle_text'] = html_to_markup(data['subtitle_text'])
             caption = Subtitle(**data)
             caption.version = version
             caption.datetime_started = datetime.now()
@@ -445,13 +445,13 @@ class SrtSubtitleParser(SubtitleParser):
         return int(hour)*60*60+int(min)*60+int(sec)+float('.'+secfr)
 
     def _get_data(self, match):
-        from videos import html_to_markdown
+        from utils.unisubsmarkup import html_to_markup
         r = match.groupdict()
         output = {}
         output['start_time'] = self._get_time(r['s_hour'], r['s_min'], r['s_sec'], r['s_secfr'])
         output['end_time'] = self._get_time(r['e_hour'], r['e_min'], r['e_sec'], r['e_secfr'])
         output['subtitle_text'] = '' if r['text'] is None else \
-            html_to_markdown(self._clean_pattern.sub('', r['text']))
+            html_to_markup(self._clean_pattern.sub('', r['text']))
         return output
 
 class SbvSubtitleParser(SrtSubtitleParser):

@@ -1713,6 +1713,16 @@ ol.subtitles {
         li {
             div.translation-text {
                 direction: rtl;
+                text-align: right;
+            }
+            &.title, &.description {
+                direction: rtl;
+                text-align: right;
+
+                div.field {
+                    direction: ltr;
+                    text-align: left;
+                }
             }
         }
     }

@@ -27,6 +27,7 @@ unisubs.translate.DescriptionTranslationWidget = function(videoDescription, capt
     this.originalVideoDescription_ = videoDescription || '';
     this.captionSet_ = captionSet;
 };
+
 goog.inherits(unisubs.translate.DescriptionTranslationWidget, goog.ui.Component);
 
 unisubs.translate.DescriptionTranslationWidget.prototype.createDom = function() {
@@ -40,7 +41,7 @@ unisubs.translate.DescriptionTranslationWidget.prototype.createDom = function() 
                   this.originalVideoDescription_),
               this.loadingIndicator_ = $d('span', 'unisubs-loading-indicator', 'loading...')
            ),
-           this.translateInput_ = $d('textarea', {"class":'unisubs-translateField unisubs-descriptionField', "rows":"10"})
+           this.translateInput_ = $d('textarea', {"class":'unisubs-translateField unisubs-descriptionField' + (this.captionSet_.languageIsRTL ? ' is-rtl' : ''), "rows":"10"})
         )
     );
 
@@ -48,23 +49,18 @@ unisubs.translate.DescriptionTranslationWidget.prototype.createDom = function() 
         this.translateInput_, goog.events.EventType.BLUR,
         this.inputLostFocus_);
 };
-
 unisubs.translate.DescriptionTranslationWidget.prototype.showLoadingIndicator = function(){
     unisubs.style.showElement(this.loadingIndicator_, true);
 };
-
 unisubs.translate.DescriptionTranslationWidget.prototype.hideLoadingIndicator = function(){
     unisubs.style.showElement(this.loadingIndicator_, false);
 };
-
 unisubs.translate.DescriptionTranslationWidget.prototype.getOriginalValue = function(){
     return this.originalVideoDescription_;
 };
-
 unisubs.translate.DescriptionTranslationWidget.prototype.isEmpty = function(){
     return ! goog.string.trim(this.translateInput_.value);
 };
-
 unisubs.translate.DescriptionTranslationWidget.prototype.setTranslation = function(value){
     this.translateInput_.value = value;
     this.inputLostFocus_();

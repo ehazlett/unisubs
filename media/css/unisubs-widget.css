@@ -1281,7 +1281,7 @@ ul.unisubs-titlesList.unisubs-beginTab .unisubs-beginTabLi {
     line-height: 1.4em !important;
     padding: 10px !important;
 }
-.unisubs-title.is-rtl {
+.is-rtl {
     direction: rtl;
     text-align: right;
 }
