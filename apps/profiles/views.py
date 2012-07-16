@@ -19,7 +19,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.utils import simplejson as json
 from django.utils.translation import ugettext_lazy as _, ugettext
@@ -168,9 +168,11 @@ def edit_profile(request):
             formset.save()
             messages.success(request, _('Your profile has been updated.'))
             return redirect('profiles:profile', user_id = request.user.username)
+
     else:
         form = EditUserForm(instance=request.user, label_suffix="")
         formset = UserLanguageFormset(instance=request.user)
+
     context = {
         'form': form,
         'user_info': request.user,
@@ -181,7 +183,11 @@ def edit_profile(request):
 
 @login_required
 def my_profile(request):
-    return profile(request, user_id = request.user.id)
+
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/profiles/profile/' + request.user.username + '/')
+    else:
+        return Http404()
 
 def profile(request, user_id=None):
     if user_id:
