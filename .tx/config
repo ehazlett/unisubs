@@ -5,4 +5,12 @@ host = https://www.transifex.net
 file_filter = locale/<lang>/LC_MESSAGES/django.po
 source_file = locale/en/LC_MESSAGES/django.po
 source_lang = en
+trans.bg_BG = locale/bg/LC_MESSAGES/django.po
+trans.el_GR = locale/el/LC_MESSAGES/django.po
+trans.es_ES = locale/es/LC_MESSAGES/django.po
+trans.id_ID = locale/id/LC_MESSAGES/django.po
+trans.lt_LT = locale/lt/LC_MESSAGES/django.po
+trans.lv_LV = locale/lv/LC_MESSAGES/django.po
+trans.sl_SI = locale/sl/LC_MESSAGES/django.po
+trans.th_TH = locale/th/LC_MESSAGES/django.po
 

@@ -320,7 +320,7 @@ class SubtitleParserTest(TestCase):
             u'Don\'t show this text it may be used to insert hidden data')
         self._assert_sub(
             result[1], 1.5, 4.5,
-            u'SubRip subtitles capability tester 1.2p by ale5000\n**Use Media Player Classic as reference**\nThis text should be blue')
+            u'SubRip subtitles capability tester 1.2p by ale5000\n<b>Use Media Player Classic as reference</b>\nThis text should be blue')
         self._assert_sub(
             result[2], 4.5, 4.5,
             u'Hidden')

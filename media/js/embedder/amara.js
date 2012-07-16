@@ -10673,6 +10673,8 @@ Popcorn.player( "youtube", {
 
         // This will store all future instances of Amara-powered videos.
         // I'm trying really hard here to not use the word "widget".
+        //
+        // TODO: Make this a private var?
         this.amaraInstances = [];
 
         // Private methods that are called via the push() method.
@@ -10713,13 +10715,7 @@ Popcorn.player( "youtube", {
 
             initialize: function() {
                 this.model.view = this;
-
-                // Variables that will eventually be set after rendering.
-                this.$amaraContainer = null;
-                this.pop = null;
-
                 this.template = __.template(this.templateHTML);
-
                 this.render();
             },
 
@@ -10749,7 +10745,7 @@ Popcorn.player( "youtube", {
                         width: that.model.get('width')
                     }));
 
-                    that.$amaraContainer = $('div.amara-container', that.$el);
+                    that.cacheNodes();
                 });
 
                 return this;
@@ -10764,7 +10760,7 @@ Popcorn.player( "youtube", {
                 return false;
             },
             transcriptButtonClicked: function() {
-                alert('Transcript button clicked');
+                this.$transcript.toggle();
                 return false;
             },
             subtitlesButtonClicked: function() {
@@ -10783,8 +10779,26 @@ Popcorn.player( "youtube", {
                 '        </ul>' +
                 '    </div>' +
                 '    <div class="amara-transcript">' +
+                '        <div class="amara-transcript-header amara-group">' +
+                '            <div class="amara-transcript-header-left">' +
+                '                Auto-stream <span>ON</span>' +
+                '            </div>' +
+                '            <div class="amara-transcript-header-right">' +
+                '                <form action="" class="amara-transcript-search">' +
+                '                    <input class="amara-transcript-search-input" placeholder="Search transcript" />' +
+                '                </form>' +
+                '            </div>' +
+                '        </div>' +
+                '        <div class="amara-transcript-body">' +
+                '            Transcript' +
+                '        </div>' +
                 '    </div>' +
-                '</div>'
+                '</div>',
+
+            cacheNodes: function() {
+                this.$amaraContainer = $('div.amara-container', this.$el);
+                this.$transcript = $('div.amara-transcript', this.$amaraContainer);
+            }
 
         });
 

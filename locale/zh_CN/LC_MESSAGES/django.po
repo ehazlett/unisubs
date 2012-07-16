@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-12 01:41-0500\n"
-"PO-Revision-Date: 2012-07-10 06:47+0000\n"
+"POT-Creation-Date: 2012-07-15 01:42-0500\n"
+"PO-Revision-Date: 2012-07-14 06:51+0000\n"
 "Last-Translator: unisubsapi <universalsubtitles-dev@pculture.org>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/"
 "universalsubtitles/language/zh_CN/)\n"
@@ -109,23 +109,23 @@ msgstr "邮件确认"
 msgid "e-mail confirmations"
 msgstr "邮件确认"
 
-#: apps/auth/views.py:58
+#: apps/auth/views.py:59
 msgid "Confirmation key expired."
 msgstr "确认码过期。"
 
-#: apps/auth/views.py:60
+#: apps/auth/views.py:61
 msgid "Email is confirmed."
 msgstr "电邮已确认。"
 
-#: apps/auth/views.py:72
+#: apps/auth/views.py:73
 msgid "Confirmation email was sent."
 msgstr "确认邮件已发。"
 
-#: apps/auth/views.py:74
+#: apps/auth/views.py:75
 msgid "You email is empty or already confirmed."
 msgstr "你的电邮为空，或者已确认。"
 
-#: apps/auth/views.py:106
+#: apps/auth/views.py:107
 msgid "Your account was deleted."
 msgstr "你的帐号被删除。"
 
@@ -1108,7 +1108,7 @@ msgstr ""
 msgid "Successfully unpublished subtitles."
 msgstr "成功撤销字幕发布"
 
-#: apps/teams/templatetags/teams_tags.py:254
+#: apps/teams/templatetags/teams_tags.py:258
 #, python-format
 msgid "Can somebody help me subtitle these videos? %(url)s"
 msgstr "有谁能帮我给这些视频加上字幕？%(url)s"
@@ -1981,822 +1981,838 @@ msgid "Bosnian"
 msgstr "波斯尼亚语"
 
 #: libs/unilangs/unilangs.py:148
+msgid "Buginese"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:149
 msgid "Catalan"
 msgstr "加泰罗尼亚语"
 
-#: libs/unilangs/unilangs.py:149
+#: libs/unilangs/unilangs.py:150
 msgid "Chechen"
 msgstr "车臣语"
 
-#: libs/unilangs/unilangs.py:150
+#: libs/unilangs/unilangs.py:151
 msgid "Cebuano"
 msgstr "宿雾语"
 
-#: libs/unilangs/unilangs.py:151
+#: libs/unilangs/unilangs.py:152
 msgid "Chamorro"
 msgstr " 查莫罗语"
 
-#: libs/unilangs/unilangs.py:152
+#: libs/unilangs/unilangs.py:153
 msgid "Choctaw"
 msgstr "乔克托语"
 
-#: libs/unilangs/unilangs.py:153
+#: libs/unilangs/unilangs.py:154
 msgid "Corsican"
 msgstr "科西嘉语"
 
-#: libs/unilangs/unilangs.py:154
+#: libs/unilangs/unilangs.py:155
 msgid "Cree"
 msgstr "克里语"
 
-#: libs/unilangs/unilangs.py:155
+#: libs/unilangs/unilangs.py:156
 msgid "Czech"
 msgstr "捷克语"
 
-#: libs/unilangs/unilangs.py:156
+#: libs/unilangs/unilangs.py:157
 msgid "Church Slavic"
 msgstr "车臣斯拉夫语"
 
-#: libs/unilangs/unilangs.py:157
+#: libs/unilangs/unilangs.py:158
 msgid "Chuvash"
 msgstr "楚瓦什语"
 
-#: libs/unilangs/unilangs.py:158
+#: libs/unilangs/unilangs.py:159
 msgid "Welsh"
 msgstr "威尔士语"
 
-#: libs/unilangs/unilangs.py:159
+#: libs/unilangs/unilangs.py:160
 msgid "Danish"
 msgstr "丹麦语"
 
-#: libs/unilangs/unilangs.py:160
+#: libs/unilangs/unilangs.py:161
 msgid "German"
 msgstr "德语"
 
-#: libs/unilangs/unilangs.py:161
+#: libs/unilangs/unilangs.py:162
 msgid "Divehi"
 msgstr "迪维西语"
 
-#: libs/unilangs/unilangs.py:162
+#: libs/unilangs/unilangs.py:163
 msgid "Dzongkha"
 msgstr "宗卡语"
 
-#: libs/unilangs/unilangs.py:163
+#: libs/unilangs/unilangs.py:164
 msgid "Ewe"
 msgstr "埃维语"
 
-#: libs/unilangs/unilangs.py:164
+#: libs/unilangs/unilangs.py:165
 msgid "Efik"
 msgstr "埃菲克语"
 
-#: libs/unilangs/unilangs.py:165
+#: libs/unilangs/unilangs.py:166
 msgid "Greek"
 msgstr "希腊语"
 
-#: libs/unilangs/unilangs.py:166
+#: libs/unilangs/unilangs.py:167
 msgid "English"
 msgstr "英语"
 
-#: libs/unilangs/unilangs.py:167
+#: libs/unilangs/unilangs.py:168
 msgid "English, British"
 msgstr "英国英语"
 
-#: libs/unilangs/unilangs.py:168
+#: libs/unilangs/unilangs.py:169
 msgid "Esperanto"
 msgstr "世界语"
 
-#: libs/unilangs/unilangs.py:169
+#: libs/unilangs/unilangs.py:170
 msgid "Spanish"
 msgstr "西班牙语"
 
-#: libs/unilangs/unilangs.py:170
+#: libs/unilangs/unilangs.py:171
 msgid "Spanish, Argentinian"
 msgstr "西班牙语"
 
-#: libs/unilangs/unilangs.py:171
+#: libs/unilangs/unilangs.py:172
 msgid "Spanish, Mexican"
 msgstr "西班牙语，墨西哥"
 
-#: libs/unilangs/unilangs.py:172
+#: libs/unilangs/unilangs.py:173
 msgid "Spanish, Nicaraguan"
 msgstr "西班牙语，尼加拉瓜"
 
-#: libs/unilangs/unilangs.py:173
+#: libs/unilangs/unilangs.py:174
 msgid "Estonian"
 msgstr "爱沙尼亚语"
 
-#: libs/unilangs/unilangs.py:174
+#: libs/unilangs/unilangs.py:175
 msgid "Basque"
 msgstr "巴斯克语"
 
-#: libs/unilangs/unilangs.py:175
+#: libs/unilangs/unilangs.py:176
 msgid "Persian"
 msgstr "波斯语"
 
-#: libs/unilangs/unilangs.py:176
+#: libs/unilangs/unilangs.py:177
 msgid "Fulah"
 msgstr "富拉赫语"
 
-#: libs/unilangs/unilangs.py:177
+#: libs/unilangs/unilangs.py:178
 msgid "Finnish"
 msgstr "芬兰语"
 
-#: libs/unilangs/unilangs.py:178
+#: libs/unilangs/unilangs.py:179
 msgid "Filipino"
 msgstr "菲律宾语"
 
-#: libs/unilangs/unilangs.py:179
+#: libs/unilangs/unilangs.py:180
 msgid "Fijian"
 msgstr "斐济语"
 
-#: libs/unilangs/unilangs.py:180
+#: libs/unilangs/unilangs.py:181
 msgid "Faroese"
 msgstr "法罗语"
 
-#: libs/unilangs/unilangs.py:181
+#: libs/unilangs/unilangs.py:182
 msgid "French"
 msgstr "法语"
 
-#: libs/unilangs/unilangs.py:182
+#: libs/unilangs/unilangs.py:183
 msgid "French, Canadian"
 msgstr "法语，加拿大"
 
-#: libs/unilangs/unilangs.py:183
+#: libs/unilangs/unilangs.py:184
 msgid "Fula"
 msgstr "富拉語"
 
-#: libs/unilangs/unilangs.py:184
+#: libs/unilangs/unilangs.py:185
 msgid "Frisian"
 msgstr "弗里西语 "
 
-#: libs/unilangs/unilangs.py:185
+#: libs/unilangs/unilangs.py:186
 msgid "Irish"
 msgstr "爱尔兰语"
 
-#: libs/unilangs/unilangs.py:186
+#: libs/unilangs/unilangs.py:187
 msgid "Scottish Gaelic"
 msgstr "苏格兰盖立语"
 
-#: libs/unilangs/unilangs.py:187
+#: libs/unilangs/unilangs.py:188
 msgid "Galician"
 msgstr "加里西亚语"
 
-#: libs/unilangs/unilangs.py:188
+#: libs/unilangs/unilangs.py:189
 msgid "Guaran"
 msgstr "瓜拉尼语"
 
-#: libs/unilangs/unilangs.py:189
+#: libs/unilangs/unilangs.py:190
 msgid "Gujarati"
 msgstr "古吉拉特语"
 
-#: libs/unilangs/unilangs.py:190
+#: libs/unilangs/unilangs.py:191
 msgid "Manx"
 msgstr "马恩岛语"
 
-#: libs/unilangs/unilangs.py:191
+#: libs/unilangs/unilangs.py:192
 msgid "Haida"
 msgstr "海达语"
 
-#: libs/unilangs/unilangs.py:192
+#: libs/unilangs/unilangs.py:193
 msgid "Hausa"
 msgstr "豪撒语"
 
-#: libs/unilangs/unilangs.py:193
+#: libs/unilangs/unilangs.py:194
+msgid "Hazaragi"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:195
 msgid "Hebrew"
 msgstr "希伯来语"
 
-#: libs/unilangs/unilangs.py:194
+#: libs/unilangs/unilangs.py:196
 msgid "Hindi"
 msgstr " 印度语"
 
-#: libs/unilangs/unilangs.py:195
+#: libs/unilangs/unilangs.py:197
 msgid "Hiri Motu"
 msgstr "希利摩陀语"
 
-#: libs/unilangs/unilangs.py:196
+#: libs/unilangs/unilangs.py:198
 msgid "Croatian"
 msgstr "克罗地亚语"
 
-#: libs/unilangs/unilangs.py:197
+#: libs/unilangs/unilangs.py:199
 msgid "Creole, Haitian"
 msgstr " 克利奥尔语，海地语"
 
-#: libs/unilangs/unilangs.py:198
+#: libs/unilangs/unilangs.py:200
 msgid "Hungarian"
 msgstr "匈牙利语"
 
-#: libs/unilangs/unilangs.py:199
+#: libs/unilangs/unilangs.py:201
 msgid "Hupa"
 msgstr "胡帕语"
 
-#: libs/unilangs/unilangs.py:200
+#: libs/unilangs/unilangs.py:202
 msgid "Armenian"
 msgstr "亚美尼亚语"
 
-#: libs/unilangs/unilangs.py:201
+#: libs/unilangs/unilangs.py:203
 msgid "Herero"
 msgstr "赫雷罗语"
 
-#: libs/unilangs/unilangs.py:202
+#: libs/unilangs/unilangs.py:204
 msgid "Interlingua"
 msgstr " 拉丁国际语"
 
-#: libs/unilangs/unilangs.py:203
+#: libs/unilangs/unilangs.py:205
 msgid "Igbo"
 msgstr "伊博语"
 
-#: libs/unilangs/unilangs.py:204
+#: libs/unilangs/unilangs.py:206
 msgid "Indonesian"
 msgstr "印度尼西亚语"
 
-#: libs/unilangs/unilangs.py:205
+#: libs/unilangs/unilangs.py:207
 msgid "Interlingue"
 msgstr "国际语"
 
-#: libs/unilangs/unilangs.py:206
+#: libs/unilangs/unilangs.py:208
 msgid "Sichuan Yi"
 msgstr "四川彝族语"
 
-#: libs/unilangs/unilangs.py:207
+#: libs/unilangs/unilangs.py:209
 msgid "Inupia"
 msgstr "因纽特语"
 
-#: libs/unilangs/unilangs.py:208
+#: libs/unilangs/unilangs.py:210
 msgid "Ilocano"
 msgstr "伊洛卡诺语"
 
-#: libs/unilangs/unilangs.py:209
+#: libs/unilangs/unilangs.py:211
 msgid "Ingush"
 msgstr "印古什语"
 
-#: libs/unilangs/unilangs.py:210
+#: libs/unilangs/unilangs.py:212
 msgid "Ido"
 msgstr " 伊多语"
 
-#: libs/unilangs/unilangs.py:211
+#: libs/unilangs/unilangs.py:213
 msgid "Iroquoian languages"
 msgstr "伊洛魁语"
 
-#: libs/unilangs/unilangs.py:212
+#: libs/unilangs/unilangs.py:214
 msgid "Icelandic"
 msgstr " 冰岛语"
 
-#: libs/unilangs/unilangs.py:213
+#: libs/unilangs/unilangs.py:215
 msgid "Italian"
 msgstr "意大利语"
 
-#: libs/unilangs/unilangs.py:214
+#: libs/unilangs/unilangs.py:216
 msgid "Inuktitut"
 msgstr "因纽特语"
 
-#: libs/unilangs/unilangs.py:215
+#: libs/unilangs/unilangs.py:217
 msgid "Japanese"
 msgstr "日语"
 
-#: libs/unilangs/unilangs.py:216
+#: libs/unilangs/unilangs.py:218
 msgid "Javanese"
 msgstr "爪哇语"
 
-#: libs/unilangs/unilangs.py:217
+#: libs/unilangs/unilangs.py:219
 msgid "Georgian"
 msgstr " 格鲁吉亚语"
 
-#: libs/unilangs/unilangs.py:218
+#: libs/unilangs/unilangs.py:220
 msgid "Karen"
 msgstr "克伦邦语"
 
-#: libs/unilangs/unilangs.py:219
+#: libs/unilangs/unilangs.py:221
 msgid "Kanuri"
 msgstr "卡努里语"
 
-#: libs/unilangs/unilangs.py:220
+#: libs/unilangs/unilangs.py:222
 msgid "Gikuyu"
 msgstr "基库尤语"
 
-#: libs/unilangs/unilangs.py:221
+#: libs/unilangs/unilangs.py:223
 msgid "Rwandi"
 msgstr "卢旺达语"
 
-#: libs/unilangs/unilangs.py:222
+#: libs/unilangs/unilangs.py:224
 msgid "Kuanyama, Kwanyama"
 msgstr "库安亚马语，库瓦亚马语"
 
-#: libs/unilangs/unilangs.py:223
+#: libs/unilangs/unilangs.py:225
 msgid "Kazakh"
 msgstr "哈萨克语"
 
-#: libs/unilangs/unilangs.py:224
+#: libs/unilangs/unilangs.py:226
 msgid "Greenlandic"
 msgstr "格陵兰语"
 
-#: libs/unilangs/unilangs.py:225
+#: libs/unilangs/unilangs.py:227
 msgid "Khmer"
 msgstr "高棉语"
 
-#: libs/unilangs/unilangs.py:226
+#: libs/unilangs/unilangs.py:228
 msgid "Kannada"
 msgstr "埃纳德语"
 
-#: libs/unilangs/unilangs.py:227
+#: libs/unilangs/unilangs.py:229
 msgid "Korean"
 msgstr "韩语"
 
-#: libs/unilangs/unilangs.py:228
+#: libs/unilangs/unilangs.py:230
 msgid "Kongo"
 msgstr " 刚果语"
 
-#: libs/unilangs/unilangs.py:229
+#: libs/unilangs/unilangs.py:231
 msgid "Kashmiri"
 msgstr " 克什米尔语"
 
-#: libs/unilangs/unilangs.py:230
+#: libs/unilangs/unilangs.py:232
 msgid "Kurdish"
 msgstr "库尔德语"
 
-#: libs/unilangs/unilangs.py:231
+#: libs/unilangs/unilangs.py:233
 msgid "Komi"
 msgstr "科美语"
 
-#: libs/unilangs/unilangs.py:232
+#: libs/unilangs/unilangs.py:234
 msgid "Cornish"
 msgstr "康沃尔语"
 
-#: libs/unilangs/unilangs.py:233
+#: libs/unilangs/unilangs.py:235
 msgid "Kyrgyz"
 msgstr "吉尔吉斯坦语"
 
-#: libs/unilangs/unilangs.py:234
+#: libs/unilangs/unilangs.py:236
 msgid "Latin"
 msgstr "拉丁语"
 
-#: libs/unilangs/unilangs.py:235
+#: libs/unilangs/unilangs.py:237
 msgid "Luxembourgish"
 msgstr "卢森堡语"
 
-#: libs/unilangs/unilangs.py:236
+#: libs/unilangs/unilangs.py:238
 msgid "Ganda"
 msgstr "干达语"
 
-#: libs/unilangs/unilangs.py:237
+#: libs/unilangs/unilangs.py:239
 msgid "Limburgish"
 msgstr "林堡语"
 
-#: libs/unilangs/unilangs.py:238
+#: libs/unilangs/unilangs.py:240
 msgid "Lingala"
 msgstr " 林加拉语"
 
-#: libs/unilangs/unilangs.py:239
+#: libs/unilangs/unilangs.py:241
 msgid "Lakota"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:240
+#: libs/unilangs/unilangs.py:242
 msgid "Lao"
 msgstr "老挝语"
 
-#: libs/unilangs/unilangs.py:241
+#: libs/unilangs/unilangs.py:243
 msgid "Lithuanian"
 msgstr "立陶宛语"
 
-#: libs/unilangs/unilangs.py:242
+#: libs/unilangs/unilangs.py:244
 msgid "Luba-Katagana"
 msgstr "卢巴-卡唐加语"
 
-#: libs/unilangs/unilangs.py:243
+#: libs/unilangs/unilangs.py:245
 msgid "Luba-Kasai"
 msgstr "希鲁巴语"
 
-#: libs/unilangs/unilangs.py:244
+#: libs/unilangs/unilangs.py:246
 msgid "Luo"
 msgstr "卢奥语"
 
-#: libs/unilangs/unilangs.py:245
+#: libs/unilangs/unilangs.py:247
 msgid "Luhya"
 msgstr "卢亚人"
 
-#: libs/unilangs/unilangs.py:246
+#: libs/unilangs/unilangs.py:248
 msgid "Latvian"
 msgstr "拉脱维亚语"
 
-#: libs/unilangs/unilangs.py:247
+#: libs/unilangs/unilangs.py:249
 msgid "Metadata: Geo"
 msgstr "元数据:Geo"
 
-#: libs/unilangs/unilangs.py:248
+#: libs/unilangs/unilangs.py:250
 msgid "Metadata: Twitter"
 msgstr "元数据：Twitter"
 
-#: libs/unilangs/unilangs.py:249
+#: libs/unilangs/unilangs.py:251
 msgid "Metadata: Wikipedia"
 msgstr "元数据：维基百科"
 
-#: libs/unilangs/unilangs.py:250
+#: libs/unilangs/unilangs.py:252
 msgid "Madurese"
 msgstr "马都拉语的"
 
-#: libs/unilangs/unilangs.py:251
+#: libs/unilangs/unilangs.py:253
 msgid "Marshallese"
 msgstr "马绍尔语"
 
-#: libs/unilangs/unilangs.py:252
+#: libs/unilangs/unilangs.py:254
 msgid "Maori"
 msgstr "毛利语"
 
-#: libs/unilangs/unilangs.py:253
+#: libs/unilangs/unilangs.py:255
 msgid "Macedonian"
 msgstr "马其顿语"
 
-#: libs/unilangs/unilangs.py:254
+#: libs/unilangs/unilangs.py:256
 msgid "Malayalam"
 msgstr " 马拉雅拉姆语"
 
-#: libs/unilangs/unilangs.py:255
+#: libs/unilangs/unilangs.py:257
 msgid "Malagasy"
 msgstr "马尔加什语"
 
-#: libs/unilangs/unilangs.py:256
+#: libs/unilangs/unilangs.py:258
 msgid "Mongolian"
 msgstr "蒙古语"
 
-#: libs/unilangs/unilangs.py:257
+#: libs/unilangs/unilangs.py:259
 msgid "Mandinka"
 msgstr " 曼丁哥语"
 
-#: libs/unilangs/unilangs.py:258
+#: libs/unilangs/unilangs.py:260
 msgid "Moldavian, Moldovan"
 msgstr "摩尔多瓦语"
 
-#: libs/unilangs/unilangs.py:259
+#: libs/unilangs/unilangs.py:261
 msgid "Mohawk"
 msgstr "摩霍克语"
 
-#: libs/unilangs/unilangs.py:260
+#: libs/unilangs/unilangs.py:262
 msgid "Manipuri"
 msgstr "尼曼普尔语"
 
-#: libs/unilangs/unilangs.py:261
+#: libs/unilangs/unilangs.py:263
 msgid "Mossi"
 msgstr "莫西语"
 
-#: libs/unilangs/unilangs.py:262
+#: libs/unilangs/unilangs.py:264
 msgid "Marathi"
 msgstr "马拉地语"
 
-#: libs/unilangs/unilangs.py:263
+#: libs/unilangs/unilangs.py:265
 msgid "Malay"
 msgstr "马来语"
 
-#: libs/unilangs/unilangs.py:264
+#: libs/unilangs/unilangs.py:266
 msgid "Maltese"
 msgstr "马耳他语"
 
-#: libs/unilangs/unilangs.py:265
+#: libs/unilangs/unilangs.py:267
 msgid "Burmese"
 msgstr "缅甸语"
 
-#: libs/unilangs/unilangs.py:266
+#: libs/unilangs/unilangs.py:268
 msgid "Hokkien"
 msgstr "闽南语"
 
-#: libs/unilangs/unilangs.py:267
+#: libs/unilangs/unilangs.py:269
 msgid "Naurunan"
 msgstr "诺鲁语"
 
-#: libs/unilangs/unilangs.py:268
+#: libs/unilangs/unilangs.py:270
 msgid "Norwegian Bokmal"
 msgstr "挪威波克默尔语"
 
-#: libs/unilangs/unilangs.py:269
+#: libs/unilangs/unilangs.py:271
 msgid "North Ndebele"
 msgstr "北恩德贝勒语"
 
-#: libs/unilangs/unilangs.py:270
+#: libs/unilangs/unilangs.py:272
 msgid "Nepali"
 msgstr "尼泊尔语"
 
-#: libs/unilangs/unilangs.py:271
+#: libs/unilangs/unilangs.py:273
 msgid "Ndonga"
 msgstr "尼东阁语 "
 
-#: libs/unilangs/unilangs.py:272
+#: libs/unilangs/unilangs.py:274
 msgid "Dutch"
 msgstr "荷兰语"
 
-#: libs/unilangs/unilangs.py:273
+#: libs/unilangs/unilangs.py:275
 msgid "Norwegian Nynorsk"
 msgstr "挪威尼诺斯克语"
 
-#: libs/unilangs/unilangs.py:274
+#: libs/unilangs/unilangs.py:276
 msgid "Norwegian"
 msgstr "挪威语"
 
-#: libs/unilangs/unilangs.py:275
+#: libs/unilangs/unilangs.py:277
 msgid "Southern Ndebele"
 msgstr "南恩德贝勒语"
 
-#: libs/unilangs/unilangs.py:276
+#: libs/unilangs/unilangs.py:278
 msgid "Northern Sotho"
 msgstr "北索托语"
 
-#: libs/unilangs/unilangs.py:277
+#: libs/unilangs/unilangs.py:279
 msgid "Navajo"
 msgstr "美印第安，纳瓦霍语"
 
-#: libs/unilangs/unilangs.py:278
+#: libs/unilangs/unilangs.py:280
 msgid "Chewa"
 msgstr "切瓦语"
 
-#: libs/unilangs/unilangs.py:279
+#: libs/unilangs/unilangs.py:281
 msgid "Occitan"
 msgstr "奥克西坦人语"
 
-#: libs/unilangs/unilangs.py:280
+#: libs/unilangs/unilangs.py:282
 msgid "Ojibwe"
 msgstr "齐佩瓦语"
 
-#: libs/unilangs/unilangs.py:281
+#: libs/unilangs/unilangs.py:283
 msgid "Oriya"
 msgstr "奥里雅语"
 
-#: libs/unilangs/unilangs.py:282
+#: libs/unilangs/unilangs.py:284
 msgid "Oromo"
 msgstr "奥罗莫语"
 
-#: libs/unilangs/unilangs.py:283
+#: libs/unilangs/unilangs.py:285
 msgid "Ossetian, Ossetic"
 msgstr "奥塞特语"
 
-#: libs/unilangs/unilangs.py:284
+#: libs/unilangs/unilangs.py:286
 msgid "Papiamento"
 msgstr "帕皮阿门托语"
 
-#: libs/unilangs/unilangs.py:285
+#: libs/unilangs/unilangs.py:287
 msgid "Punjabi"
 msgstr "旁遮普语"
 
-#: libs/unilangs/unilangs.py:286
+#: libs/unilangs/unilangs.py:288
 msgid "Pali"
 msgstr " 巴利语  "
 
-#: libs/unilangs/unilangs.py:287
+#: libs/unilangs/unilangs.py:289
 msgid "Polish"
 msgstr "波兰语"
 
-#: libs/unilangs/unilangs.py:288
+#: libs/unilangs/unilangs.py:290
+msgid "Dari"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:291
 msgid "Pashto"
 msgstr " 普什图语"
 
-#: libs/unilangs/unilangs.py:289
+#: libs/unilangs/unilangs.py:292
 msgid "Portuguese"
 msgstr "葡萄牙語"
 
-#: libs/unilangs/unilangs.py:290
+#: libs/unilangs/unilangs.py:293
 msgid "Portuguese, Brazilian"
 msgstr "巴西葡萄牙語"
 
-#: libs/unilangs/unilangs.py:291
+#: libs/unilangs/unilangs.py:294
 msgid "Quechua"
 msgstr "克丘亚语"
 
-#: libs/unilangs/unilangs.py:292
+#: libs/unilangs/unilangs.py:295
 msgid "Romansh"
 msgstr " 罗曼什语"
 
-#: libs/unilangs/unilangs.py:293
+#: libs/unilangs/unilangs.py:296
 msgid "Romanian"
 msgstr "罗马尼亚语"
 
-#: libs/unilangs/unilangs.py:294
+#: libs/unilangs/unilangs.py:297
 msgid "Russian"
 msgstr "俄語"
 
-#: libs/unilangs/unilangs.py:295
+#: libs/unilangs/unilangs.py:298
 msgid "Rundi"
 msgstr "隆迪语"
 
-#: libs/unilangs/unilangs.py:296
+#: libs/unilangs/unilangs.py:299
 msgid "Macedo"
 msgstr "马赛多"
 
-#: libs/unilangs/unilangs.py:297
+#: libs/unilangs/unilangs.py:300
 msgid "Rusyn"
 msgstr "卢森尼亚语 "
 
-#: libs/unilangs/unilangs.py:298
+#: libs/unilangs/unilangs.py:301
 msgid "Sanskrit"
 msgstr "梵文"
 
-#: libs/unilangs/unilangs.py:299
+#: libs/unilangs/unilangs.py:302
 msgid "Sardinian"
 msgstr "撒丁语"
 
-#: libs/unilangs/unilangs.py:300
+#: libs/unilangs/unilangs.py:303
 msgid "Sindhi"
 msgstr " 辛地语"
 
-#: libs/unilangs/unilangs.py:301
+#: libs/unilangs/unilangs.py:304
 msgid "Northern Sami"
 msgstr "北萨摩斯语 "
 
-#: libs/unilangs/unilangs.py:302
+#: libs/unilangs/unilangs.py:305
 msgid "Sango"
 msgstr " 桑戈语"
 
-#: libs/unilangs/unilangs.py:303
+#: libs/unilangs/unilangs.py:306
 msgid "Serbo-Croatian"
 msgstr "克罗地亚语"
 
-#: libs/unilangs/unilangs.py:304
+#: libs/unilangs/unilangs.py:307
 msgid "Sinhala"
 msgstr "僧伽罗语"
 
-#: libs/unilangs/unilangs.py:305
+#: libs/unilangs/unilangs.py:308
 msgid "Slovak"
 msgstr " 斯洛伐克语"
 
-#: libs/unilangs/unilangs.py:306
+#: libs/unilangs/unilangs.py:309
+msgid "Seko Padang"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:310
 msgid "Slovenian"
 msgstr " 斯洛文尼亚语"
 
-#: libs/unilangs/unilangs.py:307
+#: libs/unilangs/unilangs.py:311
 msgid "Samoan"
 msgstr " 萨摩亚语"
 
-#: libs/unilangs/unilangs.py:308
+#: libs/unilangs/unilangs.py:312
 msgid "Shona"
 msgstr " 修纳语"
 
-#: libs/unilangs/unilangs.py:309
+#: libs/unilangs/unilangs.py:313
 msgid "Somali"
 msgstr "索马里语"
 
-#: libs/unilangs/unilangs.py:310
+#: libs/unilangs/unilangs.py:314
 msgid "Sotho"
 msgstr "索托语"
 
-#: libs/unilangs/unilangs.py:311
+#: libs/unilangs/unilangs.py:315
 msgid "Albanian"
 msgstr "阿尔巴尼亚语"
 
-#: libs/unilangs/unilangs.py:312
+#: libs/unilangs/unilangs.py:316
 msgid "Serbian"
 msgstr " 塞尔维亚语"
 
-#: libs/unilangs/unilangs.py:313
+#: libs/unilangs/unilangs.py:317
 msgid "Serbian, Latin"
 msgstr " 塞尔维亚语，拉丁语系"
 
-#: libs/unilangs/unilangs.py:314
+#: libs/unilangs/unilangs.py:318
 msgid "Swati"
 msgstr "斯瓦蒂语"
 
-#: libs/unilangs/unilangs.py:315
+#: libs/unilangs/unilangs.py:319
 msgid "Sundanese"
 msgstr "巽他语"
 
-#: libs/unilangs/unilangs.py:316
+#: libs/unilangs/unilangs.py:320
 msgid "Swedish"
 msgstr "瑞典语"
 
-#: libs/unilangs/unilangs.py:317
+#: libs/unilangs/unilangs.py:321
 msgid "Swahili"
 msgstr "斯瓦希里"
 
-#: libs/unilangs/unilangs.py:318
+#: libs/unilangs/unilangs.py:322
 msgid "Tamil"
 msgstr "泰米尔语"
 
-#: libs/unilangs/unilangs.py:319
+#: libs/unilangs/unilangs.py:323
 msgid "Tetum"
 msgstr "德顿语"
 
-#: libs/unilangs/unilangs.py:320
+#: libs/unilangs/unilangs.py:324
 msgid "Telugu"
 msgstr " 泰卢固语"
 
-#: libs/unilangs/unilangs.py:321
+#: libs/unilangs/unilangs.py:325
 msgid "Tajik"
 msgstr "塔吉克语"
 
-#: libs/unilangs/unilangs.py:322
+#: libs/unilangs/unilangs.py:326
 msgid "Thai"
 msgstr "泰语"
 
-#: libs/unilangs/unilangs.py:323
+#: libs/unilangs/unilangs.py:327
 msgid "Tigrinya"
 msgstr "提格里尼亚语"
 
-#: libs/unilangs/unilangs.py:324
+#: libs/unilangs/unilangs.py:328
 msgid "Turkmen"
 msgstr "土库曼语"
 
-#: libs/unilangs/unilangs.py:325
+#: libs/unilangs/unilangs.py:329
 msgid "Tagalog"
 msgstr "塔加拉族语"
 
-#: libs/unilangs/unilangs.py:326
+#: libs/unilangs/unilangs.py:330
 msgid "Klingon"
 msgstr "克林贡语"
 
-#: libs/unilangs/unilangs.py:327
+#: libs/unilangs/unilangs.py:331
 msgid "Tonga"
 msgstr "汤加语"
 
-#: libs/unilangs/unilangs.py:328
+#: libs/unilangs/unilangs.py:332
 msgid "Turkish"
 msgstr "土耳其语"
 
-#: libs/unilangs/unilangs.py:329
+#: libs/unilangs/unilangs.py:333
 msgid "Tsonga"
 msgstr "聪加语"
 
-#: libs/unilangs/unilangs.py:330
+#: libs/unilangs/unilangs.py:334
 msgid "Tswana"
 msgstr "茨瓦纳语"
 
-#: libs/unilangs/unilangs.py:331
+#: libs/unilangs/unilangs.py:335
 msgid "Tartar"
 msgstr "鞑靼语"
 
-#: libs/unilangs/unilangs.py:332
+#: libs/unilangs/unilangs.py:336
 msgid "Twi"
 msgstr "契维语"
 
-#: libs/unilangs/unilangs.py:333
+#: libs/unilangs/unilangs.py:337
 msgid "Tahitian"
 msgstr "塔希提语"
 
-#: libs/unilangs/unilangs.py:334
+#: libs/unilangs/unilangs.py:338
 msgid "Uighur"
 msgstr "维吾尔语"
 
-#: libs/unilangs/unilangs.py:335
+#: libs/unilangs/unilangs.py:339
 msgid "Ukrainian"
 msgstr "乌克兰语"
 
-#: libs/unilangs/unilangs.py:336
+#: libs/unilangs/unilangs.py:340
 msgid "Umbundu"
 msgstr "姆班杜语"
 
-#: libs/unilangs/unilangs.py:337
+#: libs/unilangs/unilangs.py:341
 msgid "Uyghur"
 msgstr "维吾尔语"
 
-#: libs/unilangs/unilangs.py:338
+#: libs/unilangs/unilangs.py:342
 msgid "Urdu"
 msgstr " 乌尔都语"
 
-#: libs/unilangs/unilangs.py:339
+#: libs/unilangs/unilangs.py:343
 msgid "Uzbek"
 msgstr " 乌兹别克语"
 
-#: libs/unilangs/unilangs.py:340
+#: libs/unilangs/unilangs.py:344
 msgid "Venda"
 msgstr " 文达语"
 
-#: libs/unilangs/unilangs.py:341
+#: libs/unilangs/unilangs.py:345
 msgid "Vietnamese"
 msgstr "越南语"
 
-#: libs/unilangs/unilangs.py:342
+#: libs/unilangs/unilangs.py:346
 msgid "Volapuk"
 msgstr "沃拉普克语"
 
-#: libs/unilangs/unilangs.py:343
+#: libs/unilangs/unilangs.py:347
 msgid "Walloon"
 msgstr "瓦隆语"
 
-#: libs/unilangs/unilangs.py:344
+#: libs/unilangs/unilangs.py:348
 msgid "Wolof"
 msgstr "沃洛夫语"
 
-#: libs/unilangs/unilangs.py:345
+#: libs/unilangs/unilangs.py:349
 msgid "Xhosa"
 msgstr "科萨班图语"
 
-#: libs/unilangs/unilangs.py:346
+#: libs/unilangs/unilangs.py:350
 msgid "Yiddish"
 msgstr "意第绪语"
 
-#: libs/unilangs/unilangs.py:347
+#: libs/unilangs/unilangs.py:351
 msgid "Yoruba"
 msgstr "约鲁巴语"
 
-#: libs/unilangs/unilangs.py:348
+#: libs/unilangs/unilangs.py:352
 msgid "Zhuang, Chuang"
 msgstr "壮语"
 
-#: libs/unilangs/unilangs.py:349
+#: libs/unilangs/unilangs.py:353
 msgid "Chinese, Yue"
 msgstr "粤语"
 
-#: libs/unilangs/unilangs.py:350
+#: libs/unilangs/unilangs.py:354
 msgid "Chinese, Simplified"
 msgstr "简体中文"
 
-#: libs/unilangs/unilangs.py:351
+#: libs/unilangs/unilangs.py:355
 msgid "Chinese, Traditional"
 msgstr "繁体中文"
 
-#: libs/unilangs/unilangs.py:352
+#: libs/unilangs/unilangs.py:356
 msgid "Zulu"
 msgstr "祖鲁语"
 
@@ -3041,7 +3057,7 @@ msgid "Help"
 msgstr "帮助"
 
 #: templates/base.html:78 templates/auth/login.html:30
-#: templates/openid_consumer/signin.html:22
+#: templates/auth/login_trap.html:15 templates/openid_consumer/signin.html:22
 msgid "Sign In"
 msgstr "注册会员"
 
@@ -3077,6 +3093,10 @@ msgstr ""
 
 #: templates/base.html:124
 msgid "Rosetta"
+msgstr ""
+
+#: templates/base.html:127
+msgid "Impersonate"
 msgstr ""
 
 #: templates/demo.html:23
@@ -4987,6 +5007,10 @@ msgstr ""
 #: templates/auth/login.html:38
 msgid "Create Account"
 msgstr "注册会员"
+
+#: templates/auth/login_trap.html:10
+msgid "Sign in as a different user"
+msgstr ""
 
 #: templates/comments/_item.html:3 templates/messages/list.html:70
 #: templates/messages/sent.html:48 templates/videos/_action_tpl.html:9

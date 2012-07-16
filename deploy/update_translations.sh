@@ -37,7 +37,7 @@ echo "pushing to transifex"
 tx push --source
 
 echo "pulling from transifex"
-tx pull
+tx pull -a
 
 echo "compiling messages"
 python manage.py compilemessages

@@ -26,6 +26,7 @@ from django.contrib.auth import (
     logout, login as auth_login
 )
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponseForbidden, HttpResponse
@@ -36,7 +37,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic.simple import direct_to_template
 from oauth import oauth
 
-from auth.forms import CustomUserCreationForm
+from auth.forms import CustomUserCreationForm, ChooseUserForm
 from auth.models import (
     UserLanguage, EmailConfirmation, LoginToken
 )
@@ -145,6 +146,22 @@ def token_login(request, token):
     except LoginToken.DoesNotExist:
         pass
     return HttpResponseForbidden("Invalid user token")
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def login_trap(request):
+    if request.method == 'POST':
+        form = ChooseUserForm(request.POST)
+        if form.is_valid():
+            user = form.cleaned_data['username']
+            user.backend = getattr(settings, 'AUTHENTICATION_BACKENDS')[0]
+            auth_login(request, user)
+            return redirect('/')
+    else:
+        form = ChooseUserForm()
+    return render_to_response('auth/login_trap.html', {
+        'form': form
+    }, context_instance=RequestContext(request))
 
 
 # Helpers

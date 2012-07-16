@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-12 01:38-0500\n"
+"POT-Creation-Date: 2012-07-15 01:37-0500\n"
 "PO-Revision-Date: 2010-11-30 05:45+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,23 +104,23 @@ msgstr ""
 msgid "e-mail confirmations"
 msgstr ""
 
-#: apps/auth/views.py:58
+#: apps/auth/views.py:59
 msgid "Confirmation key expired."
 msgstr ""
 
-#: apps/auth/views.py:60
+#: apps/auth/views.py:61
 msgid "Email is confirmed."
 msgstr ""
 
-#: apps/auth/views.py:72
+#: apps/auth/views.py:73
 msgid "Confirmation email was sent."
 msgstr ""
 
-#: apps/auth/views.py:74
+#: apps/auth/views.py:75
 msgid "You email is empty or already confirmed."
 msgstr ""
 
-#: apps/auth/views.py:106
+#: apps/auth/views.py:107
 msgid "Your account was deleted."
 msgstr ""
 
@@ -1080,7 +1080,7 @@ msgstr ""
 msgid "Successfully unpublished subtitles."
 msgstr ""
 
-#: apps/teams/templatetags/teams_tags.py:254
+#: apps/teams/templatetags/teams_tags.py:258
 #, python-format
 msgid "Can somebody help me subtitle these videos? %(url)s"
 msgstr ""
@@ -1914,822 +1914,838 @@ msgid "Bosnian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:148
-msgid "Catalan"
+msgid "Buginese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:149
-msgid "Chechen"
+msgid "Catalan"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:150
-msgid "Cebuano"
+msgid "Chechen"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:151
-msgid "Chamorro"
+msgid "Cebuano"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:152
-msgid "Choctaw"
+msgid "Chamorro"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:153
-msgid "Corsican"
+msgid "Choctaw"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:154
-msgid "Cree"
+msgid "Corsican"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:155
-msgid "Czech"
+msgid "Cree"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:156
-msgid "Church Slavic"
+msgid "Czech"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:157
-msgid "Chuvash"
+msgid "Church Slavic"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:158
-msgid "Welsh"
+msgid "Chuvash"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:159
-msgid "Danish"
+msgid "Welsh"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:160
-msgid "German"
+msgid "Danish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:161
-msgid "Divehi"
+msgid "German"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:162
-msgid "Dzongkha"
+msgid "Divehi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:163
-msgid "Ewe"
+msgid "Dzongkha"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:164
-msgid "Efik"
+msgid "Ewe"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:165
-msgid "Greek"
+msgid "Efik"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:166
-msgid "English"
+msgid "Greek"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:167
-msgid "English, British"
+msgid "English"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:168
-msgid "Esperanto"
+msgid "English, British"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:169
-msgid "Spanish"
+msgid "Esperanto"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:170
-msgid "Spanish, Argentinian"
+msgid "Spanish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:171
-msgid "Spanish, Mexican"
+msgid "Spanish, Argentinian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:172
-msgid "Spanish, Nicaraguan"
+msgid "Spanish, Mexican"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:173
-msgid "Estonian"
+msgid "Spanish, Nicaraguan"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:174
-msgid "Basque"
+msgid "Estonian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:175
-msgid "Persian"
+msgid "Basque"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:176
-msgid "Fulah"
+msgid "Persian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:177
-msgid "Finnish"
+msgid "Fulah"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:178
-msgid "Filipino"
+msgid "Finnish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:179
-msgid "Fijian"
+msgid "Filipino"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:180
-msgid "Faroese"
+msgid "Fijian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:181
-msgid "French"
+msgid "Faroese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:182
-msgid "French, Canadian"
+msgid "French"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:183
-msgid "Fula"
+msgid "French, Canadian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:184
-msgid "Frisian"
+msgid "Fula"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:185
-msgid "Irish"
+msgid "Frisian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:186
-msgid "Scottish Gaelic"
+msgid "Irish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:187
-msgid "Galician"
+msgid "Scottish Gaelic"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:188
-msgid "Guaran"
+msgid "Galician"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:189
-msgid "Gujarati"
+msgid "Guaran"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:190
-msgid "Manx"
+msgid "Gujarati"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:191
-msgid "Haida"
+msgid "Manx"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:192
-msgid "Hausa"
+msgid "Haida"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:193
-msgid "Hebrew"
+msgid "Hausa"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:194
-msgid "Hindi"
+msgid "Hazaragi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:195
-msgid "Hiri Motu"
+msgid "Hebrew"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:196
-msgid "Croatian"
+msgid "Hindi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:197
-msgid "Creole, Haitian"
+msgid "Hiri Motu"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:198
-msgid "Hungarian"
+msgid "Croatian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:199
-msgid "Hupa"
+msgid "Creole, Haitian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:200
-msgid "Armenian"
+msgid "Hungarian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:201
-msgid "Herero"
+msgid "Hupa"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:202
-msgid "Interlingua"
+msgid "Armenian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:203
-msgid "Igbo"
+msgid "Herero"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:204
-msgid "Indonesian"
+msgid "Interlingua"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:205
-msgid "Interlingue"
+msgid "Igbo"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:206
-msgid "Sichuan Yi"
+msgid "Indonesian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:207
-msgid "Inupia"
+msgid "Interlingue"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:208
-msgid "Ilocano"
+msgid "Sichuan Yi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:209
-msgid "Ingush"
+msgid "Inupia"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:210
-msgid "Ido"
+msgid "Ilocano"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:211
-msgid "Iroquoian languages"
+msgid "Ingush"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:212
-msgid "Icelandic"
+msgid "Ido"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:213
-msgid "Italian"
+msgid "Iroquoian languages"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:214
-msgid "Inuktitut"
+msgid "Icelandic"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:215
-msgid "Japanese"
+msgid "Italian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:216
-msgid "Javanese"
+msgid "Inuktitut"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:217
-msgid "Georgian"
+msgid "Japanese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:218
-msgid "Karen"
+msgid "Javanese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:219
-msgid "Kanuri"
+msgid "Georgian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:220
-msgid "Gikuyu"
+msgid "Karen"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:221
-msgid "Rwandi"
+msgid "Kanuri"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:222
-msgid "Kuanyama, Kwanyama"
+msgid "Gikuyu"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:223
-msgid "Kazakh"
+msgid "Rwandi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:224
-msgid "Greenlandic"
+msgid "Kuanyama, Kwanyama"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:225
-msgid "Khmer"
+msgid "Kazakh"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:226
-msgid "Kannada"
+msgid "Greenlandic"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:227
-msgid "Korean"
+msgid "Khmer"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:228
-msgid "Kongo"
+msgid "Kannada"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:229
-msgid "Kashmiri"
+msgid "Korean"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:230
-msgid "Kurdish"
+msgid "Kongo"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:231
-msgid "Komi"
+msgid "Kashmiri"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:232
-msgid "Cornish"
+msgid "Kurdish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:233
-msgid "Kyrgyz"
+msgid "Komi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:234
-msgid "Latin"
+msgid "Cornish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:235
-msgid "Luxembourgish"
+msgid "Kyrgyz"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:236
-msgid "Ganda"
+msgid "Latin"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:237
-msgid "Limburgish"
+msgid "Luxembourgish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:238
-msgid "Lingala"
+msgid "Ganda"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:239
-msgid "Lakota"
+msgid "Limburgish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:240
-msgid "Lao"
+msgid "Lingala"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:241
-msgid "Lithuanian"
+msgid "Lakota"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:242
-msgid "Luba-Katagana"
+msgid "Lao"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:243
-msgid "Luba-Kasai"
+msgid "Lithuanian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:244
-msgid "Luo"
+msgid "Luba-Katagana"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:245
-msgid "Luhya"
+msgid "Luba-Kasai"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:246
-msgid "Latvian"
+msgid "Luo"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:247
-msgid "Metadata: Geo"
+msgid "Luhya"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:248
-msgid "Metadata: Twitter"
+msgid "Latvian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:249
-msgid "Metadata: Wikipedia"
+msgid "Metadata: Geo"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:250
-msgid "Madurese"
+msgid "Metadata: Twitter"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:251
-msgid "Marshallese"
+msgid "Metadata: Wikipedia"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:252
-msgid "Maori"
+msgid "Madurese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:253
-msgid "Macedonian"
+msgid "Marshallese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:254
-msgid "Malayalam"
+msgid "Maori"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:255
-msgid "Malagasy"
+msgid "Macedonian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:256
-msgid "Mongolian"
+msgid "Malayalam"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:257
-msgid "Mandinka"
+msgid "Malagasy"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:258
-msgid "Moldavian, Moldovan"
+msgid "Mongolian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:259
-msgid "Mohawk"
+msgid "Mandinka"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:260
-msgid "Manipuri"
+msgid "Moldavian, Moldovan"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:261
-msgid "Mossi"
+msgid "Mohawk"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:262
-msgid "Marathi"
+msgid "Manipuri"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:263
-msgid "Malay"
+msgid "Mossi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:264
-msgid "Maltese"
+msgid "Marathi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:265
-msgid "Burmese"
+msgid "Malay"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:266
-msgid "Hokkien"
+msgid "Maltese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:267
-msgid "Naurunan"
+msgid "Burmese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:268
-msgid "Norwegian Bokmal"
+msgid "Hokkien"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:269
-msgid "North Ndebele"
+msgid "Naurunan"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:270
-msgid "Nepali"
+msgid "Norwegian Bokmal"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:271
-msgid "Ndonga"
+msgid "North Ndebele"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:272
-msgid "Dutch"
+msgid "Nepali"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:273
-msgid "Norwegian Nynorsk"
+msgid "Ndonga"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:274
-msgid "Norwegian"
+msgid "Dutch"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:275
-msgid "Southern Ndebele"
+msgid "Norwegian Nynorsk"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:276
-msgid "Northern Sotho"
+msgid "Norwegian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:277
-msgid "Navajo"
+msgid "Southern Ndebele"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:278
-msgid "Chewa"
+msgid "Northern Sotho"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:279
-msgid "Occitan"
+msgid "Navajo"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:280
-msgid "Ojibwe"
+msgid "Chewa"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:281
-msgid "Oriya"
+msgid "Occitan"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:282
-msgid "Oromo"
+msgid "Ojibwe"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:283
-msgid "Ossetian, Ossetic"
+msgid "Oriya"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:284
-msgid "Papiamento"
+msgid "Oromo"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:285
-msgid "Punjabi"
+msgid "Ossetian, Ossetic"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:286
-msgid "Pali"
+msgid "Papiamento"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:287
-msgid "Polish"
+msgid "Punjabi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:288
-msgid "Pashto"
+msgid "Pali"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:289
-msgid "Portuguese"
+msgid "Polish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:290
-msgid "Portuguese, Brazilian"
+msgid "Dari"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:291
-msgid "Quechua"
+msgid "Pashto"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:292
-msgid "Romansh"
+msgid "Portuguese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:293
-msgid "Romanian"
+msgid "Portuguese, Brazilian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:294
-msgid "Russian"
+msgid "Quechua"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:295
-msgid "Rundi"
+msgid "Romansh"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:296
-msgid "Macedo"
+msgid "Romanian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:297
-msgid "Rusyn"
+msgid "Russian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:298
-msgid "Sanskrit"
+msgid "Rundi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:299
-msgid "Sardinian"
+msgid "Macedo"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:300
-msgid "Sindhi"
+msgid "Rusyn"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:301
-msgid "Northern Sami"
+msgid "Sanskrit"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:302
-msgid "Sango"
+msgid "Sardinian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:303
-msgid "Serbo-Croatian"
+msgid "Sindhi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:304
-msgid "Sinhala"
+msgid "Northern Sami"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:305
-msgid "Slovak"
+msgid "Sango"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:306
-msgid "Slovenian"
+msgid "Serbo-Croatian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:307
-msgid "Samoan"
+msgid "Sinhala"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:308
-msgid "Shona"
+msgid "Slovak"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:309
-msgid "Somali"
+msgid "Seko Padang"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:310
-msgid "Sotho"
+msgid "Slovenian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:311
-msgid "Albanian"
+msgid "Samoan"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:312
-msgid "Serbian"
+msgid "Shona"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:313
-msgid "Serbian, Latin"
+msgid "Somali"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:314
-msgid "Swati"
+msgid "Sotho"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:315
-msgid "Sundanese"
+msgid "Albanian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:316
-msgid "Swedish"
+msgid "Serbian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:317
-msgid "Swahili"
+msgid "Serbian, Latin"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:318
-msgid "Tamil"
+msgid "Swati"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:319
-msgid "Tetum"
+msgid "Sundanese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:320
-msgid "Telugu"
+msgid "Swedish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:321
-msgid "Tajik"
+msgid "Swahili"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:322
-msgid "Thai"
+msgid "Tamil"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:323
-msgid "Tigrinya"
+msgid "Tetum"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:324
-msgid "Turkmen"
+msgid "Telugu"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:325
-msgid "Tagalog"
+msgid "Tajik"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:326
-msgid "Klingon"
+msgid "Thai"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:327
-msgid "Tonga"
+msgid "Tigrinya"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:328
-msgid "Turkish"
+msgid "Turkmen"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:329
-msgid "Tsonga"
+msgid "Tagalog"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:330
-msgid "Tswana"
+msgid "Klingon"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:331
-msgid "Tartar"
+msgid "Tonga"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:332
-msgid "Twi"
+msgid "Turkish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:333
-msgid "Tahitian"
+msgid "Tsonga"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:334
-msgid "Uighur"
+msgid "Tswana"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:335
-msgid "Ukrainian"
+msgid "Tartar"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:336
-msgid "Umbundu"
+msgid "Twi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:337
-msgid "Uyghur"
+msgid "Tahitian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:338
-msgid "Urdu"
+msgid "Uighur"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:339
-msgid "Uzbek"
+msgid "Ukrainian"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:340
-msgid "Venda"
+msgid "Umbundu"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:341
-msgid "Vietnamese"
+msgid "Uyghur"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:342
-msgid "Volapuk"
+msgid "Urdu"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:343
-msgid "Walloon"
+msgid "Uzbek"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:344
-msgid "Wolof"
+msgid "Venda"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:345
-msgid "Xhosa"
+msgid "Vietnamese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:346
-msgid "Yiddish"
+msgid "Volapuk"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:347
-msgid "Yoruba"
+msgid "Walloon"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:348
-msgid "Zhuang, Chuang"
+msgid "Wolof"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:349
-msgid "Chinese, Yue"
+msgid "Xhosa"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:350
-msgid "Chinese, Simplified"
+msgid "Yiddish"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:351
-msgid "Chinese, Traditional"
+msgid "Yoruba"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:352
+msgid "Zhuang, Chuang"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:353
+msgid "Chinese, Yue"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:354
+msgid "Chinese, Simplified"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:355
+msgid "Chinese, Traditional"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:356
 msgid "Zulu"
 msgstr ""
 
@@ -2917,7 +2933,7 @@ msgid "Help"
 msgstr ""
 
 #: templates/base.html:78 templates/auth/login.html:30
-#: templates/openid_consumer/signin.html:22
+#: templates/auth/login_trap.html:15 templates/openid_consumer/signin.html:22
 msgid "Sign In"
 msgstr ""
 
@@ -2952,6 +2968,10 @@ msgstr ""
 
 #: templates/base.html:124
 msgid "Rosetta"
+msgstr ""
+
+#: templates/base.html:127
+msgid "Impersonate"
 msgstr ""
 
 #: templates/demo.html:23
@@ -4604,6 +4624,10 @@ msgstr ""
 
 #: templates/auth/login.html:38
 msgid "Create Account"
+msgstr ""
+
+#: templates/auth/login_trap.html:10
+msgid "Sign in as a different user"
 msgstr ""
 
 #: templates/comments/_item.html:3 templates/messages/list.html:70
