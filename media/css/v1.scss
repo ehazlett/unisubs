@@ -1291,7 +1291,6 @@ input[name="thumbnail-clear"] {
 
 /* Dashboard */
 #dashboard {
-
     .featured {
         margin-bottom: 4em;
         padding: 0;
@@ -1302,7 +1301,6 @@ input[name="thumbnail-clear"] {
             padding: 1em;
         }
     }
-
     .listing {
         margin-bottom: 4em;
         margin-right: 25px;
@@ -1324,9 +1322,12 @@ input[name="thumbnail-clear"] {
             top: 1em;
         }
     }
-
     .view ul {
         padding: 0;
+    }
+    div.dashboard-inner {
+        clear: both;
+        padding: 20px 10px;
     }
 }
 .v1 .only-child h2 {

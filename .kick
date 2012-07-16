@@ -5,7 +5,7 @@ process do |files|
             execute "jshint media/js/embedder/embedder.js"
             execute "media/js/embedder/compile-embedder.sh"
         when %r{^media/css/v1.scss$}
-            execute "scss -t expanded media/css/v1.scss media/css/v1.css"
+            execute "scss -t compressed media/css/v1.scss media/css/v1.css"
         when %r{^media/css/embedder/amara.scss$}
             execute "scss -t compressed media/css/embedder/amara.scss media/css/embedder/amara.css"
         end

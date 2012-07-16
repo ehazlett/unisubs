@@ -29,62 +29,65 @@
         {% with 'dashboard' as current %}
             {% include 'profiles/_tabs.html' %}
         {% endwith %}
-        <h3>{% trans 'Open Tasks' %}</h3>
-        <ul class="listing tasks">
-            {% for task in tasks %}
-                <li>
-                    <p>
-                        {{ task.team }}:
-                        {% if task.get_type_display == "Subtitle" %}
-                            {% trans 'Transcribe' %}
-                        {% else %}
-                            {{ task.get_type_display }}
-                        {% endif %}
-                        {% if task.get_type_display == "Translate" %}
-                            {% trans 'Subtitles into' %} {{ task.get_language_display }}
-                        {% else %}
-                            {% if task.get_language_display %}
-                                {{ task.get_language_display }}
+
+        <div class="dashboard-inner">
+            <h3>{% trans 'Open Tasks' %}</h3>
+            <ul class="listing tasks">
+                {% for task in tasks %}
+                    <li>
+                        <p>
+                            {{ task.team }}:
+                            {% if task.get_type_display == "Subtitle" %}
+                                {% trans 'Transcribe' %}
+                            {% else %}
+                                {{ task.get_type_display }}
                             {% endif %}
-                            {% trans 'Subtitles' %}
-                        {% endif %}
-                        {% trans 'for' %}
-                        <a href="{{ task.team_video.video.get_absolute_url }}" title="View video"><em>{{ task.team_video|truncatewords:8 }}</em></a>
-                        {% if task.team_video.video.duration %}
-                            ({{ task.team_video.video.duration|format_duration }})
-                        {% endif %}
+                            {% if task.get_type_display == "Translate" %}
+                                {% trans 'Subtitles into' %} {{ task.get_language_display }}
+                            {% else %}
+                                {% if task.get_language_display %}
+                                    {{ task.get_language_display }}
+                                {% endif %}
+                                {% trans 'Subtitles' %}
+                            {% endif %}
+                            {% trans 'for' %}
+                            <a href="{{ task.team_video.video.get_absolute_url }}" title="View video"><em>{{ task.team_video|truncatewords:8 }}</em></a>
+                            {% if task.team_video.video.duration %}
+                                ({{ task.team_video.video.duration|format_duration }})
+                            {% endif %}
 
-                        <br />{% include "teams/_perform_task_link.html" %}
-                    </p>
-                    {% with can_decline=task|can_decline_task:user %}
-                        {% if can_decline %}
-                            <a href="#" class="action-decline">{% trans 'Decline Task' %}</a>
-                            <form class="hidden" action="{% url teams:assign_task slug=task.team.slug %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="next" value="{{ request.path }}{% query_string request.GET %}" />
-                                <input type="hidden" name="task" value="{{ task.id }}" />
-                                <input type="hidden" name="assignee" value="" />
-                                <input type="submit" class="submit" value="Decline Task" name="" />
-                            </form>
-                        {% endif %}
-                    {% endwith %}
-                </li>
-            {% empty %}
-                <li>
-                    <p>{% trans 'You have no open tasks assigned to you.' %}</p>
-                </li>
-            {% endfor %}
-        </ul>
-
-        <h3>{% trans "Recent Activity" %} (<a href="{% url profiles:actions_list %}">{% trans 'View all' %}</a>)</h3>
-        {% with action_list as events %}
-            <ul class="listing activity">
-                {% for item in events %}
-                    <li>{{ item.render }}</li>
+                            <br />{% include "teams/_perform_task_link.html" %}
+                        </p>
+                        {% with can_decline=task|can_decline_task:user %}
+                            {% if can_decline %}
+                                <a href="#" class="action-decline">{% trans 'Decline Task' %}</a>
+                                <form class="hidden" action="{% url teams:assign_task slug=task.team.slug %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="next" value="{{ request.path }}{% query_string request.GET %}" />
+                                    <input type="hidden" name="task" value="{{ task.id }}" />
+                                    <input type="hidden" name="assignee" value="" />
+                                    <input type="submit" class="submit" value="Decline Task" name="" />
+                                </form>
+                            {% endif %}
+                        {% endwith %}
+                    </li>
                 {% empty %}
-                    <li class="empty">{% trans 'Sorry, no activity yet.' %}</li>
+                    <li>
+                        <p>{% trans 'You have no open tasks assigned to you.' %}</p>
+                    </li>
                 {% endfor %}
             </ul>
-        {% endwith %}
+
+            <h3>{% trans "Recent Activity" %} (<a href="{% url profiles:actions_list %}">{% trans 'View all' %}</a>)</h3>
+            {% with action_list as events %}
+                <ul class="listing activity">
+                    {% for item in events %}
+                        <li>{{ item.render }}</li>
+                    {% empty %}
+                        <li class="empty">{% trans 'Sorry, no activity yet.' %}</li>
+                    {% endfor %}
+                </ul>
+            {% endwith %}
+        </div>
     </div>
 {% endblock %}
