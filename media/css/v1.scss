@@ -151,7 +151,7 @@ body {
     text-align: center;
     text-decoration: none;
     text-shadow: 1px 1px 1px #0c4a70;
-    @include border-radius(3px);
+    @include border-radius(2px);
     @include vertical-gradient(#136aa1, $usblue);
 
     &:hover {
@@ -166,7 +166,7 @@ body {
         border-color: $fainter;
         color: $normal;
         text-shadow: none;
-        @include vertical-gradient(#fff, $fainter);
+        @include vertical-gradient(lighten($fainter, 10%), $fainter);
 
         &:hover {
             border-color: $faint;
