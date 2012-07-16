@@ -629,7 +629,7 @@ def update_integration():
     with Output("Updating nested unisubs-integration repositories"):
         _execute_on_all_hosts(_update_integration)
 
-def _notify(subj, msg, audience='sysadmin@pculture.org ehazlett@pculture.org'):
+def _notify(subj, msg, audience='ehazlett@pculture.org'):
     mail_from_host = 'pcf-us-dev.pculture.org:2191'
 
     old_host = env.host_string
