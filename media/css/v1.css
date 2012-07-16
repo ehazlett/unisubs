@@ -689,35 +689,27 @@ div.fix-chosen div.chzn-container {
       -webkit-border-radius: 5px;
       background-clip: padding-box;
       border-radius: 5px; }
-  .v1 .listing.tasks > li .perform-task .trigger {
-    text-align: right;
-    padding-right: 16px;
-    background: url("../images/chosen-sprite.png") no-repeat 138px -4px;
-    color: #a0b2bd; }
-  .v1 .listing.tasks > li .perform-task ul {
-    position: absolute;
-    top: 15px;
-    right: 0;
-    padding: 0;
-    background: #fff;
-    -moz-background-clip: padding-box;
-    -moz-border-radius: 3px;
-    -webkit-background-clip: padding-box;
-    -webkit-border-radius: 3px;
-    background-clip: padding-box;
-    border-radius: 3px;
-    -moz-box-shadow: 0px 1px 5px #777777;
-    -webkit-box-shadow: 0px 1px 5px #777777;
-    box-shadow: 0px 1px 5px #777777;
-    z-index: 1000; }
-    .v1 .listing.tasks > li .perform-task ul a {
-      text-align: left;
-      padding: .75em 1em; }
-      .v1 .listing.tasks > li .perform-task ul a:after {
-        content: ''; }
-      .v1 .listing.tasks > li .perform-task ul a:hover {
-        background: #dce2e5;
-        color: #3e6782; }
+  .v1 .listing.tasks > li .perform-task {
+    padding-right: 16px; }
+    .v1 .listing.tasks > li .perform-task .trigger {
+      text-align: right;
+      padding-right: 16px;
+      background: url("../images/chosen-sprite.png") no-repeat 138px -4px;
+      color: #a0b2bd; }
+    .v1 .listing.tasks > li .perform-task ul {
+      position: absolute;
+      top: 15px;
+      right: 0;
+      padding: 0;
+      background: #fff;
+      z-index: 1000; }
+      .v1 .listing.tasks > li .perform-task ul a {
+        text-align: left;
+        padding: .75em 1em; }
+        .v1 .listing.tasks > li .perform-task ul a:after {
+          content: ''; }
+        .v1 .listing.tasks > li .perform-task ul a:hover {
+          color: #3e6782; }
 
 .v1 .listing.tasks.yours > li {
   padding-left: 0;
@@ -1830,6 +1822,8 @@ a.truncated-expand {
     font-size: .9em;
     line-height: 15px;
     text-decoration: none; }
+    .team_dashboard .view h3 a.mode {
+      background: transparent url("../images/mode.png") no-repeat center left; }
 .team_dashboard .view .listing.yours {
   margin-bottom: 3em; }
   .team_dashboard .view .listing.yours > li {
@@ -1843,7 +1837,8 @@ a.truncated-expand {
   .team_dashboard .view .listing.yours .perform-task {
     position: absolute;
     top: 0;
-    right: 1em; }
+    right: 1em;
+    padding-right: .5em; }
 .team_dashboard .view .listing.videos li h4 a {
   display: block;
   position: absolute;
@@ -1856,8 +1851,8 @@ a.truncated-expand {
   width: 290px;
   background: rgba(0, 0, 0, 0.65);
   color: #fff; }
-.team_dashboard .view .listing.videos li:hover h4 a {
-  background: rgba(0, 0, 0, 0.75); }
+.team_dashboard .view .listing.videos li .thumb {
+  margin-bottom: .5em; }
 .team_dashboard .view .listing.videos li .languages {
   position: relative;
   clear: both;
@@ -1865,8 +1860,8 @@ a.truncated-expand {
   .team_dashboard .view .listing.videos li .languages > a {
     display: block;
     margin: 0;
-    padding: .75em .75em .75em 2em;
-    background: #f3f6f8 url("../images/arrows.png") no-repeat 10px 14px;
+    padding: .75em;
+    background: #f3f6f8;
     border: 1px solid #dce2e5;
     -moz-background-clip: padding-box;
     -moz-border-radius: 2px;
@@ -1885,9 +1880,8 @@ a.truncated-expand {
       padding: .75em 2em .75em .75em;
       border-left: 1px solid #dce2e5;
       border-top: 1px solid transparent;
-      color: #7692a3;
       cursor: pointer;
-      background: transparent url("../images/arrows.png") no-repeat 85% -61px;
+      background: transparent url("../images/arrows.png") no-repeat 85% 14px;
       -moz-border-radius-bottomleft: 0;
       -moz-border-radius-bottomright: 0;
       -moz-border-radius-topleft: 0;
@@ -1900,6 +1894,9 @@ a.truncated-expand {
       border-bottom-right-radius: 0;
       border-top-left-radius: 0;
       border-top-right-radius: 2px; }
+    .team_dashboard .view .listing.videos li .languages > div span.expand {
+      color: #7692a3;
+      background: transparent url("../images/arrows.png") no-repeat 85% -61px; }
     .team_dashboard .view .listing.videos li .languages > div ul {
       display: none;
       position: absolute;
@@ -1925,8 +1922,7 @@ a.truncated-expand {
         padding: 0; }
       .team_dashboard .view .listing.videos li .languages > div ul a {
         display: block;
-        padding: .75em .75em .75em 2em;
-        background: transparent url("../images/arrows.png") no-repeat 10px 14px;
+        padding: .75em;
         color: #2f3c45; }
     .team_dashboard .view .listing.videos li .languages > div:hover span {
       background-color: #dce2e5; }

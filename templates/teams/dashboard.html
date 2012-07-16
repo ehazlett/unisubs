@@ -38,15 +38,12 @@
         {% if user_tasks %}
             <h3>
                 <a href="#">View history</a>
-                Your Projects ({{ user_tasks.count }})
+                Your projects ({{ user_tasks.count }})
+                {# If count == 0: You don't have any projects yet #}
             </h3>
             <ul class="listing tasks yours">
                 {% for task in user_tasks %}
                     <li>
-                        {{ task.get_type_display }}
-                        {% if task.get_language_display %}
-                            {{ task.get_language_display }} for
-                        {% endif %}
                         <a href="{{ task.team_video.video.get_absolute_url }}" title="View video">
                             &#8220;{{ task.team_video }}&#8221;
                         </a>
@@ -58,14 +55,21 @@
                             {% endif %}
                         {% endif %}
                         <a class="perform-task button reduced">
-                            {% trans 'Continue' %}
+                            {{ task.get_type_display }}
+                            {% if task.get_language_display %}
+                                {{ task.get_language_display }}
+                            {% endif %}
                         </a>
                     </li>
                 {% endfor %}
             </ul>
+            {# if not user_tasks: <p>Choose from the list of available projects below</p> #}
         {% endif %}
         {% if videos %}
-            <h3>Videos that need your help ({{ videos.items|length }})</h3>
+            <h3>
+                <a href="" class="mode"></a>
+                Videos that need your help ({{ videos.items|length }})
+            </h3>
             {# View notice about langs . if not logged in or whatever, show like ten most recent. #}
             <ul class="listing videos">
                 {% for id, video in videos.items %}
@@ -78,34 +82,44 @@
                         </h4>
                         <div class="languages">
                             {% with task=video.tasks|first %}
-                                <a href="#" title="Get started now">
-                                    {% if task.get_type_display == 'Subtitle' or task.get_type_display == 'Translate' %}
-                                        Needs {{ task.get_language_display }} subtitles
-                                    {% else %}
-                                        {{ task.get_language_display }} subtitles need 
-                                        {{ task.get_type_display }}
-                                    {% endif %}
-                                </a>
+                                {% if video.tasks|length > 1 %}
+                                    <a href="#" title="Get started now">
+                                        {{ video.tasks|length }}
+                                        {% trans " languages need help" %}
+                                    </a>
+                                    <div>
+                                        <span class="expand">View all</span>
+                                        <ul>
+                                            {% for task in video.tasks %}
+                                                <li>
+                                                    <a href="" title="Get started now">
+                                                        {% if task.get_type_display == 'Subtitle' %}
+                                                            {% trans "Create Subtitles" %}
+                                                        {% else %}
+                                                            {{ task.get_type_display }}
+                                                            {% if task.get_language_display %}
+                                                                {{ task.get_language_display }}
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% else %}
+                                    <a href="#" title="Get started now">
+                                        {% if task.get_type_display == 'Subtitle' or task.get_type_display == 'Translate' %}
+                                            Needs {{ task.get_language_display }} subtitles
+                                        {% else %}
+                                            {{ task.get_language_display }} subtitles need 
+                                            {{ task.get_type_display }}
+                                        {% endif %}
+                                    </a>
+                                    <div>
+                                        <span>Start now</span>
+                                    </div>
+                                {% endif %}
                             {% endwith %}
-                            {% if video.tasks|length > 1 %}
-                                <div>
-                                    <span>{{ video.tasks|length|add:'-1' }} more</span>
-                                    <ul>
-                                        {% for task in video.tasks|slice:'1:' %}
-                                            <li>
-                                                <a href="" title="Get started now">
-                                                    {% if task.get_type_display == 'Subtitle' or task.get_type_display == 'Translate' %}
-                                                        Needs {{ task.get_language_display }} subtitles
-                                                    {% else %}
-                                                        {{ task.get_language_display }} subtitles need 
-                                                        {{ task.get_type_display }}
-                                                    {% endif %}
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            {% endif %}
                         </div>
                         {% comment %}<ul class="languages">
                             {% for task in video.tasks %}

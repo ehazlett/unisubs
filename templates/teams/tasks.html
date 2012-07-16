@@ -153,32 +153,33 @@
                                 >
 
                                 <h3>
-                                    {% if task.get_type_display == "Subtitle" %}
-                                        {% trans 'Transcribe' %}
-                                    {% else %}
-                                        {{ task.get_type_display }}
-                                        {% if task.get_type_display == 'Review' or task.get_type_display == 'Approve' %}
-                                            {% if task.subtitle_version.language.is_original %}
-                                                {% trans 'Original' %}
-                                            {% endif %}
-                                        {% endif %}
-                                    {% endif %}
-                                    {% if task.get_type_display == "Translate" %}
-                                        {% trans 'Subtitles into' %} {{ task.get_language_display }}
-                                    {% else %}
-                                        {% if task.get_language_display %}
-                                            {{ task.get_language_display }}
-                                        {% endif %}
-                                        {% trans 'Subtitles' %}
-                                    {% endif %}
-                                </h3>
-                                <p>
-                                    <strong>{% trans "Video" %}:</strong>
                                     <a href="{{ task.team_video.video.get_absolute_url }}">
-                                        {{ task.team_video|truncatewords:12 }}
+                                        {{ task.team_video|truncatewords:15 }}
                                     </a>
                                     {% if task.team_video.video.duration %}
                                         ({{ task.team_video.video.duration|format_duration }})
+                                    {% endif %}
+                                </h3>
+
+                                <p>
+                                    {% if task.assignee %}
+                                        {% trans 'Assigned to' %}
+                                        {% if task.assignee == user %}
+                                            {% trans 'me' %}
+                                        {% else %}
+                                            <a href="{{ task.assignee.get_absolute_url }}" title="View {{ task.assignee }}'s profile">
+                                                {{ task.assignee }}
+                                            </a>
+                                        {% endif %}
+                                    {% else %}
+                                        {% trans 'Unassigned' %}
+                                    {% endif %}
+                                    {% if task.expiration_date != None %}
+                                        {% if task.future %}
+                                            <span class="due">Due in {{ task.expiration_date|timeuntil }}</span>
+                                        {% else %}
+                                            <span class="due">Overdue by {{ task.expiration_date|timesince }}</span>
+                                        {% endif %}
                                     {% endif %}
                                 </p>
 
@@ -215,34 +216,29 @@
 
                                 <a href="{{ task.team_video.video.get_absolute_url }}" class="thumb"><img src="{{ task.team_video.get_thumbnail }}" alt="{{ task.team_video.title }}"></a>
                                 <ul class="actions">
-                                    <li>
-                                        <h4>
-                                            {% if task.assignee %}
-                                                {% trans 'Assigned to' %}
-                                                {% if task.assignee == user %}
-                                                    {% trans 'me' %}
-                                                {% else %}
-                                                    <a href="{{ task.assignee.get_absolute_url }}" title="View {{ task.assignee }}'s profile">
-                                                        {{ task.assignee }}
-                                                    </a>
-                                                {% endif %}
-                                            {% else %}
-                                                {% trans 'Unassigned' %}
-                                            {% endif %}
-                                        </h4>
-                                    </li>
-                                    {% if task.expiration_date != None %}
-                                        {% if task.future %}
-                                            <li class="due">Due in {{ task.expiration_date|timeuntil }}</li>
-                                        {% else %}
-                                            <li class="due">Overdue by {{ task.expiration_date|timesince }}</li>
-                                        {% endif %}
-                                    {% endif %}
-
                                     {% if task|can_perform_task:user %}
                                         {% if task.assignee == user or task.assignee == None %}
                                             <div class="action-group perform-task">
-                                                <h5 class="trigger">{% trans 'Perform Task' %}</h5>
+                                                <h5 class="trigger">
+                                                    {% if task.get_type_display == "Subtitle" %}
+                                                        {% trans 'Create' %}
+                                                    {% else %}
+                                                        {{ task.get_type_display }}
+                                                        {% if task.get_type_display == 'Review' or task.get_type_display == 'Approve' %}
+                                                            {% if task.subtitle_version.language.is_original %}
+                                                                {% trans 'Original' %}
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if task.get_type_display == "Translate" %}
+                                                        {% trans 'into' %} {{ task.get_language_display }}
+                                                    {% else %}
+                                                        {% if task.get_language_display %}
+                                                            {{ task.get_language_display }}
+                                                        {% endif %}
+                                                        {% trans 'Subtitles' %}
+                                                    {% endif %}
+                                                </h5>
                                                 <ul>
                                                     {% if task.assignee == user %}
                                                         <li>
