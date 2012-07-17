@@ -140,6 +140,7 @@ def my_videos(request):
         qs = qs.filter(Q(title__icontains=q)|Q(description__icontains=q))
     context = {
         'user_info': user,
+        'can_edit': True,
         'my_videos': True,
         'query': q
     }
