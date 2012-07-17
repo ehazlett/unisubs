@@ -2255,3 +2255,22 @@ a.truncated-expand {
         margin-top: 10px;
     }
 }
+
+/* Account */
+body.account {
+    form fieldset {
+        input[type="text"], input[type="password"] {
+            width: 95%;
+        }
+    }
+    form .alpha {
+        clear: left;
+    }
+    div.api-access {
+        fieldset {
+            legend {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

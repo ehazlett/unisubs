@@ -2,6 +2,7 @@
 
 {% load i18n messages_tags %}
 
+{% block body-class %}account {{ block.super }}{% endblock %}
 {% block title %}{{ user_info }} | Amara{% endblock %}
 
 {% block view_content %}
@@ -9,11 +10,10 @@
         {% with 'account' as current %}
             {% include 'profiles/_tabs.html' %}
         {% endwith %}
-
-        <form class="edit_profile" action="." method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-
-            {{ form.non_field_errors }}
+        <div class="account-inner">
+            <form class="edit_profile" action="." method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
                 <div class="grid_4 alpha">
                     <fieldset>
                         {% include "_form_field.html" with field=form.email %}
@@ -26,30 +26,34 @@
                         {% include "_form_field.html" with field=form.last_name %}
                     </fieldset>
                 </div>
-
-                    {% comment %}
+                <div class="grid_4 alpha">
+                    <fieldset>
                         {% include "_form_field.html" with field=form.notify_by_message widget_type="checkbox" %}
                         <p class="notation">{% trans "Send notifications to my UniversalSubtitles.org inbox" %}</p>
-                        
                         {% include "_form_field.html" with field=form.notify_by_email widget_type="checkbox" %}
                         <p class="notation">{% trans "Send an email notification for each message received" %}</p>
+                    </fieldset>
+                </div>
+                <div class="grid_4 omega">
+                    <fieldset>
                         <!-- fix this, the setting cannot be false for notify_by_message and notify_by_email  -->
                         {% include "_form_field.html" with field=form.current_password %}
-
                         {% include "_form_field.html" with field=form.new_password %}
-                        
                         {% include "_form_field.html" with field=form.new_password_verify %}
-                <fieldset>
-                    <legend>{% trans "API Access" %}</legend>
-                    {% if form.instance.api_key.key %}
-                        <label>Your API key</label>
-                        <p><span class="api-key-holder">{{form.instance.api_key.key}}</span></p>
-                        <p><span class="api-key-status"></span></p>
-                    {% else %}
-                        <a href="{% url profiles:generate-api-key %}" class="get-new-api-bt button">Generate new key</a>
-                    {% endif %}
-                </fieldset>
-                    {% endcomment %}  
+                    </fieldset>
+                </div>
+                <div class="grid_8">
+                    <fieldset>
+                        <legend>{% trans "API Access" %}</legend>
+                        {% if form.instance.api_key.key %}
+                            <label>Your API key</label>
+                            <p><span class="api-key-holder">{{form.instance.api_key.key}}</span></p>
+                            <p><span class="api-key-status"></span></p>
+                        {% else %}
+                            <a href="{% url profiles:generate-api-key %}" class="get-new-api-bt button">Generate new key</a>
+                        {% endif %}
+                    </fieldset>
+                </div>
                 <div class="grid_8">
                     <h3>Accounts</h3>
                     <ul class="listing">
@@ -58,15 +62,13 @@
                         </li>
                     </ul>
                 </div>
-
-
-            <div class="submit">
-                <button class="button save" type="submit" value="Save">
-                    {% trans 'Save Changes' %}
-                </button>
-                    
-                <a class="button delete" onclick="return confirm('Are you sure you want to permanently delete your account? This action is irreversible.');" href="{% url auth:delete_user %}">{% trans 'Permanently Delete Your Profile' %}</a>
-            </div>
-        </form>
+                <div class="submit">
+                    <button class="button save" type="submit" value="Save">
+                        {% trans 'Save Changes' %}
+                    </button>
+                    <a class="button delete" onclick="return confirm('Are you sure you want to permanently delete your account? This action is irreversible.');" href="{% url auth:delete_user %}">{% trans 'Permanently Delete Your Profile' %}</a>
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock %}
