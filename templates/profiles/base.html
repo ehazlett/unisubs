@@ -19,9 +19,7 @@
             {% endif %}
         </dl>
     </div>
-
     <div class="grid_4 context alpha">
-
         <h3>
             {% trans "Bio" %}
             {% if can_edit %}
@@ -41,7 +39,6 @@
                 </em>
             {% endif %}
         </p>
-
         {% with user_info.get_languages as langs %}
             <h3>
                 {% trans "Languages" %}
@@ -75,7 +72,7 @@
             <h3>
                 {% trans "Teams" %}
                 {% if can_edit %}
-                    <a class="edit" href="#">edit</a>
+                    <a class="edit" href="{% url teams:user_teams %}">edit</a>
                 {% endif %}
             </h3>
             {% if user_teams %}

@@ -7,13 +7,14 @@
         </a>
     </li>
 
-    <li{% if current == "videos" %} class="current" {% endif %}>
-        <a href="{% url profiles:my_videos %}">
-            {% trans "Videos" %}
-        </a>
-    </li>
-
     {% if user.is_authenticated and user == user_info %}
+
+        <li{% if current == "videos" %} class="current" {% endif %}>
+            <a href="{% url profiles:my_videos %}">
+                {% trans "Videos" %}
+            </a>
+        </li>
+
         <li{% if current == "dashboard" %} class="current" {% endif %}>
             <a href="{% url profiles:dashboard %}">
                 {% trans "Dashboard" %}
