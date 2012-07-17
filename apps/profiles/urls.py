@@ -33,4 +33,5 @@ urlpatterns = patterns('profiles.views',
     url(r'^activities/$', 'actions_list', name='actions_list'),
     url(r'^profile/(?P<user_id>.+)/$', 'activity', name='profile'),
     url(r'^generate-api-key/$', 'generate_api_key', name='generate-api-key'),
+    url(r'^save-bio/$', 'save_bio', name='save_bio'),
 )

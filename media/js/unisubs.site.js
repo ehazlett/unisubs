@@ -406,6 +406,29 @@ var Site = function(Site) {
                     return false;
                 });
             }
+            if ($('form.edit-profile-bio').length) {
+                var $form = $('form.edit-profile-bio');
+                var $modal = $form.parent();
+
+                $form.submit(function() {
+                    var url = $form.attr('action');
+
+                    $.ajax({
+                        url: url,
+                        data: { biography: $('textarea', $form).val()},
+                        dataType: 'json',
+                        type: 'post',
+                        error: function() {
+                            alert('Sorry, there was a problem saving your bio. Please try again.');
+                        },
+                        success: function(resp) {
+                            $modal.hide();
+                        }
+                    });
+
+                    return false;
+                });
+            }
 
             $listsCollapsible = $('ul.list-collapsible');
             if ($listsCollapsible.length) {

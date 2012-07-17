@@ -99,21 +99,22 @@
 
     {% if can_edit %}
         <div class="bootstrap">
-            <form action="{% url profiles:account %}" method="post" enctype="multipart/form-data">
 
             {# Edit Bio #}
             <div class="modal" id="edit-bio" style="display: none">
-                <div class="modal-header">
-                    <a href="#" class="close">x</a>
-                    <h3>{% trans 'Edit your bio' %}</h3>
-                </div>
-                <div class="modal-body">
-                    {% include "_form_field.html" with field=form.biography %}
-                </div>
-                <div class="modal-footer">
-                    {% csrf_token %}
-                    <input type="submit" class="btn primary" value="Save" />
-                </div>
+                <form action="{% url profiles:save_bio %}" class="edit-profile-bio" method="post" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <a href="#" class="close">x</a>
+                        <h3>{% trans 'Edit your bio' %}</h3>
+                    </div>
+                    <div class="modal-body">
+                        <textarea name="bio"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        {% csrf_token %}
+                        <input type="submit" class="btn primary" value="Save" />
+                    </div>
+                </form>
             </div>
 
             {# Edit languages #}
@@ -185,7 +186,6 @@
                     <input type="submit" class="btn primary" value="Save" />
                 </div>
             </div>
-        </form>
         </div>
     {% endif %}
 {% endblock %}

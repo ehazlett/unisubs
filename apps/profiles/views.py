@@ -55,6 +55,14 @@ class OptimizedQuerySet(LoadRelatedQuerySet):
 
 
 @login_required
+def my_profile(request):
+
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/profiles/profile/' + request.user.username + '/')
+    else:
+        return Http404()
+
+@login_required
 def edit_avatar(request):
     output = {}
     form = EditAvatarForm(request.POST, instance=request.user, files=request.FILES)
@@ -76,29 +84,18 @@ def remove_avatar(request):
         request.user.save()
     return HttpResponse(json.dumps({'avatar': request.user.avatar()}), "text/javascript")
 
-
 @login_required
-def account(request):
+def save_bio(request):
 
     if request.method == 'POST':
-        form = EditUserForm(request.POST,
-                            instance=request.user,
-                            files=request.FILES, label_suffix="")
-        if form.is_valid():
-            form.save()
-            messages.success(request, _('Your profile has been updated.'))
+        request.user.customuser.biography = request.POST['biography']
+        request.user.customuser.save()
 
-    else:
-        form = EditUserForm(instance=request.user, label_suffix="")
-
-    context = {
-        'form': form,
-        'user_info': request.user,
-        'edit_profile_page': True,
-        'can_edit': True
+    output = {
+        'bio': request.user.biography
     }
 
-    return direct_to_template(request, 'profiles/account.html', context)
+    return HttpResponse(json.dumps(output), "text/javascript")
 
 def activity(request, user_id=None):
     if user_id:
@@ -134,6 +131,28 @@ def activity(request, user_id=None):
                        extra_context=extra_context)
 
 @login_required
+def videos(request):
+    user = request.user
+    qs = user.videos.order_by('-edited')
+    q = request.REQUEST.get('q')
+
+    if q:
+        qs = qs.filter(Q(title__icontains=q)|Q(description__icontains=q))
+    context = {
+        'user_info': user,
+        'can_edit': True,
+        'my_videos': True,
+        'query': q
+    }
+    qs = qs._clone(OptimizedQuerySet)
+
+    return object_list(request, queryset=qs,
+                       paginate_by=VIDEOS_ON_PAGE,
+                       template_name='profiles/my_videos.html',
+                       extra_context=context,
+                       template_object_name='user_video')
+
+@login_required
 def dashboard(request):
     user = request.user
 
@@ -162,34 +181,27 @@ def dashboard(request):
     return direct_to_template(request, 'profiles/dashboard.html', context)
 
 @login_required
-def my_profile(request):
+def account(request):
 
-    if request.user.is_authenticated():
-        return HttpResponseRedirect('/profiles/profile/' + request.user.username + '/')
+    if request.method == 'POST':
+        form = EditUserForm(request.POST,
+                            instance=request.user,
+                            files=request.FILES, label_suffix="")
+        if form.is_valid():
+            form.save()
+            messages.success(request, _('Your profile has been updated.'))
+
     else:
-        return Http404()
+        form = EditUserForm(instance=request.user, label_suffix="")
 
-@login_required
-def videos(request):
-    user = request.user
-    qs = user.videos.order_by('-edited')
-    q = request.REQUEST.get('q')
-
-    if q:
-        qs = qs.filter(Q(title__icontains=q)|Q(description__icontains=q))
     context = {
-        'user_info': user,
-        'can_edit': True,
-        'my_videos': True,
-        'query': q
+        'form': form,
+        'user_info': request.user,
+        'edit_profile_page': True,
+        'can_edit': True
     }
-    qs = qs._clone(OptimizedQuerySet)
 
-    return object_list(request, queryset=qs,
-                       paginate_by=VIDEOS_ON_PAGE,
-                       template_name='profiles/my_videos.html',
-                       extra_context=context,
-                       template_object_name='user_video')
+    return direct_to_template(request, 'profiles/account.html', context)
 
 
 @login_required
