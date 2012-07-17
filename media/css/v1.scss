@@ -166,12 +166,12 @@ body {
         border-color: $fainter;
         color: $normal;
         text-shadow: none;
-        @include vertical-gradient(lighten($fainter, 10%), $fainter);
+        @include vertical-gradient(lighten($faintest, 10%), $faintest);
 
         &:hover {
             border-color: $faint;
             color: $dark;
-            @include vertical-gradient($faintest, $fainter);
+            @include vertical-gradient(lighten($fainter, 10%), $fainter);
         }
     }
     &.delete {
@@ -826,6 +826,10 @@ div.fix-chosen div.chzn-container {
             margin-left: 10px;
             max-width: 80px;
         }
+    }
+
+    p {
+        margin: 0;
     }
 
     form.assign-form {
@@ -2307,7 +2311,7 @@ a.truncated-expand {
         .perform-task {
             position: absolute;
             top:0; right: 1em;
-            padding-right: .5em;
+            padding-right: 2em;
         }
     }
 
@@ -2327,23 +2331,30 @@ a.truncated-expand {
             }
 
             .thumb {
-                margin-bottom: .5em;
             }
 
             .languages {
                 position: relative;
                 clear: both;
                 margin: 0 10px;
+                color: $dark;
+
 
                 > a {
                     display: block;
                     margin: 0;
                     padding: .75em;
-                    background: $faintest;
                     border: 1px solid $fainter;
                     @include border-radius(2px);
                     font-weight: bold;
-                    color: $darkest;
+                    color: $dark;
+                    @include vertical-gradient(lighten($faintest, 10%), $faintest);
+
+                    &:hover {
+                        border-color: $faint;
+                        color: $dark;
+                        @include vertical-gradient(lighten($fainter, 10%), $fainter);
+                    }
                 }
 
                 > div {
@@ -2353,16 +2364,16 @@ a.truncated-expand {
 
                     span {
                         display: block;
-                        padding: .75em 2em .75em .75em;
+                        padding: .75em;
                         border-left: 1px solid $fainter;
                         border-top: 1px solid transparent;
                         cursor: pointer;
-                        background: transparent url('../images/arrows.png') no-repeat 85% 14px;
                         @include multi-border-radius(0, 2px, 0, 0);
                     }
 
                     span.expand {
                         color: $light;
+                        padding-right: 2em;
                         background: transparent url('../images/arrows.png') no-repeat 85% -61px;
                     }
 
@@ -2373,7 +2384,7 @@ a.truncated-expand {
                         padding: 0;
                         top: 2.75em;
                         right: 0;
-                        background: $fainter;
+                        background: $faintest;
                         z-index: 50;
                         @include multi-border-radius(0, 0, 2px, 2px);
 
@@ -2383,14 +2394,13 @@ a.truncated-expand {
 
                         a {
                             display: block;
-                            padding: .75em;
+                            padding: 1em .75em;
                             color: $darkest;
                         }
                     }
 
                     &:hover {
                         span {
-                            background-color: $fainter;
                         }
 
                         ul {

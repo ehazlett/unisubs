@@ -82,25 +82,25 @@ body {
     border-color: #dce2e5;
     color: #678ca3;
     text-shadow: none;
-    background: #f9fafb;
-    background-image: -moz-gradient(center top, #f9fafb 0%, #dce2e5 100%);
-    background-image: -moz-linear-gradient(center top, #f9fafb 0%, #dce2e5 100%);
-    background-image: -ms-linear-gradient(#f9fafb, #dce2e5);
-    background-image: -o-linear-gradient(#f9fafb, #dce2e5);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fafb), to(#dce2e5));
-    background-image: -webkit-linear-gradient(#f9fafb, #dce2e5);
-    background-image: linear-gradient(#f9fafb, #dce2e5); }
+    background: white;
+    background-image: -moz-gradient(center top, white 0%, #f3f6f8 100%);
+    background-image: -moz-linear-gradient(center top, white 0%, #f3f6f8 100%);
+    background-image: -ms-linear-gradient(white, #f3f6f8);
+    background-image: -o-linear-gradient(white, #f3f6f8);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#f3f6f8));
+    background-image: -webkit-linear-gradient(white, #f3f6f8);
+    background-image: linear-gradient(white, #f3f6f8); }
     .v1 .button.reduced:hover, .v1 .button.cancel:hover, .v1 .content button.reduced:hover, .v1 .content button.cancel:hover, .v1 .form-container button.reduced:hover, .v1 .form-container button.cancel:hover, .v1 .submit input.reduced:hover, .v1 .submit input.cancel:hover {
       border-color: #b7c3c9;
       color: #486f87;
-      background: #f3f6f8;
-      background-image: -moz-gradient(center top, #f3f6f8 0%, #dce2e5 100%);
-      background-image: -moz-linear-gradient(center top, #f3f6f8 0%, #dce2e5 100%);
-      background-image: -ms-linear-gradient(#f3f6f8, #dce2e5);
-      background-image: -o-linear-gradient(#f3f6f8, #dce2e5);
-      background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f6f8), to(#dce2e5));
-      background-image: -webkit-linear-gradient(#f3f6f8, #dce2e5);
-      background-image: linear-gradient(#f3f6f8, #dce2e5); }
+      background: #f9fafb;
+      background-image: -moz-gradient(center top, #f9fafb 0%, #dce2e5 100%);
+      background-image: -moz-linear-gradient(center top, #f9fafb 0%, #dce2e5 100%);
+      background-image: -ms-linear-gradient(#f9fafb, #dce2e5);
+      background-image: -o-linear-gradient(#f9fafb, #dce2e5);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fafb), to(#dce2e5));
+      background-image: -webkit-linear-gradient(#f9fafb, #dce2e5);
+      background-image: linear-gradient(#f9fafb, #dce2e5); }
   .v1 .button.delete, .v1 .content button.delete, .v1 .form-container button.delete, .v1 .submit input.delete {
     border-color: #700C22;
     float: left;
@@ -667,6 +667,8 @@ div.fix-chosen div.chzn-container {
     .v1 .listing.tasks > li .thumb img {
       margin-left: 10px;
       max-width: 80px; }
+  .v1 .listing.tasks > li p {
+    margin: 0; }
   .v1 .listing.tasks > li form.assign-form {
     padding: 0; }
   .v1 .listing.tasks > li.disabled {
@@ -1838,7 +1840,7 @@ a.truncated-expand {
     position: absolute;
     top: 0;
     right: 1em;
-    padding-right: .5em; }
+    padding-right: 2em; }
 .team_dashboard .view .listing.videos li h4 a {
   display: block;
   position: absolute;
@@ -1851,17 +1853,15 @@ a.truncated-expand {
   width: 290px;
   background: rgba(0, 0, 0, 0.65);
   color: #fff; }
-.team_dashboard .view .listing.videos li .thumb {
-  margin-bottom: .5em; }
 .team_dashboard .view .listing.videos li .languages {
   position: relative;
   clear: both;
-  margin: 0 10px; }
+  margin: 0 10px;
+  color: #486f87; }
   .team_dashboard .view .listing.videos li .languages > a {
     display: block;
     margin: 0;
     padding: .75em;
-    background: #f3f6f8;
     border: 1px solid #dce2e5;
     -moz-background-clip: padding-box;
     -moz-border-radius: 2px;
@@ -1870,18 +1870,36 @@ a.truncated-expand {
     background-clip: padding-box;
     border-radius: 2px;
     font-weight: bold;
-    color: #2f3c45; }
+    color: #486f87;
+    background: white;
+    background-image: -moz-gradient(center top, white 0%, #f3f6f8 100%);
+    background-image: -moz-linear-gradient(center top, white 0%, #f3f6f8 100%);
+    background-image: -ms-linear-gradient(white, #f3f6f8);
+    background-image: -o-linear-gradient(white, #f3f6f8);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#f3f6f8));
+    background-image: -webkit-linear-gradient(white, #f3f6f8);
+    background-image: linear-gradient(white, #f3f6f8); }
+    .team_dashboard .view .listing.videos li .languages > a:hover {
+      border-color: #b7c3c9;
+      color: #486f87;
+      background: #f9fafb;
+      background-image: -moz-gradient(center top, #f9fafb 0%, #dce2e5 100%);
+      background-image: -moz-linear-gradient(center top, #f9fafb 0%, #dce2e5 100%);
+      background-image: -ms-linear-gradient(#f9fafb, #dce2e5);
+      background-image: -o-linear-gradient(#f9fafb, #dce2e5);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fafb), to(#dce2e5));
+      background-image: -webkit-linear-gradient(#f9fafb, #dce2e5);
+      background-image: linear-gradient(#f9fafb, #dce2e5); }
   .team_dashboard .view .listing.videos li .languages > div {
     position: absolute;
     top: 0;
     right: 0; }
     .team_dashboard .view .listing.videos li .languages > div span {
       display: block;
-      padding: .75em 2em .75em .75em;
+      padding: .75em;
       border-left: 1px solid #dce2e5;
       border-top: 1px solid transparent;
       cursor: pointer;
-      background: transparent url("../images/arrows.png") no-repeat 85% 14px;
       -moz-border-radius-bottomleft: 0;
       -moz-border-radius-bottomright: 0;
       -moz-border-radius-topleft: 0;
@@ -1896,6 +1914,7 @@ a.truncated-expand {
       border-top-right-radius: 2px; }
     .team_dashboard .view .listing.videos li .languages > div span.expand {
       color: #7692a3;
+      padding-right: 2em;
       background: transparent url("../images/arrows.png") no-repeat 85% -61px; }
     .team_dashboard .view .listing.videos li .languages > div ul {
       display: none;
@@ -1904,7 +1923,7 @@ a.truncated-expand {
       padding: 0;
       top: 2.75em;
       right: 0;
-      background: #dce2e5;
+      background: #f3f6f8;
       z-index: 50;
       -moz-border-radius-bottomleft: 2px;
       -moz-border-radius-bottomright: 2px;
@@ -1922,9 +1941,7 @@ a.truncated-expand {
         padding: 0; }
       .team_dashboard .view .listing.videos li .languages > div ul a {
         display: block;
-        padding: .75em;
+        padding: 1em .75em;
         color: #2f3c45; }
-    .team_dashboard .view .listing.videos li .languages > div:hover span {
-      background-color: #dce2e5; }
     .team_dashboard .view .listing.videos li .languages > div:hover ul {
       display: block; }
