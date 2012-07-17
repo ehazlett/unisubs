@@ -102,7 +102,7 @@
                                         	{% block stop_notification %}
                                             <p>
                                                 {% trans 'To stop receiving these emails, go to your preferences page and uncheck "notify me by email":' %}
-                                                <a href="http://{{ domain }}{% filter rmlocale %}{% url profiles:edit %}{% endfilter %}">
+                                                <a href="http://{{ domain }}{% filter rmlocale %}{% url profiles:account %}{% endfilter %}">
                                                     {% trans 'My profile / preferences' %}
                                                 </a>
                                             </p>

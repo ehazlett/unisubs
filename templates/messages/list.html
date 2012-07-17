@@ -42,7 +42,7 @@
 
             <ul class="listing messages">
                 <p class="view-notice">
-                    You <strong>are {% if not user_info.notify_by_email %}not {% endif %}receiving</strong> message notifications via email. <a href="{% url profiles:edit %}">Edit preferences</a>.
+                    You <strong>are {% if not user_info.notify_by_email %}not {% endif %}receiving</strong> message notifications via email. <a href="{% url profiles:account %}">Edit preferences</a>.
                 </p>
                 {% for msg in message_list %}
                     <li class="message {% if not msg.read %}unread{% endif %}">

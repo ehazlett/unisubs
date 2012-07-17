@@ -139,7 +139,7 @@ def token_login(request, token):
             backend = get_backends()[0]
             user.backend = "%s.%s" % (backend.__module__, backend.__class__.__name__)
             stock_login(request, user)
-            next_url = request.GET.get("next", reverse("profiles:edit"))
+            next_url = request.GET.get("next", reverse("profiles:account"))
             return HttpResponseRedirect(next_url)
 
     except LoginToken.DoesNotExist:

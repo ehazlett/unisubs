@@ -33,7 +33,7 @@
             {% comment %}{% if user.is_authenticated %}
                 <div class="tools group">
                     {% if can_edit %}
-                        <a class="button" href="{% url profiles:edit %}">Edit profile</a>
+                        <a class="button" href="{% url profiles:account %}">Edit profile</a>
                     {% endif %}
                     {% if not user == user_info %}
                         <a class="button" href="{% url messages:new %}?user={{ user_info.username }}">Send Message</a>

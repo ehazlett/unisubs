@@ -16,13 +16,12 @@
 # along with this program.  If not, see
 # http://www.gnu.org/licenses/agpl-3.0.html.
 from django.conf import settings
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.db.models import Q
-from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import redirect
-from django.utils import simplejson as json
 from django.utils.translation import ugettext_lazy as _, ugettext
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.utils import simplejson as json
 from django.views.generic.list_detail import object_list
 from django.views.generic.simple import direct_to_template
 from tastypie.models import ApiKey
@@ -36,18 +35,24 @@ from utils.rpc import RpcRouter
 from videos.models import Action, SubtitleLanguage, VideoUrl
 
 
-rpc_router = RpcRouter('profiles:rpc_router', {
-    'ProfileApi': ProfileApiClass()
-})
+rpc_router = RpcRouter('profiles:rpc_router', {'ProfileApi': ProfileApiClass()})
 
 VIDEOS_ON_PAGE = getattr(settings, 'VIDEOS_ON_PAGE', 30)
 
-@login_required
-def remove_avatar(request):
-    if request.POST.get('remove'):
-        request.user.picture = ''
-        request.user.save()
-    return HttpResponse(json.dumps({'avatar': request.user.avatar()}), "text/javascript")
+class OptimizedQuerySet(LoadRelatedQuerySet):
+
+    def update_result_cache(self):
+        videos = dict((v.id, v) for v in self._result_cache if not hasattr(v, 'langs_cache'))
+
+        if videos:
+            for v in videos.values():
+                v.langs_cache = []
+
+            langs_qs = SubtitleLanguage.objects.select_related('video').filter(video__id__in=videos.keys())
+
+            for l in langs_qs:
+                videos[l.video_id].langs_cache.append(l)
+
 
 @login_required
 def edit_avatar(request):
@@ -64,19 +69,13 @@ def edit_avatar(request):
         output['error'] = form.get_errors()
     return HttpResponse('<textarea>%s</textarea>'  % json.dumps(output))
 
-class OptimizedQuerySet(LoadRelatedQuerySet):
+@login_required
+def remove_avatar(request):
+    if request.POST.get('remove'):
+        request.user.picture = ''
+        request.user.save()
+    return HttpResponse(json.dumps({'avatar': request.user.avatar()}), "text/javascript")
 
-    def update_result_cache(self):
-        videos = dict((v.id, v) for v in self._result_cache if not hasattr(v, 'langs_cache'))
-
-        if videos:
-            for v in videos.values():
-                v.langs_cache = []
-
-            langs_qs = SubtitleLanguage.objects.select_related('video').filter(video__id__in=videos.keys())
-
-            for l in langs_qs:
-                videos[l.video_id].langs_cache.append(l)
 
 @login_required
 def account(request):
@@ -87,12 +86,11 @@ def account(request):
                             files=request.FILES, label_suffix="")
         if form.is_valid():
             form.save()
-            form_validated = True
-        else:
-            form_validated = False
+            messages.success(request, _('Your profile has been updated.'))
 
     else:
         form = EditUserForm(instance=request.user, label_suffix="")
+
     context = {
         'form': form,
         'user_info': request.user,
@@ -102,95 +100,7 @@ def account(request):
 
     return direct_to_template(request, 'profiles/account.html', context)
 
-@login_required
-def dashboard(request):
-    user = request.user
-
-    tasks = user.open_tasks()
-
-    widget_settings = {}
-    from apps.widget.rpc import add_general_settings
-    add_general_settings(request, widget_settings)
-
-    # For perform links on tasks
-    video_pks = [t.team_video.video_id for t in tasks]
-    video_urls = dict([(vu.video_id, vu.effective_url) for vu in
-                       VideoUrl.objects.filter(video__in=video_pks, primary=True)])
-
-    for t in tasks:
-        t.cached_video_url = video_urls.get(t.team_video.video_id)
-
-    context = {
-        'user_info': user,
-        'can_edit': True,
-        'action_list': Action.objects.for_user(user)[:5],
-        'tasks': tasks,
-        'widget_settings': widget_settings,
-    }
-
-    return direct_to_template(request, 'profiles/dashboard.html', context)
-
-@login_required
-def my_videos(request):
-    user = request.user
-    qs = user.videos.order_by('-edited')
-    q = request.REQUEST.get('q')
-
-    if q:
-        qs = qs.filter(Q(title__icontains=q)|Q(description__icontains=q))
-    context = {
-        'user_info': user,
-        'can_edit': True,
-        'my_videos': True,
-        'query': q
-    }
-    qs = qs._clone(OptimizedQuerySet)
-
-    return object_list(request, queryset=qs,
-                       paginate_by=VIDEOS_ON_PAGE,
-                       template_name='profiles/my_videos.html',
-                       extra_context=context,
-                       template_object_name='user_video')
-
-@login_required
-def edit_profile(request):
-    if request.method == 'POST':
-        form = EditUserForm(request.POST,
-                            instance=request.user,
-                            files=request.FILES, label_suffix="")
-        if form.is_valid():
-            form.save()
-            form_validated = True
-        else:
-            form_validated = False
-
-        formset = UserLanguageFormset(request.POST, instance=request.user)
-        if formset.is_valid() and form_validated:
-            formset.save()
-            messages.success(request, _('Your profile has been updated.'))
-            return redirect('profiles:profile', user_id = request.user.username)
-
-    else:
-        form = EditUserForm(instance=request.user, label_suffix="")
-        formset = UserLanguageFormset(instance=request.user)
-
-    context = {
-        'form': form,
-        'user_info': request.user,
-        'formset': formset,
-        'edit_profile_page': True
-    }
-    return direct_to_template(request, 'profiles/edit_profile.html', context)
-
-@login_required
-def my_profile(request):
-
-    if request.user.is_authenticated():
-        return HttpResponseRedirect('/profiles/profile/' + request.user.username + '/')
-    else:
-        return Http404()
-
-def profile(request, user_id=None):
+def activity(request, user_id=None):
     if user_id:
         try:
             user = User.objects.get(username=user_id)
@@ -224,6 +134,65 @@ def profile(request, user_id=None):
                        extra_context=extra_context)
 
 @login_required
+def dashboard(request):
+    user = request.user
+
+    tasks = user.open_tasks()
+
+    widget_settings = {}
+    from apps.widget.rpc import add_general_settings
+    add_general_settings(request, widget_settings)
+
+    # For perform links on tasks
+    video_pks = [t.team_video.video_id for t in tasks]
+    video_urls = dict([(vu.video_id, vu.effective_url) for vu in
+                       VideoUrl.objects.filter(video__in=video_pks, primary=True)])
+
+    for t in tasks:
+        t.cached_video_url = video_urls.get(t.team_video.video_id)
+
+    context = {
+        'user_info': user,
+        'can_edit': True,
+        'action_list': Action.objects.for_user(user)[:5],
+        'tasks': tasks,
+        'widget_settings': widget_settings,
+    }
+
+    return direct_to_template(request, 'profiles/dashboard.html', context)
+
+@login_required
+def my_profile(request):
+
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/profiles/profile/' + request.user.username + '/')
+    else:
+        return Http404()
+
+@login_required
+def videos(request):
+    user = request.user
+    qs = user.videos.order_by('-edited')
+    q = request.REQUEST.get('q')
+
+    if q:
+        qs = qs.filter(Q(title__icontains=q)|Q(description__icontains=q))
+    context = {
+        'user_info': user,
+        'can_edit': True,
+        'my_videos': True,
+        'query': q
+    }
+    qs = qs._clone(OptimizedQuerySet)
+
+    return object_list(request, queryset=qs,
+                       paginate_by=VIDEOS_ON_PAGE,
+                       template_name='profiles/my_videos.html',
+                       extra_context=context,
+                       template_object_name='user_video')
+
+
+@login_required
 def send_message(request):
     output = dict(success=False)
     form = SendMessageForm(request.user, request.POST)
@@ -254,4 +223,36 @@ def generate_api_key(request):
         key.key = key.generate_key()
         key.save()
     return HttpResponse(json.dumps({"key":key.key}))
+
+
+@login_required
+def edit_profile(request):
+    pass
+    #if request.method == 'POST':
+        #form = EditUserForm(request.POST,
+                            #instance=request.user,
+                            #files=request.FILES, label_suffix="")
+        #if form.is_valid():
+            #form.save()
+            #form_validated = True
+        #else:
+            #form_validated = False
+
+        #formset = UserLanguageFormset(request.POST, instance=request.user)
+        #if formset.is_valid() and form_validated:
+            #formset.save()
+            #messages.success(request, _('Your profile has been updated.'))
+            #return redirect('profiles:profile', user_id = request.user.username)
+
+    #else:
+        #form = EditUserForm(instance=request.user, label_suffix="")
+        #formset = UserLanguageFormset(instance=request.user)
+
+    #context = {
+        #'form': form,
+        #'user_info': request.user,
+        #'formset': formset,
+        #'edit_profile_page': True
+    #}
+    #return direct_to_template(request, 'profiles/edit_profile.html', context)
 

@@ -14,7 +14,7 @@
     {% if user.is_authenticated %}
     <li {% if user_info == user and not edit_profile_page %}class="active"{% endif %}><a href="{% url profiles:profile user.username %}">{% trans "View profile" %}</a></li>
     {% endif %}
-    <li {% if edit_profile_page %}class="active"{% endif %}><a href="{% url profiles:edit %}">{% trans "Edit Profile" %}</a></li>
+    <li {% if edit_profile_page %}class="active"{% endif %}><a href="{% url profiles:account %}">{% trans "Edit Profile" %}</a></li>
 
     <li {% if messages_display %}class="active"{% endif %}>
         <a href="{% url messages:index %}">{% trans "Messages" %}

@@ -38,10 +38,10 @@ class TestViews(TestCase):
         self.user = User.objects.get(username=self.auth['username'])
 
     def test_edit_profile(self):
-        self._simple_test('profiles:edit', status=302)
+        self._simple_test('profiles:account', status=302)
 
         self._login()
-        self._simple_test('profiles:edit')
+        self._simple_test('profiles:account')
 
         data = {
             'username': 'new_username_for_admin',
@@ -50,14 +50,14 @@ class TestViews(TestCase):
             'userlanguage_set-INITIAL_FORMS': '0',
             'userlanguage_set-MAX_NUM_FORMS': ''
         }
-        response = self.client.post(reverse('profiles:edit'), data=data)
+        response = self.client.post(reverse('profiles:account'), data=data)
         self.assertEqual(response.status_code, 302)
         user = User.objects.get(pk=self.user.pk)
         self.assertEqual(user.username, data['username'])
 
         other_user = User.objects.exclude(pk=self.user.pk)[:1].get()
         data['username'] = other_user.username
-        response = self.client.post(reverse('profiles:edit'), data=data)
+        response = self.client.post(reverse('profiles:account'), data=data)
         self.assertEqual(response.status_code, 200)
 
     def test_profile_page(self):
