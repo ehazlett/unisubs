@@ -409,8 +409,9 @@ var Site = function(Site) {
             if ($('form.edit-profile-bio').length) {
                 var $form = $('form.edit-profile-bio');
                 var $modal = $form.parent();
+                var $textarea = $('textarea', $form);
 
-                $('textarea', $form).autogrow();
+                $textarea.autogrow();
 
                 $form.submit(function() {
                     $('input[type="submit"]', $form).attr('disabled', 'disabled');

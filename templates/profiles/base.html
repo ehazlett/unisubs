@@ -27,17 +27,19 @@
             {% endif %}
         </h3>
         <p class="user_bio">
-            {% if user_info.biography %}
-                <span id="user-biography">{{ user_info.biography|urlize|linebreaksbr }}</span>
-            {% else %}
-                <em>
-                    {% if can_edit %}
-                        <a href="#edit-bio" title="Edit bio" class="open-modal">{% trans "Add a bio" %}</a>
-                    {% else %}
-                        {{ user_info|title }} {% trans "hasn't submitted a bio yet." %}
-                    {% endif %}
-                </em>
-            {% endif %}
+            <span id="user-biography">
+                {% if user_info.biography %}
+                    {{ user_info.biography|urlize|linebreaksbr }}
+                {% else %}
+                    <em>
+                        {% if can_edit %}
+                            <a href="#edit-bio" title="Edit bio" class="open-modal">{% trans "Add a bio" %}</a>
+                        {% else %}
+                            {{ user_info|title }} {% trans "hasn't submitted a bio yet." %}
+                        {% endif %}
+                    </em>
+                {% endif %}
+            </span>
         </p>
         {% with user_info.get_languages as langs %}
             <h3>
