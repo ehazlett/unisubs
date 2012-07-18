@@ -25,6 +25,7 @@ from django.utils import simplejson as json
 from django.views.generic.list_detail import object_list
 from django.views.generic.simple import direct_to_template
 from tastypie.models import ApiKey
+from django.template.defaultfilters import linebreaksbr
 
 from auth.models import CustomUser as User
 from profiles.forms import EditUserForm, SendMessageForm, UserLanguageFormset, EditAvatarForm
@@ -92,7 +93,7 @@ def save_bio(request):
         request.user.customuser.save()
 
     output = {
-        'bio': request.user.biography
+        'bio': linebreaksbr(request.user.customuser.biography)
     }
 
     return HttpResponse(json.dumps(output), "text/javascript")

@@ -410,7 +410,10 @@ var Site = function(Site) {
                 var $form = $('form.edit-profile-bio');
                 var $modal = $form.parent();
 
+                $('textarea', $form).autogrow();
+
                 $form.submit(function() {
+                    $('input[type="submit"]', $form).attr('disabled', 'disabled');
                     var url = $form.attr('action');
 
                     $.ajax({
@@ -422,7 +425,10 @@ var Site = function(Site) {
                             alert('Sorry, there was a problem saving your bio. Please try again.');
                         },
                         success: function(resp) {
+                            $('span#user-biography').html(resp.bio);
                             $modal.hide();
+                            $('body div.well').remove();
+                            $('input[type="submit"]', $form).removeAttr('disabled');
                         }
                     });
 

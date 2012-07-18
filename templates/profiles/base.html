@@ -28,7 +28,7 @@
         </h3>
         <p class="user_bio">
             {% if user_info.biography %}
-                {{ user_info.biography|urlize|linebreaksbr }}
+                <span id="user-biography">{{ user_info.biography|urlize|linebreaksbr }}</span>
             {% else %}
                 <em>
                     {% if can_edit %}
@@ -108,7 +108,7 @@
                         <h3>{% trans 'Edit your bio' %}</h3>
                     </div>
                     <div class="modal-body">
-                        <textarea name="bio"></textarea>
+                        <textarea name="bio">{{ request.user.customuser.biography }}</textarea>
                     </div>
                     <div class="modal-footer">
                         {% csrf_token %}
