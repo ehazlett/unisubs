@@ -45,7 +45,7 @@
             <h3>
                 {% trans "Languages" %}
                 {% if can_edit %}
-                    <a class="edit open-modal" href="#edit-langs">edit</a>
+                    <a class="edit" id="edit-langs-profile" href="#edit-langs">edit</a>
                 {% endif %}
             </h3>
             {% if langs %}
@@ -101,8 +101,6 @@
 
     {% if can_edit %}
         <div class="bootstrap">
-
-            {# Edit Bio #}
             <div class="modal" id="edit-bio" style="display: none">
                 <form action="{% url profiles:save_bio %}" class="edit-profile-bio" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
@@ -117,76 +115,6 @@
                         <input type="submit" class="btn primary" value="Save" />
                     </div>
                 </form>
-            </div>
-
-            {# Edit languages #}
-            <div class="modal" id="edit-langs" style="display: none">
-                <div class="modal-header">
-                    <a href="#" class="close">x</a>
-                    <h3>{% trans 'Edit your languages' %}</h3>
-                </div>
-                <div class="modal-body">
-                    <fieldset>
-                        <legend>{% trans 'Language Info' %}</legend>
-                        <h4>
-                            {{ form.preferred_language.errors }}
-                            {{ form.preferred_language.label_tag }}
-                        </h4>
-                        <p>
-                            {{ form.preferred_language }}
-                        </p>
-                        {% comment %}
-                        <p>
-                            {{ form.autoplay_preferences.errors }}
-                            {{ form.autoplay_preferences.label_tag }}
-                            {{ form.autoplay_preferences }}                
-                        </p>
-                        {% endcomment %}
-                        
-                        <h4>{% trans 'Languages I Know' %}</h4>
-                        
-                        <div class="empty-form" style="display: none">
-                            <li class="user_language clearfix">
-                                {{ formset.empty_form.id }}
-                                <a href="#" class="small_close remove-language">{% trans 'Remove Language' %}</a>
-                                <div class="entry">
-                                  {{ formset.empty_form.language }}
-                                  {{ formset.empty_form.proficiency }}
-                                    <div style="display: none" class="delete-checkbox">
-                                        {{ form.DELETE }}
-                                    </div>
-                                </div>                
-                            </li>
-                        </div>
-                        <ul class="language_list">
-                            {{ formset.management_form }}
-                            {{ formset.non_field_errors }}
-                            {% for form in formset.forms %}
-                                <li class="user_language clearfix">
-                                    {{ form.non_field_errors }}
-                                    {{ form.id }}
-                                    <a href="#" class="small_close remove-language">{% trans 'Remove Language' %}</a>
-                                    <div class="entry">
-                                        {{ form.language.errors }}
-                                        {{ form.language }}
-                                        {{ form.proficiency.errors }}
-                                        {{ form.proficiency }}
-                                        <div style="display: none" class="delete-checkbox">
-                                            {{ form.DELETE }}
-                                        </div>
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                        <button class="button add-language">
-                            {% trans 'Add Language' %}
-                        </button>
-                    </fieldset>
-                </div>
-                <div class="modal-footer">
-                    {% csrf_token %}
-                    <input type="submit" class="btn primary" value="Save" />
-                </div>
             </div>
         </div>
     {% endif %}

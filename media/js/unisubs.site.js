@@ -435,6 +435,10 @@ var Site = function(Site) {
 
                     return false;
                 });
+
+                $('a#edit-langs-profile').click(function() {
+                    $('a#lang_select_btn').click();
+                });
             }
 
             $listsCollapsible = $('ul.list-collapsible');
