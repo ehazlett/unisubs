@@ -105,17 +105,17 @@
     {% if can_edit %}
         <div class="bootstrap">
             <div class="modal" id="edit-avatar" style="display: none">
-                <form action="{% url profiles:edit_avatar %}" class="edit-profile-bio" method="post" enctype="multipart/form-data">
+                <form action="{% url profiles:edit_avatar %}" class="edit-profile-avatar" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
                         <a href="#" class="close">x</a>
                         <h3>{% trans 'Edit your picture' %}</h3>
                     </div>
                     <div class="modal-body">
-
+                        <input type="file" id="id_picture" name="picture" size="6">
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer group">
                         {% csrf_token %}
-                        <input type="submit" class="btn danger pull-left" value="Delete picture" />
+                        <a href="#" id="delete-avatar" class="btn danger pull-left">Delete picture</a>
                         <input type="submit" class="btn primary pull-right" value="Save" />
                     </div>
                 </form>

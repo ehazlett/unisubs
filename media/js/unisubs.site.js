@@ -461,6 +461,16 @@ var Site = function(Site) {
 
                     return false;
                 });
+
+                $('a#delete-avatar').click(function() {
+                    if (confirm("Are you sure you want to remove your picture?")) {
+                        var $form = $('form.edit-profile-avatar');
+                        $form.attr('action', '/en/profiles/remove_avatar/');
+                        $form.append('<input type="hidden" name="remove" value="remove" />');
+                        $form.submit();
+                    }
+                    return false;
+                });
             }
 
             $listsCollapsible = $('ul.list-collapsible');

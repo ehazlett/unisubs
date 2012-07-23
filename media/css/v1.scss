@@ -1468,6 +1468,14 @@ div#language_picker {
             }
         }
     }
+    div#edit-avatar {
+        input.pull-left {
+            float: left;
+        }
+        input.pull-right {
+            float: right;
+        }
+    }
 }
 
 /* Video view */

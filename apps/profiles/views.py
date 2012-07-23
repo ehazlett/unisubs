@@ -65,25 +65,20 @@ def my_profile(request):
 
 @login_required
 def edit_avatar(request):
-    output = {}
     form = EditAvatarForm(request.POST, instance=request.user, files=request.FILES)
     if form.is_valid():
-        try:
-            user = form.save()
-            output['url'] =  str(user.avatar())
-        except S3StorageError:
-            output['error'] = {'picture': ugettext(u'File server unavailable. Try later. You can edit some other information without any problem.')}
-
+        form.save()
     else:
-        output['error'] = form.get_errors()
-    return HttpResponse('<textarea>%s</textarea>'  % json.dumps(output))
+        messages.error(request, _(form.errors['picture']))
+    return HttpResponseRedirect('/profiles/profile/' + request.user.username + '/')
 
 @login_required
 def remove_avatar(request):
     if request.POST.get('remove'):
         request.user.picture = ''
         request.user.save()
-    return HttpResponse(json.dumps({'avatar': request.user.avatar()}), "text/javascript")
+        messages.success(request, _('Your picture has been removed.'))
+    return HttpResponseRedirect('/profiles/profile/' + request.user.username + '/')
 
 
 @login_required
