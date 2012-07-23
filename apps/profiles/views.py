@@ -250,35 +250,3 @@ def generate_api_key(request):
         key.save()
     return HttpResponse(json.dumps({"key":key.key}))
 
-
-@login_required
-def edit_profile(request):
-    pass
-    #if request.method == 'POST':
-        #form = EditUserForm(request.POST,
-                            #instance=request.user,
-                            #files=request.FILES, label_suffix="")
-        #if form.is_valid():
-            #form.save()
-            #form_validated = True
-        #else:
-            #form_validated = False
-
-        #formset = UserLanguageFormset(request.POST, instance=request.user)
-        #if formset.is_valid() and form_validated:
-            #formset.save()
-            #messages.success(request, _('Your profile has been updated.'))
-            #return redirect('profiles:profile', user_id = request.user.username)
-
-    #else:
-        #form = EditUserForm(instance=request.user, label_suffix="")
-        #formset = UserLanguageFormset(instance=request.user)
-
-    #context = {
-        #'form': form,
-        #'user_info': request.user,
-        #'formset': formset,
-        #'edit_profile_page': True
-    #}
-    #return direct_to_template(request, 'profiles/edit_profile.html', context)
-

@@ -6,7 +6,9 @@
 
 {% block main_content %}
     <div class="header">
-        <img src="{{ user_info.avatar }}" alt="{{ user_info|title }}'s avatar"/>
+        <a href="#edit-avatar" class="open-modal">
+            <img src="{{ user_info.avatar }}" alt="{{ user_info|title }}'s avatar"/>
+        </a>
         <h2>{{ user_info|title }}</h2>
         <dl class="summary">
             <dt>{% trans "Username" %}</dt>
@@ -51,7 +53,6 @@
             {% if langs %}
                 <ul class="user-languages">
                     {% for l in langs %}
-                                
                         <li class="group preferred-language {% if l.language == user_info.preferred_language %}is-preferred{% endif %}" id="preferred-language-{{ l.language }}">
                             <span class="language">{{ l.get_language_display }}</span>
                             <span class="preferred">
@@ -103,6 +104,22 @@
 
     {% if can_edit %}
         <div class="bootstrap">
+            <div class="modal" id="edit-avatar" style="display: none">
+                <form action="{% url profiles:edit_avatar %}" class="edit-profile-bio" method="post" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <a href="#" class="close">x</a>
+                        <h3>{% trans 'Edit your picture' %}</h3>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        {% csrf_token %}
+                        <input type="submit" class="btn danger pull-left" value="Delete picture" />
+                        <input type="submit" class="btn primary pull-right" value="Save" />
+                    </div>
+                </form>
+            </div>
             <div class="modal" id="edit-bio" style="display: none">
                 <form action="{% url profiles:save_bio %}" class="edit-profile-bio" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
