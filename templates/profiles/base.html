@@ -49,13 +49,15 @@
                 {% endif %}
             </h3>
             {% if langs %}
-                <ul>
+                <ul class="user-languages">
                     {% for l in langs %}
-                        <li>
-                            {{ l.get_language_display }}
-                            {% if l.language == user_info.preferred_language %}
-                                (Preferred)
-                            {% endif %}
+                                
+                        <li class="group preferred-language {% if l.language == user_info.preferred_language %}is-preferred{% endif %}" id="preferred-language-{{ l.language }}">
+                            <span class="language">{{ l.get_language_display }}</span>
+                            <span class="preferred">
+                                <span>Preferred</span>
+                                <a class="make-preferred" data-language="{{ l.language }}" href="{% url profiles:save_preferred_language %}">Make preferred</a>
+                            </span>
                         </li>
                     {% endfor %}
                 </ul>

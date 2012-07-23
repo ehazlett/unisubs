@@ -439,6 +439,28 @@ var Site = function(Site) {
                 $('a#edit-langs-profile').click(function() {
                     $('a#lang_select_btn').click();
                 });
+
+                $('a.make-preferred').click(function() {
+
+                    $.ajax({
+                        url: $(this).attr('href'),
+                        data: {
+                            csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+                            preferred_language: $(this).data('language')
+                        },
+                        dataType: 'json',
+                        type: 'post',
+                        error: function() {
+                            alert('Sorry, there was a problem saving your preferred language. Please try again.');
+                        },
+                        success: function(resp) {
+                            $('li.preferred-language').removeClass('is-preferred');
+                            $('li#preferred-language-' + resp.preferred_language).addClass('is-preferred');
+                        }
+                    });
+
+                    return false;
+                });
             }
 
             $listsCollapsible = $('ul.list-collapsible');

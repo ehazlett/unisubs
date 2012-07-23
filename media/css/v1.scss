@@ -1428,6 +1428,47 @@ div#language_picker {
         @include opacity(0.3);
     }
 }
+.profile {
+    ul.user-languages {
+        li {
+            background: transparent url('../images/dotted-sep.gif') 0 6px repeat-x;
+            span.language {
+                background: #FFF;
+                display: block;
+                float: left;
+                padding-right: 10px;
+            }
+            span.preferred {
+                background: #FFF;
+                display: block;
+                font-size: 11px;
+                float: right;
+                padding-left: 10px;
+
+                span {
+                    display: none;
+                }
+                a {
+                    display: block;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        li.is-preferred {
+            span.preferred {
+                span {
+                    display: block;
+                }
+                a {
+                    display: none;
+                }
+            }
+        }
+    }
+}
 
 /* Video view */
 .video_view {

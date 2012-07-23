@@ -20,7 +20,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _, ugettext
-from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.utils import simplejson as json
 from django.views.generic.list_detail import object_list
 from django.views.generic.simple import direct_to_template
@@ -28,7 +28,7 @@ from tastypie.models import ApiKey
 from django.template.defaultfilters import linebreaksbr
 
 from auth.models import CustomUser as User
-from profiles.forms import EditUserForm, SendMessageForm, UserLanguageFormset, EditAvatarForm
+from profiles.forms import EditUserForm, SendMessageForm, EditAvatarForm
 from profiles.rpc import ProfileApiClass
 from utils.amazon import S3StorageError
 from utils.orm import LoadRelatedQuerySet
@@ -85,12 +85,30 @@ def remove_avatar(request):
         request.user.save()
     return HttpResponse(json.dumps({'avatar': request.user.avatar()}), "text/javascript")
 
+
+@login_required
+def save_preferred_language(request):
+
+    if request.method == 'POST':
+        request.user.customuser.preferred_language = request.POST['preferred_language']
+        request.user.customuser.save()
+    else:
+        return HttpResponseBadRequest()
+
+    output = {
+        'preferred_language': request.user.customuser.preferred_language
+    }
+
+    return HttpResponse(json.dumps(output), "text/javascript")
+
 @login_required
 def save_bio(request):
 
     if request.method == 'POST':
         request.user.customuser.biography = request.POST['biography']
         request.user.customuser.save()
+    else:
+        return HttpResponseBadRequest()
 
     output = {
         'bio': linebreaksbr(request.user.customuser.biography)
@@ -98,7 +116,9 @@ def save_bio(request):
 
     return HttpResponse(json.dumps(output), "text/javascript")
 
+
 def activity(request, user_id=None):
+
     if user_id:
         try:
             user = User.objects.get(username=user_id)
@@ -116,14 +136,6 @@ def activity(request, user_id=None):
         'user_info': user,
         'can_edit': user == request.user
     }
-
-    if user == request.user:
-        form = EditUserForm(instance=user, label_suffix="")
-        formset = UserLanguageFormset(instance=user)
-
-        extra_context['can_edit'] = True
-        extra_context['form'] = form
-        extra_context['formset'] = formset
 
     return object_list(request, queryset=qs, allow_empty=True,
                        paginate_by=settings.ACTIVITIES_ONPAGE,
@@ -220,6 +232,7 @@ def send_message(request):
 def actions_list(request):
     qs = Action.objects.for_user(request.user)
     extra_context = {
+        'can_edit': True,
         'user_info': request.user
     }
 
