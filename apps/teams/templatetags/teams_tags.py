@@ -50,6 +50,7 @@ from apps.teams.permissions import (
     can_create_and_edit_subtitles, can_create_and_edit_translations
 )
 
+from haystack import site
 
 DEV_OR_STAGING = getattr(settings, 'DEV', False) or getattr(settings, 'STAGING', False)
 ACTIONS_ON_PAGE = getattr(settings, 'ACTIONS_ON_PAGE', 10)
@@ -58,6 +59,8 @@ ALL_LANGUAGES_DICT = dict(settings.ALL_LANGUAGES)
 
 register = template.Library()
 
+import logging
+logger = logging.getLogger(__name__)
 
 def _get_team_video_from_search_record(search_record):
     if getattr(search_record, '_team_video', None):
@@ -71,13 +74,14 @@ def _get_team_video_from_search_record(search_record):
             from raven.contrib.django.models import client
             client.create_from_exception()
 
-        try:
-            return TeamVideo.objects.get(video=search_record.video_pk)
-        except TeamVideo.DoesNotExist:
-            from raven.contrib.django.models import client
-            client.create_from_exception()
-            return None
+        # ok, for some reason, this search record got stale.
+        # no idea why.
+        # so let's delete it so this can't happen again
+        tv_search_index = site.get_index(TeamVideo)
+        tv_search_index.backend.remove(search_record.id)
+        logger.error("Removing %s from solr since it's stale" % search_record.id)
 
+        return None
 
 @register.filter
 def can_approve_application(team, user):

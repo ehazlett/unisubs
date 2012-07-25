@@ -145,7 +145,7 @@ class EditUserForm(forms.ModelForm):
     new_password = forms.CharField(widget=forms.PasswordInput, required=False)
     new_password_verify = forms.CharField(widget=forms.PasswordInput,
                                           required=False,
-                                          label=_(u'Confirm new password:'))
+                                          label=_(u'Confirm new password'))
 
     def __init__(self, *args, **kwargs):
         super(EditUserForm, self).__init__(*args, **kwargs)

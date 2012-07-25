@@ -33,9 +33,9 @@
             {% if search_record.task_count %}
                 <a class="callout" href="{% url teams:team_tasks slug=team.slug %}?team_video={{ search_record.team_video_pk }}" title="View available tasks for this video">
                         {% blocktrans count counter=search_record.task_count %}
-                            1 open task
+                            1 task
                         {% plural %}
-                            {{ counter }} open tasks
+                            {{ counter }} tasks
                         {% endblocktrans %}
                 </a>
             {% endif %}

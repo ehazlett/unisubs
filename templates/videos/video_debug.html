@@ -24,34 +24,172 @@ jQuery(function($) {
 
 {% block main_content %}
 
-<h1>{{video.title_display}}</h1>
-<a href="javascript:void(0)" id="reset_metadata">Reset metadata for this video</a> <span id="loading" style="display: none">loading</span><br/>
-<b>view_count:</b> {{video.view_count}}<br/>
-<b>writelock_owner_id:</b> {{video.writelock_owner_id}}<br/>
-<b>writelock_session_key:</b> {{video.writelock_session_key}}<br/>
-<b>video_id:</b> {{video.video_id}}<br/>
-<b>writelock_time:</b> {{video.writelock_time}}<br/>
-<b>is_moderated:</b> {{video.is_moderated}}<br/>
-<b>moderated_by:</b> {{video.moderated_by}}<br/>
-<b>allow_community_edits:</b> {{video.allow_community_edits}}<br/>
-<b>id:</b> {{video.id}}<br/>
-<b>subtitles_fetched_count:</b> {{video.subtitles_fetched_count}}<br/>
-<b>widget_views_count:</b> {{video.widget_views_count}}<br/>
-<b>title:</b> {{video.title}}<br/>
-<b>is_subtitled:</b> {{video.is_subtitled}}<br/>
-<b>was_subtitled:</b> {{video.was_subtitled}}<br/>
-<b>duration:</b> {{video.duration}}<br/>
-<b>thumbnail:</b> {{video.thumbnail}}<br/>
-<b>allow_video_urls_edit:</b> {{video.allow_video_urls_edit}}<br/>
-<b>created:</b> {{video.created}}<br/>
-<b>description:</b> {{video.description}}<br/>
-<b>edited:</b> {{video.edited}}<br/>
-<b>user_id:</b> {{video.user_id}}<br/>
-<b>s3_thumbnail:</b> {{video.s3_thumbnail}}<br/>
-<b>languages_count:</b> {{video.languages_count}}<br/>
-<b>complete_date:</b> {{video.complete_date}}<br/>
-<b>urls:</b> {{video.videourl_set.all}}<br/>
-<b> in Teams: </b>{% for t in video.team_set.all %}<a href="{{t.get_absolute_url}}">{{t}}</a> , {% endfor %}<br/>
+<style type="text/css">
+    h1 { font-size: 24px; font-weight: bold; }
+    h1, h2, h3 {
+        margin-top: 20px;
+    }
+    a.btn {
+        background: #eee;
+        border: 1px solid #bbb;
+        padding: 6px 10px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+
+        background: #f4f4f4; /* Old browsers */
+        background: -moz-linear-gradient(top,  #f4f4f4 0%, #cccccc 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #f4f4f4 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #f4f4f4 0%,#cccccc 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #f4f4f4 0%,#cccccc 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #f4f4f4 0%,#cccccc 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+    }
+
+    a.btn:hover {
+        border: 1px solid #ddd;
+        background: #fcfcfc; /* Old browsers */
+        background: -moz-linear-gradient(top,  #fcfcfc 0%, #e5e5e5 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #fcfcfc 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #fcfcfc 0%,#e5e5e5 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #fcfcfc 0%,#e5e5e5 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #fcfcfc 0%,#e5e5e5 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+        }
+
+    table * {
+        line-height: 1 !important;
+        }
+</style>
+
+<h1>{{ video.title_display_unabridged }}</h1>
+
+<p><a href="javascript:void(0)" id="reset_metadata" class="btn">Reset metadata for this video</a> <span id="loading" style="display: none">loading</span></p>
+
+<table class="debug" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>video</td>
+        <td><a href="{{ video.get_absolute_url }}">Video {{ video.id }} - {{ video }}</a></td>
+    </tr>
+    {% with tv=video.get_team_video %}
+        {% if tv %}
+            <tr>
+                <td>team video</td>
+                <td><a href="{{ tv.get_absolute_url }}">Team Video {{ tv.id }} - {{ tv }}</a></td>
+            </tr>
+            <tr>
+                <td>team</td>
+                <td><a href="{{ tv.team.get_absolute_url }}">{{ tv.team }}</a></td>
+            </tr>
+        {% endif %}
+    {% endwith %}
+    <tr>
+        <td>view_count</td>
+        <td>{{video.view_count}}</td>
+    </tr>
+    <tr>
+        <td>writelock_owner_id</td>
+        <td>{{video.writelock_owner_id}}</td>
+    </tr>
+    <tr>
+        <td>writelock_session_key</td>
+        <td>{{video.writelock_session_key}}</td>
+    </tr>
+    <tr>
+        <td>video_id</td>
+        <td>{{video.video_id}}</td>
+    </tr>
+    <tr>
+        <td>writelock_time</td>
+        <td>{{video.writelock_time}}</td>
+    </tr>
+    <tr>
+        <td>is_moderated</td>
+        <td>{{video.is_moderated}}</td>
+    </tr>
+    <tr>
+        <td>moderated_by</td>
+        <td>{{video.moderated_by}}</td>
+    </tr>
+    <tr>
+        <td>allow_community_edits</td>
+        <td>{{video.allow_community_edits}}</td>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>{{video.id}}</td>
+    </tr>
+    <tr>
+        <td>subtitles_fetched_count</td>
+        <td>{{video.subtitles_fetched_count}}</td>
+    </tr>
+    <tr>
+        <td>widget_views_count</td>
+        <td>{{video.widget_views_count}}</td>
+    </tr>
+    <tr>
+        <td>title</td>
+        <td>{{video.title}}</td>
+    </tr>
+    <tr>
+        <td>is_subtitled</td>
+        <td>{{video.is_subtitled}}</td>
+    </tr>
+    <tr>
+        <td>was_subtitled</td>
+        <td>{{video.was_subtitled}}</td>
+    </tr>
+    <tr>
+        <td>duration</td>
+        <td>{{video.duration}}</td>
+    </tr>
+    <tr>
+        <td>thumbnail</td>
+        <td>{{video.thumbnail}}</td>
+    </tr>
+    <tr>
+        <td>allow_video_urls_edit</td>
+        <td>{{video.allow_video_urls_edit}}</td>
+    </tr>
+    <tr>
+        <td>created</td>
+        <td>{{video.created}}</td>
+    </tr>
+    <tr>
+        <td>description</td>
+        <td>{{video.description}}</td>
+    </tr>
+    <tr>
+        <td>edited</td>
+        <td>{{video.edited}}</td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>{{video.user_id}}</td>
+    </tr>
+    <tr>
+        <td>s3_thumbnail</td>
+        <td>{{video.s3_thumbnail}}</td>
+    </tr>
+    <tr>
+        <td>languages_count</td>
+        <td>{{video.languages_count}}</td>
+    </tr>
+    <tr>
+        <td>complete_date</td>
+        <td>{{video.complete_date}}</td>
+    </tr>
+    <tr>
+        <td>urls</td>
+        <td>{{video.videourl_set.all}}</td>
+    </tr>
+</table>
 
 <h2>Languages</h2>
 <table>
@@ -62,8 +200,8 @@ jQuery(function($) {
     <th>Is complete</th>
     <th>Percent done</th>
     <th>Num Subs</th>
-    <th>translated from</ht>
-    <th>has versio</ht>
+    <th>translated from</th>
+    <th>has versio</th>
   </tr>
   {% for x in video.subtitlelanguage_set.all %}
   <tr>
@@ -78,6 +216,80 @@ jQuery(function($) {
   </tr>
   {% endfor %}
 </table>
+
+<h2>Tasks</h2>
+<table>
+    <tr>
+        <th>id</th>
+        <th>deleted</th>
+        <th>type</th>
+        <th>priority</th>
+        <th>approved</th>
+        <th>language</th>
+        <th>assignee</th>
+        <th>language</th>
+        <th>version</th>
+        <th>review_base_version</th>
+        <th>completed</th>
+        <th>expiration_date</th>
+    </tr>
+    {% for task in tasks %}
+        <tr>
+            <td>{{ task.id }}</td>
+            <td>{{ task.deleted }}</td>
+            <td>{{ task.get_type_display }}</td>
+            <td>{{ task.priority }}</td>
+            <td>{{ task.get_approved_display }}</td>
+            <td>{{ task.get_language_display }} ({{ task.language }})</td>
+            {% if task.assignee %}
+                <td>
+                    {{ task.assignee.id }} -
+                    <a href="{{ task.assignee.get_absolute_url }}">{{ task.assignee.username }}</a>
+                </td>
+            {% else %}
+                <td>Unassigned</td>
+            {% endif %}
+            {% with l=task.subtitle_version.language %}
+                {% if l %}
+                    <td>
+                        {{ l.id }} - 
+                        {{ l.get_language_display }}
+                        ({{ l.language }})
+                    </td>
+                {% else %}
+                    <td>
+                        None
+                    </td>
+                {% endif %}
+            {% endwith %}
+            {% with v=task.subtitle_version %}
+                {% if v %}
+                    <td>
+                        {{ v.id }}
+                    </td>
+                {% else %}
+                    <td>
+                        None
+                    </td>
+                {% endif %}
+            {% endwith %}
+            {% with v=task.review_base_version %}
+                {% if v %}
+                    <td>
+                        {{ v.id }}
+                    </td>
+                {% else %}
+                    <td>
+                        None
+                    </td>
+                {% endif %}
+            {% endwith %}
+            <td>{{ task.completed }}</td>
+            <td>{{ task.expiration_date }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<br/>
 
 <h3>Cache</h3>
 {% for k,v in cache.items %}

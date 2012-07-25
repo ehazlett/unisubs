@@ -3,7 +3,7 @@
 {% load paginator i18n teams_tags %}
 
 {% block title %}
-    {% if my_teams %}{% trans 'My Teams' %}{% else %}{% trans 'Teams' %}{% endif %}| Amara
+    {% if my_teams %}{% trans 'Your Teams' %}{% else %}{% trans 'Teams' %}{% endif %}| Amara
 {% endblock %}
 
 {% block body_attrs %}id="teams" class="v1"{% endblock %}
@@ -26,7 +26,7 @@
         {% if user.teams.exists %}
             <li{% if my_teams %} class="current"{% endif %}>
                 <a href="{% url teams:user_teams %}">
-                    {% trans "My Teams" %}
+                    {% trans "Your Teams" %}
                 </a>
             </li>
         {% endif %}
@@ -61,7 +61,7 @@
                     <h3>
                         <a href="{{ team.get_absolute_url }}">{{ team }}</a>
                         {% if team|is_team_member:user and not my_teams %} 
-                            <span class="descriptor">{% trans 'My team' %}</span>
+                            <span class="descriptor">{% trans 'Your team' %}</span>
                         {% endif %}
                         {% if not team.is_visible %}
                             <span class="descriptor">{% trans 'Private' %}</span>

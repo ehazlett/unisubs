@@ -173,11 +173,18 @@ unisubs.translate.Dialog.prototype.saveWorkInternal = function(closeAfterSave, s
     }
 
     if (goog.array.isEmpty(
-        this.serverModel_.captionSet_.nonblankSubtitles())){
-        // there are no subs here, close dialog or back to subtitling
-        this.showEmptySubsDialog();
+        this.serverModel_.captionSet_.nonblankSubtitles()) && !this.forceSave_){
+        this.alreadySaving_ = false;
+        if((this.captionSet_.hasTitleChanged() && this.captionSet_.originalTitle == "") ||
+             (this.captionSet_.hasDescriptionChanged() && this.captionSet_.originalDescription == "")){
+            this.showTitleDescriptionChangedDialog(closeAfterSave, saveForLater);
+        } else {
+            // there are no subs here, close dialog or back to subtitling
+            this.showEmptySubsDialog();
+        }
         return;
     }
+
     var that = this;
     this.getRightPanelInternal().showLoading(true);
     this.serverModel_.finish(
@@ -200,6 +207,7 @@ unisubs.translate.Dialog.prototype.saveWorkInternal = function(closeAfterSave, s
 unisubs.translate.Dialog.prototype.showGuidelinesForState_ = function(state) {
     this.setState_(state);
 };
+
 unisubs.Dialog.prototype.setVisible = function(visible) {
     if (visible) {
         unisubs.Dialog.superClass_.setVisible.call(this, true);

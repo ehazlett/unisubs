@@ -3,215 +3,222 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Dwi Rianto <dwiriantop@gmail.com>, 2012.
+#   <dwiriantop@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-11 01:42-0500\n"
-"PO-Revision-Date: 2010-11-30 05:45+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2012-07-24 01:41-0500\n"
+"PO-Revision-Date: 2012-07-20 06:51+0000\n"
+"Last-Translator: unisubsapi <universalsubtitles-dev@pculture.org>\n"
+"Language-Team: Indonesian (Indonesia) (http://www.transifex.com/projects/p/"
+"universalsubtitles/language/id_ID/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: id\n"
+"Language: id_ID\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
 #: apps/auth/admin.py:33 templates/profiles/view_profile.html:53
 #: templates/statistic/users_statistic.html:12
 #: templates/teams/invite_members.html:25
 msgid "Username"
-msgstr ""
+msgstr "Nama pengguna"
 
 #: apps/auth/admin.py:34
 msgid ""
 "Required. 30 characters or fewer. Alphanumeric characters only (letters, "
 "digits and underscores)."
 msgstr ""
+"Wajib. 30 karakter atau kurang. Karakter hanya alfanumerik (huruf, angka dan "
+"garis bawah)."
 
 #: apps/auth/admin.py:35
 msgid "This value must contain only letters, numbers and underscores."
-msgstr ""
+msgstr "Hanya mengandung huruf, nomor, dan garis bawah."
 
 #: apps/auth/admin.py:36
 msgid "Password"
-msgstr ""
+msgstr "Kata kunci"
 
 #: apps/auth/admin.py:37
 msgid "Password confirmation"
-msgstr ""
+msgstr "Konfirmasi kata kunci"
 
 #: apps/auth/admin.py:38
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: apps/auth/admin.py:79 templates/auth/_announcement.html:7
 #: templates/messages/_messages.html:8 templates/videos/create.html:63
 msgid "Hide"
-msgstr ""
+msgstr "Sembunyikan"
 
-#: apps/auth/models.py:99
+#: apps/auth/models.py:100
 msgid "Retired user"
-msgstr ""
-
-#: apps/auth/models.py:326
-msgid "Add comment"
-msgstr ""
+msgstr "Pengguna Tidak Aktif"
 
 #: apps/auth/models.py:327
-msgid "Start subtitles"
-msgstr ""
+msgid "Add comment"
+msgstr "Tambah komentar"
 
 #: apps/auth/models.py:328
-msgid "Start translation"
-msgstr ""
+msgid "Start subtitles"
+msgstr "Mulai menulis"
 
 #: apps/auth/models.py:329
-msgid "Edit subtitles"
-msgstr ""
+msgid "Start translation"
+msgstr "Mulai terjemahan"
 
 #: apps/auth/models.py:330
-msgid "Edit translation"
-msgstr ""
+msgid "Edit subtitles"
+msgstr "Sunting tulisan"
 
-#: apps/auth/models.py:387
-msgid "understand enough"
-msgstr ""
+#: apps/auth/models.py:331
+msgid "Edit translation"
+msgstr "Sunting terjemahan"
 
 #: apps/auth/models.py:388
-msgid "understand 99%"
-msgstr ""
+msgid "understand enough"
+msgstr "cukup mengerti"
 
 #: apps/auth/models.py:389
+msgid "understand 99%"
+msgstr "mengerti 99%"
+
+#: apps/auth/models.py:390
 msgid "write like a native"
-msgstr ""
+msgstr "menulis seperti orang asli"
 
-#: apps/auth/models.py:394
+#: apps/auth/models.py:395
 msgid "follow requests in language"
-msgstr ""
+msgstr "ikuti permintaan dalam bahasa"
 
-#: apps/auth/models.py:409
+#: apps/auth/models.py:410
 msgid ""
 "This is date when start to display announcement. And only the last will be "
 "displayed."
 msgstr ""
-
-#: apps/auth/models.py:508
-msgid "e-mail confirmation"
-msgstr ""
+"Tanggal ini ketika mulai untuk menampilkan pengumuman. Dan hanya yang "
+"terakhir yang akan ditampilkan."
 
 #: apps/auth/models.py:509
+msgid "e-mail confirmation"
+msgstr "konfirmasi e-mail"
+
+#: apps/auth/models.py:510
 msgid "e-mail confirmations"
-msgstr ""
+msgstr "konfirmasi e-mail"
 
-#: apps/auth/views.py:58
+#: apps/auth/views.py:59
 msgid "Confirmation key expired."
-msgstr ""
+msgstr "Kunci konfirmasi telah kadaluarsa."
 
-#: apps/auth/views.py:60
+#: apps/auth/views.py:61
 msgid "Email is confirmed."
-msgstr ""
+msgstr "Email telah dikonfirmasi."
 
-#: apps/auth/views.py:72
+#: apps/auth/views.py:73
 msgid "Confirmation email was sent."
-msgstr ""
+msgstr "Email konfirmasi telah terkirim."
 
-#: apps/auth/views.py:74
+#: apps/auth/views.py:75
 msgid "You email is empty or already confirmed."
-msgstr ""
+msgstr "Email Anda kosong atau telah dikonfirmasi."
 
-#: apps/auth/views.py:106
+#: apps/auth/views.py:107
 msgid "Your account was deleted."
-msgstr ""
+msgstr "Akun Anda telah dihapus"
 
 #: apps/auth/templatetags/auth_tags.py:30
 msgid "Fill email field, please."
-msgstr ""
+msgstr "Silahkan mengisikan email."
 
 #: apps/auth/templatetags/auth_tags.py:32
 msgid "Confirm your email, please."
-msgstr ""
+msgstr "Silahkan konfirmasi email Anda."
 
 #: apps/comments/forms.py:53
 msgid "You car reply only comments for same object"
-msgstr ""
+msgstr "Diperbolehkan mengomentari hanya pada objek yang sama"
 
 #: apps/icanhaz/forms.py:23
 msgid "Only me"
-msgstr ""
+msgstr "Hanya saya"
 
 #: apps/icanhaz/forms.py:44
 msgid "This user cannot change those settings"
-msgstr ""
+msgstr "Pengguna ini tidak dapat mengubah pengaturan itu"
 
 #: apps/icanhaz/models.py:191
 msgid "Public"
-msgstr ""
+msgstr "Umum"
 
 #: apps/icanhaz/models.py:192
 msgid "Only with secret url"
-msgstr ""
+msgstr "Hanya dengan surel rahasia"
 
 #: apps/icanhaz/models.py:193
 msgid "Only authorized members"
-msgstr ""
+msgstr "Hanya anggota yang sudah sah"
 
 #: apps/icanhaz/models.py:208
 msgid "public"
-msgstr ""
+msgstr "umum"
 
 #: apps/icanhaz/models.py:209
 msgid "no embeding allowed"
-msgstr ""
+msgstr "tidak diizinkan memasang"
 
 #: apps/icanhaz/views.py:26
 msgid "You cannot change visibility for this video."
-msgstr ""
+msgstr "Anda tidak dapat mengubah cara lihat video ini."
 
 #: apps/icanhaz/views.py:43
 msgid "Settings saved!"
-msgstr ""
+msgstr "Pengaturan disimpan!"
 
 #: apps/icanhaz/views.py:51
 msgid "Please correct the errors bellow!"
-msgstr ""
+msgstr "Silahkan benarkan kesalahan dibawah!"
 
 #: apps/messages/forms.py:40
 msgid "You should be authenticated to write messages"
-msgstr ""
+msgstr "Anda harus disahkan untuk menulis pesan"
 
 #: apps/messages/forms.py:58
 msgid "This message is from site administrator."
-msgstr ""
+msgstr "Pesan ini berasal dari administrator situs."
 
-#: apps/messages/forms.py:96
+#: apps/messages/forms.py:95
 msgid "You cannot send a message to a user and a team at the same time."
 msgstr ""
 
-#: apps/messages/forms.py:99
+#: apps/messages/forms.py:98
 msgid "You must choose a recipient."
 msgstr ""
 
-#: apps/messages/forms.py:106
+#: apps/messages/forms.py:105
 msgid "This field is required."
 msgstr ""
 
 #: apps/messages/models.py:70
 msgid "[no subject]"
-msgstr ""
+msgstr "[tanpa judul]"
 
 #: apps/messages/models.py:119
 msgid "You should enter subject or message."
-msgstr ""
+msgstr "Anda harus memasukkan judul pesan."
 
 #: apps/messages/rpc.py:28 apps/messages/rpc.py:44 apps/messages/rpc.py:52
 #: apps/profiles/rpc.py:45 apps/teams/rpc.py:33 apps/videos/rpc.py:43
 msgid "You should be authenticated."
-msgstr ""
+msgstr "Anda harus disahkan."
 
 #: apps/messages/rpc.py:36
 msgid "Message does not exist."
-msgstr ""
+msgstr "Pesan tidak ada."
 
 #: apps/messages/tasks.py:71
 #, python-format
@@ -291,83 +298,85 @@ msgstr ""
 msgid "%(user)s left a comment on the video %(title)s"
 msgstr ""
 
-#: apps/messages/views.py:123
+#: apps/messages/views.py:125
 msgid "Message sent."
 msgstr ""
 
 #: apps/openid_consumer/views.py:94
 msgid "i-names are not supported"
-msgstr ""
+msgstr "i-names tidak didukung"
 
 #: apps/openid_consumer/views.py:100
 msgid "The OpenID was invalid"
-msgstr ""
+msgstr "OpenID tidak berlaku"
 
 #: apps/openid_consumer/views.py:159
 msgid "The request was cancelled"
-msgstr ""
+msgstr "Pesan telah dibatalkan"
 
 #: apps/openid_consumer/views.py:163
 msgid "Setup needed"
-msgstr ""
+msgstr "Perlu pengaturan"
 
 #: apps/openid_consumer/templates/openid_consumer/failure.html:7
 #: apps/openid_consumer/templates/openid_consumer/failure.html:13
 #: apps/openid_consumer/templates/openid_consumer/failure.html:28
 #: apps/openid_consumer/templates/openid_consumer/failure.html:33
 msgid "OpenID failed"
-msgstr ""
+msgstr "OpenID gagal"
 
 #: apps/openid_consumer/templates/openid_consumer/signin.html:12
 #: apps/openid_consumer/templates/openid_consumer/signin.html:27
 #: templates/openid_consumer/signin.html:17
 msgid "Sign in with your OpenID"
-msgstr ""
+msgstr "Masuk dengan OpenID Anda"
 
 #: apps/openid_consumer/templates/openid_consumer/signin.html:15
 #: templates/auth/login.html:10
 #: templates/registration/password_reset_complete.html:16
 msgid "Sign in"
-msgstr ""
+msgstr "Masuk"
 
 #: apps/profiles/forms.py:98
 msgid "This user has not email"
-msgstr ""
+msgstr "Pengguna ini tidak memiliki alamat email"
 
 #: apps/profiles/forms.py:103
 msgid "You are not authenticated."
-msgstr ""
+msgstr "Anda belum disahkan."
 
 #: apps/profiles/forms.py:110
 #, python-format
 msgid "Personal message from %(sender)s on universalsubtitles.org"
-msgstr ""
+msgstr "Pesan pribadi dari %(sender)s pada universalsubtitles.org"
 
 #: apps/profiles/forms.py:148
 msgid "Confirm new password:"
-msgstr ""
+msgstr "Konfirmasi kata kunci yang baru:"
 
 #: apps/profiles/forms.py:165
 msgid "Invalid password."
-msgstr ""
+msgstr "Kata kunci salah."
 
 #: apps/profiles/forms.py:167
 msgid "The two passwords did not match."
-msgstr ""
+msgstr "Kedua kata kunci tidak cocok."
 
 #: apps/profiles/rpc.py:50
 msgid "Your email was updated."
-msgstr ""
+msgstr "Email Anda telah terbarui."
 
 #: apps/profiles/views.py:61
 msgid ""
 "File server unavailable. Try later. You can edit some other information "
 "without any problem."
 msgstr ""
+"Berkas server tidak tersedia. Coba lagi. Anda dapat menyunting keterangan "
+"yang lain tanpa kesulitan."
 
 #: apps/profiles/views.py:144
 msgid "Your profile has been updated."
-msgstr ""
+msgstr "Profil Anda telah terbarui."
 
 #: apps/search/forms.py:28
 msgid "Relevance"
@@ -375,116 +384,118 @@ msgstr ""
 
 #: apps/search/forms.py:29
 msgid "Most languages"
-msgstr ""
+msgstr "Bahasa yang paling sering"
 
 #: apps/search/forms.py:30
 msgid "Views Today"
-msgstr ""
+msgstr "Dilihat Hari Ini"
 
 #: apps/search/forms.py:31
 msgid "Views This Week"
-msgstr ""
+msgstr "Dilihat Pekan Ini"
 
 #: apps/search/forms.py:32
 msgid "Views This Month"
-msgstr ""
+msgstr "Dilihat Bulan Ini"
 
 #: apps/search/forms.py:33
 msgid "Total Views"
-msgstr ""
+msgstr "Total Dilihat"
 
 #: apps/search/forms.py:35
 msgid "query"
-msgstr ""
+msgstr "query"
 
 #: apps/search/forms.py:37
 msgid "Sort By"
-msgstr ""
+msgstr "Atur berdasarkan"
 
 #: apps/search/forms.py:38
 msgid "Subtitled Into"
-msgstr ""
+msgstr "Diterjemahkan ke"
 
 #: apps/search/forms.py:39 apps/search/forms.py:41
 msgid "Left blank for any language"
-msgstr ""
+msgstr "Kosongkan untuk memilih sembarang bahasa"
 
 #: apps/search/forms.py:40
 msgid "Video In"
-msgstr ""
+msgstr "Video Dalam"
 
 #: apps/search/forms.py:63 apps/search/forms.py:99
 msgid "All Languages"
-msgstr ""
+msgstr "Semua Bahasa"
 
 #: apps/statistic/models.py:47 apps/statistic/models.py:48
 msgid "Subtitle fetch statistic"
-msgstr ""
+msgstr "Statistik terjemahan yang diambil"
 
 #: apps/statistic/models.py:55 apps/statistic/models.py:56
 msgid "Video view statistic"
-msgstr ""
+msgstr "Statistik Video yang dilihat"
 
 #: apps/statistic/models.py:63 apps/statistic/models.py:64
 msgid "Widget view statistic"
-msgstr ""
+msgstr "Statistik Pengaya yang dilihat"
 
 #: apps/teams/admin.py:57
 #, python-format
 msgid "%(count)s messages sent"
-msgstr ""
+msgstr "%(count)s pesan terkirim"
 
 #: apps/teams/admin.py:59
 msgid "Fill all fields please."
-msgstr ""
+msgstr "Silahkan isi semua kolom."
 
 #: apps/teams/admin.py:60
 msgid "Send message"
-msgstr ""
+msgstr "Kirim pesan"
 
 #: apps/teams/admin.py:64
 msgid "Feature teams"
-msgstr ""
+msgstr "Tim fitur"
 
 #: apps/teams/admin.py:68
 msgid "Unfeature teams"
-msgstr ""
+msgstr "Bukan tim fitur"
 
 #: apps/teams/admin.py:78 apps/teams/admin.py:111 apps/teams/models.py:182
 msgid "Team"
-msgstr ""
+msgstr "Tim"
 
 #: apps/teams/admin.py:84
 msgid "User"
-msgstr ""
+msgstr "Pengguna"
 
 #: apps/teams/forms.py:57 apps/teams/forms.py:165
 #: libs/rosetta/templates/rosetta/languages.html:12
 #: templates/teams/_context_team.html:65
 msgid "Project"
-msgstr ""
+msgstr "Proyek"
 
 #: apps/teams/forms.py:61 apps/teams/forms.py:169
 msgid "Let's keep things tidy, shall we?"
-msgstr ""
+msgstr "Mari kita buat semuanya rapi, ya?"
 
 #: apps/teams/forms.py:151
 msgid "Video URL"
-msgstr ""
+msgstr "Surel video"
 
 #: apps/teams/forms.py:152
 msgid ""
 "Enter the URL of any compatible video or any video on our site. You can also "
 "browse the site and use the 'Add Video to Team' menu."
 msgstr ""
+"Masukkan sembarang surel video atau sembarang video ke situs Anda. Anda juga "
+"bisa menjelajai situs dan menggunakan menu 'Tambah Video ke Tim'."
 
 #: apps/teams/forms.py:160
 msgid "Video language"
-msgstr ""
+msgstr "Bahasa video"
 
 #: apps/teams/forms.py:162
 msgid "It will be saved only if video does not exist in our database."
-msgstr ""
+msgstr "Hanya akan disimpan jika video tidak ada di dalam database kami."
 
 #: apps/teams/forms.py:216
 msgid "This video already belongs to a team."
@@ -492,7 +503,7 @@ msgstr ""
 
 #: apps/teams/forms.py:222
 msgid "Set original language for this video."
-msgstr ""
+msgstr "Tetapkan bahasa asli untuk video ini."
 
 #: apps/teams/forms.py:275
 #, python-format
@@ -500,6 +511,8 @@ msgid ""
 "%(count)s videos have been added. It will take a minute or so for them to "
 "appear."
 msgstr ""
+" %(count)s  video telah ditambahkan. Ini akan memakan waktu satu menit atau "
+"lebih untuk mereka untuk tampil."
 
 #: apps/teams/forms.py:278
 #, python-format
@@ -508,10 +521,14 @@ msgid ""
 "appear. To add the remaining videos from this feed, submit this feed again "
 "and make sure to check \"Save feed\" box."
 msgstr ""
+" %(count)s  video telah ditambahkan. Ini akan memakan waktu satu menit atau "
+"lebih untuk mereka untuk tampil. Untuk menambahkan video tersisa dari feed "
+"ini, mengirimkan feed ini lagi dan pastikan untuk memeriksa \"Simpan pakan\" "
+"kotak."
 
 #: apps/teams/forms.py:295
 msgid "Team intro video URL"
-msgstr ""
+msgstr "Surel pendahuluan video tim"
 
 #: apps/teams/forms.py:297
 msgid ""
@@ -520,121 +537,125 @@ msgid ""
 "volunteers.\n"
 "Enter a link to any compatible video, or to any video page on our site."
 msgstr ""
+"Untuk menarik para sukarelawan, Anda dapat meletakkan video pilihan \n"
+"pada beranda tim Anda yang menjelaskan tentang tim Anda. \n"
+"Masukkan pranala ke sembarang video terkait, atau ke sembarang video pada "
+"situs Anda."
 
 #: apps/teams/forms.py:302
 msgid "Team URL: http://universalsubtitles.org/teams/"
-msgstr ""
+msgstr "Surel tim: http://universalsubtitles.org/teams/"
 
-#: apps/teams/forms.py:342
+#: apps/teams/forms.py:347
 msgid "This video has already been transcribed."
 msgstr ""
 
-#: apps/teams/forms.py:347
+#: apps/teams/forms.py:352
 msgid "Subtitling of this video is already in progress."
-msgstr ""
+msgstr "Penterjemahan video ini sudah berlangsung."
 
-#: apps/teams/forms.py:353
+#: apps/teams/forms.py:358
 msgid "No one has transcribed this video yet, so it can't be translated."
 msgstr ""
 
-#: apps/teams/forms.py:359
+#: apps/teams/forms.py:364
 msgid "This language already has a complete set of subtitles."
 msgstr ""
 
-#: apps/teams/forms.py:379
+#: apps/teams/forms.py:384
 msgid "There is already a task in progress for that video/language."
-msgstr ""
+msgstr "Sudah ada yang sedang melakukannya untuk video/bahasa tersebut."
 
-#: apps/teams/forms.py:393
+#: apps/teams/forms.py:398
 msgid "You must select a language for a Translate task."
 msgstr ""
 
-#: apps/teams/forms.py:426
+#: apps/teams/forms.py:433
 msgid "That user has already been assigned the maximum number of tasks."
 msgstr ""
 
-#: apps/teams/forms.py:448
-msgid "You do not have permission to assign this task."
-msgstr ""
-
 #: apps/teams/forms.py:455
+msgid "You do not have permission to assign this task."
+msgstr "Anda tidak memiliki izin untuk ikut berperan dalam tugas ini."
+
+#: apps/teams/forms.py:462
 msgid "This user cannot perform that task."
 msgstr ""
 
-#: apps/teams/forms.py:476
+#: apps/teams/forms.py:483
 msgid "You do not have permission to delete this task."
-msgstr ""
+msgstr "Anda tidak mempunya izin untuk menghapus tugas ini"
 
-#: apps/teams/forms.py:533
+#: apps/teams/forms.py:540
 msgid "You cannot blacklist a preferred language."
 msgstr ""
 
-#: apps/teams/forms.py:556 apps/teams/forms.py:558
+#: apps/teams/forms.py:563 apps/teams/forms.py:565
 msgid "User does not exist!"
 msgstr ""
 
-#: apps/teams/forms.py:565
+#: apps/teams/forms.py:572
 msgid "User is already a member of this team!"
 msgstr ""
 
-#: apps/teams/forms.py:591 templates/videos/subtitle-view.html:373
+#: apps/teams/forms.py:599 templates/videos/subtitle-view.html:375
 msgid "Would you like to delete these subtitles completely?"
 msgstr ""
 
-#: apps/teams/forms.py:595 templates/videos/subtitle-view.html:358
+#: apps/teams/forms.py:603 templates/videos/subtitle-view.html:360
 msgid "What would you like to unpublish?"
 msgstr ""
 
-#: apps/teams/forms.py:597
+#: apps/teams/forms.py:605
 msgid "This version (and any later version) for this language."
 msgstr ""
 
-#: apps/teams/forms.py:598
+#: apps/teams/forms.py:606
 msgid "All versions for this language and any dependent languages."
 msgstr ""
 
-#: apps/teams/forms.py:616
+#: apps/teams/forms.py:624
 msgid "These subtitles are not under a team's control."
 msgstr ""
 
-#: apps/teams/forms.py:620
+#: apps/teams/forms.py:628
 msgid "You do not have permission to unpublish these subtitles."
 msgstr ""
 
-#: apps/teams/forms.py:639
+#: apps/teams/forms.py:647
 msgid "You cannot perform that task."
 msgstr ""
 
-#: apps/teams/forms.py:651 apps/videos/forms.py:461
+#: apps/teams/forms.py:659 apps/videos/forms.py:461
 msgid "Invalid language to translate from."
 msgstr ""
 
-#: apps/teams/forms.py:660 apps/videos/forms.py:71 apps/videos/forms.py:89
+#: apps/teams/forms.py:668 apps/videos/forms.py:71 apps/videos/forms.py:89
 #: apps/videos/forms.py:470
 msgid "File size should be less {0} kb"
-msgstr ""
+msgstr "Berkas harus kurang dari {0} kb"
 
-#: apps/teams/forms.py:665 apps/videos/forms.py:475
+#: apps/teams/forms.py:673 apps/videos/forms.py:475
 #, python-format
 msgid "Incorrect format. Upload %s"
 msgstr ""
 
-#: apps/teams/forms.py:672 apps/videos/forms.py:76 apps/videos/forms.py:97
+#: apps/teams/forms.py:680 apps/videos/forms.py:76 apps/videos/forms.py:97
 #: apps/videos/forms.py:482
 msgid "Can not detect file encoding"
-msgstr ""
+msgstr "Tidak dapat mendeteksi pengkodean berkas"
 
-#: apps/teams/forms.py:677 apps/videos/forms.py:99 apps/videos/forms.py:487
+#: apps/teams/forms.py:685 apps/videos/forms.py:99 apps/videos/forms.py:487
 msgid "Incorrect subtitles format"
-msgstr ""
+msgstr "Format terjemahan salah"
 
-#: apps/teams/forms.py:750 apps/videos/forms.py:577
+#: apps/teams/forms.py:758 apps/videos/forms.py:577
 msgid ""
 "Sorry, we couldn't upload your file because it has fewer lines ({0}) than "
 "the previous version ({1})."
 msgstr ""
 
-#: apps/teams/forms.py:756 apps/videos/forms.py:584
+#: apps/teams/forms.py:764 apps/videos/forms.py:584
 msgid ""
 "Sorry, we couldn't upload your file because the number of lines in your "
 "translation ({0}) doesn't match the original ({1})."
@@ -642,23 +663,23 @@ msgstr ""
 
 #: apps/teams/models.py:91
 msgid "Open"
-msgstr ""
+msgstr "Buka"
 
 #: apps/teams/models.py:92 libs/rosetta/templates/rosetta/languages.html:28
 msgid "Application"
-msgstr ""
+msgstr "Aplikasi"
 
 #: apps/teams/models.py:93
 msgid "Invitation by any team member"
-msgstr ""
+msgstr "Undangan oleh sembarang anggota tim"
 
 #: apps/teams/models.py:94
 msgid "Invitation by manager"
-msgstr ""
+msgstr "Undangan oleh manajer"
 
 #: apps/teams/models.py:95
 msgid "Invitation by admin"
-msgstr ""
+msgstr "Undangan oleh admin"
 
 #: apps/teams/models.py:102
 msgid "Any team member"
@@ -674,15 +695,15 @@ msgstr ""
 
 #: apps/teams/models.py:124
 msgid "name"
-msgstr ""
+msgstr "nama"
 
 #: apps/teams/models.py:125
 msgid "slug"
-msgstr ""
+msgstr "slug"
 
 #: apps/teams/models.py:126
 msgid "description"
-msgstr ""
+msgstr "keterangan"
 
 #: apps/teams/models.py:126
 msgid ""
@@ -691,22 +712,22 @@ msgstr ""
 
 #: apps/teams/models.py:128
 msgid "logo"
-msgstr ""
+msgstr "logo"
 
 #: apps/teams/models.py:129
 msgid "publicly Visible?"
-msgstr ""
+msgstr "Perlihatkan secara umum?"
 
 #: apps/teams/models.py:130 templates/search/search.html:151
 #: templates/teams/project_list.html:10
 #: templates/videos/featured_videos.html:52
 #: templates/videos/popular_videos.html:87
 msgid "videos"
-msgstr ""
+msgstr "video"
 
 #: apps/teams/models.py:131
 msgid "users"
-msgstr ""
+msgstr "pengguna"
 
 #: apps/teams/models.py:134
 msgid "third party accounts"
@@ -714,23 +735,23 @@ msgstr ""
 
 #: apps/teams/models.py:137
 msgid "applicants"
-msgstr ""
+msgstr "pelamar"
 
 #: apps/teams/models.py:140
 msgid "Intro Video"
-msgstr ""
+msgstr "Pendahuluan Video"
 
 #: apps/teams/models.py:142
 msgid "Page content"
-msgstr ""
+msgstr "Isi halaman"
 
 #: apps/teams/models.py:142
 msgid "You can use markdown. This will replace Description."
-msgstr ""
+msgstr "Anda bisa menggunakan penanda-bawah. Ini akan menggantikan Keterangan."
 
 #: apps/teams/models.py:144
 msgid "HTML that appears at the top of the teams page."
-msgstr ""
+msgstr "HTML yang akan muncul pada bagian paling atas halaman tim."
 
 #: apps/teams/models.py:147
 msgid "authentication provider code"
@@ -738,23 +759,23 @@ msgstr ""
 
 #: apps/teams/models.py:155
 msgid "membership policy"
-msgstr ""
+msgstr "Aturan keanggotaan"
 
 #: apps/teams/models.py:158
 msgid "video policy"
-msgstr ""
+msgstr "aturan video"
 
 #: apps/teams/models.py:161
 msgid "task assignment policy"
-msgstr ""
+msgstr "kebijakan penugasan"
 
 #: apps/teams/models.py:164
 msgid "subtitling policy"
-msgstr ""
+msgstr "kebijakan menterjemahkan"
 
 #: apps/teams/models.py:167
 msgid "translation policy"
-msgstr ""
+msgstr "kebijakan terjemahan"
 
 #: apps/teams/models.py:170
 msgid "maximum tasks per member"
@@ -764,61 +785,65 @@ msgstr ""
 msgid "task expiration (days)"
 msgstr ""
 
-#: apps/teams/models.py:183 templates/profiles/_top_user_panel.html:33
+#: apps/teams/models.py:183 templates/profiles/_top_user_panel.html:32
 #: templates/profiles/dashboard.html:109 templates/teams/teams-list.html:6
 msgid "Teams"
-msgstr ""
+msgstr "Tim"
 
 #: apps/teams/models.py:626
 msgid ""
 "Use this space to explain why you or your team need to caption or subtitle "
 "this video. Adding a note makes volunteers more likely to help out!"
 msgstr ""
+"Gunakan kolom ini untuk menjelaskan mengapa tim Anda perlu membuat "
+"penterjemahan dan keterangan gambar video. Menambahkan pesan akan membuat "
+"para sukarelawan dengan senang hati membantu!"
 
 #: apps/teams/models.py:630
 msgid "We automatically grab thumbnails for certain sites, e.g. Youtube"
 msgstr ""
+"Kami secara otomatis mengambil thumbnails beberapa situs, seperti Youtube"
 
 #: apps/teams/models.py:632
 msgid "Need help with all languages"
-msgstr ""
+msgstr "Perlu bantuan dengan semua bahasa"
 
 #: apps/teams/models.py:633
 msgid "If you check this, other languages will not be displayed."
-msgstr ""
+msgstr "Jika Anda mencentang ini, semua bahasa tidak akan ditampilkan."
 
 #: apps/teams/models.py:919 apps/teams/permissions_const.py:45
 msgid "Owner"
-msgstr ""
+msgstr "Pemilik"
 
 #: apps/teams/models.py:920 apps/teams/permissions_const.py:46
 msgid "Manager"
-msgstr ""
+msgstr "Manajer"
 
 #: apps/teams/models.py:921 apps/teams/permissions_const.py:44
 #: templates/base.html:118
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 #: apps/teams/models.py:922 apps/teams/permissions_const.py:47
 msgid "Contributor"
-msgstr ""
+msgstr "Kontributor"
 
 #: apps/teams/notifications.py:150
 msgid "New activity on your team video"
-msgstr ""
+msgstr "Aktifitas baru pada tim video Anda."
 
 #: apps/teams/rpc.py:40
 msgid "Team does not exist"
-msgstr ""
+msgstr "Tim tidak ada"
 
 #: apps/teams/rpc.py:44
 msgid "You are already a member of this team."
-msgstr ""
+msgstr "Anda sudah menjadi anggota tim ini."
 
 #: apps/teams/rpc.py:50 apps/teams/views.py:858
 msgid "You are now a member of this team."
-msgstr ""
+msgstr "Anda sekarang seorang anggota tim ini."
 
 #: apps/teams/rpc.py:54
 msgid "The \"About you\" field is required in order to apply."
@@ -832,54 +857,54 @@ msgstr ""
 
 #: apps/teams/rpc.py:65
 msgid "You can't join this team by application."
-msgstr ""
+msgstr "Anda bisa bergabung ke dalam tim ini dengan lamaran."
 
 #: apps/teams/rpc.py:71
 msgid "Team does not exist."
-msgstr ""
+msgstr "Tim tidak ada."
 
 #: apps/teams/rpc.py:74
 msgid "You are not manager of this team."
-msgstr ""
+msgstr "Anda bukan manajer tim ini."
 
 #: apps/teams/rpc.py:77
 msgid "Incorrect team member role."
-msgstr ""
+msgstr "Aturan anggota tim salah."
 
 #: apps/teams/rpc.py:82
 msgid "Team member does not exist."
-msgstr ""
+msgstr "Anggota tim tidak ada."
 
 #: apps/teams/rpc.py:85
 msgid "You can't promote yourself."
-msgstr ""
+msgstr "Anda tidak dapat mempromosikan diri sendiri."
 
 #: apps/teams/rpc.py:89
 msgid "Team member role changed."
-msgstr ""
+msgstr "Aturan keanggotaan tim telah berubah."
 
 #: apps/teams/rpc.py:163
 msgid "You cannot assign that role to that member."
-msgstr ""
+msgstr "Anda tidak dapat menetapkan aturan tersebut kepada anggota itu."
 
 #: apps/teams/tasks.py:76
 #, python-format
 msgid "New %(team)s videos ready for subtitling!"
-msgstr ""
+msgstr "New %(team)s videos ready for subtitling!"
 
 #: apps/teams/views.py:121 templates/teams/settings-projects-add.html:28
 #: templates/teams/settings-projects-edit.html:36
 #: templates/teams/teams-list.html:50
 msgid "Name"
-msgstr ""
+msgstr "Nama"
 
 #: apps/teams/views.py:122 templates/teams/teams-list.html:47
 msgid "Newest"
-msgstr ""
+msgstr "Terbaru"
 
 #: apps/teams/views.py:123 templates/teams/teams-list.html:44
 msgid "Most Members"
-msgstr ""
+msgstr "Rata-Rata Anggota"
 
 #: apps/teams/views.py:166
 #, python-format
@@ -932,15 +957,15 @@ msgstr ""
 
 #: apps/teams/views.py:566
 msgid "You can't edit this video."
-msgstr ""
+msgstr "Anda tidak dapat mengedit video ini."
 
 #: apps/teams/views.py:575
 msgid "Video has been updated."
-msgstr ""
+msgstr "Video telah diperbarui."
 
 #: apps/teams/views.py:603
 msgid "Request must be a POST request."
-msgstr ""
+msgstr "Permintaan haruslah POS permintaan."
 
 #: apps/teams/views.py:611
 msgid "You can't delete that video."
@@ -948,7 +973,7 @@ msgstr ""
 
 #: apps/teams/views.py:615
 msgid "You can't remove that video."
-msgstr ""
+msgstr "Anda tidak dapat menghapus video itu."
 
 #: apps/teams/views.py:627
 msgid "Video has been deleted from Amara."
@@ -972,35 +997,35 @@ msgstr ""
 
 #: apps/teams/views.py:786
 msgid "Application approved."
-msgstr ""
+msgstr "Lamaran telah disetujui."
 
 #: apps/teams/views.py:788 apps/teams/views.py:806
 msgid "Application does not exist."
-msgstr ""
+msgstr "Lamaran tidak ada."
 
 #: apps/teams/views.py:790
 msgid "You can't approve applications."
-msgstr ""
+msgstr "Anda tidak dapat menyetujui aplikasi."
 
 #: apps/teams/views.py:804
 msgid "Application denied."
-msgstr ""
+msgstr "Lamaran ditolak."
 
 #: apps/teams/views.py:808
 msgid "You can't deny applications."
-msgstr ""
+msgstr "Anda tidak dapat membatalkan aplikasi."
 
 #: apps/teams/views.py:818
 msgid "You cannot invite people to this team."
-msgstr ""
+msgstr "Anda tidak dapat mengundang orang lain ke dalam tim ini."
 
 #: apps/teams/views.py:854
 msgid "You cannot join this team."
-msgstr ""
+msgstr "Anda tidak dapat bergabung dengan tim ini."
 
 #: apps/teams/views.py:905
 msgid "You have left this team."
-msgstr ""
+msgstr "Anda telah meninggalkan tim ini."
 
 #: apps/teams/views.py:962
 msgid "Member saved."
@@ -1012,7 +1037,7 @@ msgstr ""
 
 #: apps/teams/views.py:1261 apps/teams/views.py:1264
 msgid "You are not allowed to perform this task."
-msgstr ""
+msgstr "Anda tidak dizinkan untuk melakukan tugas ini."
 
 #: apps/teams/views.py:1319
 msgid "Task deleted."
@@ -1080,30 +1105,30 @@ msgstr ""
 msgid "Successfully unpublished subtitles."
 msgstr ""
 
-#: apps/teams/templatetags/teams_tags.py:254
+#: apps/teams/templatetags/teams_tags.py:258
 #, python-format
 msgid "Can somebody help me subtitle these videos? %(url)s"
-msgstr ""
+msgstr "Bisakan seseorang membantu saya menterjemahkan video ini? %(url)s"
 
 #: apps/videos/admin.py:32
 msgid "Email for alert"
-msgstr ""
+msgstr "Email untuk pengingat"
 
 #: apps/videos/forms.py:67
 msgid "File should have txt format"
-msgstr ""
+msgstr "Berkas harus memiliki format txt"
 
 #: apps/videos/forms.py:80
 msgid "Can't encode file. It should have utf8 encoding."
-msgstr ""
+msgstr "Tidak bisa mengkode ulang berkas. Harus dalam memiliki format utf8."
 
 #: apps/videos/forms.py:92
 msgid "Incorrect format. Upload .srt, .ssa, .sbv or .xml (TTML  format)"
-msgstr ""
+msgstr "Format salah. Unggah .srt, .ssa, .sbv or .xml (format TTML)"
 
 #: apps/videos/forms.py:125 apps/videos/forms.py:828 utils/validators.py:38
 msgid "This URL appears to be a broken link."
-msgstr ""
+msgstr "Surel ini kelihatannya tautan yang terputus."
 
 #: apps/videos/forms.py:131 utils/forms/unisub_video_form.py:88
 #, python-format
@@ -1116,11 +1141,11 @@ msgstr ""
 
 #: apps/videos/forms.py:142
 msgid "You have not permission add video URL for this video"
-msgstr ""
+msgstr "Anda tidak mempunyai izin menambah surel video ini"
 
 #: apps/videos/forms.py:174 apps/videos/forms.py:451
 msgid "Somebody is subtitling this video right now. Try later."
-msgstr ""
+msgstr "Seseorang sedang menterjemahkan file ini sekarang. Coba lagi."
 
 #: apps/videos/forms.py:189 apps/videos/forms.py:215 apps/videos/forms.py:511
 #: apps/videos/forms.py:547
@@ -1176,22 +1201,27 @@ msgid ""
 "                    <a href=\"mailto:%s\">Contact us</a> if there's a "
 "problem."
 msgstr ""
+"Anda harus menghubungkan ke video dengan situs yang telah disetujui/didukung "
+"(seperti YouTube) atau langsung ke\n"
+"                    berkas video yang berjalan di peramban HTML5. Seperti "
+"contoh: http://mysite.com/myvideo.ogg or http://mysite.com/myipadvideo.m4v\n"
+"                    <a href=\"mailto:%s\">Hubungi kami</a> jika ada masalah."
 
 #: apps/videos/forms.py:844
 msgid "Youtube usernames"
-msgstr ""
+msgstr "Nama pengguna Youtube"
 
 #: apps/videos/forms.py:844
 msgid "Enter usernames separated by comma."
-msgstr ""
+msgstr "Masukkan nama pengguna dipisahkan dengan koma."
 
 #: apps/videos/forms.py:845
 msgid "Youtube page link."
-msgstr ""
+msgstr "Pranala halaman Youtube."
 
 #: apps/videos/forms.py:846
 msgid "For example: http://www.youtube.com/user/username"
-msgstr ""
+msgstr "Misalnya: http://www.youtube.com/user/username"
 
 #: apps/videos/forms.py:847
 msgid "Supported: Youtube, Vimeo, or Dailymotion. Only supported sites added."
@@ -1199,19 +1229,23 @@ msgstr ""
 
 #: apps/videos/forms.py:848
 msgid "Save feed"
-msgstr ""
+msgstr "Simpan feed"
 
 #: apps/videos/forms.py:848
 msgid ""
 "Choose this if you wish to add videos from this feed in the future. Only "
 "valid RSS feeds will be saved."
 msgstr ""
+"Pilih jika Anda ingin menambahkan video ke dalam pengumpan ini di kemudian "
+"hari. Hanya pengumpan RSS yang sah yang akan disimpan."
 
 #: apps/videos/forms.py:891
 msgid ""
 "Sorry, we could not find a valid feed at the URL you provided. Please check "
 "the URL and try again."
 msgstr ""
+"Maaf, kami tidak menemukan feed yang berlaku pada surel yang Anda sediakan. "
+"Cek ulang surel dan coba sekali lagi."
 
 #: apps/videos/forms.py:896
 msgid ""
@@ -1221,29 +1255,31 @@ msgstr ""
 
 #: apps/videos/forms.py:907
 msgid "captcha"
-msgstr ""
+msgstr "capthca"
 
 #: apps/videos/models.py:136
 msgid "in seconds"
-msgstr ""
+msgstr "dalam detik"
 
 #: apps/videos/models.py:160
 msgid "Sub.fetched"
-msgstr ""
+msgstr "Sub.fetched"
 
 #: apps/videos/models.py:162
 msgid "Widget views"
-msgstr ""
+msgstr "Dilihat dari pengaya"
 
 #: apps/videos/models.py:164
 msgid "Views"
-msgstr ""
+msgstr "Dilihat"
 
 #: apps/videos/models.py:1120
 msgid ""
 "Sorry, you cannot upload subtitles right now because someone is editing the "
 "language you are uploading or a translation of it"
 msgstr ""
+"Maaf, Anda tidak bisa mengunggah terjemahan saat ini dikarenakan seseorang "
+"sedang menyunting atau menterjemahkan bahasa yang Anda unggah"
 
 #: apps/videos/models.py:1950
 #, python-format
@@ -1265,6 +1301,8 @@ msgid ""
 "  rejected <a href=\"%(language_url)s\">%(language)s</a> subtitles for <a "
 "href=\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"  telah ditolak <a href=\"%(language_url)s\">%(language)s</a> terjemahan "
+"untuk <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:1965
 #, python-format
@@ -1272,6 +1310,8 @@ msgid ""
 "  approved <a href=\"%(language_url)s\">%(language)s</a> subtitles for <a "
 "href=\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"  telah disetujui <a href=\"%(language_url)s\">%(language)s</a> terjemahan "
+"untuk <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:1970
 #, python-format
@@ -1288,22 +1328,22 @@ msgstr ""
 #: apps/videos/models.py:1981
 #, python-format
 msgid "added video <a href=\"%(video_url)s\">%(video_name)s</a>"
-msgstr ""
+msgstr "telah ditambahkan <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:1983
 #, python-format
 msgid "<a href=\"%(video_url)s\">%(video_name)s</a> video added"
-msgstr ""
+msgstr "<a href=\"%(video_url)s\">%(video_name)s</a> video telah ditambahkan"
 
 #: apps/videos/models.py:1989
 #, python-format
 msgid "changed title for <a href=\"%(video_url)s\">%(video_name)s</a>"
-msgstr ""
+msgstr "telah diubah judul untuk <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:1991
 #, python-format
 msgid "Title was changed for <a href=\"%(video_url)s\">%(video_name)s</a>"
-msgstr ""
+msgstr "Judul telah diubah untuk <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2006
 #, python-format
@@ -1311,6 +1351,8 @@ msgid ""
 "commented on <a href=\"%(comments_url)s\">%(language)s subtitles</a> for <a "
 "href=\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"komentar pada <a href=\"%(comments_url)s\">%(language)s terjemahan</a> untuk "
+"<a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2008
 #, python-format
@@ -1318,16 +1360,19 @@ msgid ""
 "Comment added for <a href=\"%(comments_url)s\">%(language)s subtitles</a> "
 "for <a href=\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"Telah ditambahkan komentar untuk <a href=\"%(comments_url)s\">%(language)s "
+"terjemahan</a> untuk <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2011
 #, python-format
 msgid "commented on <a href=\"%(video_url)s\">%(video_name)s</a>"
-msgstr ""
+msgstr "komentar di <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2013
 #, python-format
 msgid "Comment added for <a href=\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"Telah ditambahkan komentar untuk <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2021
 #, python-format
@@ -1335,6 +1380,8 @@ msgid ""
 "started <a href=\"%(language_url)s\">%(language)s subtitles</a> for <a href="
 "\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"telah dimulai <a href=\"%(language_url)s\">%(language)s terjemahan</a> untuk "
+"<a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2023
 #, python-format
@@ -1342,6 +1389,8 @@ msgid ""
 "<a href=\"%(language_url)s\">%(language)s subtitles</a> started for <a href="
 "\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"<a href=\"%(language_url)s\">%(language)s terjemahan</a> telah dimulai untuk "
+"<a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2034
 #, python-format
@@ -1349,6 +1398,8 @@ msgid ""
 "edited <a href=\"%(language_url)s\">%(language)s subtitles</a> for <a href="
 "\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"telah disunting <a href=\"%(language_url)s\">%(language)s terjemahan</a> "
+"untuk <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2036
 #, python-format
@@ -1356,16 +1407,21 @@ msgid ""
 "<a href=\"%(language_url)s\">%(language)s subtitles</a> edited for <a href="
 "\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"<a href=\"%(language_url)s\">%(language)s terjemahan</a> telah disunting "
+"untuk <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2042
 #, python-format
 msgid "added new URL for <a href=\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"telah ditambahkan surel untuk <a href=\"%(video_url)s\">%(video_name)s</a>"
 
 #: apps/videos/models.py:2044
 #, python-format
 msgid "New URL added for <a href=\"%(video_url)s\">%(video_name)s</a>"
 msgstr ""
+"Surel Baru telah ditambahkan untuk <a href=\"%(video_url)s\">%(video_name)s</"
+"a>"
 
 #: apps/videos/models.py:2049
 #, python-format
@@ -1379,39 +1435,39 @@ msgstr ""
 
 #: apps/videos/models.py:2125
 msgid "add video"
-msgstr ""
+msgstr "tambah video"
 
 #: apps/videos/models.py:2126
 msgid "change title"
-msgstr ""
+msgstr "ubah judul"
 
 #: apps/videos/models.py:2127
 msgid "comment"
-msgstr ""
+msgstr "komentar"
 
 #: apps/videos/models.py:2128
 msgid "add version"
-msgstr ""
+msgstr "tambah versi"
 
 #: apps/videos/models.py:2129
 msgid "add translation"
-msgstr ""
+msgstr "tambah terjemahan"
 
 #: apps/videos/models.py:2130
 msgid "add video url"
-msgstr ""
+msgstr "tambah surel video"
 
 #: apps/videos/models.py:2131
 msgid "request subtitles"
-msgstr ""
+msgstr "meminta terjemahan"
 
 #: apps/videos/models.py:2132
 msgid "approve version"
-msgstr ""
+msgstr "setujui versi"
 
 #: apps/videos/models.py:2133
 msgid "add contributor"
-msgstr ""
+msgstr "tambah kontributor"
 
 #: apps/videos/models.py:2134
 msgid "remove contributor"
@@ -1419,7 +1475,7 @@ msgstr ""
 
 #: apps/videos/models.py:2135
 msgid "reject version"
-msgstr ""
+msgstr "tolak versi"
 
 #: apps/videos/models.py:2136
 msgid "review version"
@@ -1443,62 +1499,64 @@ msgid ""
 "This URL already <a href=\"%(url)s\">exists</a> as its own video in our "
 "system. You can't add it as a secondary URL."
 msgstr ""
+"Surel ini <a href=\"%(url)s\">sudah ada</a> videonya di sistem kami. Anda "
+"tidak bisa menambahkan surel kedua atas video yang sama."
 
 #: apps/videos/rpc.py:54 apps/videos/rpc.py:70
 msgid "You have not permission"
-msgstr ""
+msgstr "Anda tidak memiliki izin"
 
 #: apps/videos/rpc.py:59 apps/videos/rpc.py:75
 msgid "Incorrect video ID"
-msgstr ""
+msgstr "ID video salah"
 
 #: apps/videos/rpc.py:62 apps/videos/rpc.py:78 apps/videos/rpc.py:331
 msgid "Video does not exist"
-msgstr ""
+msgstr "Video tidak ada"
 
 #: apps/videos/rpc.py:315 apps/videos/rpc.py:340
 msgid "Title can't be empty"
-msgstr ""
+msgstr "Judul tidak boleh kosong"
 
 #: apps/videos/rpc.py:329
 msgid "Title can't be changed for this video"
-msgstr ""
+msgstr "Judul video ini tidak bisa diubah"
 
 #: apps/videos/rpc.py:333 apps/videos/rpc.py:351
 msgid "Title was changed success"
-msgstr ""
+msgstr "Berhasil mengubah judul"
 
 #: apps/videos/rpc.py:345
 msgid "Subtitle language does not exist"
-msgstr ""
+msgstr "Bahasa terjemahan tidak ada"
 
 #: apps/videos/rpc.py:353
 msgid "This is not forked translation"
-msgstr ""
+msgstr "Ini bukan terjemahan bercabang dua"
 
 #: apps/videos/rpc.py:362 apps/videos/rpc.py:378
 msgid "Video does not exist."
-msgstr ""
+msgstr "Video tida ada"
 
 #: apps/videos/rpc.py:369
 msgid "You are following this video now."
-msgstr ""
+msgstr "Anda sedang mengikuti video ini."
 
 #: apps/videos/rpc.py:385
 msgid "You stopped following this video now."
-msgstr ""
+msgstr "Anda berhenti mengikuti video ini."
 
 #: apps/videos/rpc.py:394 apps/videos/rpc.py:407
 msgid "Subtitles does not exist."
-msgstr ""
+msgstr "Terjemahan tidak ada."
 
 #: apps/videos/rpc.py:398
 msgid "You are following this subtitles now."
-msgstr ""
+msgstr "Anda mengikuti terjemahan ini."
 
 #: apps/videos/rpc.py:411
 msgid "You stopped following this subtitles now."
-msgstr ""
+msgstr "Anda berhenti mengikuti terjemahan ini."
 
 #: apps/videos/share_utils.py:52
 msgid "Just found a version of this video with subtitles"
@@ -1506,13 +1564,14 @@ msgstr ""
 
 #: apps/videos/share_utils.py:54
 msgid "Check out this video and help make subtitles"
-msgstr ""
+msgstr "Lihat video ini dan bantu membuat terjemahan"
 
 #: apps/videos/share_utils.py:56
 #, python-format
 msgid ""
 "Hey-- check out this video %(video_title)s and help make subtitles: %(url)s"
 msgstr ""
+"Hi-- Lihat video ini %(video_title)s dan bantu membuat terjemahan: %(url)s"
 
 #: apps/videos/share_utils.py:75
 #, python-format
@@ -1528,65 +1587,72 @@ msgstr ""
 #, python-format
 msgid "Just found a version of this video with %(language_name)s subtitles"
 msgstr ""
+"Telah ditemukan sebuah versi lain video ini dengan bahasa %(language_name)s"
 
-#: apps/videos/views.py:160
+#: apps/videos/views.py:161
 msgid ""
 "Here is the subtitle workspace for your video. You can\n"
 "share the video with friends, or get an embed code for your site.  To add "
 "or\n"
 "improve subtitles, click the button below the video."
 msgstr ""
+"Ini adalah ruang penterjemahan untuk video Anda. Anda dapat\n"
+"berbagi video dengan teman, atau mendapatkan kode-pasang untuk situs Anda.  "
+"Untuk menambah atau\n"
+"mengkoreksi terjemahan, klik tombol dibawah video."
 
-#: apps/videos/views.py:168
+#: apps/videos/views.py:169
 msgid ""
 "You have submitted a video\n"
 "                that is served over http.  Your browser may display mixed\n"
 "                content warnings."
 msgstr ""
 
-#: apps/videos/views.py:173
+#: apps/videos/views.py:174
 msgid "Existing subtitles will be imported in a few minutes."
-msgstr ""
+msgstr "Terjemahan yang ada akan diimpor dalam beberapa menit."
 
-#: apps/videos/views.py:282
+#: apps/videos/views.py:283
 msgid ""
 "Thank you for uploading. It will take a minute or so for your subtitles to "
 "appear."
 msgstr ""
+"Terimakasih. Proses ini akan berlangsung satu atau lebih dari beberapa menit "
+"hingga teks film Anda muncul."
 
-#: apps/videos/views.py:284
+#: apps/videos/views.py:285
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Perubahan Anda telah disimpan"
 
-#: apps/videos/views.py:635
+#: apps/videos/views.py:636
 msgid "You have not permission change this URL"
-msgstr ""
+msgstr "Anda tidak mempunyai izin untuk mengubah surel ini"
 
-#: apps/videos/views.py:641 apps/videos/views.py:661
+#: apps/videos/views.py:642 apps/videos/views.py:662
 msgid "Object does not exist"
-msgstr ""
+msgstr "Obyek tidak ada"
 
-#: apps/videos/views.py:654
+#: apps/videos/views.py:655
 msgid "You have not permission delete this URL"
-msgstr ""
+msgstr "Anda tidak mempunyai izin untuk menghapus surel ini"
 
-#: apps/videos/views.py:657
+#: apps/videos/views.py:658
 msgid "You cann't remove original URL"
-msgstr ""
+msgstr "Anda tidak dapat menghapus surel asli"
 
 #: apps/videos/feed_parser/__init__.py:107
 msgid "Feed is unavailable now."
-msgstr ""
+msgstr "Feed tidak tersedia saat ini."
 
 #: apps/videos/templatetags/subtitles_tags.py:59
 #, python-format
 msgid "%(count)s Line"
 msgid_plural "%(count)s Lines"
-msgstr[0] ""
+msgstr[0] "%(count)s Baris"
 
 #: apps/videos/types/dailymotion.py:85
 msgid "Video is unavailable"
-msgstr ""
+msgstr "Video tidak tersedia"
 
 #: apps/videos/types/forms.py:18
 #, python-format
@@ -1595,18 +1661,21 @@ msgid ""
 "                        <a href=\"mailto:%s\">Contact us</a> if there's a "
 "problem."
 msgstr ""
+"Silahkan coba lagi dengan pranala ke halaman videonya. \n"
+"                        <a href=\"mailto:%s\">Hubungi kami</a> jika ada "
+"masalah."
 
 #: apps/videos/types/youtube.py:47
 msgid "Private video"
-msgstr ""
+msgstr "Video pribadi"
 
 #: apps/videos/types/youtube.py:48
 msgid "Undefined error"
-msgstr ""
+msgstr "Kesalahan tidak diketahui"
 
 #: apps/widget/rpc.py:109
 msgid "Video embedding disabled by owner"
-msgstr ""
+msgstr "Tempel video dinonaktifkan oleh pemilik"
 
 #: apps/widget/rpc.py:263
 #, python-format
@@ -1619,9 +1688,9 @@ msgstr ""
 msgid "Sorry, these subtitles are privately moderated."
 msgstr ""
 
-#: apps/widget/rpc.py:945 apps/widget/rpc.py:986
+#: apps/widget/rpc.py:949 apps/widget/rpc.py:990
 msgid "\n"
-msgstr ""
+msgstr "\n"
 
 #: apps/widget/views.py:107
 msgid "That task has already been completed."
@@ -1630,7 +1699,7 @@ msgstr ""
 #: libs/rosetta/templates/rosetta/languages.html:4
 #: libs/rosetta/templates/rosetta/languages.html:6
 msgid "Language selection"
-msgstr ""
+msgstr "Pilihan bahasa"
 
 #: libs/rosetta/templates/rosetta/languages.html:6
 #: libs/rosetta/templates/rosetta/pofile.html:18
@@ -1643,60 +1712,62 @@ msgstr ""
 #: templates/statistic/logger_model_admin.html:18
 #: templates/statistic/log_methods/changelist_view.html:18
 msgid "Home"
-msgstr ""
+msgstr "Beranda"
 
 #: libs/rosetta/templates/rosetta/languages.html:11
 #: templates/statistic/log_methods/changelist_view.html:37
 msgid "Filter"
-msgstr ""
+msgstr "Penyaring"
 
 #: libs/rosetta/templates/rosetta/languages.html:13
 msgid "Third party"
-msgstr ""
+msgstr "Pihak ketiga"
 
 #: libs/rosetta/templates/rosetta/languages.html:15
 #: libs/rosetta/templates/rosetta/pofile.html:35 templates/teams/tasks.html:57
 msgid "All"
-msgstr ""
+msgstr "Semua"
 
 #: libs/rosetta/templates/rosetta/languages.html:29
 msgid "Progress"
-msgstr ""
+msgstr "Perkembangan"
 
 #: libs/rosetta/templates/rosetta/languages.html:30
 #: templates/messages/new.html:14 templates/messages/sent.html:23
-#: templates/profiles/_tabs.html:13 templates/profiles/_top_user_panel.html:20
+#: templates/profiles/_tabs.html:13 templates/profiles/_top_user_panel.html:19
 #: templates/teams/_subnav_settings.html:9
 msgid "Messages"
-msgstr ""
+msgstr "Pesan-pesan"
 
 #: libs/rosetta/templates/rosetta/languages.html:31
 #: templates/teams/settings-permissions.html:72
 msgid "Translated"
-msgstr ""
+msgstr "Terjemahan"
 
 #: libs/rosetta/templates/rosetta/languages.html:32
 #: libs/rosetta/templates/rosetta/pofile.html:57
 msgid "Fuzzy"
-msgstr ""
+msgstr "Tidak jelas"
 
 #: libs/rosetta/templates/rosetta/languages.html:33
 msgid "Obsolete"
-msgstr ""
+msgstr "Yang tidak terpakai"
 
 #: libs/rosetta/templates/rosetta/languages.html:34
 msgid "File"
-msgstr ""
+msgstr "Berkas"
 
 #: libs/rosetta/templates/rosetta/languages.html:55
 msgid "Nothing to translate!"
-msgstr ""
+msgstr "Tidak ada yang harus diterjemahkan!"
 
 #: libs/rosetta/templates/rosetta/languages.html:56
 msgid ""
 "You haven't specified any languages in your settings file, or haven't yet "
 "generated a batch of translation catalogs."
 msgstr ""
+"Anda belum menentukan bahasa mana yang dipilih pada berkas pengaturan, atau "
+"belum menggerakkan setumpuk katalog terjemahan."
 
 #: libs/rosetta/templates/rosetta/languages.html:57
 #, python-format
@@ -1704,115 +1775,120 @@ msgid ""
 "Please refer to <a href=\"%(i18n_doc_link)s\">Django's I18N documentation</"
 "a> for a guide on how to set up internationalization for your project."
 msgstr ""
+"Silahkan mengacu ke <a href=\"%(i18n_doc_link)s\">Dokumentasi Django's I18N</"
+"a> untuk mengetahui cara mengglobalkan proyek Anda."
 
 #: libs/rosetta/templates/rosetta/pofile.html:8
 msgid "Pick another file"
-msgstr ""
+msgstr "Pilih berkas yang lain"
 
 #: libs/rosetta/templates/rosetta/pofile.html:9
 msgid "Download this catalog"
-msgstr ""
+msgstr "Unduh katalog ini"
 
 #: libs/rosetta/templates/rosetta/pofile.html:21
 #, python-format
 msgid "Progress: %(percent_translated)s%%"
-msgstr ""
+msgstr "Perkembangan: %(percent_translated)s%%"
 
 #: libs/rosetta/templates/rosetta/pofile.html:23
 msgid "File is read-only: download the file when done editing!"
-msgstr ""
+msgstr "Berkasa hanya dapat-dibaca: unduh berkas setelah selesai menyunting!"
 
 #: libs/rosetta/templates/rosetta/pofile.html:24
 msgid ""
 "Some items in your last translation block couldn't be saved: this usually "
 "happens when the catalog file changes on disk after you last loaded it."
 msgstr ""
+"Beberapa item diblok terjemahan terakhir Anda tidak bisa disimpan: ini "
+"biasanya terjadi karena berkas katalog berubah sejurus pada saat terakhir "
+"saat Anda memuat."
 
 #: libs/rosetta/templates/rosetta/pofile.html:28
 #, python-format
 msgid "Translate into %(rosetta_i18n_lang_name)s"
-msgstr ""
+msgstr "Terjemahkan kedalam %(rosetta_i18n_lang_name)s"
 
 #: libs/rosetta/templates/rosetta/pofile.html:31
 msgid "Display:"
-msgstr ""
+msgstr "Tampilan:"
 
 #: libs/rosetta/templates/rosetta/pofile.html:32
 msgid "Untranslated only"
-msgstr ""
+msgstr "Hanya tanpa terjemahan"
 
 #: libs/rosetta/templates/rosetta/pofile.html:33
 msgid "Translated only"
-msgstr ""
+msgstr "Hanya dengan terjemahan"
 
 #: libs/rosetta/templates/rosetta/pofile.html:34
 msgid "Fuzzy only"
-msgstr ""
+msgstr "Hanya kabur"
 
 #: libs/rosetta/templates/rosetta/pofile.html:42
 #: templates/search/_search_form.html:31
 msgid "Search"
-msgstr ""
+msgstr "Cari"
 
 #: libs/rosetta/templates/rosetta/pofile.html:44
 msgid "Go"
-msgstr ""
+msgstr "Teruskan"
 
 #: libs/rosetta/templates/rosetta/pofile.html:54
 #: templates/teams/tasks.html:162 templates/videos/_video_url_panel.html:19
 #: templates/videos/subtitle-view.html:69
 msgid "Original"
-msgstr ""
+msgstr "Asli"
 
 #: libs/rosetta/templates/rosetta/pofile.html:58
 msgid "Occurrences(s)"
-msgstr ""
+msgstr "Kemunculan"
 
 #: libs/rosetta/templates/rosetta/pofile.html:72
 #: libs/rosetta/templates/rosetta/pofile.html:75
 #: libs/rosetta/templates/rosetta/pofile.html:93
 msgid "Context hint"
-msgstr ""
+msgstr "Petunjuk konteks"
 
 #: libs/rosetta/templates/rosetta/pofile.html:90
 msgid "Contextual hint"
-msgstr ""
+msgstr "Petunjuk kontekstual"
 
 #: libs/rosetta/templates/rosetta/pofile.html:100
 msgid "suggest"
-msgstr ""
+msgstr "saran"
 
 #: libs/rosetta/templates/rosetta/pofile.html:111
 #, python-format
 msgid "%(more_count)s more"
 msgid_plural "%(more_count)s more"
-msgstr[0] ""
+msgstr[0] "%(more_count)s lagi"
 
 #: libs/rosetta/templates/rosetta/pofile.html:123
 msgid "Save and translate next block"
-msgstr ""
+msgstr "Simpan dan terjemahkan blok berikutnya"
 
 #: libs/rosetta/templates/rosetta/pofile.html:127
 msgid "Skip to page:"
-msgstr ""
+msgstr "Lompat ke halaman:"
 
 #: libs/rosetta/templates/rosetta/pofile.html:140
 msgid "Displaying:"
-msgstr ""
+msgstr "Menampilkan:"
 
 #: libs/rosetta/templates/rosetta/pofile.html:144
 #, python-format
 msgid "%(hits)s/%(message_number)s message"
 msgid_plural "%(hits)s/%(message_number)s messages"
-msgstr[0] ""
+msgstr[0] "%(hits)s/%(message_number)s pesan"
 
 #: libs/unilangs/unilangs.py:122
 msgid "Afar"
-msgstr ""
+msgstr "Afar"
 
 #: libs/unilangs/unilangs.py:123
 msgid "Abkhazian"
-msgstr ""
+msgstr "Abkhazian"
 
 #: libs/unilangs/unilangs.py:124
 msgid "Avestan"
@@ -1820,35 +1896,35 @@ msgstr ""
 
 #: libs/unilangs/unilangs.py:125
 msgid "Afrikaans"
-msgstr ""
+msgstr "Afrika"
 
 #: libs/unilangs/unilangs.py:126
 msgid "Akan"
-msgstr ""
+msgstr "Akan"
 
 #: libs/unilangs/unilangs.py:127
 msgid "Amharic"
-msgstr ""
+msgstr "Amharic"
 
 #: libs/unilangs/unilangs.py:128
 msgid "Aragonese"
-msgstr ""
+msgstr "Aragonese"
 
 #: libs/unilangs/unilangs.py:129
 msgid "Arabic"
-msgstr ""
+msgstr "Arab"
 
 #: libs/unilangs/unilangs.py:130
 msgid "Assamese"
-msgstr ""
+msgstr "Assamese"
 
 #: libs/unilangs/unilangs.py:131
 msgid "American Sign Language"
-msgstr ""
+msgstr "Bahasa Isyarat Amerika"
 
 #: libs/unilangs/unilangs.py:132
 msgid "Asturian"
-msgstr ""
+msgstr "Asturian"
 
 #: libs/unilangs/unilangs.py:133
 msgid "Avaric"
@@ -1856,7 +1932,7 @@ msgstr ""
 
 #: libs/unilangs/unilangs.py:134
 msgid "Aymara"
-msgstr ""
+msgstr "Aymara"
 
 #: libs/unilangs/unilangs.py:135
 msgid "Azerbaijani"
@@ -1864,917 +1940,933 @@ msgstr ""
 
 #: libs/unilangs/unilangs.py:136
 msgid "Bashkir"
-msgstr ""
+msgstr "Bashkir"
 
 #: libs/unilangs/unilangs.py:137
 msgid "Bambara"
-msgstr ""
+msgstr "Bambara"
 
 #: libs/unilangs/unilangs.py:138
 msgid "Belarusian"
-msgstr ""
+msgstr "Belarus"
 
 #: libs/unilangs/unilangs.py:139
 msgid "Berber"
-msgstr ""
+msgstr "Berber"
 
 #: libs/unilangs/unilangs.py:140
 msgid "Bulgarian"
-msgstr ""
+msgstr "Bulgaria"
 
 #: libs/unilangs/unilangs.py:141
 msgid "Bihari"
-msgstr ""
+msgstr "Bihari"
 
 #: libs/unilangs/unilangs.py:142
 msgid "Bislama"
-msgstr ""
+msgstr "Bislama"
 
 #: libs/unilangs/unilangs.py:143
 msgid "Bengali"
-msgstr ""
+msgstr "Bengali"
 
 #: libs/unilangs/unilangs.py:144
 msgid "Ibibio"
-msgstr ""
+msgstr "Ibibio"
 
 #: libs/unilangs/unilangs.py:145
 msgid "Tibetan"
-msgstr ""
+msgstr "Tibet"
 
 #: libs/unilangs/unilangs.py:146
 msgid "Breton"
-msgstr ""
+msgstr "Breton"
 
 #: libs/unilangs/unilangs.py:147
 msgid "Bosnian"
-msgstr ""
+msgstr "Bosnia"
 
 #: libs/unilangs/unilangs.py:148
-msgid "Catalan"
+msgid "Buginese"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:149
+msgid "Catalan"
+msgstr "Katalan"
+
+#: libs/unilangs/unilangs.py:150
 msgid "Chechen"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:150
+#: libs/unilangs/unilangs.py:151
 msgid "Cebuano"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:151
-msgid "Chamorro"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:152
+msgid "Chamorro"
+msgstr "Kamoro"
+
+#: libs/unilangs/unilangs.py:153
 msgid "Choctaw"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:153
-msgid "Corsican"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:154
-msgid "Cree"
-msgstr ""
+msgid "Corsican"
+msgstr "Korsika"
 
 #: libs/unilangs/unilangs.py:155
-msgid "Czech"
-msgstr ""
+msgid "Cree"
+msgstr "Cree"
 
 #: libs/unilangs/unilangs.py:156
+msgid "Czech"
+msgstr "Cekoslovakia"
+
+#: libs/unilangs/unilangs.py:157
 msgid "Church Slavic"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:157
+#: libs/unilangs/unilangs.py:158
 msgid "Chuvash"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:158
-msgid "Welsh"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:159
-msgid "Danish"
-msgstr ""
+msgid "Welsh"
+msgstr "Welsh"
 
 #: libs/unilangs/unilangs.py:160
-msgid "German"
-msgstr ""
+msgid "Danish"
+msgstr "Denmark"
 
 #: libs/unilangs/unilangs.py:161
-msgid "Divehi"
-msgstr ""
+msgid "German"
+msgstr "Jerman"
 
 #: libs/unilangs/unilangs.py:162
-msgid "Dzongkha"
-msgstr ""
+msgid "Divehi"
+msgstr "Divehi"
 
 #: libs/unilangs/unilangs.py:163
-msgid "Ewe"
-msgstr ""
+msgid "Dzongkha"
+msgstr "Dzongkha"
 
 #: libs/unilangs/unilangs.py:164
+msgid "Ewe"
+msgstr "Ewe"
+
+#: libs/unilangs/unilangs.py:165
 msgid "Efik"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:165
-msgid "Greek"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:166
-msgid "English"
-msgstr ""
+msgid "Greek"
+msgstr "Yunani"
 
 #: libs/unilangs/unilangs.py:167
-msgid "English, British"
-msgstr ""
+msgid "English"
+msgstr "Inggris"
 
 #: libs/unilangs/unilangs.py:168
-msgid "Esperanto"
-msgstr ""
+msgid "English, British"
+msgstr "Inggris, Inggris"
 
 #: libs/unilangs/unilangs.py:169
-msgid "Spanish"
-msgstr ""
+msgid "Esperanto"
+msgstr "Esperanto"
 
 #: libs/unilangs/unilangs.py:170
-msgid "Spanish, Argentinian"
-msgstr ""
+msgid "Spanish"
+msgstr "Spanyol"
 
 #: libs/unilangs/unilangs.py:171
+msgid "Spanish, Argentinian"
+msgstr "Spanyol, Argentina"
+
+#: libs/unilangs/unilangs.py:172
 msgid "Spanish, Mexican"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:172
+#: libs/unilangs/unilangs.py:173
 msgid "Spanish, Nicaraguan"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:173
-msgid "Estonian"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:174
-msgid "Basque"
-msgstr ""
+msgid "Estonian"
+msgstr "Estonia"
 
 #: libs/unilangs/unilangs.py:175
-msgid "Persian"
-msgstr ""
+msgid "Basque"
+msgstr "Basque"
 
 #: libs/unilangs/unilangs.py:176
+msgid "Persian"
+msgstr "Persia"
+
+#: libs/unilangs/unilangs.py:177
 msgid "Fulah"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:177
-msgid "Finnish"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:178
-msgid "Filipino"
-msgstr ""
+msgid "Finnish"
+msgstr "Finlandia"
 
 #: libs/unilangs/unilangs.py:179
-msgid "Fijian"
-msgstr ""
+msgid "Filipino"
+msgstr "Filipina"
 
 #: libs/unilangs/unilangs.py:180
-msgid "Faroese"
-msgstr ""
+msgid "Fijian"
+msgstr "Fiji"
 
 #: libs/unilangs/unilangs.py:181
-msgid "French"
-msgstr ""
+msgid "Faroese"
+msgstr "Faroe"
 
 #: libs/unilangs/unilangs.py:182
-msgid "French, Canadian"
-msgstr ""
+msgid "French"
+msgstr "Prancis"
 
 #: libs/unilangs/unilangs.py:183
-msgid "Fula"
-msgstr ""
+msgid "French, Canadian"
+msgstr "Prancis, Kanada"
 
 #: libs/unilangs/unilangs.py:184
+msgid "Fula"
+msgstr "Fula"
+
+#: libs/unilangs/unilangs.py:185
 msgid "Frisian"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:185
-msgid "Irish"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:186
-msgid "Scottish Gaelic"
-msgstr ""
+msgid "Irish"
+msgstr "Irlandia"
 
 #: libs/unilangs/unilangs.py:187
-msgid "Galician"
-msgstr ""
+msgid "Scottish Gaelic"
+msgstr "Scottish Gaelic"
 
 #: libs/unilangs/unilangs.py:188
+msgid "Galician"
+msgstr "Galician"
+
+#: libs/unilangs/unilangs.py:189
 msgid "Guaran"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:189
-msgid "Gujarati"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:190
-msgid "Manx"
-msgstr ""
+msgid "Gujarati"
+msgstr "Gujarat"
 
 #: libs/unilangs/unilangs.py:191
-msgid "Haida"
-msgstr ""
+msgid "Manx"
+msgstr "Manx"
 
 #: libs/unilangs/unilangs.py:192
-msgid "Hausa"
-msgstr ""
+msgid "Haida"
+msgstr "Haida"
 
 #: libs/unilangs/unilangs.py:193
-msgid "Hebrew"
-msgstr ""
+msgid "Hausa"
+msgstr "Hausa"
 
 #: libs/unilangs/unilangs.py:194
-msgid "Hindi"
+msgid "Hazaragi"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:195
+msgid "Hebrew"
+msgstr "Ibrani"
+
+#: libs/unilangs/unilangs.py:196
+msgid "Hindi"
+msgstr "India"
+
+#: libs/unilangs/unilangs.py:197
 msgid "Hiri Motu"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:196
-msgid "Croatian"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:197
-msgid "Creole, Haitian"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:198
-msgid "Hungarian"
-msgstr ""
+msgid "Croatian"
+msgstr "Kroasia"
 
 #: libs/unilangs/unilangs.py:199
+msgid "Creole, Haitian"
+msgstr "Creole, Haiti"
+
+#: libs/unilangs/unilangs.py:200
+msgid "Hungarian"
+msgstr "Hungaria"
+
+#: libs/unilangs/unilangs.py:201
 msgid "Hupa"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:200
+#: libs/unilangs/unilangs.py:202
 msgid "Armenian"
-msgstr ""
+msgstr "Armenia"
 
-#: libs/unilangs/unilangs.py:201
+#: libs/unilangs/unilangs.py:203
 msgid "Herero"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:202
-msgid "Interlingua"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:203
-msgid "Igbo"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:204
-msgid "Indonesian"
-msgstr ""
+msgid "Interlingua"
+msgstr "Interlingua"
 
 #: libs/unilangs/unilangs.py:205
-msgid "Interlingue"
-msgstr ""
+msgid "Igbo"
+msgstr "Igbo"
 
 #: libs/unilangs/unilangs.py:206
+msgid "Indonesian"
+msgstr "Indonesia"
+
+#: libs/unilangs/unilangs.py:207
+msgid "Interlingue"
+msgstr "Interlingue"
+
+#: libs/unilangs/unilangs.py:208
 msgid "Sichuan Yi"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:207
+#: libs/unilangs/unilangs.py:209
 msgid "Inupia"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:208
+#: libs/unilangs/unilangs.py:210
 msgid "Ilocano"
-msgstr ""
+msgstr "Ilocano"
 
-#: libs/unilangs/unilangs.py:209
+#: libs/unilangs/unilangs.py:211
 msgid "Ingush"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:210
+#: libs/unilangs/unilangs.py:212
 msgid "Ido"
-msgstr ""
+msgstr "Ido"
 
-#: libs/unilangs/unilangs.py:211
+#: libs/unilangs/unilangs.py:213
 msgid "Iroquoian languages"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:212
-msgid "Icelandic"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:213
-msgid "Italian"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:214
-msgid "Inuktitut"
-msgstr ""
+msgid "Icelandic"
+msgstr "Islandia"
 
 #: libs/unilangs/unilangs.py:215
-msgid "Japanese"
-msgstr ""
+msgid "Italian"
+msgstr "Italia"
 
 #: libs/unilangs/unilangs.py:216
-msgid "Javanese"
-msgstr ""
+msgid "Inuktitut"
+msgstr "Inuktitut"
 
 #: libs/unilangs/unilangs.py:217
-msgid "Georgian"
-msgstr ""
+msgid "Japanese"
+msgstr "Jepang"
 
 #: libs/unilangs/unilangs.py:218
+msgid "Javanese"
+msgstr "Jowo"
+
+#: libs/unilangs/unilangs.py:219
+msgid "Georgian"
+msgstr "Georgian"
+
+#: libs/unilangs/unilangs.py:220
 msgid "Karen"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:219
-msgid "Kanuri"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:220
-msgid "Gikuyu"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:221
-msgid "Rwandi"
-msgstr ""
+msgid "Kanuri"
+msgstr "Kanuri"
 
 #: libs/unilangs/unilangs.py:222
+msgid "Gikuyu"
+msgstr "Gikuyu"
+
+#: libs/unilangs/unilangs.py:223
+msgid "Rwandi"
+msgstr "Rwanda"
+
+#: libs/unilangs/unilangs.py:224
 msgid "Kuanyama, Kwanyama"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:223
-msgid "Kazakh"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:224
-msgid "Greenlandic"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:225
+msgid "Kazakh"
+msgstr "Kazakhtan"
+
+#: libs/unilangs/unilangs.py:226
+msgid "Greenlandic"
+msgstr "Greenland"
+
+#: libs/unilangs/unilangs.py:227
 msgid "Khmer"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:226
-msgid "Kannada"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:227
-msgid "Korean"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:228
-msgid "Kongo"
-msgstr ""
+msgid "Kannada"
+msgstr "Kannada"
 
 #: libs/unilangs/unilangs.py:229
-msgid "Kashmiri"
-msgstr ""
+msgid "Korean"
+msgstr "Korea"
 
 #: libs/unilangs/unilangs.py:230
-msgid "Kurdish"
-msgstr ""
+msgid "Kongo"
+msgstr "Kongo"
 
 #: libs/unilangs/unilangs.py:231
+msgid "Kashmiri"
+msgstr "Kashmir"
+
+#: libs/unilangs/unilangs.py:232
+msgid "Kurdish"
+msgstr "Kurdishtan"
+
+#: libs/unilangs/unilangs.py:233
 msgid "Komi"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:232
-msgid "Cornish"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:233
-msgid "Kyrgyz"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:234
-msgid "Latin"
-msgstr ""
+msgid "Cornish"
+msgstr "Cornish"
 
 #: libs/unilangs/unilangs.py:235
-msgid "Luxembourgish"
-msgstr ""
+msgid "Kyrgyz"
+msgstr "Kyrgyztan"
 
 #: libs/unilangs/unilangs.py:236
+msgid "Latin"
+msgstr "Latin"
+
+#: libs/unilangs/unilangs.py:237
+msgid "Luxembourgish"
+msgstr "Luxembourg"
+
+#: libs/unilangs/unilangs.py:238
 msgid "Ganda"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:237
+#: libs/unilangs/unilangs.py:239
 msgid "Limburgish"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:238
-msgid "Lingala"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:239
-msgid "Lakota"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:240
-msgid "Lao"
-msgstr ""
+msgid "Lingala"
+msgstr "Lingala"
 
 #: libs/unilangs/unilangs.py:241
-msgid "Lithuanian"
-msgstr ""
+msgid "Lakota"
+msgstr "Lakota"
 
 #: libs/unilangs/unilangs.py:242
+msgid "Lao"
+msgstr "Laos"
+
+#: libs/unilangs/unilangs.py:243
+msgid "Lithuanian"
+msgstr "Lithuania"
+
+#: libs/unilangs/unilangs.py:244
 msgid "Luba-Katagana"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:243
-msgid "Luba-Kasai"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:244
-msgid "Luo"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:245
-msgid "Luhya"
-msgstr ""
+msgid "Luba-Kasai"
+msgstr "Luba-Kasai"
 
 #: libs/unilangs/unilangs.py:246
-msgid "Latvian"
-msgstr ""
+msgid "Luo"
+msgstr "Luo"
 
 #: libs/unilangs/unilangs.py:247
+msgid "Luhya"
+msgstr "Luhya"
+
+#: libs/unilangs/unilangs.py:248
+msgid "Latvian"
+msgstr "Latvia"
+
+#: libs/unilangs/unilangs.py:249
 msgid "Metadata: Geo"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:248
+#: libs/unilangs/unilangs.py:250
 msgid "Metadata: Twitter"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:249
+#: libs/unilangs/unilangs.py:251
 msgid "Metadata: Wikipedia"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:250
+#: libs/unilangs/unilangs.py:252
 msgid "Madurese"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:251
-msgid "Marshallese"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:252
-msgid "Maori"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:253
-msgid "Macedonian"
-msgstr ""
+msgid "Marshallese"
+msgstr "Marshallese"
 
 #: libs/unilangs/unilangs.py:254
-msgid "Malayalam"
-msgstr ""
+msgid "Maori"
+msgstr "Maori"
 
 #: libs/unilangs/unilangs.py:255
-msgid "Malagasy"
-msgstr ""
+msgid "Macedonian"
+msgstr "Makedonia"
 
 #: libs/unilangs/unilangs.py:256
+msgid "Malayalam"
+msgstr "Malayalam"
+
+#: libs/unilangs/unilangs.py:257
+msgid "Malagasy"
+msgstr "Malagasi"
+
+#: libs/unilangs/unilangs.py:258
 msgid "Mongolian"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:257
+#: libs/unilangs/unilangs.py:259
 msgid "Mandinka"
-msgstr ""
+msgstr "Mandinka"
 
-#: libs/unilangs/unilangs.py:258
+#: libs/unilangs/unilangs.py:260
 msgid "Moldavian, Moldovan"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:259
+#: libs/unilangs/unilangs.py:261
 msgid "Mohawk"
-msgstr ""
+msgstr "Mohawk"
 
-#: libs/unilangs/unilangs.py:260
+#: libs/unilangs/unilangs.py:262
 msgid "Manipuri"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:261
-msgid "Mossi"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:262
-msgid "Marathi"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:263
-msgid "Malay"
-msgstr ""
+msgid "Mossi"
+msgstr "Mossi"
 
 #: libs/unilangs/unilangs.py:264
-msgid "Maltese"
-msgstr ""
+msgid "Marathi"
+msgstr "Marathi"
 
 #: libs/unilangs/unilangs.py:265
-msgid "Burmese"
-msgstr ""
+msgid "Malay"
+msgstr "Melayu"
 
 #: libs/unilangs/unilangs.py:266
+msgid "Maltese"
+msgstr "Malta"
+
+#: libs/unilangs/unilangs.py:267
+msgid "Burmese"
+msgstr "Burma"
+
+#: libs/unilangs/unilangs.py:268
 msgid "Hokkien"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:267
+#: libs/unilangs/unilangs.py:269
 msgid "Naurunan"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:268
+#: libs/unilangs/unilangs.py:270
 msgid "Norwegian Bokmal"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:269
+#: libs/unilangs/unilangs.py:271
 msgid "North Ndebele"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:270
+#: libs/unilangs/unilangs.py:272
 msgid "Nepali"
-msgstr ""
+msgstr "Nepal"
 
-#: libs/unilangs/unilangs.py:271
+#: libs/unilangs/unilangs.py:273
 msgid "Ndonga"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:272
+#: libs/unilangs/unilangs.py:274
 msgid "Dutch"
-msgstr ""
+msgstr "Belanda"
 
-#: libs/unilangs/unilangs.py:273
+#: libs/unilangs/unilangs.py:275
 msgid "Norwegian Nynorsk"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:274
+#: libs/unilangs/unilangs.py:276
 msgid "Norwegian"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:275
+#: libs/unilangs/unilangs.py:277
 msgid "Southern Ndebele"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:276
+#: libs/unilangs/unilangs.py:278
 msgid "Northern Sotho"
-msgstr ""
+msgstr "Sotho Utara"
 
-#: libs/unilangs/unilangs.py:277
+#: libs/unilangs/unilangs.py:279
 msgid "Navajo"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:278
-msgid "Chewa"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:279
-msgid "Occitan"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:280
+msgid "Chewa"
+msgstr "Chewa"
+
+#: libs/unilangs/unilangs.py:281
+msgid "Occitan"
+msgstr "Occitan"
+
+#: libs/unilangs/unilangs.py:282
 msgid "Ojibwe"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:281
-msgid "Oriya"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:282
-msgid "Oromo"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:283
+msgid "Oriya"
+msgstr "Oriya"
+
+#: libs/unilangs/unilangs.py:284
+msgid "Oromo"
+msgstr "Oromo"
+
+#: libs/unilangs/unilangs.py:285
 msgid "Ossetian, Ossetic"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:284
+#: libs/unilangs/unilangs.py:286
 msgid "Papiamento"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:285
-msgid "Punjabi"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:286
-msgid "Pali"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:287
-msgid "Polish"
-msgstr ""
+msgid "Punjabi"
+msgstr "Punjabi"
 
 #: libs/unilangs/unilangs.py:288
-msgid "Pashto"
-msgstr ""
+msgid "Pali"
+msgstr "Pali"
 
 #: libs/unilangs/unilangs.py:289
-msgid "Portuguese"
-msgstr ""
+msgid "Polish"
+msgstr "Polandia"
 
 #: libs/unilangs/unilangs.py:290
-msgid "Portuguese, Brazilian"
+msgid "Dari"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:291
-msgid "Quechua"
-msgstr ""
+msgid "Pashto"
+msgstr "Pashto"
 
 #: libs/unilangs/unilangs.py:292
+msgid "Portuguese"
+msgstr "Portugis"
+
+#: libs/unilangs/unilangs.py:293
+msgid "Portuguese, Brazilian"
+msgstr "Portugis, Brazil"
+
+#: libs/unilangs/unilangs.py:294
+msgid "Quechua"
+msgstr "Quechua"
+
+#: libs/unilangs/unilangs.py:295
 msgid "Romansh"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:293
+#: libs/unilangs/unilangs.py:296
 msgid "Romanian"
-msgstr ""
+msgstr "Romania"
 
-#: libs/unilangs/unilangs.py:294
+#: libs/unilangs/unilangs.py:297
 msgid "Russian"
-msgstr ""
+msgstr "Russia"
 
-#: libs/unilangs/unilangs.py:295
+#: libs/unilangs/unilangs.py:298
 msgid "Rundi"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:296
+#: libs/unilangs/unilangs.py:299
 msgid "Macedo"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:297
+#: libs/unilangs/unilangs.py:300
 msgid "Rusyn"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:298
-msgid "Sanskrit"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:299
-msgid "Sardinian"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:300
-msgid "Sindhi"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:301
+msgid "Sanskrit"
+msgstr "Sansekerta"
+
+#: libs/unilangs/unilangs.py:302
+msgid "Sardinian"
+msgstr "Sardinia"
+
+#: libs/unilangs/unilangs.py:303
+msgid "Sindhi"
+msgstr "Sindhi"
+
+#: libs/unilangs/unilangs.py:304
 msgid "Northern Sami"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:302
-msgid "Sango"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:303
-msgid "Serbo-Croatian"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:304
-msgid "Sinhala"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:305
-msgid "Slovak"
-msgstr ""
+msgid "Sango"
+msgstr "Sango"
 
 #: libs/unilangs/unilangs.py:306
-msgid "Slovenian"
-msgstr ""
+msgid "Serbo-Croatian"
+msgstr "Serbia-Kroasia"
 
 #: libs/unilangs/unilangs.py:307
-msgid "Samoan"
-msgstr ""
+msgid "Sinhala"
+msgstr "Sinhala"
 
 #: libs/unilangs/unilangs.py:308
-msgid "Shona"
-msgstr ""
+msgid "Slovak"
+msgstr "Slovakia"
 
 #: libs/unilangs/unilangs.py:309
-msgid "Somali"
+msgid "Seko Padang"
 msgstr ""
 
 #: libs/unilangs/unilangs.py:310
-msgid "Sotho"
-msgstr ""
+msgid "Slovenian"
+msgstr "Slovenia"
 
 #: libs/unilangs/unilangs.py:311
-msgid "Albanian"
-msgstr ""
+msgid "Samoan"
+msgstr "Samoa"
 
 #: libs/unilangs/unilangs.py:312
-msgid "Serbian"
-msgstr ""
+msgid "Shona"
+msgstr "Shona"
 
 #: libs/unilangs/unilangs.py:313
-msgid "Serbian, Latin"
-msgstr ""
+msgid "Somali"
+msgstr "Somalia"
 
 #: libs/unilangs/unilangs.py:314
-msgid "Swati"
-msgstr ""
+msgid "Sotho"
+msgstr "Sotho"
 
 #: libs/unilangs/unilangs.py:315
-msgid "Sundanese"
-msgstr ""
+msgid "Albanian"
+msgstr "Albania"
 
 #: libs/unilangs/unilangs.py:316
-msgid "Swedish"
-msgstr ""
+msgid "Serbian"
+msgstr "Serbia"
 
 #: libs/unilangs/unilangs.py:317
-msgid "Swahili"
-msgstr ""
+msgid "Serbian, Latin"
+msgstr "Serbia, Latin"
 
 #: libs/unilangs/unilangs.py:318
-msgid "Tamil"
-msgstr ""
+msgid "Swati"
+msgstr "Swati"
 
 #: libs/unilangs/unilangs.py:319
+msgid "Sundanese"
+msgstr "Sunda"
+
+#: libs/unilangs/unilangs.py:320
+msgid "Swedish"
+msgstr "Swedia"
+
+#: libs/unilangs/unilangs.py:321
+msgid "Swahili"
+msgstr "Swahili"
+
+#: libs/unilangs/unilangs.py:322
+msgid "Tamil"
+msgstr "Tamil"
+
+#: libs/unilangs/unilangs.py:323
 msgid "Tetum"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:320
-msgid "Telugu"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:321
-msgid "Tajik"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:322
-msgid "Thai"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:323
-msgid "Tigrinya"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:324
-msgid "Turkmen"
-msgstr ""
+msgid "Telugu"
+msgstr "Telugu"
 
 #: libs/unilangs/unilangs.py:325
-msgid "Tagalog"
-msgstr ""
+msgid "Tajik"
+msgstr "Tajikistan"
 
 #: libs/unilangs/unilangs.py:326
-msgid "Klingon"
-msgstr ""
+msgid "Thai"
+msgstr "Thailand"
 
 #: libs/unilangs/unilangs.py:327
+msgid "Tigrinya"
+msgstr "Tigrinya"
+
+#: libs/unilangs/unilangs.py:328
+msgid "Turkmen"
+msgstr "Turkmenistan"
+
+#: libs/unilangs/unilangs.py:329
+msgid "Tagalog"
+msgstr "Tagalog"
+
+#: libs/unilangs/unilangs.py:330
+msgid "Klingon"
+msgstr "Klingon"
+
+#: libs/unilangs/unilangs.py:331
 msgid "Tonga"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:328
+#: libs/unilangs/unilangs.py:332
 msgid "Turkish"
-msgstr ""
+msgstr "Turki"
 
-#: libs/unilangs/unilangs.py:329
+#: libs/unilangs/unilangs.py:333
 msgid "Tsonga"
-msgstr ""
+msgstr "Tsonga"
 
-#: libs/unilangs/unilangs.py:330
+#: libs/unilangs/unilangs.py:334
 msgid "Tswana"
-msgstr ""
+msgstr "Tswana"
 
-#: libs/unilangs/unilangs.py:331
+#: libs/unilangs/unilangs.py:335
 msgid "Tartar"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:332
+#: libs/unilangs/unilangs.py:336
 msgid "Twi"
-msgstr ""
+msgstr "Twi"
 
-#: libs/unilangs/unilangs.py:333
+#: libs/unilangs/unilangs.py:337
 msgid "Tahitian"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:334
+#: libs/unilangs/unilangs.py:338
 msgid "Uighur"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:335
+#: libs/unilangs/unilangs.py:339
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukrainia"
 
-#: libs/unilangs/unilangs.py:336
+#: libs/unilangs/unilangs.py:340
 msgid "Umbundu"
-msgstr ""
+msgstr "Umbundu"
 
-#: libs/unilangs/unilangs.py:337
+#: libs/unilangs/unilangs.py:341
 msgid "Uyghur"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:338
+#: libs/unilangs/unilangs.py:342
 msgid "Urdu"
-msgstr ""
+msgstr "Urdu"
 
-#: libs/unilangs/unilangs.py:339
+#: libs/unilangs/unilangs.py:343
 msgid "Uzbek"
-msgstr ""
+msgstr "Uzbekistan"
 
-#: libs/unilangs/unilangs.py:340
+#: libs/unilangs/unilangs.py:344
 msgid "Venda"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:341
-msgid "Vietnamese"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:342
-msgid "Volapuk"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:343
-msgid "Walloon"
-msgstr ""
-
-#: libs/unilangs/unilangs.py:344
-msgid "Wolof"
-msgstr ""
-
 #: libs/unilangs/unilangs.py:345
-msgid "Xhosa"
-msgstr ""
+msgid "Vietnamese"
+msgstr "Vietnam"
 
 #: libs/unilangs/unilangs.py:346
-msgid "Yiddish"
-msgstr ""
+msgid "Volapuk"
+msgstr "Volapuk"
 
 #: libs/unilangs/unilangs.py:347
-msgid "Yoruba"
-msgstr ""
+msgid "Walloon"
+msgstr "Walloon"
 
 #: libs/unilangs/unilangs.py:348
+msgid "Wolof"
+msgstr "Wolof"
+
+#: libs/unilangs/unilangs.py:349
+msgid "Xhosa"
+msgstr "Xhosa"
+
+#: libs/unilangs/unilangs.py:350
+msgid "Yiddish"
+msgstr "Yiddish"
+
+#: libs/unilangs/unilangs.py:351
+msgid "Yoruba"
+msgstr "Yoruba"
+
+#: libs/unilangs/unilangs.py:352
 msgid "Zhuang, Chuang"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:349
+#: libs/unilangs/unilangs.py:353
 msgid "Chinese, Yue"
-msgstr ""
+msgstr "Cina, Yue"
 
-#: libs/unilangs/unilangs.py:350
+#: libs/unilangs/unilangs.py:354
 msgid "Chinese, Simplified"
-msgstr ""
+msgstr "Cina, Disederhanakan"
 
-#: libs/unilangs/unilangs.py:351
+#: libs/unilangs/unilangs.py:355
 msgid "Chinese, Traditional"
-msgstr ""
+msgstr "Cina, Tradisional"
 
-#: libs/unilangs/unilangs.py:352
+#: libs/unilangs/unilangs.py:356
 msgid "Zulu"
-msgstr ""
+msgstr "Zulu"
 
 #: templates/_paginator.html:4 templates/_paginator.html.py:6
 msgid "Previous"
-msgstr ""
+msgstr "Sebelumnya"
 
 #: templates/_paginator.html:28 templates/_paginator.html.py:30
 msgid "Next"
-msgstr ""
+msgstr "Berikutnya"
 
 #: templates/_share_widget.html:4
 msgid "Share your subtitles"
-msgstr ""
+msgstr "Bagikan terjemahan Anda"
 
 #: templates/_share_widget.html:6
 msgid "Now everyone can watch the video with subtitles-- try it!"
-msgstr ""
+msgstr "Kini semua orang bisa menonton video dengan terjemahan-- ayo coba!"
 
 #: templates/_share_widget.html:7
 msgid "Then tell the world and invite your friends to help translate:"
-msgstr ""
+msgstr "Lalu sebarkan dan undang teman Anda untuk membantu menterjemah:"
 
 #: templates/_share_widget.html:10 templates/_sharing_widget.html:7
 #: templates/teams/_context_project.html:75
 #: templates/teams/_context_team.html:108
 msgid "Post to Facebook"
-msgstr ""
+msgstr "Kirim ke Facebook"
 
 #: templates/_share_widget.html:11 templates/_sharing_widget.html:8
 #: templates/teams/_context_project.html:76
 #: templates/teams/_context_team.html:109
 msgid "Post to Twitter"
-msgstr ""
+msgstr "Kirim ke Twitter"
 
 #: templates/_share_widget.html:12 templates/_sharing_widget.html:9
 #: templates/teams/_context_project.html:77
 #: templates/teams/_context_team.html:110
 msgid "Email to friends"
-msgstr ""
+msgstr "Kirim email ke teman"
 
 #: templates/_share_widget.html:16
 msgid "Embed Code"
-msgstr ""
+msgstr "Pasang Kode"
 
 #: templates/_share_widget.html:24
 msgid "Permalink"
-msgstr ""
+msgstr "Pranala"
 
 #: templates/_sharing_widget.html:3 templates/teams/_context_project.html:73
 #: templates/teams/_context_team.html:106
@@ -2787,31 +2879,35 @@ msgstr ""
 
 #: templates/_testing_widget.html:3
 msgid "We&#8217;d like help testing our subtitling widget"
-msgstr ""
+msgstr "Kami ingin menguji pengaya penterjemahan kami"
 
 #: templates/_testing_widget.html:5
 msgid "Just launch our feedback form and try captioning a video"
-msgstr ""
+msgstr "Buka formulir saran lalu tulislah keterangan gambar video"
 
 #: templates/_testing_widget.html:7
 msgid "Test the Widget"
-msgstr ""
+msgstr "Uji Pengaya"
 
 #: templates/_testing_widget.html:12
 msgid ""
 "Warning: These videos should not be embeded--there is a good possibility "
 "they will break at some point!"
 msgstr ""
+"Peringatan: Video-video jangan dipasang-- Ada kemungkinan tidak berfungsi "
+"pada beberapa titik!"
 
 #: templates/_testing_widget.html:16
 msgid ""
 "Warning #2: These subtitles are non-permanent and should not be relied on -- "
 "someone could change them."
 msgstr ""
+"Peringatan ke-2: Terjemahan ini tidak permanen dan tidak disarankan-- Ada "
+"kemungkinan seseorang bisa menggantinya."
 
 #: templates/_testing_widget.html:17
 msgid "This alpha site is for purely testing purposes."
-msgstr ""
+msgstr "Situs alfa ini hanya untuk tujuan pengujian."
 
 #: templates/about.html:22
 msgid ""
@@ -2881,7 +2977,7 @@ msgid ""
 "subtitles.  With Amara, you can build a community of volunteers to subtitle "
 "your content, integrate with professional services, and use a powerful "
 "quality control system to ensure world-class quality.  To learn more, see "
-"our <a href=\"http://www.universalsubtitles.org/en/services/\">enterprise "
+"our <a href=\"http://www.universalsubtitles.org/en/enterprise/\">enterprise "
 "services</a> and contact Dean Jansen, <a href=\"mailto:dean@pculture.org"
 "\">dean@pculture.org</a>.\n"
 "            </p>\n"
@@ -2899,11 +2995,11 @@ msgstr ""
 
 #: templates/base.html:71
 msgid "Watch"
-msgstr ""
+msgstr "Pantau"
 
 #: templates/base.html:72
 msgid "Volunteer"
-msgstr ""
+msgstr "Sukarelawan"
 
 #: templates/base.html:73
 msgid "Enterprise"
@@ -2911,11 +3007,10 @@ msgstr ""
 
 #: templates/base.html:74
 msgid "Help"
-msgstr ""
+msgstr "Bantuan"
 
-#: templates/base.html:78 templates/auth/login.html:30
-#: templates/openid_consumer/signin.html:22
-msgid "Sign In"
+#: templates/base.html:78
+msgid "Sign in / Sign up"
 msgstr ""
 
 #: templates/base.html:102
@@ -2925,7 +3020,7 @@ msgstr ""
 
 #: templates/base.html:105 templates/profiles/view_profile.html:68
 msgid "About"
-msgstr ""
+msgstr "Tentang"
 
 #: templates/base.html:106
 msgid "Jobs"
@@ -2933,22 +3028,26 @@ msgstr ""
 
 #: templates/base.html:109
 msgid "Contact Us"
-msgstr ""
+msgstr "Hubungi kami"
 
 #: templates/base.html:110
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Ketentuan Hak Pakai"
 
 #: templates/base.html:111
 msgid "Terms of Service"
-msgstr ""
+msgstr "Aturan Layanan"
 
 #: templates/base.html:121
 msgid "Sentry"
-msgstr ""
+msgstr "Sentry"
 
 #: templates/base.html:124
 msgid "Rosetta"
+msgstr "Rosetta"
+
+#: templates/base.html:127
+msgid "Impersonate"
 msgstr ""
 
 #: templates/demo.html:23
@@ -2964,6 +3063,11 @@ msgid ""
 "        Don't worry, nothing you do will be saved.\n"
 "        "
 msgstr ""
+"\n"
+"        <strong>Apa ini?</strong> Video dibawah adalah untuk \n"
+"        tujuan demo &mdash; cobalah klik tombol 'Terjemahkan Saya'!\n"
+"        Jangan khawatir, tidak ada yang akan disimpan.\n"
+"        "
 
 #: templates/demo.html:45
 msgid ""
@@ -2975,7 +3079,7 @@ msgstr ""
 
 #: templates/dmca.html:6
 msgid "Copyright Infringement Notification"
-msgstr ""
+msgstr "Pemberitahuan Pelanggaran Hak Cipta"
 
 #: templates/dmca.html:9
 msgid ""
@@ -2987,6 +3091,14 @@ msgid ""
 "your legal counsel or see Section 512(c)(3) of the Copyright Act to confirm\n"
 "these requirements):\n"
 msgstr ""
+"\n"
+"Untuk mengirimkan pemberitahuan pelanggaran karya cipta kepada kami, Anda "
+"perlu mengirimkan\n"
+"berkas komunikasi tertulis berikut substansinya (silahkan berkonsultasi "
+"kepada\n"
+"kuasa hukum Anda atau lihat Section 512(c)(3) dari Tindak Pelanggaran Karya "
+"Cipta untuk mengkonfirmasi\n"
+"permintaan ini):\n"
 
 #: templates/dmca.html:18
 msgid ""
@@ -3022,6 +3134,37 @@ msgid ""
 "of the owner of an exclusive right that is allegedly infringed.\n"
 "Such written notice should be sent to our designated agent as follows:\n"
 msgstr ""
+"\n"
+"Sebuah tanda tangan elektronik seseorang yang mempunyai perizinan untuk "
+"melakukan aksi atas\n"
+"izin dari pemilik sebuah hak eksklusif yang diduga telah dilanggar.\n"
+"Identifikasi dari pekerjaan yang berhubungan dengan hak cipta yang diklaim "
+"telah dilanggar, atau, jika\n"
+"pekerjaan multi yang berhubungan dengan hak cipta pada satu situs online "
+"yang diwadahi oleh sebuah\n"
+"pemberitahuan, daftar representasi masing-masing pekerjaan pada situs "
+"tersebut.\n"
+"Identifikasi dari materi yang diklaim akan dilanggar atau menjadi\n"
+"subyek dari aktifitas pelanggaran yang telah dihapus atau akses yang telah\n"
+"dinonaktifkan, dan informasi dengan alasan yang cukup untuk mengizinkan "
+"layanan\n"
+"provider untuk melokasikan materi. Menyediakan Surel pada email\n"
+"adalah cara terbaik bagi kami untuk melokasikan kontent dengan cepat.\n"
+"Informasi yang cukup agar layanan provider dapat menghubungi\n"
+"pihak yang melakukan aduan, seperti alamat, nomor telepon, dan jika ada, "
+"sebuah\n"
+"alamat email dimana pihak pengadu dapat dihubungi.\n"
+"Sebuah pernyataan bahwa pihak pengadu mempunya itikad baik menggunakan\n"
+"materi pada hal-hal yang diadukan yang tidak ada izinnya dari pemilik hak "
+"cipta, atau\n"
+"agennya, atau oleh undang-undang.\n"
+"Sebuah pernyataan bahwa informasi yang diberitahukan adalah benar-benar "
+"akurat, dan dibawah\n"
+"hukuman sumpah palsu, dimana pihak yang mengadukan mempunya hak untuk "
+"melakukan aksi atas izin\n"
+"pemilik hak cipta eksklusuf yang telah dilanggar.\n"
+"Pemberitahuan tertulis yang harus dikirimkan kepada agen yang ditunjuk oleh "
+"kami yaitu:\n"
 
 #: templates/dmca.html:55
 msgid ""
@@ -3031,10 +3174,16 @@ msgid ""
 "misrepresents that material or activity is infringing may be subject to\n"
 "liability.\n"
 msgstr ""
+"\n"
+"Dengan catatan setiap orang berada dibawah Section 512(f) yang mengetahui "
+"materi-materi\n"
+"yang telah salah direpresentasikan atau aktifitas yang telah dilanggar "
+"dapat\n"
+"dipertanggungjawabkan.\n"
 
 #: templates/dmca.html:63
 msgid "Counter-Notification"
-msgstr ""
+msgstr "Pemberitahuan-Banding"
 
 #: templates/dmca.html:65
 msgid ""
@@ -3047,10 +3196,20 @@ msgid ""
 "in\n"
 "appropriate circumstances of subscribers who are repeat infringers.\n"
 msgstr ""
+"\n"
+"Dengan catatan bahwa dibawah aturan Hukum Hak Cipta Section 512(f), adanya "
+"kesalahan pada setiap orang yang\n"
+"diketahui salah merepresentasikan secara material terhadap materi atau "
+"aktifitas telah dihapus atau\n"
+"dinonaktifkan atau telah terjadi kesalahan identifikasi yang dapat "
+"dipertanggungjawabkan. Mohon\n"
+"juga diketahui bahwa kami mendesak adanya kebijakan yang disediakan untuk "
+"menghapus\n"
+"keadaan sehubungan dengan pelanggan yang mengulang pelanggaran.\n"
 
 #: templates/dmca.html:75
 msgid "How do I file a DMCA counter notice?"
-msgstr ""
+msgstr "Bagaimana cara saya memberkas pemberitahuan banding DMCA?"
 
 #: templates/dmca.html:77
 msgid ""
@@ -3059,6 +3218,10 @@ msgid ""
 "Digital Millennium Copyright Act: http://www.copyright.gov/legislation/dmca."
 "pdf\n"
 msgstr ""
+"\n"
+"Proses pemberitahuan balik diatur oleh Section 512(g)\n"
+"Digital Millennium Copyright Act: http://www.copyright.gov/legislation/dmca."
+"pdf\n"
 
 #: templates/dmca.html:82
 msgid ""
@@ -3066,6 +3229,10 @@ msgid ""
 "To file a counter notification with us, you must provide a written\n"
 "communication that sets forth the items specified below.\n"
 msgstr ""
+"\n"
+"Untuk mengirimkan pemberitahuan balik kepada kami, Anda harus memberikan\n"
+"pernyataan berupa komunikasi tertulis yang diatur oleh butir-butir dibawah "
+"ini.\n"
 
 #: templates/dmca.html:87
 msgid ""
@@ -3080,10 +3247,21 @@ msgid ""
 "Accordingly, if you are not sure whether certain material infringes the\n"
 "copyrights of others, we suggest that you first contact an attorney.\n"
 msgstr ""
+"\n"
+"Dengan catatan dibawah Hukum Hak Cipta Section 512(f), setiap orang\n"
+"yang mengetahui ada kesalahan representasi secara material akan materi "
+"tersebut atau aktifitas yang telah dihapus atau\n"
+"dinonaktifkan secara salah atau secara salah identifikasi yang dapat "
+"dipertanggungjawabkan. Mohon\n"
+"juga diketahui bahwa kami mendesak adanya kebijakan yang menyediakan untuk "
+"menghapus\n"
+"keadaan sehubungan dengan pelanggan yang mengulang pelanggaran.\n"
+"Berdasarkan bahwa, jika Anda tidak yakin akan adanya pelanggaran material\n"
+"terhadap hak cipta orang lain, kami sarankan untuk menghubungi pengacara.\n"
 
 #: templates/dmca.html:99
 msgid "Elements of Counter-Notification"
-msgstr ""
+msgstr "Bagian dari Pemberitahuan-Banding"
 
 #: templates/dmca.html:101
 msgid ""
@@ -3095,6 +3273,13 @@ msgid ""
 "(including\n"
 "section numbers):\n"
 msgstr ""
+"\n"
+"Contoh pemberitahuan balik bisa ditemukan pada:\n"
+"http://www.chillingeffects.org/dmca/counter512.pdf. Guna mempercepat kami "
+"untuk\n"
+"memproses pemberitahuan balik Anda, silakan kirimkan pernyataan dalam format "
+"berikut (termasuk\n"
+"nomor seksi):\n"
 
 #: templates/dmca.html:109
 msgid ""
@@ -3122,10 +3307,33 @@ msgid ""
 "signature or a valid electronic signature will be accepted.\n"
 "Send the written communication to the following address:\n"
 msgstr ""
+"\n"
+"Identifikasikan Surel dari material yang telah dihapus oleh Miro Guide atau "
+"yang\n"
+"telah dinonaktifkan aksesnya.\n"
+"Berikan informasi berupa nama lengkap, alamat, nomor telepon, dan alamat "
+"email juga\n"
+"nama pengguna akun Miro Guide Anda.\n"
+"Berikan pernyataan bahwa Anda mengerti terhadap perundang-undangan Federal "
+"District\n"
+"Court untuk wilyah hukum dimana Anda berada (atau negara bagian\n"
+"San Fransisco, California jika alamat Anda berada diluar Amerika Serikat),\n"
+"maka Anda akan menerima layanan proses dari orang yang memberikan\n"
+"pemberitahuan dibawah subseksi (c)(1)(C) atau agen dari perorangan.\n"
+"Sertakan juga pernyataan berikut ini: \"Saya bersumpah, dibawah hukum dan "
+"para juri, bahwasannya saya\n"
+"dengan itikad baik menyatakan material tersebut telah dihapus atau "
+"dinonaktifkan sebagai hasil dari\n"
+"kesalahan misidentifikasi dari material yang telah dihapus atau "
+"dinonaktifkan.\"\n"
+"Tandatangani pernyataan tersebut. Jika Anda melayangkannya lewat e-mail, "
+"jangan lupa menyertakan tandatangan\n"
+"yang telah di-scan atau tandatangan elektronik yang berlaku.\n"
+"Kirimkan komunikasi tertulis ke alamat berikut:\n"
 
 #: templates/dmca.html:141
 msgid "What happens next?"
-msgstr ""
+msgstr "Apa yang berlaku selanjutnya?"
 
 #: templates/dmca.html:143
 msgid ""
@@ -3141,6 +3349,19 @@ msgid ""
 "party\n"
 "other than the original claimant.\n"
 msgstr ""
+"\n"
+"\n"
+"Setelah kami mnenerima surat pemberitahuan balik dari Anda, kami akan "
+"meneruskannya ke pihak yang\n"
+"telah menyatakan klaim resmi adanya pelanggaran hak karya cipta. Mohon "
+"dicatat ketika\n"
+"kami meneruskan pemberitahuan-balik tersebut, kami akan menyertakan "
+"informasi pribadi Anda. Dengan\n"
+"mengirimkan sebuah pemberitahuan-balik, Anda paham dan mengerti tentang "
+"informasi\n"
+"yang seperti ini. Kami tidak akan meneruskan pemberitahuan-balik ke pihak "
+"manapun\n"
+"selain kepada pengklaim yang sebenarnya.\n"
 
 #: templates/dmca.html:153
 msgid ""
@@ -3155,6 +3376,18 @@ msgid ""
 "the material. If we do not receive such notification, we may reinstate the\n"
 "material.\n"
 msgstr ""
+"\n"
+"Setelah kami mengirimkan pemberitahuan-balik, pihak pengklaim harus "
+"mengontak kami\n"
+"dalam jangka waktu tidak lebih dari 10 hari bahwa dia telah memberkaskan ke "
+"pihak pengadilan untuk\n"
+"mencegah Anda dari terlibat aktifitas pelanggaran hukum sehubungan dengan "
+"material yang ada\n"
+"pada Miro Guide. Apabila kami menerima suatu pemberitahuan setelah itu maka "
+"kami akan mengembalikan\n"
+"material tersebut. Apabila kami tidak menerima sembarang pemberitahuan, kami "
+"akan mengembalikannya\n"
+"kepada keadaan seperti semula sebelum ada pemberitahuan.\n"
 
 #: templates/dmca.html:163
 msgid ""
@@ -3164,14 +3397,19 @@ msgid ""
 "NOT LEGAL ADVICE. WE PRESENT THIS INFORMATION FOR INFORMATIONAL PURPOSES "
 "ONLY.\n"
 msgstr ""
+"\n"
+"PENYANGKALAN: BAHWA KAMI BUKANLAH PENGACARA ANDA, DAN INFORMASI YANG "
+"TERSEDIA DISINI\n"
+"BUKANLAH SARAN HUKUM. KAMI MENYEDIAKAN INFORMASI SEBATAS UNTUK DIKETAHUI "
+"SAJA.\n"
 
 #: templates/embed_page.html:24
 msgid "Add collaborative subtitling to every video on your site"
-msgstr ""
+msgstr "Tambah kolaborasi penterjemahan ke semua video di situs Anda"
 
 #: templates/embed_page.html:28
 msgid "Just drop one line of code into your page:"
-msgstr ""
+msgstr "Masukkan sebaris kode ke halaman Anda:"
 
 #: templates/embed_page.html:32
 msgid ""
@@ -3181,38 +3419,43 @@ msgid ""
 "unisubs/wiki/Widgetizer-script-usage-guide\">see usage notes</a>).\n"
 "        "
 msgstr ""
+"\n"
+"            Anda dapat menambahkannya sebelum tag <code>&lt;/head&gt;</code> "
+"or <code>&lt;/body&gt;</code> (<a href=\"https://github.com/pculture/unisubs/"
+"wiki/Widgetizer-script-usage-guide\">lihat catatan penggunaan</a>).\n"
+"        "
 
 #: templates/embed_page.html:37
 msgid "This lets you and visitors to your site"
-msgstr ""
+msgstr "Ini akan mengijinkan Anda dan pengunjung situs Anda"
 
 #: templates/embed_page.html:41
 msgid "Create subtitles for any compatible video"
-msgstr ""
+msgstr "Ciptakan teks film untuk semua video yang telah didukung"
 
 #: templates/embed_page.html:44
 msgid "Find subtitles created by others"
-msgstr ""
+msgstr "Temukan teks film yang dibuat oleh lainnya"
 
 #: templates/embed_page.html:47
 msgid "Add translations and improve other's work"
-msgstr ""
+msgstr "Tambah terjemahan dan koreksi pekerjaan lainnya"
 
 #: templates/embed_page.html:50
 msgid "Make your videos searchable and accessible"
-msgstr ""
+msgstr "Buat video Anda gampang dicari dan bisa diakses"
 
 #: templates/embed_page.html:53
 msgid "Bring your videos to an international audience"
-msgstr ""
+msgstr "Hadirkan video-video Anda kepada para penonton internasional"
 
 #: templates/embed_page.html:58
 msgid "Proud to be a"
-msgstr ""
+msgstr "Bangga menjadi"
 
 #: templates/embed_page.html:58
 msgid "Featured Mozilla Drumbeat Project"
-msgstr ""
+msgstr "Merupakan fitur dari Proyek Mozilla Drumbeat"
 
 #: templates/embed_page.html:66
 msgid ""
@@ -3222,14 +3465,19 @@ msgid ""
 "        Users can click to activate (or create) subtitles.\n"
 "        "
 msgstr ""
+"\n"
+"        Tombol \"subtitlekan saya\" atau \"pilih bahasa\" akan muncul "
+"disemua video yang kompatibel. \n"
+"        Pengguna dapat mengklik untuk mengaktifasi (atau membuat) subtitle.\n"
+"        "
 
 #: templates/embed_page.html:77
 msgid "This code is experimental. If you run into problems, please"
-msgstr ""
+msgstr "Kode ini bersifat percobaan. Jika terdapat masalah, silahkan"
 
 #: templates/embed_page.html:78
 msgid "let us know"
-msgstr ""
+msgstr "memberitahukan kami"
 
 #: templates/enterprise.html:13
 msgid "Features & Benefits"
@@ -3313,7 +3561,7 @@ msgstr ""
 
 #: templates/enterprise.html:63
 msgid "Build a Translation Team"
-msgstr ""
+msgstr "Buat Tim Penterjemahan"
 
 #: templates/enterprise.html:65
 msgid ""
@@ -3370,7 +3618,7 @@ msgstr ""
 
 #: templates/enterprise.html:87
 msgid "Crowdsource with Professional Review"
-msgstr ""
+msgstr "Crowdsource dengan Ulasan Profesional"
 
 #: templates/enterprise.html:89
 msgid ""
@@ -3382,7 +3630,7 @@ msgstr ""
 
 #: templates/enterprise.html:95
 msgid "Work with Any Video Platform"
-msgstr ""
+msgstr "Bekerja pada Berbagai Macam Platform Video"
 
 #: templates/enterprise.html:97
 msgid ""
@@ -3738,7 +3986,7 @@ msgstr ""
 
 #: templates/faq.html:16
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Hal-hal Yang Sering Ditanyakan"
 
 #: templates/faq.html:19 templates/faq.html.py:43
 msgid "What is Amara?"
@@ -3750,7 +3998,7 @@ msgstr ""
 
 #: templates/faq.html:21 templates/faq.html.py:65
 msgid "What are the benefits of subtitles?"
-msgstr ""
+msgstr "Apakah manfaat teks film?"
 
 #: templates/faq.html:22 templates/faq.html.py:74
 msgid ""
@@ -3763,55 +4011,61 @@ msgstr ""
 
 #: templates/faq.html:24 templates/faq.html.py:82
 msgid "Will your subtitles support my language or characterset?"
-msgstr ""
+msgstr "Apakah teks film mendukung bahasa dan set karakteristik saya ?"
 
 #: templates/faq.html:25 templates/faq.html.py:86
 msgid "When will the tools, including this site, be available in my language?"
-msgstr ""
+msgstr "Kapan peralatan dan situs ini tersedia dalam bahasa saya?"
 
 #: templates/faq.html:26 templates/faq.html.py:97
 msgid "How can I add subtitles to my video?"
-msgstr ""
+msgstr "Bagaimana cara saya menambahkan teks film ke video saya?"
 
 #: templates/faq.html:27 templates/faq.html.py:107
 msgid "What open source license do you use?"
-msgstr ""
+msgstr "Izin Open Surce apa yang Anda gunakan?"
 
 #: templates/faq.html:28 templates/faq.html.py:111
 msgid "I'm a developer, can I help out?"
-msgstr ""
+msgstr "Saya seorang pengembang, bisakah saya membantu?"
 
 #: templates/faq.html:29 templates/faq.html.py:115
 msgid "Can non-technical people get involved with the project?"
-msgstr ""
+msgstr "Dapatkah orang non-teknis terlibat ke dalam proyek?"
 
 #: templates/faq.html:30 templates/faq.html.py:126
 msgid "Do you accept donations? Are they tax deductible?"
-msgstr ""
+msgstr "Apakah Anda menerima sumbangan? Dan sudah termasuk pajak?"
 
 #: templates/faq.html:31 templates/faq.html.py:134
 msgid "What is your relationship with Mozilla Drumbeat?"
-msgstr ""
+msgstr "Apa hubungan Anda dengan Mozilla Drumbeat?"
 
 #: templates/faq.html:32 templates/faq.html.py:138
 msgid "Where can I download subtitles in .SRT or other formats?"
 msgstr ""
+"Dimana saya bisa mengunduh teks film dalam format .SRT atau yang lainnya?"
 
 #: templates/faq.html:33 templates/faq.html.py:149
 msgid ""
 "It says \"Someone else is currently editing these subtitles\" and I can't do "
 "anything.  How long will this last for?  Why does it happen?"
 msgstr ""
+"Yang menyatakan \"Seseorang sedang menyunting subtitle ini\" dan saya tidak "
+"dapat berbuat apa-apa.  Berapa lama keadaan ini bisa berlangsung?  Mengapa "
+"bisa terjadi?"
 
 #: templates/faq.html:34 templates/faq.html.py:159
 msgid "Why can't I change the timing on a translation?"
-msgstr ""
+msgstr "Mengapa saya tidak bisa mengubah penata waktu pada terjemahan?"
 
 #: templates/faq.html:35 templates/faq.html.py:170
 msgid ""
 "How do old revisions work? What if somebody makes a change to my work that I "
 "don't approve of?"
 msgstr ""
+"Bagiamana cara revisi yang lama bekerja? Bagaimana jika seseorang membuat "
+"perubahan kedalam hasil kerja saya yang tidak saya setujui?"
 
 #: templates/faq.html:36 templates/faq.html.py:186
 msgid "How do I add the Amara &quot;embed all videos&quot; code to my site?"
@@ -3819,7 +4073,7 @@ msgstr ""
 
 #: templates/faq.html:37 templates/faq.html.py:199
 msgid "Hey, you don’t list my language!"
-msgstr ""
+msgstr "Hi, Anda tidak terdaftar dalam daftar bahasa saya!"
 
 #: templates/faq.html:45
 msgid ""
@@ -3845,21 +4099,43 @@ msgid ""
 "\t\t\ta video you have already posted on the web.\t\n"
 "\t\t"
 msgstr ""
+"\n"
+"      <span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>Silahkan mencoba <a href=\"http://"
+"universalsubtitles.org/demo/\">demo</a> \n"
+"<span class=\"whitespace other\" title=\"Tab\">kami »</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span><span class=\"whitespace other\" "
+"title=\"Tab\">»</span>untuk melihat bagaimana perangkat ini bekerja. Anda "
+"juga dapat \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span><span class=\"whitespace other\" "
+"title=\"Tab\">»</span><a href=\"http://universalsubtitles.org/videos/create"
+"\">memulai subtitle</a> \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span><span class=\"whitespace other\" "
+"title=\"Tab\">»</span>video yang sudah ada di web.<span class=\"whitespace "
+"other\" title=\"Tab\">»</span>\n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>"
 
 #: templates/faq.html:66
 msgid "VVideo subtitles are a gold mine of untapped potential."
-msgstr ""
+msgstr "Teks film VVideo adalah tambang emas yang belum dimanfaatkan."
 
 #: templates/faq.html:68
 msgid ""
 "Captions make videos accessible for viewers who are deaf or hard of hearing "
 msgstr ""
+"Keterangan gambar video membuat video dapat diakses oleh penonton tunarungu "
+"dan sulit pendengaran"
 
 #: templates/faq.html:69
 msgid ""
 "Translations make it possible for all of us to watch video in languages that "
 "we don't speak"
 msgstr ""
+"Penterjemahan membuatnya mungkin bagi kita menyaksikan & mengerti video "
+"dalam bahasa yang tidak kita kuasai"
 
 #: templates/faq.html:70
 msgid ""
@@ -3867,6 +4143,9 @@ msgid ""
 "(potentially multilingual and global) audience, accessibility for deaf and "
 "hard of hearing viewers, and more"
 msgstr ""
+"Pembuat video mendapat: SEO yang lebih baik, lebih banyak penonton, akses ke "
+"penonton yang lebih besar (secara potensial multibahasa dan mendunia), akses "
+"para penonton tunarungu dan sulit pendengaran, dan masih banyak lagi"
 
 #: templates/faq.html:75
 msgid ""
@@ -3881,11 +4160,13 @@ msgid ""
 "Yes, we are working on a solution for making closed captions [including "
 "information about sounds and music], as well as subtitles/translations."
 msgstr ""
+"Ya, kami sedang mengerjakan closed captions [termasuk suara dan musik], "
+"seiring dengan teks film/terjemahan."
 
 #: templates/faq.html:83
 msgid ""
 "We will be working to support as many languages/charactersets as possible."
-msgstr ""
+msgstr "Kami akan mendukung sebanyak mungkin bahasa/set karakter."
 
 #: templates/faq.html:88
 msgid ""
@@ -3899,6 +4180,20 @@ msgid ""
 "\t\tto help improve and add more languages.\n"
 "\t  "
 msgstr ""
+"\n"
+"      <span class=\"whitespace other\" title=\"Tab\">»</span>Situs dan alat "
+"ini tersedia dalam berbagai bahasa (pilih bahasa \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>dalam preferensi peramban Anda "
+"dan kami akan melakukan selebihnya). Kami menunggu partisipasi \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span><a href=\"http://blog."
+"universalsubtitles.org/2010/09/13/our-site-is-translateable-looking-for-"
+"translators/\">penterjemah sukarela</a> \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>untuk membantu dan menambah lebih "
+"banyak lagi bahasa-bahasa.\n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span>  "
 
 #: templates/faq.html:99
 msgid ""
@@ -3910,12 +4205,25 @@ msgid ""
 "\t\t  website’s template inside the &lt;head&gt; tags.\n"
 "\t\t"
 msgstr ""
+"\n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span>      Untuk satu "
+"video, gunakan situs kami. Untuk banyak video di situs web Anda, gunakan \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>  <a href=\"http://"
+"universalsubtitles.org/en/get-code/\">kode ini</a> di dalam \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>  tag &lt;head&gt; templat situs "
+"web Anda.\n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>"
 
 #: templates/faq.html:108
 msgid ""
 "For our subtitling widget and community website, we're using the <a href="
 "\"http://en.wikipedia.org/wiki/Affero_General_Public_License\">AGPL</a>."
 msgstr ""
+"Untuk pengaya peterjemah dan situs komunitas kami, kami menggunakan <a href="
+"\"http://en.wikipedia.org/wiki/Affero_General_Public_License\">AGPL</a>."
 
 #: templates/faq.html:112
 msgid ""
@@ -3923,6 +4231,9 @@ msgid ""
 "<a href=\"http://wiki.github.com/8planes/unisubs/dev-center\">developer "
 "center</a>."
 msgstr ""
+"Silahkan lakukan hal tsb! Jika Anda tertarik untuk pengembangan dan koding, "
+"kunjungi <a href=\"http://wiki.github.com/8planes/unisubs/dev-center\">pusat "
+"pengembang</a> kami"
 
 #: templates/faq.html:117
 msgid ""
@@ -3937,6 +4248,25 @@ msgid ""
 "question for details).\n"
 "\t\t"
 msgstr ""
+"\n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>Jika Anda ingin ikut "
+"berpartisipasi, silahkan kunjungi \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span><a href=\"https://www.drumbeat."
+"org/project/universal-subtitles\">halaman Mozilla Drumbeat</a>. \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>Jika Anda punya ide, silahkan "
+"kirim email: \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span><a href=\"mailto:"
+"universalsubtitles@pculture.org\">universalsubtitles@pculture.org</a> \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>Dan sebagai sebuah organisasi "
+"nirlaba 501c3, kami juga menerima sumbangan sukarela (lihat pertanyaan "
+"selanjutnya untuk lebih jelas).\n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>"
 
 #: templates/faq.html:128
 msgid ""
@@ -3946,6 +4276,13 @@ msgid ""
 "Drumbeat project).\n"
 "\t\t"
 msgstr ""
+"\n"
+"      <span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>Ya dan ya! Anda dapat memberikan "
+"<a href=\"https://donate.mozilla.org/page/contribute/universalsubtitles"
+"\">sumbangan disini</a> (melalui proyek Mozilla Drumbeat).\n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>"
 
 #: templates/faq.html:135
 msgid ""
@@ -3967,6 +4304,20 @@ msgid ""
 "\t\t button and choose the desired file format from the drop-down list.\n"
 "       "
 msgstr ""
+"\n"
+"     <span class=\"whitespace other\" title=\"Tab\">»</span> Jika subtitle-"
+"nya ada, Anda bisa mengunduhnya dalam format .SRT, .SSA, .SBV, .TXT, and "
+"TTML \n"
+"     <span class=\"whitespace other\" title=\"Tab\">»</span> pada halaman "
+"untuk bahasa tersebut (<a href=\"http://universalsubtitles.org/videos/"
+"yKsUAgChJlGA/lt/\">contoh</a>). \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span> Klik tombol \"Unduh Subtitle\" "
+"yang ada di bagian kanan bawah tombol \"Sunting Subtitle\" \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span> lalu pilih berkas yang "
+"diinginkan dari daftar drop-down.\n"
+"       "
 
 #: templates/faq.html:151
 msgid ""
@@ -3978,6 +4329,13 @@ msgid ""
 "        you try to edit the subtitles, you'll get this message.\n"
 "        "
 msgstr ""
+"\n"
+"        Saat ini sistem hanya mengizinkan satu pengguna untuk menyunting "
+"subtitle satu video \n"
+"        pada sekali waktu. Seandainya, seseorang sudah menyunting subtitle "
+"video ketika \n"
+"        Anda sedang menyunting, Anda akan mendapat pesan ini.\n"
+"        "
 
 #: templates/faq.html:161
 msgid ""
@@ -3991,6 +4349,19 @@ msgid ""
 "\t\twill automatically cascade.\n"
 "        "
 msgstr ""
+"\n"
+"        Anda bisa. Menuju ke bagian penyuntingan terjemahan dan klik “Ubah "
+"waktu subtitle”. \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>Lakukan apabila penunjuk waktu "
+"dari bahasa yang asli tidak sesuai \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>dengan bahasa yang Anda "
+"terjemahkan. Diluar itu, pengembangan terjemahan asli \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>akan secara otomatis terangkum "
+"jadi satu.\n"
+"        "
 
 #: templates/faq.html:172
 msgid ""
@@ -4010,6 +4381,28 @@ msgid ""
 "\t\tbecause there could be useful work in an older revision.\n"
 "        "
 msgstr ""
+"\n"
+"        Masing-masing set subtitle atau terjemahan punya riwayat revisi. \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>Klik tab di halaman subtitle "
+"untuk melihat riwayat revisi. \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>Anda dapat menggunakan kotak "
+"centang disebelah kiri dan tombol \"bandingkan reivisi \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>untuk melihat perbedaan diantara "
+"dua revisi. Atau Anda bisa klik pada sembarang revisi, \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>dan sunting berdasarkan revisi "
+"tsb atau mengembalikan ke revisi tsb.\n"
+"        <br/><br/>\n"
+"        Jika revisi terbaru kosong, tapi ada revisi yang lama, \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>silahkan periksa revisi tsb, \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>karena mungkin ada yang berguna "
+"disana sebelum memulai yang baru.\n"
+"        "
 
 #: templates/faq.html:188
 msgid ""
@@ -4025,6 +4418,24 @@ msgid ""
 "\t\t  tags in your blog theme.  \n"
 "        "
 msgstr ""
+"\n"
+"          Kunjungi <a href=\"http://universalsubtitles.org/get-code/"
+"\">halaman ini</a> \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>  dan klik dua kali di kode "
+"berkotak putih untuk memilih semuanya.  \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>  Lalu ke Sunting > Salin ke menu "
+"peramban Anda untuk menyalin ke klip board.  \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>  Kemudian mulailah menyunting "
+"headers situs atau blog Anda, \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>  dan tempelkan skrip diantara "
+"tag &lt;head&gt; dan &lt;/head&gt; \n"
+"<span class=\"whitespace other\" title=\"Tab\">»</span><span class="
+"\"whitespace other\" title=\"Tab\">»</span>  pada blog Anda.  \n"
+"        "
 
 #: templates/faq.html:201
 msgid ""
@@ -4032,70 +4443,79 @@ msgid ""
 "          Sorry about that.  Just contact us and we’ll be happy to add it.\n"
 "        "
 msgstr ""
+"\n"
+"          Mohon dimaafkan.   Hubungi kami, dan kami akan menambahkannya.\n"
+"        "
 
 #: templates/feedback_response.html:3
 msgid ""
 "Thanks for getting in touch! We love hearing your ideas, bugs, feedback, "
 "opinions and such."
 msgstr ""
+"Terima kasih karena telah menghubungi kami! Senang mendengar ide, bugs, "
+"saran, dan opini dari Anda."
 
 #: templates/feedback_response.html:6
 msgid "Stay tuned as the project evolves!"
-msgstr ""
+msgstr "Tetaplah mengikuti perkembangan proyek ini!"
 
 #: templates/feedback_response.html:9
 msgid "Announcement Signup"
-msgstr ""
+msgstr "Pengumuman Pendaftaran"
 
 #: templates/feedback_response.html:12
 msgid "Best"
-msgstr ""
+msgstr "Terbaik"
 
 #: templates/feedback_response.html:16
 msgid ""
 "PS. We do our best to respond to all questions, but please be patient -- we "
 "get a lot of email"
 msgstr ""
+"NB. Kami berusaha untuk menjawab semua pertanyaan, mohon bersabar -- karena "
+"kami menerima banyak sekali email masuk"
 
 #: templates/index.html:18
 msgid "The easiest way to caption and translate any video."
 msgstr ""
+"Cara termudah untuk melakukan takarir dan terjemahan ke sembarang video."
 
 #: templates/index.html:19
 msgid "Subtitles make videos more powerful, more global, and more searchable."
-msgstr ""
+msgstr "Subtitle membuat video semakin kuat, global, dan memudahkan pencarian."
 
 #: templates/index.html:24
 msgid "Subtitle a Video Now"
-msgstr ""
+msgstr "Lakukan Subtitle video Sekarang"
 
 #: templates/index.html:26
 msgid "Subtitle"
-msgstr ""
+msgstr "Terjemahan"
 
 #: templates/index.html:27
 msgid "Works with YouTube, Vimeo, HTML5, and more."
-msgstr ""
+msgstr "Bekerja dengan YouTube, Vimeo, HTML5, dan masih banyak lagi."
 
 #: templates/index.html:30
 msgid "Features"
-msgstr ""
+msgstr "Fitur"
 
 #: templates/index.html:32
 msgid "Embed the video anywhere"
-msgstr ""
+msgstr "Tempelkan video dimana saja"
 
 #: templates/index.html:33
 msgid "Add subtitles yourself or ask viewers to help."
 msgstr ""
+"Tambah subtitle Anda sendiri atau minta pengunjung untuk membantu Anda."
 
 #: templates/index.html:34
 msgid "Full site integration"
-msgstr ""
+msgstr "Integrasi situs penuh"
 
 #: templates/index.html:39
 msgid "Volunteers Needed"
-msgstr ""
+msgstr "Diperlukan Sukarelawan"
 
 #: templates/index.html:41
 msgid ""
@@ -4111,7 +4531,7 @@ msgstr ""
 
 #: templates/index.html:48
 msgid "Complete Subtitling Solutions"
-msgstr ""
+msgstr "Solusi Subtitle Yang Lengkap"
 
 #: templates/index.html:50
 msgid ""
@@ -4124,7 +4544,7 @@ msgstr ""
 
 #: templates/index.html:53
 msgid "See our enterprise services."
-msgstr ""
+msgstr "Lihat layanan perusahaan kami."
 
 #: templates/index.html:77
 msgid "For Enterprise"
@@ -4133,7 +4553,7 @@ msgstr ""
 #: templates/index.html:78
 msgid ""
 "The largest, most powerful captioning and translation platform in the world."
-msgstr ""
+msgstr "Paling luas, platform takarir dan terjemahan terkuat di dunia."
 
 #: templates/index.html:86 templates/index.html.py:88
 msgid "TED Team"
@@ -4145,15 +4565,15 @@ msgstr ""
 
 #: templates/index.html:100 templates/index.html.py:101
 msgid "Khan Integration"
-msgstr ""
+msgstr "Integrasi Khan"
 
 #: templates/index.html:106 templates/index.html.py:107
 msgid "Drupal Example"
-msgstr ""
+msgstr "Contoh Drupal"
 
 #: templates/index.html:113 templates/index.html.py:114
 msgid "Al Jazeera Team"
-msgstr ""
+msgstr "Tim Al Jazeera"
 
 #: templates/index.html:120
 msgid "Newshour Team"
@@ -4165,84 +4585,96 @@ msgstr ""
 
 #: templates/index.html:127
 msgid "More Popular"
-msgstr ""
+msgstr "Paling Populer"
 
 #: templates/index.html:128
 msgid "Most Popular Today"
-msgstr ""
+msgstr "Paling Populer Hari Ini"
 
 #: templates/index.html:130
 msgid "Top this month"
-msgstr ""
+msgstr "Paling Top bulan ini"
 
 #: templates/index.html:131
 msgid "Top all-time"
-msgstr ""
+msgstr "Paling Top sepanjang masa"
 
 #: templates/index.html:138
 msgid "More Featured"
-msgstr ""
+msgstr "Paling Fitur"
 
 #: templates/index.html:139 templates/videos/featured_videos.html:36
 #: templates/videos/volunteer.html:25 templates/videos/watch.html:25
 msgid "Featured Videos"
-msgstr ""
+msgstr "Video Fitur"
 
 #: templates/index_old.html:26
 msgid "Easily caption and translate your videos, with help from your viewers."
 msgstr ""
+"Menterjemahkan dan membuat keterangan gambar video dengan mudah, dari "
+"bantuan orang-orang yang melihat video Anda."
 
 #: templates/index_old.html:28
 msgid ""
 "Increase video views by reaching global audiences and being accessible to "
 "the deaf and hard-of-hearing."
 msgstr ""
+"Meningkatkan jumlah total video dilihat yang menjangkau para penonton "
+"sedunia dan bisa diakses oleh penderita tunarungu dan sulit mendengar."
 
 #: templates/index_old.html:29
 msgid ""
 "It's powered by viewers and other volunteers: it's collaborative editing and "
 "translation, like a wiki."
 msgstr ""
+"Didukung oleh para penonton dan sukarelawan lain: sebuah kolaborasi "
+"penyuntingan dan penterjemahan seperti sebuah wiki."
 
 #: templates/index_old.html:30
 msgid "It's the world's easiest subtitle creator - type and tap."
-msgstr ""
+msgstr "Pencipta terjemahan termudah di dunia - ketik dan ketok"
 
 #: templates/index_old.html:31
 msgid ""
 "The fastest way to add subtitle functionality to a single video or a whole "
 "site. Super easy to integrate with no software to install."
 msgstr ""
+"Cara tercepat menambahkan fungsi terjemahan pada sebuah video atau "
+"kekesuluruhan situs. Sangat gampang diintegrasikan tanpa harus memasang "
+"perangkat lunak."
 
 #: templates/index_old.html:32
 msgid "Free, open-source, and non-profit!"
-msgstr ""
+msgstr "Bebas, open-source, dan nirlaba!"
 
 #: templates/index_old.html:35
 msgid "videos use"
-msgstr ""
+msgstr "video digunakan"
 
 #: templates/index_old.html:62
 msgid "Add this subtitle tab to a video in seconds."
-msgstr ""
+msgstr "Tambahkan tab terjemahan ini ke video dalam detik."
 
 #: templates/index_old.html:65
 msgid "For an individual video"
-msgstr ""
+msgstr "Untuk video tersendiri"
 
 #: templates/index_old.html:68
 msgid "enter a video URL to enable and then embed anywhere"
 msgstr ""
+"masukkan surel video untuk mengaktifkan lalu kode-pasangkan dimana saja"
 
 #: templates/index_old.html:71
 msgid "For every video on a page or site"
-msgstr ""
+msgstr "Untuk semua video di satu halaman atau situs"
 
 #: templates/index_old.html:73
 msgid ""
 "paste this single line of code into your page header and every video will be "
 "subtitle enabled"
 msgstr ""
+"tempelkan sebaris kode ini ke header halaman situs dan penterjemahan akan "
+"aktif untuk semua video"
 
 #: templates/index_old.html:77
 msgid "Amara works with these video sites and formats"
@@ -4254,7 +4686,7 @@ msgstr ""
 
 #: templates/index_old.html:91
 msgid "Add subtitles"
-msgstr ""
+msgstr "Tambah terjemahan"
 
 #: templates/index_old.html:92
 msgid ""
@@ -4262,10 +4694,13 @@ msgid ""
 "toyour video (or your site) and click the \"subtitle me\" button. The rest "
 "is simple! Totally free, and no software to download."
 msgstr ""
+"Kami membangun cara termudah untuk membuat teks film pada video. Tambahkan "
+"widget teks film kami ke video Anda (atau situs) lalu klik tombol \"subtitle "
+"me\". Selebihnya gampang! Gratis dan tanpa harus mengunduh perangkat lunak."
 
 #: templates/index_old.html:96
 msgid "Add translations"
-msgstr ""
+msgstr "Tambah terjemahan"
 
 #: templates/index_old.html:98
 msgid ""
@@ -4279,10 +4714,18 @@ msgid ""
 "          community.\n"
 "          "
 msgstr ""
+"\n"
+"          Seketika, pada saat penterjemahan telah tersedia, semua bisa "
+"menambahkan terjemahan dalam beragam bahasa\n"
+"          Tidak perlu robot penterjemah yang hanya akan memusingkan "
+"penonton.\n"
+"          Universal Subtitles mengumpulkan terjemahan berkualitas tinggi\n"
+"          dari komunitas penonton Anda.\n"
+"          "
 
 #: templates/index_old.html:108
 msgid "Get volunteer help"
-msgstr ""
+msgstr "Dapatkan bantuan sukarelawan"
 
 #: templates/index_old.html:110
 msgid ""
@@ -4296,14 +4739,23 @@ msgid ""
 "          your videos more accessible.\n"
 "        "
 msgstr ""
+"\n"
+"          Penonton Anda (dan anggota komunitas penterjemah kami) dapat "
+"meningkatkan\n"
+"          penterjemahan maupun terjemahannya. Demikianlah cara terjemahan "
+"akan menjadi semakin lebih baik -\n"
+"          seperti sebuah artikel di wikipedia. Kami memobilisasi penonton "
+"internasional Anda\n"
+"          untuk akses yang lebih ke video-video Anda.\n"
+"        "
 
 #: templates/index_old.html:122
 msgid "It’s free with no software to download"
-msgstr ""
+msgstr "Gratis tanpa mengunduh perangkat lunak"
 
 #: templates/index_old.html:123
 msgid "Add our embed code to your videos."
-msgstr ""
+msgstr "Tambah kode-pasang ke video Anda."
 
 #: templates/index_old.html:124
 msgid ""
@@ -4314,10 +4766,16 @@ msgid ""
 "    (as a small, simple button)\n"
 "    "
 msgstr ""
+"\n"
+"    Kirim video Anda, lalu tempelkan kode-pasang ke situs Anda. \n"
+"    Dan ketika halaman dimuat, alat terjemahan kami akan tampil tepat "
+"dibawah video Anda \n"
+"    (berbentuk tombol kecil yang sederhana)\n"
+"    "
 
 #: templates/index_old.html:132
 msgid "Subtitling tools open in your page."
-msgstr ""
+msgstr "Alat penterjemahan terbuka di halaman Anda."
 
 #: templates/index_old.html:133
 msgid ""
@@ -4328,10 +4786,17 @@ msgid ""
 "      Subtitles they create are then visible to other users, on your site.\n"
 "      "
 msgstr ""
+"\n"
+"      Ketika seseorang mengklik tombol “terjemahkan saya”, \n"
+"      sebuah papan-tampilan penterjemahan akan muncul pada halaman Anda "
+"(pengguna tidak harus meninggalkan situs Anda). \n"
+"      Penterjemahan yang mereka buat bisa dilihat oleh pengguna lain, di "
+"situs Anda.\n"
+"      "
 
 #: templates/index_old.html:142
 msgid "How it works"
-msgstr ""
+msgstr "Bagaimana cara kerjanya"
 
 #: templates/index_old.html:144
 msgid ""
@@ -4342,10 +4807,18 @@ msgid ""
 "      where people can track changes, and give feedback.\n"
 "    "
 msgstr ""
+"\n"
+"      Anda menambahkan widget kami ke video Anda.  Sehingga Anda dan "
+"pengunjung Anda bisa menambahkan\n"
+"      subtitle.  Kami menyimpan subtilte di dalam situs kami.  Tiap video "
+"punya ruang kolaborasi di situs kami\n"
+"      dimana orang lain bisa mengikuti perubahan-perubahan, dan memberikan "
+"respon.\n"
+"    "
 
 #: templates/index_old.html:149
 msgid "Try the demo"
-msgstr ""
+msgstr "Coba demo"
 
 #: templates/index_old.html:156
 msgid "Why Amara is different"
@@ -4354,55 +4827,59 @@ msgstr ""
 #: templates/index_old.html:158
 msgid ""
 "It's built by a 501(c)3 nonprofit working with a community of volunteers"
-msgstr ""
+msgstr "Dibangun oleh pekerjaan nirlaba 501(c)3 bersama komunitas sukarelawan"
 
 #: templates/index_old.html:158
 msgid "find out how to volunteer"
-msgstr ""
+msgstr "temukan cara untuk menyumbang tenaga"
 
 #: templates/index_old.html:160
 msgid "The code is free and open source"
-msgstr ""
+msgstr "Kode ini gratis dan open source"
 
 #: templates/index_old.html:160
 msgid "get the source code"
-msgstr ""
+msgstr "dapatkan kode"
 
 #: templates/index_old.html:161
 msgid ""
 "It's built using Javascript and HTML5 instead of proprietary software like "
 "Flash"
 msgstr ""
+"Dibangun dengan menggunakan Javascript dan HTML5 ketimbang perangkat lunak "
+"berpemilik seperti Flash"
 
 #: templates/index_old.html:162
 msgid "It's 100% web-based, there’s no software to download."
-msgstr ""
+msgstr "100% berbasis web, tidak perlu mengunduh perangkat lunak."
 
 #: templates/index_old.html:163
 msgid ""
 "You don't have to host your video with us, and you're not dependent on any "
 "one video host, platform, or format."
 msgstr ""
+"Anda tidak harus berlangganan kepada kami, dan Anda tidak bergantung kepada "
+"satu pun penyedia layanan video, platform, atau format."
 
 #: templates/index_old.html:164
 msgid "People are free to add subtitles to any video"
-msgstr ""
+msgstr "Orang-orang bebas menambahkan penterjemahan ke sembarang video"
 
 #: templates/index_old.html:170 templates/jsdemo/home.html:112
 msgid "Mozilla will double your donation!"
-msgstr ""
+msgstr "Mozilla akan menggandakan donasi Anda!"
 
 #: templates/index_old.html:171 templates/jsdemo/home.html:113
 msgid "We're a featured Mozilla Drumbeat project!"
-msgstr ""
+msgstr "Kami adalah fitur proyek Mozilla Drumbeat!"
 
 #: templates/index_old.html:172 templates/jsdemo/home.html:113
 msgid "Donate Now"
-msgstr ""
+msgstr "Sumbang Sekarang!"
 
 #: templates/opensubtitles2010.html:8 templates/opensubtitles2010.html:26
 msgid "Open Subtitles Design Summit"
-msgstr ""
+msgstr "Pertemuan Desain Teks Film Terbuka"
 
 #: templates/opensubtitles2010.html:28
 msgid ""
@@ -4414,13 +4891,16 @@ msgstr ""
 
 #: templates/opensubtitles2010.html:34
 msgid "Meeting Goals"
-msgstr ""
+msgstr "Tujuan Rapat"
 
 #: templates/opensubtitles2010.html:37
 msgid ""
 "<strong>Connect</strong> major stakeholders from projects, organizations, "
 "and movements that have open subtitling needs or focus."
 msgstr ""
+"<strong>Hubungan</strong> para pemegang saham mayoritas proyek, organisasi, "
+"dan pergerakan yang memiliki kepentingan atau fokus kepada penterjemahan "
+"terbuka."
 
 #: templates/opensubtitles2010.html:41
 msgid ""
@@ -4428,16 +4908,22 @@ msgid ""
 "aware of existing technology that can be leveraged. Find logical places for "
 "collaboration/cooperation."
 msgstr ""
+"<strong>Cara-cara pengenalan</strong> untuk memecahkan masalah kebutuhan "
+"menterjemahkan para pemegang saham dan kesadaran akan kehadiran teknologi "
+"yang akan diangkat. Temukan tempat-tempat yang masuk akal guna kerjasama/"
+"berkolaborasi."
 
 #: templates/opensubtitles2010.html:44
 msgid ""
 "<strong>Move towards</strong> standardizing solutions and pushing forward "
 "the state of the art in open subtiting."
 msgstr ""
+"<strong>Memajukan</strong> standarisasi solusi dan mendorong seni di dalam "
+"penterjemajan terbuka."
 
 #: templates/opensubtitles2010.html:53
 msgid "Participants"
-msgstr ""
+msgstr "Para peserta"
 
 #: templates/opensubtitles2010.html:55
 msgid ""
@@ -4447,24 +4933,32 @@ msgid ""
 "other individuals and organizations with a stake in the subtitling world. "
 "We'll make a roster available when the event draws closer."
 msgstr ""
+"Para peserta meliputi: pembuat video dan produser, pengguna, perwakilan dari "
+"penyedia layanan video besar, insinyur, pengacara aksesibilitas, para "
+"pengembang open source, pemuka-pemuka dalam bidang pendidikan, dan individu "
+"serta organisasi yang berperan dalam dunia penterjemahan. Kami akan membuat "
+"daftar kehadiran menjelang acara."
 
 #: templates/opensubtitles2010.html:57
 msgid ""
 "Attendees are selected by invitation; however, if you or your organization "
 "would like to participate, please contact:"
 msgstr ""
+"Mereka yang akan hadir adalah orang-orang yang dipilih melalui undangan, "
+"walau bagaimana pun apabila organisasi Anda ingin berpartisipasi, silahkan "
+"hubungi."
 
 #: templates/opensubtitles2010.html:62
 msgid "When"
-msgstr ""
+msgstr "Kapan"
 
 #: templates/opensubtitles2010.html:63
 msgid "September 29th and 30th, beginning at 9am on both days."
-msgstr ""
+msgstr "29 dan 30 September, masing-masing dimulai pada pukul 9 pagi."
 
 #: templates/opensubtitles2010.html:67
 msgid "Where"
-msgstr ""
+msgstr "Dimana"
 
 #: templates/opensubtitles2010.html:68
 msgid ""
@@ -4475,10 +4969,16 @@ msgid ""
 "73.92127&sspn=0.009175,0.022724&ie=UTF8&hq=&hnear=148+Lafayette+St,+New+York,"
 "+10013&ll=40.718575,-74.000988&spn=0.03669,0.090895&z=14\">map</a>)"
 msgstr ""
+"Pertemuan akan digelar di penthouse Open House Soho yang indah, yang "
+"tepatnya berada di 148 Lafayette St, Floor 12, New York City. (<a href="
+"\"http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=148+Lafayette"
+"+St,+Floor+12,+New+York+City&sll=40.701809,-"
+"73.92127&sspn=0.009175,0.022724&ie=UTF8&hq=&hnear=148+Lafayette+St,+New+York,"
+"+10013&ll=40.718575,-74.000988&spn=0.03669,0.090895&z=14\">map</a>)"
 
 #: templates/opensubtitles2010.html:73
 msgid "Why"
-msgstr ""
+msgstr "Mengapa"
 
 #: templates/opensubtitles2010.html:75
 msgid ""
@@ -4497,14 +4997,29 @@ msgid ""
 "            and make sense of the ever growing sea of online video.\n"
 "           "
 msgstr ""
+"\n"
+"            Fokus utama dari pertemuan ini adalah untuk meningkatkan fungsi "
+"teks film dan penterjemahan, \n"
+"            yang sangat dibutuhkan saat ini. Seiring dengan meroketnya "
+"penggunaan video internet, \n"
+"            &mdash;dimana orang-orang yang bergantung pada terjemahan video "
+"kemungkinan akan tertinggal. \n"
+"            Orang-orang dari bermacam latar belakang kebudayaan berdatangan "
+"secara massal; \n"
+"            standarisasi dan teknologi yang ada dapat memperbesar jumlah "
+"penonton lintas kebudayaan. \n"
+"            Penulisan teks film pada video juga akan mempermudah proses "
+"index komputer, \n"
+"            yang akan memperluas perkembangan video online.\n"
+"           "
 
 #: templates/opensubtitles2010.html:91
 msgid "Organizers, Facilitators, Sponsors"
-msgstr ""
+msgstr "Penyusun Acara, Fasilitator, Sponsor"
 
 #: templates/opensubtitles2010.html:94
 msgid "Organizers"
-msgstr ""
+msgstr "Penyusun Acara"
 
 #: templates/opensubtitles2010.html:95
 msgid ""
@@ -4516,7 +5031,7 @@ msgstr ""
 
 #: templates/opensubtitles2010.html:99
 msgid "Facilitators"
-msgstr ""
+msgstr "Fasilitator"
 
 #: templates/opensubtitles2010.html:100
 msgid ""
@@ -4525,22 +5040,30 @@ msgid ""
 "are the most powerful way to facilitate interaction, build networks, and "
 "collaborate."
 msgstr ""
+"<a href=\"http://www.aspirationtech.org/\">Aspiration</a> is menyediakan "
+"fasilitas dan merancang agenda. Aspiration yakin dengan acara pertemuan "
+"antar-muka merupakan langkah terkuat untuk mempertemukan interaksi, "
+"membangun jaringan, dan berkolaborasi."
 
 #: templates/opensubtitles2010.html:103
 msgid "Sponsors"
-msgstr ""
+msgstr "Sponsor"
 
 #: templates/opensubtitles2010.html:104
 msgid ""
 "The summit has been generously funded by the <a href=\"http://www.soros.org/"
 "\">Open Society Institute</a>."
 msgstr ""
+"Pertemuan ini dengan murah hati telah didanai oleh <a href=\"http://www."
+"soros.org/\">Open Society Institute</a>."
 
 #: templates/opensubtitles2010.html:113
 msgid ""
 "Special thanks to <a href=\"http://openplans.org/\">Open Plans</a> for "
 "providing meeting space!"
 msgstr ""
+"Sangat berterimakasih kepada <a href=\"http://openplans.org/\">Open Plans</"
+"a> karena telah menyediakan tempat pertemuan!"
 
 #: templates/admin/base_site.html:4 templates/admin/base_site.html.py:7
 msgid "Amara"
@@ -4548,36 +5071,36 @@ msgstr ""
 
 #: templates/admin/base_site.html:12
 msgid "View site"
-msgstr ""
+msgstr "Lihat situs"
 
 #: templates/admin/base_site.html:13
 msgid "Edit settings"
-msgstr ""
+msgstr "Pengaturan penyuntingan"
 
 #: templates/admin/teams/team/change_list.html:9
 msgid "Send"
-msgstr ""
+msgstr "Kirim"
 
 #: templates/auth/_email_confirmation_notification.html:6
 msgid "Resend confirmation email"
-msgstr ""
+msgstr "Kirim ulang email konfirmasi"
 
 #: templates/auth/delete_user.html:9
 msgid "Are you sure that you want to permanently delete your profile?"
-msgstr ""
+msgstr "Apakah Anda yakin ingin menghapus profil selamanya?"
 
 #: templates/auth/delete_user.html:13 templates/messages/list.html:83
 #: templates/messages/sent.html:51 templates/teams/tasks.html:381
 msgid "Delete"
-msgstr ""
+msgstr "Hapus"
 
 #: templates/auth/delete_user.html:14
 #: templates/profiles/_select_language_dialog.html:30
 #: templates/teams/settings-projects-add.html:67
 #: templates/teams/tasks.html:435 templates/videos/_feedback_form.html:25
-#: templates/videos/subtitle-view.html:387
+#: templates/videos/subtitle-view.html:389
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 #: templates/auth/login.html:25
 msgid "Or use your Amara account"
@@ -4591,6 +5114,11 @@ msgstr ""
 msgid "Forgot your password?"
 msgstr ""
 
+#: templates/auth/login.html:30 templates/auth/login_trap.html:15
+#: templates/openid_consumer/signin.html:22
+msgid "Sign In"
+msgstr "Masuk"
+
 #: templates/auth/login.html:34
 msgid "Create an Amara account"
 msgstr ""
@@ -4601,6 +5129,10 @@ msgstr ""
 
 #: templates/auth/login.html:38
 msgid "Create Account"
+msgstr "Buat Akun"
+
+#: templates/auth/login_trap.html:10
+msgid "Sign in as a different user"
 msgstr ""
 
 #: templates/comments/_item.html:3 templates/messages/list.html:70
@@ -4609,155 +5141,169 @@ msgstr ""
 #: templates/videos/_video_url_panel.html:29 templates/videos/diffing.html:107
 #: templates/videos/diffing.html.py:172
 msgid "ago"
-msgstr ""
+msgstr "yang lalu"
 
 #: templates/jsdemo/home.html:16
 msgid "Subtitles and Captions for Every Video on the Web"
-msgstr ""
+msgstr "Teks Film dan Penulisan Text Video untuk Semua Video Situs"
 
 #: templates/jsdemo/home.html:19
 msgid "The Problem"
-msgstr ""
+msgstr "Permasalahannya"
 
 #: templates/jsdemo/home.html:19
 msgid ""
 "Web video is beginning to rival television, but there isn't a good open "
 "resource for subtitling."
 msgstr ""
+"Video situs mulai menjadi saingan televisi, namun tidak begitu banyak sumber "
+"yang bagus untuk penterjemahan."
 
 #: templates/jsdemo/home.html:21
 msgid "Our Mission"
-msgstr ""
+msgstr "Misi Kami"
 
 #: templates/jsdemo/home.html:21
 msgid ""
 "We're trying to make captioning, subtitling, and translating video publicly "
 "accessible in a way that's free and open, just like the Web."
 msgstr ""
+"Kami sedang berusaha membuat penulisan keterangan video, dan penterjemahan "
+"video yang dapat diakses secara umum dalam paradigma bebas dan terbuka, sama "
+"seperti sebuah situs."
 
 #: templates/jsdemo/home.html:21
 msgid "Learn More"
-msgstr ""
+msgstr "Pelajari Selanjutnya"
 
 #: templates/jsdemo/home.html:24
 msgid "Right now"
-msgstr ""
+msgstr "Sekarang"
 
 #: templates/jsdemo/home.html:24
 msgid "we're in an alpha stage, building and testing. You can help!"
 msgstr ""
+"kami sedang berada dalam tahap alfa, membangun dan menguji. Anda dapat "
+"membantu kami!"
 
 #: templates/jsdemo/home.html:25 templates/videos/create.html:31
 msgid "Try our demo"
-msgstr ""
+msgstr "Cobalah demo kami"
 
 #: templates/jsdemo/home.html:25
 msgid "Become a tester"
-msgstr ""
+msgstr "Menjadi penguji"
 
 #: templates/jsdemo/home.html:31
 msgid "Subtitle Widget"
-msgstr ""
+msgstr "Widget Teks Film"
 
 #: templates/jsdemo/home.html:32
 msgid ""
 "A simple way to create and add captions to almost any video on the web "
 "(without having to transcode or re-upload videos)."
 msgstr ""
+"Cara termudah membuat dan menambahkan keterangan video untuk hampir semua "
+"video situs (tanpa harus mengkode ulang atau mengunggah video-video tersebut)"
 
 #: templates/jsdemo/home.html:35
 msgid "Community Site"
-msgstr ""
+msgstr "Situs Komunitas"
 
 #: templates/jsdemo/home.html:36
 msgid ""
 "An online community for collaboratively subtitling and translating the "
 "world's videos (like a Wikipedia for subtitles)."
 msgstr ""
+"Sebuah komunitas online untuk kolaborasi teks film dan terjemahan video-"
+"video diseluruh dunia (seperti Wikipedia untuk teks film)."
 
 #: templates/jsdemo/home.html:39
 msgid "Subtitle Lookup Protocol"
-msgstr ""
+msgstr "Protokol Lookup Teks Film"
 
 #: templates/jsdemo/home.html:40
 msgid ""
 "An open standard to let Firefox extensions, desktop video players, websites, "
 "browsers--any client--find and retrieve subtitles for any video."
 msgstr ""
+"Sebuah standar terbuka dari ekstensi Firefox, pemutar video desktop, situs, "
+"semua jenis peramban dan mendapatkan teks film untuk video."
 
 #: templates/jsdemo/home.html:50
 msgid "Get updates and find out first when we launch"
 msgstr ""
+"Tetap terkini dan menjadi yang pertama tahu kapan kami mulai diluncurkan"
 
 #: templates/jsdemo/home.html:55
 msgid "Get Updates!"
-msgstr ""
+msgstr "Dapatkan pembaruan!"
 
 #: templates/jsdemo/home.html:60
 msgid "Please enter a valid email address"
-msgstr ""
+msgstr "Masukkan email yang masih berlaku"
 
 #: templates/jsdemo/home.html:93
 msgid "Please enter your email address."
-msgstr ""
+msgstr "Masukkan alamat email anda."
 
 #: templates/jsdemo/home.html:121
 msgid "Check out the widget"
-msgstr ""
+msgstr "Lihat Pengaya"
 
 #: templates/jsdemo/home.html:122
 msgid "Test our subtitling widget"
-msgstr ""
+msgstr "Uji pengaya penterjemah kami"
 
 #: templates/jsdemo/home.html:122
 msgid "Try the Demo"
-msgstr ""
+msgstr "Uji Demo"
 
 #: templates/livesettings/site_settings.html:48
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentasi"
 
 #: templates/livesettings/site_settings.html:48
 msgid "Change password"
-msgstr ""
+msgstr "Ubah kata kunci"
 
 #: templates/livesettings/site_settings.html:48
 msgid "Log out"
-msgstr ""
+msgstr "Keluar"
 
 #: templates/livesettings/site_settings.html:52
 msgid "Edit Site Settings"
-msgstr ""
+msgstr "Sunting Pengaturan Situs"
 
 #: templates/livesettings/site_settings.html:59
 msgid "Livesettings are disabled for this site."
-msgstr ""
+msgstr "Pengaturan dinon-aktifkan untuk situs ini."
 
 #: templates/livesettings/site_settings.html:60
 msgid "All configuration options must be edited in the site settings.py file"
-msgstr ""
+msgstr "Semua opsi-opsi pengaturan harus disunting ke dalam berkas settings.py"
 
 #: templates/livesettings/site_settings.html:66
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
-msgstr[0] ""
+msgstr[0] "Mohon koreksi kesalahan dibawah ini."
 
 #: templates/livesettings/site_settings.html:82
 #, python-format
 msgid "Group settings: %(name)s"
-msgstr ""
+msgstr "Pengaturan grup: %(name)s"
 
 #: templates/livesettings/site_settings.html:108
 msgid "Update Settings"
-msgstr ""
+msgstr "Perbarui Pengaturan"
 
 #: templates/livesettings/site_settings.html:109
 msgid "Uncollapse all"
-msgstr ""
+msgstr "Gelar semuanya"
 
 #: templates/livesettings/site_settings.html:113
 msgid "You don't have permission to edit values."
-msgstr ""
+msgstr "Anda tidak diizinkan untuk menyunting nilai."
 
 #: templates/messages/_messages.html:4
 #, python-format
@@ -4766,23 +5312,26 @@ msgid ""
 "        You have %(msg_count)s new messages.\n"
 "    "
 msgstr ""
+"\n"
+"        Anda mempunyai %(msg_count)s pesan baru.\n"
+"    "
 
 #: templates/messages/_messages.html:7 templates/profiles/dashboard.html:85
 #: templates/videos/_recent_activity.html:11
 msgid "View all"
-msgstr ""
+msgstr "Lihat semua"
 
 #: templates/messages/list.html:6
 msgid "My Messages"
-msgstr ""
+msgstr "Pesan-pesan Saya"
 
 #: templates/messages/list.html:20
 msgid "Do you really wish to delete this message?"
-msgstr ""
+msgstr "Apakah Anda ingin menghapus pesan ini?"
 
 #: templates/messages/list.html:21
 msgid "The message has been successfully sent."
-msgstr ""
+msgstr "Pesan berhasil dikirim."
 
 #: templates/messages/list.html:38
 msgid "Compose"
@@ -4794,25 +5343,25 @@ msgstr ""
 
 #: templates/messages/list.html:79
 msgid "Reply"
-msgstr ""
+msgstr "Balas"
 
 #: templates/messages/list.html:93
 msgid "You have no messages."
-msgstr ""
+msgstr "Anda tidak mempunyai pesan."
 
 #: templates/messages/list.html:100 templates/messages/new.html:74
 #: templates/messages/sent.html:66
 msgid "Inbox"
-msgstr ""
+msgstr "Kotak Masuk"
 
 #: templates/messages/list.html:101 templates/messages/new.html:75
 #: templates/messages/sent.html:67
 msgid "Sent"
-msgstr ""
+msgstr "Terkirim"
 
 #: templates/messages/list.html:124
 msgid "Send Message"
-msgstr ""
+msgstr "Kirim Pesan"
 
 #: templates/messages/new.html:6
 msgid "Compose a Message"
@@ -4820,21 +5369,21 @@ msgstr ""
 
 #: templates/messages/sent.html:6
 msgid "Sent Messages"
-msgstr ""
+msgstr "Pesan Terkirim"
 
 #: templates/messages/sent.html:42 templates/messages/sent.html.py:44
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: templates/messages/sent.html:60
 msgid "You have no sent messages."
-msgstr ""
+msgstr "Anda tidak mempunya pesan terkirim."
 
 #: templates/messages/email/comment-notification.html:28
 #: templates/videos/email_notification.html:29
 #: templates/videos/email_notification_non_editors.html:24
 msgid "Stop watching for changes on this video"
-msgstr ""
+msgstr "Berhenti menyaksikan perubahan-perubahan yang terjadi pada video ini"
 
 #: templates/messages/email/email-confirmation.html:6
 #, python-format
@@ -4866,15 +5415,15 @@ msgstr ""
 
 #: templates/messages/email/message_received.html:14
 msgid "Reply to this message"
-msgstr ""
+msgstr "Balas pesan ini"
 
 #: templates/messages/email/team-you-have-been-invited.html:14
 msgid "Join"
-msgstr ""
+msgstr "Gabung"
 
 #: templates/messages/email/team-you-have-been-invited.html:16
 msgid "Reject"
-msgstr ""
+msgstr "Tolak"
 
 #: templates/messages/email/videos-imported.html:6
 #, python-format
@@ -4901,7 +5450,7 @@ msgstr ""
 
 #: templates/profiles/_filters.html:5
 msgid "User Details"
-msgstr ""
+msgstr "Detail Pengguna"
 
 #: templates/profiles/_filters_dashboard.html:5
 msgid "Overview"
@@ -4921,65 +5470,68 @@ msgid ""
 "It looks like you logged in without submitting an email. We need an email "
 "address to notify you (for example, when others edit your work)."
 msgstr ""
+"Sepertinya Anda masuk tanpa mendaftarkan email. Kami memerlukan alamat email "
+"untuk pemberitahuan pengumuman (contohnya, ketika seseorang menyunting "
+"pekerjaan Anda)."
 
 #: templates/profiles/_require_email_dialog.html:8
 msgid "Please enter a valid e-mail address"
-msgstr ""
+msgstr "Silahkan masukkan alamat email yang masih berlaku"
 
 #: templates/profiles/_require_email_dialog.html:10
 msgid "Enter valid email please."
-msgstr ""
+msgstr "Mohon masukkan email yang berlaku."
 
 #: templates/profiles/_select_language_dialog.html:4
 #: templates/search/search.html:154 templates/videos/featured_videos.html:55
 #: templates/videos/popular_videos.html:90
 msgid "Loading..."
-msgstr ""
+msgstr "Sedang memuat..."
 
 #: templates/profiles/_select_language_dialog.html:5
 msgid "Select your Languages"
-msgstr ""
+msgstr "Pilih Bahasa Anda"
 
 #: templates/profiles/_select_language_dialog.html:10
 msgid "Select at least one language."
-msgstr ""
+msgstr "Pilihlah minimal satu bahasa."
 
 #: templates/profiles/_select_language_dialog.html:11
 msgid "Saving your language settings..."
-msgstr ""
+msgstr "Sedang menyimpan pengaturan bahasa Anda..."
 
 #: templates/profiles/_select_language_dialog.html:15
 msgid "We really need your help!"
-msgstr ""
+msgstr "Kami benar-benar menginginkan bantuan Anda!"
 
 #: templates/profiles/_select_language_dialog.html:16
 msgid "What languages do you speak?"
-msgstr ""
+msgstr "Apa bahasa yang Anda gunakan?"
 
 #: templates/profiles/_select_language_dialog.html:29
 msgid "Submit"
-msgstr ""
+msgstr "Kirim"
 
-#: templates/profiles/_tabs.html:6 templates/profiles/_top_user_panel.html:16
+#: templates/profiles/_tabs.html:6 templates/profiles/_top_user_panel.html:15
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
-#: templates/profiles/_tabs.html:19 templates/profiles/_top_user_panel.html:12
+#: templates/profiles/_tabs.html:19 templates/profiles/_top_user_panel.html:11
 #: templates/profiles/dashboard.html:13
 msgid "Dashboard"
-msgstr ""
+msgstr "Dasbor"
 
-#: templates/profiles/_top_user_panel.html:27
+#: templates/profiles/_top_user_panel.html:26
 msgid "Logout"
-msgstr ""
+msgstr "Keluar"
 
 #: templates/profiles/_user_videos_activity.html:4
 msgid "Edits to my videos"
-msgstr ""
+msgstr "Sunting ke video saya"
 
 #: templates/profiles/_user_videos_activity.html:10
 msgid "No Activity"
-msgstr ""
+msgstr "Tidak Ada Aktifitas"
 
 #: templates/profiles/_video_detail.html:8
 #: templates/teams/members-list.html:102
@@ -4989,7 +5541,7 @@ msgstr ""
 #: templates/profiles/_video_detail.html:10
 #: templates/teams/_team_video_detail.html:28
 msgid "No subtitles yet"
-msgstr ""
+msgstr "Belum ada terjemahan"
 
 #: templates/profiles/dashboard.html:38
 msgid "Open Tasks"
@@ -5003,14 +5555,14 @@ msgstr ""
 #: templates/profiles/dashboard.html:50 templates/search/_search_form.html:28
 #: templates/teams/tasks.html:167
 msgid "Subtitles into"
-msgstr ""
+msgstr "Teks film-kan ke"
 
 #: templates/profiles/dashboard.html:55 templates/teams/tasks.html:172
 #: templates/teams/tasks.html.py:188 templates/videos/diffing.html:87
-#: templates/videos/subtitle-view.html:147
-#: templates/videos/subtitle-view.html:194
+#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:196
 msgid "Subtitles"
-msgstr ""
+msgstr "Teks Film"
 
 #: templates/profiles/dashboard.html:57 templates/teams/members-list.html:101
 #: templates/teams/members-list.html:102
@@ -5035,7 +5587,7 @@ msgstr ""
 
 #: templates/profiles/dashboard.html:115 templates/teams/teams-list.html:107
 msgid "Do you really wish to leave this team?"
-msgstr ""
+msgstr "Apakah Anda ingin keluar dari tim ini?"
 
 #: templates/profiles/dashboard.html:115
 msgid "leave team"
@@ -5043,7 +5595,7 @@ msgstr ""
 
 #: templates/profiles/edit_profile.html:5
 msgid "Edit My Profile"
-msgstr ""
+msgstr "Sunting Profil Saya"
 
 #: templates/profiles/edit_profile.html:16
 msgid "Do you really want delete your picture?"
@@ -5053,15 +5605,15 @@ msgstr ""
 #: templates/videos/_paste_transcription.html:106
 #: templates/videos/_video_url_panel.html:77
 msgid "Saving..."
-msgstr ""
+msgstr "Menyimpan..."
 
 #: templates/profiles/edit_profile.html:51
 msgid "Edit Your Profile"
-msgstr ""
+msgstr "Ubah Profil Anda"
 
 #: templates/profiles/edit_profile.html:64
 msgid "Personal Info"
-msgstr ""
+msgstr "Keterangan Pribadi"
 
 #: templates/profiles/edit_profile.html:65
 msgid "Will be displayed publicly"
@@ -5069,11 +5621,11 @@ msgstr ""
 
 #: templates/profiles/edit_profile.html:83
 msgid "remove picture"
-msgstr ""
+msgstr "hapus gambar"
 
 #: templates/profiles/edit_profile.html:88
 msgid "Upload picture"
-msgstr ""
+msgstr "Unggah gambar"
 
 #: templates/profiles/edit_profile.html:92
 msgid "Account Details"
@@ -5093,20 +5645,20 @@ msgstr ""
 
 #: templates/profiles/edit_profile.html:116
 msgid "Language Info"
-msgstr ""
+msgstr "Keterangan Bahasa"
 
 #: templates/profiles/edit_profile.html:133
 msgid "Languages I Know"
-msgstr ""
+msgstr "Bahasa yang Saya Tahu"
 
 #: templates/profiles/edit_profile.html:138
 #: templates/profiles/edit_profile.html:155
 msgid "Remove Language"
-msgstr ""
+msgstr "Hapus Bahasa"
 
 #: templates/profiles/edit_profile.html:169
 msgid "Add Language"
-msgstr ""
+msgstr "Tambah Bahasa"
 
 #: templates/profiles/edit_profile.html:173
 msgid "Developer Info"
@@ -5115,36 +5667,36 @@ msgstr ""
 #: templates/profiles/edit_profile.html:183
 #: templates/teams/settings-permissions.html:118
 msgid "Save Changes"
-msgstr ""
+msgstr "Simpan Perubahan"
 
 #: templates/profiles/edit_profile.html:186
 msgid "Permanently Delete Your Profile"
-msgstr ""
+msgstr "Hapus Profil Anda Selamanya"
 
 #: templates/profiles/my_videos.html:6 templates/profiles/my_videos.html:22
 msgid "My videos"
-msgstr ""
+msgstr "Video Saya"
 
 #: templates/profiles/view_profile.html:56
 msgid "Member since"
-msgstr ""
+msgstr "Anggota sejak"
 
 #: templates/profiles/view_profile.html:62
 msgid "Homepage"
-msgstr ""
+msgstr "Beranda"
 
 #: templates/profiles/view_profile.html:70
 msgid "<i>User has not submitted a bio.</i>"
-msgstr ""
+msgstr "<i>Pengguna ini tidak memasukkan biografi.</i>"
 
 #: templates/profiles/view_profile.html:82
 #: templates/teams/_subnav_settings.html:17
 msgid "Languages"
-msgstr ""
+msgstr "Bahasa"
 
 #: templates/profiles/view_profile.html:98
 msgid "Memberships"
-msgstr ""
+msgstr "Keanggotaan"
 
 #: templates/profiles/view_profile.html:121
 msgid "Profile deleted by user."
@@ -5161,12 +5713,12 @@ msgstr ""
 #: templates/registration/password_reset_form.html:8
 #: templates/registration/password_reset_form.html:14
 msgid "Password reset"
-msgstr ""
+msgstr "Pasang kembali kata kunci"
 
 #: templates/registration/password_reset_complete.html:6
 #: templates/registration/password_reset_complete.html:12
 msgid "Password reset complete"
-msgstr ""
+msgstr "Memasang kembali kata kunci selesai"
 
 #: templates/registration/password_reset_complete.html:14
 msgid "Your password has been set.  You may go ahead and sign in now."
@@ -5174,98 +5726,106 @@ msgstr ""
 
 #: templates/registration/password_reset_confirm.html:4
 msgid "Password reset confirmation"
-msgstr ""
+msgstr "Konfirmasi memasang kembali kata kunci"
 
 #: templates/registration/password_reset_confirm.html:15
 msgid "Enter new password"
-msgstr ""
+msgstr "Masukkan kata kunci baru"
 
 #: templates/registration/password_reset_confirm.html:16
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
+"Masukkan kata kunci dua kali hingga kami bisa membenarkan ketikan Anda."
 
 #: templates/registration/password_reset_confirm.html:21
 msgid "New password:"
-msgstr ""
+msgstr "Kata kunci baru:"
 
 #: templates/registration/password_reset_confirm.html:23
 msgid "Confirm password:"
-msgstr ""
+msgstr "Konfirmasi kata kunci:"
 
 #: templates/registration/password_reset_confirm.html:24
 msgid "Change my password"
-msgstr ""
+msgstr "Ubah kata kunci saya"
 
 #: templates/registration/password_reset_confirm.html:33
 msgid "Password reset unsuccessful"
-msgstr ""
+msgstr "Memasang kembali kata kunci tidak berhasil"
 
 #: templates/registration/password_reset_confirm.html:35
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
+"Pranala memasang kembali kata kunci tidak benar karena telah digunakan "
+"sebelumnya.  Kirimkan pemasangan kembali kata kunci."
 
 #: templates/registration/password_reset_done.html:6
 #: templates/registration/password_reset_done.html:12
 msgid "Password reset successful"
-msgstr ""
+msgstr "Memasang kembali kata kunci telah berhasil"
 
 #: templates/registration/password_reset_done.html:14
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
 msgstr ""
+"Kami telah mengirimkan email tentang cara mengatur kata kunci Anda melalui "
+"alamat email yang Anda masukkan. Pastikan Anda menerimanya sebentar lagi."
 
 #: templates/registration/password_reset_email.html:2
 msgid "You're receiving this e-mail because you requested a password reset"
 msgstr ""
+"Anda menerima email ini karena Anda meminta pemasangan kembali kata kunci."
 
 #: templates/registration/password_reset_email.html:3
 #, python-format
 msgid "for your user account at %(site_name)s"
-msgstr ""
+msgstr "untuk akun pengguna pada %(site_name)s"
 
 #: templates/registration/password_reset_email.html:5
 msgid "Please go to the following page and choose a new password:"
-msgstr ""
+msgstr "Silahkan ke halaman berikut dan pilih kata kunci baru:"
 
 #: templates/registration/password_reset_email.html:9
 msgid "Your username, in case you've forgotten:"
-msgstr ""
+msgstr "Nama pengguna Anda, hanya jika Anda lupa:"
 
 #: templates/registration/password_reset_email.html:11
 msgid "Thanks for using our site!"
-msgstr ""
+msgstr "Terima kasih telah menggunakan situs kami!"
 
 #: templates/registration/password_reset_email.html:13
 #, python-format
 msgid "The %(site_name)s team"
-msgstr ""
+msgstr "Tim %(site_name)s"
 
 #: templates/registration/password_reset_form.html:15
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll e-mail "
 "instructions for setting a new one."
 msgstr ""
+"Lupa kata kunci? Masukkan alamat email Anda dibawah ini, kami akan kirimkan "
+"email petunjuk tentang cara membuat yang baru."
 
 #: templates/registration/password_reset_form.html:18
 msgid "E-mail address:"
-msgstr ""
+msgstr "Alamat Email:"
 
 #: templates/registration/password_reset_form.html:19
 msgid "Reset my password"
-msgstr ""
+msgstr "Pasang kembali katak kunci saya"
 
 #: templates/search/_search_form.html:12
 msgid "Search videos"
-msgstr ""
+msgstr "Cari video"
 
 #: templates/search/_search_form.html:24
 msgid "Videos In"
-msgstr ""
+msgstr "Video Di"
 
 #: templates/search/_video_item.html:14
 #: templates/videos/_video_languages.html:8
@@ -5279,30 +5839,33 @@ msgid_plural ""
 "              %(number)s languages\n"
 "          "
 msgstr[0] ""
+"\n"
+"              %(number)s bahasa\n"
+"          "
 
 #: templates/search/_video_item.html:24
 msgid "lines"
-msgstr ""
+msgstr "baris"
 
 #: templates/search/_video_item.html:34
 msgid "Plays (this week)"
-msgstr ""
+msgstr "Diputar (minggu ini)"
 
 #: templates/search/_video_item.html:35
 msgid "Plays (this month)"
-msgstr ""
+msgstr "Diputar (bulan ini)"
 
 #: templates/search/_video_item.html:36
 msgid "Plays (all time)"
-msgstr ""
+msgstr "Diputar (semua waktu)"
 
 #: templates/search/search.html:86 templates/search/search.html.py:125
 msgid "Search Videos"
-msgstr ""
+msgstr "Cari Video"
 
 #: templates/search/search.html:88
 msgid "Search Results for"
-msgstr ""
+msgstr "Hasil Pencarian"
 
 #: templates/search/search.html:121
 #, python-format
@@ -5311,91 +5874,94 @@ msgid ""
 "                Search Results for %(query)s\n"
 "            "
 msgstr ""
+"\n"
+"                Hasil Pencarian untuk %(query)s\n"
+"            "
 
 #: templates/search/search.html:149 templates/videos/featured_videos.html:50
 #: templates/videos/popular_videos.html:85
 msgid "of"
-msgstr ""
+msgstr "dari"
 
 #: templates/statistic/index.html:26
 msgid "Users statistic"
-msgstr ""
+msgstr "Statistik pengguna"
 
 #: templates/statistic/index.html:27
 #: templates/statistic/videos_statistic.html:6
 msgid "Videos statistic"
-msgstr ""
+msgstr "Statistik video"
 
 #: templates/statistic/log_entry_model_admin.html:37
 #: templates/statistic/logger_model_admin.html:37
 msgid "Date"
-msgstr ""
+msgstr "Tanggal"
 
 #: templates/statistic/log_entry_model_admin.html:38
 #: templates/statistic/logger_model_admin.html:38
 msgid "Count"
-msgstr ""
+msgstr "Jumlah"
 
 #: templates/statistic/log_entry_model_admin.html:39
 #: templates/statistic/logger_model_admin.html:39
 msgid "Time(sec)"
-msgstr ""
+msgstr "Waktu (detik)"
 
 #: templates/statistic/users_statistic.html:6
 msgid "Activity statistic"
-msgstr ""
+msgstr "Statistik aktifitas"
 
 #: templates/statistic/users_statistic.html:7
 #: templates/statistic/videos_statistic.html:7
 msgid "General statistic"
-msgstr ""
+msgstr "Statistik umum"
 
 #: templates/statistic/users_statistic.html:13
 #: templates/statistic/videos_statistic.html:13
 msgid "Day"
-msgstr ""
+msgstr "Hari"
 
 #: templates/statistic/users_statistic.html:14
 #: templates/statistic/videos_statistic.html:14
 msgid "Week"
-msgstr ""
+msgstr "Minggu"
 
 #: templates/statistic/users_statistic.html:15
 #: templates/statistic/videos_statistic.html:15
 msgid "Month"
-msgstr ""
+msgstr "Bulan"
 
 #: templates/statistic/users_statistic.html:16
 #: templates/statistic/videos_statistic.html:16
 msgid "TOTAL"
-msgstr ""
+msgstr "TOTAL"
 
 #: templates/statistic/videos_statistic.html:12
 #: templates/teams/_context_project.html:25
 #: templates/teams/_context_team.html:47 templates/teams/tasks.html:125
 #: templates/teams/tasks.html.py:176 templates/videos/video-view.html:144
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: templates/statistic/log_methods/changelist_view.html:39
 msgid "By logger"
-msgstr ""
+msgstr "Oleh pengguna yang masuk"
 
 #: templates/statistic/log_methods/changelist_view.html:41
 msgid "all"
-msgstr ""
+msgstr "semua"
 
 #: templates/statistic/log_methods/changelist_view.html:55
 msgid "Class"
-msgstr ""
+msgstr "Kelas"
 
 #: templates/statistic/log_methods/changelist_view.html:56
 msgid "Method"
-msgstr ""
+msgstr "Metoda"
 
 #: templates/statistic/log_methods/changelist_view.html:57
 msgid "Value"
-msgstr ""
+msgstr "Nilai"
 
 #: templates/teams/_actions.html:9 templates/teams/_actions.html.py:50
 msgid "Join via"
@@ -5407,11 +5973,11 @@ msgstr ""
 
 #: templates/teams/_actions.html:21
 msgid "Do you really wish to join this team?"
-msgstr ""
+msgstr "Apakah Anda ingin bergabung ke dalam tim ini?"
 
 #: templates/teams/_actions.html:21
 msgid "Join this team now!"
-msgstr ""
+msgstr "Bergabung dengan tim ini sekarang!"
 
 #: templates/teams/_actions.html:27
 msgid "Login via"
@@ -5435,15 +6001,15 @@ msgstr ""
 
 #: templates/teams/_application_form.html:4
 msgid "Apply to Join"
-msgstr ""
+msgstr "Ajukan untuk Gabung"
 
 #: templates/teams/_application_form.html:11
 msgid "Apply to"
-msgstr ""
+msgstr "Lakukan ke"
 
 #: templates/teams/_application_form.html:19
 msgid "Language skill"
-msgstr ""
+msgstr "Keahlian bahasa"
 
 #: templates/teams/_application_form.html:21
 #, python-format
@@ -5458,11 +6024,11 @@ msgstr ""
 
 #: templates/teams/_application_form.html:24
 msgid "proficiency"
-msgstr ""
+msgstr "keahlian"
 
 #: templates/teams/_application_form.html:24
 msgid "specified"
-msgstr ""
+msgstr "spesifikasi"
 
 #: templates/teams/_application_form.html:29
 msgid ""
@@ -5475,7 +6041,7 @@ msgstr ""
 
 #: templates/teams/_application_form.html:37
 msgid "About you"
-msgstr ""
+msgstr "Tentang Anda"
 
 #: templates/teams/_application_form.html:39
 #, python-format
@@ -5489,20 +6055,20 @@ msgstr ""
 
 #: templates/teams/_application_form.html:47
 msgid "Submit Application"
-msgstr ""
+msgstr "Kirim Lamaran"
 
 #: templates/teams/_complete_team_video_detail.html:8
 msgid "Completed Languages"
-msgstr ""
+msgstr "Bahasa Yang Telah Selesai"
 
 #: templates/teams/_complete_team_video_detail.html:14
 msgid "Video Page"
-msgstr ""
+msgstr "Halaman Video"
 
 #: templates/teams/_context_project.html:17
 #: templates/teams/_context_team.html:14 templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:131
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show all"
 msgstr ""
@@ -5539,11 +6105,11 @@ msgstr ""
 #: templates/teams/_context_team.html:29
 #: templates/videos/test_form_page.html:24
 msgid "video"
-msgstr ""
+msgstr "video"
 
 #: templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:127
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show less"
 msgstr ""
@@ -5566,23 +6132,26 @@ msgstr ""
 
 #: templates/teams/_invite_friends_to_team.html:4
 msgid "According to your"
-msgstr ""
+msgstr "Berdasarkan kepada"
 
 #: templates/teams/_invite_friends_to_team.html:4
 msgid "language choices"
-msgstr ""
+msgstr "pilihan bahasa"
 
 #: templates/teams/_invite_friends_to_team.html:4
 msgid "there don't appear to be videos you can translate."
-msgstr ""
+msgstr "tidak muncul video yang dapat Anda terjemahkan."
 
 #: templates/teams/_invite_friends_to_team.html:4
 msgid "But check back soon! There may soon be translations for you to review."
 msgstr ""
+"Tapi silahkan cek kembali! Barangkali nanti ada terjemahan yang bisa Anda "
+"ulas."
 
 #: templates/teams/_invite_friends_to_team.html:4
 msgid "You can also invite friends who speak other languages to help out."
 msgstr ""
+"Anda juga dapat mengundang teman yang menggunakan bahasa lain untuk membantu."
 
 #: templates/teams/_perform_task_link.html:5
 #: templates/teams/_perform_task_link.html:29 templates/teams/tasks.html:259
@@ -5606,21 +6175,21 @@ msgstr ""
 #: templates/teams/_tabs.html:6 templates/teams/_tabs_projects.html:6
 #: templates/teams/videos-list.html:6
 msgid "Videos"
-msgstr ""
+msgstr "Video"
 
 #: templates/teams/_tabs.html:11 templates/teams/members-list.html:6
 msgid "Members"
-msgstr ""
+msgstr "Para Anggota"
 
 #: templates/teams/_tabs.html:16 templates/videos/video-view.html:146
 msgid "Activity"
-msgstr ""
+msgstr "Aktifitas"
 
 #: templates/teams/_tabs.html:22 templates/teams/_tabs_projects.html:12
 #: templates/teams/_team_video_detail.html:48
 #: templates/teams/settings-permissions.html:36 templates/teams/tasks.html:26
 msgid "Tasks"
-msgstr ""
+msgstr "Tugas"
 
 #: templates/teams/_tabs.html:29 templates/teams/_tabs_projects.html:19
 #: templates/teams/settings-guidelines.html:5
@@ -5630,7 +6199,7 @@ msgstr ""
 #: templates/teams/settings-projects-edit.html:5
 #: templates/teams/settings-projects.html:5 templates/teams/settings.html:5
 msgid "Settings"
-msgstr ""
+msgstr "Pengaturan"
 
 #: templates/teams/_team_add_video_select.html:4
 msgid "Add this video to one of your teams"
@@ -5666,11 +6235,11 @@ msgstr ""
 
 #: templates/teams/_team_select.html:6
 msgid "Managing"
-msgstr ""
+msgstr "Mengatur"
 
 #: templates/teams/_team_select.html:15
 msgid "Add new team"
-msgstr ""
+msgstr "Tambah tim baru"
 
 #: templates/teams/_team_video_detail.html:12
 #, python-format
@@ -5700,11 +6269,11 @@ msgstr[0] ""
 #, python-format
 msgid ""
 "\n"
-"                            1 open task\n"
+"                            1 task\n"
 "                        "
 msgid_plural ""
 "\n"
-"                            %(counter)s open tasks\n"
+"                            %(counter)s tasks\n"
 "                        "
 msgstr[0] ""
 
@@ -5712,7 +6281,7 @@ msgstr[0] ""
 #: templates/teams/members-list.html:119
 #: templates/teams/settings-projects.html:29
 msgid "Edit"
-msgstr ""
+msgstr "Sunting"
 
 #: templates/teams/_team_video_detail.html:60
 #: templates/teams/members-list.html:122 templates/teams/videos-list.html:147
@@ -5726,36 +6295,36 @@ msgstr ""
 
 #: templates/teams/activity.html:28
 msgid "Sorry, no activity yet"
-msgstr ""
+msgstr "Maaf, belum ada aktifitas"
 
 #: templates/teams/add_video.html:6 templates/teams/add_videos.html:6
 msgid "Team video"
-msgstr ""
+msgstr "Video tim"
 
 #: templates/teams/add_video.html:23
 msgid "Add video"
-msgstr ""
+msgstr "Tambah video"
 
 #: templates/teams/add_video.html:35 templates/teams/add_videos.html:31
 #: templates/teams/create_task.html:91 templates/teams/team_video.html:44
 msgid "Save"
-msgstr ""
+msgstr "Simpan"
 
 #: templates/teams/add_videos.html:21
 msgid "Add multiple videos"
-msgstr ""
+msgstr "Tambah banyak video"
 
 #: templates/teams/applications.html:6
 msgid "Team Aplications"
-msgstr ""
+msgstr "Lamaran tim"
 
 #: templates/teams/applications.html:49 templates/teams/tasks.html:64
 msgid "Approve"
-msgstr ""
+msgstr "Setuju"
 
 #: templates/teams/applications.html:52
 msgid "Deny"
-msgstr ""
+msgstr "Tolak"
 
 #: templates/teams/applications.html:56
 msgid "Send a message"
@@ -5763,7 +6332,7 @@ msgstr ""
 
 #: templates/teams/applications.html:66
 msgid "There are no applications right now"
-msgstr ""
+msgstr "Tidak ada aplikasi saat ini"
 
 #: templates/teams/base.html:43
 msgid "Edit team"
@@ -5771,20 +6340,19 @@ msgstr ""
 
 #: templates/teams/create.html:6
 msgid "Create team"
-msgstr ""
+msgstr "Buat tim"
 
 #: templates/teams/create.html:23 templates/teams/create.html.py:65
 msgid "Create a team"
-msgstr ""
+msgstr "Buat sebuah tim"
 
 #: templates/teams/create.html:28 templates/teams/teams-list.html:23
 msgid "All Teams"
-msgstr ""
+msgstr "Semua Tim"
 
-#: templates/teams/create.html:33 templates/teams/teams-list.html:6
-#: templates/teams/teams-list.html.py:29
+#: templates/teams/create.html:33
 msgid "My Teams"
-msgstr ""
+msgstr "Tim Saya"
 
 #: templates/teams/create.html:51
 msgid "Display Settings"
@@ -5792,23 +6360,23 @@ msgstr ""
 
 #: templates/teams/create.html:57
 msgid "Create Team"
-msgstr ""
+msgstr "Buat Tim"
 
 #: templates/teams/create.html:69
 msgid "Back to teams"
-msgstr ""
+msgstr "Kembali ke tim"
 
 #: templates/teams/create.html:71
 msgid "Back to my teams"
-msgstr ""
+msgstr "Kembali ke tim"
 
 #: templates/teams/create_task.html:8
 msgid "Create a Task"
-msgstr ""
+msgstr "Buat Tugas"
 
 #: templates/teams/create_task.html:44
 msgid "New Task"
-msgstr ""
+msgstr "Tugas Baru"
 
 #: templates/teams/create_task.html:45
 msgid ""
@@ -5846,7 +6414,7 @@ msgstr ""
 
 #: templates/teams/create_task.html:77
 msgid "You do not have permission to create any valid tasks for this video."
-msgstr ""
+msgstr "Anda tidak mempunyai izin untuk membuat sembarang tugas ke video ini."
 
 #: templates/teams/create_task.html:83
 msgid "Selected Video"
@@ -5868,14 +6436,19 @@ msgid ""
 "following new videos:\n"
 "        "
 msgstr ""
+"\n"
+"            %(team_name)s membutuhkan bantuan Anda untuk menterjemahkan dan "
+"melakukan subtitle video berikut:\n"
+"        "
 
 #: templates/teams/email_new_video.html:13
 msgid "Or you can visit the team page to see the latest work"
 msgstr ""
+"Atau Anda bisa mengunjungi halaman tim untuk melihat hasil kerja terakhir"
 
 #: templates/teams/email_new_video.html:17
 msgid "Stop receiving new notifications when a new video is added."
-msgstr ""
+msgstr "Berhenti menerima pemberitahuan ketika video baru ditambahkan."
 
 #: templates/teams/email_new_videos.html:7
 #, python-format
@@ -5886,14 +6459,20 @@ msgid ""
 "            team has added new videos, and they need your help:\n"
 "        "
 msgstr ""
+"\n"
+"            Tim <a href=\"http://%(domain)s%(team_url)s\">%(team_name)s</"
+"a> \n"
+"            telah menambahkan video baru, dan mereka membutuhkan bantuan "
+"Anda:\n"
+"        "
 
 #: templates/teams/email_new_videos.html:20
 msgid "Thank you!"
-msgstr ""
+msgstr "Terima Kasih!"
 
 #: templates/teams/invite_members.html:6 templates/teams/members-list.html:45
 msgid "Invite Members"
-msgstr ""
+msgstr "Undang Anggota"
 
 #: templates/teams/invite_members.html:23
 msgid "Recipient"
@@ -5925,7 +6504,7 @@ msgstr ""
 
 #: templates/teams/invite_members.html:49
 msgid "Send Invites"
-msgstr ""
+msgstr "Kirim Undangan"
 
 #: templates/teams/members-list.html:47 templates/teams/tasks.html:48
 #: templates/teams/videos-list.html:47
@@ -5933,7 +6512,7 @@ msgid "Filter and Sort"
 msgstr ""
 
 #: templates/teams/members-list.html:53
-#: templates/videos/subtitle-view.html:198
+#: templates/videos/subtitle-view.html:200
 msgid "Showing"
 msgstr ""
 
@@ -5977,7 +6556,7 @@ msgstr ""
 
 #: templates/teams/members-list.html:82
 msgid "Sorry, no members found."
-msgstr ""
+msgstr "Maaf, tidak ada anggota yang ditemukan"
 
 #: templates/teams/members-list.html:92
 msgid "Me"
@@ -5985,7 +6564,7 @@ msgstr ""
 
 #: templates/teams/members-list.html:101 templates/teams/members-list.html:102
 msgid "and"
-msgstr ""
+msgstr "dan"
 
 #: templates/teams/members-list.html:101
 msgid "project"
@@ -6174,7 +6753,7 @@ msgstr ""
 #: templates/teams/settings-permissions.html:109
 #: templates/teams/settings-projects-add.html:57 templates/teams/tasks.html:61
 msgid "Review"
-msgstr ""
+msgstr "Ulasan"
 
 #: templates/teams/settings-permissions.html:112
 #: templates/teams/settings-projects-add.html:60
@@ -6304,8 +6883,8 @@ msgstr ""
 msgid "and edited"
 msgstr ""
 
-#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:202
-#: templates/videos/subtitle-view.html:318
+#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:204
+#: templates/videos/subtitle-view.html:320
 msgid "by"
 msgstr ""
 
@@ -6347,7 +6926,7 @@ msgstr ""
 #: templates/teams/tasks.html:293 templates/videos/_upload_subtitles.html:20
 #: templates/videos/video-view.html:101
 msgid "Language"
-msgstr ""
+msgstr "Bahasa"
 
 #: templates/teams/tasks.html:299
 msgid "Translate from"
@@ -6409,31 +6988,35 @@ msgstr ""
 
 #: templates/teams/team_video.html:6
 msgid "Edit team video"
-msgstr ""
+msgstr "Sunting video tim"
 
 #: templates/teams/team_video.html:27 templates/videos/video-view.html:210
 msgid "Edit video"
-msgstr ""
+msgstr "Edit video"
 
 #: templates/teams/team_video.html:40
 msgid "This video is being moderated by team"
 msgstr ""
 
+#: templates/teams/teams-list.html:6 templates/teams/teams-list.html.py:29
+msgid "Your Teams"
+msgstr ""
+
 #: templates/teams/teams-list.html:18
 msgid "Team Directory"
-msgstr ""
+msgstr "Direktori Tim"
 
 #: templates/teams/teams-list.html:41
 msgid "Sort by"
-msgstr ""
+msgstr "Urutkan berdasar"
 
 #: templates/teams/teams-list.html:64
-msgid "My team"
+msgid "Your team"
 msgstr ""
 
 #: templates/teams/teams-list.html:67
 msgid "Private"
-msgstr ""
+msgstr "Pribadi"
 
 #: templates/teams/teams-list.html:74
 msgid "No description..."
@@ -6477,7 +7060,7 @@ msgstr ""
 
 #: templates/teams/teams-list.html:127
 msgid "Start a Team"
-msgstr ""
+msgstr "Mulai sebuah Tim"
 
 #: templates/teams/teams-list.html:131
 msgid ""
@@ -6489,7 +7072,7 @@ msgstr ""
 
 #: templates/teams/videos-list.html:44
 msgid "Add Video"
-msgstr ""
+msgstr "Tambo Ciek!"
 
 #: templates/teams/videos-list.html:54
 msgid "Videos with"
@@ -6539,7 +7122,7 @@ msgstr ""
 
 #: templates/teams/videos-list.html:107
 msgid "Sorry, no videos here"
-msgstr ""
+msgstr "Maaf, tidak ada video disini"
 
 #: templates/teams/videos-list.html:118
 msgid "Remove video"
@@ -6575,18 +7158,20 @@ msgstr ""
 #: templates/videos/_error_feedback_form.html:7
 msgid "Please let us know what you were doing when you encountered this error."
 msgstr ""
+"Jelaskan kepada kami apa yang tengah Anda lakukan ketika kesalahan ini "
+"muncul."
 
 #: templates/videos/_error_feedback_form.html:9
 msgid "Sorry, the page you requested was not found."
-msgstr ""
+msgstr "Maaf, halaman tidak ditemukan."
 
 #: templates/videos/_feature_video.html:12
 msgid "Unfeature video"
-msgstr ""
+msgstr "Bukan video fitur"
 
 #: templates/videos/_feature_video.html:14
 msgid "Feature video"
-msgstr ""
+msgstr "Video fitur"
 
 #: templates/videos/_feedback_form.html:6
 msgid "How are you using Amara?  What would make it better?"
@@ -6594,28 +7179,30 @@ msgstr ""
 
 #: templates/videos/_feedback_form.html:8
 msgid "Please let us know if you have any comments, questions, or suggestions!"
-msgstr ""
+msgstr "Kirimkan kepada kami komentar Anda, pertanyaan atau saran Anda!"
 
 #: templates/videos/_feedback_form.html:9
 msgid ""
 "Note: we read/speak English best, but try to read/respond to anything we can."
 msgstr ""
+"Pesan: kami baik dalam baca/tulis bahasa Inggris, namun kami juga berusaha "
+"sebisa mungkin membaca/merespon kepada semua."
 
 #: templates/videos/_feedback_form.html:13
 msgid "Your email:"
-msgstr ""
+msgstr "Email Anda:"
 
 #: templates/videos/_feedback_form.html:16
 msgid "Your Feedback"
-msgstr ""
+msgstr "Saran Anda:"
 
 #: templates/videos/_feedback_form.html:26
 msgid "Send feedback"
-msgstr ""
+msgstr "Kirim saran"
 
 #: templates/videos/_feedback_form.html:26
 msgid "Send Feedback"
-msgstr ""
+msgstr "Kirim Saran"
 
 #: templates/videos/_feedback_form.html:35
 #: templates/videos/_paste_transcription.html:113
@@ -6623,35 +7210,35 @@ msgstr ""
 #: templates/videos/_video_url_panel.html:43
 #: templates/videos/video-view.html:61
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 #: templates/videos/_feedback_form.html:37
 msgid "Thank you for your feedback."
-msgstr ""
+msgstr "Terima kasih atas saran Anda."
 
 #: templates/videos/_feedback_form.html:38
 msgid "If you would like to perform some additional testing"
-msgstr ""
+msgstr "Jika Anda ingin melakukan pengujian tambahan"
 
 #: templates/videos/_feedback_form.html:39
 msgid "please go to our"
-msgstr ""
+msgstr "silahkan ke"
 
 #: templates/videos/_feedback_form.html:39
 msgid "Litmus regression tests"
-msgstr ""
+msgstr "Uji pemulihan lakmus"
 
 #: templates/videos/_feedback_form.html:40
 msgid "For new testers, we have"
-msgstr ""
+msgstr "Bagi penguji baru, kami mempunyai"
 
 #: templates/videos/_feedback_form.html:40
 msgid "a getting started guide"
-msgstr ""
+msgstr "sebuah petunjuk cara memulai"
 
 #: templates/videos/_feedback_form.html:54
 msgid "Enter feedback please."
-msgstr ""
+msgstr "Silahkan masukkan saran."
 
 #: templates/videos/_follow_video_button.html:37
 msgid "✓ Following"
@@ -6680,6 +7267,8 @@ msgid ""
 " subtitles for this video are edited. You can choose to follow again at any "
 "time."
 msgstr ""
+" teks film video ini telah disunting. Anda bisa mengikutinya kembali kapan "
+"saja."
 
 #: templates/videos/_follow_video_button.html:92
 msgid "Stop following "
@@ -6688,11 +7277,11 @@ msgstr ""
 #: templates/videos/_follow_video_button.html:94
 #: templates/videos/_follow_video_button.html:147
 msgid " subtitles"
-msgstr ""
+msgstr " teks film"
 
 #: templates/videos/_follow_video_button.html:104
 msgid "Unfollow all languages"
-msgstr ""
+msgstr "Berhenti mengikuti semua bahasa"
 
 #: templates/videos/_follow_video_button.html:142
 msgid "You will receive notifications when anyone edits "
@@ -6700,7 +7289,7 @@ msgstr ""
 
 #: templates/videos/_follow_video_button.html:144
 msgid " subtitles for this video. You can stop these emails at any time."
-msgstr ""
+msgstr " teks film video ini. Anda bisa menghentikan email ini kapan saja."
 
 #: templates/videos/_follow_video_button.html:145
 msgid "Follow "
@@ -6718,15 +7307,15 @@ msgstr ""
 
 #: templates/videos/_follow_video_button.html:158
 msgid "Follow all languages"
-msgstr ""
+msgstr "Ikuti semua bahasa"
 
 #: templates/videos/_follow_video_button.html:175
 msgid "You must log in to follow a video."
-msgstr ""
+msgstr "Anda harus masuk untuk mengikuti video."
 
 #: templates/videos/_follow_video_button.html:176
 msgid "Authentication required"
-msgstr ""
+msgstr "Diperlukan keabsahan."
 
 #: templates/videos/_follow_video_button.html:200
 msgid "x Stop Following"
@@ -6738,11 +7327,11 @@ msgstr ""
 
 #: templates/videos/_get_counter.html:3
 msgid "Get counter code:"
-msgstr ""
+msgstr "Dapatkan kode:"
 
 #: templates/videos/_paste_transcription.html:114
 msgid "Submit a Transcript"
-msgstr ""
+msgstr "Kirim Transkrip"
 
 #: templates/videos/_paste_transcription.html:118
 msgid ""
@@ -6754,6 +7343,15 @@ msgid ""
 "            2) You cannot submit subtitles longer than 3 lines (2 is best).\n"
 "            "
 msgstr ""
+"\n"
+"            Tempel transkrip kebawah.  Bagaimana cara Anda memasukkan "
+"subtitle disini \n"
+"            akan terlihat sama pada layar.<br/>\n"
+"            1) Tekan Enter dua kali untuk memisahkan masing-masing subtitle;"
+"<br/> \n"
+"            2) Anda tidak bisa memasukkan subtitle lebih dari 3 baris (2 "
+"lebih baik).\n"
+"            "
 
 #: templates/videos/_paste_transcription.html:126
 msgid ""
@@ -6762,15 +7360,19 @@ msgid ""
 "display correctly.\n"
 "            "
 msgstr ""
+"\n"
+"            Beberapa subtitle yang telah Anda lakukan melebihi dua baris dan "
+"ini tidak akan tampil sempurna pada layar.\n"
+"            "
 
 #: templates/videos/_paste_transcription.html:136
 msgid "Upload TXT file"
-msgstr ""
+msgstr "Unggah berkas TXT"
 
 #: templates/videos/_paste_transcription.html:144
 #: templates/videos/_upload_subtitles.html:35
 msgid "Login to upload subtitles"
-msgstr ""
+msgstr "Masuk untuk menggunggah teks film"
 
 #: templates/videos/_team_list.html:5 templates/videos/video-view.html:179
 msgid "Collaborate"
@@ -6790,7 +7392,7 @@ msgstr ""
 
 #: templates/videos/_upload_subtitles.html:6
 msgid "Upload Subtitles"
-msgstr ""
+msgstr "Unggah Teks Film"
 
 #: templates/videos/_upload_subtitles.html:10
 msgid ""
@@ -6803,7 +7405,7 @@ msgstr ""
 
 #: templates/videos/_upload_subtitles.html:22
 msgid "Video Language"
-msgstr ""
+msgstr "Bahasa Video"
 
 #: templates/videos/_upload_subtitles.html:24
 msgid "Translated from"
@@ -6812,26 +7414,28 @@ msgstr ""
 #: templates/videos/_upload_subtitles.html:28
 #, python-format
 msgid "This subtitle file is 100% complete"
-msgstr ""
+msgstr "Berkas subtitle telah selesai 100%"
 
 #: templates/videos/_upload_subtitles.html:30
 msgid "Upload"
-msgstr ""
+msgstr "Unggah"
 
 #: templates/videos/_upload_subtitles.html:44
 msgid ""
 "If you believe your subtitle file is compatible, <a href='mailto:"
 "feedback@universalsubtitles.org'>send it to us</a>"
 msgstr ""
+"Jika Anda yakin teks film Anda sesuai, <a href='mailto:"
+"feedback@universalsubtitles.org'>kirimkan kepada kami</a>"
 
 #: templates/videos/_video.html:23
 msgid "view"
 msgid_plural "views"
-msgstr[0] ""
+msgstr[0] "lihat"
 
 #: templates/videos/_video.html:26
 msgid "Added"
-msgstr ""
+msgstr "Telah ditambah"
 
 #: templates/videos/_video.html:33
 #, python-format
@@ -6847,7 +7451,7 @@ msgstr[0] ""
 
 #: templates/videos/_video_url_panel.html:6
 msgid "Add new URL"
-msgstr ""
+msgstr "Tambah surel baru"
 
 #: templates/videos/_video_url_panel.html:16
 #: templates/videos/_video_url_panel.html:109
@@ -6860,13 +7464,15 @@ msgstr ""
 
 #: templates/videos/_video_url_panel.html:44
 msgid "Learn more"
-msgstr ""
+msgstr "Pelajari lebih lanjut"
 
 #: templates/videos/_video_url_panel.html:46
 msgid ""
 "Multiple video URLs let you link multiple videos to a single set of "
 "subtitles. Some example uses:"
 msgstr ""
+"Surel video ganda memungkinkan Anda menghubungkan banyak video ke satu set "
+"teks film. Contoh penggunaan:"
 
 #: templates/videos/_video_url_panel.html:48
 msgid ""
@@ -6880,6 +7486,8 @@ msgid ""
 "You put your video on Youtube, Vimeo, Blip, and Dailymotion and you want the "
 "subtitles you make to work on all of those versions."
 msgstr ""
+"Anda memasang video Anda di Youtube, Vimeo, Blip atau Dailymotion dan Anda "
+"ingin teks film yang Anda buat bekerja pada semua versi tersebut."
 
 #: templates/videos/_video_url_panel.html:50
 msgid ""
@@ -6888,14 +7496,17 @@ msgid ""
 "add these URLs, our embed code will automatically fall back to whatever "
 "format is necessary for the browser."
 msgstr ""
+"Anda ingin menyimpan video dengan beragam versi ke beragam peramban (HTML5/"
+"Ogg bagi pengguna perangkat lunak gratis, atau HTML5/h264 bagi pengguna "
+"iPad)."
 
 #: templates/videos/_video_url_panel.html:52
 msgid "Tip: double check that there are no timing problems."
-msgstr ""
+msgstr "Tip: cek ulang bahwa tidak terjadi kesalahan penandaan waktu."
 
 #: templates/videos/_video_url_panel.html:59
 msgid "Add another URL for this video"
-msgstr ""
+msgstr "Tambah surel baru untuk video ini"
 
 #: templates/videos/_video_url_panel.html:61
 msgid ""
@@ -6906,7 +7517,7 @@ msgstr ""
 
 #: templates/videos/_video_url_panel.html:74
 msgid "Add"
-msgstr ""
+msgstr "Tambah"
 
 #: templates/videos/_video_url_panel.html:84
 msgid "You must be logged in to add a URL"
@@ -6914,18 +7525,21 @@ msgstr ""
 
 #: templates/videos/_video_url_panel.html:88
 msgid "Login"
-msgstr ""
+msgstr "Masuk"
 
 #: templates/videos/_video_url_panel.html:121
 #: templates/videos/_video_url_panel.html:141
 msgid "You are not authenticated"
-msgstr ""
+msgstr "Anda sah"
 
 #: templates/videos/_video_url_panel.html:130
 msgid ""
 "Delete this URL?  Warning: this cannot be undone. Only delete URLs for non-"
 "matching videos or videos where subtitles fail to display correctly."
 msgstr ""
+"Hapus surel ini? Peringatan: tidak dapat dilakukan. Hapuslah surel video "
+"yang lain atau video dengan terjemahan yang tidak bisa tampil dengan baik "
+"dan benar."
 
 #: templates/videos/_watch_page.html:13
 msgid "Rebuilding video index. Please try again a bit later"
@@ -6937,7 +7551,7 @@ msgstr ""
 
 #: templates/videos/actions_list.html:21
 msgid "There are no activities."
-msgstr ""
+msgstr "Tidak ada aktifitas."
 
 #: templates/videos/create.html:10
 msgid ""
@@ -6952,14 +7566,23 @@ msgid ""
 "\"\n"
 "        "
 msgstr ""
+"\n"
+"        \"Maaf, kami tidak dapat menemukan  video dari tautan yang Anda "
+"kirimkan.  Tautan\n"
+"        tidak kami kenali, atau mungkin Anda menautkan ke halaman\n"
+"        yang punya banyak video.  Coba masukkan tautan yang berbeda\n"
+"        ke video yang Anda inginkan.  Apabila Anda temukan kesalahan,\n"
+"        <a href=\"mailto:feedback@universalsubtitles.org\">silahkan "
+"menghubungi kami</a>!\"\n"
+"        "
 
 #: templates/videos/create.html:22
 msgid "Subtitle a Video"
-msgstr ""
+msgstr "Teks Film-kan Video"
 
 #: templates/videos/create.html:25
 msgid "Begin"
-msgstr ""
+msgstr "Mulai"
 
 #: templates/videos/create.html:28
 msgid ""
@@ -6973,27 +7596,27 @@ msgstr ""
 
 #: templates/videos/create.html:37
 msgid "for example"
-msgstr ""
+msgstr "sebagai contoh"
 
 #: templates/videos/create.html:45
 msgid "Automatically submit videos"
-msgstr ""
+msgstr "Kirim video secara otomatis"
 
 #: templates/videos/create.html:49
 msgid "Let's Go!"
-msgstr ""
+msgstr "Ayo!"
 
 #: templates/videos/create.html:55 templates/videos/create.html.py:65
 msgid "Or Submit Multiple Videos"
-msgstr ""
+msgstr "Atau Kirim Multi Video"
 
 #: templates/videos/diffing.html:41
 msgid "Subtitles will be rolled back to a previous version"
-msgstr ""
+msgstr "Teks film akan dikembalikan ke versi sebelumnya"
 
 #: templates/videos/diffing.html:47
 msgid "You need to log in to do that."
-msgstr ""
+msgstr "Anda harus masuk untuk melakukan hal itu"
 
 #: templates/videos/diffing.html:69
 #, python-format
@@ -7003,6 +7626,10 @@ msgid ""
 "(version_no)s)\n"
 "            "
 msgstr ""
+"\n"
+"            Sedang membandingkan revisi (#%(second_version_no)s) ke revisi (#"
+"%(version_no)s)\n"
+"            "
 
 #: templates/videos/diffing.html:73
 #, python-format
@@ -7012,14 +7639,18 @@ msgid ""
 "(#%(version_no)s)\n"
 "            "
 msgstr ""
+"\n"
+"            Sedang membandingkan revisi (#%(second_version_no)s) ke revisi "
+"yang baru (#%(version_no)s)\n"
+"            "
 
 #: templates/videos/diffing.html:92
 msgid "Revision History"
-msgstr ""
+msgstr "Riwayat Revisi"
 
 #: templates/videos/diffing.html:96
 msgid "Comparing Revision"
-msgstr ""
+msgstr "Membandingkan Perubahan"
 
 #: templates/videos/diffing.html:104 templates/videos/diffing.html.py:169
 #, python-format
@@ -7028,47 +7659,52 @@ msgid ""
 "            Revision #%(version_no)s by %(user)s\n"
 "            "
 msgstr ""
+"\n"
+"            Revisi #%(version_no)s oleh %(user)s\n"
+"            "
 
 #: templates/videos/diffing.html:118 templates/videos/diffing.html.py:185
 msgid "Roll back to version"
-msgstr ""
+msgstr "Kembali ke versi"
 
 #: templates/videos/diffing.html:126 templates/videos/diffing.html.py:192
-#: templates/videos/subtitle-view.html:210
+#: templates/videos/subtitle-view.html:212
 msgid "Title:"
 msgstr ""
 
 #: templates/videos/diffing.html:130 templates/videos/diffing.html.py:196
-#: templates/videos/subtitle-view.html:214
+#: templates/videos/subtitle-view.html:216
 msgid "Description:"
 msgstr ""
 
 #: templates/videos/diffing.html:156 templates/videos/diffing.html.py:223
-#: templates/videos/subtitle-view.html:234
+#: templates/videos/subtitle-view.html:236
 msgid "Not Synced"
-msgstr ""
+msgstr "Tidak Sinkron"
 
 #: templates/videos/email_base.html:94
 msgid "Don't send any more emails about this particular video."
-msgstr ""
+msgstr "Jangan kirimkan email lagi yang berhubungan dengan video ini."
 
 #: templates/videos/email_base.html:104
 msgid ""
 "To stop receiving these emails, go to your preferences page and uncheck "
 "\"notify me by email\":"
 msgstr ""
+"Untuk berhenti menerima email ini, kembali ke halaman pengaturan dan centang "
+"\"notify me by email\":"
 
 #: templates/videos/email_base.html:106
 msgid "My profile / preferences"
-msgstr ""
+msgstr "Profil saya / preferensi"
 
 #: templates/videos/email_friend.html:6
 msgid "Email this to a friend"
-msgstr ""
+msgstr "Email ke seorang teman"
 
 #: templates/videos/email_friend.html:10
 msgid "Send to Friend!"
-msgstr ""
+msgstr "Kirim ke Teman!"
 
 #: templates/videos/email_notification.html:9
 #, python-format
@@ -7085,6 +7721,17 @@ msgid ""
 "                %(time_change)s of the timing was changed.\n"
 "                "
 msgstr ""
+"\n"
+"                <b><a href=\"http://%(domain)s%(language_url)s\">terjemahan %"
+"(lang)s</a></b> \n"
+"                yang Anda lakukan untuk <b><a href=\"http://%(domain)s%"
+"(video_url)s\">%(v)s</a></b> \n"
+"                telah diubah oleh <b><a href=\"http://%(domain)s%(user_url)s"
+"\">%(u)s</a></b>. \n"
+"                Perubahan ini akan segera ditayangkan.  %(text_change)s teks "
+"dan\n"
+"                %(time_change)s waktu telah diubah.\n"
+"                "
 
 #: templates/videos/email_notification.html:17
 #, python-format
@@ -7099,15 +7746,24 @@ msgid ""
 "                %(time_change)s of the timing was changed.\n"
 "                "
 msgstr ""
+"\n"
+"                <b><a href=\"http://%(domain)s%(language_url)s\">terjemahan %"
+"(lang)s</a></b> \n"
+"                yang Anda lakukan untuk <b><a href=\"http://%(domain)s%"
+"(video_url)s\">%(v)s</a></b> \n"
+"                telah diubah. Perubahan ini akan segera ditayangkan. %"
+"(text_change)s teks dan \n"
+"                %(time_change)s waktu yang telah diubah.\n"
+"                "
 
 #: templates/videos/email_notification.html:27
 #: templates/videos/email_notification_non_editors.html:23
 msgid "Compare the new version to the last version"
-msgstr ""
+msgstr "Bandingkan versi terbaru dengan versi yang lama"
 
 #: templates/videos/email_notification.html:28
 msgid "Compare your work to the new version"
-msgstr ""
+msgstr "Bandingkan pekerjaan Anda dengan versi terbaru"
 
 #: templates/videos/email_notification.html:38
 #: templates/videos/email_notification.html:66
@@ -7116,7 +7772,7 @@ msgstr ""
 #: templates/videos/email_notification_non_editors.html:60
 #: templates/videos/email_notification_non_editors.html:88
 msgid "Old Text"
-msgstr ""
+msgstr "Teks Lama"
 
 #: templates/videos/email_notification.html:41
 #: templates/videos/email_notification_non_editors.html:35
@@ -7130,7 +7786,7 @@ msgstr ""
 #: templates/videos/email_notification_non_editors.html:66
 #: templates/videos/email_notification_non_editors.html:94
 msgid "New Text"
-msgstr ""
+msgstr "Teks Baru"
 
 #: templates/videos/email_notification.html:69
 #: templates/videos/email_notification_non_editors.html:63
@@ -7140,7 +7796,7 @@ msgstr ""
 #: templates/videos/email_notification.html:97
 #: templates/videos/email_notification_non_editors.html:91
 msgid "Changes to Subtitle Text"
-msgstr ""
+msgstr "Perubahan-perubahan yang ada pada Tulisan Teks Film"
 
 #: templates/videos/email_notification_non_editors.html:9
 #, python-format
@@ -7155,6 +7811,15 @@ msgid ""
 "the timing was changed.  \n"
 "                "
 msgstr ""
+"\n"
+"                <b><a href=\"http://%(domain)s%(language_url)s\">terjemahan %"
+"(lang)s</a></b> \n"
+"                video <b><a href=\"http://%(domain)s%(video_url)s\">%(v)s</"
+"a></b>\n"
+"                telah diubah oleh <b><a href=\"http://%(domain)s%(user_url)s"
+"\">%(u)s</a></b>. Perubahan ini akan segera ditayangkan. %(change_percent)s "
+"waktu telah diubah.  \n"
+"                "
 
 #: templates/videos/email_notification_non_editors.html:15
 #, python-format
@@ -7168,10 +7833,18 @@ msgid ""
 "(change_percent)s of the timing was changed.             \n"
 "                "
 msgstr ""
+"\n"
+"                <b><a href=\"http://%(domain)s%(language_url)s\">terjemahan %"
+"(lang)s</a></b> \n"
+"                video <b><a href=\"http://%(domain)s%(video_url)s\">%(v)s</"
+"a></b>\n"
+"                telah diubah. Perubahan ini akan segera ditayangkan. %"
+"(change_percent)s waktu telah diubah.             \n"
+"                "
 
 #: templates/videos/email_start_notification.html:7
 msgid "Dear"
-msgstr ""
+msgstr "Dear"
 
 #: templates/videos/email_start_notification.html:8
 #, python-format
@@ -7188,18 +7861,20 @@ msgid ""
 "You can review the translation and thank them for their contribution on this "
 "page:"
 msgstr ""
+"Anda bisa mengulas terjemahan yang ada dan berterimakasih atas kontribusi "
+"mereka melalui:"
 
 #: templates/videos/email_start_notification.html:14
 msgid "Translation homepage"
-msgstr ""
+msgstr "Beranda terjemahan"
 
 #: templates/videos/email_start_notification.html:17
 msgid "Thanks for your great work,"
-msgstr ""
+msgstr "Terimakasih atas kerja keras anda,"
 
 #: templates/videos/email_start_notification.html:19
 msgid "Sincerely"
-msgstr ""
+msgstr "Hormat kami"
 
 #: templates/videos/email_start_notification.html:20
 msgid "The Amara Community"
@@ -7207,27 +7882,27 @@ msgstr ""
 
 #: templates/videos/email_title_changed.html:7
 msgid "The title of the video"
-msgstr ""
+msgstr "Judul video"
 
 #: templates/videos/email_title_changed.html:10
 msgid "has been changed by"
-msgstr ""
+msgstr "telah diubah oleh"
 
 #: templates/videos/email_title_changed.html:13
 msgid "has been changed"
-msgstr ""
+msgstr "telah diubah"
 
 #: templates/videos/email_title_changed.html:16
 msgid "The new title is"
-msgstr ""
+msgstr "Judul terbaru adalah"
 
 #: templates/videos/email_title_changed.html:18
 msgid "If this is incorrect, go to "
-msgstr ""
+msgstr "Kalau tidak benar, lihat ke "
 
 #: templates/videos/email_title_changed.html:19
 msgid "the video page"
-msgstr ""
+msgstr "halaman video"
 
 #: templates/videos/email_title_changed.html:20
 msgid ""
@@ -7236,153 +7911,159 @@ msgid ""
 "click 'Help' in the main menu to submit a support request.\n"
 "    "
 msgstr ""
+"\n"
+"    dan klik 'sunting judul' untuk memperbaruinya. Jika Anda tidak bisa "
+"menyunting judul, klik 'Bantuan' di menu utama untuk meminta bantuan.\n"
+"    "
 
 #: templates/videos/email_video_url_add.html:7
 msgid "A new video URL for"
-msgstr ""
+msgstr "Surel terbaru video untuk"
 
 #: templates/videos/email_video_url_add.html:9
 msgid "was submitted by"
-msgstr ""
+msgstr "telah dikirimkan oleh"
 
 #: templates/videos/email_video_url_add.html:13
 msgid "Anonymous"
-msgstr ""
+msgstr "Tanpa nama"
 
 #: templates/videos/email_video_url_add.html:15
 msgid ""
 "Please check to make sure the new URL features the exact same video, and "
 "that subtitle timing is correct:"
 msgstr ""
+"Silahkan periksa ulang untuk memastikan surel terbaru mengarah ke video yang "
+"sama, dan penandaan waktunya telah benar:"
 
 #: templates/videos/email_video_url_add.html:21
 msgid "View the new video URL"
-msgstr ""
+msgstr "Lihat surel terbaru video"
 
 #: templates/videos/email_video_url_add.html:22
 msgid "View the original video URL"
-msgstr ""
+msgstr "Lihat surel asli video"
 
 #: templates/videos/featured_videos.html:32
 #: templates/videos/popular_videos.html:55 templates/videos/watch.html:18
 msgid "Watch Subtitled Videos"
-msgstr ""
+msgstr "Tonton Video Teks Film"
 
 #: templates/videos/latest_videos.html:20 templates/videos/volunteer.html:114
 #: templates/videos/volunteer_latest.html:21 templates/videos/watch.html:107
 msgid "Latest Videos"
-msgstr ""
+msgstr "Video Terakhir"
 
 #: templates/videos/popular_videos.html:59 templates/videos/volunteer.html:59
 #: templates/videos/watch.html:41
 msgid "Popular Videos"
-msgstr ""
+msgstr "Video Populer"
 
 #: templates/videos/popular_videos.html:61
 #: templates/videos/popular_videos.html:65 templates/videos/volunteer.html:61
 #: templates/videos/volunteer.html.py:65 templates/videos/watch.html:43
 #: templates/videos/watch.html.py:47
 msgid "This Week"
-msgstr ""
+msgstr "Minggu Ini"
 
 #: templates/videos/popular_videos.html:64 templates/videos/volunteer.html:64
 #: templates/videos/watch.html:46
 msgid "Today"
-msgstr ""
+msgstr "Hari Ini"
 
 #: templates/videos/popular_videos.html:66 templates/videos/volunteer.html:66
 #: templates/videos/watch.html:48
 msgid "This Month"
-msgstr ""
+msgstr "Bulan Ini"
 
 #: templates/videos/popular_videos.html:67 templates/videos/volunteer.html:67
 #: templates/videos/watch.html:49
 msgid "This Year"
-msgstr ""
+msgstr "Tahun Ini"
 
 #: templates/videos/popular_videos.html:68 templates/videos/volunteer.html:68
 #: templates/videos/watch.html:50
 msgid "All Time"
-msgstr ""
+msgstr "Semua Waktu"
 
 #: templates/videos/stop_notification.html:9
 #, python-format
 msgid "Notifications to %(u)s stopped for %(video)s."
-msgstr ""
+msgstr "Pemberitahuna ke %(u)s telah menghentikan %(video)s."
 
 #: templates/videos/subtitle-view.html:22
 msgid "Select two revisions to compare, please"
-msgstr ""
+msgstr "Silahkan memilih dua revisi untuk membandingkan"
 
 #: templates/videos/subtitle-view.html:43
 #: templates/videos/subtitle-view.html:45
 msgid "with"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:96 templates/videos/video-view.html:83
+#: templates/videos/subtitle-view.html:98 templates/videos/video-view.html:83
 msgid "View"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:102 templates/videos/video-view.html:89
+#: templates/videos/subtitle-view.html:104 templates/videos/video-view.html:89
 msgid "Follower"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:108 templates/videos/video-view.html:95
+#: templates/videos/subtitle-view.html:110 templates/videos/video-view.html:95
 msgid "Comment"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:114
+#: templates/videos/subtitle-view.html:116
 msgid "Line"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:124
+#: templates/videos/subtitle-view.html:126
 #: templates/videos/video-view.html:111
 msgid "View Subtitles"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:148
-#: templates/videos/subtitle-view.html:285
+#: templates/videos/subtitle-view.html:150
+#: templates/videos/subtitle-view.html:287
 #: templates/videos/video-view.html:145 templates/videos/video-view.html:190
 msgid "Comments"
-msgstr ""
+msgstr "Komentar"
 
-#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:151
 msgid "Revisions"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:154
-#: templates/videos/subtitle-view.html:388
+#: templates/videos/subtitle-view.html:156
+#: templates/videos/subtitle-view.html:390
 msgid "Unpublish"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:157
-#: templates/videos/subtitle-view.html:403
+#: templates/videos/subtitle-view.html:159
+#: templates/videos/subtitle-view.html:405
 msgid "Edit Subtitles"
-msgstr ""
+msgstr "Sunting Teks Film"
 
-#: templates/videos/subtitle-view.html:164
+#: templates/videos/subtitle-view.html:166
 msgid "Download"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:192
+#: templates/videos/subtitle-view.html:194
 msgid "Draft only"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:195
+#: templates/videos/subtitle-view.html:197
 msgid "translated from"
-msgstr ""
+msgstr "diterjemahkan dari"
 
-#: templates/videos/subtitle-view.html:199
-#: templates/videos/subtitle-view.html:308
+#: templates/videos/subtitle-view.html:201
 #: templates/videos/subtitle-view.html:310
+#: templates/videos/subtitle-view.html:312
 msgid "Revision"
-msgstr ""
+msgstr "Revisi"
 
-#: templates/videos/subtitle-view.html:200
+#: templates/videos/subtitle-view.html:202
 msgid "created"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:246
+#: templates/videos/subtitle-view.html:248
 msgid ""
 "\n"
 "                            The most recent revision for this language is "
@@ -7391,27 +8072,27 @@ msgid ""
 "                            "
 msgstr ""
 
-#: templates/videos/subtitle-view.html:250
+#: templates/videos/subtitle-view.html:252
 msgid "View revision history"
-msgstr ""
+msgstr "Lihat riwayat perubahan"
 
-#: templates/videos/subtitle-view.html:255
+#: templates/videos/subtitle-view.html:257
 msgid "These subtitles are in progress."
 msgstr ""
 
-#: templates/videos/subtitle-view.html:256
+#: templates/videos/subtitle-view.html:258
 msgid "Make more?"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:258
+#: templates/videos/subtitle-view.html:260
 msgid "No subtitles available yet."
 msgstr ""
 
-#: templates/videos/subtitle-view.html:259
+#: templates/videos/subtitle-view.html:261
 msgid "Make some!"
-msgstr ""
+msgstr "Buat baru!"
 
-#: templates/videos/subtitle-view.html:267
+#: templates/videos/subtitle-view.html:269
 msgid ""
 "\n"
 "                            This language contains subtitles that are still "
@@ -7419,7 +8100,7 @@ msgid ""
 "                        "
 msgstr ""
 
-#: templates/videos/subtitle-view.html:273
+#: templates/videos/subtitle-view.html:275
 msgid ""
 "\n"
 "                            No subtitles have been added for this language "
@@ -7427,88 +8108,91 @@ msgid ""
 "                        "
 msgstr ""
 
-#: templates/videos/subtitle-view.html:283
+#: templates/videos/subtitle-view.html:285
 #: templates/videos/video-view.html:188
 msgid "Leave a comment"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:292
+#: templates/videos/subtitle-view.html:294
 msgid "Compare Revisions"
-msgstr ""
+msgstr "Perbandingan Revisi"
 
-#: templates/videos/subtitle-view.html:324
+#: templates/videos/subtitle-view.html:326
 msgid "Timing"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:325
+#: templates/videos/subtitle-view.html:327
 msgid "Text"
-msgstr ""
+msgstr "Teks"
 
-#: templates/videos/subtitle-view.html:331
+#: templates/videos/subtitle-view.html:333
 msgid "No subtitles for this language."
-msgstr ""
+msgstr "Tidak ada teks film untuk bahasa ini."
 
-#: templates/videos/subtitle-view.html:340
+#: templates/videos/subtitle-view.html:342
 msgid "Roll back to this version"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:353
+#: templates/videos/subtitle-view.html:355
 msgid "Unpublish subtitles"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:361
+#: templates/videos/subtitle-view.html:363
 msgid "This version only"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:365
+#: templates/videos/subtitle-view.html:367
 msgid "This entire language and all dependent languages"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:367
+#: templates/videos/subtitle-view.html:369
 msgid ""
 "Note: Any dependent languages will be unavailable until this language is "
 "reapproved."
 msgstr ""
 
-#: templates/videos/subtitle-view.html:376
+#: templates/videos/subtitle-view.html:378
 msgid ""
 "Yes, delete these subtitles instead of sending them back for editing/review"
 msgstr ""
 
 #: templates/videos/test_form_page.html:18
 msgid "Your Email"
-msgstr ""
+msgstr "Email Anda"
 
 #: templates/videos/test_form_page.html:23
 msgid "Task 1"
-msgstr ""
+msgstr "Tugas 1"
 
 #: templates/videos/test_form_page.html:24
 msgid "Try creating subtitles on the following"
-msgstr ""
+msgstr "Buat teks film untuk"
 
 #: templates/videos/test_form_page.html:25
 #: templates/videos/test_form_page.html:31
 #: templates/videos/test_form_page.html:37
 #: templates/videos/test_form_page.html:57
 msgid "how was it? were the instructions clear? what would improve it?"
-msgstr ""
+msgstr "bagaimana? apakah petunjuknya jelas? bagaimana hasilnya?"
 
 #: templates/videos/test_form_page.html:29
 msgid "Task 2"
-msgstr ""
+msgstr "Tugas 2"
 
 #: templates/videos/test_form_page.html:30
 msgid "Try fixing errors on the video (or just get back in and make an edit)"
 msgstr ""
+"Mencoba memperbaiki kesalahan pada video (atau baru kembali dan membuat "
+"penyuntingan)"
 
 #: templates/videos/test_form_page.html:35
 msgid "Task 3"
-msgstr ""
+msgstr "Tugas 3"
 
 #: templates/videos/test_form_page.html:36
 msgid "Translate the video (fake it if you’re not bilingual!)"
 msgstr ""
+"Terjemahkan video (palsukan jika Anda tidak berbicara dalam dua bahasa!)"
 
 #: templates/videos/test_form_page.html:42
 msgid "optional: get updates about Amara"
@@ -7516,23 +8200,24 @@ msgstr ""
 
 #: templates/videos/test_form_page.html:45
 msgid "Submit!"
-msgstr ""
+msgstr "Kirim!"
 
 #: templates/videos/test_form_page.html:67
 msgid "Simple Instructions"
-msgstr ""
+msgstr "Petunjuk Sederhana"
 
 #: templates/videos/test_form_page.html:73
 msgid "All tasks 2 & 3 are optional (but we recommend trying them all)."
 msgstr ""
+"Tugas 2 & 3 adalah pilihan (tapi kami merekomendasikan untuk mencobanya)."
 
 #: templates/videos/test_form_page.html:74
 msgid "That’s it!"
-msgstr ""
+msgstr "Nah!"
 
 #: templates/videos/video-view.html:22
 msgid "Enter non-empty title"
-msgstr ""
+msgstr "Masukkan judul"
 
 #: templates/videos/video-view.html:60
 msgid ""
@@ -7580,45 +8265,45 @@ msgstr ""
 
 #: templates/videos/video-view.html:195
 msgid "View all activity"
-msgstr ""
+msgstr "Lihat semua aktifitas"
 
 #: templates/videos/volunteer.html:18
 msgid "Contribute Subtitles"
-msgstr ""
+msgstr "Kontribusikan Teks Film"
 
 #: templates/videos/volunteer.html:23 templates/videos/watch.html:23
 msgid "More Featured Videos"
-msgstr ""
+msgstr "Video Fitur Lainnya"
 
 #: templates/videos/volunteer.html:38
 msgid "More Requested Videos"
-msgstr ""
+msgstr "Video-video Yang Diminta Lainnya"
 
 #: templates/videos/volunteer.html:40
 #: templates/videos/volunteer_requested.html:22
 msgid "Requested Videos"
-msgstr ""
+msgstr "Video Yang Diminta"
 
 #: templates/videos/volunteer.html:56 templates/videos/watch.html:38
 msgid "More Popular Videos"
-msgstr ""
+msgstr "Video Populer Lainnya"
 
 #: templates/videos/volunteer.html:112 templates/videos/watch.html:105
 msgid "More Recent Videos"
-msgstr ""
+msgstr "Video Terbaru Lainnya"
 
 #: templates/videos/volunteer_requested.html:20
 msgid "Help Subtitle Videos"
-msgstr ""
+msgstr "Bantuan Video Subtitle"
 
 #: utils/ajaxmiddleware.py:27
 #, python-format
 msgid "Required parameter missing: %s"
-msgstr ""
+msgstr "Parameter dibutuhkan: %s"
 
 #: utils/ajaxmiddleware.py:70
 msgid "Internal error"
-msgstr ""
+msgstr "Terjadi kesalahan internal"
 
 #: utils/validators.py:13
 #, python-format
@@ -7626,29 +8311,33 @@ msgid ""
 "Please keep filesize under %(required_size)s. Current filesize %"
 "(current_size)s"
 msgstr ""
+"Besar ukuran berkas yang diperbolehkan %(required_size)s. Besar ukuran "
+"berkas saat ini %(current_size)s"
 
 #: utils/forms/__init__.py:75
 msgid "Enter valid e-mail addresses separated by commas."
-msgstr ""
+msgstr "Masukkan alamat email yang berlaku dipisahkan dengan tanda koma."
 
 #: utils/forms/__init__.py:83
 msgid ""
 "Enter valid usernames separated by commas. Username can contain only a-z, A-"
 "Z and 0-9."
 msgstr ""
+"Masukkan nama pengguna yang berlaku dipisahkan dengan koma. Nama pengguna "
+"hanya dapat memiliki karakter a-z, A-Z and 0-9."
 
 #: utils/forms/unisub_video_form.py:62
 msgid "This URL does not contain video id."
-msgstr ""
+msgstr "Surel ini tidak mengandung id video"
 
 #: utils/forms/unisub_video_form.py:67
 msgid "Videos does not exist."
-msgstr ""
+msgstr "Video tidak ada."
 
 #: utils/forms/unisub_video_form.py:70
 msgid "Incorrect URL."
-msgstr ""
+msgstr "Surel salah."
 
 #: utils/templatetags/utils_tags.py:49
 msgid "more..."
-msgstr ""
+msgstr "selengkapnya..."

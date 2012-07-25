@@ -697,6 +697,8 @@ Fields
     * ``Approve``
 * ``version_no`` - Subtitle version number (required for ``Approve`` and
   ``Review`` tasks)
+* ``completed`` - ``null`` if the task hasn't been completed yet; a datetime
+  string it has
 
 An example response:
 
@@ -709,5 +711,71 @@ An example response:
         "priority": 1,
         "resource_uri": "/api2/partners/teams/all-star/tasks/3/",
         "type": "Subtitle",
-        "video_id": "Myn4j5OI7BxL"
+        "video_id": "Myn4j5OI7BxL",
+        "completed": "2012-07-18T14:08:07"
     }
+
+Activity resource
+~~~~~~~~~~~~~~~~~
+
+This resource is read-only.
+
+List activity items:
+
+.. http:get:: /api2/partners/activity/
+
+    :query team: Show only items related to a given team (team slug)
+    :query video: Show only items related to a given video (video id)
+    :query action_type: Show only items with a given action type (int, see below)
+    :query language: Show only items with a given language (language code)
+
+Activity types:
+
+1.  Add video
+2.  Change title
+3.  Comment
+4.  Add version
+5.  Add video URL
+6.  Add translation
+7.  Subtitle request
+8.  Approve version
+9.  Member joined
+10. Reject version
+11. Member left
+12. Review version
+13. Accept version
+14. Decline version
+15. Delete video
+
+Activity item detail:
+
+.. http:get:: /api2/partners/activity/[activity-id]/
+
+Example response:
+
+.. code-block:: json
+
+    {
+        "action_type": 1,
+        "comment": null,
+        "created": "2012-07-12T07:02:19",
+        "id": "1339",
+        "language": "en",
+        "new_video_title": "",
+        "resource_uri": "/api2/partners/activity/1339/",
+        "user": "test-user"
+    }
+
+Message Resource
+~~~~~~~~~~~~~~~~
+
+The message resource allows you to send messages to user and teams.
+
+.. http:post:: /api2/partners/message/
+
+    :form subject: Subject of the message
+    :form content: Content of the message
+    :form user: Recipient's username
+    :form team: Team's slug
+
+You can only send the ``user`` parameter or the ``team`` parameter at once.

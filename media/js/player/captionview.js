@@ -115,6 +115,10 @@ unisubs.player.CaptionView.breakLines = function (text, opt_charsPerLine, opt_ma
     }
     // the user might have forced line breaks, we should respect that
 
+    // Double newlines to force line breaks.
+    // No idea why.
+    text = text.replace('\n', '\n\n');
+
     var lines = [];
     var currentLine  = [];
         charsOnCurrentLine = 0,
@@ -170,9 +174,9 @@ unisubs.player.CaptionView.prototype.setCaptionText = function(text) {
         // displaying subtitles.  We should remove this once we have pluginable
         // popcorn set up.
         if (unisubs.caption_display_mode == 'n') {
-            text = unisubs.player.CaptionView.breakLines(text, 42);
+            text = unisubs.player.CaptionView.breakLines(text, 32);
         } else {
-            text = goog.string.newLineToBr(goog.string.htmlEscape(text));
+            text = goog.string.newLineToBr(text);
         }
         // convert to markdown after text layout has been done
         // as to not inflate char count:

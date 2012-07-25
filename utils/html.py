@@ -16,10 +16,10 @@
 # along with this program.  If not, see
 # http://www.gnu.org/licenses/agpl-3.0.html.
 
-import htmllib
+import htmllib, formatter
 
 def unescape(s):
-    p = htmllib.HTMLParser(None)
+    p = htmllib.HTMLParser(formatter.NullFormatter() )
     # we need to preserve line breaks, nofill makes sure we don't
     # loose them
     p.nofill = True

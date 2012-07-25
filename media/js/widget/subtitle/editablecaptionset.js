@@ -54,9 +54,13 @@ unisubs.subtitle.EditableCaptionSet = function(existingJsonCaptions, opt_complet
         this.captions_[i].setPreviousCaption(this.captions_[i - 1]);
     }
     this.completed = opt_completed;
+
     this.title = opt_title;
-    
     this.description = opt_description;
+
+    this.originalTitle = opt_title;
+    this.originalDescription = opt_description;
+
     this.forkedDuringEdits_ = !!opt_forkedDuringEdits;
     this.languageName = opt_languageName;
     this.languageIsRTL = opt_languageIsRTL;
@@ -310,10 +314,14 @@ unisubs.subtitle.EditableCaptionSet.CaptionEvent = function(type, caption) {
  * except for the last one, whose end time (only) can be undefined.
  */
 unisubs.subtitle.EditableCaptionSet.prototype.needsSync = function() {
-    return goog.array.some(goog.array.slice(this.captions_, 0, -1), function(x){ 
-        return x.needsSync();
-    }) || this.captions_[this.captions_.length -1].getStartTime() == 
-        unisubs.subtitle.EditableCaption.TIME_UNDEFINED;
+    if(this.captions_.length == 0){
+        return false;
+    } else {
+        return goog.array.some(goog.array.slice(this.captions_, 0, -1), function(x){ 
+            return x.needsSync();
+        }) || this.captions_[this.captions_.length -1].getStartTime() == 
+            unisubs.subtitle.EditableCaption.TIME_UNDEFINED;
+    }
 };
 
 unisubs.subtitle.EditableCaptionSet.prototype.fork = function(originalSubtitleState) {
@@ -343,4 +351,12 @@ unisubs.subtitle.EditableCaptionSet.prototype.makeMap = function() {
             map[c.getCaptionID()] = c;
         });
     return map;
+};
+
+unisubs.subtitle.EditableCaptionSet.prototype.hasTitleChanged = function() {
+    return this.originalTitle !== this.title;
+};
+
+unisubs.subtitle.EditableCaptionSet.prototype.hasDescriptionChanged = function() {
+    return this.originalDescription !== this.description;
 };

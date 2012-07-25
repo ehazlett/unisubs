@@ -45,6 +45,7 @@ unisubs.Dialog = function(videoSource) {
     this.idleTimer_.start();
     this.minutesIdle_ = 0;
     this.ignoreLock_ = unisubs.mode === 'review';
+    this.forceSave_ = false;
 };
 
 goog.inherits(unisubs.Dialog, goog.ui.Dialog);
@@ -263,6 +264,18 @@ unisubs.Dialog.prototype.showEmptySubsDialog = function() {
     dialog.setVisible(true);
 
 }
+
+unisubs.Dialog.prototype.showTitleDescriptionChangedDialog = function(closeAfterSave, saveForLater){
+    var that = this;
+    var dialog = new unisubs.widget.ConfirmDialog("You haven't entered any subtitles!",
+            "But you set the video's title/description. Want to save it anyway?", 
+            function(){
+                that.forceSave_ = true;
+                that.saveWork(closeAfterSave, saveForLater);
+            });
+    dialog.setVisible(true);
+};
+
 unisubs.Dialog.prototype.showSaveWorkDialog_ = function() {
     var that = this;
     var unsavedWarning = new unisubs.UnsavedWarning(function(submit) {

@@ -197,9 +197,9 @@ def _create_env(username, hosts, hostnames_squid_cache, s3_bucket,
     env.user = username
     env.web_hosts = hosts
     env.hosts = []
-    env.deploy_lock = '/tmp/.unisubs_deploy'
     env.hostnames_squid_cache = hostnames_squid_cache
     env.s3_bucket = s3_bucket
+    env.deploy_lock = '/tmp/.unisubs_deploy_dev'.format(git_branch)
     env.web_dir = web_dir or '/var/www/{0}'.format(installation_dir)
     env.static_dir = static_dir
     env.installation_name = name
@@ -476,8 +476,21 @@ def remove_pip_package(package_egg_name):
     with Output("Removing pip package '{0}'".format(package_egg_name)):
         _execute_on_all_hosts(lambda dir: _remove_pip_package(dir, package_egg_name))
 
-
 def _update_environment(base_dir, flags=''):
+    with cd(os.path.join(base_dir, 'unisubs', 'deploy')):
+        _git_pull()
+        run('export PIP_REQUIRE_VIRTUALENV=true')
+        # see http://lincolnloop.com/blog/2010/jul/1/automated-no-prompt-deployment-pip/
+        run('yes i | {0}/env/bin/pip install {1} -r requirements.txt'.format(base_dir, flags), pty=True)
+        #_clear_permissions(os.path.join(base_dir, 'env'))
+
+def _update_environment_parallel(base_dir, flags=''):
+    """
+    This is the new way to build the virtualenv ; it will completely re-build
+    each time.  However, this must also be done only when parallel tasks
+    are implemented as this takes a long time to run on staging and production.
+
+    """
     with cd(os.path.join(base_dir, 'unisubs', 'deploy')):
         _git_pull()
         env_dir = '{0}/env'.format(base_dir)
@@ -523,9 +536,9 @@ def clear_permissions():
 def _git_pull():
     run('git checkout --force')
     run('git pull --ff-only')
-    #run('chgrp pcf-web -R .git 2> /dev/null; /bin/true')
-    #run('chmod g+w -R .git 2> /dev/null; /bin/true')
-    #_clear_permissions('.')
+    run('chgrp pcf-web -R .git 2> /dev/null; /bin/true')
+    run('chmod g+w -R .git 2> /dev/null; /bin/true')
+    _clear_permissions('.')
 
 def _git_checkout(commit, as_sudo=False):
     cmd = run
@@ -533,9 +546,9 @@ def _git_checkout(commit, as_sudo=False):
         cmd = sudo
     cmd('git fetch')
     cmd('git checkout --force %s' % commit)
-    #cmd('chgrp pcf-web -R .git 2> /dev/null; /bin/true')
-    #cmd('chmod g+w -R .git 2> /dev/null; /bin/true')
-    #_clear_permissions('.')
+    cmd('chgrp pcf-web -R .git 2> /dev/null; /bin/true')
+    cmd('chmod g+w -R .git 2> /dev/null; /bin/true')
+    _clear_permissions('.')
 
 def _git_checkout_branch_and_reset(commit, branch='master', as_sudo=False):
     cmd = run
@@ -544,9 +557,9 @@ def _git_checkout_branch_and_reset(commit, branch='master', as_sudo=False):
     cmd('git fetch')
     cmd('git checkout %s' % branch)
     cmd('git reset --hard %s' % commit)
-    #cmd('chgrp pcf-web -R .git 2> /dev/null; /bin/true')
-    #cmd('chmod g+w -R .git 2> /dev/null; /bin/true')
-    #_clear_permissions('.')
+    cmd('chgrp pcf-web -R .git 2> /dev/null; /bin/true')
+    cmd('chmod g+w -R .git 2> /dev/null; /bin/true')
+    _clear_permissions('.')
 
 
 def _get_optional_repo_version(dir, repo):
@@ -616,7 +629,7 @@ def update_integration():
     with Output("Updating nested unisubs-integration repositories"):
         _execute_on_all_hosts(_update_integration)
 
-def _notify(subj, msg, audience='sysadmin@pculture.org ehazlett@pculture.org'):
+def _notify(subj, msg, audience='ehazlett@pculture.org'):
     mail_from_host = 'pcf-us-dev.pculture.org:2191'
 
     old_host = env.host_string
@@ -830,7 +843,8 @@ def _update_static(dir, compilation_level):
         media_dir = '{0}/unisubs/media/'.format(dir)
         python_exe = '{0}/env/bin/python'.format(dir)
         _git_pull()
-        #_clear_permissions(media_dir)
+        _update_integration(dir)
+        _clear_permissions(media_dir)
         run('{0} manage.py  compile_media --compilation-level={1} --settings=unisubs_settings'.format(python_exe, compilation_level))
 
 def _save_embedjs_on_app_servers():

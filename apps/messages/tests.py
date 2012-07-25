@@ -30,7 +30,7 @@ from apps.messages.models import Message
 from apps.messages import tasks as notifier
 
 from teams.models import Team, TeamMember, Application, Workflow,\
-     TeamVideo, Task
+     TeamVideo, Task, Setting, Invite
 from teams.forms import InviteForm
 from videos.models import Action, Video, SubtitleVersion, SubtitleLanguage, \
      Subtitle
@@ -398,3 +398,32 @@ class MessageTest(TestCase):
         m = mail.outbox[0]
         self.assertTrue(to_user.email in m.to)
         
+
+    def test_messages_remain_after_team_membership(self):
+        # Here's the scenario:
+        # User is invited to a team
+        # - User accepts invitation
+        # - Message for the invitation gets deleted -> wrong!
+        user = User.objects.filter(notify_by_message=True)[0]
+        owner = User.objects.filter(notify_by_message=True)[1]
+        team = Team.objects.create(name='test-team', slug='test-team', membership_policy=Team.APPLICATION)
+
+        invite_form = InviteForm(team, owner, {
+            'user_id': user.pk,
+            'message': 'Subtitle ALL the things!',
+            'role':'contributor',
+        })
+        invite_form.is_valid()
+        self.assertFalse(invite_form.errors)
+        self.assertEquals(Message.objects.for_user(user).count(), 0)
+        invite = invite_form.save()
+        # user has the invitation message on their inbox now
+        self.assertEquals(Message.objects.for_user(user).count(), 1)
+        invite_message = Message.objects.for_user(user)[0]
+        # now user accepts invite
+        invite.accept()
+        # he should be a team memebr
+        self.assertTrue(team.members.filter(user=user).exists())
+        # message should be still on their inbos
+        self.assertIn(invite_message, Message.objects.for_user(user))
+

@@ -75,6 +75,17 @@
     width: 100%;
 }
 
+div.amara-group {
+    *zoom: 1;
+
+    &:before, &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+    &:after {
+        clear: both;
+    }
+}
 div.amara-embed {
     div.amara-container {
         div.amara-bar {
@@ -150,6 +161,45 @@ div.amara-embed {
                         }
                     }
                 }
+            }
+        }
+        div.amara-transcript {
+            border: 1px solid #DADBDC;
+            display: none;
+            font: normal 12px Tahoma;
+            margin: 0 2px;
+
+            div.amara-transcript-header {
+                border-bottom: 1px solid #DADBDC;
+                color: #9A9B9C;
+                @include vertical-gradient(#E1E1E1, #FFF);
+
+                div.amara-transcript-header-left {
+                    float: left;
+                    padding: 12px;
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+                div.amara-transcript-header-right {
+                    float: right;
+
+                    form {
+                        margin: 0;
+
+                        input {
+                            background: transparent;
+                            border: 0;
+                            border-left: 1px solid #DADBDC;
+                            font: normal 12px Tahoma;
+                            padding: 12px;
+                        }
+                    }
+                }
+            }
+            div.amara-transcript-body {
+                padding: 40px 0 40px 155px;
             }
         }
     }

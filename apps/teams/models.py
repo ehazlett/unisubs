@@ -1089,23 +1089,19 @@ class Invite(models.Model):
                                                            user=self.user,
                                                            role=self.role)
         notifier.team_member_new.delay(member.pk)
-        self.delete()
 
     def deny(self):
         """Deny this invitation.
 
-        Currently just deletes itself, but it could be useful to send
-        a notification here in the future.
+        Could be useful to send a notification here in the future.
 
         """
-        self.delete()
+        pass
 
 
     def message_json_data(self, data, msg):
         data['can-reply'] = False
         return data
-
-models.signals.pre_delete.connect(Message.on_delete, Invite)
 
 
 # Workflows
@@ -1292,6 +1288,7 @@ class Workflow(models.Model):
     def allows_tasks(self):
         """Return wheter we can create tasks for a given workflow."""
         return self.approve_enabled or self.review_enabled
+
 
 # Tasks
 class TaskManager(models.Manager):

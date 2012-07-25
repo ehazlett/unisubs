@@ -80,5 +80,4 @@
   pk: 14
   fields:
     domain: staging.universalsubtitles.org
-    name: unisubsstaging
-    
+    name: unisubsnf

@@ -71,7 +71,7 @@ for(var b in a){var c=a[b];f.isFunction(c)||(c=this[a[b]]);if(!c)throw Error('Me
 e.data=JSON.stringify(b.toJSON());g.emulateJSON&&(e.contentType="application/x-www-form-urlencoded",e.data=e.data?{model:e.data}:{});if(g.emulateHTTP&&("PUT"===d||"DELETE"===d))g.emulateJSON&&(e.data._method=d),e.type="POST",e.beforeSend=function(a){a.setRequestHeader("X-HTTP-Method-Override",d)};"GET"!==e.type&&!g.emulateJSON&&(e.processData=!1);return i.ajax(f.extend(e,c))};g.wrapError=function(a,b,c){return function(d,e){e=d===b?e:d;a?a(b,e,c):b.trigger("error",b,e,c)}};var x=function(){},G=function(a,
 b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply(this,arguments)};f.extend(d,a);x.prototype=a.prototype;d.prototype=new x;b&&f.extend(d.prototype,b);c&&f.extend(d,c);d.prototype.constructor=d;d.__super__=a.prototype;return d},n=function(a,b){return!a||!a[b]?null:f.isFunction(a[b])?a[b]():a[b]},t=function(){throw Error('A "url" property or function must be specified');}}).call(this);
 /*
- * popcorn.js version bb8bf2c
+ * popcorn.js version 00f2411
  * http://popcornjs.org
  *
  * Copyright 2011, Mozilla Foundation
@@ -86,8 +86,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
       isSupported: false
     };
 
-    var methods = ( "removeInstance addInstance getInstanceById removeInstanceById " +
-          "forEach extend effects error guid sizeOf isArray nop position disable enable destroy" +
+    var methods = ( "byId forEach extend effects error guid sizeOf isArray nop position disable enable destroy" +
           "addTrackEvent removeTrackEvent getTrackEvents getTrackEvent getLastTrackEventId " +
           "timeUpdate plugin removePlugin compose effect xhr getJSONP getScript" ).split(/\s+/);
 
@@ -159,7 +158,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
   };
 
   //  Popcorn API version, automatically inserted via build system.
-  Popcorn.version = "bb8bf2c";
+  Popcorn.version = "00f2411";
 
   //  Boolean flag allowing a client to determine if Popcorn can be supported
   Popcorn.isSupported = true;
@@ -173,7 +172,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
 
     init: function( entity, options ) {
 
-      var matches,
+      var matches, nodeName,
           self = this;
 
       //  Supports Popcorn(function () { /../ })
@@ -232,13 +231,21 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
       //  Get media element by id or object reference
       this.media = matches || entity;
 
-      //  Create an audio or video element property reference
-      this[ ( this.media.nodeName && this.media.nodeName.toLowerCase() ) || "video" ] = this.media;
+      //  inner reference to this media element's nodeName string value
+      nodeName = ( this.media.nodeName && this.media.nodeName.toLowerCase() ) || "video";
 
-      //  Register new instance
-      Popcorn.instances.push( this );
+      //  Create an audio or video element property reference
+      this[ nodeName ] = this.media;
 
       this.options = options || {};
+
+      //  Resolve custom ID or default prefixed ID
+      this.id = this.options.id || Popcorn.guid( nodeName );
+
+      //  Throw if an attempt is made to use an ID that already exists
+      if ( Popcorn.byId( this.id ) ) {
+        throw new Error( "Popcorn.js Error: Cannot use duplicate ID (" + this.id + ")" );
+      }
 
       this.isDestroyed = false;
 
@@ -289,6 +296,9 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
           previousUpdateTime: -1
         }
       };
+
+      //  Register new instance
+      Popcorn.instances.push( this );
 
       //  function to fire when video is ready
       var isReady = function() {
@@ -390,6 +400,20 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
   //  Extend constructor prototype to instance prototype
   //  Allows chaining methods to instances
   Popcorn.p.init.prototype = Popcorn.p;
+
+  Popcorn.byId = function( str ) {
+    var instances = Popcorn.instances,
+        length = instances.length,
+        i = 0;
+
+    for ( ; i < length; i++ ) {
+      if ( instances[ i ].id === str ) {
+        return instances[ i ];
+      }
+    }
+
+    return null;
+  };
 
   Popcorn.forEach = function( obj, fn, context ) {
 
@@ -526,6 +550,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
     },
     destroy: function( instance ) {
       var events = instance.data.events,
+          trackEvents = instance.data.trackEvents,
           singleEvent, item, fn, plugin;
 
       //  Iterate through all events and remove them
@@ -536,6 +561,10 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
         }
         events[ item ] = null;
       }
+
+      // Remove all data.trackEvents #1178
+      trackEvents.byStart.length = 0;
+      trackEvents.byEnd.length = 0;
 
       // remove all plugins off the given instance
       for ( plugin in Popcorn.registryByName ) {
@@ -621,7 +650,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
 
     //  Rounded currentTime
     roundTime: function() {
-      return -~this.media.currentTime;
+      return Math.round( this.media.currentTime );
     },
 
     //  Attach an event to a single point in time
@@ -1688,7 +1717,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
       options._natives._setup && options._natives._setup.call( this, options );
 
       // Create new track event for this instance
-      Popcorn.addTrackEvent( this, Popcorn.extend( options, options ) );
+      Popcorn.addTrackEvent( this, options );
 
       //  Future support for plugin event definitions
       //  for all of the native events
@@ -2074,31 +2103,36 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
 
     var head = document.head || document.getElementsByTagName( "head" )[ 0 ] || document.documentElement,
       script = document.createElement( "script" ),
-      paramStr = url.split( "?" )[ 1 ],
       isFired = false,
       params = [],
-      callback, parts, callparam;
+      paramStr, callback, callparam;
 
-    if ( paramStr && !isScript ) {
-      params = paramStr.split( "&" );
-    }
+    if ( !isScript ) {
 
-    if ( params.length ) {
-      parts = params[ params.length - 1 ].split( "=" );
-    }
+      // is there a calback already in the url
+      callparam = url.match( /(callback=[^&]*)/ );
 
-    callback = params.length ? ( parts[ 1 ] ? parts[ 1 ] : parts[ 0 ]  ) : "jsonp";
+      if ( callparam ) {
 
-    if ( !paramStr && !isScript ) {
-      url += "?callback=" + callback;
-    }
+        // get the callback name
+        callback = Popcorn.guid( callparam[ 1 ].split( "=" )[ 1 ] );
 
-    if ( callback && !isScript ) {
+        // replace existing callback name with unique callback name
+        url = url.replace( /(callback=[^&]*)/, "callback=" + callback );
+      } else {
 
-      //  If a callback name already exists
-      if ( !!window[ callback ] ) {
-        //  Create a new unique callback name
-        callback = Popcorn.guid( callback );
+        callback = Popcorn.guid( "jsonp" );
+
+        // split on first question mark,
+        // this is to capture the query string
+        params = url.split( /\?(.+)?/ );
+
+        // rebuild url with callback
+        url = params[ 0 ] + "?";
+        if ( params[ 1 ] ) {
+          url += params[ 1 ] + "&";
+        }
+        url += "callback=" + callback;
       }
 
       //  Define the JSONP success callback globally
@@ -2107,9 +2141,6 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
         success && success( data );
         isFired = true;
       };
-
-      //  Replace callback param and callback name
-      url = url.replace( parts.join( "=" ), parts[ 0 ] + "=" + callback );
     }
 
     script.addEventListener( "load",  function() {
@@ -2697,7 +2728,10 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
         }
       } else {
 
-        basePlayer.dispatchEvent( "error" );
+        // Asynchronous so that users can catch this event
+        setTimeout( function() {
+          basePlayer.dispatchEvent( "error" );
+        }, 0 );
       }
 
       popcorn = new Popcorn.p.init( basePlayer, options );
@@ -3032,10 +3066,6 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
         }
 
         options._container.innerHTML  = attrib;
-
-        if ( !target && Popcorn.plugin.debug ) {
-          throw new Error( "target container doesn't exist" );
-        }
         target && target.appendChild( options._container );
       },
       /**
@@ -3075,13 +3105,13 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
     options:{
       start: {
        elem: "input",
-       type: "text",
-       label: "In"
+       type: "number",
+       label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
       nameofwork: {
         elem: "input",
@@ -3091,7 +3121,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
       nameofworkurl: {
         elem: "input",
         type: "url",
-        label: "Url of Work",
+        label: "URL of Work",
         optional: true
       },
       copyrightholder: {
@@ -3102,17 +3132,17 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
       copyrightholderurl: {
         elem: "input",
         type: "url",
-        label: "Copyright Holder Url",
+        label: "Copyright Holder URL",
         optional: true
       },
       license: {
         elem: "input",
         type: "text",
-        label: "License type"
+        label: "License Type"
        },
       licenseurl: {
         elem: "input",
-        type: "url",
+        type: "text",
         label: "License URL",
         optional: true
       },
@@ -3224,25 +3254,16 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
 
     if ( !options.onStart || typeof options.onStart !== "function" ) {
 
-      if ( Popcorn.plugin.debug ) {
-        throw new Error( "Popcorn Code Plugin Error: onStart must be a function." );
-      }
       options.onStart = Popcorn.nop;
     }
 
     if ( options.onEnd && typeof options.onEnd !== "function" ) {
 
-      if ( Popcorn.plugin.debug ) {
-        throw new Error( "Popcorn Code Plugin Error: onEnd  must be a function." );
-      }
       options.onEnd = undefined;
     }
 
     if ( options.onFrame && typeof options.onFrame !== "function" ) {
 
-      if ( Popcorn.plugin.debug ) {
-        throw new Error( "Popcorn Code Plugin Error: onFrame  must be a function." );
-      }
       options.onFrame = undefined;
     }
 
@@ -3277,13 +3298,13 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
     options: {
       start: {
        elem: "input",
-       type: "text",
-       label: "In"
+       type: "number",
+       label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
       onStart: {
         elem: "input",
@@ -3345,13 +3366,13 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
       options: {
         start: {
           elem: "input",
-          type: "text",
-          label: "In"
+          type: "number",
+          label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
-          label: "Out"
+          type: "number",
+          label: "End"
         },
         target: "documentcloud-container",
         width: {
@@ -3368,7 +3389,7 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
         },
         src: {
           elem: "input",
-          type: "text",
+          type: "url",
           label: "PDF URL",
           "default": "http://www.documentcloud.org/documents/70050-urbina-day-1-in-progress.html"
         },
@@ -3626,24 +3647,24 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
         type: {
           elem: "select",
           options: [ "LIKE", "LIKE-BOX", "ACTIVITY", "FACEPILE", "LIVE-STREAM", "SEND", "COMMENTS" ],
-          label: "Type"
+          label: "Plugin Type"
         },
         target: "facebook-container",
         start: {
           elem: "input",
-          type: "text",
-          label: "In"
+          type: "number",
+          label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
-          label: "Out"
+          type: "number",
+          label: "End"
         },
         // optional parameters:
         font: {
           elem: "input",
           type: "text",
-          label: "font",
+          label: "Font",
           optional: true
         },
         xid: {
@@ -3655,13 +3676,13 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
         href: {
           elem: "input",
           type: "url",
-          label: "Href",
+          label: "href",
           optional: true
         },
         site: {
           elem: "input",
           type: "url",
-          label:"Site",
+          label: "Site",
           optional: true
         },
         height: {
@@ -3707,32 +3728,32 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
         max_rows: {
           elem: "input",
           type: "number",
-          label: "Max_rows",
+          label: "Max Rows",
           "default": 1,
           optional: true
         },
         border_color: {
           elem: "input",
           type: "text",
-          label: "Border_color",
+          label: "Border Color",
           optional: true
         },
         event_app_id: {
           elem: "input",
           type: "text",
-          label: "Event_app_id",
+          label: "Event App Id",
           optional: true
         },
         colorscheme: {
           elem: "select",
           options: [ "light", "dark" ],
-          label: "Colorscheme",
+          label: "Color Scheme",
           optional: true
         },
         show_faces: {
           elem: "input",
           type: "checkbox",
-          label: "Showfaces",
+          label: "Show Faces",
           "default": false,
           optional: true
         },
@@ -3746,14 +3767,14 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
         always_post_to_friends: {
           elem: "input",
           type: "checkbox",
-          label: "Always_post_to_friends",
+          label: "Always post to Friends",
           "default": false,
           optional: true
         },
         num_posts: {
           elem: "input",
           type: "number",
-          label: "Number_of_Comments",
+          label: "Number of Comments",
           "default": 1,
           optional: true
         }
@@ -3763,7 +3784,7 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
     _setup: function( options ) {
 
       var target = document.getElementById( options.target ),
-          _type = options.type;
+          _type = options.type || "like";
 
       // facebook script requires a div named fb-root
       if ( !document.getElementById( "fb-root" ) ) {
@@ -3789,15 +3810,6 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
 
       // Lowercase to make value consistent no matter what user inputs
       _type = _type.toLowerCase();
-
-      var validType = function( type ) {
-        return ( [ "like", "like-box", "activity", "facepile", "live-stream", "send", "comments" ].indexOf( type ) > -1 );
-      };
-
-      // Checks if type is valid
-      if ( !validType( _type ) ) {
-        throw new Error( "Facebook plugin type was invalid." );
-      }
 
       options._container = document.createElement( "div" );
       options._container.id = "facebookdiv-" + Popcorn.guid();
@@ -3827,10 +3839,6 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
         }
       });
 
-      // Checks if the plugins target container exists
-      if ( !target && Popcorn.plugin.debug ) {
-        throw new Error( "Facebook target container doesn't exist" );
-      }
       target && target.appendChild( options._container );
     },
     /**
@@ -3924,11 +3932,6 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
     containerDiv.style.height = "100%";
     containerDiv.style.display = "none";
     idx++;
-
-    // ensure the target container the user chose exists
-    if ( !target && Popcorn.plugin.debug ) {
-      throw new Error( "flickr target container doesn't exist" );
-    }
 
     target && target.appendChild( containerDiv );
 
@@ -4036,18 +4039,18 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
     options: {
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "number",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
       userid: {
         elem: "input",
         type: "text",
-        label: "UserID",
+        label: "User ID",
         optional: true
       },
       tags: {
@@ -4064,7 +4067,7 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
       apikey: {
         elem: "input",
         type: "text",
-        label: "Api_key",
+        label: "API Key",
         optional: true
       },
       target: "flickr-container",
@@ -4142,13 +4145,13 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
       options: {
         start: {
           elem: "input",
-          type: "text",
-          label: "In"
+          type: "number",
+          label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
-          label: "Out"
+          type: "number",
+          label: "End"
         },
         text: {
           elem: "input",
@@ -4167,9 +4170,6 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
       options._container.style.display = "none";
       options._container.innerHTML  = options.text;
 
-      if ( !target ) {
-        throw new Error( "target container doesn't exist" );
-      }
       target.appendChild( options._container );
     },
 
@@ -4357,18 +4357,18 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
       options: {
         start: {
           elem: "input",
-          type: "text",
-          label: "In"
+          type: "number",
+          label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
-          label: "Out"
+          type: "number",
+          label: "End"
         },
         gmltag: {
           elem: "input",
           type: "text",
-          label: "GMLTag"
+          label: "GML Tag"
         },
         target: "gml-container"
       }
@@ -4386,9 +4386,6 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
       options.container.style.display = "none";
       options.container.setAttribute( "id", "canvas" + options.gmltag );
 
-      if ( !target && Popcorn.plugin.debug ) {
-        throw new Error( "target container doesn't exist" );
-      }
       target && target.appendChild( options.container );
 
       var scriptReady = function() {
@@ -4554,9 +4551,6 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
     newdiv.style.height = "100%";
     i++;
 
-    if ( !target && Popcorn.plugin.debug ) {
-      throw new Error( "target container doesn't exist" );
-    }
     target && target.appendChild( newdiv );
 
     initialize();
@@ -4596,32 +4590,32 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
     options: {
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "number",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
       target: "feed-container",
       url: {
         elem: "input",
         type: "url",
-        label: "url",
+        label: "Feed URL",
         "default": "http://planet.mozilla.org/rss20.xml"
       },
       title: {
         elem: "input",
         type: "text",
-        label: "title",
+        label: "Title",
         "default": "Planet Mozilla",
         optional: true
       },
       orientation: {
         elem: "select",
         options: [ "Vertical", "Horizontal" ],
-        label: "orientation",
+        label: "Orientation",
         "default": "Vertical",
         optional: true
       }
@@ -4770,10 +4764,6 @@ var googleCallback;
 
     i++;
 
-    // ensure the target container the user chose exists
-    if ( !target && Popcorn.plugin.debug ) {
-      throw new Error( "target container doesn't exist" );
-    }
     target && target.appendChild( newdiv );
 
     // ensure that google maps and its functions are loaded
@@ -4823,6 +4813,8 @@ var googleCallback;
         // ensure the map has been initialized in the setup function above
         var isMapSetup = function() {
           if ( map ) {
+            options._map = map;
+
             map.getDiv().style.display = "block";
             // reset the location and zoom just in case the user plaid with the map
             google.maps.event.trigger( map, "resize" );
@@ -4976,11 +4968,17 @@ var googleCallback;
                 }
               }
             }
+
+            if ( options.onmaploaded ) {
+              options.onmaploaded( options, map );
+            }
+
           } else {
             setTimeout(function () {
               isMapSetup();
             }, 13);
           }
+
         };
         isMapSetup();
       },
@@ -5004,6 +5002,8 @@ var googleCallback;
         // the map must be manually removed
         target && target.removeChild( newdiv );
         newdiv = map = location = null;
+
+        options._map = null;
       }
     };
   }, {
@@ -5016,19 +5016,19 @@ var googleCallback;
     options: {
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "start",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "start",
+        label: "End"
       },
       target: "map-container",
       type: {
         elem: "select",
         options: [ "ROADMAP", "SATELLITE", "STREETVIEW", "HYBRID", "TERRAIN", "STAMEN-WATERCOLOR", "STAMEN-TERRAIN", "STAMEN-TONER" ],
-        label: "Type",
+        label: "Map Type",
         optional: true
       },
       zoom: {
@@ -5168,31 +5168,32 @@ var googleCallback;
           start: {
             elem: "input",
             type: "number",
-            label: "In"
+            label: "Start"
           },
           end: {
             elem: "input",
             type: "number",
-            label: "Out"
+            label: "End"
+          },
+          src: {
+            elem: "input",
+            type: "url",
+            label: "Image URL",
+            "default": "http://mozillapopcorn.org/wp-content/themes/popcorn/images/for_developers.png"
           },
           href: {
             elem: "input",
             type: "url",
-            label: "anchor URL",
+            label: "Link",
             "default": "http://mozillapopcorn.org/wp-content/themes/popcorn/images/for_developers.png",
             optional: true
           },
           target: "image-container",
-          src: {
-            elem: "input",
-            type: "url",
-            label: "Source URL",
-            "default": "http://mozillapopcorn.org/wp-content/themes/popcorn/images/for_developers.png"
-          },
           text: {
             elem: "input",
             type: "text",
-            label: "Text",
+            label: "Caption",
+            "default": "Popcorn.js",
             optional: true
           }
         }
@@ -5206,10 +5207,6 @@ var googleCallback;
         options.anchor.style.textDecoration = "none";
         options.anchor.style.display = "none";
 
-        if ( !target && Popcorn.plugin.debug ) {
-          throw new Error( "target container doesn't exist" );
-        }
-
         // add the widget's div to the target div.
         // if target is <video> or <audio>, create a container and routinely 
         // update its size/position to be that of the media
@@ -5219,7 +5216,7 @@ var googleCallback;
             options.trackedContainer.element.appendChild( options.anchor );
           }
           else {
-            target.appendChild( options.anchor );
+            target && target.appendChild( options.anchor );
           }          
         }
 
@@ -5365,9 +5362,6 @@ var googleCallback;
 
         var target = document.getElementById( options.target );
 
-        if ( !target && Popcorn.plugin.debug ) {
-          throw new Error( "target container doesn't exist" );
-        }
         target && target.appendChild( options._container );
 
         if ( !_artists[ options.artist ] ) {
@@ -5418,13 +5412,13 @@ var googleCallback;
     options: {
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "number",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
       target: "lastfm-container",
       artist: {
@@ -5493,7 +5487,7 @@ var googleCallback;
         },
         url: {
           elem: "input",
-          type: "text",
+          type: "url",
           label: "URL"
         },
         apikey: {
@@ -5533,24 +5527,24 @@ var googleCallback;
         productid: {
           elem: "input",
           type: "text",
-          label: "productid",
+          label: "Product Id",
           optional: true
         },
         related: {
           elem: "input",
           type: "text",
-          label: "related",
+          label: "Related",
           optional: true
         },
         start: {
           elem: "input",
-          type: "text",
-          label: "In"
+          type: "number",
+          label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
-          label: "Out"
+          type: "number",
+          label: "End"
         },
 
         target: "linkedin-container"
@@ -5577,9 +5571,7 @@ var googleCallback;
       var errorMsg = function() {
         options._container = document.createElement( "p" );
         options._container.innerHTML = "Plugin requires a valid <a href='https://www.linkedin.com/secure/developer'>apikey</a>";
-        if ( !target && Popcorn.plugin.debug ) {
-          throw ( "target container doesn't exist" );
-        }
+
         target && target.appendChild( options._container );
       };
 
@@ -5648,9 +5640,6 @@ var googleCallback;
         setOptions[ options.type ] && setOptions[ options.type ]();
       }
 
-      if ( !target && Popcorn.plugin.debug ) {
-        throw new Error( "target container doesn't exist" );
-      }
       target && target.appendChild( options._container );
 
       options._container.style.display = "none";
@@ -5722,32 +5711,32 @@ var googleCallback;
         options:{
           start: {
             elem: "input",
-            type: "text",
-            label: "In"
+            type: "number",
+            label: "Start"
           },
           end: {
             elem: "input",
-            type: "text",
-            label: "Out"
+            type: "number",
+            label: "End"
           },
           target: "lowerthird-container",
           salutation : {
             elem: "input",
             type: "text",
-            label: "Text",
+            label: "Salutation",
             "default": "hello",
             optional: true
           },
           name: {
             elem: "input",
             type: "text",
-            label: "Text",
+            label: "Name",
             "default": "Popcorn.js"
           },
           role: {
             elem: "input",
             type: "text",
-            label: "Text",
+            label: "Role",
             "default": "JavaScript library",
             optional: true
           }
@@ -5779,9 +5768,7 @@ var googleCallback;
         // if a target is specified, use that
         if ( options.target && options.target !== "lowerthird-container" ) {
           options.container = document.createElement( "div" );
-          if ( !target && Popcorn.plugin.debug ) {
-            throw new Error( "target container doesn't exist" );
-          }
+
           target && target.appendChild( options.container );
         // use shared default container
         } else {
@@ -5880,12 +5867,12 @@ var googleCallback;
         target: "mediaspawner-container",
         start: {
           elem: "input",
-          type: "text",
+          type: "number",
           label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
+          type: "number",
           label: "End"
         },
         autoplay: {
@@ -5913,21 +5900,11 @@ var googleCallback;
       }
     },
     _setup: function( options ) {
-      var target = document.getElementById( options.target ),
+      var target = document.getElementById( options.target ) || {},
           mediaType,
           container,
           capContainer,
           regexResult;
-
-      // Check if mediaSource is passed and mediaType is NOT audio/video
-      if ( !options.source ) {
-        Popcorn.error( "Error. Source must be specified." );
-      }
-
-      // Check if target container exists
-      if ( !target ) {
-        Popcorn.error( "Target MediaSpawner container doesn't exist." );
-      }
 
       regexResult = urlRegex.exec( options.source );
       if ( regexResult ) {
@@ -5940,10 +5917,6 @@ var googleCallback;
       else {
         // if the regex didn't return anything we know it's an HTML5 source
         mediaType = "HTML5";
-      }
-
-      if ( mediaType === "vimeo" || mediaType === "soundcloud" ) {
-        Popcorn.error( "Vimeo and soundcloud are currently not supported by the MediaSpawner Plugin." );
       }
 
       // Store Reference to Type for use in end
@@ -6171,9 +6144,6 @@ var googleCallback;
         typeOfData = typeof options.data,
         target = document.getElementById( options.target );
 
-    if ( !target && Popcorn.plugin.debug ) {
-      throw new Error( "target container doesn't exist" );
-    }
     options.container = target || document.createElement( "div" );
 
     if ( typeOfTemplate === "function" ) {
@@ -6184,8 +6154,6 @@ var googleCallback;
       }
     } else if ( typeOfTemplate === "string" ) {
       template = options.template;
-    } else if ( Popcorn.plugin.debug ) {
-      throw new Error( "Mustache Plugin Error: options.template must be a String or a Function." );
     } else {
       template = "";
     }
@@ -6200,8 +6168,6 @@ var googleCallback;
       data = JSON.parse( options.data );
     } else if ( typeOfData === "object" ) {
       data = options.data;
-    } else if ( Popcorn.plugin.debug ) {
-      throw new Error( "Mustache Plugin Error: options.data must be a String, Object, or Function." );
     } else {
       data = "";
     }
@@ -6255,13 +6221,13 @@ var googleCallback;
     options: {
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "number",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
       target: "mustache-container",
       template: {
@@ -6354,10 +6320,6 @@ var googleCallback;
     newdiv.style.width = "100%";
     newdiv.style.height = "100%";
     i++;
-
-    if ( !target && Popcorn.plugin.debug ) {
-      throw new Error( "target container doesn't exist" );
-    }
 
     target && target.appendChild( newdiv );
 
@@ -6626,19 +6588,19 @@ var googleCallback;
     options:{
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "number",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
       target: "map-container",
       type: {
         elem: "select",
         options: [ "ROADMAP", "SATELLITE", "TERRAIN" ],
-        label: "Type",
+        label: "Map Type",
         optional: true
       },
       zoom: {
@@ -6772,9 +6734,6 @@ document.addEventListener( "click", function( event ) {
               options.codeReady = true;
             }
           });
-        } else if ( Popcorn.plugin.debug ) {
-
-          throw new Error( "Popcorn.Processing: options.sketch is undefined" );
         }
       }
 
@@ -6795,10 +6754,6 @@ document.addEventListener( "click", function( event ) {
         options.codeReady = false;
 
         options.parentTarget = document.getElementById( options.target );
-
-        if ( !options.parentTarget && Popcorn.plugin.debug ) {
-          throw new Error( "target container doesn't exist" );
-        }
 
         var canvas = document.createElement( "canvas" );
         canvas.id = Popcorn.guid( options.target + "-sketch" );
@@ -6839,19 +6794,15 @@ document.addEventListener( "click", function( event ) {
     options: {
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "Number",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "Number",
+        label: "End"
       },
-      target: {
-        elem: "input",
-        type: "text",
-        label: "Target"
-      },
+      target: "processing-container",
       sketch: {
         elem: "input",
         type: "url",
@@ -6924,10 +6875,6 @@ document.addEventListener( "click", function( event ) {
       html = data.html;
       if ( data && title && html ) {
         _album[ options.containerid ].htmlString = "<div>" + html + "</div>";
-      } else {
-        if ( Popcorn.plugin.debug ) {
-          throw new Error( "Did not receive data from server." );
-        }
       }
     },
 
@@ -6956,16 +6903,13 @@ document.addEventListener( "click", function( event ) {
         var key = options.containerid = Popcorn.guid(),
         container = _container[ key ] = document.createElement( "div" ),
         target = _target[ key ] = document.getElementById( options.target );
-        if ( !target && Popcorn.plugin.debug ) {
-          throw new Error( "Target container could not be found." );
-        }
         container.style.display = "none";
         container.innerHTML = "";
-        target.appendChild( container );
+        target && target.appendChild( container );
         _album[ key ] = {
           htmlString: ( options.playlist || "Unknown Source" ) || ( options.album || "Unknown Source" )
         };
-        _getResults( options );
+        options.type && _getResults( options );
       },
       start: function( event, options ) {
         var key = options.containerid,
@@ -6999,15 +6943,15 @@ document.addEventListener( "click", function( event ) {
     options: {
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "number",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
-      target: "rdio",
+      target: "rdio-container",
       artist: {
         elem: "input",
         type: "text",
@@ -7115,12 +7059,12 @@ document.addEventListener( "click", function( event ) {
           start: {
             elem: "input",
             type: "text",
-            label: "In"
+            label: "Start"
           },
           end: {
             elem: "input",
             type: "text",
-            label: "Out"
+            label: "End"
           },
           target: "subtitle-container",
           text: {
@@ -7239,23 +7183,22 @@ document.addEventListener( "click", function( event ) {
         var exists = false,
             target = document.getElementById( options.target );
 
-        if ( !target && Popcorn.plugin.debug ) {
-          throw new Error( "target container doesn't exist" );
-        }
+        if ( target ) {
 
-        // loop through the existing objects to ensure no duplicates
-        // the idea here is to have one object per unique options.target
-        for ( var i = 0; i < peopleArray.length; i++ ) {
-          if ( peopleArray[ i ].name === options.target ) {
-            options._p = peopleArray[ i ];
-            exists = true;
-            break;
+          // loop through the existing objects to ensure no duplicates
+          // the idea here is to have one object per unique options.target
+          for ( var i = 0; i < peopleArray.length; i++ ) {
+            if ( peopleArray[ i ].name === options.target ) {
+              options._p = peopleArray[ i ];
+              exists = true;
+              break;
+            }
           }
-        }
-        if ( !exists ) {
-          options._p = new People();
-          options._p.name = options.target;
-          peopleArray.push( options._p );
+          if ( !exists ) {
+            options._p = new People();
+            options._p.name = options.target;
+            peopleArray.push( options._p );
+          }
         }
       },
       /**
@@ -7268,7 +7211,9 @@ document.addEventListener( "click", function( event ) {
         options._p.contains[ options.person ] = ( options.image ) ? "<img src='" + options.image + "'/> " : "" ;
         options._p.contains[ options.person ] += ( options.href ) ? "<a href='" + options.href + "' target='_blank'> " + options.person + "</a>" : options.person ;
 
-        document.getElementById( options.target ).innerHTML = options._p.toString();
+        if ( document.getElementById( options.target ) ) {
+          document.getElementById( options.target ).innerHTML = options._p.toString();
+        }
       },
       /**
        * @member tagthisperson
@@ -7279,7 +7224,9 @@ document.addEventListener( "click", function( event ) {
       end: function( event, options ){
         delete options._p.contains[ options.person ];
 
-        document.getElementById( options.target ).innerHTML = options._p.toString();
+        if ( document.getElementById( options.target ) ) {
+          document.getElementById( options.target ).innerHTML = options._p.toString();
+        }
       }
    };
   })(),
@@ -7293,31 +7240,31 @@ document.addEventListener( "click", function( event ) {
     options:{
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "number",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
       target : "tagthisperson-container",
       person: {
         elem: "input",
         type: "text",
-        label: "Name",
+        label: "Person's Name",
         "default": "Popcorn.js"
       },
       image: {
         elem: "input",
         type: "url",
-        label: "Image Src",
+        label: "Image URL",
         optional: true
       },
       href: {
         elem: "input",
         type: "url",
-        label: "URL",
+        label: "Link",
         optional: true
       }
     }
@@ -7455,13 +7402,13 @@ document.addEventListener( "click", function( event ) {
       options: {
         start: {
           elem: "input",
-          type: "text",
-          label: "In"
+          type: "number",
+          label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
-          label: "Out"
+          type: "number",
+          label: "End"
         },
         text: {
           elem: "input",
@@ -7619,8 +7566,6 @@ document.addEventListener( "click", function( event ) {
         container.appendChild( contentDiv );
       }
 
-    } else if ( Popcorn.plugin.debug ) {
-      throw new Error( "target container doesn't exist" );
     }
 
     i++;
@@ -7663,35 +7608,35 @@ document.addEventListener( "click", function( event ) {
     options: {
       start: {
         elem: "input",
-        type: "text",
-        label: "In"
+        type: "number",
+        label: "Start"
       },
       end: {
         elem: "input",
-        type: "text",
-        label: "Out"
+        type: "number",
+        label: "End"
       },
       target: "feed-container",
       title: {
         elem: "input",
         type: "text",
-        label: "title"
+        label: "Title"
       },
       text: {
         elem: "input",
         type: "text",
-        label: "text"
+        label: "Text"
       },
       innerHTML: {
         elem: "input",
         type: "text",
-        label: "innerHTML",
+        label: "HTML Code",
         optional: true
       },
       direction: {
         elem: "select",
         options: [ "DOWN", "UP" ],
-        label: "direction",
+        label: "Direction",
         optional: true
       }
     }
@@ -7776,7 +7721,7 @@ document.addEventListener( "click", function( event ) {
         }
 
         // Current means of handling if alt_sizes doesn't have our default image size
-        defaultSizeIndex === -1 && Popcorn.error( "Clearly your blog has a picture that is so tiny it isn't even 250px wide. Consider " + 
+        defaultSizeIndex === -1 && Popcorn.error( "Clearly your blog has a picture that is so tiny it isn't even 250px wide. Consider " +
           " using a bigger picture or try a smaller size." );
 
         // If a matching photo is never found, use the default size.
@@ -7947,52 +7892,52 @@ document.addEventListener( "click", function( event ) {
         requestType: {
           elem: "select",
           options:[ "INFO", "AVATAR", "BLOGPOST" ],
-          label: "Type_Of_Plugin"
+          label: "Request Type"
         },
         target: "tumblr-container",
         start: {
           elem: "input",
-          type: "text",
-          label: "Start_Time"
+          type: "number",
+          label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
-          label: "End_Time"
+          type: "number",
+          label: "End"
         },
         base_hostname: {
           elem: "input",
           type: "text",
-          label: "User_Name",
+          label: "User Name",
           "default": "https://citriccomics.tumblr.com"
         },
         // optional parameters:
         api_key: { // Required for Blog Info and Blog Post retrievals
           elem: "input",
           type: "text",
-          label: "Application_Key",
+          label: "API key",
           optional: true
         },
         size: {
           elem: "select",
           options: [ 16, 24, 30, 40, 48, 64, 96, 128, 512 ],
-          label: "avatarSize",
+          label: "Avatar Size",
           optional: true
         },
         blogId: { // Required for BLOGPOST requests
           elem: "input",
           type: "number",
-          label: "Blog_ID",
+          label: "Blog Id",
           optional: true
         },
         /* Optional for Photo and Video BlogPosts, defaulted to 250 pixels for photos and 400 for videos if not provided or provided width
         * is not found in their arrays. If multiple videos or photos are in the blogpost then it will use this same size for all of them unless
-        * it is not found, which it will then use the default. If default is not present an error will be thrown.
+        * it is not found, which it will then use the default.
         */
         width: {
           elem: "input",
-          type: "number",
-          label: "Photo_Width",
+          type: "text",
+          label: "Photo Width",
           optional: true
         }
       }
@@ -8012,21 +7957,11 @@ document.addEventListener( "click", function( event ) {
         return ( [ "info", "avatar", "blogpost" ].indexOf( type ) > -1 );
       };
 
+      options.requestType = options.requestType || "";
       // Lowercase the types incase user enters it in another way
       options.requestType = options.requestType.toLowerCase();
 
-      // Check if blog url ( base_hostname ) is blank and api_key is included on info and blogpost requestType
-      ( !options.base_hostname || ( !options.api_key && ( options.requestType === "info" || options.requestType === "blogpost" ) ) ) &&
-        Popcorn.error( "Must provide a blog URL to the plugin and an api_key for Blog Info and Blog Post requests." );
-
-      // Check Request Type
-      !validType( options.requestType ) && Popcorn.error( "Invalid tumblr plugin type." );
-
-      // Check if a blogID is supplied
-      ( options.requestType === "blogpost" && options.blogId === undefined ) && Popcorn.error( "Error. BlogId required for blogpost requests" );
-
-      // Check if target container exists
-      ( !target && Popcorn.plugin.debug ) && Popcorn.error( "Target Tumblr container doesn't exist." );
+      options.base_hostname = options.base_hostname || "";
 
       // Checks if user included any http header in the url and removes it if that's the case as request don't work with it
       uri = options.base_hostname.slice( ( options.base_hostname.indexOf( "/" ) + 2 ), options.base_hostname.length );
@@ -8050,55 +7985,52 @@ document.addEventListener( "click", function( event ) {
         } else {
           type = "info";
         }
-        requestString = "http://api.tumblr.com/v2/blog/" + options.base_hostname + "/" + type + "?api_key=" + options.api_key + "&id=" + options.blogId + 
+        requestString = "http://api.tumblr.com/v2/blog/" + options.base_hostname + "/" + type + "?api_key=" + options.api_key + "&id=" + options.blogId +
           "&jsonp=tumblrCallBack";
-        
-        this.listen( "tumblrError", function( e ){
-          Popcorn.error( e );
-        });
 
-        Popcorn.getJSONP( requestString, function( data ) {
-          if ( data.meta.msg === "OK" ) {
-            var commonDiv = document.createElement( "div" );
-            if ( options.requestType === "blogpost" ) {
-              options.post = data.response.posts[ 0 ];
-              var blogType = options.post.type,
-                  post = options.post,
-                  tags = post.tags;
+        if ( options.base_hostname && options.base_hostname !== "" && options.api_key && options.blogId ) {
 
-              // date is a response type common to all blogposts so it's in here to prevent duplicated code
-              commonDiv.innerHTML = "Date Published: " + options.post.date.slice( 0, options.post.date.indexOf( " " ) ) + "<br/>";
-              // Check if tags were used for the post, append them to commonDiv
-              if ( tags.length !== 0 ) {
-                commonDiv.innerHTML += "Tags: " + tags[ 0 ];
-                for ( var i = 1, len = tags.length; i < len; i++ ) {
-                  commonDiv.innerHTML += ", " + tags[ i ];
+          Popcorn.getJSONP( requestString, function( data ) {
+            if ( data.meta.msg === "OK" ) {
+              var commonDiv = document.createElement( "div" );
+              if ( options.requestType === "blogpost" ) {
+                options.post = data.response.posts[ 0 ];
+                var blogType = options.post.type,
+                    post = options.post,
+                    tags = post.tags;
+
+                // date is a response type common to all blogposts so it's in here to prevent duplicated code
+                commonDiv.innerHTML = "Date Published: " + options.post.date.slice( 0, options.post.date.indexOf( " " ) ) + "<br/>";
+                // Check if tags were used for the post, append them to commonDiv
+                if ( tags.length !== 0 ) {
+                  commonDiv.innerHTML += "Tags: " + tags[ 0 ];
+                  for ( var i = 1, len = tags.length; i < len; i++ ) {
+                    commonDiv.innerHTML += ", " + tags[ i ];
+                  }
+                } else {
+                  commonDiv.innerHTML += "Tags: No Tags Used";
                 }
+                // commonDiv is appended at two points because of the difference in how the information
+                // is constructed between blogposts and bloginfo
+                options._container.appendChild( commonDiv );
+
+                // Processes information and forms an information div based on what the blog type is
+                processBlogPost[ blogType ]( options );
               } else {
-                commonDiv.innerHTML += "Tags: No Tags Used";
+                // Blog Info Requests
+                var link = document.createElement( "a" ),
+                    blogInfo = data.response.blog,
+                    linkText = document.createTextNode( blogInfo.title );
+
+                link.setAttribute( "href", blogInfo.url );
+                link.appendChild( linkText );
+                commonDiv.appendChild( link );
+                commonDiv.innerHTML += blogInfo.description;
+                options._container.appendChild( commonDiv );
               }
-              // commonDiv is appended at two points because of the difference in how the information
-              // is constructed between blogposts and bloginfo
-              options._container.appendChild( commonDiv );
-
-              // Processes information and forms an information div based on what the blog type is
-              processBlogPost[ blogType ]( options );
-            } else {
-              // Blog Info Requests
-              var link = document.createElement( "a" ),
-                  blogInfo = data.response.blog,
-                  linkText = document.createTextNode( blogInfo.title );
-
-              link.setAttribute( "href", blogInfo.url );
-              link.appendChild( linkText );
-              commonDiv.appendChild( link );
-              commonDiv.innerHTML += blogInfo.description;
-              options._container.appendChild( commonDiv );
             }
-          } else {
-            that.trigger( "tumblrError", "Error. Request failed. Status code: " + data.meta.status + " - Message: " + data.meta.msg );
-          }
-        }, false );
+          }, false );
+        }
       }
       options._container.style.display = "none";
       target && target.appendChild( options._container );
@@ -8163,18 +8095,18 @@ document.addEventListener( "click", function( event ) {
         options:{
           start: {
             elem: "input",
-            type: "text",
-            label: "In"
+            type: "number",
+            label: "Start"
           },
           end: {
             elem: "input",
-            type: "text",
-            label: "Out"
+            type: "number",
+            label: "End"
           },
           src: {
             elem: "input",
             type: "text",
-            label: "Source",
+            label: "Tweet Source (# or @)",
             "default": "@popcornjs"
           },
           target: "twitter-container",
@@ -8211,9 +8143,6 @@ document.addEventListener( "click", function( event ) {
         // display none by default
         options.container.style.display = "none";
 
-        if ( !target && Popcorn.plugin.debug ) {
-          throw new Error( "target container doesn't exist" );
-        }
          // add the widget's div to the target div
         target && target.appendChild( options.container );
 
@@ -8352,18 +8281,18 @@ document.addEventListener( "click", function( event ) {
         },
         start: {
           elem: "input",
-          type: "text",
-          label: "In"
+          type: "number",
+          label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
-          label: "Out"
+          type: "number",
+          label: "End"
         },
         src: {
           elem: "input",
           type: "url",
-          label: "Src",
+          label: "Webpage URL",
           "default": "http://mozillapopcorn.org"
         },
         target: "iframe-container"
@@ -8383,10 +8312,6 @@ document.addEventListener( "click", function( event ) {
       options._iframe.id = options.id;
       options._iframe.src = options.src;
       options._iframe.style.display = "none";
-
-      if ( !target && Popcorn.plugin.debug ) {
-        throw new Error( "target container doesn't exist" );
-      }
 
       // add the hidden iframe to the DOM
       target && target.appendChild( options._iframe );
@@ -8464,13 +8389,13 @@ var wikiCallback;
       options:{
         start: {
           elem: "input",
-          type: "text",
-          label: "In"
+          type: "number",
+          label: "Start"
         },
         end: {
           elem: "input",
-          type: "text",
-          label: "Out"
+          type: "number",
+          label: "End"
         },
         lang: {
           elem: "input",
@@ -8482,7 +8407,7 @@ var wikiCallback;
         src: {
           elem: "input", 
           type: "url", 
-          label: "Src",
+          label: "Wikipedia URL",
           "default": "http://en.wikipedia.org/wiki/Cat"
         },
         title: {
@@ -8494,8 +8419,8 @@ var wikiCallback;
         },
         numberofwords: {
           elem: "input",
-          type: "text",
-          label: "Num Of Words",
+          type: "number",
+          label: "Number of Words",
           "default": "200",
           optional: true
         },
@@ -8551,8 +8476,6 @@ var wikiCallback;
       if ( options.src ) {
         Popcorn.getScript( "//" + options.lang + ".wikipedia.org/w/api.php?action=parse&props=text&redirects&page=" +
           options.src.slice( options.src.lastIndexOf( "/" ) + 1 )  + "&format=json&callback=wikiCallback" + _guid );
-      } else if ( Popcorn.plugin.debug ) {
-        throw new Error( "Wikipedia plugin needs a 'src'" );
       }
 
     },
@@ -8683,13 +8606,13 @@ var wikiCallback;
         options: {
           start: {
             elem: "input",
-            type: "text",
-            label: "In"
+            type: "number",
+            label: "Start"
           },
           end: {
             elem: "input",
-            type: "text",
-            label: "Out"
+            type: "number",
+            label: "End"
           },
           target: "wordriver-container",
           text: {
@@ -8709,10 +8632,6 @@ var wikiCallback;
       },
 
       _setup: function( options ) {
-
-        if ( !document.getElementById( options.target ) && Popcorn.plugin.debug ) {
-          throw new Error( "target container doesn't exist" );
-        }
 
         options._duration = options.end - options.start;
         options._container = container[ options.target ] || setupContainer( options.target );
@@ -9936,642 +9855,827 @@ var wikiCallback;
 })();
 (function() {
 
-  // global callback for vimeo.. yuck.
-  vimeo_player_loaded = function( playerId ) {
-    vimeo_player_loaded[ playerId ] && vimeo_player_loaded[ playerId ]();
+  // parseUri 1.2.2
+  // http://blog.stevenlevithan.com/archives/parseuri
+  // (c) Steven Levithan <stevenlevithan.com>
+  // MIT License
+
+  function parseUri (str) {
+    var	o   = parseUri.options,
+        m   = o.parser[o.strictMode ? "strict" : "loose"].exec(str),
+        uri = {},
+        i   = 14;
+
+    while (i--) {
+      uri[o.key[i]] = m[i] || "";
+    }
+
+    uri[o.q.name] = {};
+    uri[o.key[12]].replace(o.q.parser, function ($0, $1, $2) {
+      if ($1) {
+        uri[o.q.name][$1] = $2;
+      }
+    });
+
+    return uri;
+  }
+
+  parseUri.options = {
+    strictMode: false,
+    key: ["source","protocol","authority","userInfo","user","password","host","port","relative","path","directory","file","query","anchor"],
+    q:   {
+      name:   "queryKey",
+      parser: /(?:^|&)([^&=]*)=?([^&]*)/g
+    },
+    parser: {
+      strict: /^(?:([^:\/?#]+):)?(?:\/\/((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?))?((((?:[^?#\/]*\/)*)([^?#]*))(?:\?([^#]*))?(?:#(.*))?)/,
+      loose:  /^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/
+    }
   };
-  vimeo_player_loaded.seek = {};
-  vimeo_player_loaded.loadProgress = {};
-  vimeo_player_loaded.play = {};
-  vimeo_player_loaded.pause = {};
+
+  function canPlayType( nodeName, url ) {
+    return ( /player.vimeo.com\/video\/\d+/ ).test( url ) ||
+           ( /vimeo.com\/\d+/ ).test( url );
+  }
 
   Popcorn.player( "vimeo", {
-    _canPlayType: function( nodeName, url ) {
 
-      return (/(?:http:\/\/www\.|http:\/\/|www\.|\.|^)(vimeo)/).test( url ) && nodeName.toLowerCase() !== "video";
-    },
+    _canPlayType: canPlayType,
     _setup: function( options ) {
 
-      var media = this,
-          vimeoObject,
-          vimeoContainer = document.createElement( "div" ),
-          currentTime = 0,
-          paused = true,
-          seekTime = 0,
-          seeking = false,
-          volumeChanged = false,
-          lastMuted = false,
-          lastVolume = 0,
-          height,
-          width,
-          playerQueue = Popcorn.player.playerQueue();
+      var TIMEUPDATE_INTERVAL_MS  = 250,
+          CURRENT_TIME_MONITOR_MS = 16,
+          MediaErrorInterface = {
+            MEDIA_ERR_ABORTED: 1,
+            MEDIA_ERR_NETWORK: 2,
+            MEDIA_ERR_DECODE: 3,
+            MEDIA_ERR_SRC_NOT_SUPPORTED: 4
+          },
+          guid,
+          media = this,
+          commands = {
+            q: [],
+            queue: function queue( fn ) {
+              this.q.push( fn );
+              this.process();
+            },
+            process: function process() {
+              if ( !vimeoReady ) {
+                return;
+              }
 
-      vimeoContainer.id = media.id + Popcorn.guid();
-
-      media.appendChild( vimeoContainer );
-
-      // setting vimeo player's height and width, default to 560 x 315
-      width = media.style.width ? "" + media.offsetWidth : "560";
-      height = media.style.height ? "" + media.offsetHeight : "315";
-
-      var vimeoInit = function() {
-
-        var flashvars,
-            params,
-            attributes = {},
-            src = media.src,
-            toggleMuteVolume = 0,
-            loadStarted = false;
-
-        vimeo_player_loaded[ vimeoContainer.id ] = function() {
-
-          vimeoObject = document.getElementById( vimeoContainer.id );
-
-          vimeo_player_loaded.seek[ vimeoContainer.id ] = function( time ) {
-            if( time.seconds !== currentTime ) {
-              seeking = true;
-              media.dispatchEvent( "seeking" );
-              currentTime = time.seconds;
-              seeking = false;
-              media.dispatchEvent( "timeupdate" );
-              media.dispatchEvent( "seeked" );
-            }
-          };
-
-          vimeo_player_loaded.play[ vimeoContainer.id ] = function() {
-
-            paused = false;
-            media.dispatchEvent( "play" );
-            media.dispatchEvent( "playing" );
-            timeUpdate();
-
-            playerQueue.next();
-          };
-
-          vimeo_player_loaded.pause[ vimeoContainer.id ] = function() {
-
-            paused = true;
-            media.dispatchEvent( "pause" );
-
-            playerQueue.next();
-          };
-
-          vimeo_player_loaded.loadProgress[ vimeoContainer.id ] = function( progress ) {
-
-            if ( !loadStarted ) {
-              loadStarted = true;
-              media.dispatchEvent( "loadstart" );
-            }
-
-            if ( progress.percent === 100 ) {
-              media.dispatchEvent( "canplaythrough" );
-            }
-          };
-
-          vimeoObject.api_addEventListener( "seek", "vimeo_player_loaded.seek." + vimeoContainer.id );
-          vimeoObject.api_addEventListener( "loadProgress", "vimeo_player_loaded.loadProgress." + vimeoContainer.id );
-          vimeoObject.api_addEventListener( "play", "vimeo_player_loaded.play." + vimeoContainer.id );
-          vimeoObject.api_addEventListener( "pause", "vimeo_player_loaded.pause." + vimeoContainer.id );
-
-          var timeUpdate = function() {
-            if ( !media.paused ) {
-              currentTime = vimeoObject.api_getCurrentTime();
-              media.dispatchEvent( "timeupdate" );
-              setTimeout( timeUpdate, 10 );
+              while ( this.q.length ) {
+                var fn = this.q.shift();
+                fn();
+              }
             }
           },
+          currentTimeId,
+          timeUpdateId,
+          vimeoReady,
+          vimeoContainer = document.createElement( "iframe" ),
+          // Loosely based on HTMLMediaElement + HTMLVideoElement IDL
+          impl = {
+            // error state
+            error: null,
 
-          isMuted = function() {
+            // network state
+            src: media.src,
+            NETWORK_EMPTY: 0,
+            NETWORK_IDLE: 1,
+            NETWORK_LOADING: 2,
+            NETWORK_NO_SOURCE: 3,
+            networkState: 0,
 
-            return vimeoObject.api_getVolume() === 0;
+            // ready state
+            HAVE_NOTHING: 0,
+            HAVE_METADATA: 1,
+            HAVE_CURRENT_DATA: 2,
+            HAVE_FUTURE_DATA: 3,
+            HAVE_ENOUGH_DATA: 4,
+            readyState: 0,
+            seeking: false,
+
+            // playback state
+            currentTime: 0,
+            duration: NaN,
+            paused: true,
+            ended: false,
+            autoplay: false,
+            loop: false,
+
+            // controls
+            volume: 1,
+            muted: false,
+
+            // Video attributes
+            width: 0,
+            height: 0
           };
 
-          var volumeUpdate = function() {
+      var readOnlyAttrs = "error networkState readyState seeking duration paused ended";
+      Popcorn.forEach( readOnlyAttrs.split(" "), function( value ) {
+        Object.defineProperty( media, value, {
+          get: function() {
+            return impl[ value ];
+          }
+        });
+      });
 
-            var muted = isMuted(),
-            vol = vimeoObject.api_getVolume();
-            if ( lastMuted !== muted ) {
-              lastMuted = muted;
-              media.dispatchEvent( "volumechange" );
-            }
-
-            if ( lastVolume !== vol ) {
-              lastVolume = vol;
-              media.dispatchEvent( "volumechange" );
-            }
-
-            setTimeout( volumeUpdate, 250 );
-          };
-
-          media.play = function() {
-
-
-            paused = false;
-            playerQueue.add(function() {
-
-              if ( vimeoObject.api_paused() ) {
-
-                vimeoObject.api_play();
-              } else {
-                playerQueue.next();
-              }
+      Object.defineProperties( media, {
+        "src": {
+          get: function() {
+            return impl.src;
+          },
+          set: function( value ) {
+            // Is there any sort of logic that determines whether to load the video or not?
+            impl.src = value;
+            media.load();
+          }
+        },
+        "currentTime": {
+          get: function() {
+            return impl.currentTime;
+          },
+          set: function( value ) {
+            commands.queue(function() {
+              sendMessage( "seekTo", value );
             });
-          };
-
-          Popcorn.player.defineProperty( media, "seeking", {
-            get: function() {
-              return seeking;
-            }
-          });
-
-          media.pause = function() {
-
-            paused = true;
-            playerQueue.add(function() {
-
-              if ( !vimeoObject.api_paused() ) {
-
-                vimeoObject.api_pause();
-              } else {
-                playerQueue.next();
-              }
+            impl.seeking = true;
+            media.dispatchEvent( "seeking" );
+          }
+        },
+        "autoplay": {
+          get: function() {
+            return impl.autoplay;
+          },
+          set: function( value ) {
+            impl.autoplay = !!value;
+          }
+        },
+        "loop": {
+          get: function() {
+            return impl.loop;
+          },
+          set: function( value) {
+            impl.loop = !!value;
+            commands.queue(function() {
+              sendMessage( "setLoop", loop );
             });
-          };
+          }
+        },
+        "volume": {
+          get: function() {
+            return impl.volume;
+          },
+          set: function( value ) {
+            impl.volume = value;
+            commands.queue(function() {
+              sendMessage( "setVolume", impl.muted ? 0 : impl.volume );
+            });
+            media.dispatchEvent( "volumechange" );
+          }
+        },
+        "muted": {
+          get: function() {
+            return impl.muted;
+          },
+          set: function( value ) {
+            impl.muted = !!value;
+            commands.queue(function() {
+              sendMessage( "setVolume", impl.muted ? 0 : impl.volume );
+            });
+            media.dispatchEvent( "volumechange" );
+          }
+        },
+        "width": {
+          get: function() {
+            return vimeoContainer.width;
+          },
+          set: function( value ) {
+            vimeoContainer.width = value;
+          }
+        },
+        "height": {
+          get: function() {
+            return vimeoContainer.height;
+          },
+          set: function( value ) {
+            vimeoContainer.height = value;
+          }
+        }
+      });
 
-          Popcorn.player.defineProperty( media, "currentTime", {
+      function sendMessage( method, params ) {
+        var url = vimeoContainer.src.split( "?" )[ 0 ],
+            data = JSON.stringify({
+              method: method,
+              value: params
+            });
 
-            set: function( val ) {
+        if ( url.substr( 0, 2 ) === "//" ) {
+          url = window.location.protocol + url;
+        }
 
-              if ( !val ) {
-                return currentTime;
-              }
+        // The iframe has been destroyed, it just doesn't know it
+        if ( !vimeoContainer.contentWindow ) {
+          media.unload();
+          return;
+        }
 
-              vimeoObject.api_seekTo( +val );
+        vimeoContainer.contentWindow.postMessage( data, url );
+      }
 
-              return currentTime;
-            },
+      var vimeoAPIMethods = {
+        "getCurrentTime": function( data ) {
+          impl.currentTime = parseFloat( data.value );
+        },
+        "getDuration": function( data ) {
+          impl.duration = parseFloat( data.value );
+          maybeReady();
+        },
+        "getVolume": function( data ) {
+          impl.volume = parseFloat( data.value );
+        }
+      };
 
-            get: function() {
+      var vimeoAPIEvents = {
+        "ready": function( data ) {
+          sendMessage( "addEventListener", "loadProgress" );
+          sendMessage( "addEventListener", "playProgress" );
+          sendMessage( "addEventListener", "play" );
+          sendMessage( "addEventListener", "pause" );
+          sendMessage( "addEventListener", "finish" );
+          sendMessage( "addEventListener", "seek" );
+          sendMessage( "getDuration" );
+          vimeoReady = true;
+          commands.process();
+          media.dispatchEvent( "loadstart" );
+        },
+        "loadProgress": function( data ) {
+          media.dispatchEvent( "progress" );
+          // loadProgress has a more accurate duration than getDuration
+          impl.duration = parseFloat( data.data.duration );
+        },
+        "playProgress": function( data ) {
+          impl.currentTime = parseFloat( data.data.seconds );
+        },
+        "play": function( data ) {
+          // Vimeo plays video if seeking from an unloaded state
+          if ( impl.seeking ) {
+            impl.seeking = false;
+            media.dispatchEvent( "seeked" );
+          }
+          impl.paused = false;
+          impl.ended = false;
+          startUpdateLoops();
+          media.dispatchEvent( "play" );
+        },
+        "pause": function( data ) {
+          impl.paused = true;
+          stopUpdateLoops();
+          media.dispatchEvent( "pause" );
+        },
+        "finish": function( data ) {
+          impl.ended = true;
+          stopUpdateLoops();
+          media.dispatchEvent( "ended" );
+        },
+        "seek": function( data ) {
+          impl.currentTime = parseFloat( data.data.seconds );
+          impl.seeking = false;
+          impl.ended = false;
+          media.dispatchEvent( "timeupdate" );
+          media.dispatchEvent( "seeked" );
+        }
+      };
 
-              return currentTime;
-            }
-          });
+      function messageListener( event ) {
+        if ( event.origin !== "http://player.vimeo.com" ) {
+          return;
+        }
 
-          Popcorn.player.defineProperty( media, "paused", {
+        var data;
+        try {
+          data = JSON.parse( event.data );
+        } catch ( ex ) {
+          console.warn( ex );
+        }
 
-            get: function() {
+        if ( data.player_id != guid ) {
+          return;
+        }
 
-              return paused;
-            }
-          });
+        // Methods
+        if ( data.method && vimeoAPIMethods[ data.method ] ) {
+          vimeoAPIMethods[ data.method ]( data );
+        }
 
-          Popcorn.player.defineProperty( media, "muted", {
+        // Events
+        if ( data.event && vimeoAPIEvents[ data.event ] ) {
+          vimeoAPIEvents[ data.event ]( data );
+        }
+      }
 
-            set: function( val ) {
+      media.load = function() {
+        vimeoReady = false;
+        guid = Popcorn.guid();
 
-              if ( isMuted() !== val ) {
+        var src = parseUri( impl.src ),
+            combinedOptions = {},
+            optionsArray = [],
+            vimeoAPIOptions = {
+              api: 1,
+              player_id: guid
+            };
 
-                if ( val ) {
-                  toggleMuteVolume = vimeoObject.api_getVolume();
-                  vimeoObject.api_setVolume( 0 );
-                } else {
+        if ( !canPlayType( media.nodeName, src.source ) ) {
+          setErrorAttr( impl.MEDIA_ERR_SRC_NOT_SUPPORTED );
+          return;
+        }
 
-                  vimeoObject.api_setVolume( toggleMuteVolume );
-                }
-              }
-            },
-            get: function() {
+        // Add Popcorn ctor options, url options, then the Vimeo API options
+        Popcorn.extend( combinedOptions, options );
+        Popcorn.extend( combinedOptions, src.queryKey );
+        Popcorn.extend( combinedOptions, vimeoAPIOptions );
 
-              return isMuted();
-            }
-          });
+        // Create the base vimeo player string. It will always have query string options
+        src = "http://player.vimeo.com/video/" + ( /\d+$/ ).exec( src.path ) + "?";
 
-          Popcorn.player.defineProperty( media, "volume", {
+        for ( var key in combinedOptions ) {
+          if ( combinedOptions.hasOwnProperty( key ) ) {
+            optionsArray.push( encodeURIComponent( key ) + "=" + encodeURIComponent( combinedOptions[ key ] ) );
+          }
+        }
+        src += optionsArray.join( "&" );
 
-            set: function( val ) {
+        impl.loop = !!src.match( /loop=1/ );
+        impl.autoplay = !!src.match( /autoplay=1/ );
 
-              if ( !val || typeof val !== "number" || ( val < 0 || val > 1 ) ) {
-                return vimeoObject.api_getVolume() / 100;
-              }
+        vimeoContainer.width = media.style.width ? media.style.width : 500;
+        vimeoContainer.height = media.style.height ? media.style.height : 281;
+        vimeoContainer.frameBorder = 0;
+        vimeoContainer.webkitAllowFullScreen = true;
+        vimeoContainer.mozAllowFullScreen = true;
+        vimeoContainer.allowFullScreen = true;
+        vimeoContainer.src = src;
+        media.appendChild( vimeoContainer );
+      };
 
-              if ( vimeoObject.api_getVolume() !== val ) {
-                vimeoObject.api_setVolume( val * 100 );
-                lastVolume = vimeoObject.api_getVolume();
-                media.dispatchEvent( "volumechange" );
-              }
+      function setErrorAttr( value ) {
+        impl.error = {};
+        Popcorn.extend( impl.error, MediaErrorInterface );
+        impl.error.code = value;
+        media.dispatchEvent( "error" );
+      }
 
-              return vimeoObject.api_getVolume() / 100;
-            },
-            get: function() {
-
-              return vimeoObject.api_getVolume() / 100;
-            }
-          });
-
-          media.duration = vimeoObject.api_getDuration();
+      function maybeReady() {
+        if ( !isNaN( impl.duration ) ) {
+          impl.readyState = 4;
           media.dispatchEvent( "durationchange" );
           media.dispatchEvent( "loadedmetadata" );
           media.dispatchEvent( "loadeddata" );
-          volumeUpdate();
-          media.readyState = 4;
+          media.dispatchEvent( "canplay" );
           media.dispatchEvent( "canplaythrough" );
-        };
+        }
+      }
 
-        var clip_id = ( /\d+$/ ).exec( src );
+      function startUpdateLoops() {
+        if ( !timeUpdateId ) {
+          timeUpdateId = setInterval(function() {
+            media.dispatchEvent( "timeupdate" );
+          }, TIMEUPDATE_INTERVAL_MS );
+        }
 
-        flashvars = {
-          // Load a video not found poster if the url does not contain a valid id
-          clip_id: clip_id ? clip_id[ 0 ] : 0,
-          api: 1,
-          js_swf_id: vimeoContainer.id
-        };
+        if ( !currentTimeId ) {
+          currentTimeId = setInterval(function() {
+            sendMessage( "getCurrentTime" );
+          }, CURRENT_TIME_MONITOR_MS );
+        }
+      }
 
-        //  extend options from user to flashvars. NOTE: Videos owned by Plus Vimeo users may override these options
-        Popcorn.extend( flashvars, options );
+      function stopUpdateLoops() {
+        if ( timeUpdateId ) {
+          clearInterval( timeUpdateId );
+          timeUpdateId = 0;
+        }
 
-        params = {
-          allowscriptaccess: "always",
-          allowfullscreen: "true",
-          wmode: "transparent"
-        };
+        if ( currentTimeId ) {
+          clearInterval( currentTimeId );
+          currentTimeId = 0;
+        }
+      }
 
-        swfobject.embedSWF( "//vimeo.com/moogaloop.swf", vimeoContainer.id,
-                            width, height, "9.0.0", "expressInstall.swf",
-                            flashvars, params, attributes );
-
+      media.unload = function() {
+        stopUpdateLoops();
+        window.removeEventListener( "message", messageListener, false );
       };
 
-      if ( !window.swfobject ) {
+      media.play = function() {
+        commands.queue(function() {
+          sendMessage( "play" );
+        });
+      };
 
-        Popcorn.getScript( "//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js", vimeoInit );
-      } else {
+      media.pause = function() {
+        commands.queue(function() {
+          sendMessage( "pause" );
+        });
+      };
 
-        vimeoInit();
+      // Start the load process now, players behave like `preload="metadata"` is set
+      // Do it asynchronously so that users can attach event listeners
+      setTimeout(function() {
+        window.addEventListener( "message", messageListener, false );
+        media.load();
+      }, 0 );
+    },
+    _teardown: function( options ) {
+      // If the baseplayer doesn't call _setup
+      if ( this.unload ) {
+        this.unload();
       }
     }
   });
 })();
-// A global callback for youtube... that makes me angry
-window.onYouTubePlayerAPIReady = function() {
+(function( window, Popcorn ) {
+  // A global callback for youtube... that makes me angry
+  window.onYouTubePlayerAPIReady = function() {
 
-  onYouTubePlayerAPIReady.ready = true;
-  for ( var i = 0; i < onYouTubePlayerAPIReady.waiting.length; i++ ) {
-    onYouTubePlayerAPIReady.waiting[ i ]();
+    onYouTubePlayerAPIReady.ready = true;
+    for ( var i = 0; i < onYouTubePlayerAPIReady.waiting.length; i++ ) {
+      onYouTubePlayerAPIReady.waiting[ i ]();
+    }
+  };
+
+  // existing youtube references can break us.
+  // remove it and use the one we can trust.
+  if ( window.YT ) {
+    window.quarantineYT = window.YT;
+    window.YT = null;
   }
-};
 
-// existing youtube references can break us.
-// remove it and use the one we can trust.
-if ( window.YT ) {
-  window.quarantineYT = window.YT;
-  window.YT = null;
-}
+  onYouTubePlayerAPIReady.waiting = [];
 
-onYouTubePlayerAPIReady.waiting = [];
+  var _loading = false;
 
-Popcorn.getScript( "http://www.youtube.com/player_api" );
+  Popcorn.player( "youtube", {
+    _canPlayType: function( nodeName, url ) {
 
-Popcorn.player( "youtube", {
-  _canPlayType: function( nodeName, url ) {
+      return typeof url === "string" && (/(?:http:\/\/www\.|http:\/\/|www\.|\.|^)(youtu)/).test( url ) && nodeName.toLowerCase() !== "video";
+    },
+    _setup: function( options ) {
+      if ( !window.YT && !_loading ) {
+        _loading = true;
+        Popcorn.getScript( "//youtube.com/player_api" );
+      }
 
-    return (/(?:http:\/\/www\.|http:\/\/|www\.|\.|^)(youtu)/).test( url ) && nodeName.toLowerCase() !== "video";
-  },
-  _setup: function( options ) {
+      var media = this,
+          autoPlay = false,
+          container = document.createElement( "div" ),
+          currentTime = 0,
+          paused = true,
+          seekTime = 0,
+          firstGo = true,
+          seeking = false,
+          fragmentStart = 0,
 
-    var media = this,
-        autoPlay = false,
-        container = document.createElement( "div" ),
-        currentTime = 0,
-        paused = true,
-        seekTime = 0,
-        firstGo = true,
-        seeking = false,
-        fragmentStart = 0,
+          // state code for volume changed polling
+          lastMuted = false,
+          lastVolume = 100,
+          playerQueue = Popcorn.player.playerQueue();
 
-        // state code for volume changed polling
-        lastMuted = false,
-        lastVolume = 100,
-        playerQueue = Popcorn.player.playerQueue();
+      var createProperties = function() {
 
-    var createProperties = function() {
+        Popcorn.player.defineProperty( media, "currentTime", {
+          set: function( val ) {
 
-      Popcorn.player.defineProperty( media, "currentTime", {
-        set: function( val ) {
+            if ( options.destroyed ) {
+              return;
+            }
+
+            seeking = true;
+            // make sure val is a number
+            currentTime = Math.round( +val * 100 ) / 100;
+          },
+          get: function() {
+
+            return currentTime;
+          }
+        });
+
+        Popcorn.player.defineProperty( media, "paused", {
+          get: function() {
+
+            return paused;
+          }
+        });
+
+        Popcorn.player.defineProperty( media, "muted", {
+          set: function( val ) {
+
+            if ( options.destroyed ) {
+
+              return val;
+            }
+
+            if ( options.youtubeObject.isMuted() !== val ) {
+
+              if ( val ) {
+
+                options.youtubeObject.mute();
+              } else {
+
+                options.youtubeObject.unMute();
+              }
+
+              lastMuted = options.youtubeObject.isMuted();
+              media.dispatchEvent( "volumechange" );
+            }
+
+            return options.youtubeObject.isMuted();
+          },
+          get: function() {
+
+            if ( options.destroyed ) {
+
+              return 0;
+            }
+
+            return options.youtubeObject.isMuted();
+          }
+        });
+
+        Popcorn.player.defineProperty( media, "volume", {
+          set: function( val ) {
+
+            if ( options.destroyed ) {
+
+              return val;
+            }
+
+            if ( options.youtubeObject.getVolume() / 100 !== val ) {
+
+              options.youtubeObject.setVolume( val * 100 );
+              lastVolume = options.youtubeObject.getVolume();
+              media.dispatchEvent( "volumechange" );
+            }
+
+            return options.youtubeObject.getVolume() / 100;
+          },
+          get: function() {
+
+            if ( options.destroyed ) {
+
+              return 0;
+            }
+
+            return options.youtubeObject.getVolume() / 100;
+          }
+        });
+
+        media.play = function() {
+
+          if ( options.destroyed ) {
+
+            return;
+          }
+
+          paused = false;
+          playerQueue.add(function() {
+
+            if ( options.youtubeObject.getPlayerState() !== 1 ) {
+
+              seeking = false;
+              options.youtubeObject.playVideo();
+            } else {
+              playerQueue.next();
+            }
+          });
+        };
+
+        media.pause = function() {
+
+          if ( options.destroyed ) {
+
+            return;
+          }
+
+          paused = true;
+          playerQueue.add(function() {
+
+            if ( options.youtubeObject.getPlayerState() !== 2 ) {
+
+              options.youtubeObject.pauseVideo();
+            } else {
+              playerQueue.next();
+            }
+          });
+        };
+      };
+
+      container.id = media.id + Popcorn.guid();
+      options._container = container;
+      media.appendChild( container );
+
+      var youtubeInit = function() {
+
+        var src, query, params, playerVars, queryStringItem, firstPlay = true;
+
+        var timeUpdate = function() {
 
           if ( options.destroyed ) {
             return;
           }
 
-          seeking = true;
-          // make sure val is a number
-          currentTime = Math.round( +val * 100 ) / 100;
-        },
-        get: function() {
+          if ( !seeking ) {
+            currentTime = options.youtubeObject.getCurrentTime();
+            media.dispatchEvent( "timeupdate" );
+          } else if ( currentTime === options.youtubeObject.getCurrentTime() ) {
 
-          return currentTime;
+            seeking = false;
+            media.dispatchEvent( "seeked" );
+            media.dispatchEvent( "timeupdate" );
+          } else {
+
+            // keep trying the seek until it is right.
+            options.youtubeObject.seekTo( currentTime );
+          }
+          setTimeout( timeUpdate, 250 );
+        };
+
+        // delay is in seconds
+        var fetchDuration = function( delay ) {
+          var ytDuration = options.youtubeObject.getDuration();
+
+          if ( isNaN( ytDuration ) || ytDuration === 0 ) {
+            setTimeout( function() {
+              fetchDuration( delay * 2 );
+            }, delay*1000 );
+          } else {
+            // set duration and dispatch ready events
+            media.duration = ytDuration;
+            media.dispatchEvent( "durationchange" );
+            
+            media.dispatchEvent( "loadedmetadata" );
+            media.dispatchEvent( "loadeddata" );
+            
+            media.readyState = 4;
+
+            timeUpdate();
+            media.dispatchEvent( "canplaythrough" );
+          }
+        };
+
+        options.controls = +options.controls === 0 || +options.controls === 1 ? options.controls : 1;
+        options.annotations = +options.annotations === 1 || +options.annotations === 3 ? options.annotations : 1;
+
+        src = /^.*(?:\/|v=)(.{11})/.exec( media.src )[ 1 ];
+
+        query = ( media.src.split( "?" )[ 1 ] || "" )
+                           .replace( /v=.{11}/, "" );
+        query = query.replace( /&t=(?:(\d+)m)?(?:(\d+)s)?/, function( all, minutes, seconds ) {
+
+          // Make sure we have real zeros
+          minutes = minutes | 0; // bit-wise OR
+          seconds = seconds | 0; // bit-wise OR
+
+          fragmentStart = ( +seconds + ( minutes * 60 ) );
+          return "";
+        });
+        query = query.replace( /&start=(\d+)?/, function( all, seconds ) {
+
+          // Make sure we have real zeros
+          seconds = seconds | 0; // bit-wise OR
+
+          fragmentStart = seconds;
+          return "";
+        });
+
+        autoPlay = ( /autoplay=1/.test( query ) );
+
+        params = query.split( /[\&\?]/g );
+        playerVars = { wmode: "transparent" };
+
+        for( var i = 0; i < params.length; i++ ) {
+          queryStringItem = params[ i ].split( "=" );
+          playerVars[ queryStringItem[ 0 ] ] = queryStringItem[ 1 ];
         }
-      });
+        
+        options.youtubeObject = new YT.Player( container.id, {
+          height: "100%",
+          width: "100%",
+          wmode: "transparent",
+          playerVars: playerVars,
+          videoId: src,
+          events: {
+            "onReady": function(){
 
-      Popcorn.player.defineProperty( media, "paused", {
-        get: function() {
+              // pulling initial volume states form baseplayer
+              lastVolume = media.volume;
+              lastMuted = media.muted;
 
-          return paused;
-        }
-      });
+              volumeupdate();
 
-      Popcorn.player.defineProperty( media, "muted", {
-        set: function( val ) {
+              paused = media.paused;
+              createProperties();
+              options.youtubeObject.playVideo();
+
+              media.currentTime = fragmentStart;
+              // wait to dispatch ready events until we get a duration
+            },
+            "onStateChange": function( state ){
+
+              if ( options.destroyed || state.data === -1 ) {
+                return;
+              }
+
+              // state.data === 2 is for pause events
+              // state.data === 1 is for play events
+              if ( state.data === 2 ) {
+                paused = true;
+                media.dispatchEvent( "pause" );
+                playerQueue.next();
+              } else if ( state.data === 1 && !firstPlay ) {
+                paused = false;
+                media.dispatchEvent( "play" );
+                media.dispatchEvent( "playing" );
+                playerQueue.next();
+              } else if ( state.data === 0 ) {
+                media.dispatchEvent( "ended" );
+              } else if ( state.data === 1 && firstPlay ) {
+                firstPlay = false;
+
+                // pulling initial paused state from autoplay or the baseplayer
+                // also need to explicitly set to paused otherwise.
+                if ( autoPlay || !media.paused ) {
+                  paused = false;
+                }
+
+                if ( paused ) {
+                  options.youtubeObject.pauseVideo();
+                }
+                
+                fetchDuration( 0.025 );
+              }
+            },
+            "onError": function( error ) {
+
+              if ( [ 2, 100, 101, 150 ].indexOf( error.data ) !== -1 ) {
+                media.error = {
+                  customCode: error.data
+                };
+                media.dispatchEvent( "error" );
+              }
+            }
+          }
+        });
+
+        var volumeupdate = function() {
 
           if ( options.destroyed ) {
 
-            return val;
+            return;
           }
 
-          if ( options.youtubeObject.isMuted() !== val ) {
-
-            if ( val ) {
-
-              options.youtubeObject.mute();
-            } else {
-
-              options.youtubeObject.unMute();
-            }
+          if ( lastMuted !== options.youtubeObject.isMuted() ) {
 
             lastMuted = options.youtubeObject.isMuted();
             media.dispatchEvent( "volumechange" );
           }
 
-          return options.youtubeObject.isMuted();
-        },
-        get: function() {
+          if ( lastVolume !== options.youtubeObject.getVolume() ) {
 
-          if ( options.destroyed ) {
-
-            return 0;
-          }
-
-          return options.youtubeObject.isMuted();
-        }
-      });
-
-      Popcorn.player.defineProperty( media, "volume", {
-        set: function( val ) {
-
-          if ( options.destroyed ) {
-
-            return val;
-          }
-
-          if ( options.youtubeObject.getVolume() / 100 !== val ) {
-
-            options.youtubeObject.setVolume( val * 100 );
             lastVolume = options.youtubeObject.getVolume();
             media.dispatchEvent( "volumechange" );
           }
 
-          return options.youtubeObject.getVolume() / 100;
-        },
-        get: function() {
-
-          if ( options.destroyed ) {
-
-            return 0;
-          }
-
-          return options.youtubeObject.getVolume() / 100;
-        }
-      });
-
-      media.play = function() {
-
-        if ( options.destroyed ) {
-
-          return;
-        }
-
-        paused = false;
-        playerQueue.add(function() {
-
-          if ( options.youtubeObject.getPlayerState() !== 1 ) {
-
-            seeking = false;
-            options.youtubeObject.playVideo();
-          } else {
-            playerQueue.next();
-          }
-        });
+          setTimeout( volumeupdate, 250 );
+        };
       };
 
-      media.pause = function() {
+      if ( onYouTubePlayerAPIReady.ready ) {
 
-        if ( options.destroyed ) {
+        youtubeInit();
+      } else {
 
-          return;
-        }
+        onYouTubePlayerAPIReady.waiting.push( youtubeInit );
+      }
+    },
+    _teardown: function( options ) {
 
-        paused = true;
-        playerQueue.add(function() {
+      options.destroyed = true;
 
-          if ( options.youtubeObject.getPlayerState() !== 2 ) {
+      var youtubeObject = options.youtubeObject;
+      if( youtubeObject ){
+        youtubeObject.stopVideo();
+        youtubeObject.clearVideo && youtubeObject.clearVideo();
+      }
 
-            options.youtubeObject.pauseVideo();
-          } else {
-            playerQueue.next();
-          }
-        });
-      };
-    };
-
-    container.id = media.id + Popcorn.guid();
-    options._container = container;
-    media.appendChild( container );
-
-    var youtubeInit = function() {
-
-      var src, width, height, originalStyle, query, styleWidth, styleHeight;
-
-      var timeUpdate = function() {
-
-        if ( options.destroyed ) {
-          return;
-        }
-
-        if ( !seeking ) {
-          currentTime = options.youtubeObject.getCurrentTime();
-          media.dispatchEvent( "timeupdate" );
-        } else if ( currentTime === options.youtubeObject.getCurrentTime() ) {
-
-          seeking = false;
-          media.dispatchEvent( "seeked" );
-          media.dispatchEvent( "timeupdate" );
-        } else {
-
-          // keep trying the seek until it is right.
-          options.youtubeObject.seekTo( currentTime );
-        }
-        setTimeout( timeUpdate, 250 );
-      };
-
-      options.controls = +options.controls === 0 || +options.controls === 1 ? options.controls : 1;
-      options.annotations = +options.annotations === 1 || +options.annotations === 3 ? options.annotations : 1;
-
-      src = /^.*(?:\/|v=)(.{11})/.exec( media.src )[ 1 ];
-
-      query = ( media.src.split( "?" )[ 1 ] || "" )
-                         .replace( /v=.{11}/, "" );
-      query = query.replace( /&t=(?:(\d+)m)?(?:(\d+)s)?/, function( all, minutes, seconds ) {
-
-        // Make sure we have real zeros
-        minutes = minutes | 0; // bit-wise OR
-        seconds = seconds | 0; // bit-wise OR
-
-        fragmentStart = ( +seconds + ( minutes * 60 ) );
-        return "";
-      });
-      query = query.replace( /&start=(\d+)?/, function( all, seconds ) {
-
-        // Make sure we have real zeros
-        seconds = seconds | 0; // bit-wise OR
-
-        fragmentStart = seconds;
-        return "";
-      });
-
-      autoPlay = ( /autoplay=1/.test( query ) );
-
-      // cache original display property so it can be reapplied
-      originalStyle = media.style.display;
-      media.style.display = "inline";
-
-      // setting youtube player's height and width, min 640 x 390,
-      // anything smaller, and the player reports incorrect states.
-      styleHeight = parseFloat( media.style.height );
-      styleWidth = parseFloat( media.style.width );
-      height = styleHeight > media.clientHeight ? styleHeight : media.clientHeight;
-      width = styleWidth > media.clientWidth ? styleWidth : media.clientWidth;
-      height = height >= 390 ? height : "390";
-      width = width >= 640 ? width: "640";
-      
-      media.style.display = originalStyle;
-
-      options.youtubeObject = new YT.Player( container.id, {
-        height: height,
-        width: width,
-        wmode: "transparent",
-        playerVars: { wmode: "transparent" },
-        videoId: src,
-        events: {
-          "onReady": function(){
-
-            // pulling initial volume states form baseplayer
-            lastVolume = media.volume;
-            lastMuted = media.muted;
-
-            media.duration = options.youtubeObject.getDuration();
-
-            media.dispatchEvent( "durationchange" );
-            volumeupdate();
-
-            // pulling initial paused state from autoplay or the baseplayer
-            // also need to explicitly set to paused otherwise.
-            if ( autoPlay || !media.paused ) {
-              paused = false;
-            }
-
-            createProperties();
-            options.youtubeObject.playVideo();
-
-            if ( paused ) {
-              options.youtubeObject.pauseVideo();
-            }
-
-            media.currentTime = fragmentStart;
-
-            media.dispatchEvent( "loadedmetadata" );
-            media.dispatchEvent( "loadeddata" );
-            media.readyState = 4;
-
-            timeUpdate();
-            media.dispatchEvent( "canplaythrough" );
-          },
-          "onStateChange": function( state ){
-
-            if ( options.destroyed || state.data === -1 ) {
-              return;
-            }
-
-            // state.data === 2 is for pause events
-            // state.data === 1 is for play events
-            if ( state.data === 2 ) {
-
-              paused = true;
-              media.dispatchEvent( "pause" );
-              playerQueue.next();
-            } else if ( state.data === 1 ) {
-              paused = false;
-              media.dispatchEvent( "play" );
-              media.dispatchEvent( "playing" );
-              playerQueue.next();
-            } else if ( state.data === 0 ) {
-              media.dispatchEvent( "ended" );
-            }
-          },
-          "onError": function( error ) {
-
-            if ( [ 2, 100, 101, 150 ].indexOf( error.data ) !== -1 ) {
-              media.error = {
-                customCode: error.data
-              };
-              media.dispatchEvent( "error" );
-            }
-          }
-        }
-      });
-
-      var volumeupdate = function() {
-
-        if ( options.destroyed ) {
-
-          return;
-        }
-
-        if ( lastMuted !== options.youtubeObject.isMuted() ) {
-
-          lastMuted = options.youtubeObject.isMuted();
-          media.dispatchEvent( "volumechange" );
-        }
-
-        if ( lastVolume !== options.youtubeObject.getVolume() ) {
-
-          lastVolume = options.youtubeObject.getVolume();
-          media.dispatchEvent( "volumechange" );
-        }
-
-        setTimeout( volumeupdate, 250 );
-      };
-    };
-
-    if ( onYouTubePlayerAPIReady.ready ) {
-
-      youtubeInit();
-    } else {
-
-      onYouTubePlayerAPIReady.waiting.push( youtubeInit );
+      this.removeChild( document.getElementById( options._container.id ) );
     }
-  },
-  _teardown: function( options ) {
-
-    options.destroyed = true;
-
-    var youtubeObject = options.youtubeObject;
-    if( youtubeObject ){
-      youtubeObject.stopVideo();
-      youtubeObject.clearVideo();
-    }
-
-    this.removeChild( document.getElementById( options._container.id ) );
-  }
-});
+  });
+}( window, Popcorn ));
 // EFFECT: applyclass
 
 (function (Popcorn) {
@@ -10701,10 +10805,80 @@ Popcorn.player( "youtube", {
 
         // Video model.
         this.VideoModel = _Backbone.Model.extend({
+
+            // The initialization of these vars is unnecessary, but it's nice to know
+            // what vars will *eventually* be on the video model.
+
+            // This var will be true once we've retrieved the rest of the model attrs
+            // from the Amara API.
+            isComplete: false,
+
+            // Set from within the embedder.
             div: '',
             height: '',
+            initialLanguage: null,
+            isOnAmara: null,
             url: '',
-            width: ''
+            width: '',
+
+            // Set from the Amara API
+            all_urls: [],
+            created: null,
+            description: null,
+            duration: null,
+            id: null,
+            languages: [],
+            original_language: null,
+            project: null,
+            resource_uri: null,
+            team: null,
+            thumbnail: null,
+            title: null,
+
+            // Every time a video model is created, do this.
+            initialize: function() {
+
+                var video = this;
+                var apiURL = 'https://staging.universalsubtitles.org/api2/partners/videos/?&video_url=';
+
+                // Make a call to the Amara API to get attributes like available languages,
+                // internal ID, description, etc.
+                _$.ajax({
+                    url: apiURL + this.get('url'),
+                    dataType: 'jsonp',
+                    success: function(resp) {
+
+                        if (resp.objects.length) {
+
+                            // The video exists on Amara.
+                            video.set('isOnAmara', true);
+
+                            // There should only be one object.
+                            if (resp.objects.length === 1) {
+
+                                // Set all of the API attrs as attrs on the video model.
+                                video.set(resp.objects[0]);
+
+                                // Set the initial language to either the one provided by the initial
+                                // options, or the original language from the API.
+                                video.set('initialLanguage',
+                                    video.get('initialLanguage') ||
+                                    video.get('original_language')
+                                );
+                            }
+
+                        } else {
+
+                            // The video does not exist on Amara.
+                            video.set('isOnAmara', false);
+
+                        }
+
+                        // Mark that the video model has been completely populated.
+                        video.set('isComplete', true);
+                    }
+                });
+            }
         });
 
         // Amara view. This contains all of the events and logic for a single instance of
@@ -10713,13 +10887,7 @@ Popcorn.player( "youtube", {
 
             initialize: function() {
                 this.model.view = this;
-
-                // Variables that will eventually be set after rendering.
-                this.$amaraContainer = null;
-                this.pop = null;
-
                 this.template = __.template(this.templateHTML);
-
                 this.render();
             },
 
@@ -10731,29 +10899,59 @@ Popcorn.player( "youtube", {
             },
 
             render: function() {
-
+                
                 var that = this;
 
                 // Init the Popcorn video.
                 this.pop = _Popcorn.smart(this.model.get('div'), this.model.get('url'));
 
-                // TODO: Popcorn is not firing any events for any video types other
-                // than HTML5. Watch http://popcornjs.org/popcorn-docs/events/.
                 this.pop.on('loadedmetadata', function() {
 
                     // Set the video model's height and width, now that we know it.
                     that.model.set('height', that.pop.position().height);
                     that.model.set('width', that.pop.position().width);
 
+                    // Create the actual core DOM for the Amara container.
                     that.$el.append(that.template({
                         width: that.model.get('width')
                     }));
 
-                    that.$amaraContainer = $('div.amara-container', that.$el);
+                    // Just set some cached Zepto selections for later use.
+                    that.cacheNodes();
+
+                    // Wait until we have a complete video model (the API was hit as soon as
+                    // the video instance was created), and then retrieve the initial set
+                    // of subtitles, so we can begin building out the transcript viewer
+                    // and the subtitle display.
+                    that.waitUntilVideoIsComplete(
+                        function() {
+
+                            // We now have a fully populated video model.
+                            //
+                            // Grab the subtitles for the initial language and do yo' thang.
+
+                            if (that.model.get('isOnAmara')) {
+                                console.log('We b buildin.');
+                            } else {
+                                // Do some other stuff for videos that aren't yet on Amara.
+                            }
+                        }
+                    );
                 });
 
                 return this;
 
+            },
+
+            waitUntilVideoIsComplete: function(callback) {
+
+                // isComplete gets set as soon as the initial API call to build out the video
+                // instance has finished.
+                if (!this.model.get('isComplete')) {
+                    setTimeout(function() { that.waitUntilVideoIsComplete(callback); }, 100);
+                } else {
+                    callback();
+                }
             },
             logoClicked: function() {
                 alert('Logo clicked');
@@ -10764,7 +10962,7 @@ Popcorn.player( "youtube", {
                 return false;
             },
             transcriptButtonClicked: function() {
-                alert('Transcript button clicked');
+                this.$transcript.toggle();
                 return false;
             },
             subtitlesButtonClicked: function() {
@@ -10783,8 +10981,26 @@ Popcorn.player( "youtube", {
                 '        </ul>' +
                 '    </div>' +
                 '    <div class="amara-transcript">' +
+                '        <div class="amara-transcript-header amara-group">' +
+                '            <div class="amara-transcript-header-left">' +
+                '                Auto-stream <span>ON</span>' +
+                '            </div>' +
+                '            <div class="amara-transcript-header-right">' +
+                '                <form action="" class="amara-transcript-search">' +
+                '                    <input class="amara-transcript-search-input" placeholder="Search transcript" />' +
+                '                </form>' +
+                '            </div>' +
+                '        </div>' +
+                '        <div class="amara-transcript-body">' +
+                '            Transcript' +
+                '        </div>' +
                 '    </div>' +
-                '</div>'
+                '</div>',
+
+            cacheNodes: function() {
+                this.$amaraContainer = $('div.amara-container', this.$el);
+                this.$transcript = $('div.amara-transcript', this.$amaraContainer);
+            }
 
         });
 
@@ -10855,7 +11071,11 @@ Popcorn.player( "youtube", {
                     $div.attr('id', id);
 
                     // Call embedVideo with this div and URL.
-                    that.push(['embedVideo', {'div': id, 'url': $div.data('url') }]);
+                    that.push(['embedVideo', {
+                        'div': id,
+                        'initialLanguage': $div.data('initial-language'),
+                        'url': $div.data('url')
+                    }]);
                 });
             }
 

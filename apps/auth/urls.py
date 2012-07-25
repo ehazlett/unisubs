@@ -26,4 +26,5 @@ urlpatterns = patterns('auth.views',
     url(r'confirm_email/(?P<confirmation_key>\w+)/$', 'confirm_email', name='confirm_email'),
     url(r'auto-login/(?P<token>[\w]{40})/$', 'token_login', name='token-login'),
     url(r'resend_confirmation_email/$', 'resend_confirmation_email', name='resend_confirmation_email'),
+    url(r'login-trap/$', 'login_trap', name='login_trap'),
 )

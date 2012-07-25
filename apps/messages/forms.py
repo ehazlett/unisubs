@@ -73,7 +73,7 @@ class NewMessageForm(forms.Form):
 
     class Meta:
         model = Message
-        fields = ('user', 'content', 'subject')
+        fields = ('user', 'content', 'subject', 'team')
 
 
     def __init__(self, author, *args, **kwargs):
@@ -87,15 +87,14 @@ class NewMessageForm(forms.Form):
         # performance probably won't be an issue here.
         self.fields['team'].queryset = author.messageable_teams()
 
-
     def clean(self):
         cd = self.cleaned_data
 
-        if cd['team'] and cd['user']:
+        if cd.get('team') and cd.get('user'):
             raise forms.ValidationError(_(
                 u'You cannot send a message to a user and a team at the same time.'))
 
-        if not cd['team'] and not cd['user']:
+        if not cd.get('team') and not cd.get('user'):
             raise forms.ValidationError(_(u'You must choose a recipient.'))
 
         return self.cleaned_data
@@ -105,5 +104,3 @@ class NewMessageForm(forms.Form):
         if not content.strip():
             raise forms.ValidationError(_(u'This field is required.'))
         return content
-
-

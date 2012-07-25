@@ -114,14 +114,20 @@
     position: relative;
     z-index: 20 !important;
 }
+#main_bar ul#bar_menu li#me_menu #user_menu #menu_name {
+    padding-right: 13px;
+}
 #main_bar ul#bar_menu li#me_menu #user_menu #menu_name a {
-    background: transparent url(../images/icon_me_menu.png) 40px 23px no-repeat;
+    background: transparent url(../images/icon_me_menu.png) center right no-repeat;
     color: #126295;
     font-weight: bold;
-    padding: 18px 25px 14px 13px;
+    max-width: 101px;
+    overflow: hidden;
+    padding: 18px 18px 14px 13px;
+    text-overflow: ellipsis;
 }
 #main_bar ul#bar_menu li#me_menu #user_menu #menu_name a:hover {
-    background: #FFF url(../images/icon_me_menu.png) 40px 23px no-repeat
+    background: #FFF url(../images/icon_me_menu.png) center right no-repeat
 }
 #main_bar ul#bar_menu li#me_menu #user_menu #menu {
     -moz-border-radius-bottomleft: 5px;
@@ -224,7 +230,7 @@
     height: 28px;
     margin: 9px 0 0 0;
     text-indent: -9999px;
-    width: 205px;
+    width: 131px;
 }
 #main_bar h1 a:hover {
     background-position: 0 -28px

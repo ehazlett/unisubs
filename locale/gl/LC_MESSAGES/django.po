@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-11 01:32-0500\n"
-"PO-Revision-Date: 2012-07-10 06:47+0000\n"
+"POT-Creation-Date: 2012-07-24 01:30-0500\n"
+"PO-Revision-Date: 2012-07-20 06:51+0000\n"
 "Last-Translator: unisubsapi <universalsubtitles-dev@pculture.org>\n"
 "Language-Team: Galician (http://www.transifex.com/projects/p/"
 "universalsubtitles/language/gl/)\n"
@@ -57,47 +57,47 @@ msgstr "Correo"
 msgid "Hide"
 msgstr "Agochar"
 
-#: apps/auth/models.py:99
+#: apps/auth/models.py:100
 msgid "Retired user"
 msgstr "Usuario retirado"
 
-#: apps/auth/models.py:326
+#: apps/auth/models.py:327
 msgid "Add comment"
 msgstr "Engadir comentario"
 
-#: apps/auth/models.py:327
+#: apps/auth/models.py:328
 msgid "Start subtitles"
 msgstr "Iniciar subtítulos"
 
-#: apps/auth/models.py:328
+#: apps/auth/models.py:329
 msgid "Start translation"
 msgstr "Iniciar tradución"
 
-#: apps/auth/models.py:329
+#: apps/auth/models.py:330
 msgid "Edit subtitles"
 msgstr "Editar subtítulos"
 
-#: apps/auth/models.py:330
+#: apps/auth/models.py:331
 msgid "Edit translation"
 msgstr "Editar tradución"
 
-#: apps/auth/models.py:387
+#: apps/auth/models.py:388
 msgid "understand enough"
 msgstr "suficiente comprensión"
 
-#: apps/auth/models.py:388
+#: apps/auth/models.py:389
 msgid "understand 99%"
 msgstr "comprensión 99%"
 
-#: apps/auth/models.py:389
+#: apps/auth/models.py:390
 msgid "write like a native"
 msgstr "escribir coma un nativo"
 
-#: apps/auth/models.py:394
+#: apps/auth/models.py:395
 msgid "follow requests in language"
 msgstr "seguir consultas no idioma"
 
-#: apps/auth/models.py:409
+#: apps/auth/models.py:410
 msgid ""
 "This is date when start to display announcement. And only the last will be "
 "displayed."
@@ -105,31 +105,31 @@ msgstr ""
 "Esta é a data ao comezar a verse o anuncio. E soamente se presentará o "
 "último."
 
-#: apps/auth/models.py:508
+#: apps/auth/models.py:509
 msgid "e-mail confirmation"
 msgstr "confirmación de correo electrónico"
 
-#: apps/auth/models.py:509
+#: apps/auth/models.py:510
 msgid "e-mail confirmations"
 msgstr "confirmacións de correo electrónico"
 
-#: apps/auth/views.py:58
+#: apps/auth/views.py:59
 msgid "Confirmation key expired."
 msgstr "A clave de confirmación expirou."
 
-#: apps/auth/views.py:60
+#: apps/auth/views.py:61
 msgid "Email is confirmed."
 msgstr "Confirmouse o correo electrónico."
 
-#: apps/auth/views.py:72
+#: apps/auth/views.py:73
 msgid "Confirmation email was sent."
 msgstr "Enviouse confirmación do correo electrónico."
 
-#: apps/auth/views.py:74
+#: apps/auth/views.py:75
 msgid "You email is empty or already confirmed."
 msgstr "O correo electrónico está baleiro ou xa foi confirmado."
 
-#: apps/auth/views.py:106
+#: apps/auth/views.py:107
 msgid "Your account was deleted."
 msgstr "Eliminouse a súa conta."
 
@@ -193,15 +193,15 @@ msgstr "Debería estar autenticado para escribir mensaxes"
 msgid "This message is from site administrator."
 msgstr "Esta é unha mensaxe do administrador do sitio."
 
-#: apps/messages/forms.py:96
+#: apps/messages/forms.py:95
 msgid "You cannot send a message to a user and a team at the same time."
 msgstr "Non pode enviar unha mensaxe a un usuario e un equipo á vez."
 
-#: apps/messages/forms.py:99
+#: apps/messages/forms.py:98
 msgid "You must choose a recipient."
 msgstr "Debe elixir un destinatario."
 
-#: apps/messages/forms.py:106
+#: apps/messages/forms.py:105
 msgid "This field is required."
 msgstr "Este campo é necesario."
 
@@ -300,7 +300,7 @@ msgstr "Os subtítulos non lle foron aceptados"
 msgid "%(user)s left a comment on the video %(title)s"
 msgstr "%(user)s deixou un comentario no vídeos %(title)s"
 
-#: apps/messages/views.py:123
+#: apps/messages/views.py:125
 msgid "Message sent."
 msgstr "A mensaxe enviou."
 
@@ -548,110 +548,110 @@ msgstr ""
 msgid "Team URL: http://universalsubtitles.org/teams/"
 msgstr "Endeezo URL do equipo: http://universalsubtitles.org/teams/"
 
-#: apps/teams/forms.py:342
+#: apps/teams/forms.py:347
 msgid "This video has already been transcribed."
 msgstr "Este vídeo xa se transcribiu."
 
-#: apps/teams/forms.py:347
+#: apps/teams/forms.py:352
 msgid "Subtitling of this video is already in progress."
 msgstr "A subtitulación deste vídeo xa está en proceso."
 
-#: apps/teams/forms.py:353
+#: apps/teams/forms.py:358
 msgid "No one has transcribed this video yet, so it can't be translated."
 msgstr "Ninguén transcribiu este vídeo aínda, pódese transcribir."
 
-#: apps/teams/forms.py:359
+#: apps/teams/forms.py:364
 msgid "This language already has a complete set of subtitles."
 msgstr "Este idioma xa completou o conxunto de subtítulos."
 
-#: apps/teams/forms.py:379
+#: apps/teams/forms.py:384
 msgid "There is already a task in progress for that video/language."
 msgstr "Aínda hai unha tarefa en proceso para este vídeo/idioma."
 
-#: apps/teams/forms.py:393
+#: apps/teams/forms.py:398
 msgid "You must select a language for a Translate task."
 msgstr "Debe seleccionar un idoma para unha tarefa de tradución."
 
-#: apps/teams/forms.py:426
+#: apps/teams/forms.py:433
 msgid "That user has already been assigned the maximum number of tasks."
 msgstr "Este usuario xa ten asignado o número máximo de tarefas."
 
-#: apps/teams/forms.py:448
+#: apps/teams/forms.py:455
 msgid "You do not have permission to assign this task."
 msgstr "Non ten permiso para asignar esta tarefa."
 
-#: apps/teams/forms.py:455
+#: apps/teams/forms.py:462
 msgid "This user cannot perform that task."
 msgstr "O usuario non pode realizar esta tarefa."
 
-#: apps/teams/forms.py:476
+#: apps/teams/forms.py:483
 msgid "You do not have permission to delete this task."
 msgstr "Non ten permiso para eliminar esta tarefa."
 
-#: apps/teams/forms.py:533
+#: apps/teams/forms.py:540
 msgid "You cannot blacklist a preferred language."
 msgstr "Non é posíbel poñer na lista negra un idioma preferido."
 
-#: apps/teams/forms.py:556 apps/teams/forms.py:558
+#: apps/teams/forms.py:563 apps/teams/forms.py:565
 msgid "User does not exist!"
 msgstr "O usuario non existe!"
 
-#: apps/teams/forms.py:565
+#: apps/teams/forms.py:572
 msgid "User is already a member of this team!"
 msgstr "O usuario xa é membro deste equipo!"
 
-#: apps/teams/forms.py:591 templates/videos/subtitle-view.html:373
+#: apps/teams/forms.py:599 templates/videos/subtitle-view.html:375
 msgid "Would you like to delete these subtitles completely?"
 msgstr "Desexa eliminar os subtítulos completamente?"
 
-#: apps/teams/forms.py:595 templates/videos/subtitle-view.html:358
+#: apps/teams/forms.py:603 templates/videos/subtitle-view.html:360
 msgid "What would you like to unpublish?"
 msgstr "Que desexa despublicar?"
 
-#: apps/teams/forms.py:597
+#: apps/teams/forms.py:605
 msgid "This version (and any later version) for this language."
 msgstr "Esta versión (e calquera versión posterior) para este idioma."
 
-#: apps/teams/forms.py:598
+#: apps/teams/forms.py:606
 msgid "All versions for this language and any dependent languages."
 msgstr "Todas as versións para este idioma e calquera idioma dependente."
 
-#: apps/teams/forms.py:616
+#: apps/teams/forms.py:624
 msgid "These subtitles are not under a team's control."
 msgstr "Os subtítulos non están baixo o control dun equipo."
 
-#: apps/teams/forms.py:620
+#: apps/teams/forms.py:628
 msgid "You do not have permission to unpublish these subtitles."
 msgstr "Non ten permiso para despublicar os subtítulos."
 
-#: apps/teams/forms.py:639
+#: apps/teams/forms.py:647
 msgid "You cannot perform that task."
 msgstr "Non pode realizar esa tarefa."
 
-#: apps/teams/forms.py:651 apps/videos/forms.py:461
+#: apps/teams/forms.py:659 apps/videos/forms.py:461
 msgid "Invalid language to translate from."
 msgstr "É incorrecta a elección de idioma do que traducir"
 
-#: apps/teams/forms.py:660 apps/videos/forms.py:71 apps/videos/forms.py:89
+#: apps/teams/forms.py:668 apps/videos/forms.py:71 apps/videos/forms.py:89
 #: apps/videos/forms.py:470
 msgid "File size should be less {0} kb"
 msgstr "O tamaño do ficheiro debería ser menor que {0} kb"
 
-#: apps/teams/forms.py:665 apps/videos/forms.py:475
+#: apps/teams/forms.py:673 apps/videos/forms.py:475
 #, python-format
 msgid "Incorrect format. Upload %s"
 msgstr "O formato non é correcto. Enviar %s"
 
-#: apps/teams/forms.py:672 apps/videos/forms.py:76 apps/videos/forms.py:97
+#: apps/teams/forms.py:680 apps/videos/forms.py:76 apps/videos/forms.py:97
 #: apps/videos/forms.py:482
 msgid "Can not detect file encoding"
 msgstr "Non é posíbel detectar a codificación do ficheiro"
 
-#: apps/teams/forms.py:677 apps/videos/forms.py:99 apps/videos/forms.py:487
+#: apps/teams/forms.py:685 apps/videos/forms.py:99 apps/videos/forms.py:487
 msgid "Incorrect subtitles format"
 msgstr "O formato dos subtítulos é incorrecto"
 
-#: apps/teams/forms.py:750 apps/videos/forms.py:577
+#: apps/teams/forms.py:758 apps/videos/forms.py:577
 msgid ""
 "Sorry, we couldn't upload your file because it has fewer lines ({0}) than "
 "the previous version ({1})."
@@ -659,7 +659,7 @@ msgstr ""
 "Desculpe, non se pode subir o seu ficheiro porque ten menos liñas ({0}) que "
 "a versión previa ({1})."
 
-#: apps/teams/forms.py:756 apps/videos/forms.py:584
+#: apps/teams/forms.py:764 apps/videos/forms.py:584
 msgid ""
 "Sorry, we couldn't upload your file because the number of lines in your "
 "translation ({0}) doesn't match the original ({1})."
@@ -793,7 +793,7 @@ msgstr "tarefas máximas por membro"
 msgid "task expiration (days)"
 msgstr "vencemento de tarefas (días)"
 
-#: apps/teams/models.py:183 templates/profiles/_top_user_panel.html:33
+#: apps/teams/models.py:183 templates/profiles/_top_user_panel.html:32
 #: templates/profiles/dashboard.html:109 templates/teams/teams-list.html:6
 msgid "Teams"
 msgstr "Equipos"
@@ -1131,7 +1131,7 @@ msgstr ""
 msgid "Successfully unpublished subtitles."
 msgstr "Subtítulos despublicados correctamente."
 
-#: apps/teams/templatetags/teams_tags.py:254
+#: apps/teams/templatetags/teams_tags.py:258
 #, python-format
 msgid "Can somebody help me subtitle these videos? %(url)s"
 msgstr "Pode alguén axudarme a subtitular estes vídeos? %(url)s"
@@ -1639,7 +1639,7 @@ msgstr ""
 msgid "Just found a version of this video with %(language_name)s subtitles"
 msgstr "Atopouse unha versión deste vídeo con subtítulos en %(language_name)s"
 
-#: apps/videos/views.py:160
+#: apps/videos/views.py:161
 msgid ""
 "Here is the subtitle workspace for your video. You can\n"
 "share the video with friends, or get an embed code for your site.  To add "
@@ -1650,7 +1650,7 @@ msgstr ""
 "amigos, ou obter o código de incrustación para o teu sitio.  Para engadir\n"
 "ou mellorar os subtítulos, preme o botón de debaixo do vídeo."
 
-#: apps/videos/views.py:168
+#: apps/videos/views.py:169
 msgid ""
 "You have submitted a video\n"
 "                that is served over http.  Your browser may display mixed\n"
@@ -1661,11 +1661,11 @@ msgstr ""
 "mestura\n"
 "                de alertas de contido."
 
-#: apps/videos/views.py:173
+#: apps/videos/views.py:174
 msgid "Existing subtitles will be imported in a few minutes."
 msgstr "Os subtítulos importaranse nuns minutos."
 
-#: apps/videos/views.py:282
+#: apps/videos/views.py:283
 msgid ""
 "Thank you for uploading. It will take a minute or so for your subtitles to "
 "appear."
@@ -1673,23 +1673,23 @@ msgstr ""
 "Grazas pola carga. Levaralle máis ou menos un minuto apareceren os "
 "subtítulos."
 
-#: apps/videos/views.py:284
+#: apps/videos/views.py:285
 msgid "Your changes have been saved."
 msgstr "Gardáronse os cambios."
 
-#: apps/videos/views.py:635
+#: apps/videos/views.py:636
 msgid "You have not permission change this URL"
 msgstr "Non ten permiso para cambiar este URL"
 
-#: apps/videos/views.py:641 apps/videos/views.py:661
+#: apps/videos/views.py:642 apps/videos/views.py:662
 msgid "Object does not exist"
 msgstr "O obxecto non existe"
 
-#: apps/videos/views.py:654
+#: apps/videos/views.py:655
 msgid "You have not permission delete this URL"
 msgstr "Non ten permiso para eliminar este URL"
 
-#: apps/videos/views.py:657
+#: apps/videos/views.py:658
 msgid "You cann't remove original URL"
 msgstr "Non se pode retirar o URL orixinal"
 
@@ -1744,7 +1744,7 @@ msgstr ""
 msgid "Sorry, these subtitles are privately moderated."
 msgstr "Estes subtítulos teñen moderación privada."
 
-#: apps/widget/rpc.py:945 apps/widget/rpc.py:986
+#: apps/widget/rpc.py:949 apps/widget/rpc.py:990
 msgid "\n"
 msgstr "\n"
 
@@ -1790,7 +1790,7 @@ msgstr "Progreso"
 
 #: libs/rosetta/templates/rosetta/languages.html:30
 #: templates/messages/new.html:14 templates/messages/sent.html:23
-#: templates/profiles/_tabs.html:13 templates/profiles/_top_user_panel.html:20
+#: templates/profiles/_tabs.html:13 templates/profiles/_top_user_panel.html:19
 #: templates/teams/_subnav_settings.html:9
 msgid "Messages"
 msgstr "Mensaxes"
@@ -2046,822 +2046,838 @@ msgid "Bosnian"
 msgstr "Bosnio"
 
 #: libs/unilangs/unilangs.py:148
+msgid "Buginese"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:149
 msgid "Catalan"
 msgstr "Catalán"
 
-#: libs/unilangs/unilangs.py:149
+#: libs/unilangs/unilangs.py:150
 msgid "Chechen"
 msgstr "Checheno"
 
-#: libs/unilangs/unilangs.py:150
+#: libs/unilangs/unilangs.py:151
 msgid "Cebuano"
 msgstr "Cebuano"
 
-#: libs/unilangs/unilangs.py:151
+#: libs/unilangs/unilangs.py:152
 msgid "Chamorro"
 msgstr "Chamorro"
 
-#: libs/unilangs/unilangs.py:152
+#: libs/unilangs/unilangs.py:153
 msgid "Choctaw"
 msgstr "Choctaw"
 
-#: libs/unilangs/unilangs.py:153
+#: libs/unilangs/unilangs.py:154
 msgid "Corsican"
 msgstr "Corso"
 
-#: libs/unilangs/unilangs.py:154
+#: libs/unilangs/unilangs.py:155
 msgid "Cree"
 msgstr "Cree"
 
-#: libs/unilangs/unilangs.py:155
+#: libs/unilangs/unilangs.py:156
 msgid "Czech"
 msgstr "Checo"
 
-#: libs/unilangs/unilangs.py:156
+#: libs/unilangs/unilangs.py:157
 msgid "Church Slavic"
 msgstr "Eslavo eclesiástico"
 
-#: libs/unilangs/unilangs.py:157
+#: libs/unilangs/unilangs.py:158
 msgid "Chuvash"
 msgstr "Chuvash"
 
-#: libs/unilangs/unilangs.py:158
+#: libs/unilangs/unilangs.py:159
 msgid "Welsh"
 msgstr "Galés"
 
-#: libs/unilangs/unilangs.py:159
+#: libs/unilangs/unilangs.py:160
 msgid "Danish"
 msgstr "Danés"
 
-#: libs/unilangs/unilangs.py:160
+#: libs/unilangs/unilangs.py:161
 msgid "German"
 msgstr "Alemán"
 
-#: libs/unilangs/unilangs.py:161
+#: libs/unilangs/unilangs.py:162
 msgid "Divehi"
 msgstr "Divehi"
 
-#: libs/unilangs/unilangs.py:162
+#: libs/unilangs/unilangs.py:163
 msgid "Dzongkha"
 msgstr "Dzongkha"
 
-#: libs/unilangs/unilangs.py:163
+#: libs/unilangs/unilangs.py:164
 msgid "Ewe"
 msgstr "Ewe"
 
-#: libs/unilangs/unilangs.py:164
+#: libs/unilangs/unilangs.py:165
 msgid "Efik"
 msgstr "Efik"
 
-#: libs/unilangs/unilangs.py:165
+#: libs/unilangs/unilangs.py:166
 msgid "Greek"
 msgstr "Grego"
 
-#: libs/unilangs/unilangs.py:166
+#: libs/unilangs/unilangs.py:167
 msgid "English"
 msgstr "Inglés"
 
-#: libs/unilangs/unilangs.py:167
+#: libs/unilangs/unilangs.py:168
 msgid "English, British"
 msgstr "Inglés Británico"
 
-#: libs/unilangs/unilangs.py:168
+#: libs/unilangs/unilangs.py:169
 msgid "Esperanto"
 msgstr "Esperanto"
 
-#: libs/unilangs/unilangs.py:169
+#: libs/unilangs/unilangs.py:170
 msgid "Spanish"
 msgstr "Castelán"
 
-#: libs/unilangs/unilangs.py:170
+#: libs/unilangs/unilangs.py:171
 msgid "Spanish, Argentinian"
 msgstr "Español, Argentina"
 
-#: libs/unilangs/unilangs.py:171
+#: libs/unilangs/unilangs.py:172
 msgid "Spanish, Mexican"
 msgstr "Español, México"
 
-#: libs/unilangs/unilangs.py:172
+#: libs/unilangs/unilangs.py:173
 msgid "Spanish, Nicaraguan"
 msgstr "Español, Nicaragua"
 
-#: libs/unilangs/unilangs.py:173
+#: libs/unilangs/unilangs.py:174
 msgid "Estonian"
 msgstr "Estonio"
 
-#: libs/unilangs/unilangs.py:174
+#: libs/unilangs/unilangs.py:175
 msgid "Basque"
 msgstr "Basco"
 
-#: libs/unilangs/unilangs.py:175
+#: libs/unilangs/unilangs.py:176
 msgid "Persian"
 msgstr "Persa"
 
-#: libs/unilangs/unilangs.py:176
+#: libs/unilangs/unilangs.py:177
 msgid "Fulah"
 msgstr "Fulah"
 
-#: libs/unilangs/unilangs.py:177
+#: libs/unilangs/unilangs.py:178
 msgid "Finnish"
 msgstr "Finés"
 
-#: libs/unilangs/unilangs.py:178
+#: libs/unilangs/unilangs.py:179
 msgid "Filipino"
 msgstr "Filipino"
 
-#: libs/unilangs/unilangs.py:179
+#: libs/unilangs/unilangs.py:180
 msgid "Fijian"
 msgstr "Fixiano"
 
-#: libs/unilangs/unilangs.py:180
+#: libs/unilangs/unilangs.py:181
 msgid "Faroese"
 msgstr "Feroés"
 
-#: libs/unilangs/unilangs.py:181
+#: libs/unilangs/unilangs.py:182
 msgid "French"
 msgstr "Francés"
 
-#: libs/unilangs/unilangs.py:182
+#: libs/unilangs/unilangs.py:183
 msgid "French, Canadian"
 msgstr "Francés, Canadá"
 
-#: libs/unilangs/unilangs.py:183
+#: libs/unilangs/unilangs.py:184
 msgid "Fula"
 msgstr "Fulah"
 
-#: libs/unilangs/unilangs.py:184
+#: libs/unilangs/unilangs.py:185
 msgid "Frisian"
 msgstr "Frisio"
 
-#: libs/unilangs/unilangs.py:185
+#: libs/unilangs/unilangs.py:186
 msgid "Irish"
 msgstr "Irlandés"
 
-#: libs/unilangs/unilangs.py:186
+#: libs/unilangs/unilangs.py:187
 msgid "Scottish Gaelic"
 msgstr "Gaélico Escocés"
 
-#: libs/unilangs/unilangs.py:187
+#: libs/unilangs/unilangs.py:188
 msgid "Galician"
 msgstr "Galego"
 
-#: libs/unilangs/unilangs.py:188
+#: libs/unilangs/unilangs.py:189
 msgid "Guaran"
 msgstr "Guaraní"
 
-#: libs/unilangs/unilangs.py:189
+#: libs/unilangs/unilangs.py:190
 msgid "Gujarati"
 msgstr "Guxarati"
 
-#: libs/unilangs/unilangs.py:190
+#: libs/unilangs/unilangs.py:191
 msgid "Manx"
 msgstr "Manés"
 
-#: libs/unilangs/unilangs.py:191
+#: libs/unilangs/unilangs.py:192
 msgid "Haida"
 msgstr "Haida"
 
-#: libs/unilangs/unilangs.py:192
+#: libs/unilangs/unilangs.py:193
 msgid "Hausa"
 msgstr "Hausa"
 
-#: libs/unilangs/unilangs.py:193
+#: libs/unilangs/unilangs.py:194
+msgid "Hazaragi"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:195
 msgid "Hebrew"
 msgstr "Hebreo"
 
-#: libs/unilangs/unilangs.py:194
+#: libs/unilangs/unilangs.py:196
 msgid "Hindi"
 msgstr "Hindi"
 
-#: libs/unilangs/unilangs.py:195
+#: libs/unilangs/unilangs.py:197
 msgid "Hiri Motu"
 msgstr "Hiri Motu"
 
-#: libs/unilangs/unilangs.py:196
+#: libs/unilangs/unilangs.py:198
 msgid "Croatian"
 msgstr "Croata"
 
-#: libs/unilangs/unilangs.py:197
+#: libs/unilangs/unilangs.py:199
 msgid "Creole, Haitian"
 msgstr "Crioulo, Haití"
 
-#: libs/unilangs/unilangs.py:198
+#: libs/unilangs/unilangs.py:200
 msgid "Hungarian"
 msgstr "Húngaro"
 
-#: libs/unilangs/unilangs.py:199
+#: libs/unilangs/unilangs.py:201
 msgid "Hupa"
 msgstr "Hupa"
 
-#: libs/unilangs/unilangs.py:200
+#: libs/unilangs/unilangs.py:202
 msgid "Armenian"
 msgstr "Armenio"
 
-#: libs/unilangs/unilangs.py:201
+#: libs/unilangs/unilangs.py:203
 msgid "Herero"
 msgstr "Herero"
 
-#: libs/unilangs/unilangs.py:202
+#: libs/unilangs/unilangs.py:204
 msgid "Interlingua"
 msgstr "Interlingua"
 
-#: libs/unilangs/unilangs.py:203
+#: libs/unilangs/unilangs.py:205
 msgid "Igbo"
 msgstr "Igbo"
 
-#: libs/unilangs/unilangs.py:204
+#: libs/unilangs/unilangs.py:206
 msgid "Indonesian"
 msgstr "Indonesio"
 
-#: libs/unilangs/unilangs.py:205
+#: libs/unilangs/unilangs.py:207
 msgid "Interlingue"
 msgstr "Interlingue"
 
-#: libs/unilangs/unilangs.py:206
+#: libs/unilangs/unilangs.py:208
 msgid "Sichuan Yi"
 msgstr "Sichuan Yi"
 
-#: libs/unilangs/unilangs.py:207
+#: libs/unilangs/unilangs.py:209
 msgid "Inupia"
 msgstr "Inuplaq"
 
-#: libs/unilangs/unilangs.py:208
+#: libs/unilangs/unilangs.py:210
 msgid "Ilocano"
 msgstr "Ilocano"
 
-#: libs/unilangs/unilangs.py:209
+#: libs/unilangs/unilangs.py:211
 msgid "Ingush"
 msgstr "Ingushetio"
 
-#: libs/unilangs/unilangs.py:210
+#: libs/unilangs/unilangs.py:212
 msgid "Ido"
 msgstr "Ido"
 
-#: libs/unilangs/unilangs.py:211
+#: libs/unilangs/unilangs.py:213
 msgid "Iroquoian languages"
 msgstr "Linguas Iroquesas"
 
-#: libs/unilangs/unilangs.py:212
+#: libs/unilangs/unilangs.py:214
 msgid "Icelandic"
 msgstr "Islandés"
 
-#: libs/unilangs/unilangs.py:213
+#: libs/unilangs/unilangs.py:215
 msgid "Italian"
 msgstr "Italiano"
 
-#: libs/unilangs/unilangs.py:214
+#: libs/unilangs/unilangs.py:216
 msgid "Inuktitut"
 msgstr "Inuktitut"
 
-#: libs/unilangs/unilangs.py:215
+#: libs/unilangs/unilangs.py:217
 msgid "Japanese"
 msgstr "Xaponés"
 
-#: libs/unilangs/unilangs.py:216
+#: libs/unilangs/unilangs.py:218
 msgid "Javanese"
 msgstr "Xavanés"
 
-#: libs/unilangs/unilangs.py:217
+#: libs/unilangs/unilangs.py:219
 msgid "Georgian"
 msgstr "Xeorxiano"
 
-#: libs/unilangs/unilangs.py:218
+#: libs/unilangs/unilangs.py:220
 msgid "Karen"
 msgstr "Karen"
 
-#: libs/unilangs/unilangs.py:219
+#: libs/unilangs/unilangs.py:221
 msgid "Kanuri"
 msgstr "Kanuri"
 
-#: libs/unilangs/unilangs.py:220
+#: libs/unilangs/unilangs.py:222
 msgid "Gikuyu"
 msgstr "Gikuyu"
 
-#: libs/unilangs/unilangs.py:221
+#: libs/unilangs/unilangs.py:223
 msgid "Rwandi"
 msgstr "Ruandés"
 
-#: libs/unilangs/unilangs.py:222
+#: libs/unilangs/unilangs.py:224
 msgid "Kuanyama, Kwanyama"
 msgstr "Kuanyama, Kwanyama"
 
-#: libs/unilangs/unilangs.py:223
+#: libs/unilangs/unilangs.py:225
 msgid "Kazakh"
 msgstr "Cazaxo"
 
-#: libs/unilangs/unilangs.py:224
+#: libs/unilangs/unilangs.py:226
 msgid "Greenlandic"
 msgstr "Grenlandés"
 
-#: libs/unilangs/unilangs.py:225
+#: libs/unilangs/unilangs.py:227
 msgid "Khmer"
 msgstr "Khmer"
 
-#: libs/unilangs/unilangs.py:226
+#: libs/unilangs/unilangs.py:228
 msgid "Kannada"
 msgstr "Kannada"
 
-#: libs/unilangs/unilangs.py:227
+#: libs/unilangs/unilangs.py:229
 msgid "Korean"
 msgstr "Coreano"
 
-#: libs/unilangs/unilangs.py:228
+#: libs/unilangs/unilangs.py:230
 msgid "Kongo"
 msgstr "Kongo"
 
-#: libs/unilangs/unilangs.py:229
+#: libs/unilangs/unilangs.py:231
 msgid "Kashmiri"
 msgstr "Caxemir"
 
-#: libs/unilangs/unilangs.py:230
+#: libs/unilangs/unilangs.py:232
 msgid "Kurdish"
 msgstr "Kurdo"
 
-#: libs/unilangs/unilangs.py:231
+#: libs/unilangs/unilangs.py:233
 msgid "Komi"
 msgstr "Komi"
 
-#: libs/unilangs/unilangs.py:232
+#: libs/unilangs/unilangs.py:234
 msgid "Cornish"
 msgstr "Córnico"
 
-#: libs/unilangs/unilangs.py:233
+#: libs/unilangs/unilangs.py:235
 msgid "Kyrgyz"
 msgstr "Kirguís"
 
-#: libs/unilangs/unilangs.py:234
+#: libs/unilangs/unilangs.py:236
 msgid "Latin"
 msgstr "Latín"
 
-#: libs/unilangs/unilangs.py:235
+#: libs/unilangs/unilangs.py:237
 msgid "Luxembourgish"
 msgstr "Luxemburgués"
 
-#: libs/unilangs/unilangs.py:236
+#: libs/unilangs/unilangs.py:238
 msgid "Ganda"
 msgstr "Ganda"
 
-#: libs/unilangs/unilangs.py:237
+#: libs/unilangs/unilangs.py:239
 msgid "Limburgish"
 msgstr "Limburgueś"
 
-#: libs/unilangs/unilangs.py:238
+#: libs/unilangs/unilangs.py:240
 msgid "Lingala"
 msgstr "Lingala"
 
-#: libs/unilangs/unilangs.py:239
+#: libs/unilangs/unilangs.py:241
 msgid "Lakota"
 msgstr "Lakotas"
 
-#: libs/unilangs/unilangs.py:240
+#: libs/unilangs/unilangs.py:242
 msgid "Lao"
 msgstr "Laosiano"
 
-#: libs/unilangs/unilangs.py:241
+#: libs/unilangs/unilangs.py:243
 msgid "Lithuanian"
 msgstr "Lituano"
 
-#: libs/unilangs/unilangs.py:242
+#: libs/unilangs/unilangs.py:244
 msgid "Luba-Katagana"
 msgstr "Luba-Katagana"
 
-#: libs/unilangs/unilangs.py:243
+#: libs/unilangs/unilangs.py:245
 msgid "Luba-Kasai"
 msgstr "Luba-Kasai"
 
-#: libs/unilangs/unilangs.py:244
+#: libs/unilangs/unilangs.py:246
 msgid "Luo"
 msgstr "Luo"
 
-#: libs/unilangs/unilangs.py:245
+#: libs/unilangs/unilangs.py:247
 msgid "Luhya"
 msgstr "Luhya"
 
-#: libs/unilangs/unilangs.py:246
+#: libs/unilangs/unilangs.py:248
 msgid "Latvian"
 msgstr "Letón"
 
-#: libs/unilangs/unilangs.py:247
+#: libs/unilangs/unilangs.py:249
 msgid "Metadata: Geo"
 msgstr "Metadatos: Geo"
 
-#: libs/unilangs/unilangs.py:248
+#: libs/unilangs/unilangs.py:250
 msgid "Metadata: Twitter"
 msgstr "Metadatos: Twitter"
 
-#: libs/unilangs/unilangs.py:249
+#: libs/unilangs/unilangs.py:251
 msgid "Metadata: Wikipedia"
 msgstr "Metadatos: Wikipedia"
 
-#: libs/unilangs/unilangs.py:250
+#: libs/unilangs/unilangs.py:252
 msgid "Madurese"
 msgstr "Madurese"
 
-#: libs/unilangs/unilangs.py:251
+#: libs/unilangs/unilangs.py:253
 msgid "Marshallese"
 msgstr "Marsellés"
 
-#: libs/unilangs/unilangs.py:252
+#: libs/unilangs/unilangs.py:254
 msgid "Maori"
 msgstr "Maorí"
 
-#: libs/unilangs/unilangs.py:253
+#: libs/unilangs/unilangs.py:255
 msgid "Macedonian"
 msgstr "Macedonio"
 
-#: libs/unilangs/unilangs.py:254
+#: libs/unilangs/unilangs.py:256
 msgid "Malayalam"
 msgstr "Malaio"
 
-#: libs/unilangs/unilangs.py:255
+#: libs/unilangs/unilangs.py:257
 msgid "Malagasy"
 msgstr "Malgaxe"
 
-#: libs/unilangs/unilangs.py:256
+#: libs/unilangs/unilangs.py:258
 msgid "Mongolian"
 msgstr "Mongol"
 
-#: libs/unilangs/unilangs.py:257
+#: libs/unilangs/unilangs.py:259
 msgid "Mandinka"
 msgstr "Mandinka"
 
-#: libs/unilangs/unilangs.py:258
+#: libs/unilangs/unilangs.py:260
 msgid "Moldavian, Moldovan"
 msgstr "Moldavo, Moldavia"
 
-#: libs/unilangs/unilangs.py:259
+#: libs/unilangs/unilangs.py:261
 msgid "Mohawk"
 msgstr "Mohawk"
 
-#: libs/unilangs/unilangs.py:260
+#: libs/unilangs/unilangs.py:262
 msgid "Manipuri"
 msgstr "Manipurí"
 
-#: libs/unilangs/unilangs.py:261
+#: libs/unilangs/unilangs.py:263
 msgid "Mossi"
 msgstr "Mossi"
 
-#: libs/unilangs/unilangs.py:262
+#: libs/unilangs/unilangs.py:264
 msgid "Marathi"
 msgstr "Maratí"
 
-#: libs/unilangs/unilangs.py:263
+#: libs/unilangs/unilangs.py:265
 msgid "Malay"
 msgstr "Malaio"
 
-#: libs/unilangs/unilangs.py:264
+#: libs/unilangs/unilangs.py:266
 msgid "Maltese"
 msgstr "Maltés"
 
-#: libs/unilangs/unilangs.py:265
+#: libs/unilangs/unilangs.py:267
 msgid "Burmese"
 msgstr "Birmano"
 
-#: libs/unilangs/unilangs.py:266
+#: libs/unilangs/unilangs.py:268
 msgid "Hokkien"
 msgstr "Hokkien"
 
-#: libs/unilangs/unilangs.py:267
+#: libs/unilangs/unilangs.py:269
 msgid "Naurunan"
 msgstr "Naurunan"
 
-#: libs/unilangs/unilangs.py:268
+#: libs/unilangs/unilangs.py:270
 msgid "Norwegian Bokmal"
 msgstr "Noruegués Bokmal"
 
-#: libs/unilangs/unilangs.py:269
+#: libs/unilangs/unilangs.py:271
 msgid "North Ndebele"
 msgstr "Ndebele do Norte"
 
-#: libs/unilangs/unilangs.py:270
+#: libs/unilangs/unilangs.py:272
 msgid "Nepali"
 msgstr "Nepalí"
 
-#: libs/unilangs/unilangs.py:271
+#: libs/unilangs/unilangs.py:273
 msgid "Ndonga"
 msgstr "Ndonga"
 
-#: libs/unilangs/unilangs.py:272
+#: libs/unilangs/unilangs.py:274
 msgid "Dutch"
 msgstr "Holandés"
 
-#: libs/unilangs/unilangs.py:273
+#: libs/unilangs/unilangs.py:275
 msgid "Norwegian Nynorsk"
 msgstr "Noruegués (Nynorsk)"
 
-#: libs/unilangs/unilangs.py:274
+#: libs/unilangs/unilangs.py:276
 msgid "Norwegian"
 msgstr "Noruegués"
 
-#: libs/unilangs/unilangs.py:275
+#: libs/unilangs/unilangs.py:277
 msgid "Southern Ndebele"
 msgstr "Ndebele do sur"
 
-#: libs/unilangs/unilangs.py:276
+#: libs/unilangs/unilangs.py:278
 msgid "Northern Sotho"
 msgstr "Sutu do Norte"
 
-#: libs/unilangs/unilangs.py:277
+#: libs/unilangs/unilangs.py:279
 msgid "Navajo"
 msgstr "Navaxo"
 
-#: libs/unilangs/unilangs.py:278
+#: libs/unilangs/unilangs.py:280
 msgid "Chewa"
 msgstr "Chewa"
 
-#: libs/unilangs/unilangs.py:279
+#: libs/unilangs/unilangs.py:281
 msgid "Occitan"
 msgstr "Occitano"
 
-#: libs/unilangs/unilangs.py:280
+#: libs/unilangs/unilangs.py:282
 msgid "Ojibwe"
 msgstr "Ojibwa"
 
-#: libs/unilangs/unilangs.py:281
+#: libs/unilangs/unilangs.py:283
 msgid "Oriya"
 msgstr "Orixa"
 
-#: libs/unilangs/unilangs.py:282
+#: libs/unilangs/unilangs.py:284
 msgid "Oromo"
 msgstr "Oromo"
 
-#: libs/unilangs/unilangs.py:283
+#: libs/unilangs/unilangs.py:285
 msgid "Ossetian, Ossetic"
 msgstr "Ossetio, Osetia"
 
-#: libs/unilangs/unilangs.py:284
+#: libs/unilangs/unilangs.py:286
 msgid "Papiamento"
 msgstr "Papiamento"
 
-#: libs/unilangs/unilangs.py:285
+#: libs/unilangs/unilangs.py:287
 msgid "Punjabi"
 msgstr "Punxabí"
 
-#: libs/unilangs/unilangs.py:286
+#: libs/unilangs/unilangs.py:288
 msgid "Pali"
 msgstr "Pali"
 
-#: libs/unilangs/unilangs.py:287
+#: libs/unilangs/unilangs.py:289
 msgid "Polish"
 msgstr "Polaco"
 
-#: libs/unilangs/unilangs.py:288
+#: libs/unilangs/unilangs.py:290
+msgid "Dari"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:291
 msgid "Pashto"
 msgstr "Pashtún"
 
-#: libs/unilangs/unilangs.py:289
+#: libs/unilangs/unilangs.py:292
 msgid "Portuguese"
 msgstr "Portugués"
 
-#: libs/unilangs/unilangs.py:290
+#: libs/unilangs/unilangs.py:293
 msgid "Portuguese, Brazilian"
 msgstr "Portugués (Brasileiro)"
 
-#: libs/unilangs/unilangs.py:291
+#: libs/unilangs/unilangs.py:294
 msgid "Quechua"
 msgstr "Quechua"
 
-#: libs/unilangs/unilangs.py:292
+#: libs/unilangs/unilangs.py:295
 msgid "Romansh"
 msgstr "Romanche"
 
-#: libs/unilangs/unilangs.py:293
+#: libs/unilangs/unilangs.py:296
 msgid "Romanian"
 msgstr "Romanés"
 
-#: libs/unilangs/unilangs.py:294
+#: libs/unilangs/unilangs.py:297
 msgid "Russian"
 msgstr "Ruso"
 
-#: libs/unilangs/unilangs.py:295
+#: libs/unilangs/unilangs.py:298
 msgid "Rundi"
 msgstr "Rundi"
 
-#: libs/unilangs/unilangs.py:296
+#: libs/unilangs/unilangs.py:299
 msgid "Macedo"
 msgstr "Macedo-romanés"
 
-#: libs/unilangs/unilangs.py:297
+#: libs/unilangs/unilangs.py:300
 msgid "Rusyn"
 msgstr "Rusyn"
 
-#: libs/unilangs/unilangs.py:298
+#: libs/unilangs/unilangs.py:301
 msgid "Sanskrit"
 msgstr "Sánscrito"
 
-#: libs/unilangs/unilangs.py:299
+#: libs/unilangs/unilangs.py:302
 msgid "Sardinian"
 msgstr "Sardo"
 
-#: libs/unilangs/unilangs.py:300
+#: libs/unilangs/unilangs.py:303
 msgid "Sindhi"
 msgstr "Sindhi"
 
-#: libs/unilangs/unilangs.py:301
+#: libs/unilangs/unilangs.py:304
 msgid "Northern Sami"
 msgstr "Sami do Norte"
 
-#: libs/unilangs/unilangs.py:302
+#: libs/unilangs/unilangs.py:305
 msgid "Sango"
 msgstr "Sango"
 
-#: libs/unilangs/unilangs.py:303
+#: libs/unilangs/unilangs.py:306
 msgid "Serbo-Croatian"
 msgstr "Serbocroata"
 
-#: libs/unilangs/unilangs.py:304
+#: libs/unilangs/unilangs.py:307
 msgid "Sinhala"
 msgstr "Sinhala"
 
-#: libs/unilangs/unilangs.py:305
+#: libs/unilangs/unilangs.py:308
 msgid "Slovak"
 msgstr "Eslovaco"
 
-#: libs/unilangs/unilangs.py:306
+#: libs/unilangs/unilangs.py:309
+msgid "Seko Padang"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:310
 msgid "Slovenian"
 msgstr "Esloveno"
 
-#: libs/unilangs/unilangs.py:307
+#: libs/unilangs/unilangs.py:311
 msgid "Samoan"
 msgstr "Samoano"
 
-#: libs/unilangs/unilangs.py:308
+#: libs/unilangs/unilangs.py:312
 msgid "Shona"
 msgstr "Shona"
 
-#: libs/unilangs/unilangs.py:309
+#: libs/unilangs/unilangs.py:313
 msgid "Somali"
 msgstr "Somalí"
 
-#: libs/unilangs/unilangs.py:310
+#: libs/unilangs/unilangs.py:314
 msgid "Sotho"
 msgstr "Sutu"
 
-#: libs/unilangs/unilangs.py:311
+#: libs/unilangs/unilangs.py:315
 msgid "Albanian"
 msgstr "Albanés"
 
-#: libs/unilangs/unilangs.py:312
+#: libs/unilangs/unilangs.py:316
 msgid "Serbian"
 msgstr "Serbio"
 
-#: libs/unilangs/unilangs.py:313
+#: libs/unilangs/unilangs.py:317
 msgid "Serbian, Latin"
 msgstr "Serbio, Latino"
 
-#: libs/unilangs/unilangs.py:314
+#: libs/unilangs/unilangs.py:318
 msgid "Swati"
 msgstr "Swati"
 
-#: libs/unilangs/unilangs.py:315
+#: libs/unilangs/unilangs.py:319
 msgid "Sundanese"
 msgstr "Sondanés"
 
-#: libs/unilangs/unilangs.py:316
+#: libs/unilangs/unilangs.py:320
 msgid "Swedish"
 msgstr "Sueco"
 
-#: libs/unilangs/unilangs.py:317
+#: libs/unilangs/unilangs.py:321
 msgid "Swahili"
 msgstr "Swahili"
 
-#: libs/unilangs/unilangs.py:318
+#: libs/unilangs/unilangs.py:322
 msgid "Tamil"
 msgstr "Tamil"
 
-#: libs/unilangs/unilangs.py:319
+#: libs/unilangs/unilangs.py:323
 msgid "Tetum"
 msgstr "Tetum"
 
-#: libs/unilangs/unilangs.py:320
+#: libs/unilangs/unilangs.py:324
 msgid "Telugu"
 msgstr "Telugu"
 
-#: libs/unilangs/unilangs.py:321
+#: libs/unilangs/unilangs.py:325
 msgid "Tajik"
 msgstr "Tadxiko"
 
-#: libs/unilangs/unilangs.py:322
+#: libs/unilangs/unilangs.py:326
 msgid "Thai"
 msgstr "Tailandés"
 
-#: libs/unilangs/unilangs.py:323
+#: libs/unilangs/unilangs.py:327
 msgid "Tigrinya"
 msgstr "Tigrinya"
 
-#: libs/unilangs/unilangs.py:324
+#: libs/unilangs/unilangs.py:328
 msgid "Turkmen"
 msgstr "Turquemeno"
 
-#: libs/unilangs/unilangs.py:325
+#: libs/unilangs/unilangs.py:329
 msgid "Tagalog"
 msgstr "Tagalo"
 
-#: libs/unilangs/unilangs.py:326
+#: libs/unilangs/unilangs.py:330
 msgid "Klingon"
 msgstr "Klingon"
 
-#: libs/unilangs/unilangs.py:327
+#: libs/unilangs/unilangs.py:331
 msgid "Tonga"
 msgstr "Tonga"
 
-#: libs/unilangs/unilangs.py:328
+#: libs/unilangs/unilangs.py:332
 msgid "Turkish"
 msgstr "Turco"
 
-#: libs/unilangs/unilangs.py:329
+#: libs/unilangs/unilangs.py:333
 msgid "Tsonga"
 msgstr "Tsonga"
 
-#: libs/unilangs/unilangs.py:330
+#: libs/unilangs/unilangs.py:334
 msgid "Tswana"
 msgstr "Tswana"
 
-#: libs/unilangs/unilangs.py:331
+#: libs/unilangs/unilangs.py:335
 msgid "Tartar"
 msgstr "Tartar"
 
-#: libs/unilangs/unilangs.py:332
+#: libs/unilangs/unilangs.py:336
 msgid "Twi"
 msgstr "Twi"
 
-#: libs/unilangs/unilangs.py:333
+#: libs/unilangs/unilangs.py:337
 msgid "Tahitian"
 msgstr "Tahitiano"
 
-#: libs/unilangs/unilangs.py:334
+#: libs/unilangs/unilangs.py:338
 msgid "Uighur"
 msgstr "Uigur"
 
-#: libs/unilangs/unilangs.py:335
+#: libs/unilangs/unilangs.py:339
 msgid "Ukrainian"
 msgstr "Ucraíno"
 
-#: libs/unilangs/unilangs.py:336
+#: libs/unilangs/unilangs.py:340
 msgid "Umbundu"
 msgstr "Umbundu"
 
-#: libs/unilangs/unilangs.py:337
+#: libs/unilangs/unilangs.py:341
 msgid "Uyghur"
 msgstr "Uigur"
 
-#: libs/unilangs/unilangs.py:338
+#: libs/unilangs/unilangs.py:342
 msgid "Urdu"
 msgstr "Urdu"
 
-#: libs/unilangs/unilangs.py:339
+#: libs/unilangs/unilangs.py:343
 msgid "Uzbek"
 msgstr "Usbeco"
 
-#: libs/unilangs/unilangs.py:340
+#: libs/unilangs/unilangs.py:344
 msgid "Venda"
 msgstr "Venda"
 
-#: libs/unilangs/unilangs.py:341
+#: libs/unilangs/unilangs.py:345
 msgid "Vietnamese"
 msgstr "Vietnamita"
 
-#: libs/unilangs/unilangs.py:342
+#: libs/unilangs/unilangs.py:346
 msgid "Volapuk"
 msgstr "Volapuk"
 
-#: libs/unilangs/unilangs.py:343
+#: libs/unilangs/unilangs.py:347
 msgid "Walloon"
 msgstr "Valón"
 
-#: libs/unilangs/unilangs.py:344
+#: libs/unilangs/unilangs.py:348
 msgid "Wolof"
 msgstr "Wolof"
 
-#: libs/unilangs/unilangs.py:345
+#: libs/unilangs/unilangs.py:349
 msgid "Xhosa"
 msgstr "Xhosa"
 
-#: libs/unilangs/unilangs.py:346
+#: libs/unilangs/unilangs.py:350
 msgid "Yiddish"
 msgstr "Hebreo"
 
-#: libs/unilangs/unilangs.py:347
+#: libs/unilangs/unilangs.py:351
 msgid "Yoruba"
 msgstr "Ioruba"
 
-#: libs/unilangs/unilangs.py:348
+#: libs/unilangs/unilangs.py:352
 msgid "Zhuang, Chuang"
 msgstr "Zhuang, Chuang"
 
-#: libs/unilangs/unilangs.py:349
+#: libs/unilangs/unilangs.py:353
 msgid "Chinese, Yue"
 msgstr "Chinés, Yue"
 
-#: libs/unilangs/unilangs.py:350
+#: libs/unilangs/unilangs.py:354
 msgid "Chinese, Simplified"
 msgstr "Chinés, simplificado"
 
-#: libs/unilangs/unilangs.py:351
+#: libs/unilangs/unilangs.py:355
 msgid "Chinese, Traditional"
 msgstr "Chinés, tradicional"
 
-#: libs/unilangs/unilangs.py:352
+#: libs/unilangs/unilangs.py:356
 msgid "Zulu"
 msgstr "Zulú"
 
@@ -3022,85 +3038,12 @@ msgid ""
 "subtitles.  With Amara, you can build a community of volunteers to subtitle "
 "your content, integrate with professional services, and use a powerful "
 "quality control system to ensure world-class quality.  To learn more, see "
-"our <a href=\"http://www.universalsubtitles.org/en/services/\">enterprise "
+"our <a href=\"http://www.universalsubtitles.org/en/enterprise/\">enterprise "
 "services</a> and contact Dean Jansen, <a href=\"mailto:dean@pculture.org"
 "\">dean@pculture.org</a>.\n"
 "            </p>\n"
 "        "
 msgstr ""
-"\n"
-"            <h2>Sobre Amaara</h2>\n"
-"            <p>\n"
-"                Amara dálles aos individuos, comunidades e grandes "
-"organizacións o poder \n"
-"                para sobrepasar as barreiras de idioma e de accesibilidade "
-"para o vídeo en liña. As ferramentas son libres \n"
-"                e abertas e fan o traballo de subtitulación de vídeo máis "
-"simple,\n"
-"máis atractivo,\n"
-" e, sobre todo, máis colaborativo.\n"
-"            </p>\n"
-"            <p>\n"
-"                Os beneficios de descrición e subtitulación son inmensos:\n"
-"                <ul>\n"
-"                    <li>Os subtítulos fan os vídeos accesíbeis para "
-"espectadores que teñen problemas auditivos</li>\n"
-"                    <li>As traducións fan posíbel para todos ver vídeos en "
-"idiomas que non falamos</li>\n"
-"                    <li>Os videocreadores obteñen: mellor clasificación SEO, "
-"máis visualizacións, acceso a unha audiencia maior (potencialmente "
-"multiligüe e global), accessibilidade para espectadores con dificultades "
-"auditivas, e máis vantaxes</li>\n"
-"                </ul>\n"
-"            </p>\n"
-"            <p>\n"
-"                Amara componse de tres partes principais:\n"
-"                <ul>\n"
-"                    <li>Unha ferramenta de creación e visualización (o "
-"chamado trebello)</li>\n"
-"                    <li>Un sitio web de subtitulación colaborativaa</li>\n"
-"                    <li>Un protocolo aberto parar busca/entrega</li>\n"
-"                </ul>\n"
-"            </p>\n"
-"            <p>\n"
-"                Todo o que facemos é con licenza de código aberto <a href="
-"\"http://www.gnu.org/licenses/agpl-3.0.html\">AGPL</a>.\n"
-"            </p>\n"
-"            <h2>A nosa organización</h2>\n"
-"            <p>\n"
-"                <a href=\"http://www.pculture.org/\">Participatory Culture "
-"Foundation</a> \n"
-"                é unha organización sen ánimo de lucro dedicada a crear "
-"ferramentas libres e de código aberto para unha multimedia \n"
-"                máis democrática e descentralizada. Outros proxectos nosos "
-"son <a href=\"http://www.getmiro.com/\">Miro</a>, \n"
-"                <a href=\"http://www.mirovideoconverter.com/\">Miro Video "
-"Converter</a>, \n"
-"                <a href=\"http://www.mirocommunity.org/\">Miro Community</"
-"a>, and \n"
-"                <a href=\"http://www.openvideoalliance.org/\">Open Video "
-"Alliance</a>.\n"
-"            </p>\n"
-"            <p>\n"
-"                Amara é un proxecto saído da  <a href=\"http://www.drumbeat."
-"org/\">Mozilla Drumbeat</a>, \n"
-"                e a Fundación Mozilla forneceu apoio para o seu "
-"desenvolvemento.  \n"
-"                O Open Society Institute e a Fundación MacArthur tamén son "
-"patrocinadores financeiros.\n"
-"            </p>\n"
-"            <h2>Servizos de edición e empresa</h2>\n"
-"            <p>\n"
-"                Amara ofrece un conxunto de ferramentas e servizos "
-"profesionais que permiten crear e xestionar subtitulación de alta calidade.  "
-"Con Amara, pode fundar unha comunidade de voluntarios para subtitular o seu "
-"contido, integralo con servizos profesionais e usar un potente sistema de "
-"control de calidade de nivel global.  Para saber máis vexa os nosos <a href="
-"\"http://www.universalsubtitles.org/en/services/\">servizos de empresa</a> e "
-"contacte con Dean Jansen, <a href=\"mailto:dean@pculture.org\">dean@pculture."
-"org</a>.\n"
-"            </p>\n"
-"        "
 
 #: templates/base.html:9
 msgid ""
@@ -3128,10 +3071,9 @@ msgstr "Empresa"
 msgid "Help"
 msgstr "Axuda"
 
-#: templates/base.html:78 templates/auth/login.html:30
-#: templates/openid_consumer/signin.html:22
-msgid "Sign In"
-msgstr "Entrar"
+#: templates/base.html:78
+msgid "Sign in / Sign up"
+msgstr ""
 
 #: templates/base.html:102
 msgid ""
@@ -3166,6 +3108,10 @@ msgstr "Sentry"
 #: templates/base.html:124
 msgid "Rosetta"
 msgstr "Rosetta"
+
+#: templates/base.html:127
+msgid "Impersonate"
+msgstr ""
 
 #: templates/demo.html:23
 msgid "Amara Editor Demo"
@@ -5435,7 +5381,7 @@ msgstr "Eliminar"
 #: templates/profiles/_select_language_dialog.html:30
 #: templates/teams/settings-projects-add.html:67
 #: templates/teams/tasks.html:435 templates/videos/_feedback_form.html:25
-#: templates/videos/subtitle-view.html:387
+#: templates/videos/subtitle-view.html:389
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -5451,6 +5397,11 @@ msgstr ""
 msgid "Forgot your password?"
 msgstr ""
 
+#: templates/auth/login.html:30 templates/auth/login_trap.html:15
+#: templates/openid_consumer/signin.html:22
+msgid "Sign In"
+msgstr "Entrar"
+
 #: templates/auth/login.html:34
 msgid "Create an Amara account"
 msgstr ""
@@ -5462,6 +5413,10 @@ msgstr ""
 #: templates/auth/login.html:38
 msgid "Create Account"
 msgstr "Crear a conta"
+
+#: templates/auth/login_trap.html:10
+msgid "Sign in as a different user"
+msgstr ""
 
 #: templates/comments/_item.html:3 templates/messages/list.html:70
 #: templates/messages/sent.html:48 templates/videos/_action_tpl.html:9
@@ -5871,16 +5826,16 @@ msgstr "Que idiomas fala?"
 msgid "Submit"
 msgstr "Enviar"
 
-#: templates/profiles/_tabs.html:6 templates/profiles/_top_user_panel.html:16
+#: templates/profiles/_tabs.html:6 templates/profiles/_top_user_panel.html:15
 msgid "Profile"
 msgstr "Perfil"
 
-#: templates/profiles/_tabs.html:19 templates/profiles/_top_user_panel.html:12
+#: templates/profiles/_tabs.html:19 templates/profiles/_top_user_panel.html:11
 #: templates/profiles/dashboard.html:13
 msgid "Dashboard"
 msgstr "Cadro de control"
 
-#: templates/profiles/_top_user_panel.html:27
+#: templates/profiles/_top_user_panel.html:26
 msgid "Logout"
 msgstr "Pechar a sesión"
 
@@ -5918,8 +5873,8 @@ msgstr "Subtitulado en"
 
 #: templates/profiles/dashboard.html:55 templates/teams/tasks.html:172
 #: templates/teams/tasks.html.py:188 templates/videos/diffing.html:87
-#: templates/videos/subtitle-view.html:147
-#: templates/videos/subtitle-view.html:194
+#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:196
 msgid "Subtitles"
 msgstr "Subtítulos"
 
@@ -6446,7 +6401,7 @@ msgstr "Páxina do vídeo"
 #: templates/teams/_context_project.html:17
 #: templates/teams/_context_team.html:14 templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:131
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show all"
 msgstr "Amosar todo"
@@ -6491,7 +6446,7 @@ msgstr "vídeo"
 
 #: templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:127
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show less"
 msgstr "Amosar menos"
@@ -6669,20 +6624,14 @@ msgstr[1] ""
 #, python-format
 msgid ""
 "\n"
-"                            1 open task\n"
+"                            1 task\n"
 "                        "
 msgid_plural ""
 "\n"
-"                            %(counter)s open tasks\n"
+"                            %(counter)s tasks\n"
 "                        "
 msgstr[0] ""
-"\n"
-"                            1 tarefa aberta\n"
-"                        "
 msgstr[1] ""
-"\n"
-"                            %(counter)s tarefas abertas\n"
-"                        "
 
 #: templates/teams/_team_video_detail.html:52
 #: templates/teams/members-list.html:119
@@ -6757,8 +6706,7 @@ msgstr "Crear un equipo"
 msgid "All Teams"
 msgstr "Todos os equipos"
 
-#: templates/teams/create.html:33 templates/teams/teams-list.html:6
-#: templates/teams/teams-list.html.py:29
+#: templates/teams/create.html:33
 msgid "My Teams"
 msgstr "Os meus equipos"
 
@@ -6926,7 +6874,7 @@ msgid "Filter and Sort"
 msgstr "Filtrar e ordenar"
 
 #: templates/teams/members-list.html:53
-#: templates/videos/subtitle-view.html:198
+#: templates/videos/subtitle-view.html:200
 msgid "Showing"
 msgstr "Presentar"
 
@@ -7307,8 +7255,8 @@ msgstr "revisado"
 msgid "and edited"
 msgstr "e editado"
 
-#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:202
-#: templates/videos/subtitle-view.html:318
+#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:204
+#: templates/videos/subtitle-view.html:320
 msgid "by"
 msgstr "por"
 
@@ -7430,6 +7378,10 @@ msgstr "Editar vídeo"
 msgid "This video is being moderated by team"
 msgstr "Este vídeo está a ser moderado polo equipo"
 
+#: templates/teams/teams-list.html:6 templates/teams/teams-list.html.py:29
+msgid "Your Teams"
+msgstr ""
+
 #: templates/teams/teams-list.html:18
 msgid "Team Directory"
 msgstr "Cartafol do equipo"
@@ -7439,8 +7391,8 @@ msgid "Sort by"
 msgstr "Ordenar por"
 
 #: templates/teams/teams-list.html:64
-msgid "My team"
-msgstr "O meu equipo"
+msgid "Your team"
+msgstr ""
 
 #: templates/teams/teams-list.html:67
 msgid "Private"
@@ -8138,17 +8090,17 @@ msgid "Roll back to version"
 msgstr "Regresar á versión"
 
 #: templates/videos/diffing.html:126 templates/videos/diffing.html.py:192
-#: templates/videos/subtitle-view.html:210
+#: templates/videos/subtitle-view.html:212
 msgid "Title:"
 msgstr "Título:"
 
 #: templates/videos/diffing.html:130 templates/videos/diffing.html.py:196
-#: templates/videos/subtitle-view.html:214
+#: templates/videos/subtitle-view.html:216
 msgid "Description:"
 msgstr "Descrición:"
 
 #: templates/videos/diffing.html:156 templates/videos/diffing.html.py:223
-#: templates/videos/subtitle-view.html:234
+#: templates/videos/subtitle-view.html:236
 msgid "Not Synced"
 msgstr "Non sincronizado"
 
@@ -8474,70 +8426,70 @@ msgstr "Por favor, escolla dúas revisións para comparar"
 msgid "with"
 msgstr "con"
 
-#: templates/videos/subtitle-view.html:96 templates/videos/video-view.html:83
+#: templates/videos/subtitle-view.html:98 templates/videos/video-view.html:83
 msgid "View"
 msgstr "Visualizar"
 
-#: templates/videos/subtitle-view.html:102 templates/videos/video-view.html:89
+#: templates/videos/subtitle-view.html:104 templates/videos/video-view.html:89
 msgid "Follower"
 msgstr "Seguidor"
 
-#: templates/videos/subtitle-view.html:108 templates/videos/video-view.html:95
+#: templates/videos/subtitle-view.html:110 templates/videos/video-view.html:95
 msgid "Comment"
 msgstr "Comentario"
 
-#: templates/videos/subtitle-view.html:114
+#: templates/videos/subtitle-view.html:116
 msgid "Line"
 msgstr "Liña"
 
-#: templates/videos/subtitle-view.html:124
+#: templates/videos/subtitle-view.html:126
 #: templates/videos/video-view.html:111
 msgid "View Subtitles"
 msgstr "Visualizar subtítulos"
 
-#: templates/videos/subtitle-view.html:148
-#: templates/videos/subtitle-view.html:285
+#: templates/videos/subtitle-view.html:150
+#: templates/videos/subtitle-view.html:287
 #: templates/videos/video-view.html:145 templates/videos/video-view.html:190
 msgid "Comments"
 msgstr "Comentarios"
 
-#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:151
 msgid "Revisions"
 msgstr "Revisións"
 
-#: templates/videos/subtitle-view.html:154
-#: templates/videos/subtitle-view.html:388
+#: templates/videos/subtitle-view.html:156
+#: templates/videos/subtitle-view.html:390
 msgid "Unpublish"
 msgstr "Despublicar"
 
-#: templates/videos/subtitle-view.html:157
-#: templates/videos/subtitle-view.html:403
+#: templates/videos/subtitle-view.html:159
+#: templates/videos/subtitle-view.html:405
 msgid "Edit Subtitles"
 msgstr "Editar subtítulos"
 
-#: templates/videos/subtitle-view.html:164
+#: templates/videos/subtitle-view.html:166
 msgid "Download"
 msgstr "Descargar"
 
-#: templates/videos/subtitle-view.html:192
+#: templates/videos/subtitle-view.html:194
 msgid "Draft only"
 msgstr "Soamente esbozo"
 
-#: templates/videos/subtitle-view.html:195
+#: templates/videos/subtitle-view.html:197
 msgid "translated from"
 msgstr "traducido desde"
 
-#: templates/videos/subtitle-view.html:199
-#: templates/videos/subtitle-view.html:308
+#: templates/videos/subtitle-view.html:201
 #: templates/videos/subtitle-view.html:310
+#: templates/videos/subtitle-view.html:312
 msgid "Revision"
 msgstr "Revisión"
 
-#: templates/videos/subtitle-view.html:200
+#: templates/videos/subtitle-view.html:202
 msgid "created"
 msgstr "creado"
 
-#: templates/videos/subtitle-view.html:246
+#: templates/videos/subtitle-view.html:248
 msgid ""
 "\n"
 "                            The most recent revision for this language is "
@@ -8551,27 +8503,27 @@ msgstr ""
 "                            máis antigas que conteñen subtítulos.\n"
 "                            "
 
-#: templates/videos/subtitle-view.html:250
+#: templates/videos/subtitle-view.html:252
 msgid "View revision history"
 msgstr "Ver o historial de revisión"
 
-#: templates/videos/subtitle-view.html:255
+#: templates/videos/subtitle-view.html:257
 msgid "These subtitles are in progress."
 msgstr "Estes subtítulos están en progreso."
 
-#: templates/videos/subtitle-view.html:256
+#: templates/videos/subtitle-view.html:258
 msgid "Make more?"
 msgstr "Facer máis?"
 
-#: templates/videos/subtitle-view.html:258
+#: templates/videos/subtitle-view.html:260
 msgid "No subtitles available yet."
 msgstr "Aínda non hai subtítulos dispoñíbeis."
 
-#: templates/videos/subtitle-view.html:259
+#: templates/videos/subtitle-view.html:261
 msgid "Make some!"
 msgstr "Facer algúns!"
 
-#: templates/videos/subtitle-view.html:267
+#: templates/videos/subtitle-view.html:269
 msgid ""
 "\n"
 "                            This language contains subtitles that are still "
@@ -8583,7 +8535,7 @@ msgstr ""
 "moderados.  Volva comprobar máis tarde.\n"
 "                        "
 
-#: templates/videos/subtitle-view.html:273
+#: templates/videos/subtitle-view.html:275
 msgid ""
 "\n"
 "                            No subtitles have been added for this language "
@@ -8595,44 +8547,44 @@ msgstr ""
 "idioma.\n"
 "                        "
 
-#: templates/videos/subtitle-view.html:283
+#: templates/videos/subtitle-view.html:285
 #: templates/videos/video-view.html:188
 msgid "Leave a comment"
 msgstr "Deixar un comentario"
 
-#: templates/videos/subtitle-view.html:292
+#: templates/videos/subtitle-view.html:294
 msgid "Compare Revisions"
 msgstr "Comparar revisións"
 
-#: templates/videos/subtitle-view.html:324
+#: templates/videos/subtitle-view.html:326
 msgid "Timing"
 msgstr "Sincronización"
 
-#: templates/videos/subtitle-view.html:325
+#: templates/videos/subtitle-view.html:327
 msgid "Text"
 msgstr "Texto"
 
-#: templates/videos/subtitle-view.html:331
+#: templates/videos/subtitle-view.html:333
 msgid "No subtitles for this language."
 msgstr "Non hai subtítulos neste idioma."
 
-#: templates/videos/subtitle-view.html:340
+#: templates/videos/subtitle-view.html:342
 msgid "Roll back to this version"
 msgstr "Regresar a esta versión"
 
-#: templates/videos/subtitle-view.html:353
+#: templates/videos/subtitle-view.html:355
 msgid "Unpublish subtitles"
 msgstr "Despublicar subtítulos"
 
-#: templates/videos/subtitle-view.html:361
+#: templates/videos/subtitle-view.html:363
 msgid "This version only"
 msgstr "Soamente esta versión"
 
-#: templates/videos/subtitle-view.html:365
+#: templates/videos/subtitle-view.html:367
 msgid "This entire language and all dependent languages"
 msgstr "Este idioma por completo e todos os idiomas que dependen del"
 
-#: templates/videos/subtitle-view.html:367
+#: templates/videos/subtitle-view.html:369
 msgid ""
 "Note: Any dependent languages will be unavailable until this language is "
 "reapproved."
@@ -8640,7 +8592,7 @@ msgstr ""
 "Nota: Os idiomas dependentes non estarán dispoñíbeis ata que se aprobade de "
 "novo este idioma."
 
-#: templates/videos/subtitle-view.html:376
+#: templates/videos/subtitle-view.html:378
 msgid ""
 "Yes, delete these subtitles instead of sending them back for editing/review"
 msgstr "Si, eliminar os subtítulos no canto de devolvelo para edición/revisión"

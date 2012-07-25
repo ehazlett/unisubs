@@ -35,11 +35,11 @@ BOLD_MARKER_START_RE = re.compile(r"\*\*(?=\w)", re.IGNORECASE)
 BOLD_MARKER_END_RE = re.compile(r"(?!\w)\*\*", re.IGNORECASE)
 
 ITALIC_TAG_RE = re.compile("</?s*i\s*>", re.IGNORECASE)
-ITALIC_MARKER_START_RE = re.compile(r"\*(?=\w)", re.IGNORECASE) 
+ITALIC_MARKER_START_RE = re.compile(r"\*(?=[^\s])", re.IGNORECASE) 
 ITALIC_MARKER_END_RE = re.compile(r"(?!\w)\*", re.IGNORECASE)
 
 UNDERLINE_TAG_RE = re.compile("</?s*u\s*>", re.IGNORECASE)
-UNDERLINE_MARKER_START_RE = re.compile(r"_(?=\w)", re.IGNORECASE) 
+UNDERLINE_MARKER_START_RE = re.compile(r"_(?=[^\s])", re.IGNORECASE) 
 UNDERLINE_MARKER_END_RE = re.compile(r"(?![^_]\w)_", re.IGNORECASE)
 
 def markup_to_html(text, strip_tags=True):

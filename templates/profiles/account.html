@@ -16,17 +16,26 @@
                 {{ form.non_field_errors }}
                 <div class="grid_4 alpha">
                     <fieldset>
-                        {% include "_form_field.html" with field=form.email %}
+                        {% include "_form_field.html" with field=form.first_name %}
                         {% include "_form_field.html" with field=form.username %}
                     </fieldset>
                 </div>
                 <div class="grid_4 omega">
                     <fieldset>
-                        {% include "_form_field.html" with field=form.first_name %}
                         {% include "_form_field.html" with field=form.last_name %}
+                        {% include "_form_field.html" with field=form.email %}
                     </fieldset>
                 </div>
                 <div class="grid_4 alpha">
+                    <fieldset>
+                        <legend>Change Password</legend>
+                        <!-- fix this, the setting cannot be false for notify_by_message and notify_by_email  -->
+                        {% include "_form_field.html" with field=form.current_password %}
+                        {% include "_form_field.html" with field=form.new_password %}
+                        {% include "_form_field.html" with field=form.new_password_verify %}
+                    </fieldset>
+                </div>
+                <div class="grid_4 omega">
                     <fieldset>
                         {% include "_form_field.html" with field=form.notify_by_message widget_type="checkbox" %}
                         <p class="notation">{% trans "Send notifications to my UniversalSubtitles.org inbox" %}</p>
@@ -34,13 +43,13 @@
                         <p class="notation">{% trans "Send an email notification for each message received" %}</p>
                     </fieldset>
                 </div>
-                <div class="grid_4 omega">
-                    <fieldset>
-                        <!-- fix this, the setting cannot be false for notify_by_message and notify_by_email  -->
-                        {% include "_form_field.html" with field=form.current_password %}
-                        {% include "_form_field.html" with field=form.new_password %}
-                        {% include "_form_field.html" with field=form.new_password_verify %}
-                    </fieldset>
+                <div class="grid_8 alpha">
+                    <h3>Accounts</h3>
+                    <ul class="listing">
+                        <li>
+                            <h3>Twitter</h3>
+                        </li>
+                    </ul>
                 </div>
                 <div class="grid_8">
                     <fieldset>
@@ -54,19 +63,11 @@
                         {% endif %}
                     </fieldset>
                 </div>
-                <div class="grid_8">
-                    <h3>Accounts</h3>
-                    <ul class="listing">
-                        <li>
-                            <h3>Twitter</h3>
-                        </li>
-                    </ul>
-                </div>
                 <div class="submit">
                     <button class="button save" type="submit" value="Save">
                         {% trans 'Save Changes' %}
                     </button>
-                    <a class="button delete" onclick="return confirm('Are you sure you want to permanently delete your account? This action is irreversible.');" href="{% url auth:delete_user %}">{% trans 'Permanently Delete Your Profile' %}</a>
+                    <a class="button delete" onclick="return confirm('Are you sure you want to permanently delete your account? This action is irreversible.');" href="{% url auth:delete_user %}">{% trans 'Delete Your Account' %}</a>
                 </div>
             </form>
         </div>

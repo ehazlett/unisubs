@@ -113,6 +113,8 @@ def new(request):
                 send_new_message_notification.delay(m.pk)
             elif form.cleaned_data['team']:
                 # TODO: Move this into a task for performance?
+                # Once we switch to Django 1.4, this should be replaced with
+                # `bulk_create`.
                 for member in form.cleaned_data['team'].members.all():
                     if member.user != request.user:
                         m = Message(user=member.user, author=request.user,

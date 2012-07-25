@@ -75,7 +75,7 @@
                     {% if user.is_authenticated %}
                         <li id="me_menu">{% top_user_panel %}</li>
                     {% else %}
-                        <li><a href="{% url auth:login %}?next={{ request.path_info|urlencode }}">{% trans 'Sign In' %}</a></li>
+                        <li><a href="{% url auth:login %}?next={{ request.path_info|urlencode }}">{% trans 'Sign in / Sign up' %}</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -122,6 +122,9 @@
                 {% endif %}
                 {% if user|can_translate %}
                     <li><a target="_blank" href="{% url rosetta-pick-file %}"><span>{% trans 'Rosetta' %}</span></a></li>
+                {% endif %}
+                {% if user.is_superuser %}
+                    <li><a target="_blank" href="{% url auth:login_trap %}">{% trans 'Impersonate' %}</a></li>
                 {% endif %}
                 <li><a href="https://github.com/pculture/unisubs/commit/{{ LAST_COMMIT_GUID }}" title="{{ LAST_COMMIT_GUID }}">Github</a></li>
             </ul>

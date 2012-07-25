@@ -110,8 +110,18 @@ unisubs.widget.Widget.prototype.decorateInternal = function(el) {
     this.addWidget_(el);
 };
 unisubs.widget.Widget.prototype.createVideoPlayer_ = function(videoSource) {
-    this.videoPlayer_ = videoSource.createPlayer();
-    this.addChildAt(this.videoPlayer_, 0, true);
+    // for chromeless players this will be a wrapper around the video player
+    var player = videoSource.createPlayer();
+    var index = 0;
+    if (goog.isDefAndNotNull(player.getPlayer)){
+        // this is a chromeless player
+        this.videoPlayer_ = player.getPlayer();
+        this.addChildAt(player, 0, true);
+        index = 1;
+    }else{
+        this.videoPlayer_ = player;
+        this.addChildAt(this.videoPlayer_, 0, true);
+    }
     this.setVideoDimensions_();
 };
 unisubs.widget.Widget.prototype.findVideoSource_ = function() {

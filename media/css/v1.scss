@@ -1431,19 +1431,18 @@ div#language_picker {
 .profile {
     ul.user-languages {
         li {
-            background: transparent url('../images/dotted-sep.gif') 0 6px repeat-x;
+            
             span.language {
-                background: #FFF;
                 display: block;
                 float: left;
                 padding-right: 10px;
             }
             span.preferred {
-                background: #FFF;
-                display: block;
                 font-size: 11px;
                 float: right;
                 padding-left: 10px;
+                display: none;
+                color: $lighter;
 
                 span {
                     display: none;
@@ -1456,9 +1455,13 @@ div#language_picker {
                     }
                 }
             }
+            &:hover span.preferred {
+                display: block;
+            }
         }
         li.is-preferred {
             span.preferred {
+                display: block;
                 span {
                     display: block;
                 }
@@ -2158,6 +2161,25 @@ a.truncated-expand {
 #teams div.join {
     clear: both;
     padding-top: 2em;
+}
+#teams div.join div#apply-modal {
+    div.modal-body {
+        div.message {
+            max-height: 235px;
+            overflow: scroll;
+
+            &::-webkit-scrollbar {
+                -webkit-appearance: none;
+                width: 11px;
+                height: 11px;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 8px;
+                border: 2px solid white;
+                background-color: rgba(0, 0, 0, .5);
+            }
+        }
+    }
 }
 #teams .context .join.button {
     display: block;

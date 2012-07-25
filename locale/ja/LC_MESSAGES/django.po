@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-11 01:40-0500\n"
-"PO-Revision-Date: 2012-07-10 06:47+0000\n"
+"POT-Creation-Date: 2012-07-24 01:38-0500\n"
+"PO-Revision-Date: 2012-07-20 06:50+0000\n"
 "Last-Translator: unisubsapi <universalsubtitles-dev@pculture.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/"
 "universalsubtitles/language/ja/)\n"
@@ -58,77 +58,77 @@ msgstr "メールアドレス"
 msgid "Hide"
 msgstr "非表示にする"
 
-#: apps/auth/models.py:99
+#: apps/auth/models.py:100
 msgid "Retired user"
 msgstr "退会済ユーザー"
 
-#: apps/auth/models.py:326
+#: apps/auth/models.py:327
 msgid "Add comment"
 msgstr "コメント記入欄"
 
-#: apps/auth/models.py:327
+#: apps/auth/models.py:328
 msgid "Start subtitles"
 msgstr "字幕を新規作成する"
 
-#: apps/auth/models.py:328
+#: apps/auth/models.py:329
 msgid "Start translation"
 msgstr "翻訳を開始する"
 
-#: apps/auth/models.py:329
+#: apps/auth/models.py:330
 msgid "Edit subtitles"
 msgstr "字幕を編集する"
 
-#: apps/auth/models.py:330
+#: apps/auth/models.py:331
 msgid "Edit translation"
 msgstr "翻訳を編集する"
 
-#: apps/auth/models.py:387
+#: apps/auth/models.py:388
 msgid "understand enough"
 msgstr "十分に理解できる"
 
-#: apps/auth/models.py:388
+#: apps/auth/models.py:389
 msgid "understand 99%"
 msgstr "99%理解できる"
 
-#: apps/auth/models.py:389
+#: apps/auth/models.py:390
 msgid "write like a native"
 msgstr "ネイティブのように書ける"
 
-#: apps/auth/models.py:394
+#: apps/auth/models.py:395
 msgid "follow requests in language"
 msgstr "言語のリクエストをフォローする"
 
-#: apps/auth/models.py:409
+#: apps/auth/models.py:410
 msgid ""
 "This is date when start to display announcement. And only the last will be "
 "displayed."
 msgstr "この日にちに通知を開始します。最新の通知のみ表示されます。"
 
-#: apps/auth/models.py:508
+#: apps/auth/models.py:509
 msgid "e-mail confirmation"
 msgstr "メールアドレス確認"
 
-#: apps/auth/models.py:509
+#: apps/auth/models.py:510
 msgid "e-mail confirmations"
 msgstr "メールアドレス確認"
 
-#: apps/auth/views.py:58
+#: apps/auth/views.py:59
 msgid "Confirmation key expired."
 msgstr "確認キーが期限切れです"
 
-#: apps/auth/views.py:60
+#: apps/auth/views.py:61
 msgid "Email is confirmed."
 msgstr "メールアドレスが確認されました"
 
-#: apps/auth/views.py:72
+#: apps/auth/views.py:73
 msgid "Confirmation email was sent."
 msgstr "確認メールが送信されました"
 
-#: apps/auth/views.py:74
+#: apps/auth/views.py:75
 msgid "You email is empty or already confirmed."
 msgstr "メールアドレスが空白か既に確認済です"
 
-#: apps/auth/views.py:106
+#: apps/auth/views.py:107
 msgid "Your account was deleted."
 msgstr "あなたのアカウントは削除されました。"
 
@@ -192,15 +192,15 @@ msgstr "メッセージを書くには認証が必要です。"
 msgid "This message is from site administrator."
 msgstr "このメッセージはサイト管理者からのメッセージです"
 
-#: apps/messages/forms.py:96
+#: apps/messages/forms.py:95
 msgid "You cannot send a message to a user and a team at the same time."
 msgstr "ユーザとチームに同時にメッセージを送る事はできません。"
 
-#: apps/messages/forms.py:99
+#: apps/messages/forms.py:98
 msgid "You must choose a recipient."
 msgstr "受信者を選んでください"
 
-#: apps/messages/forms.py:106
+#: apps/messages/forms.py:105
 msgid "This field is required."
 msgstr ""
 
@@ -299,7 +299,7 @@ msgstr "あなたの字幕は受け入れられませんでした。"
 msgid "%(user)s left a comment on the video %(title)s"
 msgstr "%(user)s さんがビデオ「%(title)s」についてコメントをしました。"
 
-#: apps/messages/views.py:123
+#: apps/messages/views.py:125
 msgid "Message sent."
 msgstr "メッセージを送信しました。"
 
@@ -381,7 +381,7 @@ msgstr "あなたのプロファイルは更新されました。"
 
 #: apps/search/forms.py:28
 msgid "Relevance"
-msgstr ""
+msgstr "関連性"
 
 #: apps/search/forms.py:29
 msgid "Most languages"
@@ -547,110 +547,110 @@ msgstr ""
 msgid "Team URL: http://universalsubtitles.org/teams/"
 msgstr "チームURL: http://universalsubtitles.org/teams/"
 
-#: apps/teams/forms.py:342
+#: apps/teams/forms.py:347
 msgid "This video has already been transcribed."
 msgstr "ビデオの書き写しはすでに完了しています。"
 
-#: apps/teams/forms.py:347
+#: apps/teams/forms.py:352
 msgid "Subtitling of this video is already in progress."
 msgstr "本ビデオの字幕は現在編集中です。"
 
-#: apps/teams/forms.py:353
+#: apps/teams/forms.py:358
 msgid "No one has transcribed this video yet, so it can't be translated."
 msgstr "ビデオの書き写しが行われていないため、翻訳することができません。"
 
-#: apps/teams/forms.py:359
+#: apps/teams/forms.py:364
 msgid "This language already has a complete set of subtitles."
 msgstr "この言語の字幕はすでに存在します。"
 
-#: apps/teams/forms.py:379
+#: apps/teams/forms.py:384
 msgid "There is already a task in progress for that video/language."
 msgstr "そのビデオ／言語の作業は進行中です。"
 
-#: apps/teams/forms.py:393
+#: apps/teams/forms.py:398
 msgid "You must select a language for a Translate task."
 msgstr "翻訳タスクには、言語を選択してください。"
 
-#: apps/teams/forms.py:426
+#: apps/teams/forms.py:433
 msgid "That user has already been assigned the maximum number of tasks."
 msgstr "ユーザは、すでに最大タスク数が指名されています。"
 
-#: apps/teams/forms.py:448
+#: apps/teams/forms.py:455
 msgid "You do not have permission to assign this task."
 msgstr "このタスクを割り当てる権限を持っていません"
 
-#: apps/teams/forms.py:455
+#: apps/teams/forms.py:462
 msgid "This user cannot perform that task."
 msgstr "このユーザは、そのタスクを行うことができません。"
 
-#: apps/teams/forms.py:476
+#: apps/teams/forms.py:483
 msgid "You do not have permission to delete this task."
 msgstr "このタスクを削除する権限がありません。"
 
-#: apps/teams/forms.py:533
+#: apps/teams/forms.py:540
 msgid "You cannot blacklist a preferred language."
-msgstr ""
+msgstr "好み言語を不要言語にすることはできません。"
 
-#: apps/teams/forms.py:556 apps/teams/forms.py:558
+#: apps/teams/forms.py:563 apps/teams/forms.py:565
 msgid "User does not exist!"
 msgstr "ユーザは存在しません！"
 
-#: apps/teams/forms.py:565
+#: apps/teams/forms.py:572
 msgid "User is already a member of this team!"
 msgstr "ユーザは既にこのチームのメンバーです。"
 
-#: apps/teams/forms.py:591 templates/videos/subtitle-view.html:373
+#: apps/teams/forms.py:599 templates/videos/subtitle-view.html:375
 msgid "Would you like to delete these subtitles completely?"
 msgstr "この字幕を完全に削除しますか？"
 
-#: apps/teams/forms.py:595 templates/videos/subtitle-view.html:358
+#: apps/teams/forms.py:603 templates/videos/subtitle-view.html:360
 msgid "What would you like to unpublish?"
-msgstr ""
+msgstr "何を非公開にしますか？"
 
-#: apps/teams/forms.py:597
+#: apps/teams/forms.py:605
 msgid "This version (and any later version) for this language."
 msgstr ""
 
-#: apps/teams/forms.py:598
+#: apps/teams/forms.py:606
 msgid "All versions for this language and any dependent languages."
 msgstr ""
 
-#: apps/teams/forms.py:616
+#: apps/teams/forms.py:624
 msgid "These subtitles are not under a team's control."
 msgstr ""
 
-#: apps/teams/forms.py:620
+#: apps/teams/forms.py:628
 msgid "You do not have permission to unpublish these subtitles."
 msgstr ""
 
-#: apps/teams/forms.py:639
+#: apps/teams/forms.py:647
 msgid "You cannot perform that task."
 msgstr "そのタスクは実行できません。"
 
-#: apps/teams/forms.py:651 apps/videos/forms.py:461
+#: apps/teams/forms.py:659 apps/videos/forms.py:461
 msgid "Invalid language to translate from."
 msgstr "翻訳元言語が無効です。"
 
-#: apps/teams/forms.py:660 apps/videos/forms.py:71 apps/videos/forms.py:89
+#: apps/teams/forms.py:668 apps/videos/forms.py:71 apps/videos/forms.py:89
 #: apps/videos/forms.py:470
 msgid "File size should be less {0} kb"
 msgstr "ファイルサイズは {0} kb以下である必要があります。"
 
-#: apps/teams/forms.py:665 apps/videos/forms.py:475
+#: apps/teams/forms.py:673 apps/videos/forms.py:475
 #, python-format
 msgid "Incorrect format. Upload %s"
 msgstr "形式が正しくありません。%s をアップロードしてください。"
 
-#: apps/teams/forms.py:672 apps/videos/forms.py:76 apps/videos/forms.py:97
+#: apps/teams/forms.py:680 apps/videos/forms.py:76 apps/videos/forms.py:97
 #: apps/videos/forms.py:482
 msgid "Can not detect file encoding"
 msgstr "ファイルのエンコーディングを検出できません"
 
-#: apps/teams/forms.py:677 apps/videos/forms.py:99 apps/videos/forms.py:487
+#: apps/teams/forms.py:685 apps/videos/forms.py:99 apps/videos/forms.py:487
 msgid "Incorrect subtitles format"
 msgstr "字幕フォーマットが正しくありません"
 
-#: apps/teams/forms.py:750 apps/videos/forms.py:577
+#: apps/teams/forms.py:758 apps/videos/forms.py:577
 msgid ""
 "Sorry, we couldn't upload your file because it has fewer lines ({0}) than "
 "the previous version ({1})."
@@ -658,7 +658,7 @@ msgstr ""
 "ファイルの行数 ({0}) が前バージョン({1}) より少ないため、アップロードすること"
 "ができません。"
 
-#: apps/teams/forms.py:756 apps/videos/forms.py:584
+#: apps/teams/forms.py:764 apps/videos/forms.py:584
 msgid ""
 "Sorry, we couldn't upload your file because the number of lines in your "
 "translation ({0}) doesn't match the original ({1})."
@@ -692,11 +692,11 @@ msgstr ""
 
 #: apps/teams/models.py:103
 msgid "Managers and admins"
-msgstr ""
+msgstr "マネジャーと管理人"
 
 #: apps/teams/models.py:104
 msgid "Admins only"
-msgstr ""
+msgstr "管理人のみ"
 
 #: apps/teams/models.py:124
 msgid "name"
@@ -714,6 +714,7 @@ msgstr "説明"
 msgid ""
 "All urls will be converted to links. Line breaks and HTML not supported."
 msgstr ""
+"URL は全てリンクに変換されます。改行および HTML はサポートしていません。"
 
 #: apps/teams/models.py:128
 msgid "logo"
@@ -736,7 +737,7 @@ msgstr "利用者"
 
 #: apps/teams/models.py:134
 msgid "third party accounts"
-msgstr ""
+msgstr "第三者アカウント"
 
 #: apps/teams/models.py:137
 msgid "applicants"
@@ -784,13 +785,13 @@ msgstr "翻訳ポリシー"
 
 #: apps/teams/models.py:170
 msgid "maximum tasks per member"
-msgstr ""
+msgstr "メンバーが受け持てるタスクの最大数"
 
 #: apps/teams/models.py:172
 msgid "task expiration (days)"
-msgstr ""
+msgstr "タスクの期限（日数）"
 
-#: apps/teams/models.py:183 templates/profiles/_top_user_panel.html:33
+#: apps/teams/models.py:183 templates/profiles/_top_user_panel.html:32
 #: templates/profiles/dashboard.html:109 templates/teams/teams-list.html:6
 msgid "Teams"
 msgstr "チーム"
@@ -850,7 +851,7 @@ msgstr "あなたはこのチームのメンバーになりました。"
 
 #: apps/teams/rpc.py:54
 msgid "The \"About you\" field is required in order to apply."
-msgstr ""
+msgstr "応募するには、「自分について」欄が必須です。"
 
 #: apps/teams/rpc.py:62
 msgid ""
@@ -1058,11 +1059,11 @@ msgstr "タスクが拒否されました。"
 
 #: apps/teams/views.py:1348
 msgid "Task assigned."
-msgstr ""
+msgstr "タスクを割り当てました。"
 
 #: apps/teams/views.py:1350
 msgid "You cannot assign this task."
-msgstr ""
+msgstr "このタスクを割り当てることはできません。"
 
 #: apps/teams/views.py:1372
 msgid "Invalid assignment attempt."
@@ -1110,7 +1111,7 @@ msgstr ""
 msgid "Successfully unpublished subtitles."
 msgstr ""
 
-#: apps/teams/templatetags/teams_tags.py:254
+#: apps/teams/templatetags/teams_tags.py:258
 #, python-format
 msgid "Can somebody help me subtitle these videos? %(url)s"
 msgstr "ビデオの翻訳を手伝ってくれませんか？%(url)s"
@@ -1575,7 +1576,7 @@ msgstr "字幕のフォローを中止しました。"
 
 #: apps/videos/share_utils.py:52
 msgid "Just found a version of this video with subtitles"
-msgstr ""
+msgstr "字幕付き版のビデオがあります。"
 
 #: apps/videos/share_utils.py:54
 msgid "Check out this video and help make subtitles"
@@ -1591,7 +1592,7 @@ msgstr ""
 #: apps/videos/share_utils.py:75
 #, python-format
 msgid "%(language)s subtitles for %(video)s:"
-msgstr ""
+msgstr "%(video)sの%(language)sの字幕"
 
 #: apps/videos/share_utils.py:80
 #, python-format
@@ -1603,7 +1604,7 @@ msgstr ""
 msgid "Just found a version of this video with %(language_name)s subtitles"
 msgstr "%(language_name)s の字幕を見つけました"
 
-#: apps/videos/views.py:160
+#: apps/videos/views.py:161
 msgid ""
 "Here is the subtitle workspace for your video. You can\n"
 "share the video with friends, or get an embed code for your site.  To add "
@@ -1614,41 +1615,41 @@ msgstr ""
 "め込めるコードを取得する事ができます。字幕の追加や編集にはビデオの下のボタン"
 "を押してください。"
 
-#: apps/videos/views.py:168
+#: apps/videos/views.py:169
 msgid ""
 "You have submitted a video\n"
 "                that is served over http.  Your browser may display mixed\n"
 "                content warnings."
 msgstr ""
 
-#: apps/videos/views.py:173
+#: apps/videos/views.py:174
 msgid "Existing subtitles will be imported in a few minutes."
 msgstr "既存の字幕を取り込みます。数分お待ちください。"
 
-#: apps/videos/views.py:282
+#: apps/videos/views.py:283
 msgid ""
 "Thank you for uploading. It will take a minute or so for your subtitles to "
 "appear."
 msgstr ""
 "アップロードありがとうございます。字幕が表示されるまで数分程度かかります。"
 
-#: apps/videos/views.py:284
+#: apps/videos/views.py:285
 msgid "Your changes have been saved."
 msgstr "変更は保存されました"
 
-#: apps/videos/views.py:635
+#: apps/videos/views.py:636
 msgid "You have not permission change this URL"
 msgstr "あなたには、このURLを変更する権限がありません。"
 
-#: apps/videos/views.py:641 apps/videos/views.py:661
+#: apps/videos/views.py:642 apps/videos/views.py:662
 msgid "Object does not exist"
 msgstr "オブジェクトは存在しません。"
 
-#: apps/videos/views.py:654
+#: apps/videos/views.py:655
 msgid "You have not permission delete this URL"
 msgstr "あなたには、このURLを削除する権限がありません。"
 
-#: apps/videos/views.py:657
+#: apps/videos/views.py:658
 msgid "You cann't remove original URL"
 msgstr "オリジナルURLを削除する事は出来ません。"
 
@@ -1703,7 +1704,7 @@ msgstr ""
 msgid "Sorry, these subtitles are privately moderated."
 msgstr ""
 
-#: apps/widget/rpc.py:945 apps/widget/rpc.py:986
+#: apps/widget/rpc.py:949 apps/widget/rpc.py:990
 msgid "\n"
 msgstr ""
 "\n"
@@ -1711,7 +1712,7 @@ msgstr ""
 
 #: apps/widget/views.py:107
 msgid "That task has already been completed."
-msgstr ""
+msgstr "このタスクはすでに完了しています。"
 
 #: libs/rosetta/templates/rosetta/languages.html:4
 #: libs/rosetta/templates/rosetta/languages.html:6
@@ -1751,7 +1752,7 @@ msgstr "進歩"
 
 #: libs/rosetta/templates/rosetta/languages.html:30
 #: templates/messages/new.html:14 templates/messages/sent.html:23
-#: templates/profiles/_tabs.html:13 templates/profiles/_top_user_panel.html:20
+#: templates/profiles/_tabs.html:13 templates/profiles/_top_user_panel.html:19
 #: templates/teams/_subnav_settings.html:9
 msgid "Messages"
 msgstr "メッセージ"
@@ -2007,822 +2008,838 @@ msgid "Bosnian"
 msgstr "ボスニア語"
 
 #: libs/unilangs/unilangs.py:148
+msgid "Buginese"
+msgstr "ブギス語"
+
+#: libs/unilangs/unilangs.py:149
 msgid "Catalan"
 msgstr "カタロニア語"
 
-#: libs/unilangs/unilangs.py:149
+#: libs/unilangs/unilangs.py:150
 msgid "Chechen"
 msgstr "チェチェン語"
 
-#: libs/unilangs/unilangs.py:150
+#: libs/unilangs/unilangs.py:151
 msgid "Cebuano"
 msgstr "セブアノ語"
 
-#: libs/unilangs/unilangs.py:151
+#: libs/unilangs/unilangs.py:152
 msgid "Chamorro"
 msgstr "チャモロ語"
 
-#: libs/unilangs/unilangs.py:152
+#: libs/unilangs/unilangs.py:153
 msgid "Choctaw"
 msgstr "チョクトー語"
 
-#: libs/unilangs/unilangs.py:153
+#: libs/unilangs/unilangs.py:154
 msgid "Corsican"
 msgstr "コルシカ語"
 
-#: libs/unilangs/unilangs.py:154
+#: libs/unilangs/unilangs.py:155
 msgid "Cree"
 msgstr "クリー語"
 
-#: libs/unilangs/unilangs.py:155
+#: libs/unilangs/unilangs.py:156
 msgid "Czech"
 msgstr "チェコ語"
 
-#: libs/unilangs/unilangs.py:156
+#: libs/unilangs/unilangs.py:157
 msgid "Church Slavic"
 msgstr "教会スラヴ語"
 
-#: libs/unilangs/unilangs.py:157
+#: libs/unilangs/unilangs.py:158
 msgid "Chuvash"
 msgstr "チュヴァシ語"
 
-#: libs/unilangs/unilangs.py:158
+#: libs/unilangs/unilangs.py:159
 msgid "Welsh"
 msgstr "ウェールズ語"
 
-#: libs/unilangs/unilangs.py:159
+#: libs/unilangs/unilangs.py:160
 msgid "Danish"
 msgstr "デンマーク語"
 
-#: libs/unilangs/unilangs.py:160
+#: libs/unilangs/unilangs.py:161
 msgid "German"
 msgstr "ドイツ語"
 
-#: libs/unilangs/unilangs.py:161
+#: libs/unilangs/unilangs.py:162
 msgid "Divehi"
 msgstr "ディベヒ語"
 
-#: libs/unilangs/unilangs.py:162
+#: libs/unilangs/unilangs.py:163
 msgid "Dzongkha"
 msgstr "ゾンカ語"
 
-#: libs/unilangs/unilangs.py:163
+#: libs/unilangs/unilangs.py:164
 msgid "Ewe"
 msgstr "エウェ語"
 
-#: libs/unilangs/unilangs.py:164
+#: libs/unilangs/unilangs.py:165
 msgid "Efik"
 msgstr "エフィク語"
 
-#: libs/unilangs/unilangs.py:165
+#: libs/unilangs/unilangs.py:166
 msgid "Greek"
 msgstr "ギリシャ語"
 
-#: libs/unilangs/unilangs.py:166
+#: libs/unilangs/unilangs.py:167
 msgid "English"
 msgstr "英語"
 
-#: libs/unilangs/unilangs.py:167
+#: libs/unilangs/unilangs.py:168
 msgid "English, British"
 msgstr "英語、英国"
 
-#: libs/unilangs/unilangs.py:168
+#: libs/unilangs/unilangs.py:169
 msgid "Esperanto"
 msgstr "エスペラント語"
 
-#: libs/unilangs/unilangs.py:169
+#: libs/unilangs/unilangs.py:170
 msgid "Spanish"
 msgstr "スペイン語"
 
-#: libs/unilangs/unilangs.py:170
+#: libs/unilangs/unilangs.py:171
 msgid "Spanish, Argentinian"
 msgstr "スペイン語、アルゼンチン"
 
-#: libs/unilangs/unilangs.py:171
+#: libs/unilangs/unilangs.py:172
 msgid "Spanish, Mexican"
 msgstr "スペイン語、メキシコ"
 
-#: libs/unilangs/unilangs.py:172
+#: libs/unilangs/unilangs.py:173
 msgid "Spanish, Nicaraguan"
 msgstr "スペイン語、ニカラグア"
 
-#: libs/unilangs/unilangs.py:173
+#: libs/unilangs/unilangs.py:174
 msgid "Estonian"
 msgstr "エストニア語"
 
-#: libs/unilangs/unilangs.py:174
+#: libs/unilangs/unilangs.py:175
 msgid "Basque"
 msgstr "バスク語"
 
-#: libs/unilangs/unilangs.py:175
+#: libs/unilangs/unilangs.py:176
 msgid "Persian"
 msgstr "ペルシア語"
 
-#: libs/unilangs/unilangs.py:176
+#: libs/unilangs/unilangs.py:177
 msgid "Fulah"
 msgstr "フラニ語"
 
-#: libs/unilangs/unilangs.py:177
+#: libs/unilangs/unilangs.py:178
 msgid "Finnish"
 msgstr "フィンランド語"
 
-#: libs/unilangs/unilangs.py:178
+#: libs/unilangs/unilangs.py:179
 msgid "Filipino"
 msgstr "フィリピン語"
 
-#: libs/unilangs/unilangs.py:179
+#: libs/unilangs/unilangs.py:180
 msgid "Fijian"
 msgstr "フィジー語"
 
-#: libs/unilangs/unilangs.py:180
+#: libs/unilangs/unilangs.py:181
 msgid "Faroese"
 msgstr "フェロー語"
 
-#: libs/unilangs/unilangs.py:181
+#: libs/unilangs/unilangs.py:182
 msgid "French"
 msgstr "フランス語"
 
-#: libs/unilangs/unilangs.py:182
+#: libs/unilangs/unilangs.py:183
 msgid "French, Canadian"
 msgstr "フランス語、カナダ"
 
-#: libs/unilangs/unilangs.py:183
+#: libs/unilangs/unilangs.py:184
 msgid "Fula"
 msgstr "フラ語"
 
-#: libs/unilangs/unilangs.py:184
+#: libs/unilangs/unilangs.py:185
 msgid "Frisian"
 msgstr "フリジア語"
 
-#: libs/unilangs/unilangs.py:185
+#: libs/unilangs/unilangs.py:186
 msgid "Irish"
 msgstr "アイルランド語"
 
-#: libs/unilangs/unilangs.py:186
+#: libs/unilangs/unilangs.py:187
 msgid "Scottish Gaelic"
 msgstr "スコットランドゲール語"
 
-#: libs/unilangs/unilangs.py:187
+#: libs/unilangs/unilangs.py:188
 msgid "Galician"
 msgstr "ガリシア語"
 
-#: libs/unilangs/unilangs.py:188
+#: libs/unilangs/unilangs.py:189
 msgid "Guaran"
 msgstr "グアラニー語"
 
-#: libs/unilangs/unilangs.py:189
+#: libs/unilangs/unilangs.py:190
 msgid "Gujarati"
 msgstr "グジャラート語"
 
-#: libs/unilangs/unilangs.py:190
+#: libs/unilangs/unilangs.py:191
 msgid "Manx"
 msgstr "マン島語"
 
-#: libs/unilangs/unilangs.py:191
+#: libs/unilangs/unilangs.py:192
 msgid "Haida"
 msgstr "ハイダ語"
 
-#: libs/unilangs/unilangs.py:192
+#: libs/unilangs/unilangs.py:193
 msgid "Hausa"
 msgstr "ハウサ語"
 
-#: libs/unilangs/unilangs.py:193
+#: libs/unilangs/unilangs.py:194
+msgid "Hazaragi"
+msgstr "ハザラ語"
+
+#: libs/unilangs/unilangs.py:195
 msgid "Hebrew"
 msgstr "ヘブライ語"
 
-#: libs/unilangs/unilangs.py:194
+#: libs/unilangs/unilangs.py:196
 msgid "Hindi"
 msgstr "ヒンディー語"
 
-#: libs/unilangs/unilangs.py:195
+#: libs/unilangs/unilangs.py:197
 msgid "Hiri Motu"
 msgstr "ヒリモツ語"
 
-#: libs/unilangs/unilangs.py:196
+#: libs/unilangs/unilangs.py:198
 msgid "Croatian"
 msgstr "クロアチア語"
 
-#: libs/unilangs/unilangs.py:197
+#: libs/unilangs/unilangs.py:199
 msgid "Creole, Haitian"
 msgstr "ハイチ語"
 
-#: libs/unilangs/unilangs.py:198
+#: libs/unilangs/unilangs.py:200
 msgid "Hungarian"
 msgstr "ハンガリー語"
 
-#: libs/unilangs/unilangs.py:199
+#: libs/unilangs/unilangs.py:201
 msgid "Hupa"
 msgstr "フーパ語"
 
-#: libs/unilangs/unilangs.py:200
+#: libs/unilangs/unilangs.py:202
 msgid "Armenian"
 msgstr "アルメニア語"
 
-#: libs/unilangs/unilangs.py:201
+#: libs/unilangs/unilangs.py:203
 msgid "Herero"
 msgstr "ヘレロ語"
 
-#: libs/unilangs/unilangs.py:202
+#: libs/unilangs/unilangs.py:204
 msgid "Interlingua"
 msgstr "インターリングア"
 
-#: libs/unilangs/unilangs.py:203
+#: libs/unilangs/unilangs.py:205
 msgid "Igbo"
 msgstr "イボ語"
 
-#: libs/unilangs/unilangs.py:204
+#: libs/unilangs/unilangs.py:206
 msgid "Indonesian"
 msgstr "インドネシア語"
 
-#: libs/unilangs/unilangs.py:205
+#: libs/unilangs/unilangs.py:207
 msgid "Interlingue"
 msgstr "インターリング"
 
-#: libs/unilangs/unilangs.py:206
+#: libs/unilangs/unilangs.py:208
 msgid "Sichuan Yi"
 msgstr "四川彝語"
 
-#: libs/unilangs/unilangs.py:207
+#: libs/unilangs/unilangs.py:209
 msgid "Inupia"
 msgstr "イヌピアック語"
 
-#: libs/unilangs/unilangs.py:208
+#: libs/unilangs/unilangs.py:210
 msgid "Ilocano"
 msgstr "イロカノ語"
 
-#: libs/unilangs/unilangs.py:209
+#: libs/unilangs/unilangs.py:211
 msgid "Ingush"
 msgstr "イングーシ語"
 
-#: libs/unilangs/unilangs.py:210
+#: libs/unilangs/unilangs.py:212
 msgid "Ido"
 msgstr "イド語"
 
-#: libs/unilangs/unilangs.py:211
+#: libs/unilangs/unilangs.py:213
 msgid "Iroquoian languages"
 msgstr "イロコイ諸語"
 
-#: libs/unilangs/unilangs.py:212
+#: libs/unilangs/unilangs.py:214
 msgid "Icelandic"
 msgstr "アイスランド語"
 
-#: libs/unilangs/unilangs.py:213
+#: libs/unilangs/unilangs.py:215
 msgid "Italian"
 msgstr "イタリア語"
 
-#: libs/unilangs/unilangs.py:214
+#: libs/unilangs/unilangs.py:216
 msgid "Inuktitut"
 msgstr "イヌクティトゥット語"
 
-#: libs/unilangs/unilangs.py:215
+#: libs/unilangs/unilangs.py:217
 msgid "Japanese"
 msgstr "日本語"
 
-#: libs/unilangs/unilangs.py:216
+#: libs/unilangs/unilangs.py:218
 msgid "Javanese"
 msgstr "ジャワ語"
 
-#: libs/unilangs/unilangs.py:217
+#: libs/unilangs/unilangs.py:219
 msgid "Georgian"
 msgstr "グルジア語"
 
-#: libs/unilangs/unilangs.py:218
+#: libs/unilangs/unilangs.py:220
 msgid "Karen"
 msgstr "カレン諸語"
 
-#: libs/unilangs/unilangs.py:219
+#: libs/unilangs/unilangs.py:221
 msgid "Kanuri"
 msgstr "カヌリ語"
 
-#: libs/unilangs/unilangs.py:220
+#: libs/unilangs/unilangs.py:222
 msgid "Gikuyu"
 msgstr "キクユ語"
 
-#: libs/unilangs/unilangs.py:221
+#: libs/unilangs/unilangs.py:223
 msgid "Rwandi"
 msgstr "ルワンダ語"
 
-#: libs/unilangs/unilangs.py:222
+#: libs/unilangs/unilangs.py:224
 msgid "Kuanyama, Kwanyama"
 msgstr "クワニャマ語"
 
-#: libs/unilangs/unilangs.py:223
+#: libs/unilangs/unilangs.py:225
 msgid "Kazakh"
 msgstr "カザフスタン語"
 
-#: libs/unilangs/unilangs.py:224
+#: libs/unilangs/unilangs.py:226
 msgid "Greenlandic"
 msgstr "グリーンランド語"
 
-#: libs/unilangs/unilangs.py:225
+#: libs/unilangs/unilangs.py:227
 msgid "Khmer"
-msgstr ""
+msgstr "クメール語"
 
-#: libs/unilangs/unilangs.py:226
+#: libs/unilangs/unilangs.py:228
 msgid "Kannada"
 msgstr "カンナダ語"
 
-#: libs/unilangs/unilangs.py:227
+#: libs/unilangs/unilangs.py:229
 msgid "Korean"
 msgstr "韓国語"
 
-#: libs/unilangs/unilangs.py:228
+#: libs/unilangs/unilangs.py:230
 msgid "Kongo"
 msgstr "コンゴ語"
 
-#: libs/unilangs/unilangs.py:229
+#: libs/unilangs/unilangs.py:231
 msgid "Kashmiri"
 msgstr "カシミール語"
 
-#: libs/unilangs/unilangs.py:230
+#: libs/unilangs/unilangs.py:232
 msgid "Kurdish"
 msgstr "クルド語"
 
-#: libs/unilangs/unilangs.py:231
+#: libs/unilangs/unilangs.py:233
 msgid "Komi"
 msgstr "コミ語"
 
-#: libs/unilangs/unilangs.py:232
+#: libs/unilangs/unilangs.py:234
 msgid "Cornish"
 msgstr "コーンウォール語"
 
-#: libs/unilangs/unilangs.py:233
+#: libs/unilangs/unilangs.py:235
 msgid "Kyrgyz"
 msgstr "キルギス語"
 
-#: libs/unilangs/unilangs.py:234
+#: libs/unilangs/unilangs.py:236
 msgid "Latin"
 msgstr "ラテン語"
 
-#: libs/unilangs/unilangs.py:235
+#: libs/unilangs/unilangs.py:237
 msgid "Luxembourgish"
 msgstr "ルクセンブルグ語"
 
-#: libs/unilangs/unilangs.py:236
+#: libs/unilangs/unilangs.py:238
 msgid "Ganda"
 msgstr "ガンダ語"
 
-#: libs/unilangs/unilangs.py:237
+#: libs/unilangs/unilangs.py:239
 msgid "Limburgish"
 msgstr "リンブルフ語"
 
-#: libs/unilangs/unilangs.py:238
+#: libs/unilangs/unilangs.py:240
 msgid "Lingala"
 msgstr "リンガラ語"
 
-#: libs/unilangs/unilangs.py:239
+#: libs/unilangs/unilangs.py:241
 msgid "Lakota"
 msgstr "ラコタ語"
 
-#: libs/unilangs/unilangs.py:240
+#: libs/unilangs/unilangs.py:242
 msgid "Lao"
 msgstr "ラオ語"
 
-#: libs/unilangs/unilangs.py:241
+#: libs/unilangs/unilangs.py:243
 msgid "Lithuanian"
 msgstr "リトアニア語"
 
-#: libs/unilangs/unilangs.py:242
+#: libs/unilangs/unilangs.py:244
 msgid "Luba-Katagana"
 msgstr "ルバ・カタンガ語"
 
-#: libs/unilangs/unilangs.py:243
+#: libs/unilangs/unilangs.py:245
 msgid "Luba-Kasai"
 msgstr "ルバ語"
 
-#: libs/unilangs/unilangs.py:244
+#: libs/unilangs/unilangs.py:246
 msgid "Luo"
 msgstr "ルオ語"
 
-#: libs/unilangs/unilangs.py:245
+#: libs/unilangs/unilangs.py:247
 msgid "Luhya"
 msgstr "ルヒヤ語"
 
-#: libs/unilangs/unilangs.py:246
+#: libs/unilangs/unilangs.py:248
 msgid "Latvian"
 msgstr "ラトビア語"
 
-#: libs/unilangs/unilangs.py:247
+#: libs/unilangs/unilangs.py:249
 msgid "Metadata: Geo"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:248
+#: libs/unilangs/unilangs.py:250
 msgid "Metadata: Twitter"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:249
+#: libs/unilangs/unilangs.py:251
 msgid "Metadata: Wikipedia"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:250
+#: libs/unilangs/unilangs.py:252
 msgid "Madurese"
 msgstr "マドゥラ語"
 
-#: libs/unilangs/unilangs.py:251
+#: libs/unilangs/unilangs.py:253
 msgid "Marshallese"
 msgstr "マーシャル島語"
 
-#: libs/unilangs/unilangs.py:252
+#: libs/unilangs/unilangs.py:254
 msgid "Maori"
 msgstr "マオリ語"
 
-#: libs/unilangs/unilangs.py:253
+#: libs/unilangs/unilangs.py:255
 msgid "Macedonian"
 msgstr "マケドニア語"
 
-#: libs/unilangs/unilangs.py:254
+#: libs/unilangs/unilangs.py:256
 msgid "Malayalam"
 msgstr "マラヤーラム語"
 
-#: libs/unilangs/unilangs.py:255
+#: libs/unilangs/unilangs.py:257
 msgid "Malagasy"
 msgstr "マダガスカル語"
 
-#: libs/unilangs/unilangs.py:256
+#: libs/unilangs/unilangs.py:258
 msgid "Mongolian"
 msgstr "モンゴル語"
 
-#: libs/unilangs/unilangs.py:257
+#: libs/unilangs/unilangs.py:259
 msgid "Mandinka"
 msgstr "マンディンカ語"
 
-#: libs/unilangs/unilangs.py:258
+#: libs/unilangs/unilangs.py:260
 msgid "Moldavian, Moldovan"
 msgstr "モルドバ語"
 
-#: libs/unilangs/unilangs.py:259
+#: libs/unilangs/unilangs.py:261
 msgid "Mohawk"
 msgstr "モホーク語"
 
-#: libs/unilangs/unilangs.py:260
+#: libs/unilangs/unilangs.py:262
 msgid "Manipuri"
 msgstr "マニプリ語"
 
-#: libs/unilangs/unilangs.py:261
+#: libs/unilangs/unilangs.py:263
 msgid "Mossi"
 msgstr "モシ語"
 
-#: libs/unilangs/unilangs.py:262
+#: libs/unilangs/unilangs.py:264
 msgid "Marathi"
 msgstr "マラーティー語"
 
-#: libs/unilangs/unilangs.py:263
+#: libs/unilangs/unilangs.py:265
 msgid "Malay"
 msgstr "マレー語"
 
-#: libs/unilangs/unilangs.py:264
+#: libs/unilangs/unilangs.py:266
 msgid "Maltese"
 msgstr "マルタ語"
 
-#: libs/unilangs/unilangs.py:265
+#: libs/unilangs/unilangs.py:267
 msgid "Burmese"
 msgstr "ビルマ語"
 
-#: libs/unilangs/unilangs.py:266
+#: libs/unilangs/unilangs.py:268
 msgid "Hokkien"
 msgstr "福佬語"
 
-#: libs/unilangs/unilangs.py:267
+#: libs/unilangs/unilangs.py:269
 msgid "Naurunan"
 msgstr "ナウル語"
 
-#: libs/unilangs/unilangs.py:268
+#: libs/unilangs/unilangs.py:270
 msgid "Norwegian Bokmal"
 msgstr "ノルウェーブークモール語"
 
-#: libs/unilangs/unilangs.py:269
+#: libs/unilangs/unilangs.py:271
 msgid "North Ndebele"
 msgstr "北ンデベレ語"
 
-#: libs/unilangs/unilangs.py:270
+#: libs/unilangs/unilangs.py:272
 msgid "Nepali"
 msgstr "ネパール語"
 
-#: libs/unilangs/unilangs.py:271
+#: libs/unilangs/unilangs.py:273
 msgid "Ndonga"
 msgstr "ンドンゴ語"
 
-#: libs/unilangs/unilangs.py:272
+#: libs/unilangs/unilangs.py:274
 msgid "Dutch"
 msgstr "オランダ語"
 
-#: libs/unilangs/unilangs.py:273
+#: libs/unilangs/unilangs.py:275
 msgid "Norwegian Nynorsk"
 msgstr "ノルウェーニーノシュク語"
 
-#: libs/unilangs/unilangs.py:274
+#: libs/unilangs/unilangs.py:276
 msgid "Norwegian"
 msgstr "ノルウェー語"
 
-#: libs/unilangs/unilangs.py:275
+#: libs/unilangs/unilangs.py:277
 msgid "Southern Ndebele"
 msgstr "南ンデベレ語"
 
-#: libs/unilangs/unilangs.py:276
+#: libs/unilangs/unilangs.py:278
 msgid "Northern Sotho"
 msgstr "北ソト語"
 
-#: libs/unilangs/unilangs.py:277
+#: libs/unilangs/unilangs.py:279
 msgid "Navajo"
 msgstr "ナバホ語"
 
-#: libs/unilangs/unilangs.py:278
+#: libs/unilangs/unilangs.py:280
 msgid "Chewa"
 msgstr "チェワ語"
 
-#: libs/unilangs/unilangs.py:279
+#: libs/unilangs/unilangs.py:281
 msgid "Occitan"
 msgstr "オック語"
 
-#: libs/unilangs/unilangs.py:280
+#: libs/unilangs/unilangs.py:282
 msgid "Ojibwe"
 msgstr "オジブエ語"
 
-#: libs/unilangs/unilangs.py:281
+#: libs/unilangs/unilangs.py:283
 msgid "Oriya"
 msgstr "オリヤー語"
 
-#: libs/unilangs/unilangs.py:282
+#: libs/unilangs/unilangs.py:284
 msgid "Oromo"
 msgstr "オロモ語"
 
-#: libs/unilangs/unilangs.py:283
+#: libs/unilangs/unilangs.py:285
 msgid "Ossetian, Ossetic"
 msgstr "オセット語"
 
-#: libs/unilangs/unilangs.py:284
+#: libs/unilangs/unilangs.py:286
 msgid "Papiamento"
 msgstr "パピアメント語"
 
-#: libs/unilangs/unilangs.py:285
+#: libs/unilangs/unilangs.py:287
 msgid "Punjabi"
 msgstr "パンジャビ語"
 
-#: libs/unilangs/unilangs.py:286
+#: libs/unilangs/unilangs.py:288
 msgid "Pali"
 msgstr "パーリ語"
 
-#: libs/unilangs/unilangs.py:287
+#: libs/unilangs/unilangs.py:289
 msgid "Polish"
 msgstr "ポーランド語"
 
-#: libs/unilangs/unilangs.py:288
+#: libs/unilangs/unilangs.py:290
+msgid "Dari"
+msgstr "ダリー語"
+
+#: libs/unilangs/unilangs.py:291
 msgid "Pashto"
 msgstr "パシュト語"
 
-#: libs/unilangs/unilangs.py:289
+#: libs/unilangs/unilangs.py:292
 msgid "Portuguese"
 msgstr "ポルトガル語"
 
-#: libs/unilangs/unilangs.py:290
+#: libs/unilangs/unilangs.py:293
 msgid "Portuguese, Brazilian"
 msgstr "ポルトガル語、ブラジル"
 
-#: libs/unilangs/unilangs.py:291
+#: libs/unilangs/unilangs.py:294
 msgid "Quechua"
 msgstr "ケチュア語"
 
-#: libs/unilangs/unilangs.py:292
+#: libs/unilangs/unilangs.py:295
 msgid "Romansh"
 msgstr "ロマンシュ語"
 
-#: libs/unilangs/unilangs.py:293
+#: libs/unilangs/unilangs.py:296
 msgid "Romanian"
 msgstr "ルーマニア語"
 
-#: libs/unilangs/unilangs.py:294
+#: libs/unilangs/unilangs.py:297
 msgid "Russian"
 msgstr "ロシア語"
 
-#: libs/unilangs/unilangs.py:295
+#: libs/unilangs/unilangs.py:298
 msgid "Rundi"
 msgstr "ルンディ語"
 
-#: libs/unilangs/unilangs.py:296
+#: libs/unilangs/unilangs.py:299
 msgid "Macedo"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:297
+#: libs/unilangs/unilangs.py:300
 msgid "Rusyn"
 msgstr "ルシン語"
 
-#: libs/unilangs/unilangs.py:298
+#: libs/unilangs/unilangs.py:301
 msgid "Sanskrit"
 msgstr "サンスクリット語"
 
-#: libs/unilangs/unilangs.py:299
+#: libs/unilangs/unilangs.py:302
 msgid "Sardinian"
 msgstr "サルデーニャ語"
 
-#: libs/unilangs/unilangs.py:300
+#: libs/unilangs/unilangs.py:303
 msgid "Sindhi"
 msgstr "シンド語"
 
-#: libs/unilangs/unilangs.py:301
+#: libs/unilangs/unilangs.py:304
 msgid "Northern Sami"
 msgstr "北部サーミ語"
 
-#: libs/unilangs/unilangs.py:302
+#: libs/unilangs/unilangs.py:305
 msgid "Sango"
 msgstr "サンゴ語"
 
-#: libs/unilangs/unilangs.py:303
+#: libs/unilangs/unilangs.py:306
 msgid "Serbo-Croatian"
 msgstr "セルボクロアチア語"
 
-#: libs/unilangs/unilangs.py:304
+#: libs/unilangs/unilangs.py:307
 msgid "Sinhala"
 msgstr "シンハラ語"
 
-#: libs/unilangs/unilangs.py:305
+#: libs/unilangs/unilangs.py:308
 msgid "Slovak"
 msgstr "スロバキア語"
 
-#: libs/unilangs/unilangs.py:306
+#: libs/unilangs/unilangs.py:309
+msgid "Seko Padang"
+msgstr ""
+
+#: libs/unilangs/unilangs.py:310
 msgid "Slovenian"
 msgstr "スロベニア語"
 
-#: libs/unilangs/unilangs.py:307
+#: libs/unilangs/unilangs.py:311
 msgid "Samoan"
 msgstr "サモア語"
 
-#: libs/unilangs/unilangs.py:308
+#: libs/unilangs/unilangs.py:312
 msgid "Shona"
 msgstr "ショナ語"
 
-#: libs/unilangs/unilangs.py:309
+#: libs/unilangs/unilangs.py:313
 msgid "Somali"
 msgstr "ソマリ語"
 
-#: libs/unilangs/unilangs.py:310
+#: libs/unilangs/unilangs.py:314
 msgid "Sotho"
 msgstr "ソト語"
 
-#: libs/unilangs/unilangs.py:311
+#: libs/unilangs/unilangs.py:315
 msgid "Albanian"
 msgstr "アルバニア語"
 
-#: libs/unilangs/unilangs.py:312
+#: libs/unilangs/unilangs.py:316
 msgid "Serbian"
 msgstr "セルビア語"
 
-#: libs/unilangs/unilangs.py:313
+#: libs/unilangs/unilangs.py:317
 msgid "Serbian, Latin"
 msgstr "セルビア語、ラテン"
 
-#: libs/unilangs/unilangs.py:314
+#: libs/unilangs/unilangs.py:318
 msgid "Swati"
 msgstr "スワジ語"
 
-#: libs/unilangs/unilangs.py:315
+#: libs/unilangs/unilangs.py:319
 msgid "Sundanese"
 msgstr "スンダ語"
 
-#: libs/unilangs/unilangs.py:316
+#: libs/unilangs/unilangs.py:320
 msgid "Swedish"
 msgstr "スウェーデン語"
 
-#: libs/unilangs/unilangs.py:317
+#: libs/unilangs/unilangs.py:321
 msgid "Swahili"
 msgstr "スワヒリ語"
 
-#: libs/unilangs/unilangs.py:318
+#: libs/unilangs/unilangs.py:322
 msgid "Tamil"
 msgstr "タミール語"
 
-#: libs/unilangs/unilangs.py:319
+#: libs/unilangs/unilangs.py:323
 msgid "Tetum"
 msgstr "テトゥン語"
 
-#: libs/unilangs/unilangs.py:320
+#: libs/unilangs/unilangs.py:324
 msgid "Telugu"
 msgstr "テルグ語"
 
-#: libs/unilangs/unilangs.py:321
+#: libs/unilangs/unilangs.py:325
 msgid "Tajik"
 msgstr "タジク語"
 
-#: libs/unilangs/unilangs.py:322
+#: libs/unilangs/unilangs.py:326
 msgid "Thai"
 msgstr "タイ語"
 
-#: libs/unilangs/unilangs.py:323
+#: libs/unilangs/unilangs.py:327
 msgid "Tigrinya"
 msgstr "ティグリニャ語"
 
-#: libs/unilangs/unilangs.py:324
+#: libs/unilangs/unilangs.py:328
 msgid "Turkmen"
 msgstr "トルクメン語"
 
-#: libs/unilangs/unilangs.py:325
+#: libs/unilangs/unilangs.py:329
 msgid "Tagalog"
 msgstr "タガログ語"
 
-#: libs/unilangs/unilangs.py:326
+#: libs/unilangs/unilangs.py:330
 msgid "Klingon"
 msgstr "クリンゴン語"
 
-#: libs/unilangs/unilangs.py:327
+#: libs/unilangs/unilangs.py:331
 msgid "Tonga"
 msgstr "トンガ語"
 
-#: libs/unilangs/unilangs.py:328
+#: libs/unilangs/unilangs.py:332
 msgid "Turkish"
 msgstr "トルコ語"
 
-#: libs/unilangs/unilangs.py:329
+#: libs/unilangs/unilangs.py:333
 msgid "Tsonga"
 msgstr "ツォンガ語"
 
-#: libs/unilangs/unilangs.py:330
+#: libs/unilangs/unilangs.py:334
 msgid "Tswana"
 msgstr "ツワナ語"
 
-#: libs/unilangs/unilangs.py:331
+#: libs/unilangs/unilangs.py:335
 msgid "Tartar"
 msgstr ""
 
-#: libs/unilangs/unilangs.py:332
+#: libs/unilangs/unilangs.py:336
 msgid "Twi"
 msgstr "トウィ語"
 
-#: libs/unilangs/unilangs.py:333
+#: libs/unilangs/unilangs.py:337
 msgid "Tahitian"
 msgstr "タヒチ語"
 
-#: libs/unilangs/unilangs.py:334
+#: libs/unilangs/unilangs.py:338
 msgid "Uighur"
 msgstr "ウイグル語"
 
-#: libs/unilangs/unilangs.py:335
+#: libs/unilangs/unilangs.py:339
 msgid "Ukrainian"
 msgstr "ウクライナ語"
 
-#: libs/unilangs/unilangs.py:336
+#: libs/unilangs/unilangs.py:340
 msgid "Umbundu"
 msgstr "ムブンドゥ語"
 
-#: libs/unilangs/unilangs.py:337
+#: libs/unilangs/unilangs.py:341
 msgid "Uyghur"
 msgstr "ウイグル語"
 
-#: libs/unilangs/unilangs.py:338
+#: libs/unilangs/unilangs.py:342
 msgid "Urdu"
 msgstr "ウルドゥ語"
 
-#: libs/unilangs/unilangs.py:339
+#: libs/unilangs/unilangs.py:343
 msgid "Uzbek"
 msgstr "ウズベク語"
 
-#: libs/unilangs/unilangs.py:340
+#: libs/unilangs/unilangs.py:344
 msgid "Venda"
 msgstr "ヴェンダ語"
 
-#: libs/unilangs/unilangs.py:341
+#: libs/unilangs/unilangs.py:345
 msgid "Vietnamese"
 msgstr "ベトナム語"
 
-#: libs/unilangs/unilangs.py:342
+#: libs/unilangs/unilangs.py:346
 msgid "Volapuk"
 msgstr "ボラピュク語"
 
-#: libs/unilangs/unilangs.py:343
+#: libs/unilangs/unilangs.py:347
 msgid "Walloon"
 msgstr "ワロン語"
 
-#: libs/unilangs/unilangs.py:344
+#: libs/unilangs/unilangs.py:348
 msgid "Wolof"
 msgstr "ウォロフ語"
 
-#: libs/unilangs/unilangs.py:345
+#: libs/unilangs/unilangs.py:349
 msgid "Xhosa"
 msgstr "コーサ語"
 
-#: libs/unilangs/unilangs.py:346
+#: libs/unilangs/unilangs.py:350
 msgid "Yiddish"
 msgstr "イディッシュ語"
 
-#: libs/unilangs/unilangs.py:347
+#: libs/unilangs/unilangs.py:351
 msgid "Yoruba"
 msgstr "ヨルバ語"
 
-#: libs/unilangs/unilangs.py:348
+#: libs/unilangs/unilangs.py:352
 msgid "Zhuang, Chuang"
 msgstr "チワン語"
 
-#: libs/unilangs/unilangs.py:349
+#: libs/unilangs/unilangs.py:353
 msgid "Chinese, Yue"
 msgstr "広東語"
 
-#: libs/unilangs/unilangs.py:350
+#: libs/unilangs/unilangs.py:354
 msgid "Chinese, Simplified"
 msgstr "中国語、簡体"
 
-#: libs/unilangs/unilangs.py:351
+#: libs/unilangs/unilangs.py:355
 msgid "Chinese, Traditional"
 msgstr "中国語、繁体"
 
-#: libs/unilangs/unilangs.py:352
+#: libs/unilangs/unilangs.py:356
 msgid "Zulu"
 msgstr "ズールー語"
 
@@ -2982,7 +2999,7 @@ msgid ""
 "subtitles.  With Amara, you can build a community of volunteers to subtitle "
 "your content, integrate with professional services, and use a powerful "
 "quality control system to ensure world-class quality.  To learn more, see "
-"our <a href=\"http://www.universalsubtitles.org/en/services/\">enterprise "
+"our <a href=\"http://www.universalsubtitles.org/en/enterprise/\">enterprise "
 "services</a> and contact Dean Jansen, <a href=\"mailto:dean@pculture.org"
 "\">dean@pculture.org</a>.\n"
 "            </p>\n"
@@ -3014,10 +3031,9 @@ msgstr ""
 msgid "Help"
 msgstr "ヘルプ"
 
-#: templates/base.html:78 templates/auth/login.html:30
-#: templates/openid_consumer/signin.html:22
-msgid "Sign In"
-msgstr "サインイン"
+#: templates/base.html:78
+msgid "Sign in / Sign up"
+msgstr ""
 
 #: templates/base.html:102
 msgid ""
@@ -3054,6 +3070,10 @@ msgstr "セントリー"
 msgid "Rosetta"
 msgstr "ロゼッタ"
 
+#: templates/base.html:127
+msgid "Impersonate"
+msgstr ""
+
 #: templates/demo.html:23
 msgid "Amara Editor Demo"
 msgstr ""
@@ -3086,7 +3106,7 @@ msgstr ""
 
 #: templates/dmca.html:6
 msgid "Copyright Infringement Notification"
-msgstr "著作権侵害警告"
+msgstr "著作権侵害通知"
 
 #: templates/dmca.html:9
 msgid ""
@@ -3099,9 +3119,9 @@ msgid ""
 "these requirements):\n"
 msgstr ""
 "\n"
-"著作権侵害警告を提出するには、書面にて下記全項を当団体にお送りください (下記"
-"要件を確認するには、弁護士にお問い合わせするか、著作権法の第512条(c)(3)をご参"
-"照ください)：\n"
+"著作権侵害通知を申し立てるには、書面にて下記全項を当団体にお送りください (下"
+"記要件を確認するには、弁護士にお問い合わせするか、著作権法の第512条(c)(3)をご"
+"参照ください)：\n"
 
 #: templates/dmca.html:18
 msgid ""
@@ -3141,18 +3161,19 @@ msgstr ""
 "独占権が侵害されたとされる所有者の代理として権限を有する者の署名または電子署"
 "名。\n"
 "侵害されたとされる著作物の特定、又は同一のオンラインサイトにおける複数の著作"
-"物が同一の警告に含まれている場合は、同サイトにおける著作物の代表的な目録。\n"
+"物が同一の通知に含まれている場合は、同サイトにおける著作物の代表的な目録。\n"
 "著作権を侵害した、又は著作権の侵害行為の主体となっているとされ、削除又はアク"
-"セスを不可能にすべき資料の特定およびサービスプロバイダが同資料を特定するため"
-"に必要な適度な情報。\n"
-"サービスプロバイダが、警告提出者に連絡を取るに必要な適度な情報、すなわち警告"
-"提出者に連絡可能な住所、電話番号、および該当する場合は電子メールアドレス。\n"
-"警告提出者が、誠実な信念をもって、申し立てに記してある資料の使用が著作権保有"
-"者、その代理人又は法律によって認可されていないと信じているという陳述。\n"
-"警告に記されている情報が正確であり、偽りの場合には偽証罪に問われることを承知"
-"の上で、警告提出者が、独占権を侵害されたとされる所有者の代理として権限を有し"
-"ているという陳述。\n"
-"以上の書面による警告を、下記に従って当団体の指定代理人にお送りください：\n"
+"セスを無効にすべき素材の特定およびサービスプロバイダが同素材を特定するに足る"
+"十分な情報。\n"
+"サービスプロバイダが、通知申し立て者に連絡を取るに必要な適度な情報、すなわち"
+"通知申し立て者に連絡可能な住所、電話番号、および該当する場合は電子メールアド"
+"レス。\n"
+"通知申し立て者が、誠実な信念をもって、申し立てに記してある資料の使用が著作権"
+"保有者、その代理人又は法律によって認可されていないと信じているという陳述。\n"
+"通知に記されている情報が正確であり、偽りの場合には偽証罪に問われることを承知"
+"の上で、通知申し立て者が、独占権を侵害されたとされる所有者の代理として権限を"
+"有しているという陳述。\n"
+"以上の書面による通知を、下記に従って当団体の指定代理人にお送りください：\n"
 
 #: templates/dmca.html:55
 msgid ""
@@ -3162,10 +3183,13 @@ msgid ""
 "misrepresents that material or activity is infringing may be subject to\n"
 "liability.\n"
 msgstr ""
+"\n"
+"また、第512条(f)により、資料または活動が著作権を侵害していると虚偽の権利を主"
+"張する者には、賠償責任が生じる場合があります。\n"
 
 #: templates/dmca.html:63
 msgid "Counter-Notification"
-msgstr ""
+msgstr "異議申し立て通知"
 
 #: templates/dmca.html:65
 msgid ""
@@ -3181,7 +3205,7 @@ msgstr ""
 
 #: templates/dmca.html:75
 msgid "How do I file a DMCA counter notice?"
-msgstr ""
+msgstr "DMCA 異議申し立て通知は、どのようにして提出するのですか？"
 
 #: templates/dmca.html:77
 msgid ""
@@ -3190,6 +3214,9 @@ msgid ""
 "Digital Millennium Copyright Act: http://www.copyright.gov/legislation/dmca."
 "pdf\n"
 msgstr ""
+"\n"
+"異議申し立て通知は、デジタルミレニアム著作権法第512条(g)に規定されています： "
+"http://www.copyright.gov/legislation/dmca.pdf\n"
 
 #: templates/dmca.html:82
 msgid ""
@@ -3197,6 +3224,9 @@ msgid ""
 "To file a counter notification with us, you must provide a written\n"
 "communication that sets forth the items specified below.\n"
 msgstr ""
+"\n"
+"異議申し立て通知を当団体に提出するには、下記項目を書面にて提出してくださ"
+"い。\n"
 
 #: templates/dmca.html:87
 msgid ""
@@ -3214,7 +3244,7 @@ msgstr ""
 
 #: templates/dmca.html:99
 msgid "Elements of Counter-Notification"
-msgstr ""
+msgstr "異議申し立て通知の要素"
 
 #: templates/dmca.html:101
 msgid ""
@@ -3226,6 +3256,10 @@ msgid ""
 "(including\n"
 "section numbers):\n"
 msgstr ""
+"\n"
+"異議申し立て通知の例は次を参照ください：http://www.chillingeffects.org/dmca/"
+"counter512.pdf. 異議申し立て通知を円滑に処理できるよう、以下の形式に従ってく"
+"ださい（セクションの番号付けも含む）：\n"
 
 #: templates/dmca.html:109
 msgid ""
@@ -3256,7 +3290,7 @@ msgstr ""
 
 #: templates/dmca.html:141
 msgid "What happens next?"
-msgstr ""
+msgstr "その後はどうなりますか？"
 
 #: templates/dmca.html:143
 msgid ""
@@ -3393,7 +3427,7 @@ msgstr "品質管理"
 
 #: templates/enterprise.html:18 templates/enterprise.html.py:159
 msgid "Automated Workflows"
-msgstr ""
+msgstr "クリアする"
 
 #: templates/enterprise.html:19 templates/enterprise.html.py:194
 msgid "Subtitle Management"
@@ -3409,7 +3443,7 @@ msgstr ""
 
 #: templates/enterprise.html:25
 msgid "Customers"
-msgstr ""
+msgstr "顧客"
 
 #: templates/enterprise.html:27 templates/enterprise.html.py:232
 msgid "Companies"
@@ -3421,11 +3455,11 @@ msgstr "大学"
 
 #: templates/enterprise.html:29 templates/enterprise.html.py:248
 msgid "Publishers"
-msgstr ""
+msgstr "発行者"
 
 #: templates/enterprise.html:30 templates/enterprise.html.py:254
 msgid "Government"
-msgstr ""
+msgstr "政府機関"
 
 #: templates/enterprise.html:36
 msgid "The World’s Most Advanced Platform for Subtitles"
@@ -3748,7 +3782,7 @@ msgstr ""
 
 #: templates/enterprise.html:200
 msgid "Import"
-msgstr ""
+msgstr "インポートする"
 
 #: templates/enterprise.html:201
 msgid ""
@@ -3874,7 +3908,7 @@ msgstr ""
 
 #: templates/enterprise.html:261
 msgid "Get started with Amara"
-msgstr ""
+msgstr "Amara で始めよう"
 
 #: templates/enterprise.html:262
 msgid "Be in touch at"
@@ -4296,7 +4330,7 @@ msgstr ""
 
 #: templates/index.html:44
 msgid "Start volunteering."
-msgstr ""
+msgstr "ボランティアを始める。"
 
 #: templates/index.html:48
 msgid "Complete Subtitling Solutions"
@@ -4844,7 +4878,7 @@ msgstr "削除する"
 #: templates/profiles/_select_language_dialog.html:30
 #: templates/teams/settings-projects-add.html:67
 #: templates/teams/tasks.html:435 templates/videos/_feedback_form.html:25
-#: templates/videos/subtitle-view.html:387
+#: templates/videos/subtitle-view.html:389
 msgid "Cancel"
 msgstr "中止する"
 
@@ -4860,6 +4894,11 @@ msgstr "アカウントをお持ちでない方"
 msgid "Forgot your password?"
 msgstr "パスワードをお忘れの方"
 
+#: templates/auth/login.html:30 templates/auth/login_trap.html:15
+#: templates/openid_consumer/signin.html:22
+msgid "Sign In"
+msgstr "サインイン"
+
 #: templates/auth/login.html:34
 msgid "Create an Amara account"
 msgstr "Amara のアカウントを作成する"
@@ -4871,6 +4910,10 @@ msgstr "すでにアカウントをお持ちの方"
 #: templates/auth/login.html:38
 msgid "Create Account"
 msgstr "アカウントを作成する"
+
+#: templates/auth/login_trap.html:10
+msgid "Sign in as a different user"
+msgstr ""
 
 #: templates/comments/_item.html:3 templates/messages/list.html:70
 #: templates/messages/sent.html:48 templates/videos/_action_tpl.html:9
@@ -5072,7 +5115,7 @@ msgstr "メッセージの送信が完了しました。"
 
 #: templates/messages/list.html:38
 msgid "Compose"
-msgstr ""
+msgstr "作成する"
 
 #: templates/messages/list.html:74
 msgid "Mark Read"
@@ -5215,12 +5258,12 @@ msgstr "ユーザー詳細"
 
 #: templates/profiles/_filters_dashboard.html:5
 msgid "Overview"
-msgstr ""
+msgstr "概要"
 
 #: templates/profiles/_filters_dashboard.html:8
 #: templates/profiles/dashboard.html:85
 msgid "Recent Activity"
-msgstr ""
+msgstr "最新活動"
 
 #: templates/profiles/_filters_dashboard.html:11
 msgid "My Videos"
@@ -5272,16 +5315,16 @@ msgstr "何語ができますか？"
 msgid "Submit"
 msgstr "送信する"
 
-#: templates/profiles/_tabs.html:6 templates/profiles/_top_user_panel.html:16
+#: templates/profiles/_tabs.html:6 templates/profiles/_top_user_panel.html:15
 msgid "Profile"
 msgstr "プロフィール"
 
-#: templates/profiles/_tabs.html:19 templates/profiles/_top_user_panel.html:12
+#: templates/profiles/_tabs.html:19 templates/profiles/_top_user_panel.html:11
 #: templates/profiles/dashboard.html:13
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: templates/profiles/_top_user_panel.html:27
+#: templates/profiles/_top_user_panel.html:26
 msgid "Logout"
 msgstr "ログアウト"
 
@@ -5319,8 +5362,8 @@ msgstr "字幕言語"
 
 #: templates/profiles/dashboard.html:55 templates/teams/tasks.html:172
 #: templates/teams/tasks.html.py:188 templates/videos/diffing.html:87
-#: templates/videos/subtitle-view.html:147
-#: templates/videos/subtitle-view.html:194
+#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:196
 msgid "Subtitles"
 msgstr "字幕"
 
@@ -5339,11 +5382,11 @@ msgstr ""
 
 #: templates/profiles/dashboard.html:91
 msgid "Sorry, no activity yet."
-msgstr ""
+msgstr "活動はまだありません。"
 
 #: templates/profiles/dashboard.html:98
 msgid "Alerts"
-msgstr ""
+msgstr "アラート"
 
 #: templates/profiles/dashboard.html:115 templates/teams/teams-list.html:107
 msgid "Do you really wish to leave this team?"
@@ -5351,7 +5394,7 @@ msgstr "本当にこのチームから脱会しますか？"
 
 #: templates/profiles/dashboard.html:115
 msgid "leave team"
-msgstr ""
+msgstr "チームを去る"
 
 #: templates/profiles/edit_profile.html:5
 msgid "Edit My Profile"
@@ -5359,7 +5402,7 @@ msgstr "プロファイルを編集する"
 
 #: templates/profiles/edit_profile.html:16
 msgid "Do you really want delete your picture?"
-msgstr ""
+msgstr "本当に写真を削除しますか？"
 
 #: templates/profiles/edit_profile.html:40
 #: templates/videos/_paste_transcription.html:106
@@ -5389,19 +5432,19 @@ msgstr "写真をアップロードする"
 
 #: templates/profiles/edit_profile.html:92
 msgid "Account Details"
-msgstr ""
+msgstr "アカウント詳細"
 
 #: templates/profiles/edit_profile.html:107
 msgid "Notifications"
-msgstr ""
+msgstr "通知"
 
 #: templates/profiles/edit_profile.html:110
 msgid "Send notifications to my UniversalSubtitles.org message inbox"
-msgstr ""
+msgstr "通知を自分の UniversalSubtitles.org メッセージの受信箱に送る"
 
 #: templates/profiles/edit_profile.html:113
 msgid "Send an email notification for each message received"
-msgstr ""
+msgstr "各メッセージにつき通知メールを送る。"
 
 #: templates/profiles/edit_profile.html:116
 msgid "Language Info"
@@ -5422,7 +5465,7 @@ msgstr "言語を追加する"
 
 #: templates/profiles/edit_profile.html:173
 msgid "Developer Info"
-msgstr ""
+msgstr "開発者情報"
 
 #: templates/profiles/edit_profile.html:183
 #: templates/teams/settings-permissions.html:118
@@ -5460,11 +5503,11 @@ msgstr "メンバーシップ"
 
 #: templates/profiles/view_profile.html:121
 msgid "Profile deleted by user."
-msgstr ""
+msgstr "ユーザがプロフィールを削除しました。"
 
 #: templates/profiles/view_profile.html:130
 msgid "Edit user"
-msgstr ""
+msgstr "ユーザを編集する"
 
 #: templates/registration/password_reset_complete.html:4
 #: templates/registration/password_reset_confirm.html:6
@@ -5747,7 +5790,7 @@ msgstr ""
 
 #: templates/teams/_actions.html:33
 msgid "to apply"
-msgstr ""
+msgstr "申し込む"
 
 #: templates/teams/_actions.html:43
 msgid "Your application is pending"
@@ -5783,6 +5826,9 @@ msgid ""
 "language\n"
 "                            "
 msgstr ""
+"\n"
+"%(team)sチームで翻訳するために正式な言語研修は必要ありませんが、翻訳に自信が"
+"ある方を求めています。プロフィールで忘れずにあなたの言語を追加してください。"
 
 #: templates/teams/_application_form.html:24
 msgid "proficiency"
@@ -5800,6 +5846,9 @@ msgid ""
 "that, it’s up to you!\n"
 "                            "
 msgstr ""
+"\n"
+"新しい応募者には、チームに参加後、一週間以内に字幕作業を一セットしていただく"
+"よう、お願いしています。それ以外は、お任せします！"
 
 #: templates/teams/_application_form.html:37
 msgid "About you"
@@ -5814,6 +5863,9 @@ msgid ""
 "longer!\n"
 "                    "
 msgstr ""
+"\n"
+"自己紹介をして、なぜ%(team)sのメンバーとし翻訳したいのか教えてください。３か"
+"ら５行程度で説明してください！"
 
 #: templates/teams/_application_form.html:47
 msgid "Submit Application"
@@ -5830,7 +5882,7 @@ msgstr "ビデオページ"
 #: templates/teams/_context_project.html:17
 #: templates/teams/_context_team.html:14 templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:131
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show all"
 msgstr "すべて表示する"
@@ -5873,7 +5925,7 @@ msgstr "ビデオ"
 
 #: templates/teams/_context_team.html:36
 #: templates/teams/_context_team.html:127
-#: templates/videos/subtitle-view.html:135
+#: templates/videos/subtitle-view.html:137
 #: templates/videos/video-view.html:123
 msgid "Show less"
 msgstr ""
@@ -5884,7 +5936,7 @@ msgstr "メンバー"
 
 #: templates/teams/_context_team.html:83
 msgid "My tasks"
-msgstr ""
+msgstr "自分のタスク"
 
 #: templates/teams/_context_team.html:100
 msgid "All available tasks"
@@ -5892,7 +5944,7 @@ msgstr ""
 
 #: templates/teams/_filters_videos.html:7
 msgid "All videos"
-msgstr ""
+msgstr "全てのビデオ"
 
 #: templates/teams/_invite_friends_to_team.html:4
 msgid "According to your"
@@ -5964,7 +6016,7 @@ msgstr "設定"
 
 #: templates/teams/_team_add_video_select.html:4
 msgid "Add this video to one of your teams"
-msgstr ""
+msgstr "このビデオをあなたのチームに追加する"
 
 #: templates/teams/_team_add_video_select.html:8
 msgid "Choose a team"
@@ -5978,6 +6030,9 @@ msgid ""
 "            <a href=\"%(team_page)s\">%(team)s</a> team. \n"
 "        "
 msgstr ""
+"\n"
+"この通知は、<a href=\"%(team_page)s\">%(team)s</a> チームのメンバーにお送りし"
+"ています。"
 
 #: templates/teams/_team_move_video_select.html:6
 msgid "Move video to one of your other teams?"
@@ -5986,7 +6041,7 @@ msgstr "ビデオをあなたの他のチームに移動しますか？"
 #: templates/teams/_team_move_video_select.html:27
 #: templates/teams/_team_move_video_select.html:51
 msgid "Move video"
-msgstr ""
+msgstr "ビデオを移動する"
 
 #: templates/teams/_team_move_video_select.html:32
 msgid ""
@@ -6039,11 +6094,11 @@ msgstr[0] ""
 #, python-format
 msgid ""
 "\n"
-"                            1 open task\n"
+"                            1 task\n"
 "                        "
 msgid_plural ""
 "\n"
-"                            %(counter)s open tasks\n"
+"                            %(counter)s tasks\n"
 "                        "
 msgstr[0] ""
 
@@ -6106,7 +6161,7 @@ msgstr "セルビア語、ラテン"
 
 #: templates/teams/base.html:43
 msgid "Edit team"
-msgstr ""
+msgstr "チームを編集する"
 
 #: templates/teams/create.html:6
 msgid "Create team"
@@ -6120,8 +6175,7 @@ msgstr "チームを作成する"
 msgid "All Teams"
 msgstr "全てのチーム"
 
-#: templates/teams/create.html:33 templates/teams/teams-list.html:6
-#: templates/teams/teams-list.html.py:29
+#: templates/teams/create.html:33
 msgid "My Teams"
 msgstr "マイ・チーム"
 
@@ -6167,15 +6221,15 @@ msgstr ""
 
 #: templates/teams/create_task.html:57
 msgid "What language is needed?"
-msgstr ""
+msgstr "必要な言語はどれですか？"
 
 #: templates/teams/create_task.html:63
 msgid "Who should do it?"
-msgstr ""
+msgstr "誰がしますか？"
 
 #: templates/teams/create_task.html:68 templates/teams/tasks.html:439
 msgid "Begin typing to search"
-msgstr ""
+msgstr "検索するにはタイプし始めてください"
 
 #: templates/teams/create_task.html:71
 msgid ""
@@ -6197,7 +6251,7 @@ msgstr ""
 
 #: templates/teams/create_task.html:103
 msgid "Back to tasks list"
-msgstr ""
+msgstr "タスクリストに戻る"
 
 #: templates/teams/email_new_video.html:7
 #, python-format
@@ -6244,11 +6298,11 @@ msgstr "メンバーを招待する"
 
 #: templates/teams/invite_members.html:23
 msgid "Recipient"
-msgstr ""
+msgstr "受信者"
 
 #: templates/teams/invite_members.html:29
 msgid "Begin typing to search."
-msgstr ""
+msgstr "検索するにはタイプし始めてください。"
 
 #: templates/teams/invite_members.html:32
 msgid "Amara username of the user you want to invite."
@@ -6256,15 +6310,15 @@ msgstr "招待するユーザの Amara ユーザ名"
 
 #: templates/teams/invite_members.html:36
 msgid "Invite Details"
-msgstr ""
+msgstr "招待の詳細"
 
 #: templates/teams/invite_members.html:39
 msgid "Include a message"
-msgstr ""
+msgstr "メッセージを添える"
 
 #: templates/teams/invite_members.html:43
 msgid "Assign a role"
-msgstr ""
+msgstr "役割を指名する"
 
 #: templates/teams/invite_members.html:45
 msgid "Role to be assigned to the user if they accept your invitation."
@@ -6277,28 +6331,28 @@ msgstr "招待を送信する"
 #: templates/teams/members-list.html:47 templates/teams/tasks.html:48
 #: templates/teams/videos-list.html:47
 msgid "Filter and Sort"
-msgstr ""
+msgstr "フィルターと並び替え順"
 
 #: templates/teams/members-list.html:53
-#: templates/videos/subtitle-view.html:198
+#: templates/videos/subtitle-view.html:200
 msgid "Showing"
 msgstr ""
 
 #: templates/teams/members-list.html:55
 msgid "all members"
-msgstr ""
+msgstr "全メンバー"
 
 #: templates/teams/members-list.html:56
 msgid "admins"
-msgstr ""
+msgstr "管理人"
 
 #: templates/teams/members-list.html:57
 msgid "managers"
-msgstr ""
+msgstr "マネジャー"
 
 #: templates/teams/members-list.html:58
 msgid "contributor"
-msgstr ""
+msgstr "寄稿者"
 
 #: templates/teams/members-list.html:62
 msgid "speaking"
@@ -6306,13 +6360,13 @@ msgstr ""
 
 #: templates/teams/members-list.html:64 templates/teams/tasks.html:71
 msgid "all languages"
-msgstr ""
+msgstr "全言語"
 
 #: templates/teams/members-list.html:72 templates/teams/tasks.html:119
 #: templates/teams/tasks.html.py:126 templates/teams/tasks.html:133
 #: templates/teams/videos-list.html:89
 msgid "Clear"
-msgstr ""
+msgstr "クリアする"
 
 #: templates/teams/members-list.html:77
 msgid "This team has"
@@ -6605,19 +6659,19 @@ msgstr "並び替え順"
 
 #: templates/teams/tasks.html:102
 msgid "date, newest"
-msgstr ""
+msgstr "日付（新着順）"
 
 #: templates/teams/tasks.html:105
 msgid "date, oldest"
-msgstr ""
+msgstr "日付（古い順）"
 
 #: templates/teams/tasks.html:109
 msgid "time left, least"
-msgstr ""
+msgstr "残り日数（少ない順）"
 
 #: templates/teams/tasks.html:112
 msgid "time left, most"
-msgstr ""
+msgstr "残り日数（多い順）"
 
 #: templates/teams/tasks.html:119 templates/teams/tasks.html.py:126
 #: templates/teams/tasks.html:133
@@ -6626,7 +6680,7 @@ msgstr "フィルター、並べ替え順、検索用語をクリアしてくだ
 
 #: templates/teams/tasks.html:131
 msgid "NOTE:"
-msgstr ""
+msgstr "注意："
 
 #: templates/teams/tasks.html:132
 msgid ""
@@ -6653,8 +6707,8 @@ msgstr ""
 msgid "and edited"
 msgstr ""
 
-#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:202
-#: templates/videos/subtitle-view.html:318
+#: templates/teams/tasks.html:208 templates/videos/subtitle-view.html:204
+#: templates/videos/subtitle-view.html:320
 msgid "by"
 msgstr ""
 
@@ -6668,7 +6722,7 @@ msgstr ""
 
 #: templates/teams/tasks.html:245
 msgid "Perform Task"
-msgstr ""
+msgstr "タスクを実行する"
 
 #: templates/teams/tasks.html:254
 msgid "You have reached the maximum number of tasks."
@@ -6734,7 +6788,7 @@ msgstr ""
 
 #: templates/teams/tasks.html:390
 msgid "Delete task"
-msgstr ""
+msgstr "タスクを削除する"
 
 #: templates/teams/tasks.html:396
 msgid "What would you like to do with the subtitles for this task?"
@@ -6742,7 +6796,7 @@ msgstr ""
 
 #: templates/teams/tasks.html:399
 msgid "Publish these subtitles immediately"
-msgstr ""
+msgstr "字幕を今すぐ公開する"
 
 #: templates/teams/tasks.html:403
 msgid ""
@@ -6756,7 +6810,7 @@ msgstr ""
 
 #: templates/teams/tasks.html:452
 msgid "Sorry, no tasks here."
-msgstr ""
+msgstr "タスクはありません。"
 
 #: templates/teams/team_video.html:6
 msgid "Edit team video"
@@ -6770,6 +6824,10 @@ msgstr "ビデオを編集する"
 msgid "This video is being moderated by team"
 msgstr ""
 
+#: templates/teams/teams-list.html:6 templates/teams/teams-list.html.py:29
+msgid "Your Teams"
+msgstr ""
+
 #: templates/teams/teams-list.html:18
 msgid "Team Directory"
 msgstr "チームディレクトリ"
@@ -6779,8 +6837,8 @@ msgid "Sort by"
 msgstr "並べ替え順序"
 
 #: templates/teams/teams-list.html:64
-msgid "My team"
-msgstr "マイ・チーム"
+msgid "Your team"
+msgstr ""
 
 #: templates/teams/teams-list.html:67
 msgid "Private"
@@ -6788,7 +6846,7 @@ msgstr "プライベート"
 
 #: templates/teams/teams-list.html:74
 msgid "No description..."
-msgstr ""
+msgstr "説明なし..."
 
 #: templates/teams/teams-list.html:81 templates/teams/teams-list.html.py:87
 #, python-format
@@ -6801,6 +6859,13 @@ msgid_plural ""
 "                                        %(count)s members\n"
 "                                    "
 msgstr[0] ""
+"\n"
+"one: ⏎\n"
+"                                        %(count)s メンバー⏎\n"
+"                                    \n"
+"other: ⏎\n"
+"                                        %(count)s メンバー⏎\n"
+"                                    "
 
 #: templates/teams/teams-list.html:96
 #, python-format
@@ -6816,7 +6881,7 @@ msgstr[0] ""
 
 #: templates/teams/teams-list.html:107
 msgid "Leave team"
-msgstr ""
+msgstr "チームを去る"
 
 #: templates/teams/teams-list.html:114
 msgid "Sorry, no teams found."
@@ -6824,7 +6889,7 @@ msgstr "該当チームなし。"
 
 #: templates/teams/teams-list.html:122
 msgid "Search and Filter"
-msgstr ""
+msgstr "検索とフィルター"
 
 #: templates/teams/teams-list.html:127
 msgid "Start a Team"
@@ -6861,15 +6926,15 @@ msgstr ""
 #: templates/videos/subtitle-view.html:45
 #: templates/videos/subtitle-view.html:72
 msgid "subtitles"
-msgstr ""
+msgstr "字幕"
 
 #: templates/teams/videos-list.html:68
 msgid "name, a-z"
-msgstr ""
+msgstr "名前（アルファベット順）"
 
 #: templates/teams/videos-list.html:71
 msgid "name, z-a"
-msgstr ""
+msgstr "名前（逆アルファベット順）"
 
 #: templates/teams/videos-list.html:74
 msgid "time, newest"
@@ -6881,11 +6946,11 @@ msgstr ""
 
 #: templates/teams/videos-list.html:80
 msgid "most subtitles"
-msgstr ""
+msgstr "字幕数（最多順）"
 
 #: templates/teams/videos-list.html:83
 msgid "least subtitles"
-msgstr ""
+msgstr "字幕数（最小順）"
 
 #: templates/teams/videos-list.html:105
 msgid "Rebuilding video index. Please try again in a few minutes"
@@ -7012,21 +7077,23 @@ msgstr "フィードバックをご入力ください。"
 
 #: templates/videos/_follow_video_button.html:37
 msgid "✓ Following"
-msgstr ""
+msgstr "✓ フォローしている"
 
 #: templates/videos/_follow_video_button.html:40
 msgid " Not Following"
-msgstr ""
+msgstr "フォローしていない"
 
 #: templates/videos/_follow_video_button.html:85
 msgid ""
 "You will stop receiving notifications when any subtitles for this video are "
 "edited.  You can choose to follow again at any time."
 msgstr ""
+"このビデオの字幕が編集されても通知メールは送信されません。いつでもフォローを"
+"再開することができます。"
 
 #: templates/videos/_follow_video_button.html:86
 msgid "Stop following this video"
-msgstr ""
+msgstr "このビデオのフォローをやめる"
 
 #: templates/videos/_follow_video_button.html:89
 msgid "You will stop receiving notification when "
@@ -7041,7 +7108,7 @@ msgstr ""
 
 #: templates/videos/_follow_video_button.html:92
 msgid "Stop following "
-msgstr ""
+msgstr "フォローをやめる"
 
 #: templates/videos/_follow_video_button.html:94
 #: templates/videos/_follow_video_button.html:147
@@ -7144,7 +7211,7 @@ msgstr "字幕をアップロードするためにログインする"
 
 #: templates/videos/_team_list.html:5 templates/videos/video-view.html:179
 msgid "Collaborate"
-msgstr ""
+msgstr "共同する"
 
 #: templates/videos/_team_list.html:8
 msgid "Visit"
@@ -7447,17 +7514,17 @@ msgid "Roll back to version"
 msgstr "以前のバージョンに戻す"
 
 #: templates/videos/diffing.html:126 templates/videos/diffing.html.py:192
-#: templates/videos/subtitle-view.html:210
+#: templates/videos/subtitle-view.html:212
 msgid "Title:"
 msgstr "タイトル："
 
 #: templates/videos/diffing.html:130 templates/videos/diffing.html.py:196
-#: templates/videos/subtitle-view.html:214
+#: templates/videos/subtitle-view.html:216
 msgid "Description:"
 msgstr "概説："
 
 #: templates/videos/diffing.html:156 templates/videos/diffing.html.py:223
-#: templates/videos/subtitle-view.html:234
+#: templates/videos/subtitle-view.html:236
 msgid "Not Synced"
 msgstr "同期していません"
 
@@ -7742,70 +7809,70 @@ msgstr "比較のために２つの改訂を選択ください"
 msgid "with"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:96 templates/videos/video-view.html:83
+#: templates/videos/subtitle-view.html:98 templates/videos/video-view.html:83
 msgid "View"
 msgstr "見る"
 
-#: templates/videos/subtitle-view.html:102 templates/videos/video-view.html:89
+#: templates/videos/subtitle-view.html:104 templates/videos/video-view.html:89
 msgid "Follower"
 msgstr "フォロワー"
 
-#: templates/videos/subtitle-view.html:108 templates/videos/video-view.html:95
+#: templates/videos/subtitle-view.html:110 templates/videos/video-view.html:95
 msgid "Comment"
 msgstr "コメントする"
 
-#: templates/videos/subtitle-view.html:114
+#: templates/videos/subtitle-view.html:116
 msgid "Line"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:124
+#: templates/videos/subtitle-view.html:126
 #: templates/videos/video-view.html:111
 msgid "View Subtitles"
 msgstr "字幕を見る"
 
-#: templates/videos/subtitle-view.html:148
-#: templates/videos/subtitle-view.html:285
+#: templates/videos/subtitle-view.html:150
+#: templates/videos/subtitle-view.html:287
 #: templates/videos/video-view.html:145 templates/videos/video-view.html:190
 msgid "Comments"
 msgstr "コメント"
 
-#: templates/videos/subtitle-view.html:149
+#: templates/videos/subtitle-view.html:151
 msgid "Revisions"
 msgstr "改訂"
 
-#: templates/videos/subtitle-view.html:154
-#: templates/videos/subtitle-view.html:388
+#: templates/videos/subtitle-view.html:156
+#: templates/videos/subtitle-view.html:390
 msgid "Unpublish"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:157
-#: templates/videos/subtitle-view.html:403
+#: templates/videos/subtitle-view.html:159
+#: templates/videos/subtitle-view.html:405
 msgid "Edit Subtitles"
 msgstr "字幕を編集する"
 
-#: templates/videos/subtitle-view.html:164
+#: templates/videos/subtitle-view.html:166
 msgid "Download"
 msgstr "ダウンロードする"
 
-#: templates/videos/subtitle-view.html:192
+#: templates/videos/subtitle-view.html:194
 msgid "Draft only"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:195
+#: templates/videos/subtitle-view.html:197
 msgid "translated from"
 msgstr "からの翻訳"
 
-#: templates/videos/subtitle-view.html:199
-#: templates/videos/subtitle-view.html:308
+#: templates/videos/subtitle-view.html:201
 #: templates/videos/subtitle-view.html:310
+#: templates/videos/subtitle-view.html:312
 msgid "Revision"
 msgstr "改訂"
 
-#: templates/videos/subtitle-view.html:200
+#: templates/videos/subtitle-view.html:202
 msgid "created"
 msgstr "作成"
 
-#: templates/videos/subtitle-view.html:246
+#: templates/videos/subtitle-view.html:248
 msgid ""
 "\n"
 "                            The most recent revision for this language is "
@@ -7816,27 +7883,27 @@ msgstr ""
 "\n"
 "この言語の最新改訂版は空白ですが、以前の改訂版に字幕が含まれています。"
 
-#: templates/videos/subtitle-view.html:250
+#: templates/videos/subtitle-view.html:252
 msgid "View revision history"
 msgstr "改訂の履歴を見る"
 
-#: templates/videos/subtitle-view.html:255
+#: templates/videos/subtitle-view.html:257
 msgid "These subtitles are in progress."
 msgstr "これらの字幕は進行中です。"
 
-#: templates/videos/subtitle-view.html:256
+#: templates/videos/subtitle-view.html:258
 msgid "Make more?"
 msgstr "もっと作りますか？"
 
-#: templates/videos/subtitle-view.html:258
+#: templates/videos/subtitle-view.html:260
 msgid "No subtitles available yet."
 msgstr "字幕はまだ存在しません。"
 
-#: templates/videos/subtitle-view.html:259
+#: templates/videos/subtitle-view.html:261
 msgid "Make some!"
 msgstr "作成してください！"
 
-#: templates/videos/subtitle-view.html:267
+#: templates/videos/subtitle-view.html:269
 msgid ""
 "\n"
 "                            This language contains subtitles that are still "
@@ -7844,7 +7911,7 @@ msgid ""
 "                        "
 msgstr ""
 
-#: templates/videos/subtitle-view.html:273
+#: templates/videos/subtitle-view.html:275
 msgid ""
 "\n"
 "                            No subtitles have been added for this language "
@@ -7854,44 +7921,44 @@ msgstr ""
 "\n"
 "この言語の字幕はまだありません。"
 
-#: templates/videos/subtitle-view.html:283
+#: templates/videos/subtitle-view.html:285
 #: templates/videos/video-view.html:188
 msgid "Leave a comment"
 msgstr "コメントを残す"
 
-#: templates/videos/subtitle-view.html:292
+#: templates/videos/subtitle-view.html:294
 msgid "Compare Revisions"
 msgstr "改訂を比較する"
 
-#: templates/videos/subtitle-view.html:324
+#: templates/videos/subtitle-view.html:326
 msgid "Timing"
 msgstr "タイミング"
 
-#: templates/videos/subtitle-view.html:325
+#: templates/videos/subtitle-view.html:327
 msgid "Text"
 msgstr "テキスト"
 
-#: templates/videos/subtitle-view.html:331
+#: templates/videos/subtitle-view.html:333
 msgid "No subtitles for this language."
 msgstr "この言語の字幕はありません。"
 
-#: templates/videos/subtitle-view.html:340
+#: templates/videos/subtitle-view.html:342
 msgid "Roll back to this version"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:353
+#: templates/videos/subtitle-view.html:355
 msgid "Unpublish subtitles"
 msgstr ""
 
-#: templates/videos/subtitle-view.html:361
+#: templates/videos/subtitle-view.html:363
 msgid "This version only"
 msgstr "このバージョンのみ"
 
-#: templates/videos/subtitle-view.html:365
+#: templates/videos/subtitle-view.html:367
 msgid "This entire language and all dependent languages"
 msgstr "この言語全部およびこの言語に依存しているすべての言語"
 
-#: templates/videos/subtitle-view.html:367
+#: templates/videos/subtitle-view.html:369
 msgid ""
 "Note: Any dependent languages will be unavailable until this language is "
 "reapproved."
@@ -7899,7 +7966,7 @@ msgstr ""
 "注意：この言語が再承認されるまで、この言語に依存している他の言語は利用できな"
 "くなります。"
 
-#: templates/videos/subtitle-view.html:376
+#: templates/videos/subtitle-view.html:378
 msgid ""
 "Yes, delete these subtitles instead of sending them back for editing/review"
 msgstr "はい、字幕を、編集／校正のために送り返すのではなく、削除する。"

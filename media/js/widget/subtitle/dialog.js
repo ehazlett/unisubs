@@ -315,9 +315,11 @@ unisubs.subtitle.Dialog.prototype.handleDoneKeyPress_ = function(event) {
     if (this.state_ == unisubs.subtitle.Dialog.State_.REVIEW) {
 
         // Make sure this subtitle set has captions.
-        if (this.captionSet_.captions_.length === 0) {
-            alert('You must create captions in order to submit.');
-            return false;
+        if((this.captionSet_.captions_.length === 0) && 
+            !(this.captionSet_.hasTitleChanged() && this.captionSet_.originalTitle == "") &&
+                 !(this.captionSet_.hasDescriptionChanged() && this.captionSet_.originalDescription == "")){
+                alert('You must create captions in order to submit.');
+                return false;
         } else {
 
             var halt = false;
@@ -363,10 +365,15 @@ unisubs.subtitle.Dialog.prototype.saveWorkInternal = function(closeAfterSave, sa
     if (this.captionSet_.needsSync()) {
         this.saveWorkImpl_(closeAfterSave, saveForLater, false);
     } else if (goog.array.isEmpty(
-        this.serverModel_.captionSet_.nonblankSubtitles())){
-        // there are no subs here, close dialog or back to subtitling
+        this.serverModel_.captionSet_.nonblankSubtitles()) && !this.forceSave_){
         this.alreadySaving_ = false;
-        this.showEmptySubsDialog();
+        if((this.captionSet_.hasTitleChanged() && this.captionSet_.originalTitle == "") ||
+             (this.captionSet_.hasDescriptionChanged() && this.captionSet_.originalDescription == "")){
+            this.showTitleDescriptionChangedDialog(closeAfterSave, saveForLater);
+        } else {
+            // there are no subs here, close dialog or back to subtitling
+            this.showEmptySubsDialog();
+        }
         return;
     } else {
         unisubs.subtitle.CompletedDialog.show(

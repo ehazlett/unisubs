@@ -2,12 +2,11 @@
 {% if user.is_authenticated %}
     <div id="user_menu">
         <div id="menu_name">
-            <a href="{% url profiles:dashboard %}">Me</a>
+            <a href="{% url profiles:dashboard %}">{{ user.username }}</a>
         </div>
         <div id="menu">
             <ul id="dropdown">
                 <li>
-                    <h4><a href="{% url profiles:my_profile  %}">{{ request.user.username }}</a></h4>
                     <a href="{% url profiles:dashboard %}">
                         {% trans "Dashboard" %}
                     </a>

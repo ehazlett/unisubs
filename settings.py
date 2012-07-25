@@ -178,6 +178,7 @@ JS_DIALOG = \
      'js/srtwriter.js',
      'js/widget/unsavedwarning.js',
      'js/widget/emptysubswarningdialog.js',
+     'js/widget/confirmdialog.js',
      'js/widget/droplockdialog.js',
      'js/finishfaildialog/dialog.js',
      'js/finishfaildialog/errorpanel.js',
@@ -238,6 +239,14 @@ JS_ONSITE.extend(
     ['js/srtwriter.js',
      'js/widget/samedomainembed.js',
      "js/widget/api/servermodel.js",
+     'js/widget/controls/bufferedbar.js',
+     'js/widget/controls/playpause.js',
+     'js/widget/controls/progressbar.js',
+     'js/widget/controls/progressslider.js',
+     'js/widget/controls/timespan.js',
+     'js/widget/controls/videocontrols.js',
+     'js/widget/controls/volumecontrol.js',
+     'js/widget/controls/volumeslider.js',
      "js/widget/api/api.js"])
 
 JS_WIDGETIZER_CORE = list(JS_CORE)

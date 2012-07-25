@@ -1437,8 +1437,8 @@ class SubtitleVersion(SubtitleCollection):
         if standard_language:
             return standard_language.latest_version(public_only=public_only)
 
-    def ordered_subtitles(self):
-        subtitles = self.subtitles()
+    def ordered_subtitles(self, public_only=True):
+        subtitles = self.subtitles(public_only=True)
         subtitles.sort(key=lambda item: item.sub_order)
         return subtitles
 
