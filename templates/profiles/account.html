@@ -51,9 +51,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grid_8">
+                <div class="grid_8 alpha">
                     <fieldset>
-                        <legend>{% trans "API Access" %}</legend>
+                        <h3>{% trans "API Access" %}</h3>
                         {% if form.instance.api_key.key %}
                             <label>Your API key</label>
                             <p><span class="api-key-holder">{{form.instance.api_key.key}}</span></p>

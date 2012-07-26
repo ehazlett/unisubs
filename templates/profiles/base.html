@@ -15,15 +15,11 @@
             <dd>{{ user_info.username }}</dd>
             <dt>{% trans "Member since" %}</dt>
             <dd>{{ user_info.date_joined|date:"DATE_FORMAT" }}</dd>
-            {% if user_info.homepage %}
-                <dt>{% trans "Homepage" %}</dt>
-                <dd><a href="{{ user_info.homepage }}">{{ user_info.homepage }}</a></dd>
-            {% endif %}
         </dl>
     </div>
     <div class="grid_4 context alpha">
         <h3>
-            {% trans "Bio" %}
+            {% trans "About" %}
             {% if can_edit %}
                 <a class="edit open-modal" href="#edit-bio">edit</a>
             {% endif %}
@@ -43,6 +39,13 @@
                 {% endif %}
             </span>
         </p>
+        {% if user_info.homepage %}
+            <p><a href="{{ user_info.homepage }}">{{ user_info.homepage }}</a></p>
+        {% else %}
+            {% if can_edit %}
+                <p><em><a href="#edit-bio" title="Edit bio" class="open-modal">{% trans "Add a bio" %}</a></em></p>
+            {% endif %}
+        {% endif %}
         {% with user_info.get_languages as langs %}
             <h3>
                 {% trans "Languages" %}
