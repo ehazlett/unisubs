@@ -171,12 +171,16 @@
                                 {% if task.get_type_display == 'Review' or task.get_type_display == 'Approve' %}
                                     {% if translated_from and not translated_from.had_version %}
                                         class="disabled">
-                                        <div class="cannot-perform-disabled">This task cannot be performed until the original language ({{ translated_from.get_language_display }}) is finished.</div
+                                        <div class="cannot-perform disabled">This task cannot be performed until the original language ({{ translated_from.get_language_display }}) is finished.</div
                                     {% endif %}
                                 {% endif %}
                                 {% if task.is_blocked %}
                                     class="disabled">
-                                    <div class="cannot-perform-disabled">This task cannot be performed until the original language ({{ task.subtitle_version.language }}) has been approved.</div
+                                    <div class="cannot-perform disabled">This task cannot be performed until the original language ({{ task.subtitle_version.language }}) has been approved.</div
+                                {% endif %}
+                                {% if not task|can_perform_task:user %}
+                                    class="disabled">
+                                    <div class="cannot-perform">You are not able to perform this task.</div
                                 {% endif %}
                                 >
 

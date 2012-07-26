@@ -2149,6 +2149,12 @@ embed#clippy {
     min-width: 300px !important;
     padding: 12px !important;
 }
+.unisubs-modal-lang div p.notice {
+    color: #999 !important;
+    font-size: 12px !important;
+    padding-top: 0 !important;
+    margin-top: -7px !important;
+}
 .unisubs-modal-lang p div, .unisubs-modal-completed p div {
     margin-bottom: 8px !important
 }

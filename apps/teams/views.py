@@ -1726,22 +1726,48 @@ def auto_captions_status(request, slug):
 def get_billing_data_for_team(team, start_date, end_date, header=True):
     """
     Return a list of lists of data suitable for the csv writer or similar.
+
+    ``start_date`` and ``end_date`` should be ``datetime.date`` instances
+
+    * Get all videos for team
+    * For each video, get all languages
+    * For each language, get the latest version
+    * If the version is approved and within the time constraints, add it.
+
+    Minutes are counted by
+        [last subtitle synced timing] - [first subtitle synced timing]
     """
+    from datetime import datetime, time
     rows = []
+
+    # Oh, Python...
+    midnight = time(0, 0, 0)
+    start_date = datetime.combine(start_date, midnight)
+    end_date = datetime.combine(end_date, midnight)
 
     if header:
         rows.append(['Video title', 'Video URL', 'Video language',
                 'Billable minutes'])
 
-    tvs = TeamVideo.objects.filter(team=team)
+    tvs = TeamVideo.objects.filter(team=team).order_by('video__title')
+
+    domain = Site.objects.get_current().domain
+    protocol = getattr(settings, 'DEFAULT_PROTOCOL')
+    host = '%s://%s' % (protocol, domain)
 
     for tv in tvs:
         languages = tv.video.subtitlelanguage_set.all()
-        versions = SubtitleVersion.objects.filter(language__in=languages,
-                moderation_status=APPROVED, datetime_started__gte=start_date,
-                datetime_started__lte=end_date)
 
-        for v in versions:
+        for language in languages:
+            v = language.latest_version()
+
+            if not v or v.moderation_status != APPROVED:
+                continue
+
+            if (v.datetime_started < start_date) or (v.datetime_started >
+                    end_date):
+                continue
+
             subs = list(v.subtitle_set.filter(start_time__isnull=False,
                 end_time__isnull=False))
 
@@ -1753,9 +1779,9 @@ def get_billing_data_for_team(team, start_date, end_date, header=True):
 
             rows.append([
                 tv.video.title.encode('utf-8'),
-                tv.video.get_video_url(),
-                tv.video.language,
-                round(end - start)
+                host + tv.video.get_absolute_url(),
+                language.language,
+                int(round((end - start) / 60))
             ])
 
     return rows

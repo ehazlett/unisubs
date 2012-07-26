@@ -827,13 +827,23 @@ div.fix-chosen div.chzn-container {
         ul.actions, ul.admin-controls {
             display: none !important;
         }
-        div.cannot-perform-disabled {
-            background: #F2DEDE;
-            border: 1px solid #EED3D7;
-            color: #B94A48;
+        div.cannot-perform {
+            float: right;
+            width: 150px;
+            background: $faintest;
+            color: $lighter;
+            border: 1px solid $fainter;
             margin-bottom: 10px;
             padding: 10px;
             @include border-radius;
+
+            &.disabled {
+                float: none;
+                width: auto;
+                background: #F2DEDE;
+                border: 1px solid #EED3D7;
+                color: #B94A48;
+            }
         }
     }
 
@@ -2326,7 +2336,6 @@ a.truncated-expand {
         margin-top: 10px;
     }
 }
-
 /* Account */
 body.account {
     form fieldset {
@@ -2343,5 +2352,16 @@ body.account {
                 margin-bottom: 10px;
             }
         }
+    }
+}
+#error {
+
+    h1 {
+        font-size: 3em;
+        padding: .75em 0 .25em;
+    }
+    p {
+        margin: 1em 0;
+        line-height: 175%;
     }
 }

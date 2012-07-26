@@ -40,6 +40,7 @@
                         To
                         <a href="{{ msg.user.get_absolute_url }}">{{ msg.user }}</a>
                     </p>
+                    <p>{{ msg.get_content|safe }}</p>
                     <a class="thumb"href="{{ msg.user.get_absolute_url }}">
                         {% with msg.user.small_avatar as user_avatar_url %}
                             {% if user_avatar_url %}

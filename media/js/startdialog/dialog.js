@@ -277,12 +277,15 @@ unisubs.startdialog.Dialog.prototype.addOriginalLanguageSection_ = function($d) 
             $d('p', null,
                $d('span', null, 'This video is in: '),
                this.originalLangDropdown_));
+        this.contentDiv_.appendChild(
+        $d('p', "notice", "Please double check the primary spoken language. This step cannot be undone."));
     }
-    else
+    else {
         this.contentDiv_.appendChild(
             $d('p', null, "This video is in " +
                unisubs.languageNameForCode(
                    this.model_.getOriginalLanguage())));
+    }
 };
 unisubs.startdialog.Dialog.prototype.connectEvents_ = function() {
     if (!this.isInDocument() || !this.fetchCompleted_)
