@@ -934,7 +934,6 @@ class TestViews(BaseTestPermission):
 
     def test_save_role(self):
 
-        from apps.icanhaz.models import VideoVisibilityPolicy
         owner = self.team.members.filter(role=ROLE_OWNER)[0]
         member  = self.team.members.filter(role=ROLE_CONTRIBUTOR)[0]
         member.user.set_password("hey")
@@ -944,11 +943,9 @@ class TestViews(BaseTestPermission):
         video_url = reverse("videos:video", args=(tv.video.video_id,))
         owner.user.set_password("hey")
         owner.user.save()
-        policy = VideoVisibilityPolicy.objects.create_for_video(
-                tv.video,
-                VideoVisibilityPolicy.SITE_VISIBILITY_PRIVATE_OWNER,
-                self.team,
-            )
+
+        self.team.is_visible = False
+        self.team.save()
 
         resp = self.client.get(video_url, follow=True)
         self.assertNotEqual(resp.status_code, 200)

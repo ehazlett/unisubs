@@ -71,22 +71,31 @@ class ViewsTests(TestCase):
         self.failUnlessEqual(response.status_code, 302)
         self.assertEqual(Team.objects.get(slug=data['slug']).slug, data["slug"])
 
-    def test_team_edit(self ):
+    def test_team_edit(self):
         team = self._create_base_team()
         self.client.login(**self.auth)
         url = reverse("teams:settings_basic", kwargs={"slug": team.slug})
         response = self.client.get(url)
 
+        member = self._create_member(team, TeamMember.ROLE_ADMIN)
+        videos = []
+
+        for video in Video.objects.all()[0:4]:
+            self._create_team_video(video.get_video_url(), team, member.user)
+            videos.append(video.video_id)
+
         self.failUnlessEqual(response.status_code, 200)
+        self.assertTrue(all([v.is_public for v in Video.objects.all()[0:4]]))
 
         self.assertFalse(team.logo)
 
         data = {
             "name": u"New team",
-            "is_visible": u"1",
+            "is_visible": u"0",
             "description": u"testing",
             "logo": open(path.join(settings.MEDIA_ROOT, "test/71600102.jpg"), "rb")
         }
+
         url = reverse("teams:settings_basic", kwargs={"slug": team.slug})
         response = self.client.post(url, data)
         self.failUnlessEqual(response.status_code, 302)
@@ -95,7 +104,20 @@ class ViewsTests(TestCase):
         self.assertTrue(team.logo)
         self.assertEqual(team.name, u"New team")
         self.assertEqual(team.description, u"testing")
-        self.assertTrue(team.is_visible)
+        self.assertFalse(team.is_visible)
+        self.assertFalse(all([v.is_public for v in Video.objects.all()[0:4]]))
+
+        data = {
+            "name": u"New team",
+            "is_visible": u"1",
+            "description": u"testing",
+        }
+
+        url = reverse("teams:settings_basic", kwargs={"slug": team.slug})
+        response = self.client.post(url, data)
+
+        self.failUnlessEqual(response.status_code, 302)
+        self.assertTrue(all([v.is_public for v in Video.objects.all()[0:4]]))
 
     def test_create_project(self):
         team = self._create_base_team()
@@ -300,6 +322,29 @@ class ViewsTests(TestCase):
         self.assertEqual(get_team_video().team.pk, old_team.pk,
                          "Video did not stay in the old team.")
 
+    def test_team_permission(self):
+        team = Team(slug="private-team", name="Private Team", is_visible=False)
+        team.save()
+
+        user, created = User.objects.get_or_create(
+           username=self.auth["username"])
+
+        TeamMember.objects.create_first_member(team, user)
+
+        for video in Video.objects.all()[0:4]:
+            self._create_team_video(video.get_video_url(), team, user)
+
+            url = reverse("videos:video", kwargs={"video_id": video.video_id})
+
+            response = self.client.get(url, follow=True)
+            self.assertEqual(response.status_code, 403)
+
+            self.client.login(**self.auth)
+
+            response = self.client.get(url, follow=True)
+            self.assertEquals(response.status_code, 200)
+
+            self.client.logout()
 
     def _create_team_video(self, video_url, team, user):
         v, c = Video.get_or_create_for_url(video_url)

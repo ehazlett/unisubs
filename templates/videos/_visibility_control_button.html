@@ -1,9 +1,0 @@
-{% if video %}
-<a class="video-visibility-form-show" href="{% url icanhaz:get-visibility-form video_id=video.video_id %}" >Set privacy</a>
-<script>
-  $(window).load(function(){
-     {% include "videos/visibility_form.js" %}
-  });
-
-</script>
-{% endif %}

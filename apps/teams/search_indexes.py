@@ -25,9 +25,9 @@ from haystack.indexes import (
     MultiValueField
 )
 from haystack.query import SearchQuerySet
-
-from icanhaz.models import VideoVisibilityPolicy
 from teams import models
+
+from haystack.exceptions import AlreadyRegistered
 
 
 LANGUAGES_DICT = dict(settings.ALL_LANGUAGES)
@@ -129,13 +129,10 @@ class TeamVideoLanguagesIndex(SearchIndex):
 
         self.prepared_data['task_count'] = models.Task.objects.incomplete().filter(team_video=obj).count()
 
-        policy = obj.video.policy
-        owned_by = None
-        if policy and policy.belongs_to_team:
-            owned_by = policy.object_id
+        team_video = obj.video.get_team_video()
 
-        self.prepared_data['is_public'] =  VideoVisibilityPolicy.objects.video_is_public(obj.video)
-        self.prepared_data["owned_by_team_id"] = owned_by
+        self.prepared_data['is_public'] =  obj.video.is_public
+        self.prepared_data["owned_by_team_id"] = team_video.team.id if team_video else None
 
         return self.prepared_data
 
@@ -143,7 +140,7 @@ class TeamVideoLanguagesIndex(SearchIndex):
     def results_for_members(self, team):
         base_qs = SearchQuerySet().models(models.TeamVideo)
         public = SQ(is_public=True)
-        mine = SQ(is_public=False,  owned_by_team_id=team.pk)
+        mine = SQ(is_public=False, owned_by_team_id=team.pk)
         return base_qs.filter(public | mine)
 
 
@@ -152,4 +149,9 @@ class TeamVideoLanguagesIndex(SearchIndex):
         return SearchQuerySet().models(models.TeamVideo).filter(is_public=True)
 
 
-site.register(models.TeamVideo, TeamVideoLanguagesIndex)
+try:
+    site.register(models.TeamVideo, TeamVideoLanguagesIndex)
+except AlreadyRegistered:
+    # i hate python imports with all my will.
+    # i hope they die.
+    pass

@@ -1,7 +1,7 @@
 class solr::package {
   exec { "solr_download":
     path => "/usr/local/bin:/usr/bin:/bin",
-    command => "wget http://www.apache.org/dist/lucene/solr/1.4.1/apache-solr-1.4.1.tgz -O /opt/solr.tgz",
+    command => "wget http://archive.apache.org/dist/lucene/solr/1.4.1/apache-solr-1.4.1.tgz -O /opt/solr.tgz",
     unless => "/usr/bin/test -d /opt/solr/example",
     creates => "/opt/solr.tgz";
   }

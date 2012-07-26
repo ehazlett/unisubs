@@ -23,9 +23,8 @@ from django.db.models import Sum, Q
 from django.utils import translation
 from django.utils.translation import ugettext as _
 
-from icanhaz.models import VideoVisibilityPolicy
 from statistic.tasks import st_widget_view_statistic_update
-from teams.models import Task, Workflow
+from teams.models import Task, Workflow, Team
 from teams.moderation_const import APPROVED, UNMODERATED, WAITING_MODERATION
 from teams.permissions import (
     can_create_and_edit_subtitles, can_create_and_edit_translations,
@@ -101,11 +100,10 @@ class Rpc(BaseRpc):
 
         visibility_policy = video_cache.get_visibility_policies(video_id)
 
-        if visibility_policy.get('widget', None) != VideoVisibilityPolicy.WIDGET_VISIBILITY_PUBLIC:
-            can_show = VideoVisibilityPolicy.objects.can_show_widget(
-                video_id, referer=request.META.get('referer'), user=request.user)
+        if not visibility_policy.get("is_public", True):
+            team = Team.objects.get(id=visibility_policy['team_id'])
 
-            if not can_show:
+            if not team.is_member(request.user):
                 return {"error_msg": _("Video embedding disabled by owner")}
 
     def _get_video_urls_for_widget(self, video_url, video_id):
@@ -238,7 +236,8 @@ class Rpc(BaseRpc):
     # Ugly hack for N caption display.
     def get_caption_display_mode(self, language):
         team_video = language.video.get_team_video()
-        if team_video and team_video.team.slug == 'netflix':
+        _NETFLIX_TEAMS = ['netflix', 'netflix-private', 'netflix-applicant']
+        if team_video and team_video.team.slug in _NETFLIX_TEAMS:
             return 'n'
         else:
             return 'normal'

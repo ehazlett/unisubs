@@ -101,19 +101,6 @@ video_url = register.tag(video_url)
 def in_progress(language):
     return not language.last_version and language.latest_version(False)
 
-
-@register.inclusion_tag("videos/_visibility_control_button.html")
-def render_visibility_button(video, user):
-    # FIXME put the actual criteria for users who can control visibility
-    if user.is_superuser is False:
-        return {}
-    return {
-        "user"  : user,
-        "video": video,
-        "STATIC_URL": settings.STATIC_URL
-
-     }
-
 @register.filter
 def format_duration(value):
 

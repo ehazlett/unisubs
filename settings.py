@@ -21,7 +21,7 @@
 import os, sys
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-DEFAULT_PROTOCOL  = 'https'
+DEFAULT_PROTOCOL  = 'http'
 
 def rel(*x):
     return os.path.join(PROJECT_ROOT, *x)
@@ -387,7 +387,6 @@ INSTALLED_APPS = (
     # our apps
     'accountlinker',
     'comments',
-    'icanhaz',
     'messages',
     'profiles',
     'search',

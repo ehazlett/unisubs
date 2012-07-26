@@ -94,7 +94,7 @@ python manage.py build_solr_schema --settings=test_settings &gt; /etc/solr/conf/
 python manage.py build_solr_schema --settings=test_settings &gt; /etc/solr/conf/testing/conf/schema.xml
 sudo service tomcat6 restart
 #bash ./hudson_test.sh test_settings
-python manage.py test api auth comments messages profiles search statistic videos widget teams icanhaz --verbosity=0 --settings=test_settings --with-xunit</command>
+python manage.py test api auth comments messages profiles search statistic videos widget teams --verbosity=0 --settings=test_settings --with-xunit</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>cd /var/www/universalsubtitles.dev/libs/unisubs-integration

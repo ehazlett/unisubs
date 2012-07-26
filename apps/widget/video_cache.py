@@ -101,6 +101,8 @@ def invalidate_video_id(video_url):
 def invalidate_video_moderation(video_id):
     cache.delete(_video_is_moderated_key(video_id))
 
+def invalidate_video_visibility(video_id):
+    cache.delete(_video_visibility_policy_key(video_id))
 
 def on_video_url_save(sender, instance, **kwargs):
     if instance.video_id:
@@ -254,20 +256,34 @@ def get_is_moderated(video_id):
     return value
 
 def get_visibility_policies(video_id):
-    from icanhaz.models import VideoVisibilityPolicy
     cache_key = _video_visibility_policy_key(video_id)
     value = cache.get(cache_key)
+
     if value is  None:
         from videos.models import Video
+
         try:
             video = Video.objects.get(video_id=video_id)
         except Video.DoesNotExist:
             return {}
+
+        team_video = video.get_team_video()
+
+        if team_video:
+            team = team_video.team.is_visible
+            is_public = team.is_visible
+            team_id = team.id
+        else:
+            is_public = True
+            team_id = None
+
         value = {
-          "site"  : VideoVisibilityPolicy.objects.site_policy_for_video(video),
-          "widget": VideoVisibilityPolicy.objects.widget_policy_for_video(video),
+            "is_public": is_public,
+            "team_id": team_id
         }
+
         cache.set(cache_key, value, TIMEOUT)
+
     return value
 
 

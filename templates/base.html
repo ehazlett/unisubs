@@ -126,6 +126,9 @@
                 {% if user.is_superuser %}
                     <li><a target="_blank" href="{% url auth:login_trap %}">{% trans 'Impersonate' %}</a></li>
                 {% endif %}
+                {% if user.is_superuser %}
+                    <li><a target="_blank" href="{% url billing %}">{% trans 'Billing' %}</a></li>
+                {% endif %}
                 <li><a href="https://github.com/pculture/unisubs/commit/{{ LAST_COMMIT_GUID }}" title="{{ LAST_COMMIT_GUID }}">Github</a></li>
             </ul>
             {% block page_controls %}{% endblock %}

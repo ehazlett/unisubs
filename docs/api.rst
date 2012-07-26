@@ -728,6 +728,8 @@ List activity items:
     :query video: Show only items related to a given video (video id)
     :query action_type: Show only items with a given action type (int, see below)
     :query language: Show only items with a given language (language code)
+    :query before: A unix timestamp in seconds
+    :query after: A unix timestamp in seconds
 
 Activity types:
 

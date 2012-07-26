@@ -83,19 +83,6 @@
             <a href="{% url teams:team_tasks team.slug %}?assignee=me">{% trans 'My tasks' %}</a>
             ({{ team|user_tasks_count:user }})
         </li>
-        {% with user.get_languages as langs %}
-            {% if langs %}
-                <li>
-                    <a href="{% url teams:team_tasks team.slug %}?lang=mine">{% trans 'Tasks in my languages' %}</a>
-                </li>
-            {% else %}
-                <li class="set-languages">
-                    {% blocktrans %}
-                        See tasks in <a href="#" data-modal="language_modal">your languages</a>
-                    {% endblocktrans %}
-                </li>
-            {% endif %}
-        {% endwith %}
         <li>
             <a href="{% url teams:team_tasks team.slug %}?assignee=none">{% trans 'All available tasks' %}</a>
         </li>

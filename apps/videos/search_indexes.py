@@ -6,7 +6,6 @@ from auth.models import CustomUser as User
 from utils.celery_search_index import CelerySearchIndex
 from django.conf import settings
 from haystack.query import SearchQuerySet
-from icanhaz.models import VideoVisibilityPolicy
 import datetime
 
 SUFFIX = u''
@@ -116,7 +115,8 @@ class VideoIndex(CelerySearchIndex):
         self.prepared_data['year_views'] = obj.views['year']
         self.prepared_data['today_views'] = obj.views['today']
         self.prepared_data['title'] = obj.title_display(truncate=False).strip()
-        self.prepared_data['is_public'] = VideoVisibilityPolicy.objects.video_is_public(obj)
+        self.prepared_data['is_public'] = obj.is_public
+
         return self.prepared_data
 
     def _setup_save(self, model):

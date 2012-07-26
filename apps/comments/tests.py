@@ -75,8 +75,8 @@ class CommentEmailTests(TestCase):
         from localeurl.utils import universal_url
         domain= Site.objects.get_current().domain
         vid = self.video.video_id
-        self.assertEqual("https://%s/videos/%s/info/" % (domain, vid) , universal_url( "videos:video", kwargs={"video_id":vid} ))
-        self.assertEqual("https://%s/videos/%s/info/" % (domain, vid) , universal_url( "videos:video", args=(vid,) ))
+        self.assertEqual("http://%s/videos/%s/info/" % (domain, vid) , universal_url( "videos:video", kwargs={"video_id":vid} ))
+        self.assertEqual("http://%s/videos/%s/info/" % (domain, vid) , universal_url( "videos:video", args=(vid,) ))
                     
     def test_simple_email(self):
         num_followers = 5

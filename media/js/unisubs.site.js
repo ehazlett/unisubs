@@ -132,11 +132,17 @@ var Site = function(Site) {
             if (typeof $select == 'undefined') {
                 $select = $('select#lang-filter');
             }
+
             if (window.REQUEST_GET_LANG) {
                 $opt = $('option[id="lang-opt-' + window.REQUEST_GET_LANG + '"]');
             } else {
-                $opt = $('option[id="lang-opt-any"]');
+                if($('#lang-opt-mine').length > 0 && window.USER_LANGS > 0){
+                    $opt = $('#lang-opt-mine');
+                } else {
+                    $opt = $('#lang-opt-any');
+                }
             }
+
             $select.children().removeAttr('selected');
             $opt.attr('selected', 'selected');
             $select.trigger('liszt:updated');

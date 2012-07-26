@@ -750,17 +750,9 @@ class TeamVideo(models.Model):
                 moderation_status=MODERATION.APPROVED).update(
                     moderation_status=MODERATION.UNMODERATED)
 
-        video.is_public = True
+        video.is_public = new_team.is_visible
         video.moderated_by = new_team if new_team.moderates_videos() else None
         video.save()
-
-        # make sure we end up with a policy that belong to the team
-        # we're moving into, else it won't come up in the team video
-        # page
-        if video.policy and video.policy.belongs_to_team:
-            video.policy.object_id = new_team.pk
-            video.policy.save(updates_metadata=False)
-
 
         # Update all Solr data.
         metadata_manager.update_metadata(video.pk)
@@ -1073,6 +1065,10 @@ class Invite(models.Model):
     author = models.ForeignKey(User)
     role = models.CharField(max_length=16, choices=TeamMember.ROLES,
                             default=TeamMember.ROLE_CONTRIBUTOR)
+    # None -> not acted upon
+    # True -> Approved
+    # False -> Rejected
+    approved = models.NullBooleanField(default=None)
 
     class Meta:
         unique_together = (('team', 'user'),)
@@ -1085,10 +1081,15 @@ class Invite(models.Model):
         deletes itself.
 
         """
-        member, created = TeamMember.objects.get_or_create(team=self.team,
+        if self.approved == None:
+            self.approved = True
+            member, created = TeamMember.objects.get_or_create(team=self.team,
                                                            user=self.user,
                                                            role=self.role)
-        notifier.team_member_new.delay(member.pk)
+            if created:
+                notifier.team_member_new.delay(member.pk)
+            self.save()
+            return True
 
     def deny(self):
         """Deny this invitation.
@@ -1096,7 +1097,10 @@ class Invite(models.Model):
         Could be useful to send a notification here in the future.
 
         """
-        pass
+        if self.approved == None:
+            self.approved = False
+            self.save()
+            return True
 
 
     def message_json_data(self, data, msg):

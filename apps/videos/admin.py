@@ -19,7 +19,7 @@
 from django.contrib import admin
 from videos.models import (
     Video, SubtitleLanguage, SubtitleVersion, VideoFeed, VideoMetadata,
-    VideoUrl, SubtitleVersionMetadata, Action
+    VideoUrl, SubtitleVersionMetadata, Action, Subtitle
 )
 from videos.tasks import video_changed_tasks
 
@@ -177,6 +177,7 @@ class VideoFeedAdmin(admin.ModelAdmin):
 
 #admin.site.register(Subtitle, SubtitleAdmin)
 admin.site.register(SubtitleVersion, SubtitleVersionAdmin)
+admin.site.register(Subtitle)
 admin.site.register(SubtitleVersionMetadata, SubtitleVersionMetadataAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(VideoMetadata, VideoMetadataAdmin)

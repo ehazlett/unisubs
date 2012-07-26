@@ -710,18 +710,6 @@ class Video(models.Model):
         return [sl for sl in self.subtitlelanguage_set.all()
                 if sl.is_complete_and_synced(public_only=public_only)]
 
-    @property
-    def policy(self):
-
-        if not hasattr(self, "_cached_policy"):
-            from icanhaz.models import VideoVisibilityPolicy
-            try:
-                self._cached_policy =  VideoVisibilityPolicy.objects.get(video=self)
-            except VideoVisibilityPolicy.DoesNotExist:
-                self._cached_policy =  None
-        return self._cached_policy
-
-
     def get_title_display(self):
         """Return a suitable title to display to a user for this video.
 
@@ -765,6 +753,18 @@ class Video(models.Model):
 
         return meta
 
+    def can_user_see(self, user):
+        team_video = self.get_team_video()
+
+        if not team_video:
+            return True
+
+        team = team_video.team
+
+        if team and team.is_visible:
+            return True
+
+        return team.is_member(user)
 
     class Meta(object):
         permissions = (

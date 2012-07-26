@@ -13,11 +13,13 @@ from django.test import TestCase
 from auth.models import CustomUser as User
 from apps.teams import tasks
 from apps.teams import moderation_const as MODERATION
+from apps.teams.forms import InviteForm
 from apps.teams.permissions import add_role
 from apps.teams.tests.teamstestsutils import refresh_obj, reset_solr
 from apps.teams.models import (
     Team, Invite, TeamVideo, Application, TeamMember, TeamLanguagePreference
 )
+from apps.teams.search_indexes import TeamVideoLanguagesIndex
 from apps.videos import metadata_manager
 from apps.videos.models import Video, SubtitleLanguage
 from messages.models import Message
@@ -143,6 +145,57 @@ class TestTasks(TestCase):
         self.team = Team.objects.all()[0]
         tv = TeamVideo(team=self.team, video=self.sl.video, added_by=self.team.users.all()[:1].get())
         tv.save()
+
+class TeamVideoTest(TestCase):
+
+    fixtures = ["staging_users.json", "staging_videos.json", "staging_teams.json"]
+
+    def setUp(self):
+        self.auth = {
+            "username": u"admin",
+            "password": u"admin"
+        }
+
+        self.user = User.objects.get(username=self.auth["username"])
+        self.team = Team.objects.get(id=1)
+
+        tm = TeamMember.objects.get(user=self.user, team=self.team)
+        tm.role = TeamMember.ROLE_ADMIN
+        tm.save()
+
+    def test_save_updates_is_visible(self):
+        videos = TeamVideoLanguagesIndex.results_for_members(self.team)
+        self.assertTrue(False not in [v.is_public for v in videos])
+
+        self.client.login(**self.auth)
+
+        url = reverse("teams:settings_basic", kwargs={"slug": self.team.slug})
+
+        response = self.client.get(url)
+        self.failUnlessEqual(response.status_code, 200)
+
+        data = {
+            "name": u"New team",
+            "is_visible": u"0",
+            "description": u"testing",
+        }
+
+
+        response = self.client.post(url, data, follow=True)
+        self.failUnlessEqual(response.status_code, 200)
+        self.assertFalse(Team.objects.get(id=1).is_visible)
+
+        videos = TeamVideoLanguagesIndex.results_for_members(self.team)
+        self.assertTrue(True not in [v.is_public for v in videos])
+
+        data['is_visible'] = u'1'
+
+        response = self.client.post(url, data, follow=True)
+        self.failUnlessEqual(response.status_code, 200)
+        self.assertTrue(Team.objects.get(id=1).is_visible)
+
+        videos = TeamVideoLanguagesIndex.results_for_members(self.team)
+        self.assertTrue(False not in [v.is_public for v in videos])
 
 class TeamsTest(TestCase):
 
@@ -955,3 +1008,60 @@ class TestLanguagePreference(TestCase):
 
         self.assertIn("en", generated)
         self.assertIn("en", cached)
+
+class TestInvites(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.filter(notify_by_message=True)[0]
+        self.user.set_password(self.user.username)
+        self.user.save()
+        self.owner = User.objects.filter(notify_by_message=True)[1]
+        self.team = Team.objects.create(name='test-team', slug='test-team', membership_policy=Team.APPLICATION)
+
+    def test_invite_invalid_after_accept(self):
+        invite_form = InviteForm(self.team, self.owner, {
+            'user_id': self.user.pk,
+            'message': 'Subtitle ALL the things!',
+            'role':'contributor',
+        })
+        invite_form.is_valid()
+        self.assertFalse(invite_form.errors)
+        self.assertEquals(Message.objects.for_user(self.user).count(), 0)
+        invite = invite_form.save()
+        # user has the invitation message on their inbox now
+        invite.accept()
+        self.assertTrue(self.team.members.filter(user=self.user).exists())
+        self.team.members.all().delete()
+        # now the invite re-accepts:
+        self.client.login(
+            username=self.user.username,
+            password=self.user.username
+        )
+        url = reverse("teams:accept_invite", args=(invite.pk,))
+        response  = self.client.get(url)
+        self.assertEqual(response.status_code, 500)
+        self.assertFalse(self.team.members.filter(user=self.user).exists())
+        
+    def test_invite_invalid_after_deny(self):
+        invite_form = InviteForm(self.team, self.owner, {
+            'user_id': self.user.pk,
+            'message': 'Subtitle ALL the things!',
+            'role':'contributor',
+        })
+        invite_form.is_valid()
+        self.assertFalse(invite_form.errors)
+        self.assertEquals(Message.objects.for_user(self.user).count(), 0)
+        invite = invite_form.save()
+        # user has the invitation message on their inbox now
+        invite.deny()
+        self.assertFalse(self.team.members.filter(user=self.user).exists())
+        # now the invite re-accepts:
+        url = reverse("teams:deny_invite", args=(invite.pk,))
+        self.client.login(
+            username=self.user.username,
+            password=self.user.username
+        )
+        response  = self.client.get(url)
+        self.assertEqual(response.status_code, 500)
+        self.assertFalse(self.team.members.filter(user=self.user).exists())
+        
