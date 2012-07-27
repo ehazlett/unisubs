@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 01:33-0500\n"
+"POT-Creation-Date: 2012-07-27 01:33-0500\n"
 "PO-Revision-Date: 2010-11-30 05:45+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1583,18 +1583,18 @@ msgstr ""
 msgid "Video embedding disabled by owner"
 msgstr ""
 
-#: apps/widget/rpc.py:261
+#: apps/widget/rpc.py:262
 #, python-format
 msgid ""
 "These subtitles are moderated. See the %s team page for information on how "
 "to contribute."
 msgstr ""
 
-#: apps/widget/rpc.py:263
+#: apps/widget/rpc.py:264
 msgid "Sorry, these subtitles are privately moderated."
 msgstr ""
 
-#: apps/widget/rpc.py:947 apps/widget/rpc.py:988
+#: apps/widget/rpc.py:948 apps/widget/rpc.py:989
 msgid "\n"
 msgstr ""
 
@@ -1734,7 +1734,7 @@ msgid "Go"
 msgstr ""
 
 #: libs/rosetta/templates/rosetta/pofile.html:54
-#: templates/teams/tasks.html:190 templates/videos/_video_url_panel.html:19
+#: templates/teams/tasks.html:194 templates/videos/_video_url_panel.html:19
 #: templates/videos/subtitle-view.html:69
 msgid "Original"
 msgstr ""
@@ -2949,6 +2949,10 @@ msgstr ""
 msgid "Impersonate"
 msgstr ""
 
+#: templates/base.html:130 templates/teams/billing/choose.html:11
+msgid "Billing"
+msgstr ""
+
 #: templates/demo.html:23
 msgid "Amara Editor Demo"
 msgstr ""
@@ -4055,6 +4059,18 @@ msgid ""
 "get a lot of email"
 msgstr ""
 
+#: templates/generic-error.html:7
+msgid "Sorry!"
+msgstr ""
+
+#: templates/generic-error.html:8
+msgid "If you need assistance, please visit our support site at "
+msgstr ""
+
+#: templates/generic-error.html:8
+msgid "Get help"
+msgstr ""
+
 #: templates/index.html:18
 msgid "The easiest way to caption and translate any video."
 msgstr ""
@@ -4565,14 +4581,14 @@ msgid "Are you sure that you want to permanently delete your profile?"
 msgstr ""
 
 #: templates/auth/delete_user.html:13 templates/messages/list.html:83
-#: templates/messages/sent.html:51 templates/teams/tasks.html:409
+#: templates/messages/sent.html:52 templates/teams/tasks.html:413
 msgid "Delete"
 msgstr ""
 
 #: templates/auth/delete_user.html:14
 #: templates/profiles/_select_language_dialog.html:30
 #: templates/teams/settings-projects-add.html:67
-#: templates/teams/tasks.html:463 templates/videos/_feedback_form.html:25
+#: templates/teams/tasks.html:467 templates/videos/_feedback_form.html:25
 #: templates/videos/subtitle-view.html:389
 msgid "Cancel"
 msgstr ""
@@ -4611,7 +4627,7 @@ msgid "Sign in as a different user"
 msgstr ""
 
 #: templates/comments/_item.html:3 templates/messages/list.html:70
-#: templates/messages/sent.html:48 templates/videos/_action_tpl.html:9
+#: templates/messages/sent.html:49 templates/videos/_action_tpl.html:9
 #: templates/videos/_action_tpl_video.html:9
 #: templates/videos/_video_url_panel.html:29 templates/videos/diffing.html:107
 #: templates/videos/diffing.html.py:172
@@ -4810,12 +4826,12 @@ msgid "You have no messages."
 msgstr ""
 
 #: templates/messages/list.html:100 templates/messages/new.html:74
-#: templates/messages/sent.html:66
+#: templates/messages/sent.html:67
 msgid "Inbox"
 msgstr ""
 
 #: templates/messages/list.html:101 templates/messages/new.html:75
-#: templates/messages/sent.html:67
+#: templates/messages/sent.html:68
 msgid "Sent"
 msgstr ""
 
@@ -4831,11 +4847,11 @@ msgstr ""
 msgid "Sent Messages"
 msgstr ""
 
-#: templates/messages/sent.html:42 templates/messages/sent.html.py:44
+#: templates/messages/sent.html:43 templates/messages/sent.html.py:45
 msgid "Avatar"
 msgstr ""
 
-#: templates/messages/sent.html:60
+#: templates/messages/sent.html:61
 msgid "You have no sent messages."
 msgstr ""
 
@@ -4966,6 +4982,7 @@ msgid "What languages do you speak?"
 msgstr ""
 
 #: templates/profiles/_select_language_dialog.html:29
+#: templates/teams/billing/choose.html:18
 msgid "Submit"
 msgstr ""
 
@@ -5005,17 +5022,17 @@ msgid "Open Tasks"
 msgstr ""
 
 #: templates/profiles/dashboard.html:45 templates/teams/tasks.html:59
-#: templates/teams/tasks.html.py:185
+#: templates/teams/tasks.html.py:189
 msgid "Transcribe"
 msgstr ""
 
 #: templates/profiles/dashboard.html:50 templates/search/_search_form.html:28
-#: templates/teams/tasks.html:195
+#: templates/teams/tasks.html:199
 msgid "Subtitles into"
 msgstr ""
 
-#: templates/profiles/dashboard.html:55 templates/teams/tasks.html:200
-#: templates/teams/tasks.html.py:216 templates/videos/diffing.html:87
+#: templates/profiles/dashboard.html:55 templates/teams/tasks.html:204
+#: templates/teams/tasks.html.py:220 templates/videos/diffing.html:87
 #: templates/videos/subtitle-view.html:149
 #: templates/videos/subtitle-view.html:196
 msgid "Subtitles"
@@ -5384,7 +5401,7 @@ msgstr ""
 #: templates/statistic/videos_statistic.html:12
 #: templates/teams/_context_project.html:25
 #: templates/teams/_context_team.html:47 templates/teams/tasks.html:126
-#: templates/teams/tasks.html.py:204 templates/videos/video-view.html:144
+#: templates/teams/tasks.html.py:208 templates/videos/video-view.html:144
 msgid "Video"
 msgstr ""
 
@@ -5582,12 +5599,12 @@ msgid "You can also invite friends who speak other languages to help out."
 msgstr ""
 
 #: templates/teams/_perform_task_link.html:5
-#: templates/teams/_perform_task_link.html:29 templates/teams/tasks.html:287
+#: templates/teams/_perform_task_link.html:29 templates/teams/tasks.html:291
 msgid "Resume"
 msgstr ""
 
 #: templates/teams/_perform_task_link.html:7
-#: templates/teams/_perform_task_link.html:31 templates/teams/tasks.html:289
+#: templates/teams/_perform_task_link.html:31 templates/teams/tasks.html:293
 msgid "Start now"
 msgstr ""
 
@@ -5836,7 +5853,7 @@ msgstr ""
 msgid "Who should do it?"
 msgstr ""
 
-#: templates/teams/create_task.html:68 templates/teams/tasks.html:467
+#: templates/teams/create_task.html:68 templates/teams/tasks.html:471
 msgid "Begin typing to search"
 msgstr ""
 
@@ -6244,7 +6261,7 @@ msgstr ""
 msgid "anyone"
 msgstr ""
 
-#: templates/teams/tasks.html:90 templates/teams/tasks.html.py:251
+#: templates/teams/tasks.html:90 templates/teams/tasks.html.py:255
 msgid "me"
 msgstr ""
 
@@ -6306,126 +6323,126 @@ msgstr ""
 msgid "Try changing your selection using the filters above to find tasks"
 msgstr ""
 
-#: templates/teams/tasks.html:218
+#: templates/teams/tasks.html:222
 msgid "latest draft"
 msgstr ""
 
-#: templates/teams/tasks.html:222
+#: templates/teams/tasks.html:226
 msgid "transcribed"
 msgstr ""
 
-#: templates/teams/tasks.html:224 templates/videos/subtitle-view.html:45
+#: templates/teams/tasks.html:228 templates/videos/subtitle-view.html:45
 msgid "translated"
 msgstr ""
 
-#: templates/teams/tasks.html:232
+#: templates/teams/tasks.html:236
 msgid "reviewed"
 msgstr ""
 
-#: templates/teams/tasks.html:234
+#: templates/teams/tasks.html:238
 msgid "and edited"
 msgstr ""
 
-#: templates/teams/tasks.html:236 templates/videos/subtitle-view.html:204
+#: templates/teams/tasks.html:240 templates/videos/subtitle-view.html:204
 #: templates/videos/subtitle-view.html:320
 msgid "by"
 msgstr ""
 
-#: templates/teams/tasks.html:249
+#: templates/teams/tasks.html:253
 msgid "Assigned to"
 msgstr ""
 
-#: templates/teams/tasks.html:258
+#: templates/teams/tasks.html:262
 msgid "Unassigned"
 msgstr ""
 
-#: templates/teams/tasks.html:273
+#: templates/teams/tasks.html:277
 msgid "Perform Task"
 msgstr ""
 
-#: templates/teams/tasks.html:282
+#: templates/teams/tasks.html:286
 msgid "You have reached the maximum number of tasks."
 msgstr ""
 
-#: templates/teams/tasks.html:301
+#: templates/teams/tasks.html:305
 msgid "Download draft"
 msgstr ""
 
-#: templates/teams/tasks.html:315
+#: templates/teams/tasks.html:319
 msgid "Upload a draft"
 msgstr ""
 
-#: templates/teams/tasks.html:318
+#: templates/teams/tasks.html:322
 msgid "Important:"
 msgstr ""
 
-#: templates/teams/tasks.html:318
+#: templates/teams/tasks.html:322
 msgid ""
 "Uploading a draft will not complete the task. After uploading, select "
 "\"Resume\" from the \"Perform Task\" drop-down to verify timing, video title "
 "and video description in the onsite editor and to submit the final version."
 msgstr ""
 
-#: templates/teams/tasks.html:321 templates/videos/_upload_subtitles.html:20
+#: templates/teams/tasks.html:325 templates/videos/_upload_subtitles.html:20
 #: templates/videos/video-view.html:101
 msgid "Language"
 msgstr ""
 
-#: templates/teams/tasks.html:327
+#: templates/teams/tasks.html:331
 msgid "Translate from"
 msgstr ""
 
-#: templates/teams/tasks.html:332
+#: templates/teams/tasks.html:336
 msgid "File:"
 msgstr ""
 
-#: templates/teams/tasks.html:335
+#: templates/teams/tasks.html:339
 msgid "Accepted formats: .srt, .ssa, .sbv, .dfxp, .txt or .xml (for TTML)"
 msgstr ""
 
-#: templates/teams/tasks.html:349
+#: templates/teams/tasks.html:353
 msgid "Download a draft"
 msgstr ""
 
-#: templates/teams/tasks.html:354
+#: templates/teams/tasks.html:358
 msgid "Download a draft of these subtitles so you can work offline."
 msgstr ""
 
-#: templates/teams/tasks.html:380
+#: templates/teams/tasks.html:384
 msgid "Decline"
 msgstr ""
 
-#: templates/teams/tasks.html:400
+#: templates/teams/tasks.html:404
 msgid "Reassign"
 msgstr ""
 
-#: templates/teams/tasks.html:402
+#: templates/teams/tasks.html:406
 msgid "Assign"
 msgstr ""
 
-#: templates/teams/tasks.html:418
+#: templates/teams/tasks.html:422
 msgid "Delete task"
 msgstr ""
 
-#: templates/teams/tasks.html:424
+#: templates/teams/tasks.html:428
 msgid "What would you like to do with the subtitles for this task?"
 msgstr ""
 
-#: templates/teams/tasks.html:427
+#: templates/teams/tasks.html:431
 msgid "Publish these subtitles immediately"
 msgstr ""
 
-#: templates/teams/tasks.html:431
+#: templates/teams/tasks.html:435
 msgid ""
 "Delete these subtitles permanently (discard all drafts since the last "
 "published version)"
 msgstr ""
 
-#: templates/teams/tasks.html:470
+#: templates/teams/tasks.html:474
 msgid "Assign to User"
 msgstr ""
 
-#: templates/teams/tasks.html:480
+#: templates/teams/tasks.html:484
 msgid "Sorry, no tasks here."
 msgstr ""
 

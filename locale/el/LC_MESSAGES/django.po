@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 01:32-0500\n"
-"PO-Revision-Date: 2012-07-26 06:51+0000\n"
+"POT-Creation-Date: 2012-07-27 01:32-0500\n"
+"PO-Revision-Date: 2012-07-27 06:51+0000\n"
 "Last-Translator: unisubsapi <universalsubtitles-dev@pculture.org>\n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/projects/p/universalsubtitles/language/el_GR/)\n"
 "MIME-Version: 1.0\n"
@@ -1570,18 +1570,18 @@ msgstr "Απροσδιόριστο σφάλμα"
 msgid "Video embedding disabled by owner"
 msgstr "Η ενσωμάτωση ροής απενεργοποιήθηκε από τον ιδιοκτήτη"
 
-#: apps/widget/rpc.py:261
+#: apps/widget/rpc.py:262
 #, python-format
 msgid ""
 "These subtitles are moderated. See the %s team page for information on how "
 "to contribute."
 msgstr "Aυτοί οι υπότιτλοι επιτηρούνται / moderated. Δείτε τη σελίδα της ομάδας %s για πληροφορίες σχετικά με το πως μπορείτε να συνεισφέρετε."
 
-#: apps/widget/rpc.py:263
+#: apps/widget/rpc.py:264
 msgid "Sorry, these subtitles are privately moderated."
 msgstr "Σγγνώμη, αυτοί οι υπότιτλοι επιτηρούνται ιδιωτικά/ moderated"
 
-#: apps/widget/rpc.py:947 apps/widget/rpc.py:988
+#: apps/widget/rpc.py:948 apps/widget/rpc.py:989
 msgid "\n"
 msgstr "\n"
 
@@ -1722,7 +1722,7 @@ msgid "Go"
 msgstr "Εμπρός"
 
 #: libs/rosetta/templates/rosetta/pofile.html:54
-#: templates/teams/tasks.html:190 templates/videos/_video_url_panel.html:19
+#: templates/teams/tasks.html:194 templates/videos/_video_url_panel.html:19
 #: templates/videos/subtitle-view.html:69
 msgid "Original"
 msgstr "Πρωτότυπο"
@@ -2910,6 +2910,10 @@ msgstr "Rosetta"
 msgid "Impersonate"
 msgstr ""
 
+#: templates/base.html:130 templates/teams/billing/choose.html:11
+msgid "Billing"
+msgstr ""
+
 #: templates/demo.html:23
 msgid "Amara Editor Demo"
 msgstr "Demo Πρόγραμμα επεξεργασίας του Amara"
@@ -3840,6 +3844,18 @@ msgid ""
 "get a lot of email"
 msgstr "ΥΣ. Κάνουμε ό,τι καλύτερο μπορούμε για να απαντούμε σε όλες τις ερωτήσεις, αλλά σας παρακαλούμε να είστε υπομονετικοί -- λαμβάνουμε πάρα πολλά e-mail"
 
+#: templates/generic-error.html:7
+msgid "Sorry!"
+msgstr ""
+
+#: templates/generic-error.html:8
+msgid "If you need assistance, please visit our support site at "
+msgstr ""
+
+#: templates/generic-error.html:8
+msgid "Get help"
+msgstr ""
+
 #: templates/index.html:18
 msgid "The easiest way to caption and translate any video."
 msgstr "Ο ευκολώτερος τρόπος να προσθέσετε captions και να μεταφράσετε οποιοδήποτε Βίντεο."
@@ -4330,14 +4346,14 @@ msgid "Are you sure that you want to permanently delete your profile?"
 msgstr "Είστε σίγουροι πως θέλετε να διαγράψετε μονίμως το προφίλ σας;"
 
 #: templates/auth/delete_user.html:13 templates/messages/list.html:83
-#: templates/messages/sent.html:51 templates/teams/tasks.html:409
+#: templates/messages/sent.html:52 templates/teams/tasks.html:413
 msgid "Delete"
 msgstr "Διαγραφή"
 
 #: templates/auth/delete_user.html:14
 #: templates/profiles/_select_language_dialog.html:30
 #: templates/teams/settings-projects-add.html:67
-#: templates/teams/tasks.html:463 templates/videos/_feedback_form.html:25
+#: templates/teams/tasks.html:467 templates/videos/_feedback_form.html:25
 #: templates/videos/subtitle-view.html:389
 msgid "Cancel"
 msgstr "Ακύρωση"
@@ -4376,7 +4392,7 @@ msgid "Sign in as a different user"
 msgstr "Συνδεθείτε ως ένας διαφορετικός χρήστης"
 
 #: templates/comments/_item.html:3 templates/messages/list.html:70
-#: templates/messages/sent.html:48 templates/videos/_action_tpl.html:9
+#: templates/messages/sent.html:49 templates/videos/_action_tpl.html:9
 #: templates/videos/_action_tpl_video.html:9
 #: templates/videos/_video_url_panel.html:29 templates/videos/diffing.html:107
 #: templates/videos/diffing.html.py:172
@@ -4574,12 +4590,12 @@ msgid "You have no messages."
 msgstr "Δεν έχετε καθόλου μηνύματα."
 
 #: templates/messages/list.html:100 templates/messages/new.html:74
-#: templates/messages/sent.html:66
+#: templates/messages/sent.html:67
 msgid "Inbox"
 msgstr "Εισερχόμενα"
 
 #: templates/messages/list.html:101 templates/messages/new.html:75
-#: templates/messages/sent.html:67
+#: templates/messages/sent.html:68
 msgid "Sent"
 msgstr "Απεσταλμένα"
 
@@ -4595,11 +4611,11 @@ msgstr "Σύνθεση ενός μηνύματος"
 msgid "Sent Messages"
 msgstr "Αποστολή μηνυμάτων"
 
-#: templates/messages/sent.html:42 templates/messages/sent.html.py:44
+#: templates/messages/sent.html:43 templates/messages/sent.html.py:45
 msgid "Avatar"
 msgstr "Avatar"
 
-#: templates/messages/sent.html:60
+#: templates/messages/sent.html:61
 msgid "You have no sent messages."
 msgstr "Δεν στείλατε μηνύματα."
 
@@ -4723,6 +4739,7 @@ msgid "What languages do you speak?"
 msgstr "Τι γλώσσες μιλάτε;"
 
 #: templates/profiles/_select_language_dialog.html:29
+#: templates/teams/billing/choose.html:18
 msgid "Submit"
 msgstr "Υποβολή"
 
@@ -4762,17 +4779,17 @@ msgid "Open Tasks"
 msgstr "Ανοικτές εργασίες"
 
 #: templates/profiles/dashboard.html:45 templates/teams/tasks.html:59
-#: templates/teams/tasks.html.py:185
+#: templates/teams/tasks.html.py:189
 msgid "Transcribe"
 msgstr "Μεταγραφή διαλόγων/ Transcribe"
 
 #: templates/profiles/dashboard.html:50 templates/search/_search_form.html:28
-#: templates/teams/tasks.html:195
+#: templates/teams/tasks.html:199
 msgid "Subtitles into"
 msgstr "Υπότιτλοι μέσα στο"
 
-#: templates/profiles/dashboard.html:55 templates/teams/tasks.html:200
-#: templates/teams/tasks.html.py:216 templates/videos/diffing.html:87
+#: templates/profiles/dashboard.html:55 templates/teams/tasks.html:204
+#: templates/teams/tasks.html.py:220 templates/videos/diffing.html:87
 #: templates/videos/subtitle-view.html:149
 #: templates/videos/subtitle-view.html:196
 msgid "Subtitles"
@@ -5140,7 +5157,7 @@ msgstr "ΣΥΝΟΛΟ"
 #: templates/statistic/videos_statistic.html:12
 #: templates/teams/_context_project.html:25
 #: templates/teams/_context_team.html:47 templates/teams/tasks.html:126
-#: templates/teams/tasks.html.py:204 templates/videos/video-view.html:144
+#: templates/teams/tasks.html.py:208 templates/videos/video-view.html:144
 msgid "Video"
 msgstr "Βίντεο"
 
@@ -5331,12 +5348,12 @@ msgid "You can also invite friends who speak other languages to help out."
 msgstr "Μπορείτε, επίσης, να προσκαλέσετε φίλους που μιλούν άλλες γλώσσες, για να βοηθήσουν."
 
 #: templates/teams/_perform_task_link.html:5
-#: templates/teams/_perform_task_link.html:29 templates/teams/tasks.html:287
+#: templates/teams/_perform_task_link.html:29 templates/teams/tasks.html:291
 msgid "Resume"
 msgstr "Ανάκτηση"
 
 #: templates/teams/_perform_task_link.html:7
-#: templates/teams/_perform_task_link.html:31 templates/teams/tasks.html:289
+#: templates/teams/_perform_task_link.html:31 templates/teams/tasks.html:293
 msgid "Start now"
 msgstr "Έναρξη τώρα"
 
@@ -5582,7 +5599,7 @@ msgstr "Τι γλώσσα χρειάζεται;"
 msgid "Who should do it?"
 msgstr "Ποιος πρέπει να το κάνει;"
 
-#: templates/teams/create_task.html:68 templates/teams/tasks.html:467
+#: templates/teams/create_task.html:68 templates/teams/tasks.html:471
 msgid "Begin typing to search"
 msgstr "Αρχίστε να πληκτρολογείτε για την αναζήτηση"
 
@@ -5988,7 +6005,7 @@ msgstr "ανατέθηκαν σε"
 msgid "anyone"
 msgstr "οποιονδήποτε"
 
-#: templates/teams/tasks.html:90 templates/teams/tasks.html.py:251
+#: templates/teams/tasks.html:90 templates/teams/tasks.html.py:255
 msgid "me"
 msgstr "εμένα"
 
@@ -6050,126 +6067,126 @@ msgstr ""
 msgid "Try changing your selection using the filters above to find tasks"
 msgstr ""
 
-#: templates/teams/tasks.html:218
+#: templates/teams/tasks.html:222
 msgid "latest draft"
 msgstr "Το πιο πρόσφατο προσχέδιο/ draft"
 
-#: templates/teams/tasks.html:222
+#: templates/teams/tasks.html:226
 msgid "transcribed"
 msgstr "μετεγράφη"
 
-#: templates/teams/tasks.html:224 templates/videos/subtitle-view.html:45
+#: templates/teams/tasks.html:228 templates/videos/subtitle-view.html:45
 msgid "translated"
 msgstr "μεταφράσθηκε"
 
-#: templates/teams/tasks.html:232
+#: templates/teams/tasks.html:236
 msgid "reviewed"
 msgstr "Αναθεωρήθηκε"
 
-#: templates/teams/tasks.html:234
+#: templates/teams/tasks.html:238
 msgid "and edited"
 msgstr "και έγινε επεξεργασία"
 
-#: templates/teams/tasks.html:236 templates/videos/subtitle-view.html:204
+#: templates/teams/tasks.html:240 templates/videos/subtitle-view.html:204
 #: templates/videos/subtitle-view.html:320
 msgid "by"
 msgstr "από τον/ την"
 
-#: templates/teams/tasks.html:249
+#: templates/teams/tasks.html:253
 msgid "Assigned to"
 msgstr "Ανατέθηκε στον/ στην"
 
-#: templates/teams/tasks.html:258
+#: templates/teams/tasks.html:262
 msgid "Unassigned"
 msgstr "Δεν ανατέθηκε"
 
-#: templates/teams/tasks.html:273
+#: templates/teams/tasks.html:277
 msgid "Perform Task"
 msgstr "Εκτέλεση εργασίας"
 
-#: templates/teams/tasks.html:282
+#: templates/teams/tasks.html:286
 msgid "You have reached the maximum number of tasks."
 msgstr "Φθάσατε τον μέγιστο αριθμό εργασιών."
 
-#: templates/teams/tasks.html:301
+#: templates/teams/tasks.html:305
 msgid "Download draft"
 msgstr "Μεταφόρτωση προσχεδίου/ draft"
 
-#: templates/teams/tasks.html:315
+#: templates/teams/tasks.html:319
 msgid "Upload a draft"
 msgstr "Ανεβάστε ένα προσχέδιο/draft"
 
-#: templates/teams/tasks.html:318
+#: templates/teams/tasks.html:322
 msgid "Important:"
 msgstr "Σημαντικό:"
 
-#: templates/teams/tasks.html:318
+#: templates/teams/tasks.html:322
 msgid ""
 "Uploading a draft will not complete the task. After uploading, select "
 "\"Resume\" from the \"Perform Task\" drop-down to verify timing, video title"
 " and video description in the onsite editor and to submit the final version."
 msgstr "Η απλή μεταφόρτωση/ Uploading ενός προσχεδίου δεν θα ολοκληρώσει την εργασία. Μετά τη μεταφόρτωση, επιλέξτε \"Ανάκτηση\" από το εκτπυσσόμενο μενού \"Εκτέλεση εργασίας\", για την επαλήθευση του χρόνου, του τίτλου του βίντεο και της περιγραφής του βίντεο, στο πρόγραμμα επεξεργασίας onsite editor και προχωρήστε στην υποβολή της τελευταίας έκδοσης."
 
-#: templates/teams/tasks.html:321 templates/videos/_upload_subtitles.html:20
+#: templates/teams/tasks.html:325 templates/videos/_upload_subtitles.html:20
 #: templates/videos/video-view.html:101
 msgid "Language"
 msgstr "Γλώσσα"
 
-#: templates/teams/tasks.html:327
+#: templates/teams/tasks.html:331
 msgid "Translate from"
 msgstr "Μετάφραση από τα"
 
-#: templates/teams/tasks.html:332
+#: templates/teams/tasks.html:336
 msgid "File:"
 msgstr "Αρχείο:"
 
-#: templates/teams/tasks.html:335
+#: templates/teams/tasks.html:339
 msgid "Accepted formats: .srt, .ssa, .sbv, .dfxp, .txt or .xml (for TTML)"
 msgstr "Αποδεκτές μορφές αρχείου: .srt, .ssa, .sbv, .dfxp, .txt ή .xml (για TTML)"
 
-#: templates/teams/tasks.html:349
+#: templates/teams/tasks.html:353
 msgid "Download a draft"
 msgstr "Κατεβάστε ένα προσχέδιο/ draft"
 
-#: templates/teams/tasks.html:354
+#: templates/teams/tasks.html:358
 msgid "Download a draft of these subtitles so you can work offline."
 msgstr "Μεταφορτώστε ένα προσχέδιο/ draft αυτών των υποτίτλων, για να μπορείτε να δουλέψετε και χωρίς σύνδεση/ offline"
 
-#: templates/teams/tasks.html:380
+#: templates/teams/tasks.html:384
 msgid "Decline"
 msgstr "Απόρριψη"
 
-#: templates/teams/tasks.html:400
+#: templates/teams/tasks.html:404
 msgid "Reassign"
 msgstr "Εκ νέου ανάθεση"
 
-#: templates/teams/tasks.html:402
+#: templates/teams/tasks.html:406
 msgid "Assign"
 msgstr "Ανάθεση"
 
-#: templates/teams/tasks.html:418
+#: templates/teams/tasks.html:422
 msgid "Delete task"
 msgstr "Διαγραφή εργασίας"
 
-#: templates/teams/tasks.html:424
+#: templates/teams/tasks.html:428
 msgid "What would you like to do with the subtitles for this task?"
 msgstr "Τι θα θέλατε  να κάνετε με αυτούς τους υπότιτλους για την εργασία αυτή;"
 
-#: templates/teams/tasks.html:427
+#: templates/teams/tasks.html:431
 msgid "Publish these subtitles immediately"
 msgstr "Άμεση δημοσίευση αυτών των υποτίτλων"
 
-#: templates/teams/tasks.html:431
+#: templates/teams/tasks.html:435
 msgid ""
 "Delete these subtitles permanently (discard all drafts since the last "
 "published version)"
 msgstr "Μόνιμη διαγραφή αυτών των υποτίτλων (απόρριψη όλων των προσχεδίων/ drafts, μετά την πιο πρόσφατα δημοσιευμένη έκδοση)"
 
-#: templates/teams/tasks.html:470
+#: templates/teams/tasks.html:474
 msgid "Assign to User"
 msgstr "Ανάθεση στον Χρήστη"
 
-#: templates/teams/tasks.html:480
+#: templates/teams/tasks.html:484
 msgid "Sorry, no tasks here."
 msgstr "Συγγνώμη, δεν υπάρχουν εργασίες εδώ."
 

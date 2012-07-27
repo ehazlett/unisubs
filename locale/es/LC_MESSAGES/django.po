@@ -29,8 +29,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Universal Subtitles\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 01:32-0500\n"
-"PO-Revision-Date: 2012-07-26 06:50+0000\n"
+"POT-Creation-Date: 2012-07-27 01:32-0500\n"
+"PO-Revision-Date: 2012-07-27 06:50+0000\n"
 "Last-Translator: unisubsapi <universalsubtitles-dev@pculture.org>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/projects/p/universalsubtitles/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
@@ -1179,7 +1179,7 @@ msgstr "Por ejemplo: http://www.youtube.com/user/username"
 
 #: apps/videos/forms.py:847
 msgid "Supported: Youtube, Vimeo, or Dailymotion. Only supported sites added."
-msgstr ""
+msgstr "Soportados: Youtube, Vimeo, o Daylimotion. Solo se añaden sitios los sitios soportados."
 
 #: apps/videos/forms.py:848
 msgid "Save feed"
@@ -1591,18 +1591,18 @@ msgstr "Error no definido"
 msgid "Video embedding disabled by owner"
 msgstr "Incrustación de vídeo deshabilitada por el dueño"
 
-#: apps/widget/rpc.py:261
+#: apps/widget/rpc.py:262
 #, python-format
 msgid ""
 "These subtitles are moderated. See the %s team page for information on how "
 "to contribute."
 msgstr "Estos subtítulos están bajo moderación. Busca información sobre cómo contribuir en la página del %s equipo."
 
-#: apps/widget/rpc.py:263
+#: apps/widget/rpc.py:264
 msgid "Sorry, these subtitles are privately moderated."
 msgstr "Lo sentimos, estos subtítulos están bajo moderación privada."
 
-#: apps/widget/rpc.py:947 apps/widget/rpc.py:988
+#: apps/widget/rpc.py:948 apps/widget/rpc.py:989
 msgid "\n"
 msgstr "\n"
 
@@ -1743,7 +1743,7 @@ msgid "Go"
 msgstr "Ir"
 
 #: libs/rosetta/templates/rosetta/pofile.html:54
-#: templates/teams/tasks.html:190 templates/videos/_video_url_panel.html:19
+#: templates/teams/tasks.html:194 templates/videos/_video_url_panel.html:19
 #: templates/videos/subtitle-view.html:69
 msgid "Original"
 msgstr "Original"
@@ -2868,7 +2868,7 @@ msgstr ""
 #: templates/base.html:9
 msgid ""
 "Universal subtitling: caption, translate, subtitle and transcribe video."
-msgstr ""
+msgstr "Subtítulos universales: subtitula, traduce y transcribe video."
 
 #: templates/base.html:70
 msgid "Subtitle Videos"
@@ -2931,6 +2931,10 @@ msgstr "Rosetta"
 msgid "Impersonate"
 msgstr ""
 
+#: templates/base.html:130 templates/teams/billing/choose.html:11
+msgid "Billing"
+msgstr ""
+
 #: templates/demo.html:23
 msgid "Amara Editor Demo"
 msgstr "Editor Amara (demo)"
@@ -2949,7 +2953,7 @@ msgid ""
 "\n"
 "        <strong>Feedback is welcome.</strong> Choose \"Help\" from the main menu to report bugs or to leave comments for the team.\n"
 "        "
-msgstr ""
+msgstr "\n        <strong>Se agradecen los comentarios.</strong> Ve a \"Ayuda\" en el menú principal para informar sobre errores o para dejar comentarios al equipo.\n        "
 
 #: templates/dmca.html:6
 msgid "Copyright Infringement Notification"
@@ -3702,7 +3706,7 @@ msgid ""
 " mission is to build a fairer, more open, and more democratic media space. "
 "PCF saw a gap in the marketplace for more open and collaborative subtitling "
 "&mdash; Amara is helping to fill that need."
-msgstr ""
+msgstr "Participatory Culture Foundation es una organización sin fines de lucro 501c3 cuya misión es construir un espacio mediático más justo, abierto y democrático. PCF vio una brecha en el mercado para procesos de subtitulación más abiertos y colaborativos &mdash; Amara está ayudando en esta necesidad."
 
 #: templates/faq.html:79
 msgid ""
@@ -3772,7 +3776,7 @@ msgid ""
 "href=\"http://www.drumbeat.org/about\">Drumbeat</a>. Drumbeat is a movement "
 "to keep the web open for the next 100 years, and Amara is a featured "
 "project!"
-msgstr ""
+msgstr "La Fundación Mozilla proporcionó a Amara la financiación inicial, apoyo a la comunidad y le ayudó a recaudar fondos a través de <a href=\"http://www.drumbeat.org/about\">Drumbeat</a>. Drumbeat es un movimiento para mantener la web abierta durante los próximos 100 años, ¡y Amara es uno de sus proyectos!"
 
 #: templates/faq.html:140
 msgid ""
@@ -3861,6 +3865,18 @@ msgid ""
 "get a lot of email"
 msgstr "PD. Intentamos responder todas vuestras preguntas, pero pedimos paciencia, ya que recibimos muchos correos."
 
+#: templates/generic-error.html:7
+msgid "Sorry!"
+msgstr ""
+
+#: templates/generic-error.html:8
+msgid "If you need assistance, please visit our support site at "
+msgstr ""
+
+#: templates/generic-error.html:8
+msgid "Get help"
+msgstr ""
+
 #: templates/index.html:18
 msgid "The easiest way to caption and translate any video."
 msgstr "La mejor manera de titular y traducir un vídeo."
@@ -3921,7 +3937,7 @@ msgid ""
 "\n"
 "            Increase viewership with transcription, captioning, and translation services, and flexible API and integration options. Improve SEO, reach a global audience, and build a managed volunteer community.\n"
 "        "
-msgstr ""
+msgstr "\n            Incrementa tu audiencia con servicios de transcripción, subtitulación y traducción, y con opciones flexibles de integración API. Mejora tu posicionamiento en motores de búsqueda para llegar a una audiencia global, y construye y gestiona una comunidad de voluntarios.\n        "
 
 #: templates/index.html:53
 msgid "See our enterprise services."
@@ -3958,11 +3974,11 @@ msgstr "Equipo Al Jazeera"
 
 #: templates/index.html:120
 msgid "Newshour Team"
-msgstr ""
+msgstr "Equipo Newshour"
 
 #: templates/index.html:121
 msgid "NewsHour Team"
-msgstr ""
+msgstr "Equipo NewsHour"
 
 #: templates/index.html:127
 msgid "More Popular"
@@ -4202,7 +4218,7 @@ msgid ""
 "the subtitling space for a tightly focused / goal oriented meeting in NYC. "
 "The event is being organized by The Participatory Culture Foundation, "
 "developers of the Amara project. We expect roughly 40 participants."
-msgstr ""
+msgstr "La Cumbre Open Subtitles Design reunirá a los interesados en el mundo del subtitulado en Nueva York en un evento con unos objetivos claros. El evento está siendo organizado por la Participatory Culture Foundation, los desarrolladores del proyecto Amara. Esperamos a alrededor de 40 participantes."
 
 #: templates/opensubtitles2010.html:34
 msgid "Meeting Goals"
@@ -4296,7 +4312,7 @@ msgid ""
 "Foundation</a> is organizing the summit. Their most recent project, <a "
 "href=\"http://universalsubtitles.org/\">Amara</a>, makes open source and "
 "collaborative subtitling and translation easy."
-msgstr ""
+msgstr "La <a href=\"http://www.participatoryculture.org/\">Participatory Culture Foundation</a> se encarga de la organización de la cumbre. Su proyecto más reciente, <a href=\"http://universalsubtitles.org/\">Amara</a>, promueve y facilita la traducción y el subtitulado colaborativo y de código abierto."
 
 #: templates/opensubtitles2010.html:99
 msgid "Facilitators"
@@ -4351,14 +4367,14 @@ msgid "Are you sure that you want to permanently delete your profile?"
 msgstr "¿Estás seguro de que deseas eliminar permanentemente tu perfil?"
 
 #: templates/auth/delete_user.html:13 templates/messages/list.html:83
-#: templates/messages/sent.html:51 templates/teams/tasks.html:409
+#: templates/messages/sent.html:52 templates/teams/tasks.html:413
 msgid "Delete"
 msgstr "Borrar"
 
 #: templates/auth/delete_user.html:14
 #: templates/profiles/_select_language_dialog.html:30
 #: templates/teams/settings-projects-add.html:67
-#: templates/teams/tasks.html:463 templates/videos/_feedback_form.html:25
+#: templates/teams/tasks.html:467 templates/videos/_feedback_form.html:25
 #: templates/videos/subtitle-view.html:389
 msgid "Cancel"
 msgstr "Cancelar"
@@ -4397,7 +4413,7 @@ msgid "Sign in as a different user"
 msgstr ""
 
 #: templates/comments/_item.html:3 templates/messages/list.html:70
-#: templates/messages/sent.html:48 templates/videos/_action_tpl.html:9
+#: templates/messages/sent.html:49 templates/videos/_action_tpl.html:9
 #: templates/videos/_action_tpl_video.html:9
 #: templates/videos/_video_url_panel.html:29 templates/videos/diffing.html:107
 #: templates/videos/diffing.html.py:172
@@ -4595,12 +4611,12 @@ msgid "You have no messages."
 msgstr "No tienes ningún mensaje."
 
 #: templates/messages/list.html:100 templates/messages/new.html:74
-#: templates/messages/sent.html:66
+#: templates/messages/sent.html:67
 msgid "Inbox"
 msgstr "Bandeja de entrada"
 
 #: templates/messages/list.html:101 templates/messages/new.html:75
-#: templates/messages/sent.html:67
+#: templates/messages/sent.html:68
 msgid "Sent"
 msgstr "Enviado"
 
@@ -4616,11 +4632,11 @@ msgstr "Redactar un mensaje"
 msgid "Sent Messages"
 msgstr "Mensajes enviados"
 
-#: templates/messages/sent.html:42 templates/messages/sent.html.py:44
+#: templates/messages/sent.html:43 templates/messages/sent.html.py:45
 msgid "Avatar"
 msgstr "Avatar"
 
-#: templates/messages/sent.html:60
+#: templates/messages/sent.html:61
 msgid "You have no sent messages."
 msgstr "No has enviado ningún mensaje."
 
@@ -4679,7 +4695,7 @@ msgid ""
 "\n"
 "Thanks, <br/>\n"
 "The Amara team\n"
-msgstr ""
+msgstr "Hola,\n\n¡%(imported_videos)s tus videos fueron importados con éxito!<br/>⏎\n\n<p>Para verlos, puedes ir a <a href=\"%(my_videos_url)s\">tu página de usuario</a></p>\n\n<p>Si crees que has recibido este mensaje por error, discúlpanos—por favor ignora el mensaje. Si tienes dudas, por favor escríbanos a feedback@universalsubtitles.org.</p>\n\nGracias, <br/>\nEquipo Amara\n"
 
 #: templates/openid_consumer/signin.html:14
 #: templates/registration/password_reset_form.html:12
@@ -4744,6 +4760,7 @@ msgid "What languages do you speak?"
 msgstr "¿Qué idiomas hablas?"
 
 #: templates/profiles/_select_language_dialog.html:29
+#: templates/teams/billing/choose.html:18
 msgid "Submit"
 msgstr "Enviar"
 
@@ -4783,17 +4800,17 @@ msgid "Open Tasks"
 msgstr "Tareas abiertas"
 
 #: templates/profiles/dashboard.html:45 templates/teams/tasks.html:59
-#: templates/teams/tasks.html.py:185
+#: templates/teams/tasks.html.py:189
 msgid "Transcribe"
 msgstr "Transcribir"
 
 #: templates/profiles/dashboard.html:50 templates/search/_search_form.html:28
-#: templates/teams/tasks.html:195
+#: templates/teams/tasks.html:199
 msgid "Subtitles into"
 msgstr "Subtítulos en"
 
-#: templates/profiles/dashboard.html:55 templates/teams/tasks.html:200
-#: templates/teams/tasks.html.py:216 templates/videos/diffing.html:87
+#: templates/profiles/dashboard.html:55 templates/teams/tasks.html:204
+#: templates/teams/tasks.html.py:220 templates/videos/diffing.html:87
 #: templates/videos/subtitle-view.html:149
 #: templates/videos/subtitle-view.html:196
 msgid "Subtitles"
@@ -5161,7 +5178,7 @@ msgstr "TOTAL"
 #: templates/statistic/videos_statistic.html:12
 #: templates/teams/_context_project.html:25
 #: templates/teams/_context_team.html:47 templates/teams/tasks.html:126
-#: templates/teams/tasks.html.py:204 templates/videos/video-view.html:144
+#: templates/teams/tasks.html.py:208 templates/videos/video-view.html:144
 msgid "Video"
 msgstr "Vídeo"
 
@@ -5352,12 +5369,12 @@ msgid "You can also invite friends who speak other languages to help out."
 msgstr "También puedes invitar a tus amigos que hablan otros idiomas para ayudar."
 
 #: templates/teams/_perform_task_link.html:5
-#: templates/teams/_perform_task_link.html:29 templates/teams/tasks.html:287
+#: templates/teams/_perform_task_link.html:29 templates/teams/tasks.html:291
 msgid "Resume"
 msgstr "Reanudar"
 
 #: templates/teams/_perform_task_link.html:7
-#: templates/teams/_perform_task_link.html:31 templates/teams/tasks.html:289
+#: templates/teams/_perform_task_link.html:31 templates/teams/tasks.html:293
 msgid "Start now"
 msgstr "Comenzar ahora"
 
@@ -5603,7 +5620,7 @@ msgstr "¿Qué lengua es necesaria?"
 msgid "Who should do it?"
 msgstr "¿Quién debería hacerlo?"
 
-#: templates/teams/create_task.html:68 templates/teams/tasks.html:467
+#: templates/teams/create_task.html:68 templates/teams/tasks.html:471
 msgid "Begin typing to search"
 msgstr "Introduzca texto para buscar"
 
@@ -6009,7 +6026,7 @@ msgstr "asignado a"
 msgid "anyone"
 msgstr "cualquiera"
 
-#: templates/teams/tasks.html:90 templates/teams/tasks.html.py:251
+#: templates/teams/tasks.html:90 templates/teams/tasks.html.py:255
 msgid "me"
 msgstr "mí"
 
@@ -6071,126 +6088,126 @@ msgstr ""
 msgid "Try changing your selection using the filters above to find tasks"
 msgstr ""
 
-#: templates/teams/tasks.html:218
+#: templates/teams/tasks.html:222
 msgid "latest draft"
 msgstr "último borrador"
 
-#: templates/teams/tasks.html:222
+#: templates/teams/tasks.html:226
 msgid "transcribed"
 msgstr "transcrito"
 
-#: templates/teams/tasks.html:224 templates/videos/subtitle-view.html:45
+#: templates/teams/tasks.html:228 templates/videos/subtitle-view.html:45
 msgid "translated"
 msgstr "traducido"
 
-#: templates/teams/tasks.html:232
+#: templates/teams/tasks.html:236
 msgid "reviewed"
 msgstr "revisado"
 
-#: templates/teams/tasks.html:234
+#: templates/teams/tasks.html:238
 msgid "and edited"
 msgstr "y editado"
 
-#: templates/teams/tasks.html:236 templates/videos/subtitle-view.html:204
+#: templates/teams/tasks.html:240 templates/videos/subtitle-view.html:204
 #: templates/videos/subtitle-view.html:320
 msgid "by"
 msgstr "por"
 
-#: templates/teams/tasks.html:249
+#: templates/teams/tasks.html:253
 msgid "Assigned to"
 msgstr "Asignado a"
 
-#: templates/teams/tasks.html:258
+#: templates/teams/tasks.html:262
 msgid "Unassigned"
 msgstr "No asignado"
 
-#: templates/teams/tasks.html:273
+#: templates/teams/tasks.html:277
 msgid "Perform Task"
 msgstr "Realizar tarea"
 
-#: templates/teams/tasks.html:282
+#: templates/teams/tasks.html:286
 msgid "You have reached the maximum number of tasks."
 msgstr ""
 
-#: templates/teams/tasks.html:301
+#: templates/teams/tasks.html:305
 msgid "Download draft"
 msgstr "Descargar borrador"
 
-#: templates/teams/tasks.html:315
+#: templates/teams/tasks.html:319
 msgid "Upload a draft"
 msgstr "Subir un borrador"
 
-#: templates/teams/tasks.html:318
+#: templates/teams/tasks.html:322
 msgid "Important:"
 msgstr "Importante:"
 
-#: templates/teams/tasks.html:318
+#: templates/teams/tasks.html:322
 msgid ""
 "Uploading a draft will not complete the task. After uploading, select "
 "\"Resume\" from the \"Perform Task\" drop-down to verify timing, video title"
 " and video description in the onsite editor and to submit the final version."
 msgstr ""
 
-#: templates/teams/tasks.html:321 templates/videos/_upload_subtitles.html:20
+#: templates/teams/tasks.html:325 templates/videos/_upload_subtitles.html:20
 #: templates/videos/video-view.html:101
 msgid "Language"
 msgstr "Idioma"
 
-#: templates/teams/tasks.html:327
+#: templates/teams/tasks.html:331
 msgid "Translate from"
 msgstr "Traducir desde"
 
-#: templates/teams/tasks.html:332
+#: templates/teams/tasks.html:336
 msgid "File:"
 msgstr "Archivo:"
 
-#: templates/teams/tasks.html:335
+#: templates/teams/tasks.html:339
 msgid "Accepted formats: .srt, .ssa, .sbv, .dfxp, .txt or .xml (for TTML)"
 msgstr "Formatos aceptados: .srt, .ssa, .sbv, .dfxp, .txt ó .xml (para TTML)"
 
-#: templates/teams/tasks.html:349
+#: templates/teams/tasks.html:353
 msgid "Download a draft"
 msgstr "Descargar un borrador"
 
-#: templates/teams/tasks.html:354
+#: templates/teams/tasks.html:358
 msgid "Download a draft of these subtitles so you can work offline."
 msgstr ""
 
-#: templates/teams/tasks.html:380
+#: templates/teams/tasks.html:384
 msgid "Decline"
 msgstr "Rechazar"
 
-#: templates/teams/tasks.html:400
+#: templates/teams/tasks.html:404
 msgid "Reassign"
 msgstr "Reasignar"
 
-#: templates/teams/tasks.html:402
+#: templates/teams/tasks.html:406
 msgid "Assign"
 msgstr "Asignar"
 
-#: templates/teams/tasks.html:418
+#: templates/teams/tasks.html:422
 msgid "Delete task"
 msgstr "Eliminar tarea"
 
-#: templates/teams/tasks.html:424
+#: templates/teams/tasks.html:428
 msgid "What would you like to do with the subtitles for this task?"
 msgstr "¿Qué quieres hacer con los subtítulos para esta tarea?"
 
-#: templates/teams/tasks.html:427
+#: templates/teams/tasks.html:431
 msgid "Publish these subtitles immediately"
 msgstr "Publicar estos subtítulos inmediatamente"
 
-#: templates/teams/tasks.html:431
+#: templates/teams/tasks.html:435
 msgid ""
 "Delete these subtitles permanently (discard all drafts since the last "
 "published version)"
 msgstr "Eliminar estos subtítulos permanentemente (borrar todos los borradores desde la última versión publicada)"
 
-#: templates/teams/tasks.html:470
+#: templates/teams/tasks.html:474
 msgid "Assign to User"
 msgstr "Asignar a Usuario"
 
-#: templates/teams/tasks.html:480
+#: templates/teams/tasks.html:484
 msgid "Sorry, no tasks here."
 msgstr "Lo sentimos, no hay tareas aquí."
 
@@ -6454,7 +6471,7 @@ msgstr "✓ Siguiendo"
 
 #: templates/videos/_follow_video_button.html:40
 msgid " Not Following"
-msgstr ""
+msgstr " No estás siguiendo."
 
 #: templates/videos/_follow_video_button.html:85
 msgid ""
@@ -7220,7 +7237,7 @@ msgstr "No hay subtítulos en este idioma"
 
 #: templates/videos/subtitle-view.html:342
 msgid "Roll back to this version"
-msgstr ""
+msgstr "Volver a esta versión"
 
 #: templates/videos/subtitle-view.html:355
 msgid "Unpublish subtitles"
