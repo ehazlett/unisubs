@@ -40,10 +40,10 @@
             </span>
         </p>
         {% if user_info.homepage %}
-            <p><a href="{{ user_info.homepage }}">{{ user_info.homepage }}</a></p>
+            <p class="homepage"><a href="{{ user_info.homepage }}">{{ user_info.homepage }}</a></p>
         {% else %}
             {% if can_edit %}
-                <p><em><a href="#edit-bio" title="Edit bio" class="open-modal">{% trans "Add a bio" %}</a></em></p>
+                <p class="homepage"><em><a href="#edit-bio" title="Edit homepage" class="open-modal">{% trans "Add a homepage" %}</a></em></p>
             {% endif %}
         {% endif %}
         {% with user_info.get_languages as langs %}

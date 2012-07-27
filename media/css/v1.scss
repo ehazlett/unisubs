@@ -783,6 +783,11 @@ div.fix-chosen div.chzn-container {
             text-overflow: ellipsis;
         }
     }
+    .thumb {
+        left: auto;
+        right: 0;
+        top: 6em;
+    }
 }
 .v1 .listing.activity > li, .v1 .listing.tasks > li, .v1 .listing.urls > li {
     padding-right: 150px;
@@ -1403,6 +1408,44 @@ div#language_picker {
     margin-left: 1em;
     margin-right: -60px;
     padding: .5em;
+}
+.profile.v1 .homepage {
+    padding-top: .5em;
+}
+.profile.v1 form {
+    padding-top: 3em;
+
+    ul.listing {
+        > li {
+            margin: 0 0 .5em;
+            padding: 1em;
+            border: none;
+            background: $faintest;
+            @include border-radius;
+
+            h3 {
+                padding: 0;
+            }
+
+            .actions {
+                top: 1em;
+                right: 1em;
+
+                a:after {
+                    content: '';
+                }
+            }
+        }
+    }
+
+    .get-new-api-bt {
+        display: block;
+        float: left;
+        margin-top: 1em;
+    }
+}
+.v1.profile .third-party {
+    padding-bottom: 3.5em;
 }
 .v1 .view .grid_4 {
     p, ul {
