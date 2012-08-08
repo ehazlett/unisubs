@@ -11,8 +11,10 @@ before_install:
   - sudo apt-get install -qq swig
 install:
   # Build/test dependencies
-  - cd deploy ; pip install -r requirements.txt --use-mirrors
-  - cd deploy ; pip install -r requirements-test.txt --use-mirrors
+  - cd deploy
+  - pip install -r requirements.txt --use-mirrors
+  - pip install -r requirements-test.txt --use-mirrors
+  - cd ..
 script: python manage.py test
 notifications:
   irc:
