@@ -4,6 +4,8 @@ branches:
     - dev
     - staging
     - production
+env:
+  - PYTHONPATH=./:./apps
 python:
   - "2.6"
 before_install:
