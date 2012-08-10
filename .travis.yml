@@ -4,8 +4,6 @@ branches:
     - dev
     - staging
     - production
-env:
-  - PYTHONPATH=./apps:./libs
 python:
   - "2.6"
 before_install:
@@ -17,7 +15,7 @@ install:
   - pip install -r requirements.txt --use-mirrors
   - pip install -r requirements-test.txt --use-mirrors
   - cd ..
-script: python manage.py test --settings=dev_settings_test
+script: PYTHONPATH=./apps:./libs:$PYTHONPATH python manage.py test --settings=dev_settings_test
 notifications:
   irc:
     channels: "irc.freenode.org#vitasso"
