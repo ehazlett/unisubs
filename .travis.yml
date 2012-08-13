@@ -12,10 +12,10 @@ before_install:
 install:
   # Build/test dependencies
   - cd deploy
-  - pip install -r requirements.txt --use-mirrors
-  - pip install -r requirements-test.txt --use-mirrors
+  - pip install -q -E . -r requirements.txt --use-mirrors
+  - pip install -q -E . -r requirements-test.txt --use-mirrors
   - cd ..
-script: PYTHONPATH=./apps:./libs:$PYTHONPATH python manage.py test --settings=dev_settings_test
+script: python manage.py test api auth comments messages profiles --settings=test_settings
 notifications:
   irc:
     channels: "irc.freenode.org#vitasso"
