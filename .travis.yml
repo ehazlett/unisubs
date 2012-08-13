@@ -12,8 +12,9 @@ before_install:
 install:
   # Build/test dependencies
   - cd deploy
-  - pip install -q . -r requirements.txt --use-mirrors
-  - pip install -q . -r requirements-test.txt --use-mirrors
+  - python create_commit_file.py
+  - pip install -q -r requirements.txt --use-mirrors
+  - pip install -q -r requirements-test.txt --use-mirrors
   - cd ..
 script: python manage.py test api auth comments messages profiles --settings=test_settings
 notifications:
